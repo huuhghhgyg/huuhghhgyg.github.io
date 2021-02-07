@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
+
+
+
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.proxy.ustclug.org">
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            C#异步介绍 | 
+        
+        Hikaru&#39;s Blog
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content="huuhghhgyg的个人主页">
+    <meta name="keywords" content="huu huuhghhgyg,C#,编程">
+    <meta name="theme-color" content="#1976D2">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?ax12tLrFrP3XOEfuY1+8yg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?2AKKL7hcCpKkcciCE8a9AA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?rT7a3skYUze07y2ZzTXWYA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/github-v2.min.css?AfzKxt++K+/lhZBlSjnxwg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Noto Sans SC,"Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #448AFF;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #1a73e8 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #1a73e8 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #1a73e8 !important;
+  }
+
+  .toTop {
+    /* background: #757575 !important; */
+    background: white;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #448AFF;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.proxy.ustclug.org/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+<!-- 新加入 Import NotoSansSC -->
+
+<!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC" rel="stylesheet"> -->
+<link href="https://cdn.jsdelivr.net/npm/noto-sans-sc@11.0.1/all.css" rel="stylesheet">
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- Real Custom Head -->
+    <link rel="manifest" href="/manifest.webmanifest">
+    <script src="/manifest.js" defer></script>
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Hikaru&#39;s Blog">
+    <meta name="msapplication-starturl" content="https://huuhghhgyg.github.io/2018/04/08/CSharpAsync/">
+    <meta name="msapplication-navbutton-color" content="#1976D2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Hikaru&#39;s Blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://huuhghhgyg.github.io/2018/04/08/CSharpAsync/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="C#异步介绍 | Hikaru&#39;s Blog">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="huuhghhgyg的个人主页">
+    <meta property="og:article:tag" content="C#"> <meta property="og:article:tag" content="编程"> 
+
+    
+        <meta property="article:published_time" content="Sun Apr 08 2018 21:14:06 GMT+0800">
+        <meta property="article:modified_time" content="Sat Aug 24 2019 23:54:46 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://huuhghhgyg.github.io/2018/04/08/CSharpAsync/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://huuhghhgyg.github.io/2018/04/08/CSharpAsync/index.html",
+    "headline": "C#异步介绍",
+    "datePublished": "Sun Apr 08 2018 21:14:06 GMT+0800",
+    "dateModified": "Sat Aug 24 2019 23:54:46 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "huuhghhgyg",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Never Settle"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Hikaru&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",C#,编程huu huuhghhgyg",
+    "description": "huuhghhgyg的个人主页",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#什么是异步编程"><span class="post-toc-number">1.</span> <span class="post-toc-text">什么是异步编程</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#async-await"><span class="post-toc-number">2.</span> <span class="post-toc-text">async/await</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#定义异步方法的几点要求"><span class="post-toc-number">3.</span> <span class="post-toc-text">定义异步方法的几点要求</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#异步返回类型"><span class="post-toc-number">4.</span> <span class="post-toc-text">异步返回类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Task-T-返回类型"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">Task(T) 返回类型</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#请参阅"><span class="post-toc-number">5.</span> <span class="post-toc-text">请参阅</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+    <div class="material-post mdl-grid">
+    <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+    <!-- Post Header(Thumbnail & Title) -->
+    
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/Async.jpg)">
+    
+            <p class="article-headline-p">
+                C#异步介绍
+            </p>
+        </div>
+
+
+
+
+
+    
+    <!-- Paradox Post Info -->
+    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar" />
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>huuhghhgyg</strong>
+        <span>4月 08, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACY0lEQVR42u3aUXLCMAwFQO5/6fYAFPIk2SZlNl8M0NjrzkTmWY+fr74eeHh4eHh4eHh4N+M94uuPGz19+ur7r77z/P58bnh4eHhneBeP2rcDv2e/AvTGjeaGh4eHd5CXT+vi0RwzksJQLid4eHh4N+Yln1YZeHh4eN/NSwpA/rc3rXt4eHh44zCiWiTe3zPfcB/KWvDw8PBiXn7IdP710fM9PDw8vIBXbmkKWgqSxoJkG92cIR4eHt5mXv4gnkcY+UFXdT54eHh4n+JVB6segOWb9aS0NLMWPDw8vDGvGs4mUWxeWqqLGwXEeHh4eJt5vVAgjwxWhRGjLTUeHh7eUl514zsPc6slpPpvwMPDw9vN6wWs8xgiKTbN4AMPDw9vM2/VBjqPZSfLEUUkeHh4eJt5eWg7H7566NUMSvDw8PA283oH/JPNd2/JDmUteHh4eDFvbVhQffT37l8OI/Dw8PAW8fLm1DxOrR6PTTbu0S8GPDw8vA28ZCpJK0Avoq1+86KA4eHh4R3hVaeVH4ztaEG4GAsPDw/vCG8S4OZL0HzQVyNjPDw8vCO8/PWkLaAXSeTFAw8PD+88b9Ujvnr/anloFgY8PDy8Dbxku5xQV4URzfYvPDw8vM286lU9+qo2GeQLhIeHh/cp3uSQPpl0vkzJ0kRLjIeHh3eEVz34rzZprQojooXDw8PDO8jLA9xkutWN+ASPh4eHd39eb+BJJFE4csPDw8P7J7wkPuhFuuUyg4eHh3eQtypyrb4zbz7Aw8PDO8/rtToVGqEG2+UEjIeHh3eS930XHh4eHh4eHh7eDa5fMofOSlRIQBwAAAAASUVORK5CYII=">
+    
+</ul>
+
+            
+
+                <!-- Tags (bookmark) -->
+                
+                    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+            <a class="post_tag-link" href="/tags/C/">C#</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/编程/">编程</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=C#异步介绍&url=https://huuhghhgyg.github.io/2018/04/08/CSharpAsync/index.html&pic=https://huuhghhgyg.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=C#异步介绍&url=https://huuhghhgyg.github.io/2018/04/08/CSharpAsync/index.html&via=huuhghhgyg" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://huuhghhgyg.github.io/2018/04/08/CSharpAsync/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://huuhghhgyg.github.io/2018/04/08/CSharpAsync/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hikaru&#39;s Blog&title=C#异步介绍&summary=huuhghhgyg的个人主页&pics=https://huuhghhgyg.github.io/img/favicon.png&url=https://huuhghhgyg.github.io/2018/04/08/CSharpAsync/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://huuhghhgyg.github.io/2018/04/08/CSharpAsync/index.html&text=C#异步介绍" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+    
+
+</div>
+
+<!-- Chips-->
+<div class="chips-tag">
+    <style type="text/css">
+        .mdl-chip {
+            height: 32px;
+            font-family: "Noto Sans SC",Roboto, "Helvetica", "Arial", sans-serif;
+            line-height: 32px;
+            padding: 0 12px;
+            border: 0;
+            border-radius: 16px;
+            background-color: #E3F2FD;
+            display: inline-block;
+            color: #232F34;
+            font-size: 0;
+            white-space: nowrap;
+            margin: 0 3px;
+        }
+        
+        .mdl-chip:hover {
+            background-color: #BBDEFB;
+        }
+        
+        .mdl-chip__text {
+            font-size: 13px;
+            vertical-align: middle;
+            display: inline-block
+        }
+        
+        .chips-tag {
+            padding: 0 13px 13px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .post_tag_chip-link {
+            font-weight: 500;
+            text-decoration: none;
+            padding: 0 5px;
+        }
+    </style>
+
+    
+        <button type="button" class="mdl-chip">
+            <span class="mdl-chip__text">
+                <a class="post_tag_chip-link" href="/tags/C/">C#</a></span></button><button type="button" class="mdl-chip"><span class="mdl-chip__text"><a class="post_tag_chip-link" href="/tags/编程/">编程</a>
+            </span>
+        </button>
+        
+</div>
+
+
+<!-- Post Content -->
+<div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>创建多线程？太麻烦了！来试试更快更便捷的异步。程序无须按照代码顺序自上而下的执行。</p>
+<h1 id="什么是异步编程"><a href="#什么是异步编程" class="headerlink" title="什么是异步编程"></a>什么是异步编程</h1><p>什么是异步编程呢？举个简单的例子：</p>
+<pre><code>using System.Net.Http;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace Core
+{
+    class Async
+    {
+        static void Main()
+        {
+            Start();
+            End();
+        }
+
+        static void Wait()=&gt;WriteLine(&quot;waiting...&quot;);
+        static void End()=&gt;WriteLine(&quot;end...&quot;);
+        static int Start()
+        {
+            WriteLine(&quot;start...&quot;);
+            HttpClient client = new HttpClient();
+            Waiting();
+            var result = client.GetStringAsync(&quot;https://www.visualstudio.com/&quot;);
+            string str = result.Result;
+            return str.Length;
+        }
+    }
+}</code></pre><p>上面这段代码中，Main方法中的代码是按照自上而下的顺序执行的。网络状况不佳时，<strong>Start()</strong> 方法是比较耗时 <em>（注意，这里在Start方法中调用了异步方法GetStringAsync，但该方法在此处是以同步方式执行的，具体原因下文会进行说明）</em> ，在 <strong>Start()</strong> 方法执行完毕之前，整个程序处于阻塞状态。而异步编程可以很好的解决这个问题，<strong>一句简单的话来概括异步编程就是，程序无须按照代码顺序自上而下的执行。</strong></p>
+<h1 id="async-await"><a href="#async-await" class="headerlink" title="async/await"></a>async/await</h1><p><strong>C#5.0新增了async和await关键字，使用这两个关键字可以大大简化异步编程</strong></p>
+<p>使用 <strong>async</strong> 关键字可将方法、<a href="https://msdn.microsoft.com/zh-cn/library/bb397687.aspx" target="_blank" rel="noopener">lambda 表达式</a>或<a href="https://msdn.microsoft.com/zh-cn/library/0yw3tz5k.aspx" target="_blank" rel="noopener">匿名方法</a>标记为异步，即，方法中应该包含一个或多个await表达式，但async关键字本身不会创建异步操作。</p>
+<pre><code>public async Task Asy()
+{
+　　//do something...
+}</code></pre><p>这里需要注意一点，若使用async关键字标记的方法中没有使用await关键字（编译器会给出警告但不报错），<strong>那么该方法将会以同步方式执行。</strong></p>
+<h1 id="定义异步方法的几点要求"><a href="#定义异步方法的几点要求" class="headerlink" title="定义异步方法的几点要求"></a>定义异步方法的几点要求</h1><p>定义一个异步方法应满足以下几点：</p>
+<ul>
+<li>使用async关键字来修饰方法</li>
+<li>在异步方法中使用await关键字（不使用编译器会给出警告但不报错），否则异步方法会以同步方式执行</li>
+<li>尽量不使用void作为返回类型，若希望异步方法返回void类型，请使用Task</li>
+<li>异步方法名称以Async结尾</li>
+<li>异步方法中不能声明使用 <strong>ref</strong> 或 <strong>out</strong> 关键字修饰的变量</li>
+</ul>
+<p>下面定义一个异步方法StartAsync()：</p>
+<pre><code>static async Task&lt;int&gt; StartAsync()
+{
+    HttpClient client = new HttpClient();
+    var str = await client.GetStringAsync(&quot;https://www.visualstudio.com/&quot;);
+    return str.Length;
+}</code></pre><h1 id="异步返回类型"><a href="#异步返回类型" class="headerlink" title="异步返回类型"></a>异步返回类型</h1><ul>
+<li>Task(T) 返回类型</li>
+<li>任务返回类型</li>
+<li>Void 返回类型</li>
+<li>通用的异步返回类型和 ValueTask</li>
+</ul>
+<p>异步方法可以具有以下返回类型：</p>
+<ul>
+<li><p><a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1" target="_blank" rel="noopener">Task<tresult></tresult></a>（对于返回值的异步方法）。</p>
+</li>
+<li><p><a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task" target="_blank" rel="noopener">Task</a>（对于执行操作但不返回任何值的异步方法）。</p>
+</li>
+<li><p>void（对于事件处理程序）。</p>
+</li>
+<li><p>从 <strong>C#7</strong> 开始，任何具有可访问的 <code>GetAwaiter</code> 方法的类型。 <code>GetAwaiter</code> 方法返回的对象必须实现 <a href="https://docs.microsoft.com/dotnet/api/system.runtime.compilerservices.icriticalnotifycompletion" target="_blank" rel="noopener">System.Runtime.CompilerServices.ICriticalNotifyCompletion</a> 接口。</p>
+</li>
+</ul>
+<p>有关异步方法的详细信息，请参<a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/concepts/async/index" target="_blank" rel="noopener">阅使用 Async 和 Await 的异步编程 (C#)</a>。</p>
+<p>在以下其中一节检查每个返回类型，且在本主题末尾可以找到使用全部三种类型的完整示例。</p>
+<h2 id="Task-T-返回类型"><a href="#Task-T-返回类型" class="headerlink" title="Task(T) 返回类型"></a>Task(T) 返回类型</h2><p><a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1" target="_blank" rel="noopener">Task<tresult></tresult></a> 返回类型用于某种异步方法，此异步方法包含 <a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/return" target="_blank" rel="noopener">return</a> (C#) 语句，其中操作数具有类型 <code>TResult</code>。</p>
+<p>在下面的示例中，<code>GetLeisureHours</code> 异步方法包含返回整数的 <code>return</code> 语句。 因此，该方法声明必须指定 <code>Task&lt;int&gt;</code> 的返回类型。 <a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.fromresult" target="_blank" rel="noopener">FromResult</a> 异步方法是返回字符串的操作的占位符。</p>
+<pre><code>using System;
+using System.Linq;
+using System.Threading.Tasks;
+
+public class Example
+{
+   public static void Main()
+   {
+      Console.WriteLine(ShowTodaysInfo().Result);
+   }
+
+   private static async Task&lt;string&gt; ShowTodaysInfo()
+   {
+      string ret = $&quot;Today is {DateTime.Today:D}\n&quot; +
+                   &quot;Today&#39;s hours of leisure: &quot; +
+                   $&quot;{await GetLeisureHours()}&quot;;
+      return ret;
+   }
+
+   static async Task&lt;int&gt; GetLeisureHours()  
+   {  
+       // Task.FromResult is a placeholder for actual work that returns a string.  
+       var today = await Task.FromResult&lt;string&gt;(DateTime.Now.DayOfWeek.ToString());  
+
+       // The method then can process the result in some way.  
+       int leisureHours;  
+       if (today.First() == &#39;S&#39;)  
+           leisureHours = 16;  
+       else  
+           leisureHours = 5;  
+
+       return leisureHours;  
+   }  
+}
+// The example displays output like the following:
+//       Today is Wednesday, May 24, 2017
+//       Today&#39;s hours of leisure: 5
+// &lt;/Snippet &gt;</code></pre><p>在 <code>ShowTodaysInfo</code> 方法中从 await 表达式内调用 <code>GetLeisureHours</code> 时，await 表达式检索存储在由 <code>GetLeisureHours</code> 方法返回的任务中的整数值（<code>leisureHours</code> 的值）。 有关 await 表达式的详细信息，请参阅 <a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/await" target="_blank" rel="noopener">await</a>。</p>
+<p>通过从应用程序 <code>await</code> 中分离对 <code>GetLeisureHours</code> 的调用，你可以更好地了解此操作，如下面的代码所示。 对非立即等待的方法 <code>TaskOfT_MethodAsync</code> 的调用返回 <code>Task&lt;int&gt;</code>，正如你从方法声明预料的一样。 该任务指派给示例中的 <code>integerTask</code> 变量。 因为 <code>integerTask</code> 是 <a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1" target="_blank" rel="noopener">Task<tresult></tresult></a>，所以它包含类型 <code>TResult</code> 的 <a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1.result#System_Threading_Tasks_Task_1_Result" target="_blank" rel="noopener">Result</a> 属性。 在这种情况下，<code>TResult</code> 表示整数类型。 <code>await</code> 应用于 <code>integerTask</code>，await 表达式的计算结果为 <code>integerTask</code> 的 <a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1.result" target="_blank" rel="noopener">Result</a> 属性内容。 此值分配给 <code>result2</code> 变量。</p>
+<blockquote>
+<p><strong>重要</strong>:Result 属性为阻止属性。 如果你在其任务完成之前尝试访问它，当前处于活动状态的线程将被阻止，直到任务完成且值为可用。 在大多数情况下，应通过使用 await 访问此值，而不是直接访问属性。<br>上一示例通过检索 Result 属性的值来阻止主线程，从而使 ShowTodaysInfo 方法可在应用程序结束之前完成执行。</p>
+<pre><code>var infoTask = GetLeisureHours();</code></pre></blockquote>
+<p>// You can do other work that does not rely on integerTask before awaiting.</p>
+<p>string ret = $”Today is {DateTime.Today:D}\n” +<br>             “Today’s hours of leisure: “ +<br>             $”{await infoTask}”;</p>
+<pre><code>## 任务返回类型
+不包含 `return` 语句的异步方法或包含不返回操作数的 `return` 语句的异步方法通常具有返回类型 [Task](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task)。 如果此类方法同步运行，它们将返回 `void`。 如果在异步方法中使用 Task 返回类型，调用方法可以使用 `await` 运算符暂停调用方的完成，直至被调用的异步方法结束。
+
+如下示例中，`WaitAndApologize` 异步方法不包含 return 语句，因此此方法返回 [Task](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task) 对象。 通过这样可等待 `WaitAndApologize`。 请注意，[Task](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task) 类型不包含 `Result` 属性，因为它不具有任何返回值。</code></pre><p>using System;<br>using System.Threading.Tasks;</p>
+<p>public class Example<br>{<br>   public static void Main()<br>   {<br>      DisplayCurrentInfo().Wait();<br>   }</p>
+<p>   static async Task DisplayCurrentInfo()<br>   {<br>      await WaitAndApologize();<br>      Console.WriteLine($”Today is {DateTime.Now:D}”);<br>      Console.WriteLine($”The current time is {DateTime.Now.TimeOfDay:t}”);<br>      Console.WriteLine(“The current temperature is 76 degrees.”);<br>   }</p>
+<p>   static async Task WaitAndApologize()<br>   {<br>      // Task.Delay is a placeholder for actual work.<br>      await Task.Delay(2000);<br>      // Task.Delay delays the following line by two seconds.<br>      Console.WriteLine(“\nSorry for the delay. . . .\n”);<br>   }<br>}<br>// The example displays the following output:<br>//       Sorry for the delay. . . .<br>//<br>//       Today is Wednesday, May 24, 2017<br>//       The current time is 15:25:16.2935649<br>//       The current temperature is 76 degrees.</p>
+<pre><code>通过使用 await 语句而不是 await 表达式等待 `WaitAndApologize`，类似于返回 void 的同步方法的调用语句。 Await 运算符的应用程序在这种情况下不生成值。
+
+如同上一个 [Task&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1) 示例，可以从 await 运算符的应用程序中分离对 `Task_MethodAsync` 的调用，如以下代码所示。 但是，请记住，`Task` 没有 `Result` 属性，并且当 await 运算符应用于 `Task` 时不产生值。
+
+以下代码将调用 `WaitAndApologize` 方法和等待此方法返回的任务分离。</code></pre><p>Task wait = WaitAndApologize();</p>
+<p>string output = $”Today is {DateTime.Now:D}\n” +<br>                $”The current time is {DateTime.Now.TimeOfDay:t}\n” +<br>                $”The current temperature is 76 degrees.\n”;<br>await wait;<br>Console.WriteLine(output);</p>
+<pre><code>## Void 返回类型
+在异步事件处理程序中使用 `void` 返回类型，这需要 `void` 返回类型。 对于事件处理程序以外的不返回值的方法，应返回 [Task](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task)，因为无法等待返回 `void` 的异步方法。 这种方法的任何调用方必须能够继续完成，而无需等待调用的异步方法完成，并且调用方必须独立于异步方法生成的任何值或异常。
+
+返回 void 的异步方法的调用方无法捕获从该方法引发的异常，且此类未经处理的异常可能会导致应用程序故障。 如果返回 [Task](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task) 或 [Task&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1) 的异步方法中出现异常，此异常将存储于返回的任务中，并在等待该任务时再次引发。 因此，请确保可以产生异常的任何异步方法都具有返回类型 [Task](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task) 或 [Task&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1)，并确保会等待对方法的调用。
+
+有关如何在异步方法中捕捉异常的更多信息，请参阅 [try-catch](https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/try-catch)。
+
+以下示例定义一个异步事件处理程序。</code></pre><p>using System;<br>using System.Threading.Tasks;</p>
+<p>public class Counter<br>{<br>   private int threshold = 0;<br>   private int iterations = 0;<br>   private int ctr = 0;</p>
+<p>   event EventHandler<eventargs> ThresholdReached;</eventargs></p>
+<p>   public Counter(int threshold)<br>   {<br>      this.threshold = threshold;<br>      ThresholdReached += thresholdReachedEvent;<br>   }</p>
+<p>   public async Task<int> StartCounting(int limit)<br>   {<br>      iterations = 1;<br>      for (int index = 0; index &lt;= limit; index++) {<br>         if (ctr == threshold)<br>            thresholdReachedEvent(this, EventArgs.Empty);<br>         ctr++;<br>         await Task.Delay(500);<br>      }<br>      int retval = ctr + (iterations - 1) * threshold;<br>      Console.WriteLine($”On iteration {iterations}, reached {limit}”);<br>      return retval;<br>   }</int></p>
+<p>   async void thresholdReachedEvent(object sender, EventArgs e)<br>   {<br>       Console.WriteLine($”Reached {ctr}. Resetting…”);<br>       await Task.Delay(1000);<br>       ctr = 0;<br>       iterations++;<br>   }<br>}</p>
+<p>public class Example<br>{<br>   public static void Main()<br>   {<br>      RunCounter().Wait();<br>   }</p>
+<p>   private static async Task RunCounter()<br>   {<br>      var count = new Counter(5);<br>      await count.StartCounting(8);<br>   }<br>}</p>
+<pre><code>## 通用的异步返回类型和 ValueTask
+从 C# 7 开始，异步方法可返回任何具有可访问的 `GetAwaiter` 方法的类型。
+[Task](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task) 和 [Task&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1) 是引用类型，因此，性能关键路径中的内存分配会对性能产生负面影响，尤其当分配出现在紧凑循环中时。 支持通用返回类型意味着可返回轻量值类型（而不是引用类型），从而避免额外的内存分配。
+
+.NET 提供 [System.Threading.Tasks.ValueTask&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1) 结构作为返回任务的通用值的轻量实现。 要使用 [System.Threading.Tasks.ValueTask&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1) 类型，必须向项目添加 `System.Threading.Tasks.Extensions` NuGet 包。 如下示例使用 [ValueTask&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1) 结构检索两个骰子的值。</code></pre><p>using System;<br>using System.Threading.Tasks;</p>
+<p>class Program<br>{<br>   static Random rnd;</p>
+<p>   static void Main()<br>   {<br>      Console.WriteLine($”You rolled {GetDiceRoll().Result}”);<br>   }</p>
+<p>   private static async ValueTask<int> GetDiceRoll()<br>   {<br>      Console.WriteLine(“…Shaking the dice…”);<br>      int roll1 = await Roll();<br>      int roll2 = await Roll();<br>      return roll1 + roll2;<br>   } </int></p>
+<p>   private static async ValueTask<int> Roll()<br>   {<br>      if (rnd == null)<br>         rnd = new Random();</int></p>
+<pre><code>  await Task.Delay(500);
+  int diceRoll = rnd.Next(1, 7);
+  return diceRoll;</code></pre><p>   }<br>}<br>// The example displays output like the following:<br>//       …Shaking the dice…<br>//       You rolled 8<br>```</p>
+<h1 id="请参阅"><a href="#请参阅" class="headerlink" title="请参阅"></a>请参阅</h1><p><a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.fromresult" target="_blank" rel="noopener">FromResult</a></p>
+<p><a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await" target="_blank" rel="noopener">演练：使用 Async 和 Await 访问 Web (C#)</a></p>
+<p><a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/concepts/async/control-flow-in-async-programs" target="_blank" rel="noopener">异步程序中的控制流 (C#)</a></p>
+<p><a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/async" target="_blank" rel="noopener">Async</a><br><a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/await" target="_blank" rel="noopener">await</a></p>
+
+            
+                <!-- <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;border-radius: 2px;">
+                    <p><strong>
+                    
+                        This blog is under a <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">CC BY-NC-SA 3.0 Unported License</a>
+                    </strong>
+                        <br>
+                        <strong>本文链接：</strong>
+                        <a href="https://huuhghhgyg.github.io/2018/04/08/CSharpAsync/">
+                            https://huuhghhgyg.github.io/2018/04/08/CSharpAsync/
+                        </a>
+                    </p>
+                </blockquote> -->
+
+                <style>
+                    .license-card {
+                        background-color: #323232;
+                        position: relative;
+                        padding: 16px;
+                        border-radius: 4px;
+                        color: #E5E5E5;
+                    }
+                    
+                    .license-card .title {
+                        font-size: 16px;
+                        margin: 0;
+                        font-weight: bold;
+                        display: flex;
+                        align-items: center;
+                    }
+                    
+                    .license-card .title-link {
+                        margin-bottom: 6px;
+                    }
+                    
+                    .license img {
+                        width: 20px;
+                        padding-bottom: 2px;
+                        display: inline;
+                    }
+                    
+                    .license-card .license-subtitle {
+                        margin-top: 16px;
+                        margin-bottom: 0px;
+                        font-size: 14px;
+                        font-weight: bold;
+                    }
+                    
+                    .license-card .info {
+                        display: flex;
+                        margin-top: 12px;
+                    }
+                    
+                    @media screen and (max-width: 480px) {
+                        .license-card .info {
+                            display: block;
+                        }
+                    }
+                    
+                    .license-card .info .license-content {
+                        line-height: 20px;
+                    }
+                    
+                    .license-card .license-block {
+                        margin-right: 24px;
+                    }
+                </style>
+
+                <div class="license-card">
+                    <div class="title">
+                        <span class="material-icons">link</span>
+                        <div style="margin-left:6px">
+                            本文链接：
+                        </div>
+                    </div>
+                    <div class="title-link">
+                        <a href="https://huuhghhgyg.github.io/2018/04/08/CSharpAsync/">
+                            https://huuhghhgyg.github.io/2018/04/08/CSharpAsync/
+                        </a>
+                    </div>
+                    <div class="info">
+                        <div class="time license-block">
+                            <div class="license-subtitle">发文时间</div>
+                            <div class="license-content">
+                                4月 08, 2018
+                            </div>
+                        </div>
+                        <div class="license license-block">
+                            <div class="license-subtitle">请遵循协议</div>
+                            <div class="license-content"><img style="border:none" src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/icon/cc_icon_white_x2.png" alt="" srcset="">
+                                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                    
+
+                        
+</div>
+
+
+
+<!-- Post Comments -->
+
+    
+    <!-- <div id="comment" style='padding:10px;' class="vcomment"></div> -->
+<div id="comment" style='width: 90%;margin: 1pc auto;' class="vcomment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!-- <script src="//unpkg.com/valine/dist/Valine.min.js"></script> -->
+<script src="//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+
+<script>
+    var GUEST_INFO = ['nick', 'mail', 'link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item) {
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    var notify = 'false' === 'true';
+    var verify = 'false' === 'true';
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "zQXuDM0BRWNAQq6FkTiK9teB-gzGzoHsz",
+        appKey: "0xSeR8Ba3Mc5VUIahEs3xPb0",
+        placeholder: "点击键入评论",
+        pageSize: '10',
+        avatar: 'mp',
+        lang: 'zh-cn',
+        guest_info: guest_info
+    });
+</script>
+
+
+</div>
+
+<!-- Post Prev & Next Nav -->
+<nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/04/13/IAmImportant/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/04/07/WhatIsGPT/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+</div>
+</div>
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/site/sidebar_header.webp);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <!-- <i class="material-icons">clear_all</i> -->
+        <i class="material-icons">arrow_back</i>
+        </style>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="huuhghhgyg's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        huuhghhgyg@outlook.com
+            <b class="caret"></b>
+    </a>
+</div>
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:huuhghhgyg@outlook.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="关于我">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于我
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间线">
+                
+                    <i class="material-icons sidebar-material-icons">timelapse</i>
+                
+                时间线
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="链接">
+                
+                    <i class="material-icons sidebar-material-icons">link</i>
+                
+                链接
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/Tools/Tools.html" title="工具">
+                
+                    <i class="material-icons sidebar-material-icons">widgets</i>
+                
+                工具
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="https://launcher3-1251886115.cos.ap-shanghai.myqcloud.com/OralCalculation/index.html" title="小程序">
+                
+                    <i class="material-icons sidebar-material-icons">shop</i>
+                
+                小程序
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="https://github.com/huuhghhgyg" title="Github目录">
+                
+                    <i class="material-icons sidebar-material-icons">insert_drive_file</i>
+                
+                Github目录
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+    <a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        sidebar.help
+        <span class="mdl-button__ripple-container">
+          <span class="mdl-ripple"></span>
+        </span>
+      </div>
+    </a>
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/Huuhghhgyg" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/hghhgyg.huu.7" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/u/2738972153" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/huuhghhgyg-11/activities" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;Hikaru's Blog
+            
+                <br>
+                
+                    <div style="visibility:hidden;height:0"> <script type="text/javascript" src="https://s13.cnzz.com/z_stat.php?id=1273431916&web_id=1273431916"></script> </div>
+<div class="inner-width" id="views"> <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> <div class="website-data"> <i class="material-icons">people</i> <span id="busuanzi_value_site_uv">Loading</span> </div> <div class="website-data data-divider">|</div> <div class="website-data"> <i class="material-icons">visibility</i> <span id="busuanzi_value_site_pv">Loading</span> </div> </div> <meta name="msvalidate.01" content="668682503059272C64C774C5F2DF530F" /> <link rel="stylesheet" href="/links/footerstyle.css">
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 2017;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

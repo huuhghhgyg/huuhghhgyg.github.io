@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
+
+
+
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.proxy.ustclug.org">
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            GPT分区是啥？ | 
+        
+        Hikaru&#39;s Blog
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content="huuhghhgyg的个人主页">
+    <meta name="keywords" content="huu huuhghhgyg,装机,硬盘,分区">
+    <meta name="theme-color" content="#1976D2">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?ax12tLrFrP3XOEfuY1+8yg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?2AKKL7hcCpKkcciCE8a9AA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?rT7a3skYUze07y2ZzTXWYA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/github-v2.min.css?AfzKxt++K+/lhZBlSjnxwg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Noto Sans SC,"Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #448AFF;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #1a73e8 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #1a73e8 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #1a73e8 !important;
+  }
+
+  .toTop {
+    /* background: #757575 !important; */
+    background: white;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #448AFF;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.proxy.ustclug.org/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+<!-- 新加入 Import NotoSansSC -->
+
+<!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC" rel="stylesheet"> -->
+<link href="https://cdn.jsdelivr.net/npm/noto-sans-sc@11.0.1/all.css" rel="stylesheet">
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- Real Custom Head -->
+    <link rel="manifest" href="/manifest.webmanifest">
+    <script src="/manifest.js" defer></script>
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Hikaru&#39;s Blog">
+    <meta name="msapplication-starturl" content="https://huuhghhgyg.github.io/2018/04/07/WhatIsGPT/">
+    <meta name="msapplication-navbutton-color" content="#1976D2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Hikaru&#39;s Blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://huuhghhgyg.github.io/2018/04/07/WhatIsGPT/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="GPT分区是啥？ | Hikaru&#39;s Blog">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="huuhghhgyg的个人主页">
+    <meta property="og:article:tag" content="装机"> <meta property="og:article:tag" content="硬盘"> <meta property="og:article:tag" content="分区"> 
+
+    
+        <meta property="article:published_time" content="Sat Apr 07 2018 13:01:03 GMT+0800">
+        <meta property="article:modified_time" content="Sat Aug 24 2019 23:54:32 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://huuhghhgyg.github.io/2018/04/07/WhatIsGPT/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://huuhghhgyg.github.io/2018/04/07/WhatIsGPT/index.html",
+    "headline": "GPT分区是啥？",
+    "datePublished": "Sat Apr 07 2018 13:01:03 GMT+0800",
+    "dateModified": "Sat Aug 24 2019 23:54:32 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "huuhghhgyg",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Never Settle"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Hikaru&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",装机,硬盘,分区huu huuhghhgyg",
+    "description": "huuhghhgyg的个人主页",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#GPT"><span class="post-toc-number">1.</span> <span class="post-toc-text">GPT</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#MBR与GPT的区别"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">MBR与GPT的区别</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#GPT-ESP"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">GPT-ESP</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#GPT-MSR"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">GPT-MSR</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SECURE-BOOT-Windows8"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">SECURE BOOT(Windows8+)</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#UEFI"><span class="post-toc-number">2.</span> <span class="post-toc-text">UEFI</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UEFI的优点"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">UEFI的优点</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#在什么情况下能使用UEFI-GPT模式来装系统呢？"><span class="post-toc-number">3.</span> <span class="post-toc-text">在什么情况下能使用UEFI+GPT模式来装系统呢？</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#AHCI"><span class="post-toc-number">4.</span> <span class="post-toc-text">AHCI</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开启AHCI有什么好处"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">开启AHCI有什么好处</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#TIPS"><span class="post-toc-number">5.</span> <span class="post-toc-text">TIPS</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+    <div class="material-post mdl-grid">
+    <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+    <!-- Post Header(Thumbnail & Title) -->
+    
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/HDD.jpg)">
+    
+            <p class="article-headline-p">
+                GPT分区是啥？
+            </p>
+        </div>
+
+
+
+
+
+    
+    <!-- Paradox Post Info -->
+    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar" />
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>huuhghhgyg</strong>
+        <span>4月 07, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACaUlEQVR42u3aQXLCMAwFUO5/6XbbmTbhS4qdDH1eMWCCXxax+dLr66PHCw8PDw8PDw8P72G8Vzz+uNCP95P5v2ceXW2yNjw8PLw9vDeP2mAp5wvKkResDQ8PD28j72hZ53OOZh599/x2TNaGh4eH92Re+Sdbn+Lh4eH9H151G5iEHXh4eHj38pI//Hl8MI85bsha8PDw8GJeXmTa/3prfQ8PDw8v4JVbmg7A5wfoanlstEI8PDy8xbz8QZwHDdWjdm9jwMPDw3sCrxdSVGPZatnsfBNqZi14eHh4Y161qTTfPKq3L2/AKmwMeHh4eFt4efNo7wB9vj3k7+Ph4eHt5+VNAKOHdXzIzuPj6EiNh4eHt4CXF6KqS+kVzJIw4s118PDw8LbwJpheUJuHIEl7Fh4eHt5O3nz0Wl17UUU5xsXDw8NbxqsWuqoBa7XpKr9+lLXg4eHhLePlsUL15/PrVL+Lh4eHdxevesDNN4O8jbUXahT+MeDh4eEt4F21iMkB/YLbioeHh7eYNynY9w7Wk8aCqMUBDw8P7ybeBJZfodci8OZTPDw8vI28SbNUOTIIMM2GLTw8PLztvBxfjV8nEW0zxsXDw8NbzOsV+6sLmoS20RaFh4eHt5hXHXkUm28DeSNCFBnj4eHhLeaNivTjKLZ6m5pHajw8PLwFvLwN6zywqD7Qqwf0pIEADw8PbydvXv5PjuDV4COH4eHh4T2Zt67toDpnSdMVHh4e3jJesujenIS6fGPAw8PDuyiMyJsDqpikoQEPDw/vObxqq9PkQJwX0vJmAjw8PLydvM8beHh4eHh4eHh4DxjftZaGknRn6vYAAAAASUVORK5CYII=">
+    
+</ul>
+
+            
+
+                <!-- Tags (bookmark) -->
+                
+                    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+            <a class="post_tag-link" href="/tags/分区/">分区</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/硬盘/">硬盘</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/装机/">装机</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=GPT分区是啥？&url=https://huuhghhgyg.github.io/2018/04/07/WhatIsGPT/index.html&pic=https://huuhghhgyg.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=GPT分区是啥？&url=https://huuhghhgyg.github.io/2018/04/07/WhatIsGPT/index.html&via=huuhghhgyg" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://huuhghhgyg.github.io/2018/04/07/WhatIsGPT/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://huuhghhgyg.github.io/2018/04/07/WhatIsGPT/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hikaru&#39;s Blog&title=GPT分区是啥？&summary=huuhghhgyg的个人主页&pics=https://huuhghhgyg.github.io/img/favicon.png&url=https://huuhghhgyg.github.io/2018/04/07/WhatIsGPT/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://huuhghhgyg.github.io/2018/04/07/WhatIsGPT/index.html&text=GPT分区是啥？" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+    
+
+</div>
+
+<!-- Chips-->
+<div class="chips-tag">
+    <style type="text/css">
+        .mdl-chip {
+            height: 32px;
+            font-family: "Noto Sans SC",Roboto, "Helvetica", "Arial", sans-serif;
+            line-height: 32px;
+            padding: 0 12px;
+            border: 0;
+            border-radius: 16px;
+            background-color: #E3F2FD;
+            display: inline-block;
+            color: #232F34;
+            font-size: 0;
+            white-space: nowrap;
+            margin: 0 3px;
+        }
+        
+        .mdl-chip:hover {
+            background-color: #BBDEFB;
+        }
+        
+        .mdl-chip__text {
+            font-size: 13px;
+            vertical-align: middle;
+            display: inline-block
+        }
+        
+        .chips-tag {
+            padding: 0 13px 13px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .post_tag_chip-link {
+            font-weight: 500;
+            text-decoration: none;
+            padding: 0 5px;
+        }
+    </style>
+
+    
+        <button type="button" class="mdl-chip">
+            <span class="mdl-chip__text">
+                <a class="post_tag_chip-link" href="/tags/分区/">分区</a></span></button><button type="button" class="mdl-chip"><span class="mdl-chip__text"><a class="post_tag_chip-link" href="/tags/硬盘/">硬盘</a></span></button><button type="button" class="mdl-chip"><span class="mdl-chip__text"><a class="post_tag_chip-link" href="/tags/装机/">装机</a>
+            </span>
+        </button>
+        
+</div>
+
+
+<!-- Post Content -->
+<div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>UEFI  BIOS可以说是legacy  BIOS的继承者，也就是传统BIOS的后代。以后的主流模式。</p>
+<h1 id="GPT"><a href="#GPT" class="headerlink" title="GPT"></a>GPT</h1><h2 id="MBR与GPT的区别"><a href="#MBR与GPT的区别" class="headerlink" title="MBR与GPT的区别"></a>MBR与GPT的区别</h2><p>传统的MBR最大支持2TB的单分区，最多能设置4个主分区;GPT支持2TB以上的单分区，理论上能设置128个主分区（硬盘的4k对齐与GPT无关联，AHCI和GPT无关联）</p>
+<p> MBR分区表：Master Boot Record，即硬盘主引导记录分区表，只支持容量在 2.1TB 以下的硬盘，超过2.1TB的硬盘只能管理2.1TB，最多只支持4个主分区或三个主分区和一个扩展分区，扩展分区下可以有多个逻辑分区。<br> GPT分区表：GPT，全局唯一标识分区表(GUID Partition Table)，与MBR最大4个分区表项的限制相比，GPT对分区数量没有限制，但Windows最大仅支持128个GPT分区，GPT可管理硬盘大小达到了18EB。只有基于UEFI平台的主板才支持GPT 分区引导启动。</p>
+<h3 id="GPT-ESP"><a href="#GPT-ESP" class="headerlink" title="GPT-ESP"></a>GPT-ESP</h3><p>ESP分区：EFI system partition，该分区用于采用了EFI BIOS的电脑系统，用来启动操作系统。分区内存放引导管理程序、驱动程序、系统维护工具等。如果电脑采用了EFI系统，或当前磁盘用于在EFI平台上启动操作系统，则应建议ESP分区。如果只是作为仓库盘，就没必要设置这个分区了。</p>
+<h3 id="GPT-MSR"><a href="#GPT-MSR" class="headerlink" title="GPT-MSR"></a>GPT-MSR</h3><p>ESP分区：EFI system partition，该分区用于采用了EFI BIOS的电脑系统，用来启动操作系统。分区内存放引导管理程序、驱动程序、系统维护工具等。如果电脑采用了EFI系统，或当前磁盘用于在EFI平台上启动操作系统，则应建议ESP分区。如果只是作为仓库盘，也同样没必要设置这个分区。</p>
+<h3 id="SECURE-BOOT-Windows8"><a href="#SECURE-BOOT-Windows8" class="headerlink" title="SECURE BOOT(Windows8+)"></a>SECURE BOOT(Windows8+)</h3><p>SECURE BOOT功能:Windows 8中增加了一个新的安全功能,Secure Boot内置于UEFI BIOS中,用来对抗感染MBR、BIOS的恶意软件,  Windows 8 缺省将使用Secure Boot,在启动过程中，任何要加载的模块必须签名(强制的)，UEFI固件会进行验证， 没有签名或者无法验证的，将不会加载。</p>
+<h1 id="UEFI"><a href="#UEFI" class="headerlink" title="UEFI"></a>UEFI</h1><p>UEFI全称“统一的可扩展固件接口”(Unified Extensible Firmware Interface)， 是一种详细描述类型接口的标准。这种接口用于操作系统自动从预启动的操作环境，加载到一种操作系统上。</p>
+<h2 id="UEFI的优点"><a href="#UEFI的优点" class="headerlink" title="UEFI的优点"></a>UEFI的优点</h2><p>　　1.纠错特性：与BIOS显著不同的是，UEFI是用模块化、C语言风格的参数堆栈传递方式、动态链接的形式构建系统，它比BIOS更易于实现，容错和纠错特性也更强，从而缩短了系统研发的时间。更加重要的是，它运行于32位或64位模式，突破了传统16位代码的寻址能力，达到处理器的最大寻址，此举克服了BIOS代码运行缓慢的弊端。</p>
+<p>　　2.兼容性：与BIOS不同的是，UEFI体系的驱动并不是由直接运行在CPU上的代码组成的，而是用EFI Byte Code(EFI字节代码)编写而成的。Java是以“Byte Code”形式存在的，正是这种没有一步到位的中间性机制，使Java可以在多种平台上运行。UEFI也借鉴了类似的做法。EFI Byte Code是一组用于UEFI驱动的虚拟机器指令，必须在UEFI驱动运行环境下被解释运行，由此保证了充分的向下兼容性。</p>
+<p>　　3.鼠标操作：UEFI内置图形驱动功能，可以提供一个高分辨率的彩色图形环境，用户进入后能用鼠标点击调整配置，一切就像操作Windows系统下的应用软件一样简单。</p>
+<p>　　4.强大的可扩展性：UEFI将使用模块化设计，它在逻辑上分为硬件控制与OS(操作系统)软件管理两部分，硬件控制为所有UEFI版本所共有，而OS软件管理其实是一个可编程的开放接口。借助这个接口，主板厂商可以实现各种丰富的功能。比如我们熟悉的各种备份及诊断功能可通过UEFI加以实现，主板或固件厂商可以将它们作为自身产品的一大卖点。UEFI也提供了强大的联网功能，其他用户可以对你的主机进行可靠的远程故障诊断，而这一切并不需要进入操作系统。</p>
+<p>　　5.图形界面：目前UEFI主要由这几部分构成：UEFI初始化模块、UEFI驱动执行环境、UEFI驱动程序、兼容性支持模块、UEFI高层应用和GUID磁盘分区组成。</p>
+<h1 id="在什么情况下能使用UEFI-GPT模式来装系统呢？"><a href="#在什么情况下能使用UEFI-GPT模式来装系统呢？" class="headerlink" title="在什么情况下能使用UEFI+GPT模式来装系统呢？"></a>在什么情况下能使用UEFI+GPT模式来装系统呢？</h1><p>win7/8 64位系统+UEFI才能在GPT中引导哦。但是现在使用传统legacy+MBR模式装系统的，还是比较多的。</p>
+<h1 id="AHCI"><a href="#AHCI" class="headerlink" title="AHCI"></a>AHCI</h1><p>AHCI（Serial ATA Advanced Host Controller Interface）串行ATA高级主控接口/高级主机控制器接口），是在Intel的指导下，由多家公司联合研发的接口标准，它允许存储驱动程序启用高级串行 ATA 功能，</p>
+<p>AHCI本质是一种PCI类设备，在系统内存总线和串行ATA设备内部逻辑之间扮演一种通用接口的角色（即它在不同的操作系统和硬件中是通用的）。这类设备描述了一个含控制和状态区域、命令序列入口表的通用系统内存结构；每个命令表入口包含SATA设备编程信息，和一个指向（用于在设备和主机传输数据的）描述表的指针。<br>AHCI通过包含一个PCI BAR（基址寄存器），来实现原生SATA功能。由于AHCI统一接口的研发成功，使得支持串行ATA产品的开发工作大为简化，操作系统和设备制造商省去了单独开发接口的工作，取而代之的是直接在统一接口上进行操作，可以实现包括NCQ（Native Command Queuing）在内的诸多功能。<br>AHCI模式则与IDE模式相反，装系统时需要安装SATA驱动（而且貌似只有这个模式能打开NCQ功能）。</p>
+<h2 id="开启AHCI有什么好处"><a href="#开启AHCI有什么好处" class="headerlink" title="开启AHCI有什么好处"></a>开启AHCI有什么好处</h2><p>可以提升性能。</p>
+<p>AHCI是串行ATA高级主控接口的英文缩写，它是Intel所主导的一项技术，它允许存储驱动程序启用高级SATA功能，如本机命令队列（NCQ）和热插拔。开启AHCI之后可以发挥SATA硬盘的潜在的性能，理论上大约可增加30%的硬盘读写速度。<br>硬盘在更改为AHCI模式之后，系统启动的速度变化不大。不过在进行大文件拷贝时，速度由原来的60MB/S提升到了71MB/S，性能提升约20%。硬盘在Windwos7中的系统评分中，也由开始的5.9分提升到了6.5分。由此可见硬盘开启AHCI之后，效果是不错的。</p>
+<h1 id="TIPS"><a href="#TIPS" class="headerlink" title="TIPS"></a>TIPS</h1><p>Mac OS X 10.X基本上都用的是GPT+UEFI<br>安装新系统时推荐使用GPT+UEFI</p>
+
+            
+                <!-- <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;border-radius: 2px;">
+                    <p><strong>
+                    
+                        This blog is under a <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">CC BY-NC-SA 3.0 Unported License</a>
+                    </strong>
+                        <br>
+                        <strong>本文链接：</strong>
+                        <a href="https://huuhghhgyg.github.io/2018/04/07/WhatIsGPT/">
+                            https://huuhghhgyg.github.io/2018/04/07/WhatIsGPT/
+                        </a>
+                    </p>
+                </blockquote> -->
+
+                <style>
+                    .license-card {
+                        background-color: #323232;
+                        position: relative;
+                        padding: 16px;
+                        border-radius: 4px;
+                        color: #E5E5E5;
+                    }
+                    
+                    .license-card .title {
+                        font-size: 16px;
+                        margin: 0;
+                        font-weight: bold;
+                        display: flex;
+                        align-items: center;
+                    }
+                    
+                    .license-card .title-link {
+                        margin-bottom: 6px;
+                    }
+                    
+                    .license img {
+                        width: 20px;
+                        padding-bottom: 2px;
+                        display: inline;
+                    }
+                    
+                    .license-card .license-subtitle {
+                        margin-top: 16px;
+                        margin-bottom: 0px;
+                        font-size: 14px;
+                        font-weight: bold;
+                    }
+                    
+                    .license-card .info {
+                        display: flex;
+                        margin-top: 12px;
+                    }
+                    
+                    @media screen and (max-width: 480px) {
+                        .license-card .info {
+                            display: block;
+                        }
+                    }
+                    
+                    .license-card .info .license-content {
+                        line-height: 20px;
+                    }
+                    
+                    .license-card .license-block {
+                        margin-right: 24px;
+                    }
+                </style>
+
+                <div class="license-card">
+                    <div class="title">
+                        <span class="material-icons">link</span>
+                        <div style="margin-left:6px">
+                            本文链接：
+                        </div>
+                    </div>
+                    <div class="title-link">
+                        <a href="https://huuhghhgyg.github.io/2018/04/07/WhatIsGPT/">
+                            https://huuhghhgyg.github.io/2018/04/07/WhatIsGPT/
+                        </a>
+                    </div>
+                    <div class="info">
+                        <div class="time license-block">
+                            <div class="license-subtitle">发文时间</div>
+                            <div class="license-content">
+                                4月 07, 2018
+                            </div>
+                        </div>
+                        <div class="license license-block">
+                            <div class="license-subtitle">请遵循协议</div>
+                            <div class="license-content"><img style="border:none" src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/icon/cc_icon_white_x2.png" alt="" srcset="">
+                                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                    
+
+                        
+</div>
+
+
+
+<!-- Post Comments -->
+
+    
+    <!-- <div id="comment" style='padding:10px;' class="vcomment"></div> -->
+<div id="comment" style='width: 90%;margin: 1pc auto;' class="vcomment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!-- <script src="//unpkg.com/valine/dist/Valine.min.js"></script> -->
+<script src="//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+
+<script>
+    var GUEST_INFO = ['nick', 'mail', 'link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item) {
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    var notify = 'false' === 'true';
+    var verify = 'false' === 'true';
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "zQXuDM0BRWNAQq6FkTiK9teB-gzGzoHsz",
+        appKey: "0xSeR8Ba3Mc5VUIahEs3xPb0",
+        placeholder: "点击键入评论",
+        pageSize: '10',
+        avatar: 'mp',
+        lang: 'zh-cn',
+        guest_info: guest_info
+    });
+</script>
+
+
+</div>
+
+<!-- Post Prev & Next Nav -->
+<nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/04/08/CSharpAsync/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/01/26/getmdl-io-introduction/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+</div>
+</div>
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/site/sidebar_header.webp);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <!-- <i class="material-icons">clear_all</i> -->
+        <i class="material-icons">arrow_back</i>
+        </style>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="huuhghhgyg's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        huuhghhgyg@outlook.com
+            <b class="caret"></b>
+    </a>
+</div>
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:huuhghhgyg@outlook.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="关于我">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于我
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间线">
+                
+                    <i class="material-icons sidebar-material-icons">timelapse</i>
+                
+                时间线
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="链接">
+                
+                    <i class="material-icons sidebar-material-icons">link</i>
+                
+                链接
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/Tools/Tools.html" title="工具">
+                
+                    <i class="material-icons sidebar-material-icons">widgets</i>
+                
+                工具
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="https://launcher3-1251886115.cos.ap-shanghai.myqcloud.com/OralCalculation/index.html" title="小程序">
+                
+                    <i class="material-icons sidebar-material-icons">shop</i>
+                
+                小程序
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="https://github.com/huuhghhgyg" title="Github目录">
+                
+                    <i class="material-icons sidebar-material-icons">insert_drive_file</i>
+                
+                Github目录
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+    <a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        sidebar.help
+        <span class="mdl-button__ripple-container">
+          <span class="mdl-ripple"></span>
+        </span>
+      </div>
+    </a>
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/Huuhghhgyg" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/hghhgyg.huu.7" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/u/2738972153" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/huuhghhgyg-11/activities" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;Hikaru's Blog
+            
+                <br>
+                
+                    <div style="visibility:hidden;height:0"> <script type="text/javascript" src="https://s13.cnzz.com/z_stat.php?id=1273431916&web_id=1273431916"></script> </div>
+<div class="inner-width" id="views"> <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> <div class="website-data"> <i class="material-icons">people</i> <span id="busuanzi_value_site_uv">Loading</span> </div> <div class="website-data data-divider">|</div> <div class="website-data"> <i class="material-icons">visibility</i> <span id="busuanzi_value_site_pv">Loading</span> </div> </div> <meta name="msvalidate.01" content="668682503059272C64C774C5F2DF530F" /> <link rel="stylesheet" href="/links/footerstyle.css">
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 2017;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

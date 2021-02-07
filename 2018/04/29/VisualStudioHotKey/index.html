@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
+
+
+
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.proxy.ustclug.org">
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            VS快捷键 | 
+        
+        Hikaru&#39;s Blog
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content="huuhghhgyg的个人主页">
+    <meta name="keywords" content="huu huuhghhgyg,VS">
+    <meta name="theme-color" content="#1976D2">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?ax12tLrFrP3XOEfuY1+8yg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?2AKKL7hcCpKkcciCE8a9AA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?rT7a3skYUze07y2ZzTXWYA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/github-v2.min.css?AfzKxt++K+/lhZBlSjnxwg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Noto Sans SC,"Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #448AFF;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #1a73e8 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #1a73e8 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #1a73e8 !important;
+  }
+
+  .toTop {
+    /* background: #757575 !important; */
+    background: white;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #448AFF;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.proxy.ustclug.org/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+<!-- 新加入 Import NotoSansSC -->
+
+<!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC" rel="stylesheet"> -->
+<link href="https://cdn.jsdelivr.net/npm/noto-sans-sc@11.0.1/all.css" rel="stylesheet">
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- Real Custom Head -->
+    <link rel="manifest" href="/manifest.webmanifest">
+    <script src="/manifest.js" defer></script>
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Hikaru&#39;s Blog">
+    <meta name="msapplication-starturl" content="https://huuhghhgyg.github.io/2018/04/29/VisualStudioHotKey/">
+    <meta name="msapplication-navbutton-color" content="#1976D2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Hikaru&#39;s Blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://huuhghhgyg.github.io/2018/04/29/VisualStudioHotKey/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="VS快捷键 | Hikaru&#39;s Blog">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="huuhghhgyg的个人主页">
+    <meta property="og:article:tag" content="VS"> 
+
+    
+        <meta property="article:published_time" content="Sun Apr 29 2018 18:07:34 GMT+0800">
+        <meta property="article:modified_time" content="Sun Jan 03 2021 09:25:28 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://huuhghhgyg.github.io/2018/04/29/VisualStudioHotKey/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://huuhghhgyg.github.io/2018/04/29/VisualStudioHotKey/index.html",
+    "headline": "VS快捷键",
+    "datePublished": "Sun Apr 29 2018 18:07:34 GMT+0800",
+    "dateModified": "Sun Jan 03 2021 09:25:28 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "huuhghhgyg",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Never Settle"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Hikaru&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",VShuu huuhghhgyg",
+    "description": "huuhghhgyg的个人主页",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#窗口快捷键"><span class="post-toc-number">1.</span> <span class="post-toc-text">窗口快捷键</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#项目功能快捷键"><span class="post-toc-number">2.</span> <span class="post-toc-text">项目功能快捷键</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#查找相关快捷键"><span class="post-toc-number">3.</span> <span class="post-toc-text">查找相关快捷键</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#代码快捷键"><span class="post-toc-number">4.</span> <span class="post-toc-text">代码快捷键</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#调试快捷键"><span class="post-toc-number">5.</span> <span class="post-toc-text">调试快捷键</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+    <div class="material-post mdl-grid">
+    <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+    <!-- Post Header(Thumbnail & Title) -->
+    
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/MS_Keyboard.png)">
+    
+            <p class="article-headline-p">
+                VS快捷键
+            </p>
+        </div>
+
+
+
+
+
+    
+    <!-- Paradox Post Info -->
+    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar" />
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>huuhghhgyg</strong>
+        <span>4月 29, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACz0lEQVR42u3aQXIbMQwEQP3/08kDXKXMAJtEIntPLktesunDFAC+fl35vLCxsbGxsbGxsbE/kv2Kn59/9Ydlgvf8/Ob7N6z2jI2NjX00OwHkmPe8ZJWEne8ZGxsb+x52vkzyaX4os6Ov94yNjY2NXQZS3fQZBSE2NjY2dvuKvMXTNpver4iNjY2N/VRTKSk2Zof4/kAf2DM2Njb20ex8aPo5P//T+TY2Njb2B7P3baA8cp66fDPcLTY2Nvah7DY82oFu0pDKx7qroQI2Njb2BexNAfBUIG2OeNVLw8bGxv5adj6+nYVTPrKdRdeqqYSNjY19BDshzaIuwT8Vlo+VItjY2NhfyG7jKlk4uY7TtrHaYqbObWxsbOyvZbfNmnyZtrR4dmCAjY2NfQ+7bevnAZZ/px1OzEIOGxsb+1R23vTZDBI2rajNCAEbGxv7HnZ7EC0+Car2GlDyNmxsbGzstlSYFRX5mDm/uImNjY19G3sWJ5voeupQigIGGxsb+1B2Mh7YR8jsGlDeMIpGxdjY2NhHs5OtJMe0efNs2Fz8S7CxsbEPZecR0i45i6K8mZW3tLCxsbHvYf/t1tLmEJMDGvbSsLGxsb+c/VTjfl+0zIqN5IixsbGxb2C3G0rGAEnBMLuyExUe2NjY2Fey24PIW/xtmdFGYFTkYGNjYx/Knl2seWo8sBk21GMMbGxs7EPZbeM+aeXMIm3TzIqCEBsbG/tQ9uYqZFs85CH333IbGxsb+wvZdQzE4ZQXHnkEtoUQNjY29g3sV/zsN9cWNsnAeJXb2NjY2Aex89DKf99e0ElKkdVa2NjY2BewZ9cr28PKQ2jWVMLGxsbGTjYxa9lvSotNOwkbGxsbex9abfDkF3SS/WNjY2Pfw54NaGeXNduxRMFrAwwbGxv7CPYDVxvL65j5mLYNvL8y38bGxsb+YPY9DzY2NjY2NjY2NvbHPL8BJYMBk0s0aOYAAAAASUVORK5CYII=">
+    
+</ul>
+
+            
+
+                <!-- Tags (bookmark) -->
+                
+                    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+            <a class="post_tag-link" href="/tags/VS/">VS</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=VS快捷键&url=https://huuhghhgyg.github.io/2018/04/29/VisualStudioHotKey/index.html&pic=https://huuhghhgyg.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=VS快捷键&url=https://huuhghhgyg.github.io/2018/04/29/VisualStudioHotKey/index.html&via=huuhghhgyg" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://huuhghhgyg.github.io/2018/04/29/VisualStudioHotKey/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://huuhghhgyg.github.io/2018/04/29/VisualStudioHotKey/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hikaru&#39;s Blog&title=VS快捷键&summary=huuhghhgyg的个人主页&pics=https://huuhghhgyg.github.io/img/favicon.png&url=https://huuhghhgyg.github.io/2018/04/29/VisualStudioHotKey/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://huuhghhgyg.github.io/2018/04/29/VisualStudioHotKey/index.html&text=VS快捷键" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+    
+
+</div>
+
+<!-- Chips-->
+<div class="chips-tag">
+    <style type="text/css">
+        .mdl-chip {
+            height: 32px;
+            font-family: "Noto Sans SC",Roboto, "Helvetica", "Arial", sans-serif;
+            line-height: 32px;
+            padding: 0 12px;
+            border: 0;
+            border-radius: 16px;
+            background-color: #E3F2FD;
+            display: inline-block;
+            color: #232F34;
+            font-size: 0;
+            white-space: nowrap;
+            margin: 0 3px;
+        }
+        
+        .mdl-chip:hover {
+            background-color: #BBDEFB;
+        }
+        
+        .mdl-chip__text {
+            font-size: 13px;
+            vertical-align: middle;
+            display: inline-block
+        }
+        
+        .chips-tag {
+            padding: 0 13px 13px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .post_tag_chip-link {
+            font-weight: 500;
+            text-decoration: none;
+            padding: 0 5px;
+        }
+    </style>
+
+    
+        <button type="button" class="mdl-chip">
+            <span class="mdl-chip__text">
+                <a class="post_tag_chip-link" href="/tags/VS/">VS</a>
+            </span>
+        </button>
+        
+</div>
+
+
+<!-- Post Content -->
+<div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>Visual Studio 快捷键整理</p>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css" integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw" crossorigin="anonymous">
+<div class="mdui-typo">
+
+<h1 id="窗口快捷键"><a href="#窗口快捷键" class="headerlink" title="窗口快捷键"></a>窗口快捷键</h1><p>记忆诀窍：</p>
+<p>凡跟窗口挂上钩的快捷键必有一个W（Windows）；<br><kbd>Ctrl+W,W</kbd>: 浏览器窗口 （浏览橱窗用有道的翻译是window shopping）</p>
+<p><kbd>Ctrl+W,S</kbd>: 解决方案管理器 （Solution）</p>
+<p><kbd>Ctrl+W,C</kbd>: 类视图 （Class）</p>
+<p><kbd>Ctrl+W,E</kbd>: 错误列表 （Error）</p>
+<p><kbd>Ctrl+W,O</kbd>: 输出窗口（输出Output；输出程序的的编译信息 ;可在vs中“工具”—-“选项”—-“调试”—-“输出窗口”进行配置需要查看哪些信息）</p>
+<p><kbd>Ctrl+W,P</kbd>: 属性窗口 （属性 Property）</p>
+<p><kbd>Ctrl+W,T</kbd>: 任务列表 （任务Task）</p>
+<p><kbd>Ctrl+W,X</kbd>: 工具箱 （事实上工具应该是Tool 但t已被任务列表占用了 ；参照一些大神的记忆方法：“X”长得四通八达，而工具就有这样一个特点，所以属性的快捷键是“X”）</p>
+<p><kbd>Ctrl+W,B</kbd>: 书签窗口 （书签 Bookmark 书签非常好用，如果有几千行代码，在寻找代码的时候添加书签找起来要快很多）</p>
+<p><kbd>Ctrl+W,U</kbd>: 文档大纲 （OutLine；使用第二个字母U）</p>
+<p><kbd>Ctrl+D,B</kbd>: 断点窗口 （breakpoint）</p>
+<p><kbd>Ctrl+D,I</kbd>: 即时窗口 （immediately）</p>
+<h1 id="项目功能快捷键"><a href="#项目功能快捷键" class="headerlink" title="项目功能快捷键"></a>项目功能快捷键</h1><blockquote>
+<p>规律：<br><kbd>Ctrl</kbd> 是强制功能键<br><kbd>Shift</kbd> 有给项目增加功能</p>
+</blockquote>
+<p><kbd>CTRL + F6 /CTRL + TAB</kbd> 下一个文档窗口即活动窗体切换 （windows操作系统是alt+tab表示在任务之间切换</p>
+<p><kbd>CTRL + SHIFT + F6 /CTRL + SHIFT + TAB</kbd> 上一个文档窗口 （在windows系统操作中 相信大家都知道shift有相反的功能 哈哈 在这里体现了）</p>
+<p><kbd>F7</kbd>: 查看代码 （WebForm开发里面，是查看后台代码）</p>
+<p><kbd>Shift+F7</kbd>: 查看窗体设计器 (在后台cs文件的时候，这种方式很方便跳转到前台.aspx页面)</p>
+<p><kbd>Ctrl+Shift+N</kbd>: 新建项目 （N是New新建的意思 那如果需要强制在项目中新建项目的话 自然就是组合键Ctrl+Shift+N）</p>
+<p><kbd>Ctrl+Shift+O</kbd>: 打开项目 （Open）</p>
+<p><kbd>CTRL + SHIFT + C</kbd> 显示类视图窗口（C代表Class类的意思）</p>
+<p><kbd>CTRL + F4</kbd> 关闭文档窗口 （相信用过qq的大家都有使用<kbd>alt+f4</kbd>来关闭当前聊天窗口 想想用<kbd>ctrl+tab</kbd>在活动标签窗口切换就知道为什么关闭当前标签窗口是<kbd>ctrl+f4</kbd>）</p>
+<p><kbd>CTRL + SHIFT + E</kbd> 显示资源视图 （E代表Explorer资源管理器的意思）</p>
+<p><kbd>CTRL + SHIFT + B</kbd> 生成解决方案 （B代表Build生成的意思 其实用F6也可以实现）</p>
+<p><kbd>Shift+F6</kbd> 表示生成当前项目 (上面已经说过使用f6可以生成整个解决方案 那如果是当前项目的生成那自然就是加上功能键shift了 )</p>
+<p><kbd>F4</kbd> 显示属性窗口 SHIFT + F4显示项目属性窗口</p>
+<p><kbd>Ctrl+Shift+S</kbd>: 全部保存 （S代表Save保存的意思 这里表示全部保存是因为如果只是单个保存Ctrl+S跟整个项目没有任何瓜葛 而全部保存的概念应该是说在整个项目中 所以组合键中自然会有shift了哦）</p>
+<p><kbd>Ctrl+Shift+A</kbd>: 新建项（A是Add的意思）</p>
+<p><kbd>Shift+Alt+C</kbd>: 新建类 （shift是跟项目有关的功能键；Alt用的非常多，空格（用的非常多）旁；C是Class;而且添加类用的非常多；所以自然就是:Shift+Alt+C）</p>
+<h1 id="查找相关快捷键"><a href="#查找相关快捷键" class="headerlink" title="查找相关快捷键"></a>查找相关快捷键</h1><p><kbd>Ctrl+F</kbd>: 查找 （Find） Ctrl+Shift+F: 在文件中查找 (上面已经提过了shift是表示在项目中 所以如果需要在项目中的文件中查找的话 那自然就少不了Shift) </p>
+<p><kbd>F3</kbd>: 查找下一个 （相信使用过windows系统的人都知道f3是查找的快捷键） </p>
+<p><kbd>Shift+F3</kbd>: 查找上一个 （shift在此有反向的功能哦） </p>
+<p><kbd>Ctrl+H</kbd>: 替换 </p>
+<p><kbd>Ctrl+Shift+H</kbd>: 在文件中替换</p>
+<h1 id="代码快捷键"><a href="#代码快捷键" class="headerlink" title="代码快捷键"></a>代码快捷键</h1><p><kbd>Ctrl+E,D</kbd>（ctrl+k,d） —-格式化全部代码 ;让你的代码瞬间整洁起来。</p>
+<p><kbd>Ctrl+E,F</kbd> —-格式化选中的代码（如果你已经记住Ctrl+E+D是格式化全部代码的话 那你想想规律不就知道了吗 F不就在D的右边表示它是特定某一范围）</p>
+<p><kbd>Ctrl+K,C</kbd>: 注释选定内容 （Comment）</p>
+<p><kbd>Ctrl+K,U</kbd>: 取消选定注释内容 （UnComment）</p>
+<p><kbd>Ctrl+J /Ctrl+K,L</kbd>: 智能提示 列出成员 （kernel核心内容 list列表 如果我们想查看一个对象具有的成员具体信息的时候试下这个快捷键吧）</p>
+<p><kbd>Ctrl+K,P</kbd>: 参数信息 （kernel核心内容 Parameters参数 如果我们想查看一个方法的具体参数的时候这个组合键可是挺有用的哦）</p>
+<p><kbd>Ctrl+K,I</kbd>: 快速查看信息（Infomation）</p>
+<p><kbd>Ctrl+K,S</kbd>: 外侧代码（平时个人惯会时不时的用#region 用了region之后代码看起来就特别整洁 所以自然而然的就用惯了这个）</p>
+<p><kbd>CTRL + M, CTRL + M</kbd> 折叠或展开当前方法</p>
+<p><kbd>CTRL + M, CTRL + O</kbd> 折叠所有方法</p>
+<p><kbd>CTRL + M, CTRL + L</kbd> 展开所有方法<br><kbd>CTRL + M, CTRL + P</kbd> 展开所有方法</p>
+<p><kbd>Ctrl+M,P</kbd>: 停止大纲显示 （用了region将代码折叠起来之后试试用这组组合键吧 体验一下折叠和展开的吧 看着舒服的代码我相信你记住这对快捷键肯定是值得的）</p>
+<p><kbd>ctrl+shift+f10</kbd>：自动添加using命名空间（在实例化对象的时候，使用的非常多）</p>
+<h1 id="调试快捷键"><a href="#调试快捷键" class="headerlink" title="调试快捷键"></a>调试快捷键</h1><p><kbd>F5</kbd>: 启动调试</p>
+<p><kbd>Ctrl+F5</kbd>: 开始执行(不调试)</p>
+<p><kbd>Shift+F5</kbd>: 停止调试</p>
+<p><kbd>Ctrl+Shift+F5</kbd>: 重启调试</p>
+<p><kbd>F9</kbd>: 启用/关闭断点</p>
+<p><kbd>Ctrl+F9</kbd>: 停止断点</p>
+<p><kbd>Ctrl+Shift+F9</kbd>: 删除全部断点</p>
+<p><kbd>F10</kbd>: 逐过程<br><kbd>Ctrl+F10</kbd>: 运行到光标处<br><kbd>F11</kbd>: 逐语句</p>
+<p>6、编辑快捷键<br><kbd>Shift+Alt+Enter</kbd>: 切换全屏编辑（如果想一心一意的只写代码 让整个vs铺满全屏 感觉还不错哦）</p>
+<p><kbd>F12</kbd>: 转到所调用过程或变量的定义</p>
+<p><kbd>Alt+F12</kbd>: 查找符号(列出所有查找结果)</p>
+<p><kbd>shift+f12</kbd>:查找所有引用（讲光标放在单词上， 然后按Shift + F12）</p>
+<p><kbd>Ctrl+U</kbd>: 全部变为小写 (的sql语句全部转换成大写以提高性能 )</p>
+<p><kbd>Ctrl+Shift+U</kbd>: 全部变为大写 （U表示Upper ）</p>
+<p><kbd>Ctrl+Shift+V</kbd>: 剪贴板循环 （平时我们都只惯用ctrl+c 和ctrl+v 大家可能还不知道事实上微软都已经帮我们把多次剪切的结果都保存了下来 记下这组快捷键吧 可以粘贴上几次剪切的结果 一用便知道它的强大厉害之处）</p>
+<p><kbd>Ctrl+Shift+L</kbd>: 删除当前行 （这个很有用哦 因为大家常常会要删除多余的空行 哈哈 这组快捷键会让你省力不少）</p>
+<p><kbd>Ctrl+E,S</kbd>: 查看空白(ctrl+r,w 和它一样可以查看空白或者说显示或隐藏tab标记)</p>
+<p><kbd>Ctrl+E,W</kbd>: 自动换行 （代码太长还有滚动条，特别是写append(sql.toString)语句的时候，太长，所以这时候就不得不拖动滚动条，这样以后就可以换行显示了）</p>
+<p><kbd>Ctrl+G</kbd>: 转到指定行 （通过情况下 我们想在跳转到具体某一行 用它太方便了）</p>
+<p><kbd>Shift+Alt+箭头键</kbd>: 选择矩形文本 Alt+鼠标左按钮: 选择矩形文本</p>
+<p><kbd>CTRL + DELETE</kbd> 删除至词尾 </p>
+<p><kbd>CTRL + BACKSPACE</kbd> 删除至词头</p>
+<p><kbd>SHIFT + TAB</kbd> 取消制表符</p>
+<p><kbd>Ctrl+左右箭头键</kbd>:一次可以移动一个单词</p>
+<p><kbd>Ctrl+单击</kbd>: 选中当前点击的整个单词</p>
+<p><kbd>SHIFT + END</kbd> 选择至行尾<br><kbd>SHIFT + HOME</kbd> 选择至行开始处</p>
+<p><kbd>CTRL + SHIFT + END</kbd> 选择至文档末尾 CTRL + SHIFT + HOME选择至文档末尾开始</p>
+<p><kbd>CTRL + SHIFT + PAGE UP</kbd> 选择至本页前面 CTRL + SHIFT + PAGE DOWN选择至本页后面</p>
+<p><kbd>CTRL + PAGE DOWN</kbd> 光标定位到窗口上方 CTRL + PAGE UP光标定位到窗口下方</p>
+<p><kbd>CTRL + END</kbd> 文档定位到最后 CTRL + HOME文档定位到最前</p>
+<p>按两下<kbd>Tab</kbd>快速生成代码段（写for, foreach循环，或者try, 还有绑定事件方法）</p>
+<p><kbd>Ctrl+减号</kbd>：回退到光标上一次的位置（这个真心挺有用的）</p>
+</div>
+            
+                <!-- <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;border-radius: 2px;">
+                    <p><strong>
+                    
+                        This blog is under a <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">CC BY-NC-SA 3.0 Unported License</a>
+                    </strong>
+                        <br>
+                        <strong>本文链接：</strong>
+                        <a href="https://huuhghhgyg.github.io/2018/04/29/VisualStudioHotKey/">
+                            https://huuhghhgyg.github.io/2018/04/29/VisualStudioHotKey/
+                        </a>
+                    </p>
+                </blockquote> -->
+
+                <style>
+                    .license-card {
+                        background-color: #323232;
+                        position: relative;
+                        padding: 16px;
+                        border-radius: 4px;
+                        color: #E5E5E5;
+                    }
+                    
+                    .license-card .title {
+                        font-size: 16px;
+                        margin: 0;
+                        font-weight: bold;
+                        display: flex;
+                        align-items: center;
+                    }
+                    
+                    .license-card .title-link {
+                        margin-bottom: 6px;
+                    }
+                    
+                    .license img {
+                        width: 20px;
+                        padding-bottom: 2px;
+                        display: inline;
+                    }
+                    
+                    .license-card .license-subtitle {
+                        margin-top: 16px;
+                        margin-bottom: 0px;
+                        font-size: 14px;
+                        font-weight: bold;
+                    }
+                    
+                    .license-card .info {
+                        display: flex;
+                        margin-top: 12px;
+                    }
+                    
+                    @media screen and (max-width: 480px) {
+                        .license-card .info {
+                            display: block;
+                        }
+                    }
+                    
+                    .license-card .info .license-content {
+                        line-height: 20px;
+                    }
+                    
+                    .license-card .license-block {
+                        margin-right: 24px;
+                    }
+                </style>
+
+                <div class="license-card">
+                    <div class="title">
+                        <span class="material-icons">link</span>
+                        <div style="margin-left:6px">
+                            本文链接：
+                        </div>
+                    </div>
+                    <div class="title-link">
+                        <a href="https://huuhghhgyg.github.io/2018/04/29/VisualStudioHotKey/">
+                            https://huuhghhgyg.github.io/2018/04/29/VisualStudioHotKey/
+                        </a>
+                    </div>
+                    <div class="info">
+                        <div class="time license-block">
+                            <div class="license-subtitle">发文时间</div>
+                            <div class="license-content">
+                                4月 29, 2018
+                            </div>
+                        </div>
+                        <div class="license license-block">
+                            <div class="license-subtitle">请遵循协议</div>
+                            <div class="license-content"><img style="border:none" src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/icon/cc_icon_white_x2.png" alt="" srcset="">
+                                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                    
+
+                        
+</div>
+
+
+
+<!-- Post Comments -->
+
+    
+    <!-- <div id="comment" style='padding:10px;' class="vcomment"></div> -->
+<div id="comment" style='width: 90%;margin: 1pc auto;' class="vcomment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!-- <script src="//unpkg.com/valine/dist/Valine.min.js"></script> -->
+<script src="//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+
+<script>
+    var GUEST_INFO = ['nick', 'mail', 'link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item) {
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    var notify = 'false' === 'true';
+    var verify = 'false' === 'true';
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "zQXuDM0BRWNAQq6FkTiK9teB-gzGzoHsz",
+        appKey: "0xSeR8Ba3Mc5VUIahEs3xPb0",
+        placeholder: "点击键入评论",
+        pageSize: '10',
+        avatar: 'mp',
+        lang: 'zh-cn',
+        guest_info: guest_info
+    });
+</script>
+
+
+</div>
+
+<!-- Post Prev & Next Nav -->
+<nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/04/29/FileGetterInstructions/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/04/13/IAmImportant/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+</div>
+</div>
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/site/sidebar_header.webp);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <!-- <i class="material-icons">clear_all</i> -->
+        <i class="material-icons">arrow_back</i>
+        </style>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="huuhghhgyg's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        huuhghhgyg@outlook.com
+            <b class="caret"></b>
+    </a>
+</div>
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:huuhghhgyg@outlook.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="关于我">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于我
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间线">
+                
+                    <i class="material-icons sidebar-material-icons">timelapse</i>
+                
+                时间线
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="链接">
+                
+                    <i class="material-icons sidebar-material-icons">link</i>
+                
+                链接
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/Tools/Tools.html" title="工具">
+                
+                    <i class="material-icons sidebar-material-icons">widgets</i>
+                
+                工具
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="https://launcher3-1251886115.cos.ap-shanghai.myqcloud.com/OralCalculation/index.html" title="小程序">
+                
+                    <i class="material-icons sidebar-material-icons">shop</i>
+                
+                小程序
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="https://github.com/huuhghhgyg" title="Github目录">
+                
+                    <i class="material-icons sidebar-material-icons">insert_drive_file</i>
+                
+                Github目录
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+    <a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        sidebar.help
+        <span class="mdl-button__ripple-container">
+          <span class="mdl-ripple"></span>
+        </span>
+      </div>
+    </a>
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/Huuhghhgyg" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/hghhgyg.huu.7" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/u/2738972153" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/huuhghhgyg-11/activities" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;Hikaru's Blog
+            
+                <br>
+                
+                    <div style="visibility:hidden;height:0"> <script type="text/javascript" src="https://s13.cnzz.com/z_stat.php?id=1273431916&web_id=1273431916"></script> </div>
+<div class="inner-width" id="views"> <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> <div class="website-data"> <i class="material-icons">people</i> <span id="busuanzi_value_site_uv">Loading</span> </div> <div class="website-data data-divider">|</div> <div class="website-data"> <i class="material-icons">visibility</i> <span id="busuanzi_value_site_pv">Loading</span> </div> </div> <meta name="msvalidate.01" content="668682503059272C64C774C5F2DF530F" /> <link rel="stylesheet" href="/links/footerstyle.css">
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 2017;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

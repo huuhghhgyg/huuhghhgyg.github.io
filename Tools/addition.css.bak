@@ -1,0 +1,202 @@
+/* 荧光标签系列 */
+
+.label {
+    display: inline;
+    border-radius: 3px;
+    font-size: 85%;
+    margin: 0 2px;
+    padding: 0.2em 0.4em;
+    color: #3c4858;
+    box-sizing: border-box;
+    transition: ease-in-out .2s;
+}
+
+.label-default {
+    background-color: #BBDEFB;
+}
+
+.label-default:hover {
+    box-shadow: 1px 1px 2px #9fbdd5, -1px -1px 2px #d7ffff;
+}
+
+.label-primary {
+    background-color: #CFD8DC;
+}
+
+.label-primary:hover {
+    box-shadow: 1px 1px 2px #b0b8bb, -1px -1px 2px #eef8fd;
+}
+
+.label-info {
+    background-color: #B2EBF2;
+}
+
+.label-info:hover {
+    box-shadow: 1px 1px 2px #97c8ce, -1px -1px 2px #cdffff;
+}
+
+.label-success {
+    background-color: #C8E6C9;
+}
+
+.label-success:hover {
+    box-shadow: 1px 1px 2px #aac4ab, -1px -1px 2px #e6ffe7;
+}
+
+.label-warning {
+    background-color: #FFECB3;
+}
+
+.label-warning:hover {
+    box-shadow: 1px 1px 2px #d9c998, -1px -1px 2px #ffffce;
+}
+
+.label-danger {
+    background-color: #FFCCBC;
+}
+
+.label-danger:hover {
+    box-shadow: 1px 1px 2px #d9ada0, -1px -1px 2px #ffebd8;
+}
+
+.link-card {
+    color: #616161;
+    box-shadow: 0 1px 1px 0 rgba(66, 66, 66, 0.08), 0 1px 3px 1px rgba(66, 66, 66, 0.16);
+    width: 240px;
+    padding: 16px 20px 2px 15px;
+    margin: 10px 10px;
+    border-radius: 3px;
+    transition: box-shadow 135ms 0ms cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 400;
+}
+
+.link-card:hover {
+    box-shadow: 0 1px 3px 1px rgba(66, 66, 66, 0.2), 0 2px 8px 4px rgba(66, 66, 66, 0.1);
+}
+
+.link-card-title {
+    color: #212121;
+    margin: 0 0 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.link-description {
+    font-size: 14px;
+    margin: 5px 0 10px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    font-weight: 400;
+    line-height: 20px;
+    height: 40px;
+}
+
+.link-navigation {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #424242;
+    position: relative;
+    margin: 10px 0;
+    font-weight: 400;
+}
+
+.img-card-span+.link-navigation {
+    top: 5px;
+}
+
+.link-card .material-icons {
+    position: absolute;
+    right: 0;
+    top: -2px;
+    color: #9E9E9E;
+    font-size: 24px;
+}
+
+.link-card a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.img-link-card {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    height: 110px;
+}
+
+.img-card-span {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    height: 80px;
+}
+
+.img-h2 {
+    margin-left: 10px;
+    margin-top: 0px;
+    color: #212121;
+    font-size: 14px;
+    /* font-weight: 500; */
+    font-weight: 600;
+}
+
+.img-description {
+    position: absolute;
+    width: 160px;
+    font-size: 14px;
+    left: 60px;
+    top: 25px;
+    max-height: 60px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.link-card-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.card-span {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.note {
+    padding: 1rem;
+    margin: 5px 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    border-radius: 4px;
+}
+
+.note span {
+    margin-right: 0.8rem;
+}
+
+.note-good {
+    background-color: #4CAF50;
+}
+
+.note-bad {
+    background-color: #F44336;
+}
+
+.note-info {
+    background: #009688;
+}
+
+.note-warning {
+    border-radius: 2px;
+    background: #FFC107;
+}

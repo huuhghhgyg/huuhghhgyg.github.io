@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
+
+
+
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.proxy.ustclug.org">
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            如何在HTML5里播放BGM | 
+        
+        Hikaru&#39;s Blog
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content="huuhghhgyg的个人主页">
+    <meta name="keywords" content="huu huuhghhgyg,干货,技术,HTML5,BGM">
+    <meta name="theme-color" content="#1976D2">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?ax12tLrFrP3XOEfuY1+8yg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?2AKKL7hcCpKkcciCE8a9AA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?rT7a3skYUze07y2ZzTXWYA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/github-v2.min.css?AfzKxt++K+/lhZBlSjnxwg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Noto Sans SC,"Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #448AFF;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #1a73e8 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #1a73e8 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #1a73e8 !important;
+  }
+
+  .toTop {
+    /* background: #757575 !important; */
+    background: white;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #448AFF;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.proxy.ustclug.org/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+<!-- 新加入 Import NotoSansSC -->
+
+<!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC" rel="stylesheet"> -->
+<link href="https://cdn.jsdelivr.net/npm/noto-sans-sc@11.0.1/all.css" rel="stylesheet">
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- Real Custom Head -->
+    <link rel="manifest" href="/manifest.webmanifest">
+    <script src="/manifest.js" defer></script>
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Hikaru&#39;s Blog">
+    <meta name="msapplication-starturl" content="https://huuhghhgyg.github.io/2017/08/28/PlayBGMInHTML5/">
+    <meta name="msapplication-navbutton-color" content="#1976D2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Hikaru&#39;s Blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://huuhghhgyg.github.io/2017/08/28/PlayBGMInHTML5/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="如何在HTML5里播放BGM | Hikaru&#39;s Blog">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="huuhghhgyg的个人主页">
+    <meta property="og:article:tag" content="干货"> <meta property="og:article:tag" content="技术"> <meta property="og:article:tag" content="HTML5"> <meta property="og:article:tag" content="BGM"> 
+
+    
+        <meta property="article:published_time" content="Mon Aug 28 2017 23:05:11 GMT+0800">
+        <meta property="article:modified_time" content="Sat Aug 24 2019 23:58:03 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://huuhghhgyg.github.io/2017/08/28/PlayBGMInHTML5/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://huuhghhgyg.github.io/2017/08/28/PlayBGMInHTML5/index.html",
+    "headline": "如何在HTML5里播放BGM",
+    "datePublished": "Mon Aug 28 2017 23:05:11 GMT+0800",
+    "dateModified": "Sat Aug 24 2019 23:58:03 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "huuhghhgyg",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Never Settle"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Hikaru&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",干货,技术,HTML5,BGMhuu huuhghhgyg",
+    "description": "huuhghhgyg的个人主页",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前情提要"><span class="post-toc-number">1.</span> <span class="post-toc-text">前情提要</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#利用HTML5的’audio’标签"><span class="post-toc-number">2.</span> <span class="post-toc-text">利用HTML5的’audio’标签</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#浏览器和音频兼容性"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">浏览器和音频兼容性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解决方案：使用三种文件类型和标签"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">解决方案：使用三种文件类型和标签</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#html代码-隐藏播放控件"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">html代码 (隐藏播放控件)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#代码演示-隐藏播放控件"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">代码演示 (隐藏播放控件)</span></a></li></ol></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+    <div class="material-post mdl-grid">
+    <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+    <!-- Post Header(Thumbnail & Title) -->
+    
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 32 + 1);
+
+    //$('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.webp');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                如何在HTML5里播放BGM
+            </p>
+        </div>
+
+
+
+
+
+    
+    <!-- Paradox Post Info -->
+    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar" />
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>huuhghhgyg</strong>
+        <span>8月 28, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACy0lEQVR42u3aUW7cMAwE0Nz/0ukBgnhnyG2xlZ6/it3a1lOATEjq6/vK6wsbGxsbGxsbGxv7I9lf8fXzrp9P+Pnt8/9J7n1+Y7FmbGxs7KPZL371PzKetyaHJfeu1oyNjY19ATtZaBs5+Xbs1/MiRLGxsbGxH8NsE3WzaMTGxsbGfhd7XyS0G4qNjY2NvVlo0qafLb0tZv5pLw0bGxv749n50PRz/v1P59vY2NjYH8xur7YUSY7vJA2m7/WFjY2NfSo7D4Z2cZu2/vN7h+vExsbGPpSdD1lnY9dZ/GyODf26WdjY2NhHs5PA2AxZZ89phwF1UwkbGxv7CHYeV++Kt/23eYGEjY2NfRv7XZ8kI4H2+Zu1YWNjY5/Nng1Z2yM+mwM6yXPqAMPGxsY+iP38grbRk7eZNuPhtojCxsbGvoGdD2jzRWxKi80gGRsbG/tmdh5I0Z/+5V35ps9GwtjY2NinsjdxMou3tp3UDnp//RwbGxv7aHby535+iGc2Kpg9s4g3bGxs7KPZm/Jj1kJqGe24FxsbG/tm9qZUeG8QzjaibiphY2Nj/+fs/JVtyLVLnB3xKX4w2NjY2IeyN2GTP2fW+m9j70UhhI2NjX00O4mKd30yu/LDPdjY2Ni3sfMmft7inwVVXhoNixlsbGzsC9ibkerskM2mqdSGJTY2NvbN7D3seYnt4Z7ZIAEbGxv7HvYek8RefeAm3m5sbGzsm9lt26jdoLyQaJtZ0aACGxsb+1D2bODaFiTPBU/b3hpGIDY2Nvah7E3DKB8nJE+YDQ+KozzY2NjYR7PbV27u2oyT8wDDxsbGvpOdDFM337Zb04bri7jFxsbGxo4LjHwAkIRQOzb4iwGGjY2NfRB7f81irB1gYGNjY9/GbqOoPcQzGz8k5Ue0ZmxsbOyj2W3jpm3c76ntdmNjY2Pfw77nwsbGxsbGxsbGxv6Y6w/O9M2ALBDkDAAAAABJRU5ErkJggg==">
+    
+</ul>
+
+            
+
+                <!-- Tags (bookmark) -->
+                
+                    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+            <a class="post_tag-link" href="/tags/BGM/">BGM</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/HTML5/">HTML5</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/干货/">干货</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/技术/">技术</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=如何在HTML5里播放BGM&url=https://huuhghhgyg.github.io/2017/08/28/PlayBGMInHTML5/index.html&pic=https://huuhghhgyg.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=如何在HTML5里播放BGM&url=https://huuhghhgyg.github.io/2017/08/28/PlayBGMInHTML5/index.html&via=huuhghhgyg" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://huuhghhgyg.github.io/2017/08/28/PlayBGMInHTML5/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://huuhghhgyg.github.io/2017/08/28/PlayBGMInHTML5/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hikaru&#39;s Blog&title=如何在HTML5里播放BGM&summary=huuhghhgyg的个人主页&pics=https://huuhghhgyg.github.io/img/favicon.png&url=https://huuhghhgyg.github.io/2017/08/28/PlayBGMInHTML5/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://huuhghhgyg.github.io/2017/08/28/PlayBGMInHTML5/index.html&text=如何在HTML5里播放BGM" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+    
+
+</div>
+
+<!-- Chips-->
+<div class="chips-tag">
+    <style type="text/css">
+        .mdl-chip {
+            height: 32px;
+            font-family: "Noto Sans SC",Roboto, "Helvetica", "Arial", sans-serif;
+            line-height: 32px;
+            padding: 0 12px;
+            border: 0;
+            border-radius: 16px;
+            background-color: #E3F2FD;
+            display: inline-block;
+            color: #232F34;
+            font-size: 0;
+            white-space: nowrap;
+            margin: 0 3px;
+        }
+        
+        .mdl-chip:hover {
+            background-color: #BBDEFB;
+        }
+        
+        .mdl-chip__text {
+            font-size: 13px;
+            vertical-align: middle;
+            display: inline-block
+        }
+        
+        .chips-tag {
+            padding: 0 13px 13px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .post_tag_chip-link {
+            font-weight: 500;
+            text-decoration: none;
+            padding: 0 5px;
+        }
+    </style>
+
+    
+        <button type="button" class="mdl-chip">
+            <span class="mdl-chip__text">
+                <a class="post_tag_chip-link" href="/tags/BGM/">BGM</a></span></button><button type="button" class="mdl-chip"><span class="mdl-chip__text"><a class="post_tag_chip-link" href="/tags/HTML5/">HTML5</a></span></button><button type="button" class="mdl-chip"><span class="mdl-chip__text"><a class="post_tag_chip-link" href="/tags/干货/">干货</a></span></button><button type="button" class="mdl-chip"><span class="mdl-chip__text"><a class="post_tag_chip-link" href="/tags/技术/">技术</a>
+            </span>
+        </button>
+        
+</div>
+
+
+<!-- Post Content -->
+<div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>把一个软件内的背景音乐提取出来了，想炫耀一下<br><audio autoplay="autoplay" controls><br>    <source src="https://huuhghhgyg.github.io/BGM/LevelPiano.mp3"><br></audio></p>
+<h2 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h2><p>上次在”毕业咯”的2B页面里面插入了一个第三方(网易云)bgm，同时也用的是网易云的播放器框架。那么框架代码就直接在这里展示出来了。</p>
+<pre><code>&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=330 height=86 src=&quot;//music.163.com/outchain/player?type=2&amp;id=482988841&amp;auto=1&amp;height=66&quot;&gt;&lt;/iframe&gt;</code></pre><p>这个东西可以在网易云那里生成。具体步骤:<br>1.网易云随便打开一首歌<br>2.胶片唱盘下面有个<strong>生成外链播放器</strong>的链接<br>3.点进去，你就会做了(这肯定不用我教吧)<br>4.(算了还是教一下吧)将代码添加至你的html(md)代码中，(生成后)就可以使用了。</p>
+<h2 id="利用HTML5的’audio’标签"><a href="#利用HTML5的’audio’标签" class="headerlink" title="利用HTML5的’audio’标签"></a>利用HTML5的’audio’标签</h2><p>Html5中，有许多标签。像&lt;body&gt;,&lt;header&gt;,&lt;script&gt;之类的(可能有打错的)都是标签。那么下面的<audio>标签就是可以用来播放背景音乐的。&lt;audio&gt; 是 HTML 5 的新标签，定义声音，比如音乐或其他音频流。<br>代码(html5):</audio></p>
+<pre><code>&lt;audio autoplay=&quot;autoplay&quot; controls=&quot;controls&quot;loop=&quot;loop&quot; preload=&quot;auto&quot;
+            src=&quot;http://demo.mimvp.com/html5/take_you_fly.mp3&quot;&gt;
+      你的浏览器不支持audio标签
+&lt;/audio&gt;</code></pre><p>我们可以在开始标签和结束标签之间放置文本内容，这样老的浏览器就可以显示出不支持该标签的信息。</p>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">值</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="http://www.w3school.com.cn/html5/att_audio_autoplay.asp" target="_blank" rel="noopener">autoplay</a></td>
+<td align="left">autoplay</td>
+<td align="left">如果出现该属性，则音频在就绪后<strong>马上播放。</strong></td>
+</tr>
+<tr>
+<td align="left"><a href="http://www.w3school.com.cn/html5/att_audio_controls.asp" target="_blank" rel="noopener">controls</a></td>
+<td align="left">controls</td>
+<td align="left">如果出现该属性，则向用户<strong>显示控件</strong>，比如播放按钮。</td>
+</tr>
+<tr>
+<td align="left"><a href="http://www.w3school.com.cn/html5/att_audio_loop.asp" target="_blank" rel="noopener">loop</a></td>
+<td align="left">loop</td>
+<td align="left">如果出现该属性，则每当音频结束时<strong>重新循环</strong>开始播放。</td>
+</tr>
+<tr>
+<td align="left">[pre]oad](<a href="http://www.w3school.com.cn/html5/att_audio_preload.asp" target="_blank" rel="noopener">http://www.w3school.com.cn/html5/att_audio_preload.asp</a>)</td>
+<td align="left">preload</td>
+<td align="left">如果出现该属性，则音频在页面加载时进行加载，并预备播放。如果使用<strong>“autoplay”</strong>，则忽略该属性。</td>
+</tr>
+<tr>
+<td align="left"><a href="http://www.w3school.com.cn/html5/att_audio_src.asp" target="_blank" rel="noopener">src</a></td>
+<td align="left">url</td>
+<td align="left">要播放的音频的 <strong>URL</strong>。也可以使用&lt;source&gt;标签来设置音频。</td>
+</tr>
+<tr>
+<td align="left"><strong>注:此表格所有外部链接没有使用https加密，原因是使用后可能会出现打不开的情况</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p>html5 Audio标签能够支持<strong>wav, mp3, ogg, acc, webm</strong>等格式，但有个很重要的音乐文件格式midi(扩展名mid)却在各大浏览器中都没有内置的支持(<a href="http://www.myexception.cn/HTML-CSS/581442.html" target="_blank" rel="noopener">详见此处</a>)。不是所有的浏览器都支持<strong>MP3 ,OGG</strong>之类的，每个浏览器因为版权的问题支持的格式都是不一样的。 </p>
+<h3 id="浏览器和音频兼容性"><a href="#浏览器和音频兼容性" class="headerlink" title="浏览器和音频兼容性"></a>浏览器和音频兼容性</h3><p>浏览器制造商并非都同意使用某种音频文件格式。对于图像，*<em>PNG、JPEG 或 GIF *</em>格式的文件在任何浏览器上都能加载到您的网页里。遗憾的是，音频文件并非如此。表 1 展示了网页中可以使用的音频文件格式，但是并非所有格式都能用于所有浏览器。例如，Chrome、Internet Explorer 9 (IE9) 和 Safari 浏览器不支持 WAV 文件，这是一种使用非压缩格式且正在衰败的标准。</p>
+<table>
+<thead>
+<tr>
+<th align="left">音频格式</th>
+<th align="left">Chrome</th>
+<th align="left">Firefox</th>
+<th align="left">IE9</th>
+<th align="left">Opera</th>
+<th align="left">Safari</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">OGG</td>
+<td align="left">支持</td>
+<td align="left">支持</td>
+<td align="left">支持</td>
+<td align="left">不支持</td>
+<td align="left">不支持</td>
+</tr>
+<tr>
+<td align="left">MP3</td>
+<td align="left">支持</td>
+<td align="left">不支持</td>
+<td align="left">支持</td>
+<td align="left">不支持</td>
+<td align="left">支持</td>
+</tr>
+<tr>
+<td align="left">WAV</td>
+<td align="left">不支持</td>
+<td align="left">支持</td>
+<td align="left">不支持</td>
+<td align="left">支持</td>
+<td align="left">不支持</td>
+</tr>
+</tbody></table>
+<p>没有一种通用的文件格式让每个浏览器都使用单个文件格式意味着至少有 2/5 的浏览器无法播放某些声音。这不是无法在单一音频标准中达成一致的浏览器制造商不妥协的问题，而是涉及专利权和特许权使用费的法律和财务问题。不受软件专利限制的 OGG 格式旨在一劳永逸地解决这个问题。然而，在撰写本文时，Opera 和 Safari 都不支持 OGG。与 OGG 格式的文件相比，可用的 WAV 和 MP3 文件数量要更多，因此毫无疑问，浏览器制造商考虑到了这一点。MP3 作为事实的标准是个很好的解决方案。</p>
+<h3 id="解决方案：使用三种文件类型和标签"><a href="#解决方案：使用三种文件类型和标签" class="headerlink" title="解决方案：使用三种文件类型和标签"></a>解决方案：使用三种文件类型和<audio>标签</audio></h3><p>鉴于目前的状况，您可能认为目前还不是在 HTML5 页面上使用音频的黄金时刻。在某些方面可能的确如此，但是 HTML5 提供了一个解决方案，使您喜欢的浏览器能够找到一种兼容的格式。</p>
+<p>与 <audio> 标签结合使用时，<source> 标签可以嵌套在 <audio> 容器内。假设您是一个瓦格纳迷，想在 HTML5 网页上听他的歌剧 Ride of the Valkyries（《女武神》）。首先，您需要获得三种文件类型的音乐，即 OGG、MP3 和 WAV。将这些音乐文件与 HTML5 文件放在同一个文件夹内。然后，将每个文件名放在单独的 <source> 标签里，并且音频容器中的所有源标签都由<audio></audio> 构成，如下所示。</audio></audio></p>
+<pre><code>&lt;audio controls&gt;
+    &lt;source src=”http://demo.mimvp.com/html5/take_you_fly.ogg” /&gt;
+    &lt;source src=”http://demo.mimvp.com/html5/take_you_fly.mp3″ /&gt;
+    &lt;source src=”http://demo.mimvp.com/html5/take_you_fly.wav” /&gt;
+&lt;/audio&gt;</code></pre><p>无论访问者使用什么浏览器，它都将自动选择所读取的第一个文件类型，并为您播放声音。</p>
+<h4 id="html代码-隐藏播放控件"><a href="#html代码-隐藏播放控件" class="headerlink" title="html代码 (隐藏播放控件)"></a>html代码 (隐藏播放控件)</h4><pre><code>&lt;audio autoplay=&quot;autoplay&quot;&gt;
+&lt;source src=&quot;http://demo.mimvp.com/html5/take_you_fly.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+&lt;/audio&gt;</code></pre><h4 id="代码演示-隐藏播放控件"><a href="#代码演示-隐藏播放控件" class="headerlink" title="代码演示 (隐藏播放控件)"></a>代码演示 (隐藏播放控件)</h4><pre><code>&lt;audio autoplay=&quot;autoplay&quot; controls=&quot;controls&quot;&gt;
+&lt;source src=&quot;http://demo.mimvp.com/html5/take_you_fly.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+&lt;/audio&gt;</code></pre><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101667365-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+            
+                <!-- <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;border-radius: 2px;">
+                    <p><strong>
+                    
+                        This blog is under a <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">CC BY-NC-SA 3.0 Unported License</a>
+                    </strong>
+                        <br>
+                        <strong>本文链接：</strong>
+                        <a href="https://huuhghhgyg.github.io/2017/08/28/PlayBGMInHTML5/">
+                            https://huuhghhgyg.github.io/2017/08/28/PlayBGMInHTML5/
+                        </a>
+                    </p>
+                </blockquote> -->
+
+                <style>
+                    .license-card {
+                        background-color: #323232;
+                        position: relative;
+                        padding: 16px;
+                        border-radius: 4px;
+                        color: #E5E5E5;
+                    }
+                    
+                    .license-card .title {
+                        font-size: 16px;
+                        margin: 0;
+                        font-weight: bold;
+                        display: flex;
+                        align-items: center;
+                    }
+                    
+                    .license-card .title-link {
+                        margin-bottom: 6px;
+                    }
+                    
+                    .license img {
+                        width: 20px;
+                        padding-bottom: 2px;
+                        display: inline;
+                    }
+                    
+                    .license-card .license-subtitle {
+                        margin-top: 16px;
+                        margin-bottom: 0px;
+                        font-size: 14px;
+                        font-weight: bold;
+                    }
+                    
+                    .license-card .info {
+                        display: flex;
+                        margin-top: 12px;
+                    }
+                    
+                    @media screen and (max-width: 480px) {
+                        .license-card .info {
+                            display: block;
+                        }
+                    }
+                    
+                    .license-card .info .license-content {
+                        line-height: 20px;
+                    }
+                    
+                    .license-card .license-block {
+                        margin-right: 24px;
+                    }
+                </style>
+
+                <div class="license-card">
+                    <div class="title">
+                        <span class="material-icons">link</span>
+                        <div style="margin-left:6px">
+                            本文链接：
+                        </div>
+                    </div>
+                    <div class="title-link">
+                        <a href="https://huuhghhgyg.github.io/2017/08/28/PlayBGMInHTML5/">
+                            https://huuhghhgyg.github.io/2017/08/28/PlayBGMInHTML5/
+                        </a>
+                    </div>
+                    <div class="info">
+                        <div class="time license-block">
+                            <div class="license-subtitle">发文时间</div>
+                            <div class="license-content">
+                                8月 28, 2017
+                            </div>
+                        </div>
+                        <div class="license license-block">
+                            <div class="license-subtitle">请遵循协议</div>
+                            <div class="license-content"><img style="border:none" src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/icon/cc_icon_white_x2.png" alt="" srcset="">
+                                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                    
+
+                        
+</div>
+
+
+
+<!-- Post Comments -->
+
+    
+    <!-- <div id="comment" style='padding:10px;' class="vcomment"></div> -->
+<div id="comment" style='width: 90%;margin: 1pc auto;' class="vcomment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!-- <script src="//unpkg.com/valine/dist/Valine.min.js"></script> -->
+<script src="//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+
+<script>
+    var GUEST_INFO = ['nick', 'mail', 'link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item) {
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    var notify = 'false' === 'true';
+    var verify = 'false' === 'true';
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "zQXuDM0BRWNAQq6FkTiK9teB-gzGzoHsz",
+        appKey: "0xSeR8Ba3Mc5VUIahEs3xPb0",
+        placeholder: "点击键入评论",
+        pageSize: '10',
+        avatar: 'mp',
+        lang: 'zh-cn',
+        guest_info: guest_info
+    });
+</script>
+
+
+</div>
+
+<!-- Post Prev & Next Nav -->
+<nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/08/28/ReInstallHexo/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/08/25/Grade1Recite1-cn/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+</div>
+</div>
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/site/sidebar_header.webp);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <!-- <i class="material-icons">clear_all</i> -->
+        <i class="material-icons">arrow_back</i>
+        </style>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="huuhghhgyg's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        huuhghhgyg@outlook.com
+            <b class="caret"></b>
+    </a>
+</div>
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:huuhghhgyg@outlook.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="关于我">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于我
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间线">
+                
+                    <i class="material-icons sidebar-material-icons">timelapse</i>
+                
+                时间线
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="链接">
+                
+                    <i class="material-icons sidebar-material-icons">link</i>
+                
+                链接
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/Tools/Tools.html" title="工具">
+                
+                    <i class="material-icons sidebar-material-icons">widgets</i>
+                
+                工具
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="https://launcher3-1251886115.cos.ap-shanghai.myqcloud.com/OralCalculation/index.html" title="小程序">
+                
+                    <i class="material-icons sidebar-material-icons">shop</i>
+                
+                小程序
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="https://github.com/huuhghhgyg" title="Github目录">
+                
+                    <i class="material-icons sidebar-material-icons">insert_drive_file</i>
+                
+                Github目录
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+    <a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        sidebar.help
+        <span class="mdl-button__ripple-container">
+          <span class="mdl-ripple"></span>
+        </span>
+      </div>
+    </a>
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/Huuhghhgyg" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/hghhgyg.huu.7" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/u/2738972153" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/huuhghhgyg-11/activities" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;Hikaru's Blog
+            
+                <br>
+                
+                    <div style="visibility:hidden;height:0"> <script type="text/javascript" src="https://s13.cnzz.com/z_stat.php?id=1273431916&web_id=1273431916"></script> </div>
+<div class="inner-width" id="views"> <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> <div class="website-data"> <i class="material-icons">people</i> <span id="busuanzi_value_site_uv">Loading</span> </div> <div class="website-data data-divider">|</div> <div class="website-data"> <i class="material-icons">visibility</i> <span id="busuanzi_value_site_pv">Loading</span> </div> </div> <meta name="msvalidate.01" content="668682503059272C64C774C5F2DF530F" /> <link rel="stylesheet" href="/links/footerstyle.css">
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 2017;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

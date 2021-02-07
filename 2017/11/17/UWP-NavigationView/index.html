@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
+
+
+
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.proxy.ustclug.org">
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            UWP应用导航设计基础 | 
+        
+        Hikaru&#39;s Blog
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content="huuhghhgyg的个人主页">
+    <meta name="keywords" content="huu huuhghhgyg,设计,FluentDesign,Controls">
+    <meta name="theme-color" content="#1976D2">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?ax12tLrFrP3XOEfuY1+8yg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?2AKKL7hcCpKkcciCE8a9AA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?rT7a3skYUze07y2ZzTXWYA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/github-v2.min.css?AfzKxt++K+/lhZBlSjnxwg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Noto Sans SC,"Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #448AFF;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #1a73e8 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #1a73e8 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #1a73e8 !important;
+  }
+
+  .toTop {
+    /* background: #757575 !important; */
+    background: white;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #448AFF;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.proxy.ustclug.org/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+<!-- 新加入 Import NotoSansSC -->
+
+<!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC" rel="stylesheet"> -->
+<link href="https://cdn.jsdelivr.net/npm/noto-sans-sc@11.0.1/all.css" rel="stylesheet">
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- Real Custom Head -->
+    <link rel="manifest" href="/manifest.webmanifest">
+    <script src="/manifest.js" defer></script>
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Hikaru&#39;s Blog">
+    <meta name="msapplication-starturl" content="https://huuhghhgyg.github.io/2017/11/17/UWP-NavigationView/">
+    <meta name="msapplication-navbutton-color" content="#1976D2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Hikaru&#39;s Blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://huuhghhgyg.github.io/2017/11/17/UWP-NavigationView/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="UWP应用导航设计基础 | Hikaru&#39;s Blog">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="huuhghhgyg的个人主页">
+    <meta property="og:article:tag" content="设计"> <meta property="og:article:tag" content="FluentDesign"> <meta property="og:article:tag" content="Controls"> 
+
+    
+        <meta property="article:published_time" content="Fri Nov 17 2017 20:13:58 GMT+0800">
+        <meta property="article:modified_time" content="Sat Aug 24 2019 23:55:47 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://huuhghhgyg.github.io/2017/11/17/UWP-NavigationView/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://huuhghhgyg.github.io/2017/11/17/UWP-NavigationView/index.html",
+    "headline": "UWP应用导航设计基础",
+    "datePublished": "Fri Nov 17 2017 20:13:58 GMT+0800",
+    "dateModified": "Sat Aug 24 2019 23:55:47 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "huuhghhgyg",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Never Settle"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Hikaru&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",设计,FluentDesign,Controlshuu huuhghhgyg",
+    "description": "huuhghhgyg的个人主页",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#良好的设计原则"><span class="post-toc-number">1.</span> <span class="post-toc-text">良好的设计原则</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#始终如一"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">始终如一</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#把事情简单化"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">把事情简单化</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#保持简洁"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">保持简洁</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#三个一般规则"><span class="post-toc-number">2.</span> <span class="post-toc-text">三个一般规则</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用正确的结构"><span class="post-toc-number">3.</span> <span class="post-toc-text">使用正确的结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#平-外侧"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">平/外侧</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#分级"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">分级</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#组合结构"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">组合结构</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用正确的控件"><span class="post-toc-number">4.</span> <span class="post-toc-text">使用正确的控件</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#下一步：将导航代码添加到您的应用"><span class="post-toc-number">5.</span> <span class="post-toc-text">下一步：将导航代码添加到您的应用</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+    <div class="material-post mdl-grid">
+    <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+    <!-- Post Header(Thumbnail & Title) -->
+    
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://docs.microsoft.com/zh-cn/windows/uwp/design/basics/images/nav/nav-component-layout.png)">
+    
+            <p class="article-headline-p">
+                UWP应用导航设计基础
+            </p>
+        </div>
+
+
+
+
+
+    
+    <!-- Paradox Post Info -->
+    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar" />
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>huuhghhgyg</strong>
+        <span>11月 17, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACzUlEQVR42u3aQXLjMAwEQP3/08kDXGIGgJ2SydYp5V3LaF5QwPD6OfK5sLGxsbGxsbGxsR/JvuLn9Vvr9+Sf373zFtCrGRsbG3trdvIzybeSIta/OH/Dbc3Y2NjYB7CTn1n//7vmkbS6del5DdjY2NjYOTsZKuaHsm6f2NjY2NjzBjYpOqnkoX0bGxsb+5Hs6khwV2KyikqOpnpwH9ylYWNjYz+enYemz/n7X/NtbGxs7Aezq09vtKiOK+vW2KwcGxsbe1N2L7jNV/zV4HYSOfxRFTY2NvbW7Mn1ynWheftJDiL55LZybGxs7APY69KTMLUH68UP5YAZGxsbe1P2JO7tXdach8H5QWBjY2OfwO4td/Jmlh9NDzzKt7GxsbG3ZudtIx9j8mC4Ghi8rYFhY2NjfyG7+pPvimDzQ5kHFdjY2Nh7s3tjQO/zanw7eSc2Njb2mex50b2AtkeqxgbY2NjYu7LfFff2QtzqIVYvAGFjY2Ofw642jGpskK/4r+JTsGBjY2Nvys7bQK/EZK0/ObiP5NvY2NjYX8XOh4re4r7aAnuVRMMMNjY29qbsvCUkF2gm7ScfUZrrMGxsbOxj2PNFfP7mPO7NrwoVJjBsbGzsLdjJir86nORHkz+TdoiNjY29NzuPePPYIBljegumfKmEjY2NjV0dSPKDS1pUtZ7o0LGxsbG3Zs8D3V54kC+VenEyNjY2Nnb+r702Uz243rUebGxs7DPZ1UV89cJN0tLmDzY2NvYJ7F7gWl3u9Bb6k0PHxsbGPofdawaTKLc6qFT/xsbGxj6TPW8/kzihFzCU34CNjY19ADuJb/MLOknzq8a91RgYGxsbG7s3Bkyu6eTjTV4zNjY2NnZvVCgs7uN2mC+2sLGxsc9k5+FuLxKukvIDir6LjY2NvTW7uripNrAqNW9aozun2NjY2Fuwz3mwsbGxsbGxsbGxH/P8AmwQC23rbfO3AAAAAElFTkSuQmCC">
+    
+</ul>
+
+            
+
+                <!-- Tags (bookmark) -->
+                
+                    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+            <a class="post_tag-link" href="/tags/Controls/">Controls</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/FluentDesign/">FluentDesign</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/设计/">设计</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=UWP应用导航设计基础&url=https://huuhghhgyg.github.io/2017/11/17/UWP-NavigationView/index.html&pic=https://huuhghhgyg.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=UWP应用导航设计基础&url=https://huuhghhgyg.github.io/2017/11/17/UWP-NavigationView/index.html&via=huuhghhgyg" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://huuhghhgyg.github.io/2017/11/17/UWP-NavigationView/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://huuhghhgyg.github.io/2017/11/17/UWP-NavigationView/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hikaru&#39;s Blog&title=UWP应用导航设计基础&summary=huuhghhgyg的个人主页&pics=https://huuhghhgyg.github.io/img/favicon.png&url=https://huuhghhgyg.github.io/2017/11/17/UWP-NavigationView/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://huuhghhgyg.github.io/2017/11/17/UWP-NavigationView/index.html&text=UWP应用导航设计基础" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+    
+
+</div>
+
+<!-- Chips-->
+<div class="chips-tag">
+    <style type="text/css">
+        .mdl-chip {
+            height: 32px;
+            font-family: "Noto Sans SC",Roboto, "Helvetica", "Arial", sans-serif;
+            line-height: 32px;
+            padding: 0 12px;
+            border: 0;
+            border-radius: 16px;
+            background-color: #E3F2FD;
+            display: inline-block;
+            color: #232F34;
+            font-size: 0;
+            white-space: nowrap;
+            margin: 0 3px;
+        }
+        
+        .mdl-chip:hover {
+            background-color: #BBDEFB;
+        }
+        
+        .mdl-chip__text {
+            font-size: 13px;
+            vertical-align: middle;
+            display: inline-block
+        }
+        
+        .chips-tag {
+            padding: 0 13px 13px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .post_tag_chip-link {
+            font-weight: 500;
+            text-decoration: none;
+            padding: 0 5px;
+        }
+    </style>
+
+    
+        <button type="button" class="mdl-chip">
+            <span class="mdl-chip__text">
+                <a class="post_tag_chip-link" href="/tags/Controls/">Controls</a></span></button><button type="button" class="mdl-chip"><span class="mdl-chip__text"><a class="post_tag_chip-link" href="/tags/FluentDesign/">FluentDesign</a></span></button><button type="button" class="mdl-chip"><span class="mdl-chip__text"><a class="post_tag_chip-link" href="/tags/设计/">设计</a>
+            </span>
+        </button>
+        
+</div>
+
+
+<!-- Post Content -->
+<div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>如果将应用程序视为页面集合，则术语导航将描述在页面之间和页面内移动的行为。这是用户体验的起点。这是用户如何找到他们感兴趣的内容和功能。这是非常重要的，而且很难做到。</p>
+<blockquote>
+<p>重要的API：<a href="https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Frame" target="_blank" rel="noopener">Frame</a>，<a href="https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Pivot" target="_blank" rel="noopener">Pivot类</a>，<a href="https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.NavigationView" target="_blank" rel="noopener">NavigationView类</a></p>
+</blockquote>
+<p>部分难以正确理解的原因是，作为应用程序设计师，我们有大量的选择。如果我们在设计一本书，我们的选择将会很简单：章节的顺序是什么。通过一个应用程序，我们可以创建一个模仿一本书的导航体验，要求用户按顺序浏览一系列的页面。或者我们可以提供一个菜单，让用户直接跳转到他或她想要的任何页面 - 但是如果页面太多，我们可能会用选择用信息淹没用户。因此我们可以将所有内容放在一个页面上，并提供查看内容的过滤机制。<br>虽然没有单一的导航设计适用于每个应用程序，但有一套原则和指导方针可以帮助您找出适合您的应用程序的设计。</p>
+<h1 id="良好的设计原则"><a href="#良好的设计原则" class="headerlink" title="良好的设计原则"></a>良好的设计原则</h1><p>让我们从研究已经显示的基本原则开始，这些原则是良好的导航设计的基础：</p>
+<ul>
+<li>保持一致：满足用户期望。</li>
+<li>保持简单：不要做比你需要的更多。</li>
+<li>保持简洁：不要让导航功能以用户的方式进入。</li>
+</ul>
+<h2 id="始终如一"><a href="#始终如一" class="headerlink" title="始终如一"></a>始终如一</h2><p>导航应该符合用户的期望，依靠图标，位置和样式的标准惯例。<br>例如，在下图中，您可以看到用户通常希望找到功能的位置，如导航窗格和命令栏。不同的设备系列有自己的导航元素约定。例如，导航窗格通常出现在平板电脑屏幕的左侧，而最上面的是移动设备。<br><img src="https://docs.microsoft.com/zh-cn/windows/uwp/design/basics/images/nav/nav-component-layout.png" alt="用户期望在标准位置找到某些UI元素。"></p>
+<h2 id="把事情简单化"><a href="#把事情简单化" class="headerlink" title="把事情简单化"></a>把事情简单化</h2><p>导航设计的另一个重要因素是Hick-Hyman定律，经常引用航海选择。这条法律鼓励我们在菜单中添加更少的选项。用户选择越多，与用户的交互就越慢，特别是当用户在探索新应用时。<br><img src="https://docs.microsoft.com/zh-cn/windows/uwp/design/basics/images/nav/nav-simple-menus.png" alt><br>在左侧，注意用户选择的选项较少，而在右侧有几个选项。希克 - 海曼定律指出左边的菜单将更容易让用户理解和利用。</p>
+<h2 id="保持简洁"><a href="#保持简洁" class="headerlink" title="保持简洁"></a>保持简洁</h2><p>导航的最后一个关键特征是简洁干净的交互，它指的是用户通过各种上下文进行导航的物理方式。这是把自己放在用户位置的一个领域将通知您的设计。试着了解你的用户和用户们的行为。例如，如果你正在设计一个烹饪应用程序，你可以考虑提供一个购物清单和一个计时器的方便用户。</p>
+<h1 id="三个一般规则"><a href="#三个一般规则" class="headerlink" title="三个一般规则"></a>三个一般规则</h1><p>现在，让我们采取我们的设计原则 -一致性，简单性和干净的交互 -并使用它们来提出一些通用规则。就像任何经验法则一样，将它们作为起点，并根据需要进行调整。</p>
+<p>1.避免深层导航层次结构。多少级别的导航最适合您的用户？顶级导航和下面的一个级别通常是很多。如果你超越了三级导航，那么你打破了简单的原则。更糟糕的是，您可能会将用户置于深层次结构中，难以离开。</p>
+<p>2.避免太多的导航选项。每层有三到六个导航元素是最常见的。如果你的导航需要比这更多，尤其是在你的层次结构的顶层，那么你可能会考虑把你的应用分成多个应用，因为你可能在一个地方做的太多了。应用程序中导航元素太多通常会导致不一致和不相关的目标。</p>
+<p>3.避免“弹跳”。当有相关的内容时会发生Pogo-sticking，但是导航到这个需要用户上升一个级别然后再下降。Pogo-sticking违反了干净互动的原则，要求不必要的点击或交互来实现一个明显的目标 - 在这种情况下，查看一系列相关内容。（这个规则的例外是在搜索和浏览中，在这里pogo-sticking可能是提供所需多样性和深度的唯一方法。）</p>
+<p><img src="https://docs.microsoft.com/zh-cn/windows/uwp/design/basics/images/nav/nav-pogo-sticking-1.png" alt="Pogo-sticking浏览应用程序 - 用户必须返回（绿色后退箭头）到主页面才能导航到“项目”选项卡。"></p>
+<p><img src="https://docs.microsoft.com/zh-cn/windows/uwp/design/basics/images/nav/nav-pogo-sticking-2.png" alt="你可以用一个图标来解决一些弹跳的问题（注意绿色的滑动手势）。"></p>
+<h1 id="使用正确的结构"><a href="#使用正确的结构" class="headerlink" title="使用正确的结构"></a>使用正确的结构</h1><p>现在您已经熟悉了一般的导航原则和规则，现在是时候做出所有导航决策中最重要的事情了：应该如何构建您的应用程序？有两个一般结构：平面和层次结构。</p>
+<h2 id="平-外侧"><a href="#平-外侧" class="headerlink" title="平/外侧"></a>平/外侧</h2><p>在平面/侧面结构中，页面并排存在。您可以按任何顺序从一页到另一页。<br><img src="https://docs.microsoft.com/zh-cn/windows/uwp/design/basics/images/nav/nav-pages-peer.png" alt="页面排列在一个平坦的结构"></p>
+<p>平面结构有许多好处：简单易懂，让用户直接跳转到特定页面，而不必通过中间页面进行浏览。一般来说，平面结构很棒- 但是它们并不适用于每个应用程序。如果你的应用程序有很多的页面，一个平面的列表可以压倒一切。如果页面需要按照特定顺序查看，则平面结构不起作用。</p>
+<p>我们建议使用扁平结构：</p>
+<ul>
+<li>页面可以按任意顺序查看。</li>
+<li>这些页面彼此明显不同，并且没有明显的父母/子女关系。</li>
+<li>组中的页数少于8页。<br>当组中的页面数超过7页时，用户可能难以理解页面的独特性或了解其在组内的当前位置。如果你不认为这是你的应用程序的问题，继续前进，使页面同行。否则，请考虑使用分层结构将页面分成两个或更多个较小的组。（集线器控制可以帮助您将网页分组。</li>
+</ul>
+<h2 id="分级"><a href="#分级" class="headerlink" title="分级"></a>分级</h2><p>在分层结构中，页面被组织成树状结构。每个子页面只有一个父页面，但父页面可以有一个或多个子页面。要访问子页面，您需要通过父级。<br><img src="https://docs.microsoft.com/zh-cn/windows/uwp/design/basics/images/nav/nav-pages-hiearchy.png" alt="按层次结构排列的页面"></p>
+<p>分层结构适用于组织跨越大量页面的复杂内容，或者以特定顺序查看页面。缺点是分层页面引入了一些导航开销：结构越深，用户从页面到页面所需的点击越多。</p>
+<p>我们建议在以下情况下使用hiearchical结构：</p>
+<ul>
+<li>您希望用户以特定顺序遍历页面。安排层次结构执行该顺序。</li>
+<li>在一个页面和组中的其他页面之间存在明确的亲子关系。</li>
+<li>小组中有7页以上。<br>当组中的页面数超过7页时，用户可能难以理解页面的独特性或了解其在组内的当前位置。如果你不认为这是你的应用程序的问题，继续前进，使页面同行。否则，请考虑使用分层结构将页面分成两个或更多个较小的组。（集线器控制可以帮助您将网页分组。</li>
+</ul>
+<h2 id="组合结构"><a href="#组合结构" class="headerlink" title="组合结构"></a>组合结构</h2><p>你没有选择一个结构或另一个结构; 许多精心设计的应用程序使用平面和层次结构：<br><img src="https://docs.microsoft.com/zh-cn/windows/uwp/design/basics/images/nav/nav-hybridstructure.png.png" alt></p>
+<p>这些应用程序对可以按任何顺序查看的顶级页面使用平面结构，对于具有更复杂关系的页面使用分层结构。</p>
+<p>如果您的导航结构具有多个级别，我们建议对等导航元素只链接到当前子树内的对等点。请考虑下面的插图，其中显示了具有三个级别的导航结构：<br><img src="https://docs.microsoft.com/zh-cn/windows/uwp/design/basics/images/nav/nav-subtrees.png" alt></p>
+<ul>
+<li>对于级别1，对等导航元素应提供对页面A，B，C和D的访问。</li>
+<li>在级别2，A2页面的点对点导航元素应该只链接到其他A2页面。他们不应该链接到C子树中的二级页面。<br><img src="https://docs.microsoft.com/zh-cn/windows/uwp/design/basics/images/nav/nav-subtrees2.png" alt></li>
+</ul>
+<h1 id="使用正确的控件"><a href="#使用正确的控件" class="headerlink" title="使用正确的控件"></a>使用正确的控件</h1><p>一旦你决定了一个页面结构，你需要决定用户如何浏览这些页面。UWP提供了各种导航控件来帮助您。由于这些控件适用于每个UWP应用程序，因此使用这些控件有助于确保一致可靠的导航体验。</p>
+<table>
+<thead>
+<tr>
+<th align="left">控制</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Frame" target="_blank" rel="noopener">帧</a></td>
+<td align="left">除少数例外，任何具有多个页面的应用程序都使用该框架。在典型的设置中，应用程序有一个主页面，其中包含框架和主导航元素，如导航视图控件。当用户选择一个页面时，该框架加载并显示它。</td>
+</tr>
+<tr>
+<td align="left"><a href="https://docs.microsoft.com/zh-cn/windows/uwp/design/controls-and-patterns/tabs-pivot" target="_blank" rel="noopener">选项卡和主键</a><img src="https://docs.microsoft.com/zh-cn/windows/uwp/design/basics/images/nav/nav-tabs-sm-300.png" alt></td>
+<td align="left">显示相同级别页面的链接列表。在以下情况下使用标签/枢轴：<br><li>有2-5页。</li><li> （当页面数量超过5页时，您可以使用标签/支点，但可能难以将所有标签/支点放在屏幕上。）您希望用户经常在页面之间切换。</li></td>
+</tr>
+<tr>
+<td align="left"><a href="https://docs.microsoft.com/zh-cn/windows/uwp/design/controls-and-patterns/navigationview" target="_blank" rel="noopener">导航视图</a><img src="https://docs.microsoft.com/zh-cn/windows/uwp/design/basics/images/nav/nav-navpane-4page-thumb.png" alt></td>
+<td align="left">显示顶层页面的链接列表。<br>以下情况下使用导航窗格：<br><li>您不希望用户经常在页面之间切换。</li><li>您希望以减慢导航操作为代价节省空间。</li><li>页面存在于顶层。</li><li></li></td>
+</tr>
+<tr>
+<td align="left"><a href="https://docs.microsoft.com/zh-cn/windows/uwp/design/controls-and-patterns/master-details" target="_blank" rel="noopener">主/细节</a><img src="https://docs.microsoft.com/zh-cn/windows/uwp/design/basics/images/higsecone-masterdetail-thumb.png" alt></td>
+<td align="left">显示项目汇总的列表（主视图）。选择一个项目将在详细信息部分显示其相应的项目页面。<br>在以下情况下使用主/细节元素：<li>您期望用户频繁地切换子项目。</li><li>您希望使用户能够对单个项目或项目组执行高级操作（如删除或排序），还希望使用户能够查看或更新每个项目的详细信息。</li><br>主/细节元素非常适合电子邮件收件箱，联系人列表和数据输入。</td>
+</tr>
+<tr>
+<td align="left"><a href="https://docs.microsoft.com/zh-cn/windows/uwp/design/basics/navigation-history-and-backwards-navigation" target="_blank" rel="noopener">背部</a></td>
+<td align="left">让用户遍历应用程序中的导航历史记录，并根据设备从应用程序到应用程序。有关更多信息，请参阅<a href="https://docs.microsoft.com/zh-cn/windows/uwp/design/basics/navigation-history-and-backwards-navigation" target="_blank" rel="noopener">导航历史记录和向后导航文章</a>。</td>
+</tr>
+<tr>
+<td align="left">超链接和按钮</td>
+<td align="left">内容嵌入的导航元素出现在网页的内容中。与其他导航元素不同，页面的组或子树应该保持一致，内容嵌入的导航元素在页面之间是唯一的。</td>
+</tr>
+</tbody></table>
+<h1 id="下一步：将导航代码添加到您的应用"><a href="#下一步：将导航代码添加到您的应用" class="headerlink" title="下一步：将导航代码添加到您的应用"></a>下一步：将导航代码添加到您的应用</h1><p>下一篇文章“<a href="https://docs.microsoft.com/zh-cn/windows/uwp/design/basics/navigate-between-two-pages" target="_blank" rel="noopener">实现基本导航 </a>”将展示使用Frame控件在您的应用程序中启用基本导航所需的XAML和代码。</p>
+<p><a href="https://docs.microsoft.com/zh-cn/windows/uwp/design/basics/navigation-basics" target="_blank" rel="noopener">转到原文</a></p>
+
+            
+                <!-- <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;border-radius: 2px;">
+                    <p><strong>
+                    
+                        This blog is under a <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">CC BY-NC-SA 3.0 Unported License</a>
+                    </strong>
+                        <br>
+                        <strong>本文链接：</strong>
+                        <a href="https://huuhghhgyg.github.io/2017/11/17/UWP-NavigationView/">
+                            https://huuhghhgyg.github.io/2017/11/17/UWP-NavigationView/
+                        </a>
+                    </p>
+                </blockquote> -->
+
+                <style>
+                    .license-card {
+                        background-color: #323232;
+                        position: relative;
+                        padding: 16px;
+                        border-radius: 4px;
+                        color: #E5E5E5;
+                    }
+                    
+                    .license-card .title {
+                        font-size: 16px;
+                        margin: 0;
+                        font-weight: bold;
+                        display: flex;
+                        align-items: center;
+                    }
+                    
+                    .license-card .title-link {
+                        margin-bottom: 6px;
+                    }
+                    
+                    .license img {
+                        width: 20px;
+                        padding-bottom: 2px;
+                        display: inline;
+                    }
+                    
+                    .license-card .license-subtitle {
+                        margin-top: 16px;
+                        margin-bottom: 0px;
+                        font-size: 14px;
+                        font-weight: bold;
+                    }
+                    
+                    .license-card .info {
+                        display: flex;
+                        margin-top: 12px;
+                    }
+                    
+                    @media screen and (max-width: 480px) {
+                        .license-card .info {
+                            display: block;
+                        }
+                    }
+                    
+                    .license-card .info .license-content {
+                        line-height: 20px;
+                    }
+                    
+                    .license-card .license-block {
+                        margin-right: 24px;
+                    }
+                </style>
+
+                <div class="license-card">
+                    <div class="title">
+                        <span class="material-icons">link</span>
+                        <div style="margin-left:6px">
+                            本文链接：
+                        </div>
+                    </div>
+                    <div class="title-link">
+                        <a href="https://huuhghhgyg.github.io/2017/11/17/UWP-NavigationView/">
+                            https://huuhghhgyg.github.io/2017/11/17/UWP-NavigationView/
+                        </a>
+                    </div>
+                    <div class="info">
+                        <div class="time license-block">
+                            <div class="license-subtitle">发文时间</div>
+                            <div class="license-content">
+                                11月 17, 2017
+                            </div>
+                        </div>
+                        <div class="license license-block">
+                            <div class="license-subtitle">请遵循协议</div>
+                            <div class="license-content"><img style="border:none" src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/icon/cc_icon_white_x2.png" alt="" srcset="">
+                                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                    
+
+                        
+</div>
+
+
+
+<!-- Post Comments -->
+
+    
+    <!-- <div id="comment" style='padding:10px;' class="vcomment"></div> -->
+<div id="comment" style='width: 90%;margin: 1pc auto;' class="vcomment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!-- <script src="//unpkg.com/valine/dist/Valine.min.js"></script> -->
+<script src="//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+
+<script>
+    var GUEST_INFO = ['nick', 'mail', 'link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item) {
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    var notify = 'false' === 'true';
+    var verify = 'false' === 'true';
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "zQXuDM0BRWNAQq6FkTiK9teB-gzGzoHsz",
+        appKey: "0xSeR8Ba3Mc5VUIahEs3xPb0",
+        placeholder: "点击键入评论",
+        pageSize: '10',
+        avatar: 'mp',
+        lang: 'zh-cn',
+        guest_info: guest_info
+    });
+</script>
+
+
+</div>
+
+<!-- Post Prev & Next Nav -->
+<nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/01/26/getmdl-io-introduction/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/11/12/FluentDesign-Acrylic/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+</div>
+</div>
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/site/sidebar_header.webp);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <!-- <i class="material-icons">clear_all</i> -->
+        <i class="material-icons">arrow_back</i>
+        </style>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="huuhghhgyg's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        huuhghhgyg@outlook.com
+            <b class="caret"></b>
+    </a>
+</div>
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:huuhghhgyg@outlook.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="关于我">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于我
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间线">
+                
+                    <i class="material-icons sidebar-material-icons">timelapse</i>
+                
+                时间线
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="链接">
+                
+                    <i class="material-icons sidebar-material-icons">link</i>
+                
+                链接
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/Tools/Tools.html" title="工具">
+                
+                    <i class="material-icons sidebar-material-icons">widgets</i>
+                
+                工具
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="https://launcher3-1251886115.cos.ap-shanghai.myqcloud.com/OralCalculation/index.html" title="小程序">
+                
+                    <i class="material-icons sidebar-material-icons">shop</i>
+                
+                小程序
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="https://github.com/huuhghhgyg" title="Github目录">
+                
+                    <i class="material-icons sidebar-material-icons">insert_drive_file</i>
+                
+                Github目录
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+    <a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        sidebar.help
+        <span class="mdl-button__ripple-container">
+          <span class="mdl-ripple"></span>
+        </span>
+      </div>
+    </a>
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/Huuhghhgyg" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/hghhgyg.huu.7" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/u/2738972153" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/huuhghhgyg-11/activities" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;Hikaru's Blog
+            
+                <br>
+                
+                    <div style="visibility:hidden;height:0"> <script type="text/javascript" src="https://s13.cnzz.com/z_stat.php?id=1273431916&web_id=1273431916"></script> </div>
+<div class="inner-width" id="views"> <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> <div class="website-data"> <i class="material-icons">people</i> <span id="busuanzi_value_site_uv">Loading</span> </div> <div class="website-data data-divider">|</div> <div class="website-data"> <i class="material-icons">visibility</i> <span id="busuanzi_value_site_pv">Loading</span> </div> </div> <meta name="msvalidate.01" content="668682503059272C64C774C5F2DF530F" /> <link rel="stylesheet" href="/links/footerstyle.css">
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 2017;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

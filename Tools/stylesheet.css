@@ -1,0 +1,204 @@
+.demo-layout-transparent {
+    background: url('https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/Tools/background.png') center / cover;
+}
+
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
+    /* This background is dark, so we set text to white. Use 87% black instead if
+     your background is light. */
+    /* color: white; */
+    color: #455A64;
+}
+
+.mdl-layout__header-row .mdl-navigation__link {
+    color: #455A64;
+}
+
+.card-container {
+    margin: 25px 10px;
+    float: left;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+}
+
+.card-platte {
+    margin: 40px 3%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+    grid-template-rows: repeat(256px);
+}
+
+.mdl-button.mdl-js-button {
+    margin: auto;
+    float: left;
+    font-weight: 600;
+    /*font-weight: 600;为后加部分*/
+}
+
+.md-icons-container {
+    float: left;
+    text-align: center;
+    margin: -6px;
+}
+
+.blackcolor {
+    color: #212121;
+    font-family: 'Noto Sans SC', sans-serif;
+}
+
+.whitecolor {
+    color: rgba(255, 255, 255, 0.92);
+    font-family: 'Noto Sans SC', sans-serif;
+}
+
+.product-sans {
+    font-family: 'Product Sans';
+    font-style: normal;
+    src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/productsans/v5/HYvgU2fE2nRJvZ5JFAumwegdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+}
+
+.menu-title {
+    font-size: 25px;
+    color: #455A64;
+    margin: 20px 0px 0px 3px;
+}
+
+.card-shadow-animation {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.card-shadow-animation:hover {
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2);
+}
+
+.nav-font-animation {
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.nav-font-animation:hover {
+    color: gray;
+}
+
+.sidebar-line {
+    display: inline;
+    margin: auto 0px auto 20px;
+    vertical-align: middle;
+    color: #212121;
+    font-family: "Product Sans", "Noto-Sans-SC";
+}
+
+.sidebar-icons {
+    vertical-align: middle;
+}
+
+.card-image0.mdl-card {
+    width: 256px;
+    height: 256px;
+    background: url('https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/Tools/transform.webp') center / cover;
+}
+
+.card-image0>.mdl-card__actions {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.card-image1.mdl-card {
+    width: 256px;
+    height: 256px;
+    background: url('https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/Tools/sms.webp') center / cover;
+}
+
+.card-image1>.mdl-card__actions {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.card-image1__filename {
+    color: #fff;
+}
+
+.card-image2.mdl-card {
+    width: 256px;
+    height: 256px;
+    background: url('https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/Tools/typhoon.jpg') center / cover;
+}
+
+.card-image2>.mdl-card__actions {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.card-image2__filename {
+    color: #fff;
+}
+
+.card-image3.mdl-card {
+    width: 256px;
+    height: 256px;
+    background: url('https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/Tools/translate.jpg') center / cover;
+}
+
+.card-image3>.mdl-card__actions {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.card-image3__filename {
+    color: white;
+}
+
+.card-image4.mdl-card {
+    width: 256px;
+    height: 256px;
+    background: url('https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/Tools/BrowserShell.png') center / cover;
+}
+
+.card-image4>.mdl-card__actions {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.card-image4__filename {
+    color: #fff;
+}
+
+.card-image5.mdl-card {
+    width: 256px;
+    height: 256px;
+    background: url('https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/Tools/mailbox.webp') center / cover;
+}
+
+.card-image5>.mdl-card__actions {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.card-image5__filename {
+    color: #fff;
+}
+
+.card-image6.mdl-card {
+    width: 256px;
+    height: 256px;
+    background: url('https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/Tools/dimcookguide.jpg') center / cover;
+}
+
+.card-image6>.mdl-card__actions {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.card-image6__filename {
+    color: #fff;
+}
+
+.card-image7.mdl-card {
+    width: 256px;
+    height: 256px;
+    background: url('https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/Tools/windy.webp') center / cover;
+}
+
+.card-image7>.mdl-card__actions {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.card-image7__filename {
+    color: #fff;
+}
