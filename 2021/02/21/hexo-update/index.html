@@ -51,7 +51,7 @@
     
     <title>
         
-            正则表达式笔记 | 
+            Hexo升级记录 | 
         
         Hikaru&#39;s Blog
     </title>
@@ -62,7 +62,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="huuhghhgyg的个人主页">
-    <meta name="keywords" content="huu huuhghhgyg,编程,语法">
+    <meta name="keywords" content="huu huuhghhgyg,hexo">
     <meta name="theme-color" content="#1976D2">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -261,7 +261,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Hikaru&#39;s Blog">
-    <meta name="msapplication-starturl" content="https://huuhghhgyg.github.io/2020/12/31/RegularExpression/">
+    <meta name="msapplication-starturl" content="https://huuhghhgyg.github.io/2021/02/21/hexo-update/">
     <meta name="msapplication-navbutton-color" content="#1976D2">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Hikaru&#39;s Blog">
@@ -276,16 +276,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://huuhghhgyg.github.io/2020/12/31/RegularExpression/">
+    <meta property="og:url" content="https://huuhghhgyg.github.io/2021/02/21/hexo-update/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="正则表达式笔记 | Hikaru&#39;s Blog">
+    <meta property="og:title" content="Hexo升级记录 | Hikaru&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="huuhghhgyg的个人主页">
-    <meta property="og:article:tag" content="编程"> <meta property="og:article:tag" content="语法"> 
+    <meta property="og:article:tag" content="hexo"> 
 
     
-        <meta property="article:published_time" content="Thu Dec 31 2020 19:32:35 GMT+0800">
-        <meta property="article:modified_time" content="Sat Jan 23 2021 23:33:35 GMT+0800">
+        <meta property="article:published_time" content="Sun Feb 21 2021 23:25:49 GMT+0800">
+        <meta property="article:modified_time" content="Sun Feb 21 2021 23:54:03 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -293,7 +293,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://huuhghhgyg.github.io/2020/12/31/RegularExpression/index.html" />
+        <link rel="canonical" href="https://huuhghhgyg.github.io/2021/02/21/hexo-update/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -305,10 +305,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://huuhghhgyg.github.io/2020/12/31/RegularExpression/index.html",
-    "headline": "正则表达式笔记",
-    "datePublished": "Thu Dec 31 2020 19:32:35 GMT+0800",
-    "dateModified": "Sat Jan 23 2021 23:33:35 GMT+0800",
+    "mainEntityOfPage": "https://huuhghhgyg.github.io/2021/02/21/hexo-update/index.html",
+    "headline": "Hexo升级记录",
+    "datePublished": "Sun Feb 21 2021 23:25:49 GMT+0800",
+    "dateModified": "Sun Feb 21 2021 23:54:03 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "huuhghhgyg",
@@ -326,7 +326,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",编程,语法huu huuhghhgyg",
+    "keywords": ",hexohuu huuhghhgyg",
     "description": "huuhghhgyg的个人主页",
 }
 </script>
@@ -391,7 +391,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%A0%87%E8%AE%B0"><span class="post-toc-number">1.</span> <span class="post-toc-text">标记</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%99%AE%E9%80%9A%E5%AD%97%E7%AC%A6%EF%BC%88%E5%A4%A7%E5%B0%8F%E5%86%99%E6%95%8F%E6%84%9F%EF%BC%89"><span class="post-toc-number">2.</span> <span class="post-toc-text">普通字符（大小写敏感）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%9D%9E%E6%89%93%E5%8D%B0%E5%AD%97%E7%AC%A6"><span class="post-toc-number">3.</span> <span class="post-toc-text">非打印字符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6"><span class="post-toc-number">4.</span> <span class="post-toc-text">特殊字符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%99%90%E5%AE%9A%E7%AC%A6"><span class="post-toc-number">5.</span> <span class="post-toc-text">限定符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%AB%98%E7%BA%A7%E5%8C%B9%E9%85%8D"><span class="post-toc-number">6.</span> <span class="post-toc-text">高级匹配</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%8D%87%E7%BA%A7%E5%89%8D%E5%90%8E%E7%89%88%E6%9C%AC%E5%8F%98%E5%8C%96"><span class="post-toc-number">1.</span> <span class="post-toc-text">升级前后版本变化</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%8D%87%E7%BA%A7%E6%93%8D%E4%BD%9C"><span class="post-toc-number">2.</span> <span class="post-toc-text">升级操作</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3"><span class="post-toc-number">3.</span> <span class="post-toc-text">问题解决</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">遇到的问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="post-toc-number">3.0.2.</span> <span class="post-toc-text">解决方法</span></a></li></ol></li></ol></li></ol>
     </ul>
     
 
@@ -410,11 +410,21 @@
     
     <!-- Paradox Post Header -->
     
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/regex.png)">
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 32 + 1);
+
+    //$('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.webp');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
     
             <p class="article-headline-p">
-                正则表达式笔记
+                Hexo升级记录
             </p>
         </div>
 
@@ -433,7 +443,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>huuhghhgyg</strong>
-        <span>12月 31, 2020</span>
+        <span>2月 21, 2021</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -455,7 +465,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC1ElEQVR42u3aQU7EMBAEwP3/p+GKhALdngDBrpwQWRKXkRhm2q+3I68XNjY2NjY2NjY29iPZr/i6fNyHu1efv3rC559t35KvGRsbG3tv9jd/+uMF5aTkmVeMtTVjY2Njn8BOXnN1t13WWtFaWzM2NjY2drsFSRFqi9ZkzdjY2NjYydgoGfe0rcuj6zY2Njb2I9lro/nJCKmNH/5sloaNjY39eHYemj7n61/Nt7GxsbEfzG6v5FDO1d1J3Ps2vrCxsbF3ZeeFof7Xf9BmzEdX2NjY2Oew8/FNfndS5EZjo683CxsbG3trdhujrjUS8+0YvQUbGxt7U3Yewc4LTN5s5FHBzfk2NjY29r9lf11a2mP0yfcnccLaIAwbGxt7V/ZapJo3J+1BzHwj2gAYGxsbe1d28qC1pmICbgvhaKiEjY2N/c/ZSQvxc6OitbC5bZ+wsbGx92a3xWBUQpYK1dpqsbGxsc9ht8VsPuKfFLYk+q3PnGJjY2NvwW6j3JY3L1Ftq3PbmVNsbGzsx7Pzh64Vs0l8m7cZ0XAKGxsbe1P22svyItc+Idn6tgnBxsbGPpM9KTZtkLA2VKoPHmFjY2Mfw26P8kzGQG0YPAqJsbGxsQ9jr5WK+hhNOSRqDwZhY2Njn8lOwt12LFUM8cvjlaPDl9jY2NhbsPMSkrQoa1u5djCo/sVgY2Njb82ejHUmkcBdI6roM9jY2NgHsCdNSDuWWosQ8hViY2Njn8wuSkLcHuRPy2OGUdCLjY2NvRG7vdZe2UbI+diriIqxsbGxN2XPj07md9fA7dd10IuNjY29Bbs9jtMOg/I3tlHuDR0YNjY29kbsJJptQ995oLs2TsLGxsbGbv/1b8vbWin68XwbGxsb+xh2UkjujYQn24eNjY19DruNZqOyEYyQ2nH/zQUMGxsbewt2O7hpC1Vb5O4aVGFjY2OfwD7nwsbGxsbGxsbGxn7M9Q5RGklL3dl2OwAAAABJRU5ErkJggg==">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZ0lEQVR42u3aSW4jMRAEQP3/0/YDBmplchPHiD4JRi8MHshysl4/f/p64eHh4eHh4eHhXcZ7xde/T0UfC+58d8/g2PDw8PCO8PLPz9yf/J6fGjw8PLyTvHcL7vM9z9vG8xDb9zyPDQ8PD+9mXr4NvHtbOzV4eHh4/y/v+amkvM7BeHh4ePfzin/4H4e4O97dmLXg4eHhxbz8kOn876Pne3h4eHgBr71mDrFWtSN8GCEeHh7eZt5YK0BeZOdBcH609iH+wMPDw9vMS0KHtU0GydS0TQZ4eHh43+KNbQP5Qp+8IS/N8fDw8L7Fmz/KSpbyse2k3WDw8PDwvsubuScvjqdK5/Z8Dw8PD28DLz+Uatuw2kbVPBzBw8PDO89rPzMTK4zFHHVsgYeHh7eZN7Yo56HtTGNWfhSHh4eHd5LXLsozm0f73cGyGw8PD28zb6wgXtVY0G5F0UTj4eHhHeTlJexY9DDYChA8i4eHh3eelx/b50NZ2xZQTCseHh7eZt5MCZtEtGNRRV6IR+d7eHh4eEt5+bAWLNllPJFPEB4eHt4NvOfj/Pb3h6U8HkNU1uPh4eEd5OWkPLpth54HE4NZCx4eHt4iXlIo521Y84V1fjwWbQx4eHh4S3nttarxtD0YKxpY8fDw8Dbz2kU/+VjbHNBuMHWMi4eHh7eB124GY0/lDQrJdNRZCx4eHt4GXtsEsDbwXRVJ4OHh4d3Jy4OJdolPIow6jMDDw8O7gNfGE8lA24IbDw8P7wbefKyw9j3tRoWHh4d3ktc2VCVNAMnf83cWk4KHh4e3mff3Ljw8PDw8PDw8vAuuXw2glro9FXvVAAAAAElFTkSuQmCC">
     
 </ul>
 
@@ -469,7 +479,7 @@
     </button>
                     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
                         <li class="mdl-menu__item">
-                            <a class="post_tag-none-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/%E8%AF%AD%E6%B3%95/" rel="tag">语法</a>
+                            <a class="post_tag-none-link" href="/tags/hexo/" rel="tag">hexo</a>
                     </ul>
                     
 
@@ -486,7 +496,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=正则表达式笔记&url=https://huuhghhgyg.github.io/2020/12/31/RegularExpression/index.html&pic=https://huuhghhgyg.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Hexo升级记录&url=https://huuhghhgyg.github.io/2021/02/21/hexo-update/index.html&pic=https://huuhghhgyg.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -495,7 +505,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=正则表达式笔记&url=https://huuhghhgyg.github.io/2020/12/31/RegularExpression/index.html&via=huuhghhgyg" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Hexo升级记录&url=https://huuhghhgyg.github.io/2021/02/21/hexo-update/index.html&via=huuhghhgyg" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -504,7 +514,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://huuhghhgyg.github.io/2020/12/31/RegularExpression/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://huuhghhgyg.github.io/2021/02/21/hexo-update/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -513,7 +523,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://huuhghhgyg.github.io/2020/12/31/RegularExpression/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://huuhghhgyg.github.io/2021/02/21/hexo-update/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -525,7 +535,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hikaru&#39;s Blog&title=正则表达式笔记&summary=huuhghhgyg的个人主页&pics=https://huuhghhgyg.github.io/img/favicon.png&url=https://huuhghhgyg.github.io/2020/12/31/RegularExpression/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hikaru&#39;s Blog&title=Hexo升级记录&summary=huuhghhgyg的个人主页&pics=https://huuhghhgyg.github.io/img/favicon.png&url=https://huuhghhgyg.github.io/2021/02/21/hexo-update/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -534,7 +544,7 @@
 
     <!-- Share Telegram -->
     
-        <a class="post_share-link" href="https://telegram.me/share/url?url=https://huuhghhgyg.github.io/2020/12/31/RegularExpression/index.html&text=正则表达式笔记" target="_blank">
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://huuhghhgyg.github.io/2021/02/21/hexo-update/index.html&text=Hexo升级记录" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Telegram
             </li>
@@ -589,7 +599,7 @@
     
         <button type="button" class="mdl-chip">
             <span class="mdl-chip__text">
-                <a class="post_tag_chip-none-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a></span></button><button type="button" class="mdl-chip"><span class="mdl-chip__text"><a class="post_tag_chip-none-link" href="/tags/%E8%AF%AD%E6%B3%95/" rel="tag">语法</a>
+                <a class="post_tag_chip-none-link" href="/tags/hexo/" rel="tag">hexo</a>
             </span>
         </button>
         
@@ -599,280 +609,43 @@
 <!-- Post Content -->
 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <link rel="stylesheet" href="/Tools/addition.css">
-
-<!-- 有图标的链接card -->
-<div class="link-card">
-    <a target="_blank" rel="noopener" href="http://c.runoob.com/front-end/854">
-        <div class="img-card-span">
-            <image class="link-card-img" src="https://static.runoob.com/images/favicon.ico">
-            </image>
-            <span class="img-h2">正则表达式在线匹配</span>
-            <span class="img-description">正则表达式在线测试 | 菜鸟工具</span>
-        </div>
-        <span class="link-navigation">
-            Visit
-            <span class="material-icons">arrow_forward</span>
-        </span>
-    </a>
-</div>
-
-<h2 id="标记"><a href="#标记" class="headerlink" title="标记"></a>标记</h2><table>
-<thead>
-<tr>
-<th>表达式</th>
-<th>作用</th>
-<th>示例</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>^</td>
-<td>匹配行首</td>
-<td>^a</td>
-<td>匹配a在行首的情况</td>
-</tr>
-<tr>
-<td>$</td>
-<td>结匹配行尾</td>
-<td>a$</td>
-<td>匹配a在行尾的情况</td>
-</tr>
-</tbody></table>
-<h2 id="普通字符（大小写敏感）"><a href="#普通字符（大小写敏感）" class="headerlink" title="普通字符（大小写敏感）"></a>普通字符（大小写敏感）</h2><table>
-<thead>
-<tr>
-<th>表达式</th>
-<th>作用</th>
-<th>示例</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>[]</td>
-<td>只能匹配中括号中的字符</td>
-<td>[ABC]</td>
-<td>匹配字符串中的所有ABC</td>
-</tr>
-<tr>
-<td>[^A]</td>
-<td>除去</td>
-<td>[^ABC]</td>
-<td>得到除了ABC以外的所有字符</td>
-</tr>
-<tr>
-<td>[A-Z]</td>
-<td>某一个区间(可以是大写区间、小写区间、数字区间)</td>
-<td>[A-C]</td>
-<td>匹配A-C的区间</td>
-</tr>
-<tr>
-<td>.</td>
-<td>匹配 除换行符的所有单个字符,相当于[^\n\r]</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>[\s]</td>
-<td>匹配 空白字符（空格、换行）</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>[\s]</td>
-<td>匹配 非空白字符（包括换行）</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>[\w]</td>
-<td>匹配 字母、数字、下划线,相当于[A-Za-z0-9]</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="非打印字符"><a href="#非打印字符" class="headerlink" title="非打印字符"></a>非打印字符</h2><table>
-<thead>
-<tr>
-<th>符号</th>
-<th>作用</th>
-<th>示例</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>\ca</td>
-<td>匹配control+a的快捷键（\c是表示c，\为转义）(\cx的x必须是A-Z或者a-z)</td>
-<td>\cv</td>
-<td>匹配control+v的快捷键</td>
-</tr>
-<tr>
-<td>\f</td>
-<td>换页符</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>\n</td>
-<td>换行符</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>\r</td>
-<td>回车</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>\s</td>
-<td>空白字符，包括空格、制表符、换页符等等</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>\S</td>
-<td>非空白字符，包括回车</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>\t</td>
-<td>制表符（Tab）</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>\v</td>
-<td>垂直制表符(Vertical Tab)</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>\d</td>
-<td>数字字符，等价于[0-9]</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>\D</td>
-<td>非数字字符，等价于[^0-9]</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>\w</td>
-<td>单词(word)</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>\W</td>
-<td>非单词</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h2><table>
-<thead>
-<tr>
-<th>符号</th>
-<th>作用</th>
-<th>示例</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>$</td>
-<td>匹配字符串的结尾位置</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>()</td>
-<td>标记一个子表达式开始和结束的位置</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>*</td>
-<td>匹配前面的子表达式0次或多次</td>
-<td>go*gle</td>
-<td>可以匹配ggle,google,gooooogle等</td>
-</tr>
-<tr>
-<td>+</td>
-<td>匹配前面的子表达式1次或多次(1+)</td>
-<td>go+gle</td>
-<td>可以匹配gogle,goooogle等</td>
-</tr>
-<tr>
-<td>.</td>
-<td>匹配除换行符之外的任何单字符</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>[</td>
-<td>标记一个中括号表达式的开始</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>?</td>
-<td>匹配前面的字符可有可无,或指明一个非贪婪限定符</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>\</td>
-<td>转义符</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>^</td>
-<td>匹配输入字符串的开始位置</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>{</td>
-<td>标记限定符表达式的开始</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>|</td>
-<td>或（两项之间的选择）</td>
-<td>a|b</td>
-<td>匹配a或b</td>
-</tr>
-</tbody></table>
-<h2 id="限定符"><a href="#限定符" class="headerlink" title="限定符"></a>限定符</h2><table>
-<thead>
-<tr>
-<th>符号</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>{n}</td>
-<td>匹配n次</td>
-</tr>
-<tr>
-<td>{n,}</td>
-<td>匹配n次及以上</td>
-</tr>
-<tr>
-<td>{n,m}</td>
-<td>至少匹配n次，至多匹配m次</td>
-</tr>
-</tbody></table>
-<h2 id="高级匹配"><a href="#高级匹配" class="headerlink" title="高级匹配"></a>高级匹配</h2><ul>
-<li><strong>贪婪匹配：</strong>匹配到最后<br>&lt;.+&gt;默认贪婪匹配任意字符</li>
-<li><strong>懒惰匹配：</strong>匹配到就停止<br>&lt;.+?&gt;懒惰匹配任意字符</li>
-</ul>
+        <p>hexo版本太旧，将hexo从3.9.0升级到5.4.0</p>
+<h1 id="升级前后版本变化"><a href="#升级前后版本变化" class="headerlink" title="升级前后版本变化"></a>升级前后版本变化</h1><p>升级前</p>
+<pre><code>hexo: 3.9.0
+hexo-cli: 4.2.0
+</code></pre>
+<p>升级后</p>
+<pre><code>hexo: 5.4.0
+hexo-cli: 4.2.0
+uv: 1.33.1
+</code></pre>
+<h1 id="升级操作"><a href="#升级操作" class="headerlink" title="升级操作"></a>升级操作</h1><p>先运行了<code>npm update</code>查看了一下有没有需要升级的软件，我这边提示有需要升级的软件，所以手动升级了一下</p>
+<p>然后是正经的检查更新</p>
+<pre><code>npm install -g npm-check
+npm install -g npm-upgrade
+</code></pre>
+<p>后面看来好像还是npm-check更有用一点🤣<br>分别执行</p>
+<pre><code>npm-check
+npm-upgrade
+</code></pre>
+<p>其中npm-check占用资源比较多，耗时比较久。最后是通过提示的<br><code>npm-check -u</code><br>完成升级</p>
+<h1 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h1><p>由于主题比较老旧，多年没有更新，但是又很喜欢，所以我一直都在魔改并解决问题。</p>
+<h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><ol>
+<li><p>在执行hexo操作的时候总会弹出错误</p>
+<pre><code>WARN  Deprecated config detected: &quot;external_link&quot; with a Boolean value is deprecated. See https://hexo.io/docs/configuration for more details.
+</code></pre>
+</li>
+<li><p>主题底部的换页按钮样式失效，直接显示html源码</p>
+</li>
+</ol>
+<p>本来升级hexo的目的是想尝试修复页面中h3存在时，目录错位显示错误的问题，但是升级后也还是没有解决…</p>
+<p>[+]那个好像就是一个奇怪的bug也不知道怎么修复，下次注意标题层次好像就没什么大问题了😂</p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><ol>
+<li><p><code>_config.yml</code>文件中的<code>external_link</code>改为<code>external_link.enable</code>，详见 <a target="_blank" rel="noopener" href="https://hexo.io/docs/configuration#Writing">https://hexo.io/docs/configuration#Writing</a></p>
+</li>
+<li><p>主题底部换页显示错误，找到主题文件中的<code>index.ejs</code>中的<code>paginator</code>部分，添加<code>escape:false</code>（记得在上一行最末尾加逗号）。再<code>hexo clean</code>并<code>hexo g</code>应该就能解决</p>
+</li>
+</ol>
 
             
                 <!-- <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;border-radius: 2px;">
@@ -882,8 +655,8 @@
                     </strong>
                         <br>
                         <strong>本文链接：</strong>
-                        <a href="https://huuhghhgyg.github.io/2020/12/31/RegularExpression/">
-                            https://huuhghhgyg.github.io/2020/12/31/RegularExpression/
+                        <a href="https://huuhghhgyg.github.io/2021/02/21/hexo-update/">
+                            https://huuhghhgyg.github.io/2021/02/21/hexo-update/
                         </a>
                     </p>
                 </blockquote> -->
@@ -951,15 +724,15 @@
                         </div>
                     </div>
                     <div class="title-link">
-                        <a href="https://huuhghhgyg.github.io/2020/12/31/RegularExpression/">
-                            https://huuhghhgyg.github.io/2020/12/31/RegularExpression/
+                        <a href="https://huuhghhgyg.github.io/2021/02/21/hexo-update/">
+                            https://huuhghhgyg.github.io/2021/02/21/hexo-update/
                         </a>
                     </div>
                     <div class="info">
                         <div class="time license-block">
                             <div class="license-subtitle">发文时间</div>
                             <div class="license-content">
-                                12月 31, 2020
+                                2月 21, 2021
                             </div>
                         </div>
                         <div class="license license-block">
@@ -1015,21 +788,13 @@
 <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2021/01/20/raspi-setup/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2020/10/08/PythonNote1/" id="post_nav-older" class="next-content">
+        <a href="/2021/01/23/docker-startup/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

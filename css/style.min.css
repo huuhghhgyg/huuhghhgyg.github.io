@@ -95,7 +95,7 @@ a {
 #post-content,
 #post-content p {
     /* font-size: 15px; */
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     line-height: 1.7;
     overflow: hidden;
 }
@@ -197,17 +197,21 @@ a {
     /* font-size: 2.5em; */
     font-size: 2em;
     border-bottom: 1px solid #ddd;
+    font-weight: 300;
 }
 
 #post-content h2 {
     /* font-size: 2em; */
     font-size: 1.8em;
     border-bottom: 1px solid #eee;
+    font-weight: 300;
 }
 
 #post-content h3 {
     /* font-size: 1.5em; */
     font-size: 1.4em;
+    color: #1a1a1a;
+    font-weight: 400;
 }
 
 #post-content h4 {
@@ -797,7 +801,8 @@ a {
 }
 
 #scheme-Paradox .material-layout .mdl-card h3 {
-    margin: 0
+    margin: 0;
+    margin: 1.8rem 0 -.4rem 0;
 }
 
 #scheme-Paradox .material-layout .mdl-card h1 a,
