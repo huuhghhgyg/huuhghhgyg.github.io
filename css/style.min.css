@@ -252,7 +252,8 @@ a {
 #post-content ul,
 #post-content ol {
     padding-left: 30px;
-    font-size: 15px;
+    /* font-size: 15px; */
+    font-size: 1.18rem;
     line-height: 1.7;
     overflow: hidden;
 }

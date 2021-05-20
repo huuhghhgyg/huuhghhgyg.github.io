@@ -15,13 +15,15 @@ pre {
 
 #post-content ul {
     padding-left: 51px;
-    font-size: 1rem;
+    /* font-size: 1rem; */
+    font-size: 1.18rem;
     margin: 0
 }
 
 #post-content ol {
     padding: 5px 10px 5px 51px;
-    font-size: 1rem;
+    /* font-size: 1rem; */
+    font-size: 1.18rem;
     margin: 0;
 }
 
