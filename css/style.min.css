@@ -312,7 +312,9 @@ a {
 }
 
 #post-content table th {
-    font-weight: bold;
+    /* font-weight: bold; */
+    font-weight: 500;
+    background: #fafafa;
 }
 
 #post-content table th,
