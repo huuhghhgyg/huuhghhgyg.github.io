@@ -1005,6 +1005,8 @@ a {
     max-width: 90%;
     margin: 1pc auto;
     padding-top: 0;
+    /* 为了使material卡片小组件能够对齐边界显示 */
+    overflow: visible;
 }
 
 #scheme-Paradox #post-content img {

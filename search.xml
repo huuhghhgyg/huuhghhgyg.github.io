@@ -170,7 +170,7 @@
       <link href="2020/07/16/word-typesetting/"/>
       <url>2020/07/16/word-typesetting/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" href="/Tools/addition.css"><p>Word的一点小技巧</p><h2 id="快捷键-按键"><a href="#快捷键-按键" class="headerlink" title="快捷键/按键"></a>快捷键/按键</h2><table><thead><tr><th align="left">快捷键</th><th align="left">功能</th></tr></thead><tbody><tr><td align="left"><code>Del</code></td><td align="left">向后删除</td></tr><tr><td align="left"><code>Backspace</code></td><td align="left">向前删除</td></tr><tr><td align="left"><code>Ctrl</code> + <code>Enter</code></td><td align="left">插入分页符</td></tr></tbody></table><h2 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h2><ul><li>单位可以直接输入，例如“50磅”</li><li>修改默认单位可以在“文件-选项-高级-显示-度量单位”修改</li></ul><h2 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h2><ul><li>粘贴时可以只粘贴文本而不粘贴格式：<strong>“右键-只保留文本”</strong>，修改默认粘贴方式可以在 <strong>“文件-选项-高级-剪切、复制和粘贴”</strong> 处修改默认值（从其他程序粘贴-&gt;“仅保留文本”）</li><li>定制功能区提高效率（高级选手）【Word选项-自定义功能区】</li></ul><!-- card容器(card少可不用，多了用美观) --><div class="card-span"><!-- 链接card --><div class="link-card">    <a href="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/src/%E8%AE%BA%E6%96%87%E5%8A%9F%E8%83%BD%E5%8C%BA.exportedUI">        <span class="link-card-title">论文工作区配置文件</span>        <span class="link-description">来自：元卅 论文功能区.exportedUI</span>        <span class="link-navigation">            Download            <span class="material-icons">cloud_download</span>        </span>    </a></div><div class="link-card">    <a href="https://space.bilibili.com/2878969">        <span class="link-card-title">元卅的B站主页</span>        <span class="link-description">跳转到个人主页</span>        <span class="link-navigation">            Visit            <span class="material-icons">arrow_forward</span>        </span>    </a></div></div><h2 id="个人信息排版"><a href="#个人信息排版" class="headerlink" title="个人信息排版"></a>个人信息排版</h2><ul><li>用表格排版，防止改字体改信息以后引起排版问题</li><li>表头可以使用分散对齐，点击表格左上角的控制柄后设置居中可以使表格内容竖直和水平居中</li><li>最后去掉表格框线，再加下框线达到下划线的效果</li></ul><h2 id="设置目录"><a href="#设置目录" class="headerlink" title="设置目录"></a>设置目录</h2><ul><li><strong>引用选项卡-插入</strong>（插入目录）</li><li>使用 <strong>“样式”</strong> 让Word软件知道你的文章结构（标题等），软件可以以此自动生成目录</li><li>右键 <strong>“样式”</strong> 中的样式可以修改样式</li><li>更改 <strong>“正文”</strong> 的样式会改变后面所有自带样式</li></ul><h2 id="分隔符"><a href="#分隔符" class="headerlink" title="分隔符"></a>分隔符</h2><ul><li><p><strong>文件-选项-显示-显示所有格式标记</strong> 显示特殊排版符号</p><table><thead><tr><th align="left">符号</th><th align="left">使用方法</th></tr></thead><tbody><tr><td align="left">分页符</td><td align="left"><code>Ctrl+Enter</code> 插入分页符</td></tr><tr><td align="left">分节符</td><td align="left"><strong>“布局-分隔符-分节符”</strong></td></tr></tbody></table></li><li><p>再页眉页脚插入分节符可以达到每一页页眉页脚不同/数字不同的效果，点击<code>与上一页相同</code>取消内容与上一页相同</p></li><li><p>有<code>奇偶页不同</code>的选项</p></li></ul><h2 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h2><ul><li><p>插入公式：<strong>“插入-公式”</strong> 或者 <code>Alt</code> + <code>=</code></p></li><li><p>公式分为 <strong>行内公式（嵌入）</strong> 和 <strong>单行公式（显示）</strong></p></li><li><p>鼠标悬停在公式的符号上就可以看到字符的转义代码</p><table><thead><tr><th align="left">符号</th><th align="left">特殊字符/用法</th></tr></thead><tbody><tr><td align="left">上标</td><td align="left">^</td></tr><tr><td align="left">下标</td><td align="left">_</td></tr><tr><td align="left">×（叉乘号）</td><td align="left">\times</td></tr><tr><td align="left">·（点乘号）</td><td align="left">\cdot</td></tr><tr><td align="left">矢量</td><td align="left">\vec</td></tr></tbody></table></li><li><p>写方程组时加&amp;可以上下对齐</p></li><li><p>插入域：Seq</p></li><li><p><code>Alt</code> + <code>F9</code> , SEQ后面加序列名字，再按<code>Alt</code> + <code>F9</code>退出，光标点到标号按<code>F9</code>更新序号，自动标号</p></li><li><p><code>F9</code>自动更新文档内数据内容</p></li><li><p>图片显示不全时，改行距（单倍/多倍行距）</p></li></ul>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" href="/Tools/addition.css"><p>Word的一点小技巧</p><h2 id="快捷键-按键"><a href="#快捷键-按键" class="headerlink" title="快捷键/按键"></a>快捷键/按键</h2><table><thead><tr><th align="left">快捷键</th><th align="left">功能</th></tr></thead><tbody><tr><td align="left"><code>Del</code></td><td align="left">向后删除</td></tr><tr><td align="left"><code>Backspace</code></td><td align="left">向前删除</td></tr><tr><td align="left"><code>Ctrl</code> + <code>Enter</code></td><td align="left">插入分页符</td></tr></tbody></table><h2 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h2><ul><li>单位可以直接输入，例如“50磅”</li><li>修改默认单位可以在“文件-选项-高级-显示-度量单位”修改</li></ul><h2 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h2><ul><li>粘贴时可以只粘贴文本而不粘贴格式：<strong>“右键-只保留文本”</strong>，修改默认粘贴方式可以在 <strong>“文件-选项-高级-剪切、复制和粘贴”</strong> 处修改默认值（从其他程序粘贴-&gt;“仅保留文本”）</li><li>定制功能区提高效率（高级选手）【Word选项-自定义功能区】</li></ul><!-- card容器(card少可不用，多了用美观) --><div class="card-span"><!-- 链接card --><div class="link-card">    <a href="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/src/%E8%AE%BA%E6%96%87%E5%8A%9F%E8%83%BD%E5%8C%BA.exportedUI">        <span class="link-card-title">论文工作区配置文件</span>        <span class="link-description">来自：元卅 论文功能区.exportedUI</span>        <span class="link-navigation">            Download            <span class="material-icons" style="transform:rotate(0)">cloud_download</span>        </span>    </a></div><div class="link-card">    <a href="https://space.bilibili.com/2878969">        <span class="link-card-title">元卅的B站主页</span>        <span class="link-description">跳转到个人主页</span>        <span class="link-navigation">            Visit            <span class="material-icons">arrow_forward</span>        </span>    </a></div></div><h2 id="个人信息排版"><a href="#个人信息排版" class="headerlink" title="个人信息排版"></a>个人信息排版</h2><ul><li>用表格排版，防止改字体改信息以后引起排版问题</li><li>表头可以使用分散对齐，点击表格左上角的控制柄后设置居中可以使表格内容竖直和水平居中</li><li>最后去掉表格框线，再加下框线达到下划线的效果</li></ul><h2 id="设置目录"><a href="#设置目录" class="headerlink" title="设置目录"></a>设置目录</h2><ul><li><strong>引用选项卡-插入</strong>（插入目录）</li><li>使用 <strong>“样式”</strong> 让Word软件知道你的文章结构（标题等），软件可以以此自动生成目录</li><li>右键 <strong>“样式”</strong> 中的样式可以修改样式</li><li>更改 <strong>“正文”</strong> 的样式会改变后面所有自带样式</li></ul><h2 id="分隔符"><a href="#分隔符" class="headerlink" title="分隔符"></a>分隔符</h2><ul><li><p><strong>文件-选项-显示-显示所有格式标记</strong> 显示特殊排版符号</p><table><thead><tr><th align="left">符号</th><th align="left">使用方法</th></tr></thead><tbody><tr><td align="left">分页符</td><td align="left"><code>Ctrl+Enter</code> 插入分页符</td></tr><tr><td align="left">分节符</td><td align="left"><strong>“布局-分隔符-分节符”</strong></td></tr></tbody></table></li><li><p>再页眉页脚插入分节符可以达到每一页页眉页脚不同/数字不同的效果，点击<code>与上一页相同</code>取消内容与上一页相同</p></li><li><p>有<code>奇偶页不同</code>的选项</p></li></ul><h2 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h2><ul><li><p>插入公式：<strong>“插入-公式”</strong> 或者 <code>Alt</code> + <code>=</code></p></li><li><p>公式分为 <strong>行内公式（嵌入）</strong> 和 <strong>单行公式（显示）</strong></p></li><li><p>鼠标悬停在公式的符号上就可以看到字符的转义代码</p><table><thead><tr><th align="left">符号</th><th align="left">特殊字符/用法</th></tr></thead><tbody><tr><td align="left">上标</td><td align="left">^</td></tr><tr><td align="left">下标</td><td align="left">_</td></tr><tr><td align="left">×（叉乘号）</td><td align="left">\times</td></tr><tr><td align="left">·（点乘号）</td><td align="left">\cdot</td></tr><tr><td align="left">矢量</td><td align="left">\vec</td></tr></tbody></table></li><li><p>写方程组时加&amp;可以上下对齐</p></li><li><p>插入域：Seq</p></li><li><p><code>Alt</code> + <code>F9</code> , SEQ后面加序列名字，再按<code>Alt</code> + <code>F9</code>退出，光标点到标号按<code>F9</code>更新序号，自动标号</p></li><li><p><code>F9</code>自动更新文档内数据内容</p></li><li><p>图片显示不全时，改行距（单倍/多倍行距）</p></li></ul>]]></content>
       
       
       
@@ -818,9 +818,9 @@
       
         <tags>
             
-            <tag> Calscore </tag>
-            
             <tag> calculator </tag>
+            
+            <tag> Calscore </tag>
             
             <tag> cal </tag>
             
@@ -870,11 +870,11 @@
     
     
     <entry>
-      <title>links</title>
-      <link href="links/index.html"/>
-      <url>links/index.html</url>
+      <title></title>
+      <link href="serviceworker.js"/>
+      <url>serviceworker.js</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[self.addEventListener('fetch', function(e) {    console.log(e.request.url);    e.respondWith(        caches.match(e.request).then(function(response) {            return response || fetch(e.request);        })    );});self.addEventListener('install', function(e) {    e.waitUntil(        caches.open('video-store').then(function(cache) {            return cache.addAll([            ]);        })    );});]]></content>
       
     </entry>
     
@@ -892,28 +892,6 @@
     
     
     <entry>
-      <title></title>
-      <link href="serviceworker.js"/>
-      <url>serviceworker.js</url>
-      
-        <content type="html"><![CDATA[self.addEventListener('fetch', function(e) {    console.log(e.request.url);    e.respondWith(        caches.match(e.request).then(function(response) {            return response || fetch(e.request);        })    );});self.addEventListener('install', function(e) {    e.waitUntil(        caches.open('video-store').then(function(cache) {            return cache.addAll([            ]);        })    );});]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="links/footerstyle.css"/>
-      <url>links/footerstyle.css</url>
-      
-        <content type="html"><![CDATA[.website-data {    display: flex;    font-size: 14px;    color: #9e9e9e;    margin: 0px 15px;}.inner-width {    margin: 0px;    display: inline-flex;}.website-data i {    font-size: 16px;    padding: 2px 5px 0px 0px;}.data-divider {    margin: -1px 0px;    max-width: 5px;    font-size: 16px;    text-align: center;}]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>About Me</title>
       <link href="about/index.html"/>
       <url>about/index.html</url>
@@ -925,11 +903,33 @@
     
     
     <entry>
+      <title>links</title>
+      <link href="links/index.html"/>
+      <url>links/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>timeline</title>
       <link href="timeline/index.html"/>
       <url>timeline/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="links/footerstyle.css"/>
+      <url>links/footerstyle.css</url>
+      
+        <content type="html"><![CDATA[.website-data {    display: flex;    font-size: 14px;    color: #9e9e9e;    margin: 0px 15px;}.inner-width {    margin: 0px;    display: inline-flex;}.website-data i {    font-size: 16px;    padding: 2px 5px 0px 0px;}.data-divider {    margin: -1px 0px;    max-width: 5px;    font-size: 16px;    text-align: center;}]]></content>
       
     </entry>
     
