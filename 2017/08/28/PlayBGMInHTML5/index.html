@@ -24,8 +24,13 @@
     <meta http-equiv="x-dns-prefetch-control" content="on">
 
 
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
 
 
+
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net"/>
 
 
 
@@ -57,7 +62,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="huuhghhgyg的个人主页">
-    <meta name="keywords" content="huu huuhghhgyg,技术,干货,HTML5,BGM">
+    <meta name="keywords" content="huu huuhghhgyg,干货,技术,HTML5,BGM">
     <meta name="theme-color" content="#1976D2">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -276,7 +281,7 @@
     <meta property="og:title" content="如何在HTML5里播放BGM | Hikaru&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="huuhghhgyg的个人主页">
-    <meta property="og:article:tag" content="技术"> <meta property="og:article:tag" content="干货"> <meta property="og:article:tag" content="HTML5"> <meta property="og:article:tag" content="BGM"> 
+    <meta property="og:article:tag" content="干货"> <meta property="og:article:tag" content="技术"> <meta property="og:article:tag" content="HTML5"> <meta property="og:article:tag" content="BGM"> 
 
     
         <meta property="article:published_time" content="Mon Aug 28 2017 23:05:11 GMT+0800">
@@ -321,7 +326,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",技术,干货,HTML5,BGMhuu huuhghhgyg",
+    "keywords": ",干货,技术,HTML5,BGMhuu huuhghhgyg",
     "description": "huuhghhgyg的个人主页",
 }
 </script>
@@ -830,34 +835,32 @@
 <!-- Post Comments -->
 
     
-    <!-- 使用 Gitalk -->
-<div id="gitalk-comment">
-    <!-- Gitalk 评论框 -->
-<div id="gitalk-container"></div>
-
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <!-- <div id="comment" style='padding:10px;' class="vcomment"></div> -->
+<div id="comment" style='width: 90%;margin: 1pc auto;' class="vcomment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!-- <script src="//unpkg.com/valine/dist/Valine.min.js"></script> -->
+<script src="//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
 
 <script>
-    var gitalk = new Gitalk({
-            clientID: '37485e1d76ada102806b',
-            clientSecret: '140fffeeba3fab7708650383fd7b9b3254ad37cd',
-            repo: 'https://github.com/huuhghhgyg/gitpage_comments.git',
-            owner: 'huuhghhgyg',
-            admin: ['huuhghhgyg'],
-            // facebook-like distraction free mode
-            distractionFreeMode: false
-        })
-   gitalk.render('gitalk-container')
+    var GUEST_INFO = ['nick', 'mail', 'link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item) {
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    var notify = 'false' === 'true';
+    var verify = 'false' === 'true';
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "zQXuDM0BRWNAQq6FkTiK9teB-gzGzoHsz",
+        appKey: "0xSeR8Ba3Mc5VUIahEs3xPb0",
+        placeholder: "点击键入评论",
+        pageSize: '10',
+        avatar: 'mp',
+        lang: 'zh-cn',
+        guest_info: guest_info
+    });
 </script>
-</div>
-<style>
-    #gitalk-comment {
-        background-color: #eee;
-        padding: 2pc;
-    }
-</style>
 
 
 </div>
@@ -1247,7 +1250,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-   <!-- GitTalk -->
+   
 
 
 
