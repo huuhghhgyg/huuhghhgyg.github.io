@@ -932,17 +932,6 @@
     
     
     <entry>
-      <title></title>
-      <link href="links/footerstyle.css"/>
-      <url>links/footerstyle.css</url>
-      
-        <content type="html"><![CDATA[.website-data {    display: flex;    font-size: 14px;    color: #9e9e9e;    margin: 0px 15px;}.inner-width {    margin: 0px;    display: inline-flex;}.website-data i {    font-size: 16px;    padding: 2px 5px 0px 0px;}.data-divider {    margin: -1px 0px;    max-width: 5px;    font-size: 16px;    text-align: center;}]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>About Me</title>
       <link href="about/index.html"/>
       <url>about/index.html</url>
@@ -970,6 +959,17 @@
       <url>timeline/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="links/footerstyle.css"/>
+      <url>links/footerstyle.css</url>
+      
+        <content type="html"><![CDATA[.website-data {    display: flex;    font-size: 14px;    color: #9e9e9e;    margin: 0px 15px;}.inner-width {    margin: 0px;    display: inline-flex;}.website-data i {    font-size: 16px;    padding: 2px 5px 0px 0px;}.data-divider {    margin: -1px 0px;    max-width: 5px;    font-size: 16px;    text-align: center;}]]></content>
       
     </entry>
     
