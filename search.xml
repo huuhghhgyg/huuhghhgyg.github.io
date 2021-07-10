@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>npm快速上手</title>
+      <link href="2021/07/10/npm-overview/"/>
+      <url>2021/07/10/npm-overview/</url>
+      
+        <content type="html"><![CDATA[<p>在npm中，包（package）、模块（module）、依赖（dependency）都是一个东西。</p><h2 id="npm常用操作"><a href="#npm常用操作" class="headerlink" title="npm常用操作"></a>npm常用操作</h2><h3 id="npm配置项"><a href="#npm配置项" class="headerlink" title="npm配置项"></a>npm配置项</h3><p>初始化 <code>npm init</code>（其实就是创建一个<code>package.json</code>文件），之后让你填入许多信息（package name,version,description,entry point,test command,git repository,key words,author)<br><code>npm init -y</code>相当于<code>npm init</code>但信息都为空，初始化后npm会认为你的项目是一个包</p><h3 id="npm搜索"><a href="#npm搜索" class="headerlink" title="npm搜索"></a>npm搜索</h3><p><code>npm search &lt;包名&gt;</code> 如：<code>npm search jquery</code></p><h3 id="包安装"><a href="#包安装" class="headerlink" title="包安装"></a>包安装</h3><table><thead><tr><th align="left">操作</th><th align="left">命令</th></tr></thead><tbody><tr><td align="left">直接安装</td><td align="left"><code>npm install &lt;包名&gt;</code>，简写为<code>npm i &lt;包名&gt;</code></td></tr><tr><td align="left">安装指定版本/旧版本</td><td align="left"><code>npm install &lt;包名&gt;@&lt;版本号&gt;</code></td></tr><tr><td align="left">安装指定tag的包</td><td align="left"><code>npm install &lt;包名&gt;@&lt;tag&gt;</code></td></tr><tr><td align="left">参数 <code>-g</code></td><td align="left">安装到全局环境下，这样在任何一个目录下都能识别，比如 <code>npm install npm@latest -g</code></td></tr><tr><td align="left">参数 <code>--save-dev</code>或者<code>-D</code></td><td align="left">表明是开发环境下的依赖，不会在生产环境中出现</td></tr></tbody></table><h3 id="包卸载"><a href="#包卸载" class="headerlink" title="包卸载"></a>包卸载</h3><ul><li><code>npm uninstall &lt;包名&gt;</code></li><li><code>-D</code> 卸载包，并从<code>package.json</code>的<code>devDependencies</code>中删除。<blockquote><p>老版本的npm中卸载包要加<code>--save</code>才能保存到<code>package.json</code>中</p></blockquote></li></ul><h3 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h3><table><thead><tr><th>操作</th><th>命令</th></tr></thead><tbody><tr><td>更新包</td><td><code>npm update &lt;包名&gt;</code>，局部更新。加<code>-g</code>全局更新</td></tr><tr><td>列出已安装包</td><td><code>npm list</code>默认列出局部依赖。加<code>-g</code> 列出已安装的全局依赖。</td></tr><tr><td>检查过期包（依赖）</td><td><code>npm outdated</code></td></tr><tr><td>查看依赖安装路径</td><td><code>npm root</code>，也就是node_modules的路径，加<code>-g</code>查看全局安装路径</td></tr><tr><td>查看模块的注册信息</td><td><code>npm view &lt;包名&gt; versions</code>，列出所有版本。<br> <code>npm view &lt;包名&gt; dependencies</code>，列出所有依赖</td></tr></tbody></table><h2 id="使用npm的优势"><a href="#使用npm的优势" class="headerlink" title="使用npm的优势"></a>使用npm的优势</h2><p>以引用jQuery为例，先新建html文件。</p><p><strong>以往的工作流</strong></p><ol><li>搜索jQuery的网络CDN</li><li>在html文件中插入<code>&lt;script src=&#39;&lt;网络CDN地址&gt;&#39;&gt;&lt;/script&gt;</code>引用jQuery。</li></ol><p><strong>利用npm的工作流</strong></p><ol><li>命令行进入工作目录，进行<code>npm init</code></li><li><code>npm i jquery</code>，npm自动将文件安装到目录下的<code>node_modules</code>文件夹中。</li><li><code>node_modules</code>文件夹中找到<code>jquery.js</code>,在html文件中插入<code>&lt;script src=&#39;&lt;node_modules中jquery的位置&gt;&#39;&gt;&lt;/script&gt;</code>进行引用</li></ol><p>好处：就算删掉<code>node_modules</code>也没关系，因为依赖信息已经写到项目文件夹中的<code>package.json</code>中(dependencies)。只需要运行<code>npm i</code>就会重新安装上。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>利用Gitkraken了解Git</title>
       <link href="2021/07/09/git-basic/"/>
       <url>2021/07/09/git-basic/</url>
