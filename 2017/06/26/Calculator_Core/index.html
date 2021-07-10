@@ -742,6 +742,8 @@
 
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
+<script src="/js/md5.min.js"></script>
+
 <script>
     var gitalk = new Gitalk({
             clientID: '37485e1d76ada102806b',
@@ -749,6 +751,8 @@
             repo: 'gitpage_comments',
             owner: 'huuhghhgyg',
             admin: ['huuhghhgyg'],
+            // id是后添加的
+            id: md5(location.pathname),
             // facebook-like distraction free mode
             distractionFreeMode: false
         })
