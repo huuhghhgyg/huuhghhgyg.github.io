@@ -1,18 +1,18 @@
-self.addEventListener('fetch', function(e) {
+self.addEventListener('install', (e) => {
+    e.waitUntil(
+      caches.open('fox-store').then((cache) => cache.addAll([
+        '/img/logo.png',
+        '/img/favicon.png',
+        '/img/avatar.png',
+        '/img/daily_pic.png',
+        '/img/sidebar_header.png',
+      ])),
+    );
+  });
+  
+  self.addEventListener('fetch', (e) => {
     console.log(e.request.url);
     e.respondWith(
-        caches.match(e.request).then(function(response) {
-            return response || fetch(e.request);
-        })
+      caches.match(e.request).then((response) => response || fetch(e.request)),
     );
-});
-
-self.addEventListener('install', function(e) {
-    e.waitUntil(
-        caches.open('video-store').then(function(cache) {
-            return cache.addAll([
-
-            ]);
-        })
-    );
-});
+  });
