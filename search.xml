@@ -176,9 +176,9 @@
       
         <tags>
             
-            <tag> 编程 </tag>
-            
             <tag> 语法 </tag>
+            
+            <tag> 编程 </tag>
             
         </tags>
       
@@ -935,7 +935,7 @@
       <link href="/manifest.js"/>
       <url>/manifest.js</url>
       
-        <content type="html"><![CDATA[// Register service worker to control making site work offlineif ('serviceWorker' in navigator) {    navigator.serviceWorker        .register('serviceworker.js')        .then(function() { console.log('Service Worker Registered'); });}// Code to handle install prompt on desktoplet deferredPrompt;const addBtn = document.querySelector('.add-button');addBtn.style.display = 'none';window.addEventListener('beforeinstallprompt', (e) => {    // Prevent Chrome 67 and earlier from automatically showing the prompt    e.preventDefault();    // Stash the event so it can be triggered later.    deferredPrompt = e;    // Update UI to notify the user they can add to home screen    addBtn.style.display = 'block';    addBtn.addEventListener('click', (e) => {        // hide our user interface that shows our A2HS button        addBtn.style.display = 'none';        // Show the prompt        deferredPrompt.prompt();        // Wait for the user to respond to the prompt        deferredPrompt.userChoice.then((choiceResult) => {            if (choiceResult.outcome === 'accepted') {                console.log('User accepted the A2HS prompt');            } else {                console.log('User dismissed the A2HS prompt');            }            deferredPrompt = null;        });    });});]]></content>
+        <content type="html"><![CDATA[// Register service worker to control making site work offlineif ('serviceWorker' in navigator) {    navigator.serviceWorker        .register('/serviceworker.js')        .then(function() { console.log('Service Worker Registered'); });}// Code to handle install prompt on desktoplet deferredPrompt;const addBtn = document.querySelector('#add-button');if (document.getElementById('add-button')){    addBtn.style.display = 'none';}window.addEventListener('beforeinstallprompt', (e) => {    // Prevent Chrome 67 and earlier from automatically showing the prompt    e.preventDefault();    // Stash the event so it can be triggered later.    deferredPrompt = e;    // Update UI to notify the user they can add to home screen    if (document.getElementById('add-button')){        addBtn.style.display = 'block';            addBtn.addEventListener('click', (e) => {            // hide our user interface that shows our A2HS button            addBtn.style.display = 'none';            // Show the prompt            deferredPrompt.prompt();            // Wait for the user to respond to the prompt            deferredPrompt.userChoice.then((choiceResult) => {                if (choiceResult.outcome === 'accepted') {                    console.log('User accepted the A2HS prompt');                } else {                    console.log('User dismissed the A2HS prompt');                }                deferredPrompt = null;            });        });    }});]]></content>
       
     </entry>
     
@@ -953,22 +953,22 @@
     
     
     <entry>
-      <title>About Me</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title></title>
+      <link href="/links/footerstyle.css"/>
+      <url>/links/footerstyle.css</url>
       
-        <content type="html"><![CDATA[<p>你猜对了。<br>huuhghhgyg这个名字是一次玩奥比岛的时候乱打的，后来就一直沿用下来了😀<br>huu也是这个名字的简称。</p><hr><p>性格是INTP50%,INTJ50%(更新于2019年3月)</p><p>喜欢简洁的设计。在生活中，喜欢北欧设计风格；喜欢电子产品中的Material Design和Fluent Design。(蓝色最棒!!!😋)<br>正是生活中有新事物和不完美的存在才鼓励人们继续探索。<br>而我喜欢做些新的尝试，这样每天都将会是崭新的一天。<a href="https://www.oneplus.cn/">Never Settle</a>,一步一步来。</p><p>生产日期:<strong>2002/02/18</strong></p><h1 id="找我吗？"><a href="#找我吗？" class="headerlink" title="找我吗？"></a>找我吗？</h1><p><strong>主页:</strong><a href="https://huuhghhgyg.github.io/">huu’s Main Page</a></p><p><strong>邮箱:</strong><a href="mailto:huuhghhgyg@outlook.com">Email him</a></p><blockquote><p>这有可能会推送到他的Oneplus3上</p></blockquote><p><strong>微博:</strong><a href="https://weibo.com/u/2738972153">huuhghhgyg1</a></p><p><strong>知乎:</strong><a href="https://www.zhihu.com/people/huuhghhgyg-11/activities">huuhghhgyg</a></p><h2 id="来点墙外的？"><a href="#来点墙外的？" class="headerlink" title="来点墙外的？"></a>来点墙外的？</h2><p><strong>Facebook:</strong><a href="https://www.facebook.com/hghhgyg.huu.7">huuhghhgyg</a></p><p><strong>Twitter:</strong><a href="https://twitter.com/Huuhghhgyg">huuhghhgyg</a></p><blockquote><p>Instagram就在Facebook里面找吧，不写了</p></blockquote><p><strong>Google+:</strong><a href="https://plus.google.com/u/0/105936598030810813906">huuhghhgyg</a></p><h2 id="去我的Github项目上给我提交问题"><a href="#去我的Github项目上给我提交问题" class="headerlink" title="去我的Github项目上给我提交问题?"></a>去我的Github项目上给我提交问题?</h2><p><strong>Github:</strong><a href="https://github.com/huuhghhgyg">huuhghhgyg</a></p>]]></content>
+        <content type="html"><![CDATA[.website-data {    display: flex;    font-size: 14px;    color: #9e9e9e;    margin: 0px 15px;}.inner-width {    margin: 0px;    display: inline-flex;}.website-data i {    font-size: 16px;    padding: 2px 5px 0px 0px;}.data-divider {    margin: -1px 0px;    max-width: 5px;    font-size: 16px;    text-align: center;}]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title></title>
-      <link href="/links/footerstyle.css"/>
-      <url>/links/footerstyle.css</url>
+      <title>About Me</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[.website-data {    display: flex;    font-size: 14px;    color: #9e9e9e;    margin: 0px 15px;}.inner-width {    margin: 0px;    display: inline-flex;}.website-data i {    font-size: 16px;    padding: 2px 5px 0px 0px;}.data-divider {    margin: -1px 0px;    max-width: 5px;    font-size: 16px;    text-align: center;}]]></content>
+        <content type="html"><![CDATA[<p>你猜对了。<br>huuhghhgyg这个名字是一次玩奥比岛的时候乱打的，后来就一直沿用下来了😀<br>huu也是这个名字的简称。</p><hr><p>性格是INTP50%,INTJ50%(更新于2019年3月)</p><p>喜欢简洁的设计。在生活中，喜欢北欧设计风格；喜欢电子产品中的Material Design和Fluent Design。(蓝色最棒!!!😋)<br>正是生活中有新事物和不完美的存在才鼓励人们继续探索。<br>而我喜欢做些新的尝试，这样每天都将会是崭新的一天。<a href="https://www.oneplus.cn/">Never Settle</a>,一步一步来。</p><p>生产日期:<strong>2002/02/18</strong></p><h1 id="找我吗？"><a href="#找我吗？" class="headerlink" title="找我吗？"></a>找我吗？</h1><p><strong>主页:</strong><a href="https://huuhghhgyg.github.io/">huu’s Main Page</a></p><p><strong>邮箱:</strong><a href="mailto:huuhghhgyg@outlook.com">Email him</a></p><blockquote><p>这有可能会推送到他的Oneplus3上</p></blockquote><p><strong>微博:</strong><a href="https://weibo.com/u/2738972153">huuhghhgyg1</a></p><p><strong>知乎:</strong><a href="https://www.zhihu.com/people/huuhghhgyg-11/activities">huuhghhgyg</a></p><h2 id="来点墙外的？"><a href="#来点墙外的？" class="headerlink" title="来点墙外的？"></a>来点墙外的？</h2><p><strong>Facebook:</strong><a href="https://www.facebook.com/hghhgyg.huu.7">huuhghhgyg</a></p><p><strong>Twitter:</strong><a href="https://twitter.com/Huuhghhgyg">huuhghhgyg</a></p><blockquote><p>Instagram就在Facebook里面找吧，不写了</p></blockquote><p><strong>Google+:</strong><a href="https://plus.google.com/u/0/105936598030810813906">huuhghhgyg</a></p><h2 id="去我的Github项目上给我提交问题"><a href="#去我的Github项目上给我提交问题" class="headerlink" title="去我的Github项目上给我提交问题?"></a>去我的Github项目上给我提交问题?</h2><p><strong>Github:</strong><a href="https://github.com/huuhghhgyg">huuhghhgyg</a></p>]]></content>
       
     </entry>
     
