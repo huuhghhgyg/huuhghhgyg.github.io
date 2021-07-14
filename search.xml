@@ -8,13 +8,13 @@
       <link href="/2021/07/11/vscode-multicursor/"/>
       <url>/2021/07/11/vscode-multicursor/</url>
       
-        <content type="html"><![CDATA[<p>VSCode多行光标功能的使用</p><link rel="stylesheet" href="/Tools/addition.css"><!-- card容器(card少可不用，多了用美观) --><div class="card-span"><!-- 链接card --><div class="link-card">    <a href="[/](https://code.visualstudio.com/docs/editor/codebasics)">        <span class="link-card-title">Visual Studio Code Basics</span>        <span class="link-description">This topic takes you through the basics of the editor and helps you get moving with your code.</span>        <span class="link-navigation">            Visit            <span class="material-icons">arrow_forward</span>        </span>    </a></div><!-- 链接card --><div class="link-card">    <a href="[/](https://stackoverflow.com/questions/30037808/multiline-editing-in-visual-studio-code)">        <span class="link-card-title">StackOverflow</span>        <span class="link-description">Multiline editing in Visual Studio Code</span>        <span class="link-navigation">            Visit            <span class="material-icons">arrow_forward</span>        </span>    </a></div></div><h2 id="多行光标的使用"><a href="#多行光标的使用" class="headerlink" title="多行光标的使用"></a>多行光标的使用</h2><h3 id="用键盘使用多行光标"><a href="#用键盘使用多行光标" class="headerlink" title="用键盘使用多行光标"></a>用键盘使用多行光标</h3><table><thead><tr><th>快捷键</th><th>作用</th></tr></thead><tbody><tr><td><kbd>Ctrl+D</kbd></td><td>选择下一个匹配的内容</td></tr><tr><td><kbd>Ctrl+U</kbd></td><td>撤销上一个光标操作</td></tr><tr><td><kbd>Esc</kbd></td><td>取消多行选择</td></tr><tr><td><kbd>Ctrl+Backspace</kbd></td><td>智能删除</td></tr></tbody></table><p><img src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/vscode-cursor/1.webp"><br>使用 <code>Ctrl+D</code> 时,右上角的小部件，从左到右依次是：<br>区分大小写 <kbd>Alt+C</kbd>、全字匹配 <kbd>Alt+W</kbd>、使用正则表达式<kbd>Alt+R</kbd></p><p><kbd>Ctrl+Shift+P</kbd> 能够呼出万能指令窗口</p><table><thead><tr><th><kbd>Ctrl+Shift+P</kbd> 指令</th><th>作用</th></tr></thead><tbody><tr><td>Cursor Undo</td><td>撤销光标操作</td></tr><tr><td>Cursor Redo</td><td>重做光标操作</td></tr></tbody></table><h3 id="用鼠标使用多行光标"><a href="#用鼠标使用多行光标" class="headerlink" title="用鼠标使用多行光标"></a>用鼠标使用多行光标</h3><p><img src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/vscode-cursor/2.webp"><br>有时候可能会想要跳过某一个位置，这时使用<code>Ctrl+D</code>就难以做到。使用鼠标控制会令多行光标的使用更灵活。（比如说跳过注释部分的“：”）</p><p>使用方法<br>按住<kbd>Alt</kbd>并点击</p><h2 id="多行光标特性"><a href="#多行光标特性" class="headerlink" title="多行光标特性"></a>多行光标特性</h2><h3 id="合并"><a href="#合并" class="headerlink" title="合并"></a>合并</h3><p>当两个光标移动到重合时，会自动合并。例如下面的删除：<br><img src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/vscode-cursor/3.webp"><br><img src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/vscode-cursor/4.webp"></p><p>有时候在一行中分布有很多光标，当用<kbd>Ctrl+←</kbd>将光标置于行开头的时候，也会因此自动合并。<br>这个特性可以在VSCode选项中关闭，默认开启。</p><h3 id="复制粘贴"><a href="#复制粘贴" class="headerlink" title="复制粘贴"></a>复制粘贴</h3><p><kbd>Ctrl+←</kbd>或者<kbd>Ctrl+→</kbd>是智能移动。当另外按下<kbd>Shift</kbd>的时候还会对文本进行选择。</p><p>当多行光标选中多项复制以后，粘贴会逐行粘贴选中的内容。<br><img src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/vscode-cursor/5.webp"><br><img src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/vscode-cursor/6.webp"></p><p>当有多行光标时，每个光标都会逐行粘贴之前多行复制的内容。<br><img src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/vscode-cursor/7.webp"></p><p>但是，如果光标数量和复制的时候一致，粘贴时会在相应的位置粘贴。多行复制粘贴同理。<br><img src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/vscode-cursor/8.webp"></p><h3 id="在上面-下面插入光标"><a href="#在上面-下面插入光标" class="headerlink" title="在上面/下面插入光标"></a>在上面/下面插入光标</h3><p><kbd>Ctrl+Alt+↑</kbd>或者<kbd>Ctrl+Alt+↓</kbd>，上就是向上选择，下就是向下选择</p><p><img src="https://code.visualstudio.com/assets/docs/editor/codebasics/multicursor.gif" alt="Multiple selections"></p><h3 id="方形选（Column-box-selection）"><a href="#方形选（Column-box-selection）" class="headerlink" title="方形选（Column (box) selection）"></a>方形选（Column (box) selection）</h3><p>先正常选择，再按住<kbd>Alt+Shift</kbd></p><p><img src="https://code.visualstudio.com/assets/docs/editor/codebasics/column-select.gif" alt="Column (box) selection"></p><h3 id="扩大、缩小选择区域"><a href="#扩大、缩小选择区域" class="headerlink" title="扩大、缩小选择区域"></a>扩大、缩小选择区域</h3><p><kbd>Shift+Alt+Left</kbd>和<kbd>Shift+Alt+Right</kbd></p><p><img src="https://code.visualstudio.com/assets/docs/editor/codebasics/expandselection.gif" alt="Shrink/expand selection"></p><h3 id="添加光标到顶部、底部，在行尾添加光标"><a href="#添加光标到顶部、底部，在行尾添加光标" class="headerlink" title="添加光标到顶部、底部，在行尾添加光标"></a>添加光标到顶部、底部，在行尾添加光标</h3><p><kbd>Ctrl+Shift+P</kbd></p><ul><li>Add Cursors To Top</li><li>Add Cursors To Bottom</li><li>Add Cursors To Line Ends <kbd>Alt+Shift+l</kbd></li></ul><h3 id="适用于HTML的快速输入"><a href="#适用于HTML的快速输入" class="headerlink" title="适用于HTML的快速输入"></a>适用于HTML的快速输入</h3><p><img src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/vscode-cursor/1.gif"></p>]]></content>
+        <content type="html"><![CDATA[<p>VSCode多行光标功能的使用</p><link rel="stylesheet" href="/Tools/addition.css"><!-- card容器(card少可不用，多了用美观) --><div class="card-span"><!-- 链接card --><div class="link-card">    <a href="[/](https://code.visualstudio.com/docs/editor/codebasics)">        <span class="link-card-title">Visual Studio Code Basics</span>        <span class="link-description">This topic takes you through the basics of the editor and helps you get moving with your code.</span>        <span class="link-navigation">            Visit            <span class="material-icons">arrow_forward</span>        </span>    </a></div><!-- 链接card --><div class="link-card">    <a href="[/](https://stackoverflow.com/questions/30037808/multiline-editing-in-visual-studio-code)">        <span class="link-card-title">StackOverflow</span>        <span class="link-description">Multiline editing in Visual Studio Code</span>        <span class="link-navigation">            Visit            <span class="material-icons">arrow_forward</span>        </span>    </a></div></div><h2 id="多行光标的使用"><a href="#多行光标的使用" class="headerlink" title="多行光标的使用"></a>多行光标的使用</h2><h3 id="用键盘使用多行光标"><a href="#用键盘使用多行光标" class="headerlink" title="用键盘使用多行光标"></a>用键盘使用多行光标</h3><table><thead><tr><th>快捷键</th><th>作用</th></tr></thead><tbody><tr><td><kbd>Ctrl+D</kbd></td><td>选择下一个匹配的内容</td></tr><tr><td><kbd>Ctrl+U</kbd></td><td>撤销上一个光标操作</td></tr><tr><td><kbd>Esc</kbd></td><td>取消多行选择</td></tr><tr><td><kbd>Ctrl+Backspace</kbd></td><td>智能删除</td></tr></tbody></table><p><img src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/vscode-cursor/1.webp"><br>使用 <code>Ctrl+D</code> 时,右上角的小部件，从左到右依次是：<br>区分大小写 <kbd>Alt+C</kbd>、全字匹配 <kbd>Alt+W</kbd>、使用正则表达式 <kbd>Alt+R</kbd></p><p><kbd>Ctrl+Shift+P</kbd> 能够呼出万能指令窗口</p><table><thead><tr><th><kbd>Ctrl+Shift+P</kbd> 指令</th><th>作用</th></tr></thead><tbody><tr><td>Cursor Undo</td><td>撤销光标操作</td></tr><tr><td>Cursor Redo</td><td>重做光标操作</td></tr></tbody></table><h3 id="用鼠标使用多行光标"><a href="#用鼠标使用多行光标" class="headerlink" title="用鼠标使用多行光标"></a>用鼠标使用多行光标</h3><p><img src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/vscode-cursor/2.webp"><br>有时候可能会想要跳过某一个位置，这时使用<code>Ctrl+D</code>就难以做到。使用鼠标控制会令多行光标的使用更灵活。（比如说跳过注释部分的“：”）</p><p>使用方法<br>按住 <kbd>Alt</kbd> 并点击</p><h2 id="多行光标特性"><a href="#多行光标特性" class="headerlink" title="多行光标特性"></a>多行光标特性</h2><h3 id="合并"><a href="#合并" class="headerlink" title="合并"></a>合并</h3><p>当两个光标移动到重合时，会自动合并。例如下面的删除：<br><img src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/vscode-cursor/3.webp"><br><img src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/vscode-cursor/4.webp"></p><p>有时候在一行中分布有很多光标，当用 <kbd>Ctrl+←</kbd> 将光标置于行开头的时候，也会因此自动合并。<br>这个特性可以在VSCode选项中关闭，默认开启。</p><h3 id="复制粘贴"><a href="#复制粘贴" class="headerlink" title="复制粘贴"></a>复制粘贴</h3><p><kbd>Ctrl+←</kbd> 或者 <kbd>Ctrl+→</kbd> 是智能移动。当另外按下 <kbd>Shift</kbd> 的时候还会对文本进行选择。</p><p>当多行光标选中多项复制以后，粘贴会逐行粘贴选中的内容。<br><img src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/vscode-cursor/5.webp"><br><img src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/vscode-cursor/6.webp"></p><p>当有多行光标时，每个光标都会逐行粘贴之前多行复制的内容。<br><img src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/vscode-cursor/7.webp"></p><p>但是，如果光标数量和复制的时候一致，粘贴时会在相应的位置粘贴。多行复制粘贴同理。<br><img src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/vscode-cursor/8.webp"></p><h3 id="在上面-下面插入光标"><a href="#在上面-下面插入光标" class="headerlink" title="在上面/下面插入光标"></a>在上面/下面插入光标</h3><p><kbd>Ctrl+Alt+↑</kbd> 或者 <kbd>Ctrl+Alt+↓</kbd> ，上就是向上选择，下就是向下选择</p><p><img src="https://code.visualstudio.com/assets/docs/editor/codebasics/multicursor.gif" alt="Multiple selections"></p><h3 id="方形选（Column-box-selection）"><a href="#方形选（Column-box-selection）" class="headerlink" title="方形选（Column (box) selection）"></a>方形选（Column (box) selection）</h3><p>先正常选择，再按住 <kbd>Alt+Shift</kbd></p><p><img src="https://code.visualstudio.com/assets/docs/editor/codebasics/column-select.gif" alt="Column (box) selection"></p><h3 id="扩大、缩小选择区域"><a href="#扩大、缩小选择区域" class="headerlink" title="扩大、缩小选择区域"></a>扩大、缩小选择区域</h3><p><kbd>Shift+Alt+Left</kbd> 和 <kbd>Shift+Alt+Right</kbd></p><p><img src="https://code.visualstudio.com/assets/docs/editor/codebasics/expandselection.gif" alt="Shrink/expand selection"></p><h3 id="添加光标到顶部、底部，在行尾添加光标"><a href="#添加光标到顶部、底部，在行尾添加光标" class="headerlink" title="添加光标到顶部、底部，在行尾添加光标"></a>添加光标到顶部、底部，在行尾添加光标</h3><p><kbd>Ctrl+Shift+P</kbd></p><ul><li>Add Cursors To Top</li><li>Add Cursors To Bottom</li><li>Add Cursors To Line Ends <kbd>Alt+Shift+l</kbd></li></ul><h3 id="适用于HTML的快速输入"><a href="#适用于HTML的快速输入" class="headerlink" title="适用于HTML的快速输入"></a>适用于HTML的快速输入</h3><p><img src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/vscode-cursor/1.gif"></p>]]></content>
       
       
       
         <tags>
             
-            <tag> vscode </tag>
+            <tag> 前端 </tag>
             
             <tag> 快捷键 </tag>
             
@@ -37,6 +37,8 @@
             
             <tag> 前端 </tag>
             
+            <tag> 后端 </tag>
+            
             <tag> js </tag>
             
         </tags>
@@ -55,6 +57,10 @@
       
       
         <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> 后端 </tag>
             
             <tag> git </tag>
             
@@ -77,8 +83,6 @@
             
             <tag> 设计 </tag>
             
-            <tag> 设计风格 </tag>
-            
         </tags>
       
     </entry>
@@ -93,6 +97,12 @@
         <content type="html"><![CDATA[<p>迅哥儿快被踢出课本了，这都是各种鲁迅名言的摘抄🤣</p><h2 id="沉默和孤独"><a href="#沉默和孤独" class="headerlink" title="沉默和孤独"></a>沉默和孤独</h2><ul><li><p>惟沉默是最高的轻蔑。——《且介亭杂文附集》</p></li><li><p>猛兽总是独行，牛羊才成群结队。</p></li><li><p>当我沉默的时候，我觉得很充实，当我开口说话，就感到了空虚。</p></li><li><p>楼下一个男人病得要死，那间隔壁的一家唱着留声机，对面是弄孩子。楼上有两人狂笑；还有打牌声。河中的船上有女人哭着她死去的母亲。人类的悲欢并不相通，我只觉得他们吵闹。——《而已集•小杂感》</p></li></ul><p>这4句是鲁迅说沉默和孤独的，嗯，我们迅哥儿还是有点傲娇的。因此愿意独行，不想像新月派、鸳鸯蝴蝶派的“牛羊”一样成群结队。</p><h2 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h2><ul><li><p>哪里有什么天才，我只是把别人喝咖啡的时间用在工作上了。</p></li><li><p>伟大的成绩和辛勤劳动是成正比例的，有一分劳动就有一分收获，日积月累，从少到多，奇迹就可以创造出来。</p></li></ul><p>这两句说明，鲁迅其实也是工作狂，每周996，相信一分耕耘一分收获，把喝咖啡的时间都用在了写作上，所以才著作等身，成为近现代作家中的第一大咖（或许只有胡适才能齐名）</p><h2 id="情"><a href="#情" class="headerlink" title="情"></a>情</h2><ul><li><p>待我成尘时，你将见我的微笑。</p></li><li><p>无情未必真豪杰，怜子如何不丈夫。</p></li><li><p>渡尽劫波兄弟在，相逢一笑泯恩仇。</p></li><li><p>友谊是两颗心真诚相待，而不是一颗心对另一颗心的敲打。</p></li><li><p>人生得一知已足矣，斯世当以同怀视之。</p></li><li><p>我寄你的信，总要送往邮局,不喜欢放在街边的绿色邮筒中，我总疑心那里会慢一点。</p></li></ul><p>这6句话可以归为一类：迅哥儿看感情——儿女之情、兄弟之情和朋友之情。我们的教材，经常把鲁迅塑造成头发如钢针、横眉冷对千夫指的刚毅硬汉，其实迅哥儿也有自己温柔的一面。上面5句话，就表达了迅哥儿作为暖男的一面，不管是对朋友、兄弟还是妻儿，都有无限柔情。</p><h2 id="责任和担当"><a href="#责任和担当" class="headerlink" title="责任和担当"></a>责任和担当</h2><ul><li><p>无穷的远方，无数的人们，都与我有关。</p></li><li><p>必须敢于正视，这才可望敢想，敢说，敢做，敢当。</p></li><li><p>我们自古以来，就有埋头苦干的人，有拼命硬干的人，有为民请命的人，有舍身求法的人。虽是等于为帝王将相作家谱的所谓“正史”，也往往掩不住他们的光辉，这就是中国的脊梁。</p></li><li><p>愿中国青年都摆脱冷气，只是向上走，不必听自暴自弃者流的话。能做事的做事，能发声的发声。有一分热，发一分光，就令萤火一般，也可以在黑暗里发一点光，不必等候炬火。此后如竟没有炬火：我便是唯一的光。倘若有了炬火，出了太阳，我们自然心悦诚服的消失，不但毫无不平，而且还要随喜赞美这炬火或太阳；因为他照了人类，连我都在内。</p></li><li><p>中国的孩子，只要生，不管他好不好，只要多，不管他才不才，生他们的人，不负教他的责任。虽然“人口众多”这一句话，很可以闭了眼睛自负，然而这许多人口，便只在尘土中辗转，小的时候，不把他当人，大了以后也做不了人。——《随感录廿五》</p></li></ul><h2 id="杂谈"><a href="#杂谈" class="headerlink" title="杂谈"></a>杂谈</h2><ul><li><p>谣言世家的子弟是以谣言杀人，也以谣言被杀的。</p></li><li><p>讽刺和冷嘲只隔一张纸，有趣和肉麻也一样。</p></li><li><p>悲剧将人生的有价值的东西毁灭给人看，喜剧将那无价值的撕破给人看。</p></li><li><p>若举世唯科学是崇，则人生必将归于枯寂。</p></li><li><p>我之所谓生存，并不是苟活，所谓温饱，不是奢侈，所谓发展，也不是放纵。</p></li><li><p>面具戴太久，就会长到脸上，再想揭下来，除非伤筋动骨扒皮。</p></li><li><p>人生最苦痛的是梦醒了无路可走，做梦的人是幸福的；倘没有看出可走的路，最要紧的是不要去惊醒他。</p></li><li><p>有缺点的战士终竟是战士，完美的苍蝇也终竟不过是苍蝇。 ——《战士和苍蝇》</p></li></ul><p>这些话不太好归类，干脆就全放一起，就叫鲁迅杂谈吧。迅哥儿杂文写得多，这些名言就算迅哥儿杂谈好了。</p><h2 id="创新"><a href="#创新" class="headerlink" title="创新"></a>创新</h2><ul><li><p>从来如此，便对么？</p></li><li><p>其实地上本没有路，走的人多了，也便成了路。</p></li><li><p>同是不满于现状，但打破现状的手段却不同：一是革新，一是复古。</p></li><li><p>从原虫到人类，从野蛮到文明，就因为没有一刻不在革命。</p></li><li><p>既然像螃蟹这样的东西，人们都很爱吃，那么蜘蛛也一定有人吃过，只不过后来知道不好吃才不吃了，但是第一个吃螃蟹的人一定是个勇士。</p></li></ul><p>这一类名言，主题都指向了一个点：创新（不守旧）。</p><h2 id="抨击黑暗"><a href="#抨击黑暗" class="headerlink" title="抨击黑暗"></a>抨击黑暗</h2><ul><li><p>中国人的性情是总喜欢调和折中的，譬如你说，这屋子太暗，须在这里开一个窗，大家一定不允许的。但如果你主张拆掉屋顶他们就来调和，愿意开窗了。</p></li><li><p>我独不解中国人何以于旧状况那么心平气和，于较新的机运就这么疾首蹙额；于已成之局那么委曲求全；于初兴之事就这么求全责备?<br>——《这个与那个》</p></li><li><p>一见短袖子，立刻想到白臂膊，立刻想到全裸体，立刻想到生殖器，立刻想到性交，立刻想到杂交，立刻想到私生子。中国人的想象惟在这一层能够如此跃进。</p></li><li><p>一部《红楼梦》，单是命意，就因读者的眼光而有种种：经学家看见《易》，道学家看见淫，才子看见缠绵，革命家看见排满，流言家看见宫闱秘事。</p></li><li><p>我翻开历史一查，这历史没有年代。歪歪斜斜的每页上都写着“仁义道德”几个字，我横竖睡不着，仔细看了半夜，才从字缝里看出来，满本上都写着两个字“吃人”！</p></li><li><p>中国一向就少有失败的英雄，少有韧性的反抗，少有敢单身鏖战的武人，少有敢抚哭叛徒的吊客；见胜兆则纷纷聚集，见败兆则纷纷逃亡。</p></li><li><p>他们这群人，又想吃人，又是鬼鬼祟祟，想法子遮掩，不敢直截下手，真要令我笑死。我忍不住，便放声大笑起来，十分快活。自己晓得这笑声里面，有的是义勇和正气。——《狂人日记》</p></li><li><p>但究竟是夷人可恶，偏要讲什么科学。科学虽然给我们许多惊奇，但也搅坏了我们许多好梦。——《春末闲谈》</p></li><li><p>群众，尤其是中国的——永远是戏剧的看客。牺牲上场，如果显得慷慨，他们就看了悲壮剧；如果显得觳觫，他们就看了滑稽剧。北京的羊肉铺常有几个人张嘴看剥羊，仿佛颇为愉快，人的牺牲能给他们的益处，也不过如此。而况事后走不几步，他们并这一点也就忘了。 ——《娜拉走后怎样》</p></li><li><p>真的猛士，敢于直面惨淡的人生，敢于正视淋漓的鲜血。这是怎样的哀痛者和幸福者？然而造化又常常为庸人设计，以时间的流驶，来洗涤旧迹，仅使留下淡红的血色和微漠的悲哀。在这淡红的血色和微漠的悲哀中，又给人暂得偷生，维持着这似人非人的世界。我不知道这样的世界何时是一个尽头！——《纪念刘和珍君》</p></li></ul><p>这一类就不用我多说了，作为成天怼天怼地怼空气的迅哥儿，最喜欢怼的就是民族劣根性了。以上，都是怼民族劣根性的。虽然当下也有很多粪青，但，这些粪青只是“愤”，却不知“情”，也就是不能从根子里了解问题所在。像迅哥儿这般，既“愤”，又能鞭辟入里，直指要害的，太少了。所以，大师永远是大师，路人甲只是路人甲。</p><h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>于浩歌狂热之际中寒；于天上看见深渊。于一切眼中看见无所有；于无所希望中得救。——鲁迅</p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> 文章 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -128,13 +138,17 @@
       
         <tags>
             
+            <tag> 系统 </tag>
+            
+            <tag> 后端 </tag>
+            
+            <tag> 安装 </tag>
+            
             <tag> 树莓派 </tag>
             
             <tag> docker </tag>
             
             <tag> linux </tag>
-            
-            <tag> 安装 </tag>
             
         </tags>
       
@@ -153,11 +167,15 @@
       
         <tags>
             
+            <tag> 系统 </tag>
+            
+            <tag> 后端 </tag>
+            
+            <tag> 安装 </tag>
+            
             <tag> 树莓派 </tag>
             
             <tag> linux </tag>
-            
-            <tag> 安装 </tag>
             
         </tags>
       
@@ -176,9 +194,11 @@
       
         <tags>
             
-            <tag> 编程 </tag>
+            <tag> 后端 </tag>
             
             <tag> 语法 </tag>
+            
+            <tag> 编程 </tag>
             
         </tags>
       
@@ -196,6 +216,8 @@
       
       
         <tags>
+            
+            <tag> 后端 </tag>
             
             <tag> Python </tag>
             
@@ -216,7 +238,7 @@
       
         <tags>
             
-            <tag> 网站 </tag>
+            <tag> 前端 </tag>
             
             <tag> hexo </tag>
             
@@ -256,9 +278,7 @@
       
         <tags>
             
-            <tag> Chrome </tag>
-            
-            <tag> website </tag>
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -277,11 +297,11 @@
       
         <tags>
             
+            <tag> 系统 </tag>
+            
             <tag> Office </tag>
             
-            <tag> 装机 </tag>
-            
-            <tag> 系统 </tag>
+            <tag> 安装 </tag>
             
         </tags>
       
@@ -302,7 +322,7 @@
             
             <tag> 壁纸 </tag>
             
-            <tag> 美化 </tag>
+            <tag> 设计 </tag>
             
         </tags>
       
@@ -321,9 +341,7 @@
       
         <tags>
             
-            <tag> Android </tag>
-            
-            <tag> 刷机 </tag>
+            <tag> 系统 </tag>
             
         </tags>
       
@@ -342,15 +360,9 @@
       
         <tags>
             
+            <tag> 后端 </tag>
+            
             <tag> 壁纸 </tag>
-            
-            <tag> 美化 </tag>
-            
-            <tag> Powershell </tag>
-            
-            <tag> 维护 </tag>
-            
-            <tag> Bing </tag>
             
         </tags>
       
@@ -390,9 +402,7 @@
       
         <tags>
             
-            <tag> Apple </tag>
-            
-            <tag> iPhone </tag>
+            <tag> 设计 </tag>
             
         </tags>
       
@@ -430,7 +440,9 @@
       
         <tags>
             
-            <tag> UWP </tag>
+            <tag> 后端 </tag>
+            
+            <tag> 软件开发 </tag>
             
         </tags>
       
@@ -449,11 +461,9 @@
       
         <tags>
             
-            <tag> 干货 </tag>
+            <tag> 系统 </tag>
             
             <tag> 快捷键 </tag>
-            
-            <tag> Windows </tag>
             
         </tags>
       
@@ -472,7 +482,9 @@
       
         <tags>
             
-            <tag> FileGetter </tag>
+            <tag> 后端 </tag>
+            
+            <tag> 软件开发 </tag>
             
         </tags>
       
@@ -481,7 +493,7 @@
     
     
     <entry>
-      <title>VS快捷键</title>
+      <title>Visual Studio 快捷键</title>
       <link href="/2018/04/29/VisualStudioHotKey/"/>
       <url>/2018/04/29/VisualStudioHotKey/</url>
       
@@ -491,7 +503,7 @@
       
         <tags>
             
-            <tag> VS </tag>
+            <tag> 后端 </tag>
             
         </tags>
       
@@ -510,11 +522,7 @@
       
         <tags>
             
-            <tag> 哲学 </tag>
-            
-            <tag> 人生 </tag>
-            
-            <tag> 心理 </tag>
+            <tag> 生活 </tag>
             
         </tags>
       
@@ -533,9 +541,7 @@
       
         <tags>
             
-            <tag> C# </tag>
-            
-            <tag> 编程 </tag>
+            <tag> 后端，软件开发 </tag>
             
         </tags>
       
@@ -554,11 +560,9 @@
       
         <tags>
             
-            <tag> 装机 </tag>
+            <tag> 安装 </tag>
             
             <tag> 硬盘 </tag>
-            
-            <tag> 分区 </tag>
             
         </tags>
       
@@ -577,7 +581,9 @@
       
         <tags>
             
-            <tag> Material </tag>
+            <tag> 前端 </tag>
+            
+            <tag> 设计 </tag>
             
         </tags>
       
@@ -596,11 +602,7 @@
       
         <tags>
             
-            <tag> FluentDesign </tag>
-            
             <tag> 设计 </tag>
-            
-            <tag> Controls </tag>
             
         </tags>
       
@@ -619,7 +621,7 @@
       
         <tags>
             
-            <tag> FluentDesign.设计 </tag>
+            <tag> 设计 </tag>
             
         </tags>
       
@@ -637,12 +639,6 @@
       
       
         <tags>
-            
-            <tag> 高一 </tag>
-            
-            <tag> 语文 </tag>
-            
-            <tag> 必背 </tag>
             
             <tag> 学习 </tag>
             
@@ -663,11 +659,7 @@
       
         <tags>
             
-            <tag> 干货 </tag>
-            
-            <tag> 正经学习 </tag>
-            
-            <tag> 笔记 </tag>
+            <tag> 学习 </tag>
             
         </tags>
       
@@ -686,9 +678,9 @@
       
         <tags>
             
-            <tag> hexo </tag>
+            <tag> 前端 </tag>
             
-            <tag> 修复 </tag>
+            <tag> hexo </tag>
             
         </tags>
       
@@ -707,13 +699,7 @@
       
         <tags>
             
-            <tag> 干货 </tag>
-            
-            <tag> 技术 </tag>
-            
-            <tag> HTML5 </tag>
-            
-            <tag> BGM </tag>
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -731,12 +717,6 @@
       
       
         <tags>
-            
-            <tag> 高一 </tag>
-            
-            <tag> 语文 </tag>
-            
-            <tag> 必背 </tag>
             
             <tag> 学习 </tag>
             
@@ -757,11 +737,9 @@
       
         <tags>
             
-            <tag> Launcher </tag>
+            <tag> 后端 </tag>
             
-            <tag> Minecraft </tag>
-            
-            <tag> RELauncher </tag>
+            <tag> 软件开发 </tag>
             
         </tags>
       
@@ -780,11 +758,11 @@
       
         <tags>
             
+            <tag> 前端 </tag>
+            
             <tag> Hexo </tag>
             
             <tag> 语法 </tag>
-            
-            <tag> 干货 </tag>
             
         </tags>
       
@@ -801,6 +779,12 @@
       
       
       
+        <tags>
+            
+            <tag> 文章 </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -816,7 +800,7 @@
       
         <tags>
             
-            <tag> graduation </tag>
+            <tag> 生活 </tag>
             
         </tags>
       
@@ -835,11 +819,9 @@
       
         <tags>
             
-            <tag> calculator </tag>
+            <tag> 后端 </tag>
             
-            <tag> core </tag>
-            
-            <tag> calcore </tag>
+            <tag> 软件开发 </tag>
             
         </tags>
       
@@ -858,9 +840,9 @@
       
         <tags>
             
-            <tag> chat </tag>
+            <tag> 后端 </tag>
             
-            <tag> localChat </tag>
+            <tag> 软件开发 </tag>
             
         </tags>
       
@@ -879,13 +861,9 @@
       
         <tags>
             
-            <tag> calculator </tag>
+            <tag> 后端 </tag>
             
-            <tag> Calscore </tag>
-            
-            <tag> cal </tag>
-            
-            <tag> calscore </tag>
+            <tag> 软件开发 </tag>
             
         </tags>
       
@@ -904,9 +882,9 @@
       
         <tags>
             
-            <tag> cal </tag>
+            <tag> 后端 </tag>
             
-            <tag> Calculator </tag>
+            <tag> 软件开发 </tag>
             
         </tags>
       
@@ -946,7 +924,7 @@
       <link href="/serviceworker.js"/>
       <url>/serviceworker.js</url>
       
-        <content type="html"><![CDATA[self.addEventListener('install', (e) => {    e.waitUntil(      caches.open('fox-store').then((cache) => cache.addAll([        '/img/logo.png',        '/img/favicon.png',        '/img/avatar.png',        '/img/daily_pic.png',        '/img/sidebar_header.png',      ])),    );  });    self.addEventListener('fetch', (e) => {    console.log(e.request.url);    e.respondWith(      caches.match(e.request).then((response) => response || fetch(e.request)),    );  });]]></content>
+        <content type="html"><![CDATA[self.addEventListener('install', (e) => {    e.waitUntil(      caches.open('fox-store').then((cache) => cache.addAll([        '/img/logo.png',        '/img/favicon.png',        '/img/avatar.png',        '/img/daily_pic.png',        '/img/sidebar_header.png',        'https://cdn.jsdelivr.net/npm/noto-sans-sc@11.0.1/all.css',      ])),    );  });    self.addEventListener('fetch', (e) => {    console.log(e.request.url);    e.respondWith(      caches.match(e.request).then((response) => response || fetch(e.request)),    );  });]]></content>
       
     </entry>
     

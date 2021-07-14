@@ -1365,7 +1365,8 @@ input.mdl-button[type=submit] {
 .mdl-menu__item {
     display: block;
     border: 0;
-    color: rgba(0, 0, 0, .87);
+    /* color: rgba(0, 0, 0, .87); */
+    color: #29302e;
     background-color: transparent;
     text-align: left;
     margin: 0;

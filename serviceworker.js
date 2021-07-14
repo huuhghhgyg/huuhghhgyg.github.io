@@ -6,6 +6,7 @@ self.addEventListener('install', (e) => {
         '/img/avatar.png',
         '/img/daily_pic.png',
         '/img/sidebar_header.png',
+        'https://cdn.jsdelivr.net/npm/noto-sans-sc@11.0.1/all.css',
       ])),
     );
   });
