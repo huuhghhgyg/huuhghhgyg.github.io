@@ -21,6 +21,8 @@ window.addEventListener('beforeinstallprompt', (e) => {
     deferredPrompt = e;
     // Update UI to notify the user they can add to home screen
     if (document.getElementById('add-button')){
+        // 检测有没有add button
+        
         addBtn.style.display = 'block';
     
         addBtn.addEventListener('click', (e) => {
