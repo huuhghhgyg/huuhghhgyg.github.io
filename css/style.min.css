@@ -2457,6 +2457,7 @@ a {
     border-radius: 5px;
     padding: 1px 54px 1px 14px;
     margin: 3px;
+    font-weight: 500;
 }
 .sidebar-colored .sidebar-nav li>a:hover{
     font-weight: 500;
