@@ -3602,6 +3602,13 @@ _:-ms-input-placeholder {
 }
 
 @media(max-width:479px) {
+    /* 追加 */
+    /* search输入框在移动端的显示修复 */
+    #search{
+        color: #b6b8c3;
+        width: 80vw;
+    }
+
     .mdl-grid {
         padding: 8px
     }
