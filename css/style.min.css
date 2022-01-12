@@ -1977,6 +1977,10 @@ a {
     }
 }
 
+.material-post-shadow{
+    box-shadow: 10px 10px 20px #d3d3d3,-10px -10px 20px #ededed;
+}
+
 #scheme-Isolation .material-post .mdl-card {
     width: 100%;
     border-radius: 2px;
@@ -2091,7 +2095,7 @@ a {
     -moz-transition-delay: 0;
     transition-delay: 0;
     /* 遮罩层（淡入）过渡 */
-    transition: .5s ease-in;
+    transition: .5s cubic-bezier(0, 0, 0.2, 1);
 }
 
 .top-bar {
