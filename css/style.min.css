@@ -1978,7 +1978,7 @@ a {
 }
 
 .material-post-shadow{
-    box-shadow: 10px 10px 20px #d3d3d3,-10px -10px 20px #ededed;
+    box-shadow: 5px 5px 16px #e6e6e6, -5px -5px 16px #ffffff;
 }
 
 #scheme-Isolation .material-post .mdl-card {
