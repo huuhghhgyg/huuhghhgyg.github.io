@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>LINQ笔记&amp;实例</title>
+      <link href="/2022/03/12/linq/"/>
+      <url>/2022/03/12/linq/</url>
+      
+        <content type="html"><![CDATA[<p>LINQ：语言继承查询</p><h1 id="限制运算符-Where"><a href="#限制运算符-Where" class="headerlink" title="限制运算符 Where"></a>限制运算符 Where</h1><p>where语句的基本示例</p><pre><code class="C#">int[] numbers = &#123;5,4,1,3,9,8,6,7,2,0&#125;;var lowNums = from num in numbers              where num &lt; 5              select num; // 只选择小于5的数字</code></pre><p>筛选符合属性条件的元素</p><pre><code class="C#">var soldOutProducts = from prod in products                      where prod.UnitsInStock == 0                      select prod; // 从集合中选出符合属性的元素</code></pre><p>用多个条件筛选元素</p><pre><code class="C#">var expensiveInStockProducts = from prod in products                               where prod.UnitsInStock &gt; 0 &amp;&amp; prod.UnitPrice &gt; 3.00M                               select prod; // 从集合中选出符合上述两个条件的元素</code></pre><p>基于元素在列表中位置的筛选</p><pre><code class="C#">string[] digits = &#123;&quot;zero&quot;, &quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;, &quot;six&quot;, &quot;seven&quot;, &quot;eight&quot;, &quot;nine&quot;&#125;;var shortDigits = digits.Where((digit,index) =&gt; digit.Length &lt; index); // 其中，index为元素的位置下标（从0开始），digit为digits的子元素。</code></pre><h1 id="投影（转换）运算符-Select"><a href="#投影（转换）运算符-Select" class="headerlink" title="投影（转换）运算符 Select"></a>投影（转换）运算符 Select</h1><p>以下的例子展示了如何用select修改输入的元素序列。</p><pre><code class="C#">int[] numbers = &#123;5,4,1,3,9,8,6,7,2,0&#125;;var numsPlusOne = from n in numbers                  select n+1;</code></pre><p>选择一个单独的属性</p><pre><code class="C#">var productNames = from p in products                   select p.ProductName; // 选择了p的ProductName属性</code></pre><p>用<code>select</code>进行一些变换</p><pre><code class="C#">int[] numbers = &#123;5,4,1,3,9,8,6,7,2,0&#125;; // 数字序列string[] strings = &#123;&quot;zero&quot;, &quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;, &quot;six&quot;, &quot;seven&quot;, &quot;eight&quot;, &quot;nine&quot;&#125;; // 单词序列var textNums = from n in numbers               select strings[n]; // 用数字序列的元素作为下标选择单词序列中的元素</code></pre><p>选择匿名类型或元组</p><blockquote><p>注意：创建新类型的时候，需要使用<code>new</code>关键字</p></blockquote><pre><code class="C#">string[] words = &#123; &quot;aPPLE&quot;, &quot;BlUeBeRrY&quot;, &quot;cHeRry&quot; &#125;;var upperLowerWords = from w in words                      select new &#123; Upper = w.ToUpper(), Lower = w.ToLower() &#125;;                      // 生成的Upper和Lower里面分别是这些单词的大写和小写版本// 使用元组的方法（从C#7开始）var upperLowerWords = from w in words                      select new &#123; Upper: w.ToUpper(), Lower: w.ToLower() &#125;;</code></pre><p>使用<code>select</code>创建新类型</p><pre><code class="C#">int[] numbers = &#123;5,4,1,3,9,8,6,7,2,0&#125;; // 数字序列string[] strings = &#123;&quot;zero&quot;, &quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;, &quot;six&quot;, &quot;seven&quot;, &quot;eight&quot;, &quot;nine&quot;&#125;; // 单词序列var digitOddEvens = from n in numbers                    select new &#123; Digit = strings[n], Even = (n % 2 == 0)&#125;;                     // 创建了两个类型：                    //  Digit：对应数字的单词序列                    //  Even：偶数序列</code></pre><p>选择属性的子集<br>我还没试，Try.NET坏了…😭</p><pre><code class="C#">var productInfos = from p in products                   select (p.ProductName, p.Category, Price: p.UnitPrice);Console.WriteLine(&quot;Product Info:&quot;);foreach (var productInfo in productInfos)&#123;    Console.WriteLine($&quot;&#123;productInfo.ProductName&#125; is in the category &#123;productInfo.Category&#125; and costs &#123;productInfo.Price&#125; per unit.&quot;);&#125;</code></pre><p><strong>用元素的<code>index</code>对其进行选择</strong></p><pre><code class="C#">int[] numbers = &#123; 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 &#125;;var numsInPlace = numbers.Select((num, index) =&gt; (Num: num, InPlace: (num == index)));// 得到的numsInPlace中有Num和InPlace，其中InPlace为num==index的值</code></pre><p>在多输入序列中进行选择</p><pre><code class="C#">int[] numbersA = &#123; 0, 2, 4, 5, 6, 8, 9 &#125;;int[] numbersB = &#123; 1, 3, 5, 7, 8 &#125;;var pairs = from a in numbersA            from b in numbersB            where a &lt; b            select (a, b); // 符合条件的(a,b)对（pairs）Console.WriteLine(&quot;Pairs where a &lt; b:&quot;);foreach (var pair in pairs)&#123;    Console.WriteLine($&quot;&#123;pair.a&#125; is less than &#123;pair.b&#125;&quot;);    // 把所有的a和所有的b逐个进行比较&#125;</code></pre><p>在相关的输入序列中进行选择</p><pre><code class="C#">var orders = from c in customers             from o in c.Orders             where o.Total &lt; 500.00M             select (c.CustomerID, o.OrderID, o.Total);             // cutomers -&gt; c：顾客             // c -&gt; c.o：订单（与c相关联）             // c.o -&gt; o：订单信息</code></pre><p>带有Where的符合选择</p><pre><code class="C#">var orders = from c in customers             from o in c.Orders             where o.OrderDate &gt;= new DateTime(1998, 1, 1)             select (c.CustomerID, o.OrderID, o.OrderDate);</code></pre><h1 id="Query-Syntax-查询语法（分区运算符）"><a href="#Query-Syntax-查询语法（分区运算符）" class="headerlink" title="Query Syntax 查询语法（分区运算符）"></a>Query Syntax 查询语法（分区运算符）</h1><h2 id="Take"><a href="#Take" class="headerlink" title="Take"></a>Take</h2><p><code>n.Take(n);</code>获取前n个元素</p><pre><code class="C#">int[] numbers=&#123;5,4,3,2,1&#125;;var first3Numbers = numbers.Take(3); // First3Numbers是一个集合，有3个数</code></pre><p><code>Take</code>也可以嵌套到其它查询语句中</p><pre><code class="C#">var first3WAOrders = (    from customer in customers    from order in cutomer.Orders    where customer.Region == &quot;WA&quot;    select (customer.CustomerID, order.OrderID, order.OrderDate)    .Take(3);) // 得到前3个</code></pre><h2 id="Skip"><a href="#Skip" class="headerlink" title="Skip"></a>Skip</h2><p><code>n.Skip(n)</code>跳过前n个元素</p><pre><code class="C#">int[] numbers = &#123; 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 &#125;;var allButFirst4Numbers = numbers.Skip(4);</code></pre><p>先查询，再在结果中跳过</p><pre><code class="C#">var waOrders = from cust in customers               from order in cust.Orders               where cust.Region == &quot;WA&quot;               select (cust.CustomerID, order.OrderID, order.OrderDate);var allButFirst2Orders = waOrders.Skip(2); // 查询完毕后，从查询结果中跳过前2个结果</code></pre><h2 id="TakeWhile"><a href="#TakeWhile" class="headerlink" title="TakeWhile"></a>TakeWhile</h2><p>理解为<code>While</code>循环下的<code>Take()</code>。一旦不符合条件就停止。</p><pre><code class="C#">int[] numbers = &#123;5,4,1,3,9,8,6,7,2,0&#125;;var firstNumbersLessThan6 = numbers.TakeWhile(n =&gt; n&lt;6);                        // 从开始一直Take()，直到n&lt;6的条件不成立</code></pre><p>用<code>index</code>作为条件的<code>TakeWhile</code></p><pre><code class="C#">int[] numbers = &#123; 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 &#125;;var firstSmallNumbers = numbers.TakeWhile((n, index) =&gt; n &gt;= index);</code></pre><h2 id="SkipWhile"><a href="#SkipWhile" class="headerlink" title="SkipWhile"></a>SkipWhile</h2><p>以下例子只显示分数小于80的成绩。</p><pre><code class="C#">int[] grades = &#123; 59, 82, 70, 56, 92, 98, 85 &#125;;IEnumerable&lt;int&gt; lowerGrades =    grades    .OrderByDescending(grade =&gt; grade)    .SkipWhile(grade =&gt; grade &gt;= 80);Console.WriteLine(&quot;All grades below 80:&quot;);foreach (int grade in lowerGrades)&#123;    Console.WriteLine(grade);&#125;/* This code produces the following output: All grades below 80: 70 59 56*/```使用`n`和`index`进行筛选```C#int[] amounts = &#123; 5000, 2500, 9000, 8000,                    6500, 4000, 1500, 5500 &#125;;IEnumerable&lt;int&gt; query =    amounts.SkipWhile((amount, index) =&gt; amount &gt; index * 1000);foreach (int amount in query)&#123;    Console.WriteLine(amount);&#125;/* This code produces the following output: 4000 1500 5500*/</code></pre><h1 id="排序运算符"><a href="#排序运算符" class="headerlink" title="排序运算符"></a>排序运算符</h1><h2 id="orderby-升序"><a href="#orderby-升序" class="headerlink" title="orderby 升序"></a>orderby 升序</h2><p>升序：0,1,2,…<br>使用<code>orderby</code>根据宠物年龄进行升序排序</p><pre><code class="C#">class Pet&#123;    public string Name &#123; get; set; &#125;    public int Age &#123; get; set; &#125;&#125;public static void OrderByEx1()&#123;    Pet[] pets = &#123; new Pet &#123; Name=&quot;Barley&quot;, Age=8 &#125;,                   new Pet &#123; Name=&quot;Boots&quot;, Age=4 &#125;,                   new Pet &#123; Name=&quot;Whiskers&quot;, Age=1 &#125; &#125;;    // Sort the Pet objects in the array by Pet.Age.    IEnumerable&lt;Pet&gt; query =        pets.AsQueryable().OrderBy(pet =&gt; pet.Age);    foreach (Pet pet in query)        Console.WriteLine($&quot;&#123;pet.Name&#125; - &#123;pet.Age&#125;&quot;);&#125;/*    This code produces the following output:    Whiskers - 1    Boots - 4    Barley - 8*/</code></pre><h2 id="orderby-descending"><a href="#orderby-descending" class="headerlink" title="orderby descending"></a>orderby descending</h2><p>使用<code>orderby</code>和<code>descending</code>关键字对数字进行降序排序。</p><pre><code class="C#">double[] doubles = &#123; 1.7, 2.3, 1.9, 4.1, 2.9 &#125;;var sortedDoubles = from d in doubles                    orderby d descending // 注意descending的用法                    select d;Console.WriteLine(&quot;The doubles from highest to lowest:&quot;);</code></pre><h1 id="序列操作"><a href="#序列操作" class="headerlink" title="序列操作"></a>序列操作</h1><h2 id="EqualAll"><a href="#EqualAll" class="headerlink" title="EqualAll"></a>EqualAll</h2><p>如果两个序列相同，返回<code>True</code></p><pre><code class="C#">var wordsA = new string[] &#123; &quot;cherry&quot;, &quot;apple&quot;, &quot;blueberry&quot; &#125;;var wordsB = new string[] &#123; &quot;cherry&quot;, &quot;apple&quot;, &quot;blueberry&quot; &#125;;bool match = wordsA.SequenceEqual(wordsB);Console.WriteLine($&quot;The sequences match: &#123;match&#125;&quot;); //True// 如果以上两个序列中的元素顺序进行了调换，输出值则为False</code></pre><h2 id="Zip"><a href="#Zip" class="headerlink" title="Zip"></a>Zip</h2><pre><code class="C#">int[] vectorA = &#123; 0, 2, 4, 5, 6 &#125;;int[] vectorB = &#123; 1, 3, 5, 7, 8 &#125;;int dotProduct = vectorA.Zip(vectorB, (a, b) =&gt; a * b).Sum();                            // 把A中的元素和B中的对应元素进行操作。                            // Sum()为求和Console.WriteLine($&quot;Dot product: &#123;dotProduct&#125;&quot;);// Dot product:109</code></pre><h1 id="Query（查询）执行模式"><a href="#Query（查询）执行模式" class="headerlink" title="Query（查询）执行模式"></a>Query（查询）执行模式</h1><h2 id="懒惰执行"><a href="#懒惰执行" class="headerlink" title="懒惰执行"></a>懒惰执行</h2><p>如果数据经常变化，可以考虑使用“懒惰查询”，需要时再进行查询。</p><pre><code class="C#">int[] numbers = &#123; 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 &#125;;int i = 0;var q = from n in numbers        select ++i; //i: 0 → 1// Note, the local variable &#39;i&#39; is not incremented// until each element is evaluated (as a side-effect):// 直到每个值被使用时才执行++iforeach (var v in q)&#123;    Console.WriteLine($&quot;v = &#123;v&#125;, i = &#123;i&#125;&quot;);    // ++i在这里才被执行并存入v中。    // 这里的i是原来的i（int i=0时定义的）&#125;</code></pre><p>如果把<code>foreach</code>再完整执行一遍，<code>v</code>和<code>i</code>的值将会到达20</p><h2 id="急迫执行"><a href="#急迫执行" class="headerlink" title="急迫执行"></a>急迫执行</h2><p>当数据不会变时使用“急迫执行”，因为再次查询数据也不会变。</p><pre><code class="C#">// Methods like ToList() cause the query to be// executed immediately, caching the results.// 类似ToList()的方法可以使query立即执行。int[] numbers = &#123; 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 &#125;;int i = 0;var q = (from n in numbers         select ++i)         .ToList();// The local variable i has already been fully// incremented before we iterate the results:// 在输出结果之前，++i已经全部执行完了foreach (var v in q)&#123;    Console.WriteLine($&quot;v = &#123;v&#125;, i = &#123;i&#125;&quot;);&#125;</code></pre><p>如果把<code>foreach</code>再完整执行一遍，<code>i</code>的值仍然全为10，<code>v</code>的值也不变</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> C# </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>VSCode多光标输入</title>
       <link href="/2021/07/11/vscode-multicursor/"/>
       <url>/2021/07/11/vscode-multicursor/</url>
@@ -35,9 +54,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> 后端 </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> js </tag>
             
@@ -58,9 +77,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> 后端 </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> git </tag>
             
@@ -138,9 +157,9 @@
       
         <tags>
             
-            <tag> 系统 </tag>
-            
             <tag> 后端 </tag>
+            
+            <tag> 系统 </tag>
             
             <tag> 安装 </tag>
             
@@ -167,9 +186,9 @@
       
         <tags>
             
-            <tag> 系统 </tag>
-            
             <tag> 后端 </tag>
+            
+            <tag> 系统 </tag>
             
             <tag> 安装 </tag>
             
@@ -486,6 +505,8 @@
             
             <tag> 软件开发 </tag>
             
+            <tag> C# </tag>
+            
         </tags>
       
     </entry>
@@ -541,7 +562,11 @@
       
         <tags>
             
-            <tag> 后端，软件开发 </tag>
+            <tag> 后端 </tag>
+            
+            <tag> 软件开发 </tag>
+            
+            <tag> C# </tag>
             
         </tags>
       
@@ -602,7 +627,11 @@
       
         <tags>
             
+            <tag> C# </tag>
+            
             <tag> 设计 </tag>
+            
+            <tag> UWP </tag>
             
         </tags>
       
@@ -741,6 +770,8 @@
             
             <tag> 软件开发 </tag>
             
+            <tag> C# </tag>
+            
         </tags>
       
     </entry>
@@ -823,26 +854,7 @@
             
             <tag> 软件开发 </tag>
             
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>localChat</title>
-      <link href="/2017/06/26/localChat/"/>
-      <url>/2017/06/26/localChat/</url>
-      
-        <content type="html"><![CDATA[<p>通讯工具</p><h1 id="localChat"><a href="#localChat" class="headerlink" title="localChat"></a>localChat</h1><h2 id="Instruction-说明"><a href="#Instruction-说明" class="headerlink" title="Instruction 说明"></a>Instruction 说明</h2><p>嗯…就是一个垃圾的自制通讯软件嘛…</p><h2 id="历代版本-amp-软件说明"><a href="#历代版本-amp-软件说明" class="headerlink" title="历代版本&amp;软件说明"></a>历代版本&amp;软件说明</h2><h3 id="Beta1"><a href="#Beta1" class="headerlink" title="Beta1:"></a>Beta1:</h3><p><strong>Server 服务端:</strong><br><img src="/img/Chat1_0.png"></p><p><strong>Cilnet 客户端</strong><br><img src="/img/ChatSer1_0.png"></p><p>1，服务端可以给某个客户端发私信<br>2，发送信息会显示时间<br>3，简略地报错</p><script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-101667365-1', 'auto');  ga('send', 'pageview');</script>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 后端 </tag>
-            
-            <tag> 软件开发 </tag>
+            <tag> C# </tag>
             
         </tags>
       
@@ -865,6 +877,8 @@
             
             <tag> 软件开发 </tag>
             
+            <tag> C# </tag>
+            
         </tags>
       
     </entry>
@@ -876,7 +890,7 @@
       <link href="/2017/06/26/HCalculator/"/>
       <url>/2017/06/26/HCalculator/</url>
       
-        <content type="html"><![CDATA[<p>A calculator was written by huuhghhgyg</p><h1 id="HCalculator"><a href="#HCalculator" class="headerlink" title="HCalculator"></a>HCalculator</h1><h2 id="Link-链接"><a href="#Link-链接" class="headerlink" title="Link 链接"></a>Link 链接</h2><p> <a href="https://github.com/huuhghhgyg/HCalculator">View on Github 在Github查看</a><br> <a href="https://github.com/huuhghhgyg/HCalculator/zipball/master">Download .zip 下载.zip文件</a><br> <a href="https://github.com/huuhghhgyg/HCalculator/tarball/master">Download .tar.gz 下载.tar.gz文件</a></p><h2 id="Instructions-说明"><a href="#Instructions-说明" class="headerlink" title="Instructions 说明"></a>Instructions 说明</h2><p>若要访问原网页点击<a href="https://huuhghhgyg.github.io/HCalculator">&gt;这里&lt;</a></p><p>嗯，就只是一个计算器嘛没什么好看的….要下赶快下XDD</p><h2 id="Updates-历代大版本更新"><a href="#Updates-历代大版本更新" class="headerlink" title="Updates 历代大版本更新"></a>Updates 历代大版本更新</h2><h3 id="计算器1-0-最初版本"><a href="#计算器1-0-最初版本" class="headerlink" title="计算器1.0(最初版本)"></a>计算器1.0(最初版本)</h3><p><img src="/img/Calculator1.0.png"><br>基本的傻瓜计算器功能，差不多支持键盘乱弹。</p><h3 id="计算器2-0-已遗失-作为向Material-Design的过渡"><a href="#计算器2-0-已遗失-作为向Material-Design的过渡" class="headerlink" title="计算器2.0(已遗失) 作为向Material Design的过渡"></a>计算器2.0(已遗失) 作为向Material Design的过渡</h3><h3 id="计算器3-0"><a href="#计算器3-0" class="headerlink" title="计算器3.0"></a>计算器3.0</h3><p><img src="/img/Calculator3.0.png"><br>拥有更好的界面，Material Design设计标准，更多的功能。支持生成随机数，计算日期之间的间隔等新功能。</p><h3 id="计算器4-0-现在版本-持续更新中"><a href="#计算器4-0-现在版本-持续更新中" class="headerlink" title="计算器4.0(现在版本)[持续更新中]"></a>计算器4.0(现在版本)[持续更新中]</h3><p><img src="/img/Calculator4.0.png"><br>新增了科学计算器。改进了科学计算器的界面。持续改进!</p><script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-101667365-1', 'auto');  ga('send', 'pageview');</script>]]></content>
+        <content type="html"><![CDATA[<p>A calculator was written by huuhghhgyg<br>[2022-03-02]：该项目已被归档</p><h1 id="HCalculator"><a href="#HCalculator" class="headerlink" title="HCalculator"></a>HCalculator</h1><h2 id="Link-链接"><a href="#Link-链接" class="headerlink" title="Link 链接"></a>Link 链接</h2><p> <a href="https://github.com/huuhghhgyg/HCalculator">View on Github 在Github查看</a><br> <a href="https://github.com/huuhghhgyg/HCalculator/zipball/master">Download .zip 下载.zip文件</a><br> <a href="https://github.com/huuhghhgyg/HCalculator/tarball/master">Download .tar.gz 下载.tar.gz文件</a></p><h2 id="Instructions-说明"><a href="#Instructions-说明" class="headerlink" title="Instructions 说明"></a>Instructions 说明</h2><p>若要访问原网页点击<a href="https://huuhghhgyg.github.io/HCalculator">&gt;这里&lt;</a></p><p>嗯，就只是一个计算器嘛没什么好看的….要下赶快下XDD</p><h2 id="Updates-历代大版本更新"><a href="#Updates-历代大版本更新" class="headerlink" title="Updates 历代大版本更新"></a>Updates 历代大版本更新</h2><h3 id="计算器1-0-最初版本"><a href="#计算器1-0-最初版本" class="headerlink" title="计算器1.0(最初版本)"></a>计算器1.0(最初版本)</h3><p><img src="/img/Calculator1.0.png"><br>基本的傻瓜计算器功能，差不多支持键盘乱弹。</p><h3 id="计算器2-0-已遗失-作为向Material-Design的过渡"><a href="#计算器2-0-已遗失-作为向Material-Design的过渡" class="headerlink" title="计算器2.0(已遗失) 作为向Material Design的过渡"></a>计算器2.0(已遗失) 作为向Material Design的过渡</h3><h3 id="计算器3-0"><a href="#计算器3-0" class="headerlink" title="计算器3.0"></a>计算器3.0</h3><p><img src="/img/Calculator3.0.png"><br>拥有更好的界面，Material Design设计标准，更多的功能。支持生成随机数，计算日期之间的间隔等新功能。</p><h3 id="计算器4-0-现在版本-持续更新中"><a href="#计算器4-0-现在版本-持续更新中" class="headerlink" title="计算器4.0(现在版本)[持续更新中]"></a>计算器4.0(现在版本)[持续更新中]</h3><p><img src="/img/Calculator4.0.png"><br>新增了科学计算器。改进了科学计算器的界面。持续改进!</p><script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-101667365-1', 'auto');  ga('send', 'pageview');</script>]]></content>
       
       
       
@@ -885,6 +899,8 @@
             <tag> 后端 </tag>
             
             <tag> 软件开发 </tag>
+            
+            <tag> C# </tag>
             
         </tags>
       
@@ -931,6 +947,17 @@
     
     
     <entry>
+      <title></title>
+      <link href="/links/footerstyle.css"/>
+      <url>/links/footerstyle.css</url>
+      
+        <content type="html"><![CDATA[.website-data {  display: flex;  font-size: 14px;  color: #9e9e9e;  margin: 0px 15px;  align-items: center;}.inner-width {  margin: 0px;  display: inline-flex;}.website-data i {  font-size: 16px;  margin: 3px 4px 0 0;}.data-divider {  margin: -2px 0 0 0;  max-width: 5px;  font-size: 16px;  text-align: center;}]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>About Me</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
@@ -947,17 +974,6 @@
       <url>/links/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/links/footerstyle.css"/>
-      <url>/links/footerstyle.css</url>
-      
-        <content type="html"><![CDATA[.website-data {  display: flex;  font-size: 14px;  color: #9e9e9e;  margin: 0px 15px;  align-items: center;}.inner-width {  margin: 0px;  display: inline-flex;}.website-data i {  font-size: 16px;  margin: 3px 4px 0 0;}.data-divider {  margin: -2px 0 0 0;  max-width: 5px;  font-size: 16px;  text-align: center;}]]></content>
       
     </entry>
     
