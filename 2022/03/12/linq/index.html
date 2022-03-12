@@ -336,7 +336,7 @@
 
     
         <meta property="article:published_time" content="Sat Mar 12 2022 16:29:27 GMT+0800">
-        <meta property="article:modified_time" content="Sat Mar 12 2022 19:05:36 GMT+0800">
+        <meta property="article:modified_time" content="Sat Mar 12 2022 22:03:21 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -359,7 +359,7 @@
     "mainEntityOfPage": "https://huuhghhgyg.github.io/2022/03/12/linq/index.html",
     "headline": "LINQ笔记&实例",
     "datePublished": "Sat Mar 12 2022 16:29:27 GMT+0800",
-    "dateModified": "Sat Mar 12 2022 19:05:36 GMT+0800",
+    "dateModified": "Sat Mar 12 2022 22:03:21 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "huuhghhgyg",
@@ -461,18 +461,8 @@
     
     <!-- Paradox Post Header -->
     
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-            <script type="text/ls-javascript" id="post-thumbnail-script">
-    var randomNum = Math.floor(Math.random() * 32 + 1);
-
-    //$('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.webp');
-    $('.post_thumbnail-random').addClass('lazy');
-</script>
-
-        
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/query.webp)">
     
             <p class="article-headline-p">
                 LINQ笔记&实例
@@ -680,7 +670,8 @@ var lowNums = from num in numbers
 </code></pre>
 <p>基于元素在列表中位置的筛选</p>
 <pre><code class="C#">string[] digits = &#123;&quot;zero&quot;, &quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;, &quot;six&quot;, &quot;seven&quot;, &quot;eight&quot;, &quot;nine&quot;&#125;;
-var shortDigits = digits.Where((digit,index) =&gt; digit.Length &lt; index); // 其中，index为元素的位置下标（从0开始），digit为digits的子元素。
+var shortDigits = digits.Where((digit,index) =&gt; digit.Length &lt; index);
+                  // 其中，index为元素的位置下标（从0开始），digit为digits的子元素。
 </code></pre>
 <h1 id="投影（转换）运算符-Select"><a href="#投影（转换）运算符-Select" class="headerlink" title="投影（转换）运算符 Select"></a>投影（转换）运算符 Select</h1><p>以下的例子展示了如何用select修改输入的元素序列。</p>
 <pre><code class="C#">int[] numbers = &#123;5,4,1,3,9,8,6,7,2,0&#125;;
@@ -708,6 +699,7 @@ var textNums = from n in numbers
 var upperLowerWords = from w in words
                       select new &#123; Upper = w.ToUpper(), Lower = w.ToLower() &#125;;
                       // 生成的Upper和Lower里面分别是这些单词的大写和小写版本
+
 // 使用元组的方法（从C#7开始）
 var upperLowerWords = from w in words
                       select new &#123; Upper: w.ToUpper(), Lower: w.ToLower() &#125;;
@@ -816,17 +808,15 @@ foreach (int grade in lowerGrades)
     Console.WriteLine(grade);
 &#125;
 
-/*
- This code produces the following output:
+// This code produces the following output:
 
- All grades below 80:
- 70
- 59
- 56
-*/```
-使用`n`和`index`进行筛选
-```C#
-int[] amounts = &#123; 5000, 2500, 9000, 8000,
+// All grades below 80:
+// 70
+// 59
+// 56
+</code></pre>
+<p>使用<code>n</code>和<code>index</code>进行筛选</p>
+<pre><code class="C#">int[] amounts = &#123; 5000, 2500, 9000, 8000,
                     6500, 4000, 1500, 5500 &#125;;
 
 IEnumerable&lt;int&gt; query =
@@ -837,13 +827,12 @@ foreach (int amount in query)
     Console.WriteLine(amount);
 &#125;
 
-/*
- This code produces the following output:
 
- 4000
- 1500
- 5500
-*/
+// This code produces the following output:
+
+// 4000
+// 1500
+// 5500
 </code></pre>
 <h1 id="排序运算符"><a href="#排序运算符" class="headerlink" title="排序运算符"></a>排序运算符</h1><h2 id="orderby-升序"><a href="#orderby-升序" class="headerlink" title="orderby 升序"></a>orderby 升序</h2><p>升序：0,1,2,…<br>使用<code>orderby</code>根据宠物年龄进行升序排序</p>
 <pre><code class="C#">class Pet
@@ -866,13 +855,11 @@ public static void OrderByEx1()
         Console.WriteLine($&quot;&#123;pet.Name&#125; - &#123;pet.Age&#125;&quot;);
 &#125;
 
-/*
-    This code produces the following output:
+// This code produces the following output:
 
-    Whiskers - 1
-    Boots - 4
-    Barley - 8
-*/
+// Whiskers - 1
+// Boots - 4
+// Barley - 8
 </code></pre>
 <h2 id="orderby-descending"><a href="#orderby-descending" class="headerlink" title="orderby descending"></a>orderby descending</h2><p>使用<code>orderby</code>和<code>descending</code>关键字对数字进行降序排序。</p>
 <pre><code class="C#">double[] doubles = &#123; 1.7, 2.3, 1.9, 4.1, 2.9 &#125;;
