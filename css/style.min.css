@@ -1383,6 +1383,10 @@ ul > li:last-child > p:last-child{
     #scheme-Paradox #search-form {
         margin-left: 0
     }
+    
+    .post_entry-module.mdl-card {
+        margin-top: 10px !important;
+    }
 }
 
 @media screen and (max-width:840px) {
