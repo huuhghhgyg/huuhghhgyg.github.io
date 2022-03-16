@@ -57,7 +57,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="huuhghhgyg的个人主页">
-    <meta name="keywords" content="huu huuhghhgyg,C#">
+    <meta name="keywords" content="huu huuhghhgyg,后端,C#,编程">
     <meta name="theme-color" content="#1976D2">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -332,11 +332,11 @@
     <meta property="og:title" content="LINQ笔记&amp;实例 | Hikaru&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="huuhghhgyg的个人主页">
-    <meta property="og:article:tag" content="C#"> 
+    <meta property="og:article:tag" content="后端"> <meta property="og:article:tag" content="C#"> <meta property="og:article:tag" content="编程"> 
 
     
         <meta property="article:published_time" content="Sat Mar 12 2022 16:29:27 GMT+0800">
-        <meta property="article:modified_time" content="Sat Mar 12 2022 22:36:17 GMT+0800">
+        <meta property="article:modified_time" content="Wed Mar 16 2022 22:10:38 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -359,7 +359,7 @@
     "mainEntityOfPage": "https://huuhghhgyg.github.io/2022/03/12/linq/index.html",
     "headline": "LINQ笔记&实例",
     "datePublished": "Sat Mar 12 2022 16:29:27 GMT+0800",
-    "dateModified": "Sat Mar 12 2022 22:36:17 GMT+0800",
+    "dateModified": "Wed Mar 16 2022 22:10:38 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "huuhghhgyg",
@@ -377,7 +377,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",C#huu huuhghhgyg",
+    "keywords": ",后端,C#,编程huu huuhghhgyg",
     "description": "huuhghhgyg的个人主页",
 }
 </script>
@@ -520,7 +520,7 @@
     </button>
                     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
                         <li class="mdl-menu__item">
-                            <a class="post_tag-none-link" href="/tags/C/" rel="tag">C#</a>
+                            <a class="post_tag-none-link" href="/tags/C/" rel="tag">C#</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a>
                     </ul>
                     
 
@@ -641,7 +641,7 @@
     
         <button type="button" class="mdl-chip">
             <span class="mdl-chip__text">
-                <a class="post_tag_chip-none-link" href="/tags/C/" rel="tag">C#</a>
+                <a class="post_tag_chip-none-link" href="/tags/C/" rel="tag">C#</a></span></button><button type="button" class="mdl-chip"><span class="mdl-chip__text"><a class="post_tag_chip-none-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a></span></button><button type="button" class="mdl-chip"><span class="mdl-chip__text"><a class="post_tag_chip-none-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a>
             </span>
         </button>
         
@@ -672,6 +672,22 @@ var lowNums = from num in numbers
 <pre><code class="C#">string[] digits = &#123;&quot;zero&quot;, &quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;, &quot;six&quot;, &quot;seven&quot;, &quot;eight&quot;, &quot;nine&quot;&#125;;
 var shortDigits = digits.Where((digit,index) =&gt; digit.Length &lt; index);
                   // 其中，index为元素的位置下标（从0开始），digit为digits的子元素。
+</code></pre>
+<p>以…开始<br>使用<code>AutoSuggestBox</code>控件<br>Xaml:</p>
+<pre><code class="xml">&lt;AutoSuggestBox Name=&quot;MyAutoSuggestBox&quot; 
+                QueryIcon=&quot;Find&quot; 
+                PlaceholderText=&quot;Search&quot; 
+                TextChanged=&quot;MyAutoSuggestBox_TextChanged&quot;/&gt;
+</code></pre>
+<p>C#</p>
+<pre><code class="C#">private string[] selectionItems = new string[] &#123;&quot;Ferdinand&quot;, &quot;Nigel&quot;, &quot;Tag&quot;,...&#125;;
+
+private void MyAutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs e)
+&#123;
+    var autoSuggestBox = (AutoSuggestBox)sender;
+    var fileterd = selectionItems.Where(p =&gt; p.StartWith(AutoSuggestBox.Text)).ToArray();
+    autoSuggestBox.ItemSource = filtered;
+&#125;
 </code></pre>
 <h1 id="投影（转换）运算符-Select"><a href="#投影（转换）运算符-Select" class="headerlink" title="投影（转换）运算符 Select"></a>投影（转换）运算符 Select</h1><p>以下的例子展示了如何用select修改输入的元素序列。</p>
 <pre><code class="C#">int[] numbers = &#123;5,4,1,3,9,8,6,7,2,0&#125;;
@@ -1087,6 +1103,14 @@ foreach (var v in q)
 <!-- Post Prev & Next Nav -->
 <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2022/03/16/XamlSummary/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
     
 
     <!-- Section Spacer -->
