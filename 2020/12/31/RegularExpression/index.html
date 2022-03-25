@@ -669,7 +669,8 @@
     </a>
 </div>
 
-<h2 id="标记"><a href="#标记" class="headerlink" title="标记"></a>标记</h2><table>
+<h2 id="标记"><a href="#标记" class="headerlink" title="标记"></a>标记</h2><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>表达式</th>
@@ -678,7 +679,8 @@
 <th>作用</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>^</td>
 <td>匹配行首</td>
 <td>^a</td>
@@ -690,8 +692,11 @@
 <td>a$</td>
 <td>匹配a在行尾的情况</td>
 </tr>
-</tbody></table>
-<h2 id="普通字符（大小写敏感）"><a href="#普通字符（大小写敏感）" class="headerlink" title="普通字符（大小写敏感）"></a>普通字符（大小写敏感）</h2><table>
+</tbody>
+</table>
+</div>
+<h2 id="普通字符（大小写敏感）"><a href="#普通字符（大小写敏感）" class="headerlink" title="普通字符（大小写敏感）"></a>普通字符（大小写敏感）</h2><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>表达式</th>
@@ -700,16 +705,17 @@
 <th>作用</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>[]</td>
 <td>只能匹配中括号中的字符</td>
 <td>[ABC]</td>
 <td>匹配字符串中的所有ABC</td>
 </tr>
 <tr>
-<td>[^A]</td>
+<td><sup><a href="#fn_A" id="reffn_A">A</a></sup></td>
 <td>除去</td>
-<td>[^ABC]</td>
+<td><sup><a href="#fn_ABC" id="reffn_ABC">ABC</a></sup></td>
 <td>得到除了ABC以外的所有字符</td>
 </tr>
 <tr>
@@ -720,30 +726,29 @@
 </tr>
 <tr>
 <td>.</td>
-<td>匹配 除换行符的所有单个字符,相当于[^\n\r]</td>
-<td></td>
+<td>匹配 除换行符的所有单个字符,相当于<sup><a href="#fn_\n\r" id="reffn_\n\r">\n\r</a></sup></td>
 <td></td>
 </tr>
 <tr>
 <td>[\s]</td>
 <td>匹配 空白字符（空格、换行）</td>
 <td></td>
-<td></td>
 </tr>
 <tr>
 <td>[\s]</td>
 <td>匹配 非空白字符（包括换行）</td>
-<td></td>
 <td></td>
 </tr>
 <tr>
 <td>[\w]</td>
 <td>匹配 字母、数字、下划线,相当于[A-Za-z0-9]</td>
 <td></td>
-<td></td>
 </tr>
-</tbody></table>
-<h2 id="非打印字符"><a href="#非打印字符" class="headerlink" title="非打印字符"></a>非打印字符</h2><table>
+</tbody>
+</table>
+</div>
+<h2 id="非打印字符"><a href="#非打印字符" class="headerlink" title="非打印字符"></a>非打印字符</h2><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>符号</th>
@@ -752,7 +757,8 @@
 <th>作用</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>\ca</td>
 <td>匹配control+a的快捷键（\c是表示c，\为转义）(\cx的x必须是A-Z或者a-z)</td>
 <td>\cv</td>
@@ -762,70 +768,61 @@
 <td>\f</td>
 <td>换页符</td>
 <td></td>
-<td></td>
 </tr>
 <tr>
 <td>\n</td>
 <td>换行符</td>
-<td></td>
 <td></td>
 </tr>
 <tr>
 <td>\r</td>
 <td>回车</td>
 <td></td>
-<td></td>
 </tr>
 <tr>
 <td>\s</td>
 <td>空白字符，包括空格、制表符、换页符等等</td>
-<td></td>
 <td></td>
 </tr>
 <tr>
 <td>\S</td>
 <td>非空白字符，包括回车</td>
 <td></td>
-<td></td>
 </tr>
 <tr>
 <td>\t</td>
 <td>制表符（Tab）</td>
-<td></td>
 <td></td>
 </tr>
 <tr>
 <td>\v</td>
 <td>垂直制表符(Vertical Tab)</td>
 <td></td>
-<td></td>
 </tr>
 <tr>
 <td>\d</td>
 <td>数字字符，等价于[0-9]</td>
 <td></td>
-<td></td>
 </tr>
 <tr>
 <td>\D</td>
-<td>非数字字符，等价于[^0-9]</td>
-<td></td>
+<td>非数字字符，等价于<sup><a href="#fn_0-9" id="reffn_0-9">0-9</a></sup></td>
 <td></td>
 </tr>
 <tr>
 <td>\w</td>
 <td>单词(word)</td>
 <td></td>
-<td></td>
 </tr>
 <tr>
 <td>\W</td>
 <td>非单词</td>
-<td></td>
-<td></td>
 </tr>
-</tbody></table>
-<h2 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h2><table>
+</tbody>
+</table>
+</div>
+<h2 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h2><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>符号</th>
@@ -834,16 +831,15 @@
 <th>作用</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>$</td>
 <td>匹配字符串的结尾位置</td>
-<td></td>
 <td></td>
 </tr>
 <tr>
 <td>()</td>
 <td>标记一个子表达式开始和结束的位置</td>
-<td></td>
 <td></td>
 </tr>
 <tr>
@@ -862,53 +858,53 @@
 <td>.</td>
 <td>匹配除换行符之外的任何单字符</td>
 <td></td>
-<td></td>
 </tr>
 <tr>
 <td>[</td>
 <td>标记一个中括号表达式的开始</td>
 <td></td>
-<td></td>
 </tr>
 <tr>
-<td>?</td>
+<td>\?</td>
 <td>匹配前面的字符可有可无,或指明一个非贪婪限定符</td>
 <td></td>
-<td></td>
 </tr>
 <tr>
-<td>\</td>
+<td>\\</td>
 <td>转义符</td>
-<td></td>
 <td></td>
 </tr>
 <tr>
 <td>^</td>
 <td>匹配输入字符串的开始位置</td>
 <td></td>
-<td></td>
 </tr>
 <tr>
 <td>{</td>
 <td>标记限定符表达式的开始</td>
 <td></td>
-<td></td>
 </tr>
 <tr>
-<td>|</td>
+<td>\</td>
+<td></td>
 <td>或（两项之间的选择）</td>
-<td>a|b</td>
+<td>a\</td>
+<td>b</td>
 <td>匹配a或b</td>
 </tr>
-</tbody></table>
-<h2 id="限定符"><a href="#限定符" class="headerlink" title="限定符"></a>限定符</h2><table>
+</tbody>
+</table>
+</div>
+<h2 id="限定符"><a href="#限定符" class="headerlink" title="限定符"></a>限定符</h2><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>符号</th>
 <th>作用</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>{n}</td>
 <td>匹配n次</td>
 </tr>
@@ -920,7 +916,9 @@
 <td>{n,m}</td>
 <td>至少匹配n次，至多匹配m次</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h2 id="高级匹配"><a href="#高级匹配" class="headerlink" title="高级匹配"></a>高级匹配</h2><ul>
 <li><strong>贪婪匹配：</strong>匹配到最后<br>&lt;.+&gt;默认贪婪匹配任意字符</li>
 <li><strong>懒惰匹配：</strong>匹配到就停止<br>&lt;.+?&gt;懒惰匹配任意字符</li>
@@ -1565,6 +1563,21 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
     
 </html>

@@ -654,34 +654,38 @@
         <p>在npm中，包（package）、模块（module）、依赖（dependency）都是一个东西。</p>
 <h2 id="npm常用操作"><a href="#npm常用操作" class="headerlink" title="npm常用操作"></a>npm常用操作</h2><h3 id="npm配置项"><a href="#npm配置项" class="headerlink" title="npm配置项"></a>npm配置项</h3><p>初始化 <code>npm init</code>（其实就是创建一个<code>package.json</code>文件），之后让你填入许多信息（package name,version,description,entry point,test command,git repository,key words,author)<br><code>npm init -y</code>相当于<code>npm init</code>但信息都为空，初始化后npm会认为你的项目是一个包</p>
 <h3 id="npm搜索"><a href="#npm搜索" class="headerlink" title="npm搜索"></a>npm搜索</h3><p><code>npm search &lt;包名&gt;</code> 如：<code>npm search jquery</code></p>
-<h3 id="包安装"><a href="#包安装" class="headerlink" title="包安装"></a>包安装</h3><table>
+<h3 id="包安装"><a href="#包安装" class="headerlink" title="包安装"></a>包安装</h3><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="left">操作</th>
-<th align="left">命令</th>
+<th style="text-align:left">操作</th>
+<th style="text-align:left">命令</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">直接安装</td>
-<td align="left"><code>npm install &lt;包名&gt;</code>，简写为<code>npm i &lt;包名&gt;</code></td>
+<tbody>
+<tr>
+<td style="text-align:left">直接安装</td>
+<td style="text-align:left"><code>npm install &lt;包名&gt;</code>，简写为<code>npm i &lt;包名&gt;</code></td>
 </tr>
 <tr>
-<td align="left">安装指定版本&#x2F;旧版本</td>
-<td align="left"><code>npm install &lt;包名&gt;@&lt;版本号&gt;</code></td>
+<td style="text-align:left">安装指定版本/旧版本</td>
+<td style="text-align:left"><code>npm install &lt;包名&gt;@&lt;版本号&gt;</code></td>
 </tr>
 <tr>
-<td align="left">安装指定tag的包</td>
-<td align="left"><code>npm install &lt;包名&gt;@&lt;tag&gt;</code></td>
+<td style="text-align:left">安装指定tag的包</td>
+<td style="text-align:left"><code>npm install &lt;包名&gt;@&lt;tag&gt;</code></td>
 </tr>
 <tr>
-<td align="left">参数 <code>-g</code></td>
-<td align="left">安装到全局环境下，这样在任何一个目录下都能识别，比如 <code>npm install npm@latest -g</code></td>
+<td style="text-align:left">参数 <code>-g</code></td>
+<td style="text-align:left">安装到全局环境下，这样在任何一个目录下都能识别，比如 <code>npm install npm@latest -g</code></td>
 </tr>
 <tr>
-<td align="left">参数 <code>--save-dev</code>或者<code>-D</code></td>
-<td align="left">表明是开发环境下的依赖，不会在生产环境中出现</td>
+<td style="text-align:left">参数 <code>--save-dev</code>或者<code>-D</code></td>
+<td style="text-align:left">表明是开发环境下的依赖，不会在生产环境中出现</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h3 id="包卸载"><a href="#包卸载" class="headerlink" title="包卸载"></a>包卸载</h3><ul>
 <li><code>npm uninstall &lt;包名&gt;</code></li>
 <li><code>-D</code> 卸载包，并从<code>package.json</code>的<code>devDependencies</code>中删除。<blockquote>
@@ -689,14 +693,16 @@
 </blockquote>
 </li>
 </ul>
-<h3 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h3><table>
+<h3 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h3><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>操作</th>
 <th>命令</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>更新包</td>
 <td><code>npm update &lt;包名&gt;</code>，局部更新。加<code>-g</code>全局更新</td>
 </tr>
@@ -716,7 +722,9 @@
 <td>查看模块的注册信息</td>
 <td><code>npm view &lt;包名&gt; versions</code>，列出所有版本。<br> <code>npm view &lt;包名&gt; dependencies</code>，列出所有依赖</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h2 id="使用npm的优势"><a href="#使用npm的优势" class="headerlink" title="使用npm的优势"></a>使用npm的优势</h2><p>以引用jQuery为例，先新建html文件。</p>
 <p><strong>以往的工作流</strong></p>
 <ol>
@@ -1371,6 +1379,21 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
     
 </html>

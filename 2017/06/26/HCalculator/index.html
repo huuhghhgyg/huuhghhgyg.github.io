@@ -655,9 +655,9 @@
 <h1 id="HCalculator"><a href="#HCalculator" class="headerlink" title="HCalculator"></a>HCalculator</h1><h2 id="Link-链接"><a href="#Link-链接" class="headerlink" title="Link 链接"></a>Link 链接</h2><p> <a target="_blank" rel="noopener" href="https://github.com/huuhghhgyg/HCalculator">View on Github 在Github查看</a><br> <a target="_blank" rel="noopener" href="https://github.com/huuhghhgyg/HCalculator/zipball/master">Download .zip 下载.zip文件</a><br> <a target="_blank" rel="noopener" href="https://github.com/huuhghhgyg/HCalculator/tarball/master">Download .tar.gz 下载.tar.gz文件</a></p>
 <h2 id="Instructions-说明"><a href="#Instructions-说明" class="headerlink" title="Instructions 说明"></a>Instructions 说明</h2><p>若要访问原网页点击<a href="https://huuhghhgyg.github.io/HCalculator">&gt;这里&lt;</a></p>
 <p>嗯，就只是一个计算器嘛没什么好看的….要下赶快下XDD</p>
-<h2 id="Updates-历代大版本更新"><a href="#Updates-历代大版本更新" class="headerlink" title="Updates 历代大版本更新"></a>Updates 历代大版本更新</h2><h3 id="计算器1-0-最初版本"><a href="#计算器1-0-最初版本" class="headerlink" title="计算器1.0(最初版本)"></a>计算器1.0(最初版本)</h3><p><img src="/img/Calculator1.0.png"><br>基本的傻瓜计算器功能，差不多支持键盘乱弹。</p>
-<h3 id="计算器2-0-已遗失-作为向Material-Design的过渡"><a href="#计算器2-0-已遗失-作为向Material-Design的过渡" class="headerlink" title="计算器2.0(已遗失) 作为向Material Design的过渡"></a>计算器2.0(已遗失) 作为向Material Design的过渡</h3><h3 id="计算器3-0"><a href="#计算器3-0" class="headerlink" title="计算器3.0"></a>计算器3.0</h3><p><img src="/img/Calculator3.0.png"><br>拥有更好的界面，Material Design设计标准，更多的功能。支持生成随机数，计算日期之间的间隔等新功能。</p>
-<h3 id="计算器4-0-现在版本-持续更新中"><a href="#计算器4-0-现在版本-持续更新中" class="headerlink" title="计算器4.0(现在版本)[持续更新中]"></a>计算器4.0(现在版本)[持续更新中]</h3><p><img src="/img/Calculator4.0.png"><br>新增了科学计算器。改进了科学计算器的界面。持续改进!</p>
+<h2 id="Updates-历代大版本更新"><a href="#Updates-历代大版本更新" class="headerlink" title="Updates 历代大版本更新"></a>Updates 历代大版本更新</h2><h3 id="计算器1-0-最初版本"><a href="#计算器1-0-最初版本" class="headerlink" title="计算器1.0(最初版本)"></a>计算器1.0(最初版本)</h3><p><img src="/img/Calculator1.0.png" alt=""><br>基本的傻瓜计算器功能，差不多支持键盘乱弹。</p>
+<h3 id="计算器2-0-已遗失-作为向Material-Design的过渡"><a href="#计算器2-0-已遗失-作为向Material-Design的过渡" class="headerlink" title="计算器2.0(已遗失) 作为向Material Design的过渡"></a>计算器2.0(已遗失) 作为向Material Design的过渡</h3><h3 id="计算器3-0"><a href="#计算器3-0" class="headerlink" title="计算器3.0"></a>计算器3.0</h3><p><img src="/img/Calculator3.0.png" alt=""><br>拥有更好的界面，Material Design设计标准，更多的功能。支持生成随机数，计算日期之间的间隔等新功能。</p>
+<h3 id="计算器4-0-现在版本-持续更新中"><a href="#计算器4-0-现在版本-持续更新中" class="headerlink" title="计算器4.0(现在版本)[持续更新中]"></a>计算器4.0(现在版本)[持续更新中]</h3><p><img src="/img/Calculator4.0.png" alt=""><br>新增了科学计算器。改进了科学计算器的界面。持续改进!</p>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -1307,6 +1307,21 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
     
 </html>

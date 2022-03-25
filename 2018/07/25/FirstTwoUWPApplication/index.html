@@ -684,11 +684,10 @@
                       TintOpacity=&quot;0.6&quot; TintTransitionDuration=&quot;1&quot;
                       FallbackColor=&quot;Black&quot;/&gt;
 &lt;/Page.Resources&gt;
-    
+
 &lt;Grid  Background=&quot;&#123;StaticResource MyAcrylicBrush&#125;&quot;&gt;
 &lt;/Grid&gt;
-</code></pre>
-<p>之后当你要使用自定义的笔刷时，只需要将填充内容改为 <code>&quot;&#123;StaticResource MyAcrylicBrush&#125;&quot;</code> 即可。</p>
+</code></pre><p>之后当你要使用自定义的笔刷时，只需要将填充内容改为 <code>&quot;&#123;StaticResource MyAcrylicBrush&#125;&quot;</code> 即可。</p>
 <h2 id="应用1-357"><a href="#应用1-357" class="headerlink" title="应用1:357"></a>应用1:357</h2><blockquote>
 <p>这是一个游戏。游戏规则的话你自己去下载应用，翻看里面的介绍吧。Idea来自于课间无聊瞎玩的游戏。目前AI模式的AI属于智障AI。<strong>此应用使用的是自定义的 Acrylic笔刷</strong><br>得益于Win10新增的 <strong>Fluent Design</strong> 设计系统和 <strong>Acrylic</strong> ，得到了如下的效果图。</p>
 </blockquote>
@@ -1341,6 +1340,21 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
     
 </html>

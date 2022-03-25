@@ -442,7 +442,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B"><span class="post-toc-number">1.</span> <span class="post-toc-text">什么是异步编程</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#async-x2F-await"><span class="post-toc-number">2.</span> <span class="post-toc-text">async&#x2F;await</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%AE%9A%E4%B9%89%E5%BC%82%E6%AD%A5%E6%96%B9%E6%B3%95%E7%9A%84%E5%87%A0%E7%82%B9%E8%A6%81%E6%B1%82"><span class="post-toc-number">3.</span> <span class="post-toc-text">定义异步方法的几点要求</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%BC%82%E6%AD%A5%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B"><span class="post-toc-number">4.</span> <span class="post-toc-text">异步返回类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Task-T-%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">Task(T) 返回类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BB%BB%E5%8A%A1%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">任务返回类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Void-%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">Void 返回类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%80%9A%E7%94%A8%E7%9A%84%E5%BC%82%E6%AD%A5%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B%E5%92%8C-ValueTask"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">通用的异步返回类型和 ValueTask</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E8%AF%B7%E5%8F%82%E9%98%85"><span class="post-toc-number">5.</span> <span class="post-toc-text">请参阅</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B"><span class="post-toc-number">1.</span> <span class="post-toc-text">什么是异步编程</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#async-await"><span class="post-toc-number">2.</span> <span class="post-toc-text">async&#x2F;await</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%AE%9A%E4%B9%89%E5%BC%82%E6%AD%A5%E6%96%B9%E6%B3%95%E7%9A%84%E5%87%A0%E7%82%B9%E8%A6%81%E6%B1%82"><span class="post-toc-number">3.</span> <span class="post-toc-text">定义异步方法的几点要求</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%BC%82%E6%AD%A5%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B"><span class="post-toc-number">4.</span> <span class="post-toc-text">异步返回类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Task-T-%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">Task(T) 返回类型</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E8%AF%B7%E5%8F%82%E9%98%85"><span class="post-toc-number">5.</span> <span class="post-toc-text">请参阅</span></a></li></ol>
     </ul>
     
 
@@ -680,16 +680,14 @@ namespace Core
         &#125;
     &#125;
 &#125;
-</code></pre>
-<p>上面这段代码中，Main方法中的代码是按照自上而下的顺序执行的。网络状况不佳时，<strong>Start()</strong> 方法是比较耗时 <em>（注意，这里在Start方法中调用了异步方法GetStringAsync，但该方法在此处是以同步方式执行的，具体原因下文会进行说明）</em> ，在 <strong>Start()</strong> 方法执行完毕之前，整个程序处于阻塞状态。而异步编程可以很好的解决这个问题，<strong>一句简单的话来概括异步编程就是，程序无须按照代码顺序自上而下的执行。</strong></p>
-<h1 id="async-x2F-await"><a href="#async-x2F-await" class="headerlink" title="async&#x2F;await"></a>async&#x2F;await</h1><p><strong>C#5.0新增了async和await关键字，使用这两个关键字可以大大简化异步编程</strong></p>
+</code></pre><p>上面这段代码中，Main方法中的代码是按照自上而下的顺序执行的。网络状况不佳时，<strong>Start()</strong> 方法是比较耗时 <em>（注意，这里在Start方法中调用了异步方法GetStringAsync，但该方法在此处是以同步方式执行的，具体原因下文会进行说明）</em> ，在 <strong>Start()</strong> 方法执行完毕之前，整个程序处于阻塞状态。而异步编程可以很好的解决这个问题，<strong>一句简单的话来概括异步编程就是，程序无须按照代码顺序自上而下的执行。</strong></p>
+<h1 id="async-await"><a href="#async-await" class="headerlink" title="async/await"></a>async/await</h1><p><strong>C#5.0新增了async和await关键字，使用这两个关键字可以大大简化异步编程</strong></p>
 <p>使用 <strong>async</strong> 关键字可将方法、<a target="_blank" rel="noopener" href="https://msdn.microsoft.com/zh-cn/library/bb397687.aspx">lambda 表达式</a>或<a target="_blank" rel="noopener" href="https://msdn.microsoft.com/zh-cn/library/0yw3tz5k.aspx">匿名方法</a>标记为异步，即，方法中应该包含一个或多个await表达式，但async关键字本身不会创建异步操作。</p>
 <pre><code>public async Task Asy()
 &#123;
 　　//do something...
 &#125;
-</code></pre>
-<p>这里需要注意一点，若使用async关键字标记的方法中没有使用await关键字（编译器会给出警告但不报错），<strong>那么该方法将会以同步方式执行。</strong></p>
+</code></pre><p>这里需要注意一点，若使用async关键字标记的方法中没有使用await关键字（编译器会给出警告但不报错），<strong>那么该方法将会以同步方式执行。</strong></p>
 <h1 id="定义异步方法的几点要求"><a href="#定义异步方法的几点要求" class="headerlink" title="定义异步方法的几点要求"></a>定义异步方法的几点要求</h1><p>定义一个异步方法应满足以下几点：</p>
 <ul>
 <li>使用async关键字来修饰方法</li>
@@ -705,8 +703,7 @@ namespace Core
     var str = await client.GetStringAsync(&quot;https://www.visualstudio.com/&quot;);
     return str.Length;
 &#125;
-</code></pre>
-<h1 id="异步返回类型"><a href="#异步返回类型" class="headerlink" title="异步返回类型"></a>异步返回类型</h1><ul>
+</code></pre><h1 id="异步返回类型"><a href="#异步返回类型" class="headerlink" title="异步返回类型"></a>异步返回类型</h1><ul>
 <li>Task(T) 返回类型</li>
 <li>任务返回类型</li>
 <li>Void 返回类型</li>
@@ -750,14 +747,14 @@ public class Example
    &#123;  
        // Task.FromResult is a placeholder for actual work that returns a string.  
        var today = await Task.FromResult&lt;string&gt;(DateTime.Now.DayOfWeek.ToString());  
-     
+
        // The method then can process the result in some way.  
        int leisureHours;  
        if (today.First() == &#39;S&#39;)  
            leisureHours = 16;  
        else  
            leisureHours = 5;  
-     
+
        return leisureHours;  
    &#125;  
 &#125;
@@ -765,160 +762,58 @@ public class Example
 //       Today is Wednesday, May 24, 2017
 //       Today&#39;s hours of leisure: 5
 // &lt;/Snippet &gt;
-</code></pre>
-<p>在 <code>ShowTodaysInfo</code> 方法中从 await 表达式内调用 <code>GetLeisureHours</code> 时，await 表达式检索存储在由 <code>GetLeisureHours</code> 方法返回的任务中的整数值（<code>leisureHours</code> 的值）。 有关 await 表达式的详细信息，请参阅 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/await">await</a>。</p>
+</code></pre><p>在 <code>ShowTodaysInfo</code> 方法中从 await 表达式内调用 <code>GetLeisureHours</code> 时，await 表达式检索存储在由 <code>GetLeisureHours</code> 方法返回的任务中的整数值（<code>leisureHours</code> 的值）。 有关 await 表达式的详细信息，请参阅 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/await">await</a>。</p>
 <p>通过从应用程序 <code>await</code> 中分离对 <code>GetLeisureHours</code> 的调用，你可以更好地了解此操作，如下面的代码所示。 对非立即等待的方法 <code>TaskOfT_MethodAsync</code> 的调用返回 <code>Task&lt;int&gt;</code>，正如你从方法声明预料的一样。 该任务指派给示例中的 <code>integerTask</code> 变量。 因为 <code>integerTask</code> 是 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task<TResult></a>，所以它包含类型 <code>TResult</code> 的 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1.result#System_Threading_Tasks_Task_1_Result">Result</a> 属性。 在这种情况下，<code>TResult</code> 表示整数类型。 <code>await</code> 应用于 <code>integerTask</code>，await 表达式的计算结果为 <code>integerTask</code> 的 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a> 属性内容。 此值分配给 <code>result2</code> 变量。</p>
 <blockquote>
-<p><strong>重要</strong>:Result 属性为阻止属性。 如果你在其任务完成之前尝试访问它，当前处于活动状态的线程将被阻止，直到任务完成且值为可用。 在大多数情况下，应通过使用 await 访问此值，而不是直接访问属性。<br>上一示例通过检索 Result 属性的值来阻止主线程，从而使 ShowTodaysInfo 方法可在应用程序结束之前完成执行。</p>
+<p><strong>重要</strong>:Result 属性为阻止属性。 如果你在其任务完成之前尝试访问它，当前处于活动状态的线程将被阻止，直到任务完成且值为可用。 在大多数情况下，应通过使用 await 访问此值，而不是直接访问属性。<br>上一示例通过检索 Result 属性的值来阻止主线程，从而使 ShowTodaysInfo 方法可在应用程序结束之前完成执行。<br>```<br>var infoTask = GetLeisureHours();</p>
 </blockquote>
-<pre><code>var infoTask = GetLeisureHours();
+<p>// You can do other work that does not rely on integerTask before awaiting.</p>
+<p>string ret = $”Today is {DateTime.Today:D}\n” +<br>             “Today’s hours of leisure: “ +<br>             $”{await infoTask}”;</p>
+<pre><code>## 任务返回类型
+不包含 `return` 语句的异步方法或包含不返回操作数的 `return` 语句的异步方法通常具有返回类型 [Task](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task)。 如果此类方法同步运行，它们将返回 `void`。 如果在异步方法中使用 Task 返回类型，调用方法可以使用 `await` 运算符暂停调用方的完成，直至被调用的异步方法结束。
 
-// You can do other work that does not rely on integerTask before awaiting.
+如下示例中，`WaitAndApologize` 异步方法不包含 return 语句，因此此方法返回 [Task](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task) 对象。 通过这样可等待 `WaitAndApologize`。 请注意，[Task](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task) 类型不包含 `Result` 属性，因为它不具有任何返回值。
+</code></pre><p>using System;<br>using System.Threading.Tasks;</p>
+<p>public class Example<br>{<br>   public static void Main()<br>   {<br>      DisplayCurrentInfo().Wait();<br>   }</p>
+<p>   static async Task DisplayCurrentInfo()<br>   {<br>      await WaitAndApologize();<br>      Console.WriteLine($”Today is {DateTime.Now:D}”);<br>      Console.WriteLine($”The current time is {DateTime.Now.TimeOfDay:t}”);<br>      Console.WriteLine(“The current temperature is 76 degrees.”);<br>   }</p>
+<p>   static async Task WaitAndApologize()<br>   {<br>      // Task.Delay is a placeholder for actual work.<br>      await Task.Delay(2000);<br>      // Task.Delay delays the following line by two seconds.<br>      Console.WriteLine(“\nSorry for the delay. . . .\n”);<br>   }<br>}<br>// The example displays the following output:<br>//       Sorry for the delay. . . .<br>//<br>//       Today is Wednesday, May 24, 2017<br>//       The current time is 15:25:16.2935649<br>//       The current temperature is 76 degrees.</p>
+<pre><code>通过使用 await 语句而不是 await 表达式等待 `WaitAndApologize`，类似于返回 void 的同步方法的调用语句。 Await 运算符的应用程序在这种情况下不生成值。
 
-string ret = $&quot;Today is &#123;DateTime.Today:D&#125;\n&quot; +
-             &quot;Today&#39;s hours of leisure: &quot; +
-             $&quot;&#123;await infoTask&#125;&quot;;
-</code></pre>
-<h2 id="任务返回类型"><a href="#任务返回类型" class="headerlink" title="任务返回类型"></a>任务返回类型</h2><p>不包含 <code>return</code> 语句的异步方法或包含不返回操作数的 <code>return</code> 语句的异步方法通常具有返回类型 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a>。 如果此类方法同步运行，它们将返回 <code>void</code>。 如果在异步方法中使用 Task 返回类型，调用方法可以使用 <code>await</code> 运算符暂停调用方的完成，直至被调用的异步方法结束。</p>
-<p>如下示例中，<code>WaitAndApologize</code> 异步方法不包含 return 语句，因此此方法返回 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a> 对象。 通过这样可等待 <code>WaitAndApologize</code>。 请注意，<a target="_blank" rel="noopener" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a> 类型不包含 <code>Result</code> 属性，因为它不具有任何返回值。</p>
-<pre><code>using System;
-using System.Threading.Tasks;
+如同上一个 [Task&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1) 示例，可以从 await 运算符的应用程序中分离对 `Task_MethodAsync` 的调用，如以下代码所示。 但是，请记住，`Task` 没有 `Result` 属性，并且当 await 运算符应用于 `Task` 时不产生值。
 
-public class Example
-&#123;
-   public static void Main()
-   &#123;
-      DisplayCurrentInfo().Wait();
-   &#125;
+以下代码将调用 `WaitAndApologize` 方法和等待此方法返回的任务分离。
+</code></pre><p>Task wait = WaitAndApologize();</p>
+<p>string output = $”Today is {DateTime.Now:D}\n” +<br>                $”The current time is {DateTime.Now.TimeOfDay:t}\n” +<br>                $”The current temperature is 76 degrees.\n”;<br>await wait;<br>Console.WriteLine(output);</p>
+<pre><code>## Void 返回类型
+在异步事件处理程序中使用 `void` 返回类型，这需要 `void` 返回类型。 对于事件处理程序以外的不返回值的方法，应返回 [Task](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task)，因为无法等待返回 `void` 的异步方法。 这种方法的任何调用方必须能够继续完成，而无需等待调用的异步方法完成，并且调用方必须独立于异步方法生成的任何值或异常。
 
-   static async Task DisplayCurrentInfo()
-   &#123;
-      await WaitAndApologize();
-      Console.WriteLine($&quot;Today is &#123;DateTime.Now:D&#125;&quot;);
-      Console.WriteLine($&quot;The current time is &#123;DateTime.Now.TimeOfDay:t&#125;&quot;);
-      Console.WriteLine(&quot;The current temperature is 76 degrees.&quot;);
-   &#125;
+返回 void 的异步方法的调用方无法捕获从该方法引发的异常，且此类未经处理的异常可能会导致应用程序故障。 如果返回 [Task](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task) 或 [Task&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1) 的异步方法中出现异常，此异常将存储于返回的任务中，并在等待该任务时再次引发。 因此，请确保可以产生异常的任何异步方法都具有返回类型 [Task](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task) 或 [Task&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1)，并确保会等待对方法的调用。
 
-   static async Task WaitAndApologize()
-   &#123;
-      // Task.Delay is a placeholder for actual work.  
-      await Task.Delay(2000);  
-      // Task.Delay delays the following line by two seconds.  
-      Console.WriteLine(&quot;\nSorry for the delay. . . .\n&quot;);  
-   &#125;
-&#125;
-// The example displays the following output:
-//       Sorry for the delay. . . .
-//       
-//       Today is Wednesday, May 24, 2017
-//       The current time is 15:25:16.2935649
-//       The current temperature is 76 degrees.
-</code></pre>
-<p>通过使用 await 语句而不是 await 表达式等待 <code>WaitAndApologize</code>，类似于返回 void 的同步方法的调用语句。 Await 运算符的应用程序在这种情况下不生成值。</p>
-<p>如同上一个 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task<TResult></a> 示例，可以从 await 运算符的应用程序中分离对 <code>Task_MethodAsync</code> 的调用，如以下代码所示。 但是，请记住，<code>Task</code> 没有 <code>Result</code> 属性，并且当 await 运算符应用于 <code>Task</code> 时不产生值。</p>
-<p>以下代码将调用 <code>WaitAndApologize</code> 方法和等待此方法返回的任务分离。</p>
-<pre><code>Task wait = WaitAndApologize();
+有关如何在异步方法中捕捉异常的更多信息，请参阅 [try-catch](https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/try-catch)。
 
-string output = $&quot;Today is &#123;DateTime.Now:D&#125;\n&quot; + 
-                $&quot;The current time is &#123;DateTime.Now.TimeOfDay:t&#125;\n&quot; +
-                $&quot;The current temperature is 76 degrees.\n&quot;;
-await wait;
-Console.WriteLine(output);
-</code></pre>
-<h2 id="Void-返回类型"><a href="#Void-返回类型" class="headerlink" title="Void 返回类型"></a>Void 返回类型</h2><p>在异步事件处理程序中使用 <code>void</code> 返回类型，这需要 <code>void</code> 返回类型。 对于事件处理程序以外的不返回值的方法，应返回 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a>，因为无法等待返回 <code>void</code> 的异步方法。 这种方法的任何调用方必须能够继续完成，而无需等待调用的异步方法完成，并且调用方必须独立于异步方法生成的任何值或异常。</p>
-<p>返回 void 的异步方法的调用方无法捕获从该方法引发的异常，且此类未经处理的异常可能会导致应用程序故障。 如果返回 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a> 或 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task<TResult></a> 的异步方法中出现异常，此异常将存储于返回的任务中，并在等待该任务时再次引发。 因此，请确保可以产生异常的任何异步方法都具有返回类型 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a> 或 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task<TResult></a>，并确保会等待对方法的调用。</p>
-<p>有关如何在异步方法中捕捉异常的更多信息，请参阅 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/try-catch">try-catch</a>。</p>
-<p>以下示例定义一个异步事件处理程序。</p>
-<pre><code>using System;
-using System.Threading.Tasks;
+以下示例定义一个异步事件处理程序。
+</code></pre><p>using System;<br>using System.Threading.Tasks;</p>
+<p>public class Counter<br>{<br>   private int threshold = 0;<br>   private int iterations = 0;<br>   private int ctr = 0;</p>
+<p>   event EventHandler<EventArgs> ThresholdReached;</p>
+<p>   public Counter(int threshold)<br>   {<br>      this.threshold = threshold;<br>      ThresholdReached += thresholdReachedEvent;<br>   }</p>
+<p>   public async Task<int> StartCounting(int limit)<br>   {<br>      iterations = 1;<br>      for (int index = 0; index &lt;= limit; index++) {<br>         if (ctr == threshold)<br>            thresholdReachedEvent(this, EventArgs.Empty);<br>         ctr++;<br>         await Task.Delay(500);<br>      }<br>      int retval = ctr + (iterations - 1) * threshold;<br>      Console.WriteLine($”On iteration {iterations}, reached {limit}”);<br>      return retval;<br>   }</p>
+<p>   async void thresholdReachedEvent(object sender, EventArgs e)<br>   {<br>       Console.WriteLine($”Reached {ctr}. Resetting…”);<br>       await Task.Delay(1000);<br>       ctr = 0;<br>       iterations++;<br>   }<br>}</p>
+<p>public class Example<br>{<br>   public static void Main()<br>   {<br>      RunCounter().Wait();<br>   }</p>
+<p>   private static async Task RunCounter()<br>   {<br>      var count = new Counter(5);<br>      await count.StartCounting(8);<br>   }<br>}</p>
+<pre><code>## 通用的异步返回类型和 ValueTask
+从 C# 7 开始，异步方法可返回任何具有可访问的 `GetAwaiter` 方法的类型。
+[Task](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task) 和 [Task&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1) 是引用类型，因此，性能关键路径中的内存分配会对性能产生负面影响，尤其当分配出现在紧凑循环中时。 支持通用返回类型意味着可返回轻量值类型（而不是引用类型），从而避免额外的内存分配。
 
-public class Counter
-&#123;
-   private int threshold = 0;
-   private int iterations = 0;
-   private int ctr = 0;
-
-   event EventHandler&lt;EventArgs&gt; ThresholdReached;
-
-   public Counter(int threshold)
-   &#123;
-      this.threshold = threshold;
-      ThresholdReached += thresholdReachedEvent;
-   &#125;
-
-   public async Task&lt;int&gt; StartCounting(int limit)
-   &#123;
-      iterations = 1;
-      for (int index = 0; index &lt;= limit; index++) &#123;
-         if (ctr == threshold)
-            thresholdReachedEvent(this, EventArgs.Empty);
-         ctr++;
-         await Task.Delay(500);
-      &#125;
-      int retval = ctr + (iterations - 1) * threshold;
-      Console.WriteLine($&quot;On iteration &#123;iterations&#125;, reached &#123;limit&#125;&quot;);
-      return retval;    
-   &#125;
-
-   async void thresholdReachedEvent(object sender, EventArgs e)
-   &#123;
-       Console.WriteLine($&quot;Reached &#123;ctr&#125;. Resetting...&quot;);
-       await Task.Delay(1000);
-       ctr = 0;
-       iterations++;
-   &#125;
-&#125;
-
-public class Example
-&#123;
-   public static void Main()
-   &#123;
-      RunCounter().Wait();
-   &#125;
-
-   private static async Task RunCounter()
-   &#123;
-      var count = new Counter(5);
-      await count.StartCounting(8);
-   &#125;
-&#125;
-</code></pre>
-<h2 id="通用的异步返回类型和-ValueTask"><a href="#通用的异步返回类型和-ValueTask" class="headerlink" title="通用的异步返回类型和 ValueTask"></a>通用的异步返回类型和 ValueTask</h2><p>从 C# 7 开始，异步方法可返回任何具有可访问的 <code>GetAwaiter</code> 方法的类型。<br><a target="_blank" rel="noopener" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a> 和 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task<TResult></a> 是引用类型，因此，性能关键路径中的内存分配会对性能产生负面影响，尤其当分配出现在紧凑循环中时。 支持通用返回类型意味着可返回轻量值类型（而不是引用类型），从而避免额外的内存分配。</p>
-<p>.NET 提供 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1">System.Threading.Tasks.ValueTask<TResult></a> 结构作为返回任务的通用值的轻量实现。 要使用 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1">System.Threading.Tasks.ValueTask<TResult></a> 类型，必须向项目添加 <code>System.Threading.Tasks.Extensions</code> NuGet 包。 如下示例使用 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1">ValueTask<TResult></a> 结构检索两个骰子的值。</p>
-<pre><code>using System;
-using System.Threading.Tasks;
-
-class Program
-&#123;
-   static Random rnd;
-   
-   static void Main()
-   &#123;
-      Console.WriteLine($&quot;You rolled &#123;GetDiceRoll().Result&#125;&quot;);
-   &#125;
-   
-   private static async ValueTask&lt;int&gt; GetDiceRoll()
-   &#123;
-      Console.WriteLine(&quot;...Shaking the dice...&quot;);
-      int roll1 = await Roll();
-      int roll2 = await Roll();
-      return roll1 + roll2; 
-   &#125; 
-   
-   private static async ValueTask&lt;int&gt; Roll()
-   &#123;
-      if (rnd == null)
-         rnd = new Random();
-      
-      await Task.Delay(500);
-      int diceRoll = rnd.Next(1, 7);
-      return diceRoll;
-   &#125; 
-&#125;
-// The example displays output like the following:
-//       ...Shaking the dice...
-//       You rolled 8
-</code></pre>
+.NET 提供 [System.Threading.Tasks.ValueTask&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1) 结构作为返回任务的通用值的轻量实现。 要使用 [System.Threading.Tasks.ValueTask&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1) 类型，必须向项目添加 `System.Threading.Tasks.Extensions` NuGet 包。 如下示例使用 [ValueTask&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1) 结构检索两个骰子的值。
+</code></pre><p>using System;<br>using System.Threading.Tasks;</p>
+<p>class Program<br>{<br>   static Random rnd;</p>
+<p>   static void Main()<br>   {<br>      Console.WriteLine($”You rolled {GetDiceRoll().Result}”);<br>   }</p>
+<p>   private static async ValueTask<int> GetDiceRoll()<br>   {<br>      Console.WriteLine(“…Shaking the dice…”);<br>      int roll1 = await Roll();<br>      int roll2 = await Roll();<br>      return roll1 + roll2;<br>   } </p>
+<p>   private static async ValueTask<int> Roll()<br>   {<br>      if (rnd == null)<br>         rnd = new Random();</p>
+<pre><code>  await Task.Delay(500);
+  int diceRoll = rnd.Next(1, 7);
+  return diceRoll;
+</code></pre><p>   }<br>}<br>// The example displays output like the following:<br>//       …Shaking the dice…<br>//       You rolled 8<br>```</p>
 <h1 id="请参阅"><a href="#请参阅" class="headerlink" title="请参阅"></a>请参阅</h1><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.fromresult">FromResult</a></p>
 <p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await">演练：使用 Async 和 Await 访问 Web (C#)</a></p>
 <p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/concepts/async/control-flow-in-async-programs">异步程序中的控制流 (C#)</a></p>
@@ -1563,6 +1458,21 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
     
 </html>

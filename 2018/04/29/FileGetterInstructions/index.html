@@ -661,7 +661,7 @@
 <!-- Post Content -->
 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h1 id="File-Getter使用说明"><a href="#File-Getter使用说明" class="headerlink" title="File Getter使用说明"></a>File Getter使用说明</h1><h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p>启动后持续扫描电脑上盘符数，当盘符数量有变更时检索新增盘符内文件。当检索到指定文件时复制到电脑中指定目录(C:&#x2F;got)下。</p>
+        <h1 id="File-Getter使用说明"><a href="#File-Getter使用说明" class="headerlink" title="File Getter使用说明"></a>File Getter使用说明</h1><h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p>启动后持续扫描电脑上盘符数，当盘符数量有变更时检索新增盘符内文件。当检索到指定文件时复制到电脑中指定目录(C:/got)下。</p>
 <h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>直接打开(建议存入电脑C盘中某个位置再打开)，当你程序成功开始运行后发出短暂(哔)声。当有新盘符插入时，扫描盘符内文件，若有指定类型文件则复制。当扫描完成后程序发出长(1s,哔)声，并自动退出。</p>
 <h2 id="奇淫技巧"><a href="#奇淫技巧" class="headerlink" title="奇淫技巧"></a>奇淫技巧</h2><p>当你在程序运行目录下新建以下文件程序运行逻辑会发生改变:</p>
 <p><strong>debug.txt</strong><br>当程序运行时，只要检测到运行目录下有此文件，日志窗口会显示出来。当检测到此文件被删去，窗口则会被隐藏。<br><em>注意:此操作在程序运行时是实时的，命令即刻执行(在下一个循环时)</em></p>
@@ -1309,6 +1309,21 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
     
 </html>

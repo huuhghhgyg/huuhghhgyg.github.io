@@ -662,21 +662,20 @@
 &#125;
 
 Set-WallPaper -value &quot;C:\Windows\Web\Wallpaper\Homes_Background.bmp&quot;
-</code></pre>
-<p>将其中<code>C:\Windows\Web\Wallpaper\Homes_Background.bmp</code>更改成壁纸所在处，执行脚本即生效。</p>
-<h2 id="添加到计划任务"><a href="#添加到计划任务" class="headerlink" title="添加到计划任务"></a>添加到计划任务</h2><p>计划任务的位置在 <strong>“控制面板”-(“系统和安全”)-“管理工具”-“计划任务”</strong><br>打开后点击 <strong>“添加基本任务”</strong> ,之后就可以跟着向导走了。执行文件填写 <strong>powershell</strong> ,参数填写刚刚保存的脚本文件位置即可。<br><img src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/PlannedTask.png"></p>
+</code></pre><p>将其中<code>C:\Windows\Web\Wallpaper\Homes_Background.bmp</code>更改成壁纸所在处，执行脚本即生效。</p>
+<h2 id="添加到计划任务"><a href="#添加到计划任务" class="headerlink" title="添加到计划任务"></a>添加到计划任务</h2><p>计划任务的位置在 <strong>“控制面板”-(“系统和安全”)-“管理工具”-“计划任务”</strong><br>打开后点击 <strong>“添加基本任务”</strong> ,之后就可以跟着向导走了。执行文件填写 <strong>powershell</strong> ,参数填写刚刚保存的脚本文件位置即可。<br><img src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/PlannedTask.png" alt=""></p>
 <h2 id="还可以"><a href="#还可以" class="headerlink" title="还可以"></a>还可以</h2><p><strong>每日获取Bing图片并设为壁纸</strong></p>
 <pre><code>function Save-BingTodayImage()
 &#123;
     #必应图片故事API
     $bingImageApi =&#39;http://www.bing.com/HPImageArchive.aspx?format=xml&amp;idx=0&amp;n=1&amp;mkt=zh-cn&#39;
     $bingUri = &#39;http://www.bing.com/&#39;
- 
+
     # 获取图片链接
     [xml]$bingImageXml = (Invoke-WebRequest -Uri $bingImageApi).Content
     Write-Host &quot; 今日图片故事： $( $bingImageXml.images.image.copyright ) &quot;
     $imgLink = &#39;&#123;0&#125;&#123;1&#125;&#39; -f $bingUri , $bingImageXml.images.image.url
- 
+
     # 下载和保存图片
     $imageDir = &quot;$HOME\Pictures\Bing\&quot;
     if( -not (Test-Path $imageDir) )
@@ -684,25 +683,24 @@ Set-WallPaper -value &quot;C:\Windows\Web\Wallpaper\Homes_Background.bmp&quot;
         mkdir $imageDir | Out-Null
     &#125;
     $imageFile = Join-Path $imageDir ( &#39;&#123;0&#125;.jpg&#39; -f $bingImageXml.images.image.fullstartdate)
- 
+
     Invoke-WebRequest -Uri $imgLink -OutFile $imageFile
- 
+
     return $imageFile
 &#125;
- 
+
 Function Set-DesktopWallPaper($imagePath)
 &#123;
  Set-ItemProperty -path &#39;HKCU:\Control Panel\Desktop\&#39; -name wallpaper -value $imagePath
  RUNDLL32.EXE USER32.DLL UpdatePerUserSystemParameters ,1 ,True
 &#125;
- 
+
 # 获取今日必应背景图片
 $image=Save-BingTodayImage
- 
+
 #设置为桌面墙纸
 Set-DesktopWallPaper -imagePath $image
 </code></pre>
-
             
                 <!-- <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;border-radius: 2px;">
                     <p><strong>
@@ -1342,6 +1340,21 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
     
 </html>

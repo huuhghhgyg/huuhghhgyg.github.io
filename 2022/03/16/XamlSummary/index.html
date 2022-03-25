@@ -653,11 +653,11 @@
     
         <p>主要是Xaml的“绑定”和“资源”</p>
 <h1 id="Xaml静态资源绑定"><a href="#Xaml静态资源绑定" class="headerlink" title="Xaml静态资源绑定"></a>Xaml静态资源绑定</h1><p>需要绑定一个resource的时候，需要的表达式就是大括号里面有“StaticResource”，再加上resource的名字。这种绑定只在App运行的时候进行一次，因为是静态资源，所以它就不会变了。<br>如：</p>
-<pre><code class="xml">&lt;TextBlock Foreground = &quot;&#123;StaticResource MyBrush&#125;&quot; /&gt;
+<pre><code class="lang-xml">&lt;TextBlock Foreground = &quot;&#123;StaticResource MyBrush&#125;&quot; /&gt;
 </code></pre>
 <p><code>StaticResource</code>表明了我们所绑定的资源的类型</p>
 <h2 id="单个属性的绑定"><a href="#单个属性的绑定" class="headerlink" title="单个属性的绑定"></a>单个属性的绑定</h2><p>可以创建单个属性的资源绑定，如：</p>
-<pre><code class="xml">&lt;Page.Resources&gt;
+<pre><code class="lang-xml">&lt;Page.Resources&gt;
     &lt;SolidColorBrush x:Key=&quot;MyBrush&quot; Color=&quot;Brown&quot;/&gt;
 &lt;/Page.Resources&gt;
 
@@ -665,10 +665,10 @@
 &lt;TextBlock Text=&quot;Hello World&quot; Foreground=&quot;&#123;StaticResource MyBrush&#125;&quot;/&gt;
 </code></pre>
 <p>还可以创建值绑定，如将<code>Slider</code>的值绑定到<code>ProgessBar</code>中：</p>
-<pre><code class="xml">&lt;ProgressBar Maximum=&quot;100&quot; Value=&quot;&#123;x:Bind MySlider.Value, Mode=OneWay&#125;&quot;&gt;
+<pre><code class="lang-xml">&lt;ProgressBar Maximum=&quot;100&quot; Value=&quot;&#123;x:Bind MySlider.Value, Mode=OneWay&#125;&quot;&gt;
 </code></pre>
 <h2 id="多个属性的绑定（Style）"><a href="#多个属性的绑定（Style）" class="headerlink" title="多个属性的绑定（Style）"></a>多个属性的绑定（Style）</h2><p>也可以创建多个值类型的绑定，如设置背景、字体、字号等属性，如：</p>
-<pre><code class="xml">&lt;Page.Resources&gt;
+<pre><code class="lang-xml">&lt;Page.Resources&gt;
     &lt;Style TargetType=&quot;Button&quot; x:Key=&quot;MyButtonStyle&quot;&gt;
     &lt;!-- 定义了目标类型、样式（资源）名称 --&gt;
     &lt;!-- 下面是各个属性值的设置 --&gt;
@@ -684,12 +684,12 @@
         &lt;!-- 资源的名称是“MyButtonStyle” --&gt;
 </code></pre>
 <h2 id="属性的继承"><a href="#属性的继承" class="headerlink" title="属性的继承"></a>属性的继承</h2><p>使用<code>BasedOn</code>属性<br>如<code>HeaderTextBlockStyle</code>就是继承自<code>BaseTextBlockStyle</code><br>原文引用：</p>
-<pre><code class="xml">&lt;Style x:Key=&quot;HeaderTextBlockStyle&quot; TargetType=&quot;TextBlock&quot; BasedOn=&quot;&#123;StaticResource BaseTextBlockStyle&#125;&quot;&gt;
+<pre><code class="lang-xml">&lt;Style x:Key=&quot;HeaderTextBlockStyle&quot; TargetType=&quot;TextBlock&quot; BasedOn=&quot;&#123;StaticResource BaseTextBlockStyle&#125;&quot;&gt;
     ...
 &lt;/Style&gt;
 </code></pre>
 <h2 id="跨页引用资源"><a href="#跨页引用资源" class="headerlink" title="跨页引用资源"></a>跨页引用资源</h2><p>如果要跨页引用属性定义，需要在<code>App.xaml</code>的<code>Application.Resources</code>里面添加定义<br>在<code>App.xaml</code>中添加定义：</p>
-<pre><code class="xml">&lt;Application.Resources&gt;
+<pre><code class="lang-xml">&lt;Application.Resources&gt;
     &lt;!-- 在这里添加属性的定义 --&gt;
 &lt;/Application.Resources&gt;
 </code></pre>
@@ -706,14 +706,14 @@
 <li>…</li>
 </ul>
 <p>不仅在<code>Page</code>和<code>Application</code>层面可以创建Resource Dictionary，还可以创建名为<code>Merged Resource Dictionary</code>，用于在多个文件中定义Resource Dictionary，以此降低程序的复杂性，并允许在不同的项目中重复使用Dictionary文档。<br>比如，在项目中创建一个<code>Dictionary1.xaml</code>文件（<code>ResourceDictionary</code>类型），内容如下：</p>
-<pre><code class="xml">&lt;ResourceDictionary
+<pre><code class="lang-xml">&lt;ResourceDictionary
     xmlns=&quot;&quot;
     ...&gt;
     &lt;x:String x:Key=&quot;greeting&quot;&gt;Hello World&lt;/x:String&gt;
 &lt;ResourceDictionary/&gt;
 </code></pre>
 <p>在其它文件中的引用（以<code>Page</code>为例）：</p>
-<pre><code class="xml">&lt;Page.Resources&gt;
+<pre><code class="lang-xml">&lt;Page.Resources&gt;
     &lt;ResourceDictionary&gt;
         &lt;ResourceDictionary.MergedDictionaries&gt;
             &lt;!-- 可以合并多个Dictionary入这个文件，只需要向里面添加 --&gt;
@@ -724,7 +724,7 @@
 </code></pre>
 <h2 id="使用系统已经构建好的主题"><a href="#使用系统已经构建好的主题" class="headerlink" title="使用系统已经构建好的主题"></a>使用系统已经构建好的主题</h2><p>可以直接在<code>Style=&quot;&#123;StaticResource ...&#125;&quot;</code>里面根据IntelliSense查找，或者在控件的属性框内，找到Miscellaneous中的<code>Style</code>，选中<code>System Resource</code>，进行选择。</p>
 <h1 id="Xaml非静态资源绑定"><a href="#Xaml非静态资源绑定" class="headerlink" title="Xaml非静态资源绑定"></a>Xaml非静态资源绑定</h1><h2 id="ThemeResource"><a href="#ThemeResource" class="headerlink" title="ThemeResource"></a>ThemeResource</h2><p><code>ThemeResource</code>和系统主题有关，使用系统主题中的颜色：</p>
-<pre><code class="xml">&lt;!-- 使用系统的主题色 --&gt;
+<pre><code class="lang-xml">&lt;!-- 使用系统的主题色 --&gt;
 &lt;Rectangle Fill=&quot;&#123;ThemeResource SystemAccentColor&#125;&quot;&gt;
 &lt;!-- 使用系统的窗口颜色（亮/暗等） --&gt;
 &lt;Rectangle Fill=&quot;&#123;ThemeResource SystemColorWindowColor&#125;&quot;&gt;
@@ -1369,6 +1369,21 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
     
 </html>

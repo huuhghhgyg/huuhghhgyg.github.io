@@ -46,7 +46,7 @@
     
     <title>
         
-            高一语文必修一必背篇目 | 
+            C#线程 | 
         
         Hikaru&#39;s Blog
     </title>
@@ -57,7 +57,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="huuhghhgyg的个人主页">
-    <meta name="keywords" content="huu huuhghhgyg,学习">
+    <meta name="keywords" content="huu huuhghhgyg,C#,编程">
     <meta name="theme-color" content="#1976D2">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -312,7 +312,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Hikaru&#39;s Blog">
-    <meta name="msapplication-starturl" content="https://huuhghhgyg.github.io/2017/08/25/Grade1Recite1-cn/">
+    <meta name="msapplication-starturl" content="https://huuhghhgyg.github.io/2022/03/25/CSharpThread/">
     <meta name="msapplication-navbutton-color" content="#1976D2">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Hikaru&#39;s Blog">
@@ -327,16 +327,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://huuhghhgyg.github.io/2017/08/25/Grade1Recite1-cn/">
+    <meta property="og:url" content="https://huuhghhgyg.github.io/2022/03/25/CSharpThread/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="高一语文必修一必背篇目 | Hikaru&#39;s Blog">
+    <meta property="og:title" content="C#线程 | Hikaru&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="huuhghhgyg的个人主页">
-    <meta property="og:article:tag" content="学习"> 
+    <meta property="og:article:tag" content="C#"> <meta property="og:article:tag" content="编程"> 
 
     
-        <meta property="article:published_time" content="Fri Aug 25 2017 20:54:29 GMT+0800">
-        <meta property="article:modified_time" content="Wed Jul 14 2021 22:34:30 GMT+0800">
+        <meta property="article:published_time" content="Fri Mar 25 2022 11:31:09 GMT+0800">
+        <meta property="article:modified_time" content="Fri Mar 25 2022 11:48:42 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -344,7 +344,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://huuhghhgyg.github.io/2017/08/25/Grade1Recite1-cn/index.html" />
+        <link rel="canonical" href="https://huuhghhgyg.github.io/2022/03/25/CSharpThread/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -356,10 +356,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://huuhghhgyg.github.io/2017/08/25/Grade1Recite1-cn/index.html",
-    "headline": "高一语文必修一必背篇目",
-    "datePublished": "Fri Aug 25 2017 20:54:29 GMT+0800",
-    "dateModified": "Wed Jul 14 2021 22:34:30 GMT+0800",
+    "mainEntityOfPage": "https://huuhghhgyg.github.io/2022/03/25/CSharpThread/index.html",
+    "headline": "C#线程",
+    "datePublished": "Fri Mar 25 2022 11:31:09 GMT+0800",
+    "dateModified": "Fri Mar 25 2022 11:48:42 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "huuhghhgyg",
@@ -377,7 +377,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",学习huu huuhghhgyg",
+    "keywords": ",C#,编程huu huuhghhgyg",
     "description": "huuhghhgyg的个人主页",
 }
 </script>
@@ -442,7 +442,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%BF%85%E4%BF%AE%E4%B8%80%E5%BF%85%E8%83%8C%E7%AF%87%E7%9B%AE"><span class="post-toc-number">1.</span> <span class="post-toc-text">必修一必背篇目</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%B2%81%E5%9B%AD%E6%98%A5%C2%B7%E9%95%BF%E6%B2%99"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">沁园春·长沙</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%9B%A8%E5%B7%B7"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">雨巷</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%86%8D%E5%88%AB%E5%BA%B7%E6%A1%A5"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">再别康桥</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%8D%86%E8%BD%B2%E5%88%BA%E7%A7%A6%E7%8E%8B"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">荆轲刺秦王</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%AF%91%E6%96%87"><span class="post-toc-number">1.0.4.1.</span> <span class="post-toc-text">译文</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%BA%AA%E5%BF%B5%E5%88%98%E5%92%8C%E7%8F%8D%E5%90%9B"><span class="post-toc-number">1.0.5.</span> <span class="post-toc-text">纪念刘和珍君</span></a></li></ol></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Thread-%E7%BA%BF%E7%A8%8B"><span class="post-toc-number">1.</span> <span class="post-toc-text">Thread 线程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%BA%BF%E7%A8%8B%E8%A2%AB%E6%8A%A2%E5%8D%A0"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">线程被抢占</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%B1%9E%E6%80%A7-amp-%E7%89%B9%E6%80%A7"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">线程的属性&amp;特性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Join"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Join</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%B7%BB%E5%8A%A0%E8%B6%85%E6%97%B6"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">添加超时</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Sleep"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Sleep</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E9%98%BB%E5%A1%9E"><span class="post-toc-number">2.</span> <span class="post-toc-text">阻塞</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ThreadState"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">ThreadState</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%BE%E4%BE%8B"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">举例</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E8%A7%A3%E9%99%A4%E9%98%BB%E5%A1%9E"><span class="post-toc-number">3.</span> <span class="post-toc-text">解除阻塞</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="post-toc-number">4.</span> <span class="post-toc-text">异常处理</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%89%8D%E5%8F%B0%E5%92%8C%E5%90%8E%E5%8F%B0%E7%BA%BF%E7%A8%8B"><span class="post-toc-number">5.</span> <span class="post-toc-text">前台和后台线程</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E7%BA%BF%E7%A8%8B%E4%BC%98%E5%85%88%E7%BA%A7"><span class="post-toc-number">6.</span> <span class="post-toc-text">线程优先级</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%BF%A1%E5%8F%B7"><span class="post-toc-number">7.</span> <span class="post-toc-text">信号</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%AF%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%BA%BF%E7%A8%8B"><span class="post-toc-number">8.</span> <span class="post-toc-text">富客户端应用程序的线程</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E7%BA%BF%E7%A8%8B%E6%B1%A0"><span class="post-toc-number">9.</span> <span class="post-toc-text">线程池</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="post-toc-number">10.</span> <span class="post-toc-text">参考资料</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BD%8D%E6%93%8D%E4%BD%9C"><span class="post-toc-number">10.1.</span> <span class="post-toc-text">位操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%8C%89%E4%BD%8D%E4%B8%8E-amp-%E5%92%8C%E6%8C%89%E4%BD%8D%E6%88%96"><span class="post-toc-number">10.1.1.</span> <span class="post-toc-text">按位与(&amp;)和按位或(|)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%8C%89%E4%BD%8D%E5%BC%82%E6%88%96"><span class="post-toc-number">10.1.2.</span> <span class="post-toc-text">按位异或(^)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%B7%A6%E7%A7%BB"><span class="post-toc-number">10.1.3.</span> <span class="post-toc-text">左移</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%8F%B3%E7%A7%BB"><span class="post-toc-number">10.1.4.</span> <span class="post-toc-text">右移</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%8A%E4%B8%8B%E6%96%87%E5%88%87%E6%8D%A2"><span class="post-toc-number">10.2.</span> <span class="post-toc-text">上下文切换</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%BC%95%E7%94%A8"><span class="post-toc-number">11.</span> <span class="post-toc-text">引用</span></a></li></ol>
     </ul>
     
 
@@ -475,7 +475,7 @@
         
     
             <p class="article-headline-p">
-                高一语文必修一必背篇目
+                C#线程
             </p>
         </div>
 
@@ -494,7 +494,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>huuhghhgyg</strong>
-        <span>8月 25, 2017</span>
+        <span>3月 25, 2022</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -516,7 +516,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC10lEQVR42u3aS44bMQwFQN//0sk2wMDt96h20pFKK8MfNUsDDEFSr19Hrhc2NjY2NjY2Njb2I9mveP35/evXP/f/+az86e/2bH+LjY2NvTf7w7/+OPTrd96FnsSTHPH1PtjY2NgnsPOklZASxjW+jedDVNjY2NjYSZK4dSUHjY2NjY09S2CzJHRdhCQHio2NjY293lSawVbS0iN6adjY2NiPZ9876P07rx8338bGxsb+R+zhRcZ4PLCeGr9y+RIbGxt7I/ZKiz//VTK+zZNW2xTDxsbG3ps9S1RtcElDKgfkB42NjY19DrvdOi9LkuNok2IeOTY2NvYJ7LZ9kzy4vaaTsKNiYzYVwcbGxt6CnZcNSVjtPrOiqL6+iY2Njb01e9bEydv0edprG0ZFGwsbGxt7a/ZK8/2uq5OzMfPSnVNsbGzsrdntp3lweVv/3v2xsbGx92bnzaD22mVbQtxbDmFjY2OfwL7erh6mXu7QtviTAyrSLTY2Nvam7PYKziw5LTWDyqMcVmDY2NjY/y27bSflTZ/ZnrOhb/THw8bGxt6UnQ9QV5r4s/FAO3iuSxFsbGzsTdkrA4O2ub9ShCTlBzY2NvY57PZhKwPgtoz5YimCjY2NvR27TWAz5MrYeOkgsLGxsQ9jtyVHW37khURbLL09LGxsbOyt2XlrZjayzY8yZ+TRYmNjY5/DTlLLSvppGXniTPbHxsbG3pudBJQkqjy1tOz8atHbnbGxsbEPZudt+rZQSQ7ltbCwsbGxT2C3a73kuOudNgFjY2Nj78puk0E+ZF0Z3M6aXB8ODhsbG3tr9qwwSKiz8UN7QWc46MXGxsbejn1XiOsDgDbFLiUwbGxs7CPZ7bWbpFWUfJoPMLCxsbGxZ6koHxi0iTAfNmBjY2OfzF4f7q43iWaxLd1UwsbGxt6C3Q56hw8eJcJ8RPH1+TY2Njb2I9nnLGxsbGxsbGxsbOzHrN+xJM2AwuNB+wAAAABJRU5ErkJggg==">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC20lEQVR42u3aS27DMAwFwNz/0u0BAjuPpBPY0ngVoP6NvGDFx9fflscLGxsbGxsbGxsb+5bsV3y8X/X+O7nz0V/P73bBO2NjY2MvzU4ek1w1WaZz2AXvjI2Njb0BOykqR+fnC1Qtjfk5H94EGxsbGzvYBpwvxxEjXxRsbGxs7O8VsBxZxUzeARsbG3s3dtKgyQtVNUi4dS8NGxsb+/bsPDS9z++f5tvY2NjYN2ZXj+qoTa/8TM4/vA82Njb2ouxq67/akOo1sOYRBTY2NvZu7GqZyYPeXvnJR38KrStsbGzsDdiTaPZ8EXthbf5hLuulYWNjYz+Qnb/05MxqEeo1sApBLzY2NvZy7Png4+TVq62lZiHExsbGXpQ9GZdM/jof+smXeNRLw8bGxn44u/evf9IGyttM+XYlDyewsbGxd2MnBaPalJ9sLarbG2xsbOyd2b2AtloIe9Fv9aooHsDGxsZejp0EqNXAtTcuWW0zFT4MNjY29jbs3jhmfp9qu6ra9rqgl4aNjY39KHZvQ1INdycxcP4xPnwYbGxs7A3YvXbPBJDfv7cdwsbGxt6BPeFVR2euKpDVa7GxsbHXZveaO72GVC+47TWYmlsRbGxs7AeyJ6OQ0cPircKH8jMuh9jY2NirsvOCVC1dvfv3tjfRZgYbGxt7UXaPWo17q2WsOiR0QTyAjY2NvRy72rj55bBmL4TAxsbG3oddjQ3y1n81fpic2cy3sbGxsR/OTh5ztDRJO6kaPPQGhrCxsbF3Y88D12qTqPc7X9ByKoKNjY39cPakJFSLTW+j0lugqKmEjY2NvRC7V37yCGE+gnNBewsbGxt7A3bSSOoN7uQL2juiz4ONjY2N3WrcT7YWk6d/pYBhY2NjL8funTkZxMzHdL5YwLCxsbFvzK7e9JyRXJWHuNWAARsbG3s3drVxU92Q5GWsuqA/yrexsbGxb8ze58DGxsbGxsbGxsa+zfEPcyh77jqN7S4AAAAASUVORK5CYII=">
     
 </ul>
 
@@ -530,7 +530,7 @@
     </button>
                     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
                         <li class="mdl-menu__item">
-                            <a class="post_tag-none-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a>
+                            <a class="post_tag-none-link" href="/tags/C/" rel="tag">C#</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a>
                     </ul>
                     
 
@@ -547,7 +547,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=高一语文必修一必背篇目&url=https://huuhghhgyg.github.io/2017/08/25/Grade1Recite1-cn/index.html&pic=https://huuhghhgyg.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=C#线程&url=https://huuhghhgyg.github.io/2022/03/25/CSharpThread/index.html&pic=https://huuhghhgyg.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -556,7 +556,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=高一语文必修一必背篇目&url=https://huuhghhgyg.github.io/2017/08/25/Grade1Recite1-cn/index.html&via=huuhghhgyg" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=C#线程&url=https://huuhghhgyg.github.io/2022/03/25/CSharpThread/index.html&via=huuhghhgyg" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -565,7 +565,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://huuhghhgyg.github.io/2017/08/25/Grade1Recite1-cn/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://huuhghhgyg.github.io/2022/03/25/CSharpThread/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -574,7 +574,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://huuhghhgyg.github.io/2017/08/25/Grade1Recite1-cn/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://huuhghhgyg.github.io/2022/03/25/CSharpThread/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -586,7 +586,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hikaru&#39;s Blog&title=高一语文必修一必背篇目&summary=huuhghhgyg的个人主页&pics=https://huuhghhgyg.github.io/img/favicon.png&url=https://huuhghhgyg.github.io/2017/08/25/Grade1Recite1-cn/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hikaru&#39;s Blog&title=C#线程&summary=huuhghhgyg的个人主页&pics=https://huuhghhgyg.github.io/img/favicon.png&url=https://huuhghhgyg.github.io/2022/03/25/CSharpThread/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -595,7 +595,7 @@
 
     <!-- Share Telegram -->
     
-        <a class="post_share-link" href="https://telegram.me/share/url?url=https://huuhghhgyg.github.io/2017/08/25/Grade1Recite1-cn/index.html&text=高一语文必修一必背篇目" target="_blank">
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://huuhghhgyg.github.io/2022/03/25/CSharpThread/index.html&text=C#线程" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Telegram
             </li>
@@ -651,7 +651,7 @@
     
         <button type="button" class="mdl-chip">
             <span class="mdl-chip__text">
-                <a class="post_tag_chip-none-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a>
+                <a class="post_tag_chip-none-link" href="/tags/C/" rel="tag">C#</a></span></button><button type="button" class="mdl-chip"><span class="mdl-chip__text"><a class="post_tag_chip-none-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a>
             </span>
         </button>
         
@@ -661,31 +661,260 @@
 <!-- Post Content -->
 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>由于其他站点的排版不便背诵所以我整理了一下2333</p>
-<h1 id="必修一必背篇目"><a href="#必修一必背篇目" class="headerlink" title="必修一必背篇目"></a>必修一必背篇目</h1><h3 id="沁园春·长沙"><a href="#沁园春·长沙" class="headerlink" title="沁园春·长沙"></a>沁园春·长沙</h3><p><strong>毛泽东</strong></p>
-<p>独立寒秋，湘江北去，橘子洲头。<br>看万山红遍，层林尽染；漫江碧透，百舸争流。<br>鹰击长空，鱼翔浅底，万类霜天竞自由。<br>怅寥廓，问苍茫大地，谁主沉浮？<br>携来百侣曾游，忆往昔峥嵘岁月稠。<br>恰同学少年，风华正茂；书生意气，挥斥方遒。<br>指点江山，激扬文字，粪土当年万户侯。<br>曾记否，到中流击水，浪遏飞舟？</p>
-<h3 id="雨巷"><a href="#雨巷" class="headerlink" title="雨巷"></a>雨巷</h3><p><strong>戴望舒</strong></p>
-<p>撑着油纸伞，独自彷徨在悠长、悠长又寂寥的雨巷，<br>我希望逢着一个丁香一样的结着愁怨的姑娘。<br>她是有<br>丁香一样的颜色，<br>丁香一样的芬芳，<br>丁香一样的忧愁，<br>在雨中哀怨，哀怨又彷徨；<br>她彷徨在这寂寥的雨巷，撑着油纸伞像我一样，<br>像我一样地<br>默默彳亍着<br>冷漠、凄清，又惆怅。<br>她静默地走近走近，<br>又投出太息一般的眼光，<br>她飘过<br>像梦一般地，<br>像梦一般地凄婉迷茫。　<br>像梦中飘过一枝丁香地，<br>我身旁飘过这女郎；<br>她静默地远了，远了，到了颓圮的篱墙，走尽这雨巷。<br>在雨的哀曲里，消了她的颜色，散了她的芬芳，<br>消散了，甚至她的太息般的眼光，丁香般的惆怅。<br>撑着油纸伞，独自彷徨在悠长，悠长又寂寥的雨巷，<br>我希望飘过一个丁香一样的结着愁怨的姑娘。</p>
-<h3 id="再别康桥"><a href="#再别康桥" class="headerlink" title="再别康桥"></a>再别康桥</h3><p><strong>徐志摩</strong></p>
-<p>轻轻的我走了，正如我轻轻的来；<br>我轻轻的招手，作别西天的云彩。</p>
-<p>那河畔的金柳，是夕阳中的新娘；<br>波光里的艳影，在我的心头荡漾。<br>软泥上的青荇，油油的在水底招摇；<br>在康河的柔波里，我甘心做一条水草！</p>
-<p>那榆阴下的一潭，不是清泉，是天上虹<br>揉碎在浮藻间，沉淀着彩虹似的梦。<br>寻梦？撑一支长篙，向青草更青处漫溯，<br>满载一船星辉，在星辉斑斓里放歌。<br>但我不能放歌，悄悄是别离的笙箫；<br>夏虫也为我沉默，沉默是今晚的康桥！</p>
-<p>悄悄的我走了，正如我悄悄的来；<br>我挥一挥衣袖，不带走一片云彩。</p>
-<h3 id="荆轲刺秦王"><a href="#荆轲刺秦王" class="headerlink" title="荆轲刺秦王"></a>荆轲刺秦王</h3><p>太子及宾客知其事者，皆白衣冠以送之。至易水上，既祖，取道。高渐离击筑，荆轲和而歌，为变徵之声，士皆垂泪涕泣。又前而为歌曰：“风萧萧兮易水寒，壮士一去兮不复还！”复为慷慨羽声，士皆瞋目，发尽上指冠。于是荆轲遂就车而去，终已不顾</p>
-<h4 id="译文"><a href="#译文" class="headerlink" title="译文"></a>译文</h4><p>太子和他的宾客中知道这件事的人，都穿着白衣，戴着白帽给他送行。到易水上，祭过路神，就要上路。高渐离敲着筑，荆轲和着节拍唱歌，发出变徵的声音，众宾客都流着眼泪小声地哭。荆轲又上前作歌唱道：“风声萧萧悲鸣啊易水彻骨寒冷，壮士这一离去啊就永远不再回还!”又发出悲壮激昂的羽声。众宾客都睁大了眼睛，头发都向上竖起顶住了帽子。于是荆轲就上车离去，始终不曾回头看一眼。</p>
-<h3 id="纪念刘和珍君"><a href="#纪念刘和珍君" class="headerlink" title="纪念刘和珍君"></a>纪念刘和珍君</h3><p><strong>鲁迅</strong></p>
-<p>（1）真的猛士，敢于直面惨淡的人生，敢于正视淋漓的鲜血。这是怎样的哀痛者和幸福者？然而造化又常常为庸人设计，以时间的流驶，来洗涤旧迹，仅使留下淡红的血色和微漠的悲哀。在这淡红的血色和微漠的悲哀中，又给人暂得偷生，维持着这似人非人的世界。我不知道这样的世界何时是一个尽头！<br>我们还在这样的世上活着；我也早觉得有写一点东西的必要了。离三月十八日也已有两星期，忘却的救主快要降临了罢，我正有写一点东西的必要了。</p>
-<p>（2）我在十八日早晨，才知道上午有群众向执政府请愿的事；下午便得到噩耗，说卫队居然开枪，死伤至数百人，而刘和珍君即在遇害者之列。但我对于这些传说，竟至于颇为怀疑。我向来是不惮以最坏的恶意，来推测中国人的，然而我还不料，也不信竟会下劣凶残到这地步。况且始终微笑着的和蔼的刘和珍君，更何至于无端在府门前喋血呢？<br>然而即日证明是事实了，作证的便是她自己的尸骸。还有一具，是杨德群君的。而且又证明着这不但是杀害，简直是虐杀，因为身体上还有棍棒的伤痕。<br>但段政府就有令，说她们是“暴徒”！<br>但接着就有流言，说她们是受人利用的。<br>惨象，已使我目不忍视了；流言，尤使我耳不忍闻。我还有什么话可说呢？我懂得衰亡民族之所以默无声息的缘由了。沉默呵，沉默呵！不在沉默中爆发，就在沉默中灭亡。</p>
- <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        <h1 id="Thread-线程"><a href="#Thread-线程" class="headerlink" title="Thread 线程"></a>Thread 线程</h1><p>一个可执行路径，独立于其它线程执行。</p>
+<h2 id="线程被抢占"><a href="#线程被抢占" class="headerlink" title="线程被抢占"></a>线程被抢占</h2><p>线程的执行与另外一个线程上代码的执行交织的那一点。</p>
+<h2 id="线程的属性-amp-特性"><a href="#线程的属性-amp-特性" class="headerlink" title="线程的属性&amp;特性"></a>线程的属性&amp;特性</h2><ul>
+<li>线程一旦开始执行，<code>IsAlive</code>为<code>true</code>；线程结束变成<code>false</code></li>
+<li>线程结束的条件：线程构造函数传入的委托执行结束</li>
+<li>线程一旦结束，无法重启</li>
+<li>每个线程都有<code>Name</code>属性，通常用于调试。<code>Name</code>只能设置一次，更改会抛出异常。</li>
+<li>静态的<code>Thread.CurrentThread</code>属性返回当前执行的线程。</li>
+</ul>
+<h2 id="Join"><a href="#Join" class="headerlink" title="Join"></a>Join</h2><p>调用<code>Join</code>方法，可以<strong>等待另一个线程结束。</strong></p>
+<pre><code class="lang-C#">Thread t = new Thread(Go);
+t.Start(); //开始线程
+t.Join(); //等待线程执行完成
+Console.WriteLine(&quot;Thread t has ended!&quot;); //线程结束
 
-  ga('create', 'UA-101667365-1', 'auto');
-  ga('send', 'pageview');
+static void Go() //线程构造函数传入的委托
+&#123;
+    for (int i = 0; i &lt; 1000; i++)
+        Console.Write(&#39;y&#39;);
+&#125;
+</code></pre>
+<h3 id="添加超时"><a href="#添加超时" class="headerlink" title="添加超时"></a>添加超时</h3><p>调用<code>Join</code>的时候，可以设置一个超时，可以使用毫秒或者<code>TimeSpan</code><br>如果返回<code>true</code>，线程结束；如果超时，返回<code>false</code></p>
+<pre><code class="lang-C#">bool IsTerminated = thread1.Join(2000); //等待2秒后线程是否执行结束
+</code></pre>
+<h2 id="Sleep"><a href="#Sleep" class="headerlink" title="Sleep"></a>Sleep</h2><p><code>Thread.Sleep()</code>方法会暂停当前的线程，并等待一段时间。可以是毫秒或者<code>TimeSpan</code></p>
+<pre><code class="lang-c#">Thread.Sleep(500); //线程休眠500ms
+</code></pre>
+<ul>
+<li><code>Thread.Sleep(0)</code>会导致线程立即放弃当前的时间片，自动将CPU移交给其它线程。</li>
+<li><code>Thread.Yield()</code>做同样的事情，但是它只会把执行交给同一处理器上的其它线程。</li>
+<li>当等待Sleep或Join的时候，线程处于阻塞的状态。<blockquote>
+<p>阻塞：正在等待某一事件发生，根据原因可设置多个阻塞队列</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>❔ 如果在代码中任何地方插入Thread.Yield()就破坏了程序，程序几乎肯定会有bug</p>
+</blockquote>
+<h1 id="阻塞"><a href="#阻塞" class="headerlink" title="阻塞"></a>阻塞</h1><p>线程的执行由于某种原因导致暂停。<br>可以通过<code>ThreadState</code>属性判断线程是否处于被阻塞的状态。</p>
+<h2 id="ThreadState"><a href="#ThreadState" class="headerlink" title="ThreadState"></a>ThreadState</h2><p><code>ThreadState</code>是一个flags enum(可以有多个枚举值)，通过<strong><a href="#位操作">按位</a></strong>的形式可以合并数据的选项。</p>
+<blockquote>
+<p>枚举值是2^n</p>
+</blockquote>
+<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">状态（只列举部分状态）</th>
+<th>枚举值</th>
+<th>二进制枚举值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>ThreadState.Unstarted</code></td>
+<td>8</td>
+<td>1000 (2^3)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>ThreadState.Stopped</code></td>
+<td>16</td>
+<td>10000 (2^4)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>ThreadState.WaitSleepJoin</code></td>
+<td>32</td>
+<td>100000 (2^5)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre><code class="lang-C#">var state = ThreadState.Unstarted | ThreadState.Stopped | ThreadState.WaitSleepJoin;
+// 得到的状态为xxx000
+</code></pre>
+<p>通过ThreadState判断线程是否处于被阻塞的状态</p>
+<pre><code class="lang-C#">bool blocked = (someThread.ThreadState &amp; ThreadState.WaitSleepJoin) != 0;
+</code></pre>
+<p><img src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/multi-threading/ThreadState.svg" alt="线程状态图"></p>
+<p>常用的线程状态</p>
+<ul>
+<li>Unstarted：未开始</li>
+<li>Running：运行</li>
+<li>WaitSleepJoin：阻塞</li>
+<li>Stopped：停止</li>
+</ul>
+<p>剥离出这四种状态</p>
+<pre><code class="lang-C#">public static ThreadState SimpleThreadState(ThreadState ts)
+&#123;
+    return ts &amp; (ThreadState.Unstarted |
+                ThreadState.WaitSleepJoin |
+                ThreadState.Stopped);
+&#125;
+</code></pre>
+<h1 id="解除阻塞"><a href="#解除阻塞" class="headerlink" title="解除阻塞"></a>解除阻塞</h1><p>四种情况</p>
+<ul>
+<li>阻塞条件被满足</li>
+<li>操作超时（如果设置了超时）</li>
+<li><code>Thread.Interrupt()</code>进行打断</li>
+<li><code>Thread.Abort()</code>进行中止</li>
+</ul>
+<h1 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h1><p>创建线程时在作用范围内的try/catch/finally块，在线程开始执行后就与线程无关了。</p>
+<p>在WPF、WinForm里，可以订阅全局异常处理事件：</p>
+<ul>
+<li><code>Application.DispatcherUnhaandledException</code></li>
+<li><code>Application.ThreadException</code></li>
+</ul>
+<p>主线程（UI线程）上有未处理的异常，会触发以上两个线程；非UI线程不会触发以上两个线程。</p>
+<p>任何线程有任何未处理的异常都会触发：</p>
+<ul>
+<li>AppDomain.CurrentDomain.UnhandledException</li>
+</ul>
+<h1 id="前台和后台线程"><a href="#前台和后台线程" class="headerlink" title="前台和后台线程"></a>前台和后台线程</h1><p>默认情况下，手动创建的线程是前台线程。</p>
+<ul>
+<li>只要由前台线程在运行，应用程序就会一直处于活动状态，后台线程却不行。</li>
+<li>一旦所有的前台线程停止，那么应用程序就停止，任何的后台线程也会突然终止。<br>可以通过<code>IsBackground</code>判断线程是否后台线程。</li>
+</ul>
+<h1 id="线程优先级"><a href="#线程优先级" class="headerlink" title="线程优先级"></a>线程优先级</h1><p>线程的优先级（<code>Thread</code>的<code>Priority</code>属性）决定了相对于操作系统中其它活跃线程所占的执行时间。<br>优先级：<code>enum ThreadPriority &#123;Lowest, BelowNormal, Normal, AboveNormal, Highest&#125;</code></p>
+<h1 id="信号"><a href="#信号" class="headerlink" title="信号"></a>信号</h1><p>有时候需要让线程一直处于等待的状态，直至接收到其它线程发来的通知。这就叫做signaling（发送信号）<br>最简单的信号结构为<code>ManualResetEvent</code>，调用其上面的<code>WaitOne()</code>方法会阻塞当前的线程，直到另一个线程通过调用<code>Set()</code>方法来开启信号。</p>
+<pre><code class="lang-C#">var signal = new ManualResetEvent(false);
+new Thread(()=&gt;
+&#123;
+    Console.WriteLine(&quot;Waiting for signal...&quot;);
+    signal.WaitOne();
+    signal.Dispose();
+    Console.WriteLine(&quot;Got signal!&quot;);
+&#125;).Start();
 
-</script>
+Thread.Sleep(3000);
+signal.Set(); //打开信号（线程）
+</code></pre>
+<p>调用完<code>Set()</code>之后，信号会处于“打开”状态，可以通过调用<code>Reset()</code>方法将其关闭。</p>
+<h1 id="富客户端应用程序的线程"><a href="#富客户端应用程序的线程" class="headerlink" title="富客户端应用程序的线程"></a>富客户端应用程序的线程</h1><p>在有UI的程序中，如果在主线程执行耗时的操作，就会导致整个程序无响应。针对这种耗时的操作，一种流行的做法是启用一个worker线程，执行完操作后再将结果更新到UI。<br>富客户端应用的线程模型：</p>
+<ul>
+<li>UI元素和控件只能从创建它们的线程来进行访问（通常是主UI线程）</li>
+<li><p><strong>当想从worker线程更新UI的时候，必须把请求交给UI线程</strong><br>如：在WPF中，在元素的Dispatcher对象上调用<code>BeginInvoke</code>或<code>Invoke</code>；在WinForm中，调用控件的<code>BeginInvoke</code>或<code>Invoke</code>；UWP中，调用Dispatcher对象上的<code>RunAsync</code>或<code>Invoke</code>。这些方法都接收一个委托。</p>
+</li>
+<li><p><code>BeginInvoke</code>或<code>RunAsync</code>通过将委托排队到UI线程的消息队列来执行工作。</p>
+</li>
+<li><code>Invoke</code>也会执行相同的操作，但随后会进行阻塞，直到UI线程读取并处理消息。所以<code>Invoke</code>允许从方法中获取返回值。</li>
+</ul>
+<p>从其它线程直接更改UI会引发<code>System.InvalidOperationException</code>错误（无法更新主线程上的UI）<br>应该调用<code>Dispatcher.BeginInvoke()</code>，把委托排队发送到UI线程的消息队列（处理键盘鼠标事件、定时事件等）</p>
+<pre><code class="lang-C#">Action action = () =&gt; MessageText.Text = message; // 委托
+Dispatcher.BeginInvoke(action); // 将委托发送到消息队列
+</code></pre>
+<h1 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h1><p>线程池可以通过预先创建一个可循环使用线程的池来减小类似“创建一个新的局部变量栈(stack)”这样的开销。<br>线程池允许在不被线程启动的开销淹没的情况下运行短期操作。（操作事件没有线程启动的时间长）<br>线程池对于高效的并行编程和细粒度的并发是必不可少的。</p>
+<p>使用线程池需要注意的几点：</p>
+<ul>
+<li>不可以设置池线程的<code>Name</code></li>
+<li>池线程都是后台线程</li>
+<li>阻塞池线程可使性能降级</li>
+<li>可以自由地更改池线程的优先级，当它释放回池的时候优先级将还原为正常状态。</li>
+<li>可以通过<code>Thread.CurrentThread.IsThreadPoolThread</code>属性判断是否执行在池线程上。</li>
+</ul>
+<p>进入线程池<br>最简单的、显式地在线程池运行代码地方式就是<code>Task.Run</code></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><h2 id="位操作"><a href="#位操作" class="headerlink" title="位操作"></a>位操作</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&amp;</td>
+<td>按位与</td>
+</tr>
+<tr>
+<td>\</td>
+<td>按位或</td>
+</tr>
+<tr>
+<td>^</td>
+<td>按位异或</td>
+</tr>
+<tr>
+<td>&lt;&lt;</td>
+<td>左移</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>右移</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="按位与-amp-和按位或"><a href="#按位与-amp-和按位或" class="headerlink" title="按位与(&amp;)和按位或(|)"></a>按位与(&amp;)和按位或(|)</h3><p>按位与(&amp;)和按位或(|)运算规则同与(&amp;&amp;)和或(|)，不同在于按位运算是按照二进制位运算。</p>
+<p><strong>例如：一个二进制数<code>1101 1001</code>，只要它的后四位</strong><br>只需要进行如下操作：<code>1101 1001 &amp; 0000 1111</code>即可。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">数值</td>
+<td style="text-align:left"><code>11011001</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&amp; 与运算</td>
+<td style="text-align:left"><code>0001111</code></td>
+</tr>
+<tr>
+<td style="text-align:left">结果</td>
+<td style="text-align:left"><code>00001001</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>按位或运算同理</p>
+<h3 id="按位异或"><a href="#按位异或" class="headerlink" title="按位异或(^)"></a>按位异或(^)</h3><p>只要参与运算的双方不同，结果为1，否则为0</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">运算</th>
+<th style="text-align:left">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">0^0</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">0^1</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left">1^0</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left">1^1</td>
+<td style="text-align:left">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="左移"><a href="#左移" class="headerlink" title="左移"></a>左移</h3><p>将目标二进制数字向左/右移动相应的位数<br>换算为十进制为原来的1/2<br>左移补0;<br><code>1011 1111 &lt;&lt; 1 == 0111 1110</code></p>
+<h3 id="右移"><a href="#右移" class="headerlink" title="右移"></a>右移</h3><p>需要看符号位：负数补1，正数补0<br>换算为十进制为原来的1/2<br><code>1011 1111 &gt;&gt; 1 == 0101 1111</code></p>
+<blockquote>
+<p>位移运算：左乘右除</p>
+</blockquote>
+<h2 id="上下文切换"><a href="#上下文切换" class="headerlink" title="上下文切换"></a>上下文切换</h2><p>当线程阻塞或解除阻塞时，操作系统将执行上下文切换。</p>
+<ul>
+<li>I/O-bound 花费大部分时间等待某件事发生的操作。</li>
+<li>Compute-bound或CPU-bound 花费大部分事件执行CPU密集型工作的操作</li>
+</ul>
+<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/dotnet/api/system.threading.threadstate?view=net-6.0">ThreadState 枚举 (System.Threading) | Microsoft Docs</a></p>
+
             
                 <!-- <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;border-radius: 2px;">
                     <p><strong>
@@ -694,8 +923,8 @@
                     </strong>
                         <br>
                         <strong>本文链接：</strong>
-                        <a href="https://huuhghhgyg.github.io/2017/08/25/Grade1Recite1-cn/">
-                            https://huuhghhgyg.github.io/2017/08/25/Grade1Recite1-cn/
+                        <a href="https://huuhghhgyg.github.io/2022/03/25/CSharpThread/">
+                            https://huuhghhgyg.github.io/2022/03/25/CSharpThread/
                         </a>
                     </p>
                 </blockquote> -->
@@ -768,15 +997,15 @@
                         </div>
                     </div>
                     <div class="title-link">
-                        <a href="https://huuhghhgyg.github.io/2017/08/25/Grade1Recite1-cn/">
-                            https://huuhghhgyg.github.io/2017/08/25/Grade1Recite1-cn/
+                        <a href="https://huuhghhgyg.github.io/2022/03/25/CSharpThread/">
+                            https://huuhghhgyg.github.io/2022/03/25/CSharpThread/
                         </a>
                     </div>
                     <div class="info">
                         <div class="time license-block">
                             <div class="license-subtitle">发文时间</div>
                             <div class="license-content">
-                                8月 25, 2017
+                                3月 25, 2022
                             </div>
                         </div>
                         <div class="license license-block">
@@ -845,7 +1074,7 @@
 <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/08/28/PlayBGMInHTML5/" id="post_nav-newer" class="prev-content">
+        <a href="/2022/03/25/CSharpTask/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -859,7 +1088,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/2017/08/09/RE3StageResults/" id="post_nav-older" class="next-content">
+        <a href="/2022/03/22/MultiThreading-Hardware/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

@@ -655,19 +655,17 @@
 <h1 id="升级前后版本变化"><a href="#升级前后版本变化" class="headerlink" title="升级前后版本变化"></a>升级前后版本变化</h1><p>升级前</p>
 <pre><code>hexo: 3.9.0
 hexo-cli: 4.2.0
-</code></pre>
-<p>升级后</p>
+</code></pre><p>升级后</p>
 <pre><code>hexo: 5.4.0
 hexo-cli: 4.2.0
 uv: 1.33.1
-</code></pre>
-<h1 id="升级操作"><a href="#升级操作" class="headerlink" title="升级操作"></a>升级操作</h1><p>先运行了<code>npm update</code>查看了一下有没有需要升级的软件，我这边提示有需要升级的软件，所以手动升级了一下</p>
+</code></pre><h1 id="升级操作"><a href="#升级操作" class="headerlink" title="升级操作"></a>升级操作</h1><p>先运行了<code>npm update</code>查看了一下有没有需要升级的软件，我这边提示有需要升级的软件，所以手动升级了一下</p>
 <p>然后是正经的检查更新</p>
-<pre><code class="bash">npm install -g npm-check
+<pre><code class="lang-bash">npm install -g npm-check
 npm install -g npm-upgrade
 </code></pre>
 <p>后面看来好像还是npm-check更有用一点🤣<br>分别执行</p>
-<pre><code class="bash">npm-check
+<pre><code class="lang-bash">npm-check
 npm-upgrade
 </code></pre>
 <p>其中npm-check占用资源比较多，耗时比较久。最后是通过提示的<br><code>npm-check -u</code><br>完成升级</p>
@@ -1329,6 +1327,21 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
     
 </html>

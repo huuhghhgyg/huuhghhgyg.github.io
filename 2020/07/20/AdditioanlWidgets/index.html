@@ -442,7 +442,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Highlight"><span class="post-toc-number">1.</span> <span class="post-toc-text">Highlight</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Highlight-%E7%8A%B6%E6%80%81"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Highlight(状态)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BE%BF%E7%AD%BE%E6%9D%A1"><span class="post-toc-number">2.</span> <span class="post-toc-text">便签条</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%93%BE%E6%8E%A5%E5%8D%A1%E7%89%87"><span class="post-toc-number">3.</span> <span class="post-toc-text">链接卡片</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Highlight"><span class="post-toc-number">1.</span> <span class="post-toc-text">Highlight</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Highlight-%E7%8A%B6%E6%80%81"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Highlight(状态)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BE%BF%E7%AD%BE%E6%9D%A1"><span class="post-toc-number">2.</span> <span class="post-toc-text">便签条</span></a></li></ol>
     </ul>
     
 
@@ -674,20 +674,17 @@
 </ul>
 <h2 id="便签条"><a href="#便签条" class="headerlink" title="便签条"></a>便签条</h2><pre><code>&lt;div class=&quot;note note-good&quot;&gt;
     &lt;span class=&quot;material-icons&quot;&gt;thumb_up_alt&lt;/span&gt; good deeds&lt;/div&gt;
-</code></pre>
-<div class="note note-good">
+</code></pre><div class="note note-good">
     <span class="material-icons">thumb_up_alt</span> 这是建议的做法</div>
 
 <pre><code>&lt;div class=&quot;note note-bad&quot;&gt;
     &lt;span class=&quot;material-icons&quot;&gt;block&lt;/span&gt; bad deeds&lt;/div&gt;
-</code></pre>
-<div class="note note-bad">
+</code></pre><div class="note note-bad">
     <span class="material-icons">block</span> 这是错误的做法</div>
 
 <pre><code>&lt;div class=&quot;note note-info&quot;&gt;
     &lt;span class=&quot;material-icons&quot;&gt;error&lt;/span&gt; this is information&lt;/div&gt;
-</code></pre>
-<div class="note note-info">
+</code></pre><div class="note note-info">
     <span class="material-icons">error</span> 这是信息标签</div>
 
 <p><strong>警告标签</strong></p>
@@ -695,10 +692,14 @@
     <span class="material-icons">warning</span> warnings</div>
 <br>
 
-<pre><code>&lt;div class=&quot;note note-warning&quot;&gt;
-    &lt;span class=&quot;material-icons&quot;&gt;warning&lt;/span&gt; warnings&lt;/div&gt;
-</code></pre>
-<h2 id="链接卡片"><a href="#链接卡片" class="headerlink" title="链接卡片"></a>链接卡片</h2><!-- card容器(card少可不用，多了用美观) -->
+```
+<div class="note note-warning">
+    <span class="material-icons">warning</span> warnings</div>
+```
+
+## 链接卡片
+
+<!-- card容器(card少可不用，多了用美观) -->
 <div class="card-span">
 
 <!-- 链接card -->
@@ -725,8 +726,7 @@
     </a>
 </div>
 
-</div>
-
+<p>&lt;/div&gt;</p>
 <pre><code>&lt;!-- card容器(card少可不用，多了用美观) --&gt;
 &lt;div class=&quot;card-span&quot;&gt;
 
@@ -755,8 +755,7 @@
 &lt;/div&gt;
 
 &lt;/div&gt;
-</code></pre>
-<div class="link-card">
+</code></pre><div class="link-card">
     <a href="/">
         <div class="img-card-span">
             <image class="link-card-img" src="/img/avatar.png">
@@ -787,7 +786,6 @@
     &lt;/a&gt;
 &lt;/div&gt;
 </code></pre>
-
             
                 <!-- <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;border-radius: 2px;">
                     <p><strong>
@@ -1427,6 +1425,21 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
     
 </html>

@@ -661,96 +661,100 @@
 <!-- Post Content -->
 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>把一个软件内的背景音乐提取出来了，想炫耀一下<br><audio autoplay="autoplay" controls><br>    <source src="https://huuhghhgyg.github.io/BGM/LevelPiano.mp3" /><br></audio></p>
+        <p>把一个软件内的背景音乐提取出来了，想炫耀一下</p>
+<p><audio autoplay="autoplay" controls><br>    <source src="https://huuhghhgyg.github.io/BGM/LevelPiano.mp3" />
+</audio></p>
 <h2 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h2><p>上次在”毕业咯”的2B页面里面插入了一个第三方(网易云)bgm，同时也用的是网易云的播放器框架。那么框架代码就直接在这里展示出来了。</p>
 <pre><code>&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=330 height=86 src=&quot;//music.163.com/outchain/player?type=2&amp;id=482988841&amp;auto=1&amp;height=66&quot;&gt;&lt;/iframe&gt;
-</code></pre>
-<p>这个东西可以在网易云那里生成。具体步骤:<br>1.网易云随便打开一首歌<br>2.胶片唱盘下面有个<strong>生成外链播放器</strong>的链接<br>3.点进去，你就会做了(这肯定不用我教吧)<br>4.(算了还是教一下吧)将代码添加至你的html(md)代码中，(生成后)就可以使用了。</p>
-<h2 id="利用HTML5的’audio’标签"><a href="#利用HTML5的’audio’标签" class="headerlink" title="利用HTML5的’audio’标签"></a>利用HTML5的’audio’标签</h2><p>Html5中，有许多标签。像&lt;body&gt;,&lt;header&gt;,&lt;script&gt;之类的(可能有打错的)都是标签。那么下面的<audio>标签就是可以用来播放背景音乐的。&lt;audio&gt; 是 HTML 5 的新标签，定义声音，比如音乐或其他音频流。<br>代码(html5):</p>
+</code></pre><p>这个东西可以在网易云那里生成。具体步骤:<br>1.网易云随便打开一首歌<br>2.胶片唱盘下面有个<strong>生成外链播放器</strong>的链接<br>3.点进去，你就会做了(这肯定不用我教吧)<br>4.(算了还是教一下吧)将代码添加至你的html(md)代码中，(生成后)就可以使用了。</p>
+<h2 id="利用HTML5的’audio’标签"><a href="#利用HTML5的’audio’标签" class="headerlink" title="利用HTML5的’audio’标签"></a>利用HTML5的’audio’标签</h2><p>Html5中，有许多标签。像\<body\>,\<header\>,\<script\>之类的(可能有打错的)都是标签。那么下面的<audio>标签就是可以用来播放背景音乐的。\<audio\> 是 HTML 5 的新标签，定义声音，比如音乐或其他音频流。<br>代码(html5):</p>
 <pre><code>&lt;audio autoplay=&quot;autoplay&quot; controls=&quot;controls&quot;loop=&quot;loop&quot; preload=&quot;auto&quot;
             src=&quot;http://demo.mimvp.com/html5/take_you_fly.mp3&quot;&gt;
       你的浏览器不支持audio标签
 &lt;/audio&gt;
-</code></pre>
-<p>我们可以在开始标签和结束标签之间放置文本内容，这样老的浏览器就可以显示出不支持该标签的信息。</p>
+</code></pre><p>我们可以在开始标签和结束标签之间放置文本内容，这样老的浏览器就可以显示出不支持该标签的信息。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="left">属性</th>
-<th align="left">值</th>
-<th align="left">描述</th>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">值</th>
+<th style="text-align:left">描述</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left"><a target="_blank" rel="noopener" href="http://www.w3school.com.cn/html5/att_audio_autoplay.asp">autoplay</a></td>
-<td align="left">autoplay</td>
-<td align="left">如果出现该属性，则音频在就绪后<strong>马上播放。</strong></td>
+<tbody>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="http://www.w3school.com.cn/html5/att_audio_autoplay.asp">autoplay</a></td>
+<td style="text-align:left">autoplay</td>
+<td style="text-align:left">如果出现该属性，则音频在就绪后<strong>马上播放。</strong></td>
 </tr>
 <tr>
-<td align="left"><a target="_blank" rel="noopener" href="http://www.w3school.com.cn/html5/att_audio_controls.asp">controls</a></td>
-<td align="left">controls</td>
-<td align="left">如果出现该属性，则向用户<strong>显示控件</strong>，比如播放按钮。</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="http://www.w3school.com.cn/html5/att_audio_controls.asp">controls</a></td>
+<td style="text-align:left">controls</td>
+<td style="text-align:left">如果出现该属性，则向用户<strong>显示控件</strong>，比如播放按钮。</td>
 </tr>
 <tr>
-<td align="left"><a target="_blank" rel="noopener" href="http://www.w3school.com.cn/html5/att_audio_loop.asp">loop</a></td>
-<td align="left">loop</td>
-<td align="left">如果出现该属性，则每当音频结束时<strong>重新循环</strong>开始播放。</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="http://www.w3school.com.cn/html5/att_audio_loop.asp">loop</a></td>
+<td style="text-align:left">loop</td>
+<td style="text-align:left">如果出现该属性，则每当音频结束时<strong>重新循环</strong>开始播放。</td>
 </tr>
 <tr>
-<td align="left">[pre]oad](<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/html5/att_audio_preload.asp">http://www.w3school.com.cn/html5/att_audio_preload.asp</a>)</td>
-<td align="left">preload</td>
-<td align="left">如果出现该属性，则音频在页面加载时进行加载，并预备播放。如果使用<strong>“autoplay”</strong>，则忽略该属性。</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="http://www.w3school.com.cn/html5/att_audio_preload.asp">pre]oad</a></td>
+<td style="text-align:left">preload</td>
+<td style="text-align:left">如果出现该属性，则音频在页面加载时进行加载，并预备播放。如果使用<strong>“autoplay”</strong>，则忽略该属性。</td>
 </tr>
 <tr>
-<td align="left"><a target="_blank" rel="noopener" href="http://www.w3school.com.cn/html5/att_audio_src.asp">src</a></td>
-<td align="left">url</td>
-<td align="left">要播放的音频的 <strong>URL</strong>。也可以使用&lt;source&gt;标签来设置音频。</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="http://www.w3school.com.cn/html5/att_audio_src.asp">src</a></td>
+<td style="text-align:left">url</td>
+<td style="text-align:left">要播放的音频的 <strong>URL</strong>。也可以使用\<source\>标签来设置音频。</td>
 </tr>
-<tr>
-<td align="left"><strong>注:此表格所有外部链接没有使用https加密，原因是使用后可能会出现打不开的情况</strong></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
+<p><strong>注:此表格所有外部链接没有使用https加密，原因是使用后可能会出现打不开的情况</strong></p>
 <p>html5 Audio标签能够支持<strong>wav, mp3, ogg, acc, webm</strong>等格式，但有个很重要的音乐文件格式midi(扩展名mid)却在各大浏览器中都没有内置的支持(<a target="_blank" rel="noopener" href="http://www.myexception.cn/HTML-CSS/581442.html">详见此处</a>)。不是所有的浏览器都支持<strong>MP3 ,OGG</strong>之类的，每个浏览器因为版权的问题支持的格式都是不一样的。 </p>
-<h3 id="浏览器和音频兼容性"><a href="#浏览器和音频兼容性" class="headerlink" title="浏览器和音频兼容性"></a>浏览器和音频兼容性</h3><p>浏览器制造商并非都同意使用某种音频文件格式。对于图像，**PNG、JPEG 或 GIF **格式的文件在任何浏览器上都能加载到您的网页里。遗憾的是，音频文件并非如此。表 1 展示了网页中可以使用的音频文件格式，但是并非所有格式都能用于所有浏览器。例如，Chrome、Internet Explorer 9 (IE9) 和 Safari 浏览器不支持 WAV 文件，这是一种使用非压缩格式且正在衰败的标准。</p>
+<h3 id="浏览器和音频兼容性"><a href="#浏览器和音频兼容性" class="headerlink" title="浏览器和音频兼容性"></a>浏览器和音频兼容性</h3><p>浏览器制造商并非都同意使用某种音频文件格式。对于图像，<strong>PNG、JPEG 或 GIF </strong>格式的文件在任何浏览器上都能加载到您的网页里。遗憾的是，音频文件并非如此。表 1 展示了网页中可以使用的音频文件格式，但是并非所有格式都能用于所有浏览器。例如，Chrome、Internet Explorer 9 (IE9) 和 Safari 浏览器不支持 WAV 文件，这是一种使用非压缩格式且正在衰败的标准。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="left">音频格式</th>
-<th align="left">Chrome</th>
-<th align="left">Firefox</th>
-<th align="left">IE9</th>
-<th align="left">Opera</th>
-<th align="left">Safari</th>
+<th style="text-align:left">音频格式</th>
+<th style="text-align:left">Chrome</th>
+<th style="text-align:left">Firefox</th>
+<th style="text-align:left">IE9</th>
+<th style="text-align:left">Opera</th>
+<th style="text-align:left">Safari</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">OGG</td>
-<td align="left">支持</td>
-<td align="left">支持</td>
-<td align="left">支持</td>
-<td align="left">不支持</td>
-<td align="left">不支持</td>
+<tbody>
+<tr>
+<td style="text-align:left">OGG</td>
+<td style="text-align:left">支持</td>
+<td style="text-align:left">支持</td>
+<td style="text-align:left">支持</td>
+<td style="text-align:left">不支持</td>
+<td style="text-align:left">不支持</td>
 </tr>
 <tr>
-<td align="left">MP3</td>
-<td align="left">支持</td>
-<td align="left">不支持</td>
-<td align="left">支持</td>
-<td align="left">不支持</td>
-<td align="left">支持</td>
+<td style="text-align:left">MP3</td>
+<td style="text-align:left">支持</td>
+<td style="text-align:left">不支持</td>
+<td style="text-align:left">支持</td>
+<td style="text-align:left">不支持</td>
+<td style="text-align:left">支持</td>
 </tr>
 <tr>
-<td align="left">WAV</td>
-<td align="left">不支持</td>
-<td align="left">支持</td>
-<td align="left">不支持</td>
-<td align="left">支持</td>
-<td align="left">不支持</td>
+<td style="text-align:left">WAV</td>
+<td style="text-align:left">不支持</td>
+<td style="text-align:left">支持</td>
+<td style="text-align:left">不支持</td>
+<td style="text-align:left">支持</td>
+<td style="text-align:left">不支持</td>
 </tr>
-</tbody></table>
-<p>没有一种通用的文件格式让每个浏览器都使用单个文件格式意味着至少有 2&#x2F;5 的浏览器无法播放某些声音。这不是无法在单一音频标准中达成一致的浏览器制造商不妥协的问题，而是涉及专利权和特许权使用费的法律和财务问题。不受软件专利限制的 OGG 格式旨在一劳永逸地解决这个问题。然而，在撰写本文时，Opera 和 Safari 都不支持 OGG。与 OGG 格式的文件相比，可用的 WAV 和 MP3 文件数量要更多，因此毫无疑问，浏览器制造商考虑到了这一点。MP3 作为事实的标准是个很好的解决方案。</p>
+</tbody>
+</table>
+</div>
+<p>没有一种通用的文件格式让每个浏览器都使用单个文件格式意味着至少有 2/5 的浏览器无法播放某些声音。这不是无法在单一音频标准中达成一致的浏览器制造商不妥协的问题，而是涉及专利权和特许权使用费的法律和财务问题。不受软件专利限制的 OGG 格式旨在一劳永逸地解决这个问题。然而，在撰写本文时，Opera 和 Safari 都不支持 OGG。与 OGG 格式的文件相比，可用的 WAV 和 MP3 文件数量要更多，因此毫无疑问，浏览器制造商考虑到了这一点。MP3 作为事实的标准是个很好的解决方案。</p>
 <h3 id="解决方案：使用三种文件类型和标签"><a href="#解决方案：使用三种文件类型和标签" class="headerlink" title="解决方案：使用三种文件类型和标签"></a>解决方案：使用三种文件类型和<audio>标签</h3><p>鉴于目前的状况，您可能认为目前还不是在 HTML5 页面上使用音频的黄金时刻。在某些方面可能的确如此，但是 HTML5 提供了一个解决方案，使您喜欢的浏览器能够找到一种兼容的格式。</p>
 <p>与 <audio> 标签结合使用时，<source> 标签可以嵌套在 <audio> 容器内。假设您是一个瓦格纳迷，想在 HTML5 网页上听他的歌剧 Ride of the Valkyries（《女武神》）。首先，您需要获得三种文件类型的音乐，即 OGG、MP3 和 WAV。将这些音乐文件与 HTML5 文件放在同一个文件夹内。然后，将每个文件名放在单独的 <source> 标签里，并且音频容器中的所有源标签都由<audio></audio> 构成，如下所示。</p>
 <pre><code>&lt;audio controls&gt;
@@ -758,17 +762,14 @@
     &lt;source src=”http://demo.mimvp.com/html5/take_you_fly.mp3″ /&gt;
     &lt;source src=”http://demo.mimvp.com/html5/take_you_fly.wav” /&gt;
 &lt;/audio&gt;
-</code></pre>
-<p>无论访问者使用什么浏览器，它都将自动选择所读取的第一个文件类型，并为您播放声音。</p>
+</code></pre><p>无论访问者使用什么浏览器，它都将自动选择所读取的第一个文件类型，并为您播放声音。</p>
 <h4 id="html代码-隐藏播放控件"><a href="#html代码-隐藏播放控件" class="headerlink" title="html代码 (隐藏播放控件)"></a>html代码 (隐藏播放控件)</h4><pre><code>&lt;audio autoplay=&quot;autoplay&quot;&gt;
 &lt;source src=&quot;http://demo.mimvp.com/html5/take_you_fly.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
-</code></pre>
-<h4 id="代码演示-隐藏播放控件"><a href="#代码演示-隐藏播放控件" class="headerlink" title="代码演示 (隐藏播放控件)"></a>代码演示 (隐藏播放控件)</h4><pre><code>&lt;audio autoplay=&quot;autoplay&quot; controls=&quot;controls&quot;&gt;
+</code></pre><h4 id="代码演示-隐藏播放控件"><a href="#代码演示-隐藏播放控件" class="headerlink" title="代码演示 (隐藏播放控件)"></a>代码演示 (隐藏播放控件)</h4><pre><code>&lt;audio autoplay=&quot;autoplay&quot; controls=&quot;controls&quot;&gt;
 &lt;source src=&quot;http://demo.mimvp.com/html5/take_you_fly.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
-</code></pre>
-<script>
+</code></pre><script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -1417,6 +1418,21 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
     
 </html>

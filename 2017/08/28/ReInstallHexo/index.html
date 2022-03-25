@@ -689,16 +689,15 @@
 </div>
 
 
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p><strong>假使hexo目录为D:&#x2F;hexo</strong></p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p><strong>假使hexo目录为D:/hexo</strong></p>
 <ul>
-<li>打开CMD    [按下**(win+r)**组合键，输入cmd]</li>
+<li>打开CMD    [按下<strong>(win+r)</strong>组合键，输入cmd]</li>
 <li>输入npm:如果没有npm的详细信息，请重装Node.js</li>
-<li>CMD中定位到hexo目录</li>
+<li>CMD中定位到hexo目录    </li>
 </ul>
 <pre><code>d:
 cd hexo
-</code></pre>
-<ul>
+</code></pre><ul>
 <li>安装hexo:在CMD中输入<code>npm install -g hexo</code></li>
 <li>安装完成后关闭CMD</li>
 <li>打开Git，定位到hexo的目录<code>cd d:/hexo</code></li>
@@ -709,8 +708,7 @@ cd hexo
 git config --global user.email &quot;邮箱&quot;
 
 ssh-keygen -t rsa -C &quot;邮箱&quot;
-</code></pre>
-<p>你的windows账户文件夹内，会有.ssh的文件夹，找到里面的<strong>id_rsa.pub</strong>文件。将其内部所有内容复制到github的密钥框中，确定即可。</p>
+</code></pre><p>你的windows账户文件夹内，会有.ssh的文件夹，找到里面的<strong>id_rsa.pub</strong>文件。将其内部所有内容复制到github的密钥框中，确定即可。</p>
 <p>注:如果上面配置ssh时叫你设置密码设置空密码就可以了。</p>
 
             
@@ -1352,6 +1350,21 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
     
 </html>

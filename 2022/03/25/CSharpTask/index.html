@@ -46,6 +46,8 @@
     
     <title>
         
+            CSharpTask | 
+        
         Hikaru&#39;s Blog
     </title>
 
@@ -55,7 +57,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="huuhghhgyg的个人主页">
-    <meta name="keywords" content="huu huuhghhgyg">
+    <meta name="keywords" content="huu huuhghhgyg,C#,编程">
     <meta name="theme-color" content="#1976D2">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -310,7 +312,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Hikaru&#39;s Blog">
-    <meta name="msapplication-starturl" content="https://huuhghhgyg.github.io/page/2/">
+    <meta name="msapplication-starturl" content="https://huuhghhgyg.github.io/2022/03/25/CSharpTask/">
     <meta name="msapplication-navbutton-color" content="#1976D2">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Hikaru&#39;s Blog">
@@ -325,13 +327,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://huuhghhgyg.github.io/page/2/">
+    <meta property="og:url" content="https://huuhghhgyg.github.io/2022/03/25/CSharpTask/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Hikaru&#39;s Blog">
+    <meta property="og:title" content="CSharpTask | Hikaru&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="huuhghhgyg的个人主页">
-    
+    <meta property="og:article:tag" content="C#"> <meta property="og:article:tag" content="编程"> 
 
+    
+        <meta property="article:published_time" content="Fri Mar 25 2022 11:56:41 GMT+0800">
+        <meta property="article:modified_time" content="Fri Mar 25 2022 11:57:33 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -339,13 +344,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://huuhghhgyg.github.io/page/2/index.html" />
+        <link rel="canonical" href="https://huuhghhgyg.github.io/2022/03/25/CSharpTask/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://huuhghhgyg.github.io/2022/03/25/CSharpTask/index.html",
+    "headline": "CSharpTask",
+    "datePublished": "Fri Mar 25 2022 11:56:41 GMT+0800",
+    "dateModified": "Fri Mar 25 2022 11:57:33 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "huuhghhgyg",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Never Settle"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Hikaru&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",C#,编程huu huuhghhgyg",
+    "description": "huuhghhgyg的个人主页",
+}
+</script>
 
 
     
@@ -378,596 +413,530 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
+                    <!-- Post TOC -->
+
     
-    <div class="locate-thumbnail-symbol"></div>
-
-    <!-- Pin on top -->
-    
-
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/hexo-update.webp">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2021/02/21/hexo-update/">Hexo升级记录</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            hexo版本太旧，将hexo从3.9.0升级到5.4.0以前尝试了几次，这次终于成功了（把所有问题都解决了）
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2021/02/21/hexo-update/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="huuhghhgyg's avatar">
-            </div>
-            <div>
-                <strong>huuhghhgyg</strong>
-                <span>2月 21, 2021</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
             </span>
-        </div>
+        </a>
     </div>
-</div>
+    -->
 
-            
-            
-        
+
+    <!-- Left aligned menu below button -->
     
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
     
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/docker-setup.webp">
-    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2021/01/23/docker-startup/">初探Docker</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-
-尝试了docker的一些常用操作
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2021/01/23/docker-startup/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="huuhghhgyg's avatar">
-            </div>
-            <div>
-                <strong>huuhghhgyg</strong>
-                <span>1月 23, 2021</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/linux-setup.webp">
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Task"><span class="post-toc-number">1.</span> <span class="post-toc-text">Task</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%BC%80%E5%A7%8B%E4%B8%80%E4%B8%AATask"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">开始一个Task</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Wait"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Wait</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%95%BF%E6%97%B6%E9%97%B4%E8%BF%90%E8%A1%8C%E7%9A%84%E4%BB%BB%E5%8A%A1"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">长时间运行的任务</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Task%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Task的返回值</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Task%E7%9A%84%E5%BC%82%E5%B8%B8"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">Task的异常</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E2%80%9C%E8%87%AA%E6%B2%BB%E2%80%9D%E7%9A%84Task"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">“自治”的Task</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%9C%AA%E8%A7%82%E5%AF%9F%E5%88%B0%E7%9A%84%E5%BC%82%E5%B8%B8"><span class="post-toc-number">1.6.1.</span> <span class="post-toc-text">未观察到的异常</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Continuation"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">Continuation</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Awaiter"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">Awaiter</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%9D%9E%E6%B3%9B%E5%9E%8BTask"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">非泛型Task</span></a></li></ol></li></ol>
+    </ul>
     
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2021/01/20/raspi-setup/">树莓派安装设置</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            重新刷入系统进行各项设置安装
 
 
 
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2021/01/20/raspi-setup/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="huuhghhgyg's avatar">
-            </div>
-            <div>
-                <strong>huuhghhgyg</strong>
-                <span>1月 20, 2021</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
+<!-- Layouts -->
 
-            
+    <!-- Post Module -->
+    <div class="material-post_container">
 
-            
+    <div class="material-post mdl-grid">
+    <div class="mdl-card mdl-cell mdl-cell--12-col material-post-shadow">
 
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
+    <!-- Post Header(Thumbnail & Title) -->
+    
+    <!-- Paradox Post Header -->
     
         
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/regex.png">
-    
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 32 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2020/12/31/RegularExpression/">正则表达式笔记</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-
-
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2020/12/31/RegularExpression/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="huuhghhgyg's avatar">
-            </div>
-            <div>
-                <strong>huuhghhgyg</strong>
-                <span>12月 31, 2020</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/python.webp">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2020/10/08/PythonNote1/">PythonNote1</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            删除对象
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2020/10/08/PythonNote1/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="huuhghhgyg's avatar">
-            </div>
-            <div>
-                <strong>huuhghhgyg</strong>
-                <span>10月 08, 2020</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/material-web-components.webp">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2020/07/20/AdditioanlWidgets/">自定义CSS小部件测试</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            新增了几个小部件，提升阅读体验与美观性
-需要先引用部件库&lt;link rel=&quot;stylesheet...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2020/07/20/AdditioanlWidgets/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="huuhghhgyg's avatar">
-            </div>
-            <div>
-                <strong>huuhghhgyg</strong>
-                <span>7月 20, 2020</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/word-typo.webp">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2020/07/16/word-typesetting/">Word排版技巧</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-
-Word的一点小技巧
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2020/07/16/word-typesetting/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="huuhghhgyg's avatar">
-            </div>
-            <div>
-                <strong>huuhghhgyg</strong>
-                <span>7月 16, 2020</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/A2HS/A2hs_thumbnail.webp">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/07/27/a2hs/">为本站添加A2HS</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            终究止不住折腾，终于还是把卡住很久的这个...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/07/27/a2hs/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="huuhghhgyg's avatar">
-            </div>
-            <div>
-                <strong>huuhghhgyg</strong>
-                <span>7月 27, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/DeployOfficeFaster/OfficeIcon.webp">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/05/25/DelpyOfficeFaster/">更快地部署Office</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            每次新安装Office诚然是一件很头疼地...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/05/25/DelpyOfficeFaster/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="huuhghhgyg's avatar">
-            </div>
-            <div>
-                <strong>huuhghhgyg</strong>
-                <span>5月 25, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/CityPhoneBackground/CityBackground.webp">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/05/19/CityPhoneBackground/">把自己的城市地图设置为壁纸</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            这个网站可以把自己的城市设置为壁纸。具体...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/05/19/CityPhoneBackground/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="huuhghhgyg's avatar">
-            </div>
-            <div>
-                <strong>huuhghhgyg</strong>
-                <span>5月 19, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-    <!-- Index nav -->
-        <nav class="material-nav mdl-cell mdl-cell--12-col">
-            <a class="extend prev" rel="prev" href="/"><button aria-label="Last page" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_back</i></button></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><button aria-label="Next page" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_forward</i></button></a>
-        </nav>
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 32 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        // locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.webp');
+    //$('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.webp');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
     
+            <p class="article-headline-p">
+                CSharpTask
+            </p>
+        </div>
+
+
+
+
+
+    
+    <!-- Paradox Post Info -->
+    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar" />
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>huuhghhgyg</strong>
+        <span>3月 25, 2022</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACc0lEQVR42u3awW7DIBAE0Pz/T7fXSlWcmcXGbvU4VZXj8DjAZpbX178eLzw8PDw8PDw8vIfxXvH4+Xzyht/PvHu+ffOH78LDw8Pbwvuw1b6ZxPHXHH/2+G2zueHh4eHt5521ZR9PLnnb0tzw8PDwHsY7nlx7tOQLgYeHh/d3eTmg3e5n5TseHh7evbz8B/+wNVUePDdkLXh4eHgxb9YA2/P3bf09PDw8vDe82eZ+HEYcF81tJFHPEA8PD+9iXhINrMQT+WWsfCk/LBweHh7edt5Kmz+5gDW7oJAcQnh4eHg7efnxkBfTObuNIYYxLh4eHt5JvLOaWG3bLC/Q65gDDw8P72JeflW0jQnyb2nL8WGMi4eHh3cSLyln2//nRfB6QIyHh4e3n7c+6TosiEnJZ/Hw8PCewEsYeXGcLNnJFw7w8PDwLubN4trjaDV/56y1hoeHh3cvb1bO5tt628pqj6UTGmB4eHh4y7eS2hK23fSTcCGhDs89PDw8vGXerAU1C2TbOKNdYjw8PLw9vFlEm5fIbUE8u9aAh4eHt5N31mWp/Khow9n8DXh4eHh7eLOYdb2htR4Nv30eDw8PbwtvFpi28UQS6bafqn8x4OHh4S3z2hA239CLIjg+bOqDAQ8PD+8CXjtWLk6tHB5Fsw0PDw/vYt4rHnnhmxwDediRHCd4eHh4+3krzfu2mM6XMolL8PDw8O7ltWHuemjbjuHNCDw8PLxbeXn7P+cli5gcPHh4eHhP5rWtqfY/K1cZ8PDw8Hby8s135WLBrGQ/bqfh4eHh7efNrjq116dmrbI65sDDw8O7mPf/Bh4eHh4eHh4e3gPGN7BjfLjnkJkvAAAAAElFTkSuQmCC">
+    
+</ul>
+
+            
+
+                <!-- Tags (bookmark) -->
+                
+                    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+                        <li class="mdl-menu__item">
+                            <a class="post_tag-none-link" href="/tags/C/" rel="tag">C#</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a>
+                    </ul>
+                    
+
+                        <!-- Share -->
+                        
+                            <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=CSharpTask&url=https://huuhghhgyg.github.io/2022/03/25/CSharpTask/index.html&pic=https://huuhghhgyg.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=CSharpTask&url=https://huuhghhgyg.github.io/2022/03/25/CSharpTask/index.html&via=huuhghhgyg" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://huuhghhgyg.github.io/2022/03/25/CSharpTask/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://huuhghhgyg.github.io/2022/03/25/CSharpTask/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hikaru&#39;s Blog&title=CSharpTask&summary=huuhghhgyg的个人主页&pics=https://huuhghhgyg.github.io/img/favicon.png&url=https://huuhghhgyg.github.io/2022/03/25/CSharpTask/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://huuhghhgyg.github.io/2022/03/25/CSharpTask/index.html&text=CSharpTask" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+                                
+
+</div>
+
+<!-- Chips-->
+<div class="chips-tag">
+    <style type="text/css">
+        .mdl-chip {
+            height: 32px;
+            font-family: "Noto Sans SC", Roboto, "Helvetica", "Arial", sans-serif;
+            line-height: 32px;
+            padding: 0 12px;
+            border: 0;
+            border-radius: 16px;
+            background-color: #E3F2FD;
+            display: inline-block;
+            color: #232F34;
+            font-size: 0;
+            white-space: nowrap;
+            margin: 0 6px 12px 0;
+        }
+        
+        .mdl-chip:hover {
+            background-color: #BBDEFB;
+        }
+        
+        .mdl-chip__text {
+            font-size: 13px;
+            vertical-align: middle;
+            display: inline-block
+        }
+        
+        .chips-tag {
+            /* padding: 0 13px 13px; */
+            padding: 0 16px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .post_tag_chip-none-link {
+            font-weight: 500;
+            text-decoration: none;
+            padding: 0 5px;
+        }
+    </style>
+
+    
+        <button type="button" class="mdl-chip">
+            <span class="mdl-chip__text">
+                <a class="post_tag_chip-none-link" href="/tags/C/" rel="tag">C#</a></span></button><button type="button" class="mdl-chip"><span class="mdl-chip__text"><a class="post_tag_chip-none-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a>
+            </span>
+        </button>
+        
+</div>
+
+
+<!-- Post Content -->
+<div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h1><p>线程的问题：线程(Thread)是用来创建并发的一种低级别工具，尤其在于以下方面有一些限制：</p>
+<ul>
+<li>虽然开始线程的时候可以方便地传入数据，但是当<code>Join</code>（等待）的时候，很难从线程获得返回值。<ul>
+<li>可能需要设置一些共享字段</li>
+<li>如果抛出异常，捕获和传播该异常都很麻烦</li>
+</ul>
+</li>
+<li>无法告诉线程在结束时开始做另外的工作，必须进行<code>Join</code>操作，在进程中阻塞当前的进程，等待线程结束。</li>
+<li>对手动同步的更大依赖以及随之而来的问题<br><code>Task</code>类可以很好地解决上述问题。<code>Task</code>是一个相对高级的抽象，它代表了一个并发操作(concurrent)，该操作可能由Thread支持，或不由Thread支持。并且，Task是可组合的。</li>
+<li><code>Tasks</code>可以使用线程池来减少启动延迟</li>
+<li>使用<code>TaskCompletionSource</code>，Tasks可以利用回调的方式在等待I/O绑定操作是完全避免线程。</li>
+</ul>
+<h2 id="开始一个Task"><a href="#开始一个Task" class="headerlink" title="开始一个Task"></a>开始一个Task</h2><p>开始一个Task最简单的方法就是使用<code>Task.Run</code>这个静态方法。(.NET4.5开始，.NET4.0的时候是<code>Task.Factory.StartNew</code>这个静态方法) 使用方法：传入一个Action委托即可。</p>
+<p>Task默认使用线程池，也就是后台线程。当主线程结束时，创建的所有任务都会结束。</p>
+<pre><code class="lang-C#">static void Main(string[] args)
+&#123;
+    Task.Run(() =&gt; Console.WriteLine(&quot;Foo&quot;));
+    Console.ReadLine(); // 可以达到阻塞线程的效果。
+    // 如果程序运行完了，由于Task是后台线程，Task也会被关闭。
+&#125;
+</code></pre>
+<p><code>Task.Run</code>返回一个Task对象，可以使用它来监视其过程。<code>Task.Run</code>之后没有调用<code>Start</code>，因为该方法创建的是“热”任务(hot task)；可以通过Task的构造函数创建“冷”任务(cold task)，但很少这样做。</p>
+<h2 id="Wait"><a href="#Wait" class="headerlink" title="Wait"></a>Wait</h2><p>调用Task的Wait方法会进行阻塞直到操作完成（相当于调用Thread上的Join方法）</p>
+<pre><code class="lang-C#">static void Main(string[] args)
+&#123;
+    Task task = Task.Run(() =&gt;
+    &#123;
+        Thread.Sleep(3000);
+        Console.WriteLine(&quot;Foo&quot;);
+    &#125;); //创建一个“热任务”
+
+    Console.WriteLine(task.IsCompleted); //False
+
+    task.Wait(); //阻塞至task完成操作
+
+    Console.WriteLine(task.IsCompleted); //True
+
+    // False
+    // Foo
+    // True
+&#125;
+</code></pre>
+<p>Wait也可以指定一个超时时间和取消令牌来提前结束等待。</p>
+<h2 id="长时间运行的任务"><a href="#长时间运行的任务" class="headerlink" title="长时间运行的任务"></a>长时间运行的任务</h2><ul>
+<li>默认情况下，CLR在线程池中运行Task，这非常适合短时间运行的Compute-Bound类工作</li>
+<li>针对长时间运行的任务或者阻塞操作（例如前面的例子），可以不采用线程池</li>
+<li>如果同时运行多个long-running tasks（尤其是其中有处于阻塞态的），那么性能将会受很大影响，这时有比<code>TaskCreationOptions.LongRunning</code>更好的办法：<ul>
+<li>如果任务是IO-Bound，<code>TaskCompletionSource</code>和异步函数可以让你用回调代替线程实现并发。</li>
+<li>如果任务是Compute-Bound，生产者/消费者队列允许你对任务的并发性进行限流，避免把其它线程和进程饿死。（并行编程）</li>
+</ul>
+</li>
+</ul>
+<h2 id="Task的返回值"><a href="#Task的返回值" class="headerlink" title="Task的返回值"></a>Task的返回值</h2><p>Task有一个泛型子类叫做<code>Task&lt;TResult&gt;</code>，他允许发出一个返回值。</p>
+<p>使用<code>Func&lt;TResult&gt;</code>委托或兼容的Lambda表达式来调用<code>Task.Run</code>就可以得到<code>Task&lt;TResult&gt;</code>，随后可以通过<code>Result</code>属性来获得返回的结果。</p>
+<p>如果这个task还没有完成操作，访问<code>Result</code>属性会阻塞该线程直到该task完成操作。</p>
+<pre><code class="lang-C#">static void Main(string[] args)
+&#123;
+    Task&lt;int&gt; task = Task.Run(() =&gt;
+    &#123;
+        Console.WriteLIne(&quot;Foo&quot;);
+        return 3;
+    &#125;); //Lambda表达式与Func&lt;TResult&gt;兼容
+
+    int result = task.Result; //如果task没完成，会阻塞当前进程，直到返回结果
+    Console.WriteLine(result); //3
+&#125;
+</code></pre>
+<p><code>Task&lt;TResult&gt;</code>可以看作是一种所谓得“许诺”，在它里面包裹着一个Result，在稍后的时候就会变得可用。</p>
+<h2 id="Task的异常"><a href="#Task的异常" class="headerlink" title="Task的异常"></a>Task的异常</h2><p>不同于Thread，Task可以很方便地传播异常。如果task里面抛出了ige未处理的异常（故障），那么异常就会重新抛出给：</p>
+<ul>
+<li>调用了<code>wait()</code>的地方、</li>
+<li>访问了<code>Task&lt;TResult&gt;</code>的<code>Result</code>属性的地方</li>
+</ul>
+<p>无需重新抛出异常，通过Task的IsFaulted和IsCancelled属性也可以检测出Task是否发生了故障：</p>
+<ul>
+<li>如果两个属性都返回<code>false</code>，那么没有错误发生。</li>
+<li>如果IsCanceled位<code>true</code>，那就说明一个<code>OperationCanceledException</code>为该Task抛出了异常</li>
+<li>如果<code>IsFaulted</code>为<code>true</code>，那就说明另一个类型的异常被抛出，而Exception属性也将指明错误</li>
+</ul>
+<h2 id="“自治”的Task"><a href="#“自治”的Task" class="headerlink" title="“自治”的Task"></a>“自治”的Task</h2><p>“自治”的Task制“设置完就不管了”的Task。指不通过调用<code>Wait()</code>方法、Result属性或continuation进行会合的任务。</p>
+<p>针对自治的Task，需要像Thread一样，显式地处理异常，避免发生“悄无声息”的故障。<br>自治Task上未处理的异常称为<strong>未观察到的异常</strong>。</p>
+<h3 id="未观察到的异常"><a href="#未观察到的异常" class="headerlink" title="未观察到的异常"></a>未观察到的异常</h3><p>可以通过全局的<code>TaskScheduler.UnobservedTaskException</code>来订阅未观察到的异常。</p>
+<p>使用超时进行等待的<code>Task</code>，如果在超时后发生故障，那么它将会产生一个“未观察到的异常”</p>
+<p>在Task发生故障后，如果访问Task的<code>Exception</code>属性，那么该异常就被认为是“已观察到的异常”</p>
+<h2 id="Continuation"><a href="#Continuation" class="headerlink" title="Continuation"></a>Continuation</h2><p>当Task结束的时候，继续做其它事情。Continuation通常是通过回调的方式实现的，当操作一结束，就开始执行。</p>
+<p>在Task上调用<code>GetAwaiter</code>会返回一个<code>awaiter</code>对象。它的<code>OnCompleted</code>方法会告诉task：“当你结束/发生故障时要执行委托”</p>
+<p>可以将<code>Continuation</code>附加到已经结束的task上面，此时<code>Continuation</code>将会被安排立即执行。</p>
+<h2 id="Awaiter"><a href="#Awaiter" class="headerlink" title="Awaiter"></a>Awaiter</h2><p>awaiter是可以暴露下列两个方法和一个属性的对象：</p>
+<ul>
+<li>OnCompleted</li>
+<li>GetResult</li>
+<li>IsCompleted（bool属性）<br>其中，<code>OnCompleted</code>是<code>INotifyCompletion</code>的一部分</li>
+</ul>
+<p>如果发生故障，调用<code>awaiter.GetResult()</code>的时候，异常会重新抛出。<br>无需调用<code>GetResult</code>，task的<code>Result</code>属性也可以直接访问。</p>
+<h2 id="非泛型Task"><a href="#非泛型Task" class="headerlink" title="非泛型Task"></a>非泛型Task</h2><p>非泛型的task，<code>GetResult()</code>方法有一个void返回值，只用来重新抛出异常。</p>
+<blockquote>
+<p>未完…</p>
+</blockquote>
+<p>async<br>标志着这些代码是异步的，编译器必须重新排列它。</p>
+
+            
+                <!-- <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;border-radius: 2px;">
+                    <p><strong>
+                    
+                        This blog is under a <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">CC BY-NC-SA 3.0 Unported License</a>
+                    </strong>
+                        <br>
+                        <strong>本文链接：</strong>
+                        <a href="https://huuhghhgyg.github.io/2022/03/25/CSharpTask/">
+                            https://huuhghhgyg.github.io/2022/03/25/CSharpTask/
+                        </a>
+                    </p>
+                </blockquote> -->
+
+                <style>
+                    .license-card {
+                        background-color: #323232;
+                        position: relative;
+                        padding: 16px;
+                        border-radius: 4px;
+                        color: #E5E5E5;
+                        word-wrap: break-word;
+                        margin-top: 12px;
+                    }
+
+                    .license-card *::selection{
+                        background-color: #304E75;
+                    }
+                    
+                    .license-card .title {
+                        font-size: 16px;
+                        margin: 0;
+                        font-weight: bold;
+                        display: flex;
+                        align-items: center;
+                    }
+                    
+                    .license-card .title-link {
+                        margin-bottom: 6px;
+                    }
+                    
+                    .license img {
+                        width: 20px;
+                        padding-bottom: 2px;
+                        display: inline;
+                    }
+                    
+                    .license-card .license-subtitle {
+                        margin-top: 16px;
+                        margin-bottom: 0px;
+                        font-size: 14px;
+                        font-weight: bold;
+                    }
+                    
+                    .license-card .info {
+                        display: flex;
+                        margin-top: 12px;
+                    }
+                    
+                    @media screen and (max-width: 480px) {
+                        .license-card .info {
+                            display: block;
+                        }
+                    }
+                    
+                    .license-card .info .license-content {
+                        line-height: 20px;
+                    }
+                    
+                    .license-card .license-block {
+                        margin-right: 24px;
+                    }
+                </style>
+
+                <div class="license-card">
+                    <div class="title">
+                        <span class="material-icons">link</span>
+                        <div style="margin-left:6px">
+                            本文链接：
+                        </div>
+                    </div>
+                    <div class="title-link">
+                        <a href="https://huuhghhgyg.github.io/2022/03/25/CSharpTask/">
+                            https://huuhghhgyg.github.io/2022/03/25/CSharpTask/
+                        </a>
+                    </div>
+                    <div class="info">
+                        <div class="time license-block">
+                            <div class="license-subtitle">发文时间</div>
+                            <div class="license-content">
+                                3月 25, 2022
+                            </div>
+                        </div>
+                        <div class="license license-block">
+                            <div class="license-subtitle">请遵循协议</div>
+                            <div class="license-content"><img style="border:none" src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/icon/cc_icon_white_x2.png" alt="" srcset="">
+                                <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                    
+
+                        
+</div>
+
+
+
+<!-- Post Comments -->
+
+    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script src="/js/md5.min.js"></script>
+
+<!-- 错位修补 2021-7-14 -->
+<style>
+    .gt-svg{
+        vertical-align: unset !important;
+    }
+</style>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: '37485e1d76ada102806b',
+            clientSecret: '140fffeeba3fab7708650383fd7b9b3254ad37cd',
+            repo: 'huuhghhgyg.github.io',
+            owner: 'huuhghhgyg',
+            admin: ['huuhghhgyg'],
+            // id是后添加的
+            id: md5(location.pathname),
+            // facebook-like distraction free mode
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+</div>
+
+<!-- Post Prev & Next Nav -->
+<nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2022/03/25/CSharpThread/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+</div>
 </div>
 
 

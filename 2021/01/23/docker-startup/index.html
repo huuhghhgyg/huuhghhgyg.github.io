@@ -660,6 +660,7 @@
 </blockquote>
 <h3 id="查看所有容器"><a href="#查看所有容器" class="headerlink" title="查看所有容器"></a>查看所有容器</h3><p><code>docker ps -a</code></p>
 <h2 id="建立容器"><a href="#建立容器" class="headerlink" title="建立容器"></a>建立容器</h2><p><code>docker run ubuntu -it</code></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -667,7 +668,8 @@
 <th>作用</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>-i</code></td>
 <td>与容器互动(类似ssh，可以输入指令)</td>
 </tr>
@@ -675,19 +677,20 @@
 <td><code>-t</code></td>
 <td>创造一个终端</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h2 id="容器常用操作"><a href="#容器常用操作" class="headerlink" title="容器常用操作"></a>容器常用操作</h2><h3 id="本地容器操作容器："><a href="#本地容器操作容器：" class="headerlink" title="本地容器操作容器："></a>本地容器操作容器：</h3><p>运行但不进入：<br><code>docker start [容器ID/容器ID开头的几个字]</code></p>
 <p>进入容器：<br><code>docker attach [容器ID/容器ID开头的几个字]</code></p>
 <p>离开容器:<br><kbd>Ctrl+P</kbd> <kbd>Ctrl+Q</kbd></p>
 <p>停止容器：<br><code>docker stop [容器ID/容器ID开头的几个字]</code></p>
-<p>查看已经下载到本地的容器：<br><code>docker image ls </code></p>
+<p>查看已经下载到本地的容器：<br><code>docker image ls</code></p>
 <p>移除本地容器：<br><code>docker rm [容器名称]</code></p>
 <p>移除本地镜像：<br><code>docker rmi [镜像名称]</code></p>
 <blockquote>
 <p>镜像名称在REPOSITORY下</p>
 </blockquote>
-<h3 id="新建容器"><a href="#新建容器" class="headerlink" title="新建容器"></a>新建容器</h3><p>搜索镜像</p>
-<!-- 有图标的链接card -->
+<h3 id="新建容器"><a href="#新建容器" class="headerlink" title="新建容器"></a>新建容器</h3><p>搜索镜像<br><!-- 有图标的链接card --></p>
 <div class="link-card">
     <a target="_blank" rel="noopener" href="https://hub.docker.com/">
         <div class="img-card-span">
@@ -704,6 +707,7 @@
 </div>
 
 <p><code>docker run (参数) [容器名称]</code></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -711,7 +715,8 @@
 <th>作用</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>--name [name]</code></td>
 <td>更改容器名称</td>
 </tr>
@@ -727,10 +732,13 @@
 <td><code>-v [路径]:[容器路径]</code></td>
 <td>文件映射。将电脑的文件映射入容器</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>第一次使用的镜像会自动从Docker Hub下载</p>
 <p>假设要开启ngnix服务器:<br>跳转到目标目录，运行<code>docker run --name web-server -d -p 8000:80 -v $(pwd):/usr/share/ngnix/html</code></p>
 <h2 id="自建镜像"><a href="#自建镜像" class="headerlink" title="自建镜像"></a>自建镜像</h2><h3 id="查看更改："><a href="#查看更改：" class="headerlink" title="查看更改："></a>查看更改：</h3><p><code>docker diff [容器名称]</code></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -738,7 +746,8 @@
 <th>含义</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>A</td>
 <td>新增档案</td>
 </tr>
@@ -750,10 +759,12 @@
 <td>D</td>
 <td>删除档案</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h3 id="生成镜像："><a href="#生成镜像：" class="headerlink" title="生成镜像："></a>生成镜像：</h3><p><code>docker commit 容器ID [镜像名称]</code></p>
 <blockquote>
-<p>建议命名方式 [username]&#x2F;[image-name]:[version]</p>
+<p>建议命名方式 [username]/[image-name]:[version]</p>
 </blockquote>
 <h3 id="启用镜像："><a href="#启用镜像：" class="headerlink" title="启用镜像："></a>启用镜像：</h3><p>需要进入容器：<br><code>docker run -it [镜像名称]</code></p>
 <p>只需要执行命令：<br><code>docker run [包名] [命令]</code></p>
@@ -1397,6 +1408,21 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
     
 </html>

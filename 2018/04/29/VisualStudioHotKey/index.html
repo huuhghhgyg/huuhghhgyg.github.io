@@ -436,15 +436,6 @@
     <!-- Left aligned menu below button -->
     
     
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
-    </button>
-
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E7%AA%97%E5%8F%A3%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="post-toc-number">1.</span> <span class="post-toc-text">窗口快捷键</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E9%A1%B9%E7%9B%AE%E5%8A%9F%E8%83%BD%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="post-toc-number">2.</span> <span class="post-toc-text">项目功能快捷键</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%9F%A5%E6%89%BE%E7%9B%B8%E5%85%B3%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="post-toc-number">3.</span> <span class="post-toc-text">查找相关快捷键</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%BB%A3%E7%A0%81%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="post-toc-number">4.</span> <span class="post-toc-text">代码快捷键</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E8%B0%83%E8%AF%95%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="post-toc-number">5.</span> <span class="post-toc-text">调试快捷键</span></a></li></ol>
-    </ul>
-    
 
 
 
@@ -652,92 +643,183 @@
 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>Visual Studio 快捷键整理</p>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"
+<p><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"
   integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw"
-  crossorigin="anonymous"/>
+  crossorigin="anonymous"/></p>
 <div class="mdui-typo">
 
-<h1 id="窗口快捷键"><a href="#窗口快捷键" class="headerlink" title="窗口快捷键"></a>窗口快捷键</h1><p>记忆诀窍：</p>
-<p>凡跟窗口挂上钩的快捷键必有一个W（Windows）；<br><kbd>Ctrl+W,W</kbd>: 浏览器窗口 （浏览橱窗用有道的翻译是window shopping）</p>
-<p><kbd>Ctrl+W,S</kbd>: 解决方案管理器 （Solution）</p>
-<p><kbd>Ctrl+W,C</kbd>: 类视图 （Class）</p>
-<p><kbd>Ctrl+W,E</kbd>: 错误列表 （Error）</p>
-<p><kbd>Ctrl+W,O</kbd>: 输出窗口（输出Output；输出程序的的编译信息 ;可在vs中“工具”—-“选项”—-“调试”—-“输出窗口”进行配置需要查看哪些信息）</p>
-<p><kbd>Ctrl+W,P</kbd>: 属性窗口 （属性 Property）</p>
-<p><kbd>Ctrl+W,T</kbd>: 任务列表 （任务Task）</p>
-<p><kbd>Ctrl+W,X</kbd>: 工具箱 （事实上工具应该是Tool 但t已被任务列表占用了 ；参照一些大神的记忆方法：“X”长得四通八达，而工具就有这样一个特点，所以属性的快捷键是“X”）</p>
-<p><kbd>Ctrl+W,B</kbd>: 书签窗口 （书签 Bookmark 书签非常好用，如果有几千行代码，在寻找代码的时候添加书签找起来要快很多）</p>
-<p><kbd>Ctrl+W,U</kbd>: 文档大纲 （OutLine；使用第二个字母U）</p>
-<p><kbd>Ctrl+D,B</kbd>: 断点窗口 （breakpoint）</p>
-<p><kbd>Ctrl+D,I</kbd>: 即时窗口 （immediately）</p>
-<h1 id="项目功能快捷键"><a href="#项目功能快捷键" class="headerlink" title="项目功能快捷键"></a>项目功能快捷键</h1><blockquote>
-<p>规律：<br><kbd>Ctrl</kbd> 是强制功能键<br><kbd>Shift</kbd> 有给项目增加功能</p>
-</blockquote>
-<p><kbd>CTRL + F6 /CTRL + TAB</kbd> 下一个文档窗口即活动窗体切换 （windows操作系统是alt+tab表示在任务之间切换</p>
-<p><kbd>CTRL + SHIFT + F6 /CTRL + SHIFT + TAB</kbd> 上一个文档窗口 （在windows系统操作中 相信大家都知道shift有相反的功能 哈哈 在这里体现了）</p>
-<p><kbd>F7</kbd>: 查看代码 （WebForm开发里面，是查看后台代码）</p>
-<p><kbd>Shift+F7</kbd>: 查看窗体设计器 (在后台cs文件的时候，这种方式很方便跳转到前台.aspx页面)</p>
-<p><kbd>Ctrl+Shift+N</kbd>: 新建项目 （N是New新建的意思 那如果需要强制在项目中新建项目的话 自然就是组合键Ctrl+Shift+N）</p>
-<p><kbd>Ctrl+Shift+O</kbd>: 打开项目 （Open）</p>
-<p><kbd>CTRL + SHIFT + C</kbd> 显示类视图窗口（C代表Class类的意思）</p>
-<p><kbd>CTRL + F4</kbd> 关闭文档窗口 （相信用过qq的大家都有使用<kbd>alt+f4</kbd>来关闭当前聊天窗口 想想用<kbd>ctrl+tab</kbd>在活动标签窗口切换就知道为什么关闭当前标签窗口是<kbd>ctrl+f4</kbd>）</p>
-<p><kbd>CTRL + SHIFT + E</kbd> 显示资源视图 （E代表Explorer资源管理器的意思）</p>
-<p><kbd>CTRL + SHIFT + B</kbd> 生成解决方案 （B代表Build生成的意思 其实用F6也可以实现）</p>
-<p><kbd>Shift+F6</kbd> 表示生成当前项目 (上面已经说过使用f6可以生成整个解决方案 那如果是当前项目的生成那自然就是加上功能键shift了 )</p>
-<p><kbd>F4</kbd> 显示属性窗口 SHIFT + F4显示项目属性窗口</p>
-<p><kbd>Ctrl+Shift+S</kbd>: 全部保存 （S代表Save保存的意思 这里表示全部保存是因为如果只是单个保存Ctrl+S跟整个项目没有任何瓜葛 而全部保存的概念应该是说在整个项目中 所以组合键中自然会有shift了哦）</p>
-<p><kbd>Ctrl+Shift+A</kbd>: 新建项（A是Add的意思）</p>
-<p><kbd>Shift+Alt+C</kbd>: 新建类 （shift是跟项目有关的功能键；Alt用的非常多，空格（用的非常多）旁；C是Class;而且添加类用的非常多；所以自然就是:Shift+Alt+C）</p>
-<h1 id="查找相关快捷键"><a href="#查找相关快捷键" class="headerlink" title="查找相关快捷键"></a>查找相关快捷键</h1><p><kbd>Ctrl+F</kbd>: 查找 （Find） Ctrl+Shift+F: 在文件中查找 (上面已经提过了shift是表示在项目中 所以如果需要在项目中的文件中查找的话 那自然就少不了Shift) </p>
-<p><kbd>F3</kbd>: 查找下一个 （相信使用过windows系统的人都知道f3是查找的快捷键） </p>
-<p><kbd>Shift+F3</kbd>: 查找上一个 （shift在此有反向的功能哦） </p>
-<p><kbd>Ctrl+H</kbd>: 替换 </p>
-<p><kbd>Ctrl+Shift+H</kbd>: 在文件中替换</p>
-<h1 id="代码快捷键"><a href="#代码快捷键" class="headerlink" title="代码快捷键"></a>代码快捷键</h1><p><kbd>Ctrl+E,D</kbd>（ctrl+k,d） —-格式化全部代码 ;让你的代码瞬间整洁起来。</p>
-<p><kbd>Ctrl+E,F</kbd> —-格式化选中的代码（如果你已经记住Ctrl+E+D是格式化全部代码的话 那你想想规律不就知道了吗 F不就在D的右边表示它是特定某一范围）</p>
-<p><kbd>Ctrl+K,C</kbd>: 注释选定内容 （Comment）</p>
-<p><kbd>Ctrl+K,U</kbd>: 取消选定注释内容 （UnComment）</p>
-<p><kbd>Ctrl+J /Ctrl+K,L</kbd>: 智能提示 列出成员 （kernel核心内容 list列表 如果我们想查看一个对象具有的成员具体信息的时候试下这个快捷键吧）</p>
-<p><kbd>Ctrl+K,P</kbd>: 参数信息 （kernel核心内容 Parameters参数 如果我们想查看一个方法的具体参数的时候这个组合键可是挺有用的哦）</p>
-<p><kbd>Ctrl+K,I</kbd>: 快速查看信息（Infomation）</p>
-<p><kbd>Ctrl+K,S</kbd>: 外侧代码（平时个人惯会时不时的用#region 用了region之后代码看起来就特别整洁 所以自然而然的就用</kbd>惯了这个）</p>
-<p><kbd>CTRL + M, CTRL + M</kbd> 折叠或展开当前方法</p>
-<p><kbd>CTRL + M, CTRL + O</kbd> 折叠所有方法</p>
-<p><kbd>CTRL + M, CTRL + L</kbd> 展开所有方法<br><kbd>CTRL + M, CTRL + P</kbd> 展开所有方法</p>
-<p><kbd>Ctrl+M,P</kbd>: 停止大纲显示 （用了region将代码折叠起来之后试试用这组组合键吧 体验一下折叠和展开的</kbd>吧 看着舒服的代码我相信你记住这对快捷键肯定是值得的）</p>
-<p><kbd>ctrl+shift+f10</kbd>：自动添加using命名空间（在实例化对象的时候，使用的非常多）</p>
-<h1 id="调试快捷键"><a href="#调试快捷键" class="headerlink" title="调试快捷键"></a>调试快捷键</h1><p><kbd>F5</kbd>: 启动调试</p>
-<p><kbd>Ctrl+F5</kbd>: 开始执行(不调试)</p>
-<p><kbd>Shift+F5</kbd>: 停止调试</p>
-<p><kbd>Ctrl+Shift+F5</kbd>: 重启调试</p>
-<p><kbd>F9</kbd>: 启用&#x2F;关闭断点</p>
-<p><kbd>Ctrl+F9</kbd>: 停止断点</p>
-<p><kbd>Ctrl+Shift+F9</kbd>: 删除全部断点</p>
-<p><kbd>F10</kbd>: 逐过程<br><kbd>Ctrl+F10</kbd>: 运行到光标处<br><kbd>F11</kbd>: 逐语句</p>
-<p>6、编辑快捷键<br><kbd>Shift+Alt+Enter</kbd>: 切换全屏编辑（如果想一心一意的只写代码 让整个vs铺满全屏 感觉还不错哦）</p>
-<p><kbd>F12</kbd>: 转到所调用过程或变量的定义</p>
-<p><kbd>Alt+F12</kbd>: 查找符号(列出所有查找结果)</p>
-<p><kbd>shift+f12</kbd>:查找所有引用（讲光标放在单词上， 然后按Shift + F12）</p>
-<p><kbd>Ctrl+U</kbd>: 全部变为小写 (的sql语句全部转换成大写以提高性能 )</p>
-<p><kbd>Ctrl+Shift+U</kbd>: 全部变为大写 （U表示Upper ）</p>
-<p><kbd>Ctrl+Shift+V</kbd>: 剪贴板循环 （平时我们都只</kbd>惯用ctrl+c 和ctrl+v 大家可能还不知道事实上微软都已经帮我们把多次剪切的结果都保存了下来 记下这组快捷键吧 可以粘贴上几次剪切的结果 一用便知道它的强大厉害之处）</p>
-<p><kbd>Ctrl+Shift+L</kbd>: 删除当前行 （这个很有用哦 因为大家常常会要删除多余的空行 哈哈 这组快捷键会让你省力不少）</p>
-<p><kbd>Ctrl+E,S</kbd>: 查看空白(ctrl+r,w 和它一样可以查看空白或者说显示或隐藏tab标记)</p>
-<p><kbd>Ctrl+E,W</kbd>: 自动换行 （代码太长还有滚动条，特别是写append(sql.toString)语句的时候，太长，所以这时候就不得不拖动滚动条，这样以后就可以换行显示了）</p>
-<p><kbd>Ctrl+G</kbd>: 转到指定行 （通过情况下 我们想在跳转到具体某一行 用它太方便了）</p>
-<p><kbd>Shift+Alt+箭头键</kbd>: 选择矩形文本 Alt+鼠标左按钮: 选择矩形文本</p>
-<p><kbd>CTRL + DELETE</kbd> 删除至词尾 </p>
-<p><kbd>CTRL + BACKSPACE</kbd> 删除至词头</p>
-<p><kbd>SHIFT + TAB</kbd> 取消制表符</p>
-<p><kbd>Ctrl+左右箭头键</kbd>:一次可以移动一个单词</p>
-<p><kbd>Ctrl+单击</kbd>: 选中当前点击的整个单词</p>
-<p><kbd>SHIFT + END</kbd> 选择至行尾<br><kbd>SHIFT + HOME</kbd> 选择至行开始处</p>
-<p><kbd>CTRL + SHIFT + END</kbd> 选择至文档末尾 CTRL + SHIFT + HOME选择至文档末尾开始</p>
-<p><kbd>CTRL + SHIFT + PAGE UP</kbd> 选择至本页前面 CTRL + SHIFT + PAGE DOWN选择至本页后面</p>
-<p><kbd>CTRL + PAGE DOWN</kbd> 光标定位到窗口上方 CTRL + PAGE UP光标定位到窗口下方</p>
-<p><kbd>CTRL + END</kbd> 文档定位到最后 CTRL + HOME文档定位到最前</p>
-<p>按两下<kbd>Tab</kbd>快速生成代码段（写for, foreach循环，或者try, 还有绑定事件方法）</p>
-<p><kbd>Ctrl+减号</kbd>：回退到光标上一次的位置（这个真心挺有用的）</p>
+# 窗口快捷键
+记忆诀窍：
+
+凡跟窗口挂上钩的快捷键必有一个W（Windows）；
+<kbd>Ctrl+W,W</kbd>: 浏览器窗口 （浏览橱窗用有道的翻译是window shopping）
+
+<kbd>Ctrl+W,S</kbd>: 解决方案管理器 （Solution）
+
+<kbd>Ctrl+W,C</kbd>: 类视图 （Class）
+
+<kbd>Ctrl+W,E</kbd>: 错误列表 （Error）
+
+<kbd>Ctrl+W,O</kbd>: 输出窗口（输出Output；输出程序的的编译信息 ;可在vs中“工具”—-“选项”—-“调试”—-“输出窗口”进行配置需要查看哪些信息）
+
+<kbd>Ctrl+W,P</kbd>: 属性窗口 （属性 Property）
+
+<kbd>Ctrl+W,T</kbd>: 任务列表 （任务Task）
+
+<kbd>Ctrl+W,X</kbd>: 工具箱 （事实上工具应该是Tool 但t已被任务列表占用了 ；参照一些大神的记忆方法：“X”长得四通八达，而工具就有这样一个特点，所以属性的快捷键是“X”）
+
+<kbd>Ctrl+W,B</kbd>: 书签窗口 （书签 Bookmark 书签非常好用，如果有几千行代码，在寻找代码的时候添加书签找起来要快很多）
+
+<kbd>Ctrl+W,U</kbd>: 文档大纲 （OutLine；使用第二个字母U）
+
+<kbd>Ctrl+D,B</kbd>: 断点窗口 （breakpoint）
+
+<kbd>Ctrl+D,I</kbd>: 即时窗口 （immediately）
+
+# 项目功能快捷键
+>规律：
+><kbd>Ctrl</kbd> 是强制功能键
+><kbd>Shift</kbd> 有给项目增加功能
+
+<kbd>CTRL + F6 /CTRL + TAB</kbd> 下一个文档窗口即活动窗体切换 （windows操作系统是alt+tab表示在任务之间切换
+
+<kbd>CTRL + SHIFT + F6 /CTRL + SHIFT + TAB</kbd> 上一个文档窗口 （在windows系统操作中 相信大家都知道shift有相反的功能 哈哈 在这里体现了）
+
+<kbd>F7</kbd>: 查看代码 （WebForm开发里面，是查看后台代码）
+
+<kbd>Shift+F7</kbd>: 查看窗体设计器 (在后台cs文件的时候，这种方式很方便跳转到前台.aspx页面)
+
+<kbd>Ctrl+Shift+N</kbd>: 新建项目 （N是New新建的意思 那如果需要强制在项目中新建项目的话 自然就是组合键Ctrl+Shift+N）
+
+<kbd>Ctrl+Shift+O</kbd>: 打开项目 （Open）
+
+<kbd>CTRL + SHIFT + C</kbd> 显示类视图窗口（C代表Class类的意思）
+
+<kbd>CTRL + F4</kbd> 关闭文档窗口 （相信用过qq的大家都有使用<kbd>alt+f4</kbd>来关闭当前聊天窗口 想想用<kbd>ctrl+tab</kbd>在活动标签窗口切换就知道为什么关闭当前标签窗口是<kbd>ctrl+f4</kbd>）
+
+<kbd>CTRL + SHIFT + E</kbd> 显示资源视图 （E代表Explorer资源管理器的意思）
+
+<kbd>CTRL + SHIFT + B</kbd> 生成解决方案 （B代表Build生成的意思 其实用F6也可以实现）
+
+<kbd>Shift+F6</kbd> 表示生成当前项目 (上面已经说过使用f6可以生成整个解决方案 那如果是当前项目的生成那自然就是加上功能键shift了 )
+
+<kbd>F4</kbd> 显示属性窗口 SHIFT + F4显示项目属性窗口
+
+<kbd>Ctrl+Shift+S</kbd>: 全部保存 （S代表Save保存的意思 这里表示全部保存是因为如果只是单个保存Ctrl+S跟整个项目没有任何瓜葛 而全部保存的概念应该是说在整个项目中 所以组合键中自然会有shift了哦）
+
+<kbd>Ctrl+Shift+A</kbd>: 新建项（A是Add的意思）
+
+<kbd>Shift+Alt+C</kbd>: 新建类 （shift是跟项目有关的功能键；Alt用的非常多，空格（用的非常多）旁；C是Class;而且添加类用的非常多；所以自然就是:Shift+Alt+C）
+
+# 查找相关快捷键
+
+<kbd>Ctrl+F</kbd>: 查找 （Find） Ctrl+Shift+F: 在文件中查找 (上面已经提过了shift是表示在项目中 所以如果需要在项目中的文件中查找的话 那自然就少不了Shift) 
+
+<kbd>F3</kbd>: 查找下一个 （相信使用过windows系统的人都知道f3是查找的快捷键） 
+
+<kbd>Shift+F3</kbd>: 查找上一个 （shift在此有反向的功能哦） 
+
+<kbd>Ctrl+H</kbd>: 替换 
+
+<kbd>Ctrl+Shift+H</kbd>: 在文件中替换
+
+# 代码快捷键
+<kbd>Ctrl+E,D</kbd>（ctrl+k,d） —-格式化全部代码 ;让你的代码瞬间整洁起来。
+
+<kbd>Ctrl+E,F</kbd> —-格式化选中的代码（如果你已经记住Ctrl+E+D是格式化全部代码的话 那你想想规律不就知道了吗 F不就在D的右边表示它是特定某一范围）
+
+<kbd>Ctrl+K,C</kbd>: 注释选定内容 （Comment）
+
+<kbd>Ctrl+K,U</kbd>: 取消选定注释内容 （UnComment）
+
+<kbd>Ctrl+J /Ctrl+K,L</kbd>: 智能提示 列出成员 （kernel核心内容 list列表 如果我们想查看一个对象具有的成员具体信息的时候试下这个快捷键吧）
+
+<kbd>Ctrl+K,P</kbd>: 参数信息 （kernel核心内容 Parameters参数 如果我们想查看一个方法的具体参数的时候这个组合键可是挺有用的哦）
+
+<kbd>Ctrl+K,I</kbd>: 快速查看信息（Infomation）
+
+<kbd>Ctrl+K,S</kbd>: 外侧代码（平时个人惯会时不时的用#region 用了region之后代码看起来就特别整洁 所以自然而然的就用</kbd>惯了这个）
+
+<kbd>CTRL + M, CTRL + M</kbd> 折叠或展开当前方法
+
+<kbd>CTRL + M, CTRL + O</kbd> 折叠所有方法
+
+<kbd>CTRL + M, CTRL + L</kbd> 展开所有方法 
+<kbd>CTRL + M, CTRL + P</kbd> 展开所有方法
+
+<kbd>Ctrl+M,P</kbd>: 停止大纲显示 （用了region将代码折叠起来之后试试用这组组合键吧 体验一下折叠和展开的</kbd>吧 看着舒服的代码我相信你记住这对快捷键肯定是值得的）
+
+<kbd>ctrl+shift+f10</kbd>：自动添加using命名空间（在实例化对象的时候，使用的非常多）
+
+# 调试快捷键
+<kbd>F5</kbd>: 启动调试
+
+<kbd>Ctrl+F5</kbd>: 开始执行(不调试)
+
+<kbd>Shift+F5</kbd>: 停止调试
+
+<kbd>Ctrl+Shift+F5</kbd>: 重启调试
+
+<kbd>F9</kbd>: 启用/关闭断点
+
+<kbd>Ctrl+F9</kbd>: 停止断点
+
+<kbd>Ctrl+Shift+F9</kbd>: 删除全部断点
+
+<kbd>F10</kbd>: 逐过程 
+<kbd>Ctrl+F10</kbd>: 运行到光标处 
+<kbd>F11</kbd>: 逐语句
+
+6、编辑快捷键
+<kbd>Shift+Alt+Enter</kbd>: 切换全屏编辑（如果想一心一意的只写代码 让整个vs铺满全屏 感觉还不错哦）
+
+<kbd>F12</kbd>: 转到所调用过程或变量的定义
+
+<kbd>Alt+F12</kbd>: 查找符号(列出所有查找结果)
+
+<kbd>shift+f12</kbd>:查找所有引用（讲光标放在单词上， 然后按Shift + F12）
+
+<kbd>Ctrl+U</kbd>: 全部变为小写 (的sql语句全部转换成大写以提高性能 )
+
+<kbd>Ctrl+Shift+U</kbd>: 全部变为大写 （U表示Upper ）
+
+<kbd>Ctrl+Shift+V</kbd>: 剪贴板循环 （平时我们都只</kbd>惯用ctrl+c 和ctrl+v 大家可能还不知道事实上微软都已经帮我们把多次剪切的结果都保存了下来 记下这组快捷键吧 可以粘贴上几次剪切的结果 一用便知道它的强大厉害之处）
+
+<kbd>Ctrl+Shift+L</kbd>: 删除当前行 （这个很有用哦 因为大家常常会要删除多余的空行 哈哈 这组快捷键会让你省力不少）
+
+<kbd>Ctrl+E,S</kbd>: 查看空白(ctrl+r,w 和它一样可以查看空白或者说显示或隐藏tab标记)
+
+<kbd>Ctrl+E,W</kbd>: 自动换行 （代码太长还有滚动条，特别是写append(sql.toString)语句的时候，太长，所以这时候就不得不拖动滚动条，这样以后就可以换行显示了）
+
+<kbd>Ctrl+G</kbd>: 转到指定行 （通过情况下 我们想在跳转到具体某一行 用它太方便了）
+
+<kbd>Shift+Alt+箭头键</kbd>: 选择矩形文本 Alt+鼠标左按钮: 选择矩形文本
+
+<kbd>CTRL + DELETE</kbd> 删除至词尾 
+
+<kbd>CTRL + BACKSPACE</kbd> 删除至词头
+
+<kbd>SHIFT + TAB</kbd> 取消制表符
+
+<kbd>Ctrl+左右箭头键</kbd>:一次可以移动一个单词
+
+<kbd>Ctrl+单击</kbd>: 选中当前点击的整个单词
+
+<kbd>SHIFT + END</kbd> 选择至行尾 
+<kbd>SHIFT + HOME</kbd> 选择至行开始处
+
+<kbd>CTRL + SHIFT + END</kbd> 选择至文档末尾 CTRL + SHIFT + HOME选择至文档末尾开始
+
+<kbd>CTRL + SHIFT + PAGE UP</kbd> 选择至本页前面 CTRL + SHIFT + PAGE DOWN选择至本页后面
+
+<kbd>CTRL + PAGE DOWN</kbd> 光标定位到窗口上方 CTRL + PAGE UP光标定位到窗口下方
+
+<kbd>CTRL + END</kbd> 文档定位到最后 CTRL + HOME文档定位到最前
+
+按两下<kbd>Tab</kbd>快速生成代码段（写for, foreach循环，或者try, 还有绑定事件方法）
+
+<kbd>Ctrl+减号</kbd>：回退到光标上一次的位置（这个真心挺有用的）
+
 </div>
             
                 <!-- <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;border-radius: 2px;">
@@ -1378,6 +1460,21 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
     
 </html>
