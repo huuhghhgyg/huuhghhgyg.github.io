@@ -46,7 +46,7 @@
     
     <title>
         
-            Hello World | 
+            SQL入门 | 
         
         Hikaru&#39;s Blog
     </title>
@@ -57,7 +57,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="huuhghhgyg的个人主页">
-    <meta name="keywords" content="huu huuhghhgyg">
+    <meta name="keywords" content="huu huuhghhgyg,后端,编程">
     <meta name="theme-color" content="#1976D2">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -312,7 +312,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Hikaru&#39;s Blog">
-    <meta name="msapplication-starturl" content="https://huuhghhgyg.github.io/2017/06/26/hello-world/">
+    <meta name="msapplication-starturl" content="https://huuhghhgyg.github.io/2022/03/27/sql/">
     <meta name="msapplication-navbutton-color" content="#1976D2">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Hikaru&#39;s Blog">
@@ -327,16 +327,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://huuhghhgyg.github.io/2017/06/26/hello-world/">
+    <meta property="og:url" content="https://huuhghhgyg.github.io/2022/03/27/sql/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Hello World | Hikaru&#39;s Blog">
+    <meta property="og:title" content="SQL入门 | Hikaru&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="huuhghhgyg的个人主页">
-    
+    <meta property="og:article:tag" content="后端"> <meta property="og:article:tag" content="编程"> 
 
     
-        <meta property="article:published_time" content="Mon Jun 26 2017 07:13:22 GMT+0800">
-        <meta property="article:modified_time" content="Mon Jun 26 2017 10:16:11 GMT+0800">
+        <meta property="article:published_time" content="Sun Mar 27 2022 11:52:50 GMT+0800">
+        <meta property="article:modified_time" content="Sun Mar 27 2022 15:51:36 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -344,7 +344,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://huuhghhgyg.github.io/2017/06/26/hello-world/index.html" />
+        <link rel="canonical" href="https://huuhghhgyg.github.io/2022/03/27/sql/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -356,10 +356,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://huuhghhgyg.github.io/2017/06/26/hello-world/index.html",
-    "headline": "Hello World",
-    "datePublished": "Mon Jun 26 2017 07:13:22 GMT+0800",
-    "dateModified": "Mon Jun 26 2017 10:16:11 GMT+0800",
+    "mainEntityOfPage": "https://huuhghhgyg.github.io/2022/03/27/sql/index.html",
+    "headline": "SQL入门",
+    "datePublished": "Sun Mar 27 2022 11:52:50 GMT+0800",
+    "dateModified": "Sun Mar 27 2022 15:51:36 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "huuhghhgyg",
@@ -377,7 +377,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": "huu huuhghhgyg",
+    "keywords": ",后端,编程huu huuhghhgyg",
     "description": "huuhghhgyg的个人主页",
 }
 </script>
@@ -442,7 +442,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Quick-Start"><span class="post-toc-number">1.</span> <span class="post-toc-text">Quick Start</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Create-a-new-post"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Create a new post</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Run-server"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Run server</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generate-static-files"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Generate static files</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Deploy-to-remote-sites"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="post-toc-number">1.</span> <span class="post-toc-text">基本语法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%B3%A8%E9%87%8A"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">注释</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">运算符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%9D%A1%E4%BB%B6"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">条件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">正则表达式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#NULL"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">NULL</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#AS"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">AS</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SELECT"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">SELECT</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ORDER-BY"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">ORDER BY</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%A4%9A%E5%80%BC%E6%8E%92%E5%BA%8F"><span class="post-toc-number">1.8.1.</span> <span class="post-toc-text">多值排序</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%A0%B9%E6%8D%AE%E5%88%97%E6%8E%92%E5%BA%8F"><span class="post-toc-number">1.8.2.</span> <span class="post-toc-text">根据列排序</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DESC"><span class="post-toc-number">1.8.3.</span> <span class="post-toc-text">DESC</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%A4%9A%E5%80%BC%E6%8E%92%E5%BA%8F-1"><span class="post-toc-number">1.8.4.</span> <span class="post-toc-text">多值排序</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#LIMIT"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">LIMIT</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Alias-%E7%AE%80%E5%86%99"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">Alias 简写</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JOIN%E5%92%8CON"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">JOIN和ON</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%88%87%E6%8D%A2%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="post-toc-number">1.12.</span> <span class="post-toc-text">切换数据库</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UNION"><span class="post-toc-number">1.13.</span> <span class="post-toc-text">UNION</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%B1%9E%E6%80%A7"><span class="post-toc-number">2.</span> <span class="post-toc-text">属性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%88%97%E5%B1%9E%E6%80%A7"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">列属性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">数据类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%95%B0%E6%8D%AE%E5%B1%9E%E6%80%A7"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">数据属性</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86"><span class="post-toc-number">3.</span> <span class="post-toc-text">数据管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%B7%BB%E5%8A%A0%E8%A1%8C"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">添加行</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%85%A8%E9%83%A8%E6%B7%BB%E5%8A%A0"><span class="post-toc-number">3.1.1.</span> <span class="post-toc-text">全部添加</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%80%89%E6%8B%A9%E9%83%A8%E5%88%86%E5%8F%98%E9%87%8F%E6%B7%BB%E5%8A%A0"><span class="post-toc-number">3.1.2.</span> <span class="post-toc-text">选择部分变量添加</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%A4%9A%E4%B8%AA%E5%8F%98%E9%87%8F"><span class="post-toc-number">3.1.3.</span> <span class="post-toc-text">添加多个变量</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%90%91%E4%B8%8D%E5%90%8C%E7%9A%84%E8%A1%A8%E6%A0%BC%E6%B7%BB%E5%8A%A0%E5%8F%98%E9%87%8F"><span class="post-toc-number">3.1.4.</span> <span class="post-toc-text">向不同的表格添加变量</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BB%8E%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E8%A1%A8%E6%B7%BB%E5%8A%A0%E5%8F%98%E9%87%8F%E5%88%B0%E5%8F%A6%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E8%A1%A8"><span class="post-toc-number">3.1.5.</span> <span class="post-toc-text">从一个数据表添加变量到另一个数据表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%8F%92%E5%85%A5%E5%88%B0%E6%95%B0%E6%8D%AE%E8%A1%A8%EF%BC%88INSERT%EF%BC%89"><span class="post-toc-number">3.1.6.</span> <span class="post-toc-text">插入到数据表（INSERT）</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%9B%B4%E6%96%B0%E6%95%B0%E6%8D%AE"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">更新数据</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%9B%B4%E6%96%B0%E5%8D%95%E8%A1%8C%E6%95%B0%E6%8D%AE"><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text">更新单行数据</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%9B%B4%E6%96%B0%E5%A4%9A%E8%A1%8C%E6%95%B0%E6%8D%AE"><span class="post-toc-number">3.2.2.</span> <span class="post-toc-text">更新多行数据</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">删除数据</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -475,7 +475,7 @@
         
     
             <p class="article-headline-p">
-                Hello World
+                SQL入门
             </p>
         </div>
 
@@ -494,7 +494,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>huuhghhgyg</strong>
-        <span>6月 26, 2017</span>
+        <span>3月 27, 2022</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -516,7 +516,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZklEQVR42u3awW6DMBAE0Pz/T7fXSlXozDo2qHqcqgQIbw82nd3X178+Xnh4eHh4eHh4eA/jveLj5/m/r333SXLV73Nmz4aHh4d3kvfHUvvm4a5/5hpzfbfZs+Hh4eGd57U/Uy/ZZSFmz4aHh4f3NN7wNTde7vHw8PD+H+96Y2hflPNC4OHh4T2TV/zDH8Synyrf0awFDw8PL+atNMB2/31zfw8PDw9veehqfVBg1io7NFOGh4eHF/DyIaq2oZXfIXlxL4qLh4eHt5m3Es62W0VOTcodhRF4eHh4G3gzTPJw+dBA3kKLioKHh4e3mTcLWPNHzBtXedHx8PDw7uWdGT9dCSzqOBgPDw9vM68NGpLgIA9/2+0kKRkeHh7ebt4sREiW8llbqw128fDw8O7itWHrsDUVxMHtwAEeHh7eXbxkY2gHSXNePjSAh4eH9wRevuC2ra88/E2CjKXRATw8PLwjvDxsbZtnbehQDyXg4eHhbeatjAW0jf8Zpo108fDw8E7y8nB2NkrVBrJthIGHh4d3ntdGDO1YQPuiPBuWxcPDw9vNS5bylfHTfIPJ71+8UuPh4eFt47WL9croQD5u1W5deHh4eGd4sxvVAcFojHU4TICHh4e3mdceebCbf75eYjw8PLyTvDaAmEW3Oez62iiAxsPDwzvCmzXv8/PbguZxCR4eHt69vJWmfjti9RodS5MReHh4eDfx2pfg2bezCBgPDw/vybz1QrRbRRE04+Hh4R3k5eNT7efJlnBdgqRAeHh4eCd5Kw2wz24ebVNte38PDw8Pb3no6vkHHh4eHh4eHh7eA45vq78WEZE2FIIAAAAASUVORK5CYII=">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZklEQVR42u3aQY6DMBAEQP7/6d0HRHK6beOQqHxarYhwccBDz1x/P70uPDw8PDw8PDy8h/GueI1/9fr/1+vza5b2hoeHh3eE9+ZVO7ymvf0Yub43PDw8vJO88et+jBm/3PNHs7I3PDw8vCfzxq/4cQGdMPDw8PB+j5cHFnPHAB4eHt638JIP/nF0m8S1bcF9NGvBw8PDi3l5FHv+76P9PTw8PLyAV480lS2u9oDZPHSFh4eHdwNvLmhIRgHyrSdFeb4fPDw8vCfwEkwb4Laxb9FOw8PDw7uZl9y+HaVqH0ES/hbHDB4eHt4R3t4NzY26tuV1cTDg4eHhHeG14wJzIwjj++aPHg8PD+88b66tNdfmT46E/MjZEEbg4eHhlbzkI78NCOaGCfLH9OYueHh4eDfz8k/9XaVzEge3rTI8PDy8z/LagGDlCMnbb8XAAR4eHt7NvLwFlZS8Kw+ujSfqMAIPDw9vEy8piPNoYFdbay6GwMPDw/sUL2k+5c2w9eOkpeLh4eGd5+XRbRLs5k2v/Kioh67w8PDwtvLmSuG29dUWynl0G2UteHh4eDfwVtr/c0Xz+h7qmTI8PDy8g7xdxfRKRFsMcuHh4eEd5O0KXusNLbTcioMBDw8PbxOvXXmzf6Ux1g404OHh4Z3kXfHaFePmB08biODh4eGd5O0aJlhpg7VjWHh4eHhP4O1t6q80upbaaXh4eHiP5OWtrHxctR20KsIIPDw8vAfw2uNhbtN50wsPDw/vU7y2FF4ZIKgjhjMxLh4eHt4NDbD2NZ1HGHPBLh4eHt553u8tPDw8PDw8PDy8B6x/eCztOda62G0AAAAASUVORK5CYII=">
     
 </ul>
 
@@ -524,6 +524,15 @@
 
                 <!-- Tags (bookmark) -->
                 
+                    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+                        <li class="mdl-menu__item">
+                            <a class="post_tag-none-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a>
+                    </ul>
+                    
 
                         <!-- Share -->
                         
@@ -538,7 +547,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Hello World&url=https://huuhghhgyg.github.io/2017/06/26/hello-world/index.html&pic=https://huuhghhgyg.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=SQL入门&url=https://huuhghhgyg.github.io/2022/03/27/sql/index.html&pic=https://huuhghhgyg.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -547,7 +556,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Hello World&url=https://huuhghhgyg.github.io/2017/06/26/hello-world/index.html&via=huuhghhgyg" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=SQL入门&url=https://huuhghhgyg.github.io/2022/03/27/sql/index.html&via=huuhghhgyg" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -556,7 +565,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://huuhghhgyg.github.io/2017/06/26/hello-world/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://huuhghhgyg.github.io/2022/03/27/sql/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -565,7 +574,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://huuhghhgyg.github.io/2017/06/26/hello-world/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://huuhghhgyg.github.io/2022/03/27/sql/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -577,7 +586,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hikaru&#39;s Blog&title=Hello World&summary=huuhghhgyg的个人主页&pics=https://huuhghhgyg.github.io/img/favicon.png&url=https://huuhghhgyg.github.io/2017/06/26/hello-world/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hikaru&#39;s Blog&title=SQL入门&summary=huuhghhgyg的个人主页&pics=https://huuhghhgyg.github.io/img/favicon.png&url=https://huuhghhgyg.github.io/2022/03/27/sql/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -586,7 +595,7 @@
 
     <!-- Share Telegram -->
     
-        <a class="post_share-link" href="https://telegram.me/share/url?url=https://huuhghhgyg.github.io/2017/06/26/hello-world/index.html&text=Hello World" target="_blank">
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://huuhghhgyg.github.io/2022/03/27/sql/index.html&text=SQL入门" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Telegram
             </li>
@@ -640,25 +649,317 @@
     </style>
 
     
+        <button type="button" class="mdl-chip">
+            <span class="mdl-chip__text">
+                <a class="post_tag_chip-none-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a></span></button><button type="button" class="mdl-chip"><span class="mdl-chip__text"><a class="post_tag_chip-none-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a>
+            </span>
+        </button>
+        
 </div>
 
 
 <!-- Post Content -->
 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="lang-bash">$ hexo new &quot;My New Post&quot;
+        <pre><code class="lang-sql">SELECT *
+FROM table
+WHERE column LIKE &#39;条件&#39;
+Order by 1
+LIMIT 100
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="lang-bash">$ hexo server
+<h1 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h1><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p><code>--</code>后面是注释内容。<code>--</code>是sql的注释标志</p>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AND</code></td>
+<td>和，AND的优先级一般会高于OR</td>
+</tr>
+<tr>
+<td><code>OR</code></td>
+<td>或者</td>
+</tr>
+<tr>
+<td><code>NOT</code></td>
+<td>非</td>
+</tr>
+<tr>
+<td><code>()</code></td>
+<td>括号，提高优先级。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>%</code></td>
+<td>n个任意字符</td>
+</tr>
+<tr>
+<td><code>_</code></td>
+<td>1个任意字符</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p>REGEXP（Regular Expression）</p>
+<pre><code class="lang-sql">WHERE column REGEXP &#39;表达式&#39;
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="lang-bash">$ hexo generate
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>意义</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>^</code></td>
+<td>以..开头</td>
+<td><code>^field</code></td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>以..结尾</td>
+<td><code>field$</code></td>
+</tr>
+<tr>
+<td><code>\</code></td>
+<td>或者</td>
+<td><code>^field｜mac｜rose</code></td>
+</tr>
+<tr>
+<td><code>[]</code></td>
+<td>匹配中括号内的所有字符</td>
+<td><code>[gim]e</code>，匹配ge、ie、me，<br><code>[a-c]d</code>，匹配<br>ad、bd、cd，<br><code>[1-3]</code>同理</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="NULL"><a href="#NULL" class="headerlink" title="NULL"></a>NULL</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IS NULL</code></td>
+<td>值为<code>null</code></td>
+</tr>
+<tr>
+<td><code>IS NOT NULL</code></td>
+<td>值不为<code>null</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="AS"><a href="#AS" class="headerlink" title="AS"></a>AS</h2><p>在原有数据基础上新建一列数据，或者理解为处理完原有列数据填入新一列中</p>
+<pre><code class="lang-sql">score + 10 AS new _score
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="lang-bash">$ hexo deploy
+<h2 id="SELECT"><a href="#SELECT" class="headerlink" title="SELECT"></a>SELECT</h2><p>选择表内的数据</p>
+<pre><code class="lang-sql">SELECT first _name, last _name
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/deployment.html">Deployment</a></p>
+<h2 id="ORDER-BY"><a href="#ORDER-BY" class="headerlink" title="ORDER BY"></a>ORDER BY</h2><p>根据什么值排序</p>
+<pre><code class="lang-sql">ORDER BY first _name
+</code></pre>
+<h3 id="多值排序"><a href="#多值排序" class="headerlink" title="多值排序"></a>多值排序</h3><pre><code class="lang-sql">ORDER BY state, first _name
+</code></pre>
+<h3 id="根据列排序"><a href="#根据列排序" class="headerlink" title="根据列排序"></a>根据列排序</h3><pre><code class="lang-sql">ORDER BY 1, 2
+</code></pre>
+<h3 id="DESC"><a href="#DESC" class="headerlink" title="DESC"></a>DESC</h3><ul>
+<li>descending：降序</li>
+</ul>
+<pre><code class="lang-sql">ORDER BY first _name DESC
+</code></pre>
+<h3 id="多值排序-1"><a href="#多值排序-1" class="headerlink" title="多值排序"></a>多值排序</h3><pre><code class="lang-sql">ORDER BY state DESC, first _name
+</code></pre>
+<h2 id="LIMIT"><a href="#LIMIT" class="headerlink" title="LIMIT"></a>LIMIT</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LIMIT 6</code></td>
+<td>设定返回查询数据的最大条数为6</td>
+</tr>
+<tr>
+<td><code>LIMIT 6, 3</code></td>
+<td>跳过前6条，再返回3条数据（返回第7-9条数据）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="Alias-简写"><a href="#Alias-简写" class="headerlink" title="Alias 简写"></a>Alias 简写</h2><pre><code class="lang-sql">SELECT customer _id c
+From table_t
+ORDER BY c
+</code></pre>
+<h2 id="JOIN和ON"><a href="#JOIN和ON" class="headerlink" title="JOIN和ON"></a>JOIN和ON</h2><p>JOIN用于联系多个表的数据列。</p>
+<pre><code class="lang-sql">SELECT *
+FROM orders o
+JOIN customers c
+  ON o.customer _id = c.customer _id
+</code></pre>
+<h2 id="切换数据库"><a href="#切换数据库" class="headerlink" title="切换数据库"></a>切换数据库</h2><pre><code class="lang-sql">USE 数据库名
+
+SELECT *
+FROM 另一个数据库名.数据表
+…
+</code></pre>
+<h2 id="UNION"><a href="#UNION" class="headerlink" title="UNION"></a>UNION</h2><p>用于合并多个查询结果。</p>
+<pre><code class="lang-sql">SELECT first _name
+FROM customers
+UNION
+SELECT name
+FROM shippers
+</code></pre>
+<ul>
+<li>如果一个查询里面有多个语句，一个语句结束后要使用分号（;）</li>
+<li>UNION连接的查询语句只算一个语句</li>
+</ul>
+<h1 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h1><h2 id="列属性"><a href="#列属性" class="headerlink" title="列属性"></a>列属性</h2><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>INT(11)</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>VARCHAR(50)</code></td>
+<td>最大50个字符，且最大占用50个字符的空间，常用于保存string</td>
+</tr>
+<tr>
+<td><code>CHAR(50)</code></td>
+<td>最大50个字符，占用50个字符的的空间</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="数据属性"><a href="#数据属性" class="headerlink" title="数据属性"></a>数据属性</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>缩写</th>
+<th>全称</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PK</code></td>
+<td>Primary Key</td>
+<td>数据主键</td>
+</tr>
+<tr>
+<td><code>NN</code></td>
+<td>Not Null</td>
+<td>是否能接受NULL值？（可选值？）</td>
+</tr>
+<tr>
+<td><code>AI</code></td>
+<td>Auto Increment</td>
+<td>自动递增</td>
+</tr>
+<tr>
+<td><code>Default / Expression</code></td>
+<td>-</td>
+<td>默认值</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="数据管理"><a href="#数据管理" class="headerlink" title="数据管理"></a>数据管理</h1><h2 id="添加行"><a href="#添加行" class="headerlink" title="添加行"></a>添加行</h2><p>按照数据排列顺序，包含在<code>VALUES</code>里面添加。</p>
+<h3 id="全部添加"><a href="#全部添加" class="headerlink" title="全部添加"></a>全部添加</h3><pre><code class="lang-sql">INSERT INTO customers
+-- 如果想要用自动递增，可以直接填DEFAULT
+-- 如果是可选值，不填入数据的话就填NULL
+VALUES (
+  DEFAULT,
+  &#39;first name value&#39;,
+  &#39;last name value&#39;,
+  &#39;1990-01-01&#39;,
+  NULL,
+  &#39;address&#39;,
+  &#39;city&#39;,
+  &#39;CA&#39;)
+</code></pre>
+<h3 id="选择部分变量添加"><a href="#选择部分变量添加" class="headerlink" title="选择部分变量添加"></a>选择部分变量添加</h3><pre><code class="lang-sql">INSERT INTO customers(
+  first _name,
+  last _name,
+  birth _date)
+-- VALUES的顺序根据上面定义的顺序来，上面定义的数据顺序可以根据自己的喜好
+VAULES(
+  &#39;first name value&#39;,
+  &#39;last name value&#39;,
+  &#39;date of birth&#39;)
+</code></pre>
+<h3 id="添加多个变量"><a href="#添加多个变量" class="headerlink" title="添加多个变量"></a>添加多个变量</h3><pre><code class="lang-sql">INSERT INTO shippers (name)
+VALUES(&#39;shipper1&#39;),
+  (&#39;shipper2&#39;),
+  (&#39;shipper3&#39;)
+</code></pre>
+<h3 id="向不同的表格添加变量"><a href="#向不同的表格添加变量" class="headerlink" title="向不同的表格添加变量"></a>向不同的表格添加变量</h3><pre><code class="lang-sql">INSERT INTO orders (customer _id, order _date, status)
+VALUES (1, &#39;2019-01-02&#39;, 1);
+INSERT INTO order _items
+VALUES (LAST _INSERT _ID(), 1, 1, 2.95),
+VALUES (LAST _INSERT _ID(), 2, 1, 3.95)
+</code></pre>
+<h3 id="从一个数据表添加变量到另一个数据表"><a href="#从一个数据表添加变量到另一个数据表" class="headerlink" title="从一个数据表添加变量到另一个数据表"></a>从一个数据表添加变量到另一个数据表</h3><p>新建为数据表（CREATE）</p>
+<pre><code class="lang-sql">CREATE TABLE ordres _archived AS
+SELECT  * FROM orders
+-- 这里的SELECT语句是SubQuery
+</code></pre>
+<ul>
+<li>右键数据表的“truncate table”是清空数据表的所有数据</li>
+</ul>
+<h3 id="插入到数据表（INSERT）"><a href="#插入到数据表（INSERT）" class="headerlink" title="插入到数据表（INSERT）"></a>插入到数据表（INSERT）</h3><pre><code class="lang-sql">INSERT INTO orders _archived
+SELECT  *
+FROM orders
+WHERE order _date &lt; &#39;2019-01-01&#39;
+</code></pre>
+<h2 id="更新数据"><a href="#更新数据" class="headerlink" title="更新数据"></a>更新数据</h2><h3 id="更新单行数据"><a href="#更新单行数据" class="headerlink" title="更新单行数据"></a>更新单行数据</h3><pre><code class="lang-sql">UPDATE table
+SET payment _total = 10, payment _date = &#39;2019-03-01&#39;
+WHERE invoice _id = 1
+</code></pre>
+<h3 id="更新多行数据"><a href="#更新多行数据" class="headerlink" title="更新多行数据"></a>更新多行数据</h3><pre><code class="lang-sql">UPDATE table
+SET payment _total = 10, payment _date = &#39;2019-03-01&#39;
+WHERE invoice _id IN (3, 4)
+-- 如果要更新数据表中的所有值，只需留空WHERE
+</code></pre>
+<h2 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h2><pre><code class="lang-sql">DELETE FROM table
+-- 如果没有WHERE语句，将会删除所有数据，非常危险。
+WHERE client _id = (
+  SELECT client _id
+  FROM clients
+  WHERE name = &#39;Myworks&#39;)
+</code></pre>
 
             
                 <!-- <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;border-radius: 2px;">
@@ -668,8 +969,8 @@
                     </strong>
                         <br>
                         <strong>本文链接：</strong>
-                        <a href="https://huuhghhgyg.github.io/2017/06/26/hello-world/">
-                            https://huuhghhgyg.github.io/2017/06/26/hello-world/
+                        <a href="https://huuhghhgyg.github.io/2022/03/27/sql/">
+                            https://huuhghhgyg.github.io/2022/03/27/sql/
                         </a>
                     </p>
                 </blockquote> -->
@@ -742,15 +1043,15 @@
                         </div>
                     </div>
                     <div class="title-link">
-                        <a href="https://huuhghhgyg.github.io/2017/06/26/hello-world/">
-                            https://huuhghhgyg.github.io/2017/06/26/hello-world/
+                        <a href="https://huuhghhgyg.github.io/2022/03/27/sql/">
+                            https://huuhghhgyg.github.io/2022/03/27/sql/
                         </a>
                     </div>
                     <div class="info">
                         <div class="time license-block">
                             <div class="license-subtitle">发文时间</div>
                             <div class="license-content">
-                                6月 26, 2017
+                                3月 27, 2022
                             </div>
                         </div>
                         <div class="license license-block">
@@ -819,19 +1120,19 @@
 <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/06/26/HCalculator/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2022/03/26/hello-world/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
