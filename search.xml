@@ -1022,10 +1022,10 @@
     
     <entry>
       <title></title>
-      <link href="/serviceworker.js"/>
-      <url>/serviceworker.js</url>
+      <link href="/manifest.js"/>
+      <url>/manifest.js</url>
       
-        <content type="html"><![CDATA[self.addEventListener('install', (e) => {    e.waitUntil(      caches.open('install-store').then((cache) => cache.addAll([        '/img/logo.png',        '/img/favicon.png',        '/img/avatar.png',        '/img/daily_pic.png',        '/img/sidebar_header.png',        'https://cdn.jsdelivr.net/npm/noto-sans-sc@latest/all.css',        'https://cdn.jsdelivr.net/npm/material-icons@1.10.4/iconfont/material-icons.min.css',        'https://cdn.jsdelivr.net/npm/material-icons@1.10.4/iconfont/material-icons.woff2',        'https://cdn.jsdelivr.net/npm/material-icons@1.10.4/iconfont/material-icons-outlined.woff2',        '/img/random/material-1.webp',        '/img/random/material-2.webp',        '/img/random/material-3.webp',        '/img/random/material-4.webp',        '/img/random/material-5.webp',        '/img/random/material-6.webp',        '/img/random/material-7.webp',        '/img/random/material-8.webp',        '/img/random/material-9.webp',        '/img/random/material-10.webp',        '/img/random/material-11.webp',        '/img/random/material-12.webp',        '/img/random/material-13.webp',        '/img/random/material-14.webp',        '/img/random/material-15.webp',        '/img/random/material-16.webp',        '/img/random/material-17.webp',        '/img/random/material-18.webp',        '/img/random/material-19.webp',        '/img/random/material-20.webp',        '/img/random/material-21.webp',        '/img/random/material-22.webp',        '/img/random/material-23.webp',        '/img/random/material-24.webp',        '/img/random/material-25.webp',        '/img/random/material-26.webp',        '/img/random/material-27.webp',        '/img/random/material-28.webp',        '/img/random/material-29.webp',        '/img/random/material-30.webp',        '/img/random/material-31.webp',        '/img/random/material-32.webp',        '/page/2',        '/page/3',        '/page/4',        '/page/5',        'https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/highlight.min.js',        'https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/languages/csharp.min.js',        'https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/languages/xml.min.js',        'https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/languages/python.min.js',        'https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/languages/javascript.min.js',        'https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/styles/vs2015.min.css',      ])),    );  });    self.addEventListener('fetch', (e) => {    console.log(e.request.url);    e.respondWith(      caches.match(e.request).then((response) => response || fetch(e.request)),    );  });]]></content>
+        <content type="html"><![CDATA[// Register service worker to control making site work offlineif ('serviceWorker' in navigator) {    navigator.serviceWorker        .register('/serviceworker.js')        .then(function() { console.log('Service Worker Registered'); });}// Code to handle install prompt on desktoplet deferredPrompt;const addBtn = document.querySelector('#add-button');if (document.getElementById('add-button')){    addBtn.style.display = 'none';}window.addEventListener('beforeinstallprompt', (e) => {    // Prevent Chrome 67 and earlier from automatically showing the prompt    e.preventDefault();    // Stash the event so it can be triggered later.    deferredPrompt = e;    // Update UI to notify the user they can add to home screen    if (document.getElementById('add-button')){        // 检测有没有add button                addBtn.style.display = 'block';            addBtn.addEventListener('click', (e) => {            // hide our user interface that shows our A2HS button            addBtn.style.display = 'none';            // Show the prompt            deferredPrompt.prompt();            // Wait for the user to respond to the prompt            deferredPrompt.userChoice.then((choiceResult) => {                if (choiceResult.outcome === 'accepted') {                    console.log('User accepted the A2HS prompt');                } else {                    console.log('User dismissed the A2HS prompt');                }                deferredPrompt = null;            });        });    }});]]></content>
       
     </entry>
     
@@ -1033,10 +1033,21 @@
     
     <entry>
       <title></title>
-      <link href="/manifest.js"/>
-      <url>/manifest.js</url>
+      <link href="/serviceworker.js"/>
+      <url>/serviceworker.js</url>
       
-        <content type="html"><![CDATA[// Register service worker to control making site work offlineif ('serviceWorker' in navigator) {    navigator.serviceWorker        .register('/serviceworker.js')        .then(function() { console.log('Service Worker Registered'); });}// Code to handle install prompt on desktoplet deferredPrompt;const addBtn = document.querySelector('#add-button');if (document.getElementById('add-button')){    addBtn.style.display = 'none';}window.addEventListener('beforeinstallprompt', (e) => {    // Prevent Chrome 67 and earlier from automatically showing the prompt    e.preventDefault();    // Stash the event so it can be triggered later.    deferredPrompt = e;    // Update UI to notify the user they can add to home screen    if (document.getElementById('add-button')){        // 检测有没有add button                addBtn.style.display = 'block';            addBtn.addEventListener('click', (e) => {            // hide our user interface that shows our A2HS button            addBtn.style.display = 'none';            // Show the prompt            deferredPrompt.prompt();            // Wait for the user to respond to the prompt            deferredPrompt.userChoice.then((choiceResult) => {                if (choiceResult.outcome === 'accepted') {                    console.log('User accepted the A2HS prompt');                } else {                    console.log('User dismissed the A2HS prompt');                }                deferredPrompt = null;            });        });    }});]]></content>
+        <content type="html"><![CDATA[self.addEventListener('install', (e) => {    e.waitUntil(      caches.open('install-store').then((cache) => cache.addAll([        '/img/logo.png',        '/img/favicon.png',        '/img/avatar.png',        '/img/daily_pic.png',        '/img/sidebar_header.png',        'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap',        'https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp',        '/img/random/material-1.webp',        '/img/random/material-2.webp',        '/img/random/material-3.webp',        '/img/random/material-4.webp',        '/img/random/material-5.webp',        '/img/random/material-6.webp',        '/img/random/material-7.webp',        '/img/random/material-8.webp',        '/img/random/material-9.webp',        '/img/random/material-10.webp',        '/img/random/material-11.webp',        '/img/random/material-12.webp',        '/img/random/material-13.webp',        '/img/random/material-14.webp',        '/img/random/material-15.webp',        '/img/random/material-16.webp',        '/img/random/material-17.webp',        '/img/random/material-18.webp',        '/img/random/material-19.webp',        '/img/random/material-20.webp',        '/img/random/material-21.webp',        '/img/random/material-22.webp',        '/img/random/material-23.webp',        '/img/random/material-24.webp',        '/img/random/material-25.webp',        '/img/random/material-26.webp',        '/img/random/material-27.webp',        '/img/random/material-28.webp',        '/img/random/material-29.webp',        '/img/random/material-30.webp',        '/img/random/material-31.webp',        '/img/random/material-32.webp',        '/page/2',        '/page/3',        '/page/4',        '/page/5',      ])),    );  });    self.addEventListener('fetch', (e) => {    console.log(e.request.url);    e.respondWith(      caches.match(e.request).then((response) => response || fetch(e.request)),    );  });]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/links/footerstyle.css"/>
+      <url>/links/footerstyle.css</url>
+      
+        <content type="html"><![CDATA[.website-data {  display: flex;  font-size: 14px;  color: #9e9e9e;  margin: 0px 15px;  align-items: center;}.inner-width {  margin: 0px;  display: inline-flex;}.website-data i {  font-size: 16px;  margin: 3px 4px 0 0;}.data-divider {  margin: -2px 0 0 0;  max-width: 5px;  font-size: 16px;  text-align: center;}]]></content>
       
     </entry>
     
@@ -1059,17 +1070,6 @@
       <url>/links/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/links/footerstyle.css"/>
-      <url>/links/footerstyle.css</url>
-      
-        <content type="html"><![CDATA[.website-data {  display: flex;  font-size: 14px;  color: #9e9e9e;  margin: 0px 15px;  align-items: center;}.inner-width {  margin: 0px;  display: inline-flex;}.website-data i {  font-size: 16px;  margin: 3px 4px 0 0;}.data-divider {  margin: -2px 0 0 0;  max-width: 5px;  font-size: 16px;  text-align: center;}]]></content>
       
     </entry>
     
