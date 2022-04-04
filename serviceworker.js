@@ -46,6 +46,12 @@ self.addEventListener('install', (e) => {
         '/page/3',
         '/page/4',
         '/page/5',
+        'https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/highlight.min.js',
+        'https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/languages/csharp.min.js',
+        'https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/languages/xml.min.js',
+        'https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/languages/python.min.js',
+        'https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/languages/javascript.min.js',
+        'https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/styles/vs2015.min.css',
       ])),
     );
   });
