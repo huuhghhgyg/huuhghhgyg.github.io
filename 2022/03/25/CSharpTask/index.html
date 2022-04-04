@@ -31,7 +31,7 @@
 
 
 
-    <link rel="dns-prefetch" href="https://lib.baomitu.com"/>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
 
 
 
@@ -200,31 +200,7 @@
 <!-- Import Font -->
 <!-- Import Roboto -->
 
-    <style>
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 300;
-            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot);
-            src: local('Roboto'), local('Roboto-Normal'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot?#iefix) format('embedded-opentype'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff2) format('woff2'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff) format('woff'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.ttf) format('truetype'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.svg#Roboto) format('svg')
-        }
-        
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: regular;
-            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot);
-            src: local('Roboto'), local('Roboto-Normal'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot?#iefix) format('embedded-opentype'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff2) format('woff2'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff) format('woff'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.ttf) format('truetype'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.svg#Roboto) format('svg')
-        }
-        
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 500;
-            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot);
-            src: local('Roboto'), local('Roboto-Normal'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot?#iefix) format('embedded-opentype'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff2) format('woff2'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff) format('woff'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.ttf) format('truetype'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.svg#Roboto) format('svg')
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 
 
 <!-- Import Material Icons -->
@@ -233,14 +209,15 @@
     <!-- <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/null/css/material-icons.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script> -->
     <!-- <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","https://cdn.jsdelivr.net/npm/material-icons@1.10.4/iconfont/material-icons.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script> -->
     <!-- 上面的代码似乎有误，已禁用 -->
-    <link href="https://cdn.jsdelivr.net/npm/material-icons@1.10.4/iconfont/material-icons.min.css" rel="stylesheet"></link>
-
+    <!-- <link href="https://cdn.jsdelivr.net/npm/material-icons@1.10.4/iconfont/material-icons.min.css" rel="stylesheet"></link> -->
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    
 
 
 <!-- 新加入 Import NotoSansSC -->
 
-<!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC" rel="stylesheet"> -->
-<link href="https://cdn.jsdelivr.net/npm/noto-sans-sc@latest/all.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC" rel="stylesheet">
+<!-- <link href="https://cdn.jsdelivr.net/npm/noto-sans-sc@latest/all.css" rel="stylesheet"> -->
 
 <style>
   pre {
@@ -393,7 +370,7 @@
     <!-- Custom Head -->
     
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.1.0"></head>
 
     
         <body id="scheme-Paradox" class="lazy">
@@ -671,11 +648,11 @@
 <li>无法告诉线程在结束时开始做另外的工作，必须进行<code>Join</code>操作，在进程中阻塞当前的进程，等待线程结束。</li>
 <li>对手动同步的更大依赖以及随之而来的问题<br><code>Task</code>类可以很好地解决上述问题。<code>Task</code>是一个相对高级的抽象，它代表了一个并发操作(concurrent)，该操作可能由Thread支持，或不由Thread支持。并且，Task是可组合的。</li>
 <li><code>Tasks</code>可以使用线程池来减少启动延迟</li>
-<li>使用<code>TaskCompletionSource</code>，Tasks可以利用回调的方式在等待I/O绑定操作是完全避免线程。</li>
+<li>使用<code>TaskCompletionSource</code>，Tasks可以利用回调的方式在等待I&#x2F;O绑定操作是完全避免线程。</li>
 </ul>
 <h2 id="开始一个Task"><a href="#开始一个Task" class="headerlink" title="开始一个Task"></a>开始一个Task</h2><p>开始一个Task最简单的方法就是使用<code>Task.Run</code>这个静态方法。(.NET4.5开始，.NET4.0的时候是<code>Task.Factory.StartNew</code>这个静态方法) 使用方法：传入一个Action委托即可。</p>
 <p>Task默认使用线程池，也就是后台线程。当主线程结束时，创建的所有任务都会结束。</p>
-<pre><code class="lang-C#">static void Main(string[] args)
+<pre><code class="C#">static void Main(string[] args)
 &#123;
     Task.Run(() =&gt; Console.WriteLine(&quot;Foo&quot;));
     Console.ReadLine(); // 可以达到阻塞线程的效果。
@@ -684,7 +661,7 @@
 </code></pre>
 <p><code>Task.Run</code>返回一个Task对象，可以使用它来监视其过程。<code>Task.Run</code>之后没有调用<code>Start</code>，因为该方法创建的是“热”任务(hot task)；可以通过Task的构造函数创建“冷”任务(cold task)，但很少这样做。</p>
 <h2 id="Wait"><a href="#Wait" class="headerlink" title="Wait"></a>Wait</h2><p>调用Task的Wait方法会进行阻塞直到操作完成（相当于调用Thread上的Join方法）</p>
-<pre><code class="lang-C#">static void Main(string[] args)
+<pre><code class="C#">static void Main(string[] args)
 &#123;
     Task task = Task.Run(() =&gt;
     &#123;
@@ -709,14 +686,14 @@
 <li>针对长时间运行的任务或者阻塞操作（例如前面的例子），可以不采用线程池</li>
 <li>如果同时运行多个long-running tasks（尤其是其中有处于阻塞态的），那么性能将会受很大影响，这时有比<code>TaskCreationOptions.LongRunning</code>更好的办法：<ul>
 <li>如果任务是IO-Bound，<code>TaskCompletionSource</code>和异步函数可以让你用回调代替线程实现并发。</li>
-<li>如果任务是Compute-Bound，生产者/消费者队列允许你对任务的并发性进行限流，避免把其它线程和进程饿死。（并行编程）</li>
+<li>如果任务是Compute-Bound，生产者&#x2F;消费者队列允许你对任务的并发性进行限流，避免把其它线程和进程饿死。（并行编程）</li>
 </ul>
 </li>
 </ul>
 <h2 id="Task的返回值"><a href="#Task的返回值" class="headerlink" title="Task的返回值"></a>Task的返回值</h2><p>Task有一个泛型子类叫做<code>Task&lt;TResult&gt;</code>，他允许发出一个返回值。</p>
 <p>使用<code>Func&lt;TResult&gt;</code>委托或兼容的Lambda表达式来调用<code>Task.Run</code>就可以得到<code>Task&lt;TResult&gt;</code>，随后可以通过<code>Result</code>属性来获得返回的结果。</p>
 <p>如果这个task还没有完成操作，访问<code>Result</code>属性会阻塞该线程直到该task完成操作。</p>
-<pre><code class="lang-C#">static void Main(string[] args)
+<pre><code class="C#">static void Main(string[] args)
 &#123;
     Task&lt;int&gt; task = Task.Run(() =&gt;
     &#123;
@@ -746,7 +723,7 @@
 <p>使用超时进行等待的<code>Task</code>，如果在超时后发生故障，那么它将会产生一个“未观察到的异常”</p>
 <p>在Task发生故障后，如果访问Task的<code>Exception</code>属性，那么该异常就被认为是“已观察到的异常”</p>
 <h2 id="Continuation"><a href="#Continuation" class="headerlink" title="Continuation"></a>Continuation</h2><p>当Task结束的时候，继续做其它事情。Continuation通常是通过回调的方式实现的，当操作一结束，就开始执行。</p>
-<p>在Task上调用<code>GetAwaiter</code>会返回一个<code>awaiter</code>对象。它的<code>OnCompleted</code>方法会告诉task：“当你结束/发生故障时要执行委托”</p>
+<p>在Task上调用<code>GetAwaiter</code>会返回一个<code>awaiter</code>对象。它的<code>OnCompleted</code>方法会告诉task：“当你结束&#x2F;发生故障时要执行委托”</p>
 <p>可以将<code>Continuation</code>附加到已经结束的task上面，此时<code>Continuation</code>将会被安排立即执行。</p>
 <h2 id="Awaiter"><a href="#Awaiter" class="headerlink" title="Awaiter"></a>Awaiter</h2><p>awaiter是可以暴露下列两个方法和一个属性的对象：</p>
 <ul>
@@ -783,7 +760,7 @@
                         border-radius: 4px;
                         color: #E5E5E5;
                         word-wrap: break-word;
-                        margin-top: 12px;
+                        margin-top: 24px;
                     }
 
                     .license-card *::selection{
@@ -878,9 +855,12 @@
     <!-- Gitalk 评论框 -->
 <div id="gitalk-container"></div>
 
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<!-- 更换为loli cdn -->
+<!-- <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"> -->
+<link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/gitalk/1.7.2/gitalk.css"/>
 
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<!-- <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script> -->
+<script src="https://cdnjs.loli.net/ajax/libs/gitalk/1.7.2/gitalk.min.js"></script>
 
 <script src="/js/md5.min.js"></script>
 
@@ -920,7 +900,7 @@
 <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2022/03/26/hello-world/" id="post_nav-newer" class="prev-content">
+        <a href="/2022/03/27/sql/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -1381,12 +1361,18 @@ It will not impact the appearance and can give developers a lot of support :)
     })()
 </script>
 
-<!-- highlight.js 2021-9-15 -->
+<!-- highlight.js 2022-4-4 -->
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/highlight.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
 <!-- and it's easy to individually load additional languages -->
-<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/languages/go.min.js"></script>
-<!-- highlight.js css 2021-9-15-->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/styles/vs2015.min.css">
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/languages/csharp.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/languages/xml.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/languages/python.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/languages/javascript.min.js"></script>
+
+<!-- highlight.js css 2022-4-4-->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/styles/vs2015.min.css"> -->
+<link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/styles/vs2015.min.css"/>
 
 <script>
     $(document).ready(function(){
@@ -1400,21 +1386,6 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
                 </main>
             </div>
-        <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
+        </body>
     
 </html>

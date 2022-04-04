@@ -31,7 +31,7 @@
 
 
 
-    <link rel="dns-prefetch" href="https://lib.baomitu.com"/>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
 
 
 
@@ -200,31 +200,7 @@
 <!-- Import Font -->
 <!-- Import Roboto -->
 
-    <style>
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 300;
-            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot);
-            src: local('Roboto'), local('Roboto-Normal'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot?#iefix) format('embedded-opentype'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff2) format('woff2'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff) format('woff'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.ttf) format('truetype'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.svg#Roboto) format('svg')
-        }
-        
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: regular;
-            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot);
-            src: local('Roboto'), local('Roboto-Normal'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot?#iefix) format('embedded-opentype'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff2) format('woff2'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff) format('woff'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.ttf) format('truetype'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.svg#Roboto) format('svg')
-        }
-        
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 500;
-            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot);
-            src: local('Roboto'), local('Roboto-Normal'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot?#iefix) format('embedded-opentype'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff2) format('woff2'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff) format('woff'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.ttf) format('truetype'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.svg#Roboto) format('svg')
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 
 
 <!-- Import Material Icons -->
@@ -233,14 +209,15 @@
     <!-- <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/null/css/material-icons.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script> -->
     <!-- <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","https://cdn.jsdelivr.net/npm/material-icons@1.10.4/iconfont/material-icons.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script> -->
     <!-- 上面的代码似乎有误，已禁用 -->
-    <link href="https://cdn.jsdelivr.net/npm/material-icons@1.10.4/iconfont/material-icons.min.css" rel="stylesheet"></link>
-
+    <!-- <link href="https://cdn.jsdelivr.net/npm/material-icons@1.10.4/iconfont/material-icons.min.css" rel="stylesheet"></link> -->
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    
 
 
 <!-- 新加入 Import NotoSansSC -->
 
-<!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC" rel="stylesheet"> -->
-<link href="https://cdn.jsdelivr.net/npm/noto-sans-sc@latest/all.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC" rel="stylesheet">
+<!-- <link href="https://cdn.jsdelivr.net/npm/noto-sans-sc@latest/all.css" rel="stylesheet"> -->
 
 <style>
   pre {
@@ -393,7 +370,7 @@
     <!-- Custom Head -->
     
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.1.0"></head>
 
     
         <body id="scheme-Paradox" class="lazy">
@@ -716,7 +693,7 @@
 
 <h1 id="软件源"><a href="#软件源" class="headerlink" title="软件源"></a>软件源</h1><p>备份软件源后对其进行修改<br><code>sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak</code></p>
 <p>在这里使用清华tuna源<br>在 ARM(arm64, armhf)、PowerPC(ppc64el)、RISC-V(riscv64) 和 S390x 等架构的设备上（对应官方源为ports.ubuntu.com）使用 ubuntu-ports 镜像。</p>
-<pre><code class="lang-bash"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
+<pre><code class="bash"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal main restricted universe multiverse
 # deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal main restricted universe multiverse
 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-updates main restricted universe multiverse
@@ -748,7 +725,8 @@ set confirm &quot;处理未保存或者只读文件时,给出提示
 set smartindent &quot;智能对齐
 set shiftwidth=4 &quot;偏移4个空格
 set helplang=cn &quot;中文帮助文档(前提是下了中文包)
-</code></pre><h1 id="Python相关"><a href="#Python相关" class="headerlink" title="Python相关"></a>Python相关</h1><p><strong>安装pip</strong><br><code>sudo apt install python3-pip</code></p>
+</code></pre>
+<h1 id="Python相关"><a href="#Python相关" class="headerlink" title="Python相关"></a>Python相关</h1><p><strong>安装pip</strong><br><code>sudo apt install python3-pip</code></p>
 <p><strong>安装Selenium对浏览器进行控制</strong><br><code>pip3 install selenium</code></p>
 <p><strong>安装火狐</strong><br><code>sudo apt install firefox</code><br>如果出现错误，可以尝试<br><code>sudo apt install firefox-esr</code></p>
 <p><strong>安装虚拟屏幕</strong>:在shell中也可以使用Selenium<br><code>sudo apt install xvfb</code><br><code>pip3 install pyvirtualdisplay</code></p>
@@ -756,9 +734,9 @@ set helplang=cn &quot;中文帮助文档(前提是下了中文包)
 <p>备份Samba配置文件后修改<br><code>sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.bak</code><br><code>sudo vim /etc/samba/smb.conf</code></p>
 <p>防乱码：在[default]下添加</p>
 <pre><code>unix charset = UTF-8 
-dos charset = cp936
-</code></pre><h2 id="文件夹权限"><a href="#文件夹权限" class="headerlink" title="文件夹权限"></a>文件夹权限</h2><p>先用两张表格</p>
-<div class="table-container">
+dos charset = cp936 
+</code></pre>
+<h2 id="文件夹权限"><a href="#文件夹权限" class="headerlink" title="文件夹权限"></a>文件夹权限</h2><p>先用两张表格</p>
 <table>
 <thead>
 <tr>
@@ -767,16 +745,12 @@ dos charset = cp936
 <th>x 执行</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>4</td>
 <td>2</td>
 <td>1</td>
 </tr>
-</tbody>
-</table>
-</div>
-<div class="table-container">
+</tbody></table>
 <table>
 <thead>
 <tr>
@@ -786,16 +760,13 @@ dos charset = cp936
 <th>rwx</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td>文件(-)/目录(d)</td>
+<tbody><tr>
+<td>文件(-)&#x2F;目录(d)</td>
 <td>4+2+1</td>
 <td>4+2+1</td>
 <td>4+2+1</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p>将文件夹权限更改为777</p>
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><pre><code>[share]
 path = /home/pi/terminal
@@ -808,8 +779,9 @@ create mask = 0777
 directory mask =0777
 force user = pi
 force group = samba-public
-</code></pre><p><strong>添加用户组</strong></p>
-<pre><code class="lang-bash">sudo useradd -rs /bin/false samba-public
+</code></pre>
+<p><strong>添加用户组</strong></p>
+<pre><code class="bash">sudo useradd -rs /bin/false samba-public
 sudo chown samba-public /home/pi/terminal
 sudo chmod u+rwx /home/pi/terminal
 </code></pre>
@@ -825,13 +797,15 @@ sudo chmod u+rwx /home/pi/terminal
 <pre><code>[Install]
 WantedBy=multi-user.target
 Alias=rc-local.service
-</code></pre><p><strong>rc.local (/etc/rc.local)</strong></p>
+</code></pre>
+<p><strong>rc.local (&#x2F;etc&#x2F;rc.local)</strong></p>
 <pre><code>#!/bin/sh
 
 # 这里添加要开机执行的脚本和命令等等
 
 exit 0
-</code></pre><p><strong>添加可执行权限</strong><br><code>sudo chmod +x /etc/rc.local</code></p>
+</code></pre>
+<p><strong>添加可执行权限</strong><br><code>sudo chmod +x /etc/rc.local</code></p>
 <p><strong>创建软链接??</strong><br><code>sudo ln -s /lib/systemd/system/rc-local.service /etc/systemd/system/rc-local.service</code></p>
 <h1 id="安装ngnix"><a href="#安装ngnix" class="headerlink" title="安装ngnix"></a>安装ngnix</h1><p><code>sudo apt install nginx</code><br><strong>编辑默认配置</strong><br><code>/etc/nginx/sites-available/default</code><br>其中的 root 是网页目录</p>
 <p><strong>重启nginx</strong><br><code>service nginx restart</code></p>
@@ -846,7 +820,8 @@ dpkg: dependency problems prevent configuration of webmin:
   Package libio-pty-perl is not installed.
  webmin depends on unzip; however:
   Package unzip is not installed.
-</code></pre><p><strong>A:</strong><br><code>sudo apt install -f</code></p>
+</code></pre>
+<p><strong>A:</strong><br><code>sudo apt install -f</code></p>
 <h3 id="Q-vimrc在sudo中不生效"><a href="#Q-vimrc在sudo中不生效" class="headerlink" title="Q: .vimrc在sudo中不生效"></a>Q: .vimrc在sudo中不生效</h3><p><strong>A:</strong><br><code>cp ~/.vimrc /root</code></p>
 
             
@@ -871,7 +846,7 @@ dpkg: dependency problems prevent configuration of webmin:
                         border-radius: 4px;
                         color: #E5E5E5;
                         word-wrap: break-word;
-                        margin-top: 12px;
+                        margin-top: 24px;
                     }
 
                     .license-card *::selection{
@@ -966,9 +941,12 @@ dpkg: dependency problems prevent configuration of webmin:
     <!-- Gitalk 评论框 -->
 <div id="gitalk-container"></div>
 
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<!-- 更换为loli cdn -->
+<!-- <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"> -->
+<link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/gitalk/1.7.2/gitalk.css"/>
 
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<!-- <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script> -->
+<script src="https://cdnjs.loli.net/ajax/libs/gitalk/1.7.2/gitalk.min.js"></script>
 
 <script src="/js/md5.min.js"></script>
 
@@ -1469,12 +1447,18 @@ It will not impact the appearance and can give developers a lot of support :)
     })()
 </script>
 
-<!-- highlight.js 2021-9-15 -->
+<!-- highlight.js 2022-4-4 -->
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/highlight.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
 <!-- and it's easy to individually load additional languages -->
-<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/languages/go.min.js"></script>
-<!-- highlight.js css 2021-9-15-->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/styles/vs2015.min.css">
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/languages/csharp.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/languages/xml.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/languages/python.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/languages/javascript.min.js"></script>
+
+<!-- highlight.js css 2022-4-4-->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/styles/vs2015.min.css"> -->
+<link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/styles/vs2015.min.css"/>
 
 <script>
     $(document).ready(function(){
@@ -1488,21 +1472,6 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
                 </main>
             </div>
-        <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
+        </body>
     
 </html>

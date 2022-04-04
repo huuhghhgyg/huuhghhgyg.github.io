@@ -31,7 +31,7 @@
 
 
 
-    <link rel="dns-prefetch" href="https://lib.baomitu.com"/>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
 
 
 
@@ -200,31 +200,7 @@
 <!-- Import Font -->
 <!-- Import Roboto -->
 
-    <style>
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 300;
-            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot);
-            src: local('Roboto'), local('Roboto-Normal'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot?#iefix) format('embedded-opentype'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff2) format('woff2'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff) format('woff'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.ttf) format('truetype'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.svg#Roboto) format('svg')
-        }
-        
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: regular;
-            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot);
-            src: local('Roboto'), local('Roboto-Normal'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot?#iefix) format('embedded-opentype'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff2) format('woff2'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff) format('woff'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.ttf) format('truetype'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.svg#Roboto) format('svg')
-        }
-        
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 500;
-            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot);
-            src: local('Roboto'), local('Roboto-Normal'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot?#iefix) format('embedded-opentype'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff2) format('woff2'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff) format('woff'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.ttf) format('truetype'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.svg#Roboto) format('svg')
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 
 
 <!-- Import Material Icons -->
@@ -233,14 +209,15 @@
     <!-- <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/null/css/material-icons.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script> -->
     <!-- <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","https://cdn.jsdelivr.net/npm/material-icons@1.10.4/iconfont/material-icons.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script> -->
     <!-- 上面的代码似乎有误，已禁用 -->
-    <link href="https://cdn.jsdelivr.net/npm/material-icons@1.10.4/iconfont/material-icons.min.css" rel="stylesheet"></link>
-
+    <!-- <link href="https://cdn.jsdelivr.net/npm/material-icons@1.10.4/iconfont/material-icons.min.css" rel="stylesheet"></link> -->
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    
 
 
 <!-- 新加入 Import NotoSansSC -->
 
-<!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC" rel="stylesheet"> -->
-<link href="https://cdn.jsdelivr.net/npm/noto-sans-sc@latest/all.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC" rel="stylesheet">
+<!-- <link href="https://cdn.jsdelivr.net/npm/noto-sans-sc@latest/all.css" rel="stylesheet"> -->
 
 <style>
   pre {
@@ -393,7 +370,7 @@
     <!-- Custom Head -->
     
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.1.0"></head>
 
     
         <body id="scheme-Paradox" class="lazy">
@@ -684,10 +661,11 @@
                       TintOpacity=&quot;0.6&quot; TintTransitionDuration=&quot;1&quot;
                       FallbackColor=&quot;Black&quot;/&gt;
 &lt;/Page.Resources&gt;
-
+    
 &lt;Grid  Background=&quot;&#123;StaticResource MyAcrylicBrush&#125;&quot;&gt;
 &lt;/Grid&gt;
-</code></pre><p>之后当你要使用自定义的笔刷时，只需要将填充内容改为 <code>&quot;&#123;StaticResource MyAcrylicBrush&#125;&quot;</code> 即可。</p>
+</code></pre>
+<p>之后当你要使用自定义的笔刷时，只需要将填充内容改为 <code>&quot;&#123;StaticResource MyAcrylicBrush&#125;&quot;</code> 即可。</p>
 <h2 id="应用1-357"><a href="#应用1-357" class="headerlink" title="应用1:357"></a>应用1:357</h2><blockquote>
 <p>这是一个游戏。游戏规则的话你自己去下载应用，翻看里面的介绍吧。Idea来自于课间无聊瞎玩的游戏。目前AI模式的AI属于智障AI。<strong>此应用使用的是自定义的 Acrylic笔刷</strong><br>得益于Win10新增的 <strong>Fluent Design</strong> 设计系统和 <strong>Acrylic</strong> ，得到了如下的效果图。</p>
 </blockquote>
@@ -723,7 +701,7 @@
                         border-radius: 4px;
                         color: #E5E5E5;
                         word-wrap: break-word;
-                        margin-top: 12px;
+                        margin-top: 24px;
                     }
 
                     .license-card *::selection{
@@ -818,9 +796,12 @@
     <!-- Gitalk 评论框 -->
 <div id="gitalk-container"></div>
 
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<!-- 更换为loli cdn -->
+<!-- <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"> -->
+<link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/gitalk/1.7.2/gitalk.css"/>
 
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<!-- <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script> -->
+<script src="https://cdnjs.loli.net/ajax/libs/gitalk/1.7.2/gitalk.min.js"></script>
 
 <script src="/js/md5.min.js"></script>
 
@@ -1321,12 +1302,18 @@ It will not impact the appearance and can give developers a lot of support :)
     })()
 </script>
 
-<!-- highlight.js 2021-9-15 -->
+<!-- highlight.js 2022-4-4 -->
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/highlight.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
 <!-- and it's easy to individually load additional languages -->
-<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/languages/go.min.js"></script>
-<!-- highlight.js css 2021-9-15-->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/styles/vs2015.min.css">
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/languages/csharp.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/languages/xml.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/languages/python.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/languages/javascript.min.js"></script>
+
+<!-- highlight.js css 2022-4-4-->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/styles/vs2015.min.css"> -->
+<link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/styles/vs2015.min.css"/>
 
 <script>
     $(document).ready(function(){
@@ -1340,21 +1327,6 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
                 </main>
             </div>
-        <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
+        </body>
     
 </html>

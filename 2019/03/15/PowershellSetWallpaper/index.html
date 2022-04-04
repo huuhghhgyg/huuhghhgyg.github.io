@@ -31,7 +31,7 @@
 
 
 
-    <link rel="dns-prefetch" href="https://lib.baomitu.com"/>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
 
 
 
@@ -200,31 +200,7 @@
 <!-- Import Font -->
 <!-- Import Roboto -->
 
-    <style>
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 300;
-            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot);
-            src: local('Roboto'), local('Roboto-Normal'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot?#iefix) format('embedded-opentype'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff2) format('woff2'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff) format('woff'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.ttf) format('truetype'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.svg#Roboto) format('svg')
-        }
-        
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: regular;
-            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot);
-            src: local('Roboto'), local('Roboto-Normal'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot?#iefix) format('embedded-opentype'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff2) format('woff2'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff) format('woff'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.ttf) format('truetype'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.svg#Roboto) format('svg')
-        }
-        
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 500;
-            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot);
-            src: local('Roboto'), local('Roboto-Normal'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot?#iefix) format('embedded-opentype'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff2) format('woff2'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff) format('woff'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.ttf) format('truetype'), url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.svg#Roboto) format('svg')
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 
 
 <!-- Import Material Icons -->
@@ -233,14 +209,15 @@
     <!-- <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/null/css/material-icons.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script> -->
     <!-- <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","https://cdn.jsdelivr.net/npm/material-icons@1.10.4/iconfont/material-icons.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script> -->
     <!-- 上面的代码似乎有误，已禁用 -->
-    <link href="https://cdn.jsdelivr.net/npm/material-icons@1.10.4/iconfont/material-icons.min.css" rel="stylesheet"></link>
-
+    <!-- <link href="https://cdn.jsdelivr.net/npm/material-icons@1.10.4/iconfont/material-icons.min.css" rel="stylesheet"></link> -->
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    
 
 
 <!-- 新加入 Import NotoSansSC -->
 
-<!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC" rel="stylesheet"> -->
-<link href="https://cdn.jsdelivr.net/npm/noto-sans-sc@latest/all.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC" rel="stylesheet">
+<!-- <link href="https://cdn.jsdelivr.net/npm/noto-sans-sc@latest/all.css" rel="stylesheet"> -->
 
 <style>
   pre {
@@ -393,7 +370,7 @@
     <!-- Custom Head -->
     
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.1.0"></head>
 
     
         <body id="scheme-Paradox" class="lazy">
@@ -662,20 +639,21 @@
 &#125;
 
 Set-WallPaper -value &quot;C:\Windows\Web\Wallpaper\Homes_Background.bmp&quot;
-</code></pre><p>将其中<code>C:\Windows\Web\Wallpaper\Homes_Background.bmp</code>更改成壁纸所在处，执行脚本即生效。</p>
-<h2 id="添加到计划任务"><a href="#添加到计划任务" class="headerlink" title="添加到计划任务"></a>添加到计划任务</h2><p>计划任务的位置在 <strong>“控制面板”-(“系统和安全”)-“管理工具”-“计划任务”</strong><br>打开后点击 <strong>“添加基本任务”</strong> ,之后就可以跟着向导走了。执行文件填写 <strong>powershell</strong> ,参数填写刚刚保存的脚本文件位置即可。<br><img src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/PlannedTask.png" alt=""></p>
+</code></pre>
+<p>将其中<code>C:\Windows\Web\Wallpaper\Homes_Background.bmp</code>更改成壁纸所在处，执行脚本即生效。</p>
+<h2 id="添加到计划任务"><a href="#添加到计划任务" class="headerlink" title="添加到计划任务"></a>添加到计划任务</h2><p>计划任务的位置在 <strong>“控制面板”-(“系统和安全”)-“管理工具”-“计划任务”</strong><br>打开后点击 <strong>“添加基本任务”</strong> ,之后就可以跟着向导走了。执行文件填写 <strong>powershell</strong> ,参数填写刚刚保存的脚本文件位置即可。<br><img src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/PlannedTask.png"></p>
 <h2 id="还可以"><a href="#还可以" class="headerlink" title="还可以"></a>还可以</h2><p><strong>每日获取Bing图片并设为壁纸</strong></p>
 <pre><code>function Save-BingTodayImage()
 &#123;
     #必应图片故事API
     $bingImageApi =&#39;http://www.bing.com/HPImageArchive.aspx?format=xml&amp;idx=0&amp;n=1&amp;mkt=zh-cn&#39;
     $bingUri = &#39;http://www.bing.com/&#39;
-
+ 
     # 获取图片链接
     [xml]$bingImageXml = (Invoke-WebRequest -Uri $bingImageApi).Content
     Write-Host &quot; 今日图片故事： $( $bingImageXml.images.image.copyright ) &quot;
     $imgLink = &#39;&#123;0&#125;&#123;1&#125;&#39; -f $bingUri , $bingImageXml.images.image.url
-
+ 
     # 下载和保存图片
     $imageDir = &quot;$HOME\Pictures\Bing\&quot;
     if( -not (Test-Path $imageDir) )
@@ -683,24 +661,25 @@ Set-WallPaper -value &quot;C:\Windows\Web\Wallpaper\Homes_Background.bmp&quot;
         mkdir $imageDir | Out-Null
     &#125;
     $imageFile = Join-Path $imageDir ( &#39;&#123;0&#125;.jpg&#39; -f $bingImageXml.images.image.fullstartdate)
-
+ 
     Invoke-WebRequest -Uri $imgLink -OutFile $imageFile
-
+ 
     return $imageFile
 &#125;
-
+ 
 Function Set-DesktopWallPaper($imagePath)
 &#123;
  Set-ItemProperty -path &#39;HKCU:\Control Panel\Desktop\&#39; -name wallpaper -value $imagePath
  RUNDLL32.EXE USER32.DLL UpdatePerUserSystemParameters ,1 ,True
 &#125;
-
+ 
 # 获取今日必应背景图片
 $image=Save-BingTodayImage
-
+ 
 #设置为桌面墙纸
 Set-DesktopWallPaper -imagePath $image
 </code></pre>
+
             
                 <!-- <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;border-radius: 2px;">
                     <p><strong>
@@ -723,7 +702,7 @@ Set-DesktopWallPaper -imagePath $image
                         border-radius: 4px;
                         color: #E5E5E5;
                         word-wrap: break-word;
-                        margin-top: 12px;
+                        margin-top: 24px;
                     }
 
                     .license-card *::selection{
@@ -818,9 +797,12 @@ Set-DesktopWallPaper -imagePath $image
     <!-- Gitalk 评论框 -->
 <div id="gitalk-container"></div>
 
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<!-- 更换为loli cdn -->
+<!-- <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"> -->
+<link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/gitalk/1.7.2/gitalk.css"/>
 
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<!-- <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script> -->
+<script src="https://cdnjs.loli.net/ajax/libs/gitalk/1.7.2/gitalk.min.js"></script>
 
 <script src="/js/md5.min.js"></script>
 
@@ -1321,12 +1303,18 @@ It will not impact the appearance and can give developers a lot of support :)
     })()
 </script>
 
-<!-- highlight.js 2021-9-15 -->
+<!-- highlight.js 2022-4-4 -->
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/highlight.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
 <!-- and it's easy to individually load additional languages -->
-<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/languages/go.min.js"></script>
-<!-- highlight.js css 2021-9-15-->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/styles/vs2015.min.css">
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/languages/csharp.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/languages/xml.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/languages/python.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/languages/javascript.min.js"></script>
+
+<!-- highlight.js css 2022-4-4-->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/styles/vs2015.min.css"> -->
+<link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.0/styles/vs2015.min.css"/>
 
 <script>
     $(document).ready(function(){
@@ -1340,21 +1328,6 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
                 </main>
             </div>
-        <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
+        </body>
     
 </html>
