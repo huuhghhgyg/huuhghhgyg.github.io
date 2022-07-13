@@ -46,7 +46,7 @@
     
     <title>
         
-            SQL入门 | 
+            使用Python编写遗传算法 | 
         
         Hikaru&#39;s Blog
     </title>
@@ -57,7 +57,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="huuhghhgyg的个人主页">
-    <meta name="keywords" content="huu huuhghhgyg,编程,后端">
+    <meta name="keywords" content="huu huuhghhgyg">
     <meta name="theme-color" content="#1976D2">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -289,7 +289,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Hikaru&#39;s Blog">
-    <meta name="msapplication-starturl" content="https://huuhghhgyg.github.io/2022/03/27/sql/">
+    <meta name="msapplication-starturl" content="https://huuhghhgyg.github.io/2022/07/13/ga/">
     <meta name="msapplication-navbutton-color" content="#1976D2">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Hikaru&#39;s Blog">
@@ -304,16 +304,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://huuhghhgyg.github.io/2022/03/27/sql/">
+    <meta property="og:url" content="https://huuhghhgyg.github.io/2022/07/13/ga/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="SQL入门 | Hikaru&#39;s Blog">
+    <meta property="og:title" content="使用Python编写遗传算法 | Hikaru&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="huuhghhgyg的个人主页">
-    <meta property="og:article:tag" content="编程"> <meta property="og:article:tag" content="后端"> 
+    
 
     
-        <meta property="article:published_time" content="Sun Mar 27 2022 11:52:50 GMT+0800">
-        <meta property="article:modified_time" content="Wed Jul 13 2022 11:55:27 GMT+0800">
+        <meta property="article:published_time" content="Wed Jul 13 2022 12:07:30 GMT+0800">
+        <meta property="article:modified_time" content="Wed Jul 13 2022 14:59:19 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -321,7 +321,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://huuhghhgyg.github.io/2022/03/27/sql/index.html" />
+        <link rel="canonical" href="https://huuhghhgyg.github.io/2022/07/13/ga/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -333,10 +333,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://huuhghhgyg.github.io/2022/03/27/sql/index.html",
-    "headline": "SQL入门",
-    "datePublished": "Sun Mar 27 2022 11:52:50 GMT+0800",
-    "dateModified": "Wed Jul 13 2022 11:55:27 GMT+0800",
+    "mainEntityOfPage": "https://huuhghhgyg.github.io/2022/07/13/ga/index.html",
+    "headline": "使用Python编写遗传算法",
+    "datePublished": "Wed Jul 13 2022 12:07:30 GMT+0800",
+    "dateModified": "Wed Jul 13 2022 14:59:19 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "huuhghhgyg",
@@ -354,7 +354,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",编程,后端huu huuhghhgyg",
+    "keywords": "huu huuhghhgyg",
     "description": "huuhghhgyg的个人主页",
 }
 </script>
@@ -419,7 +419,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="post-toc-number">1.</span> <span class="post-toc-text">基本语法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%B3%A8%E9%87%8A"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">注释</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">运算符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%9D%A1%E4%BB%B6"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">条件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">正则表达式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#NULL"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">NULL</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#AS"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">AS</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SELECT"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">SELECT</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ORDER-BY"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">ORDER BY</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%A4%9A%E5%80%BC%E6%8E%92%E5%BA%8F"><span class="post-toc-number">1.8.1.</span> <span class="post-toc-text">多值排序</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%A0%B9%E6%8D%AE%E5%88%97%E6%8E%92%E5%BA%8F"><span class="post-toc-number">1.8.2.</span> <span class="post-toc-text">根据列排序</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DESC"><span class="post-toc-number">1.8.3.</span> <span class="post-toc-text">DESC</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%A4%9A%E5%80%BC%E6%8E%92%E5%BA%8F-1"><span class="post-toc-number">1.8.4.</span> <span class="post-toc-text">多值排序</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#LIMIT"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">LIMIT</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Alias-%E7%AE%80%E5%86%99"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">Alias 简写</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JOIN%E5%92%8CON"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">JOIN和ON</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%88%87%E6%8D%A2%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="post-toc-number">1.12.</span> <span class="post-toc-text">切换数据库</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UNION"><span class="post-toc-number">1.13.</span> <span class="post-toc-text">UNION</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%B1%9E%E6%80%A7"><span class="post-toc-number">2.</span> <span class="post-toc-text">属性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%88%97%E5%B1%9E%E6%80%A7"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">列属性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">数据类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%95%B0%E6%8D%AE%E5%B1%9E%E6%80%A7"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">数据属性</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86"><span class="post-toc-number">3.</span> <span class="post-toc-text">数据管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%B7%BB%E5%8A%A0%E8%A1%8C"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">添加行</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%85%A8%E9%83%A8%E6%B7%BB%E5%8A%A0"><span class="post-toc-number">3.1.1.</span> <span class="post-toc-text">全部添加</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%80%89%E6%8B%A9%E9%83%A8%E5%88%86%E5%8F%98%E9%87%8F%E6%B7%BB%E5%8A%A0"><span class="post-toc-number">3.1.2.</span> <span class="post-toc-text">选择部分变量添加</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%A4%9A%E4%B8%AA%E5%8F%98%E9%87%8F"><span class="post-toc-number">3.1.3.</span> <span class="post-toc-text">添加多个变量</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%90%91%E4%B8%8D%E5%90%8C%E7%9A%84%E8%A1%A8%E6%A0%BC%E6%B7%BB%E5%8A%A0%E5%8F%98%E9%87%8F"><span class="post-toc-number">3.1.4.</span> <span class="post-toc-text">向不同的表格添加变量</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BB%8E%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E8%A1%A8%E6%B7%BB%E5%8A%A0%E5%8F%98%E9%87%8F%E5%88%B0%E5%8F%A6%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E8%A1%A8"><span class="post-toc-number">3.1.5.</span> <span class="post-toc-text">从一个数据表添加变量到另一个数据表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%8F%92%E5%85%A5%E5%88%B0%E6%95%B0%E6%8D%AE%E8%A1%A8%EF%BC%88INSERT%EF%BC%89"><span class="post-toc-number">3.1.6.</span> <span class="post-toc-text">插入到数据表（INSERT）</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%9B%B4%E6%96%B0%E6%95%B0%E6%8D%AE"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">更新数据</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%9B%B4%E6%96%B0%E5%8D%95%E8%A1%8C%E6%95%B0%E6%8D%AE"><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text">更新单行数据</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%9B%B4%E6%96%B0%E5%A4%9A%E8%A1%8C%E6%95%B0%E6%8D%AE"><span class="post-toc-number">3.2.2.</span> <span class="post-toc-text">更新多行数据</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">删除数据</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="post-toc-number">1.</span> <span class="post-toc-text">概述</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%A8%A1%E5%9E%8B%E6%8F%8F%E8%BF%B0"><span class="post-toc-number">2.</span> <span class="post-toc-text">模型描述</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%9B%AE%E6%A0%87%E5%87%BD%E6%95%B0"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">目标函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%BA%A6%E6%9D%9F%E6%96%B9%E7%A8%8B"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">约束方程</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1"><span class="post-toc-number">3.</span> <span class="post-toc-text">遗传算法设计</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8F%AF%E8%A1%8C%E8%A7%A3%E7%9A%84%E7%94%9F%E6%88%90"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">初始可行解的生成</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%9B%AE%E6%A0%87%E5%87%BD%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">目标函数的表示</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%9F%BA%E5%9B%A0%E5%BA%8F%E5%88%97%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E4%BA%A4%E5%8F%89%E6%96%B9%E5%BC%8F"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">基因序列的设计和交叉方式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%9F%BA%E5%9B%A0%E5%BA%8F%E5%88%97%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="post-toc-number">3.3.1.</span> <span class="post-toc-text">基因序列的设计</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BA%A4%E5%8F%89%E6%96%B9%E6%B3%95"><span class="post-toc-number">3.3.2.</span> <span class="post-toc-text">交叉方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%A7%8D%E7%BE%A4%E7%AE%A1%E7%90%86"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">种群管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%94%9F%E6%88%90%E5%88%9D%E5%A7%8B%E7%A7%8D%E7%BE%A4"><span class="post-toc-number">3.4.1.</span> <span class="post-toc-text">生成初始种群</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%A7%8D%E7%BE%A4%E7%9A%84%E8%BF%AD%E4%BB%A3"><span class="post-toc-number">3.4.2.</span> <span class="post-toc-text">种群的迭代</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE"><span class="post-toc-number">4.</span> <span class="post-toc-text">遗传算法参数设置</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81%E4%B8%8B%E8%BD%BD"><span class="post-toc-number">5.</span> <span class="post-toc-text">遗传算法完整代码下载</span></a></li></ol>
     </ul>
     
 
@@ -439,10 +439,10 @@
     <!-- Paradox Post Header -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/sql.webp)">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/evolution.webp)">
     
             <p class="article-headline-p">
-                SQL入门
+                使用Python编写遗传算法
             </p>
         </div>
 
@@ -461,7 +461,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>huuhghhgyg</strong>
-        <span>3月 27, 2022</span>
+        <span>7月 13, 2022</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -483,7 +483,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZklEQVR42u3aQY6DMBAEQP7/6d0HRHK6beOQqHxarYhwccBDz1x/P70uPDw8PDw8PDy8h/GueI1/9fr/1+vza5b2hoeHh3eE9+ZVO7ymvf0Yub43PDw8vJO88et+jBm/3PNHs7I3PDw8vCfzxq/4cQGdMPDw8PB+j5cHFnPHAB4eHt638JIP/nF0m8S1bcF9NGvBw8PDi3l5FHv+76P9PTw8PLyAV480lS2u9oDZPHSFh4eHdwNvLmhIRgHyrSdFeb4fPDw8vCfwEkwb4Laxb9FOw8PDw7uZl9y+HaVqH0ES/hbHDB4eHt4R3t4NzY26tuV1cTDg4eHhHeG14wJzIwjj++aPHg8PD+88b66tNdfmT46E/MjZEEbg4eHhlbzkI78NCOaGCfLH9OYueHh4eDfz8k/9XaVzEge3rTI8PDy8z/LagGDlCMnbb8XAAR4eHt7NvLwFlZS8Kw+ujSfqMAIPDw9vEy8piPNoYFdbay6GwMPDw/sUL2k+5c2w9eOkpeLh4eGd5+XRbRLs5k2v/Kioh67w8PDwtvLmSuG29dUWynl0G2UteHh4eDfwVtr/c0Xz+h7qmTI8PDy8g7xdxfRKRFsMcuHh4eEd5O0KXusNLbTcioMBDw8PbxOvXXmzf6Ux1g404OHh4Z3kXfHaFePmB08biODh4eGd5O0aJlhpg7VjWHh4eHhP4O1t6q80upbaaXh4eHiP5OWtrHxctR20KsIIPDw8vAfw2uNhbtN50wsPDw/vU7y2FF4ZIKgjhjMxLh4eHt4NDbD2NZ1HGHPBLh4eHt553u8tPDw8PDw8PDy8B6x/eCztOda62G0AAAAASUVORK5CYII=">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACaElEQVR42u3aQZKDMAwEQP7/6ewDUpCRbLQk1T6lNlSgOVjekY7XT68DDw8PDw8PDw/vYbwjXqc/93bN+/Xv315fs/JseHh4eDO8D1ttkXf99zNw9b6nLwUPDw9vkHe24V5v60kZqF7ZezY8PDy87+X1SkjyGQ8PD+/beclhOvn9hxYGPDw8vE1hRBJMrBSJf85a8PDw8GJe3mSa/zza38PDw8MLeNVVDSPyUKNaWk7viIeHh3czL9+IE2RvUCAPL6KDOB4eHt4grxdD9ILdfAShPLiAh4eHN8LLB1Kr23evSbYUJePh4eEN8qphQXVzv2PsoJxS4+Hh4W3lJSWhF9fm0XDyJOUYFw8PD28rb/0guzIEcP0M+eAsHh4e3iSvGjRUA4vkwJ2Xgeh14+Hh4d3MyzfulUN2NciolhA8PDy8SV5vC+6NZO1qsH14iXh4eHg386q3SQLZPGJYGboqZC14eHh4W3m9Vn116CoHrL9oPDw8vElevumvN8yqo1e3DF3h4eHhtXj5wbc6IpBHwNFAwN6hKzw8PLwFXi+KXaFWN/1yxIyHh4c3wkua99WY9RWv6gH9Q/nBw8PDG+QVBpsWwoLekAEeHh7eM3l5AywPbaND8KZ2Gh4eHt4Mr7pWjt35NdX74uHh4U3yjnhVb1Ydt9pWhPDw8PBGeL1iUGX02l158cDDw8Ob51WHonolIXmVeYnCw8PD+xZeEjRUQ4deqFEeusLDw8P7J14vpFhpfRX+AcDDw8Mb5CVhxMrxtxcTj8a4eHh4eDc0wHojAivsZJgADw8Pb5L3ewsPDw8PDw8PD+8B6w85l69bhO8iuwAAAABJRU5ErkJggg==">
     
 </ul>
 
@@ -491,15 +491,6 @@
 
                 <!-- Tags (bookmark) -->
                 
-                    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-                        <li class="mdl-menu__item">
-                            <a class="post_tag-none-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a>
-                    </ul>
-                    
 
                         <!-- Share -->
                         
@@ -514,7 +505,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=SQL入门&url=https://huuhghhgyg.github.io/2022/03/27/sql/index.html&pic=https://huuhghhgyg.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=使用Python编写遗传算法&url=https://huuhghhgyg.github.io/2022/07/13/ga/index.html&pic=https://huuhghhgyg.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -523,7 +514,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=SQL入门&url=https://huuhghhgyg.github.io/2022/03/27/sql/index.html&via=huuhghhgyg" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=使用Python编写遗传算法&url=https://huuhghhgyg.github.io/2022/07/13/ga/index.html&via=huuhghhgyg" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -532,7 +523,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://huuhghhgyg.github.io/2022/03/27/sql/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://huuhghhgyg.github.io/2022/07/13/ga/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -541,7 +532,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://huuhghhgyg.github.io/2022/03/27/sql/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://huuhghhgyg.github.io/2022/07/13/ga/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -553,7 +544,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hikaru&#39;s Blog&title=SQL入门&summary=huuhghhgyg的个人主页&pics=https://huuhghhgyg.github.io/img/favicon.png&url=https://huuhghhgyg.github.io/2022/03/27/sql/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hikaru&#39;s Blog&title=使用Python编写遗传算法&summary=huuhghhgyg的个人主页&pics=https://huuhghhgyg.github.io/img/favicon.png&url=https://huuhghhgyg.github.io/2022/07/13/ga/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -562,7 +553,7 @@
 
     <!-- Share Telegram -->
     
-        <a class="post_share-link" href="https://telegram.me/share/url?url=https://huuhghhgyg.github.io/2022/03/27/sql/index.html&text=SQL入门" target="_blank">
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://huuhghhgyg.github.io/2022/07/13/ga/index.html&text=使用Python编写遗传算法" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Telegram
             </li>
@@ -616,293 +607,481 @@
     </style>
 
     
-        <button type="button" class="mdl-chip">
-            <span class="mdl-chip__text">
-                <a class="post_tag_chip-none-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a></span></button><button type="button" class="mdl-chip"><span class="mdl-chip__text"><a class="post_tag_chip-none-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a>
-            </span>
-        </button>
-        
 </div>
 
 
 <!-- Post Content -->
 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <pre><code class="sql">SELECT *
-FROM table
-WHERE column LIKE &#39;条件&#39;
-Order by 1
-LIMIT 100
-</code></pre>
-<h1 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h1><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p><code>--</code>后面是注释内容。<code>--</code>是sql的注释标志</p>
-<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>AND</code></td>
-<td>和，AND的优先级一般会高于OR</td>
-</tr>
-<tr>
-<td><code>OR</code></td>
-<td>或者</td>
-</tr>
-<tr>
-<td><code>NOT</code></td>
-<td>非</td>
-</tr>
-<tr>
-<td><code>()</code></td>
-<td>括号，提高优先级。</td>
-</tr>
-</tbody></table>
-<h2 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h2><table>
-<thead>
-<tr>
-<th>符号</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>%</code></td>
-<td>n个任意字符</td>
-</tr>
-<tr>
-<td><code>_</code></td>
-<td>1个任意字符</td>
-</tr>
-</tbody></table>
-<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p>REGEXP（Regular Expression）</p>
-<pre><code class="sql">WHERE column REGEXP &#39;表达式&#39;
-</code></pre>
+        <script type="text/javascript" async
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>        
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+});
+</script>
+
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>当涉及非线性规划问题或者难以在短时间内求得满意解的线性规划问题，可以通过求其近似解（或满意解）而非精确解。使用遗传算法求解近似解所消耗的时间远少于求解精确解，多数时候近似解的效果都可以接受。<br>遗传算法的优势体现在：在小规模问题上，遗传算法求解得到的通常是精确解；而在大规模问题上，遗传算法通常可以通过较短的时间求得精确解。<br><img src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/ga/ga.webp" alt="ga1"></p>
+<blockquote>
+<p>同样的问题通过遗传算法求解近似解和线性规划求解精确解，遗传算法花费的时间显著短于精确算法。</p>
+</blockquote>
 <table>
 <thead>
 <tr>
-<th>符号</th>
-<th>意义</th>
-<th>例子</th>
+<th>算法</th>
+<th>时长</th>
+<th>结果(此处结果越小越好）</th>
 </tr>
 </thead>
 <tbody><tr>
-<td><code>^</code></td>
-<td>以..开头</td>
-<td><code>^field</code></td>
+<td>遗传算法</td>
+<td>123s (2m03s)</td>
+<td>371.06</td>
 </tr>
 <tr>
-<td><code> $</code></td>
-<td>以..结尾</td>
-<td><code>field$</code></td>
-</tr>
-<tr>
-<td><code>\</code></td>
-<td>或者</td>
-<td><code>^field｜mac｜rose</code></td>
-</tr>
-<tr>
-<td><code>[]</code></td>
-<td>匹配中括号内的所有字符</td>
-<td><code>[gim]e</code>，匹配ge、ie、me，<br><code>[a-c]d</code>，匹配<br>ad、bd、cd，<br><code>[1-3]</code>同理</td>
+<td>精确算法</td>
+<td>201s (3m21s)</td>
+<td>367.07</td>
 </tr>
 </tbody></table>
-<blockquote>
-<p>注意：由于我使用的markdown编译器无法将表格中的代码中的<code>|</code>识别为符号，以上的<code>|</code>为全角符号</p>
-</blockquote>
-<h2 id="NULL"><a href="#NULL" class="headerlink" title="NULL"></a>NULL</h2><table>
-<thead>
-<tr>
-<th>表达式</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>IS NULL</code></td>
-<td>值为<code>null</code></td>
-</tr>
-<tr>
-<td><code>IS NOT NULL</code></td>
-<td>值不为<code>null</code></td>
-</tr>
-</tbody></table>
-<h2 id="AS"><a href="#AS" class="headerlink" title="AS"></a>AS</h2><p>在原有数据基础上新建一列数据，或者理解为处理完原有列数据填入新一列中</p>
-<pre><code class="sql">score + 10 AS new _score
-</code></pre>
-<h2 id="SELECT"><a href="#SELECT" class="headerlink" title="SELECT"></a>SELECT</h2><p>选择表内的数据</p>
-<pre><code class="sql">SELECT first _name, last _name
-</code></pre>
-<h2 id="ORDER-BY"><a href="#ORDER-BY" class="headerlink" title="ORDER BY"></a>ORDER BY</h2><p>根据什么值排序</p>
-<pre><code class="sql">ORDER BY first _name
-</code></pre>
-<h3 id="多值排序"><a href="#多值排序" class="headerlink" title="多值排序"></a>多值排序</h3><pre><code class="sql">ORDER BY state, first _name
-</code></pre>
-<h3 id="根据列排序"><a href="#根据列排序" class="headerlink" title="根据列排序"></a>根据列排序</h3><pre><code class="sql">ORDER BY 1, 2
-</code></pre>
-<h3 id="DESC"><a href="#DESC" class="headerlink" title="DESC"></a>DESC</h3><ul>
-<li>descending：降序</li>
-</ul>
-<pre><code class="sql">ORDER BY first _name DESC
-</code></pre>
-<h3 id="多值排序-1"><a href="#多值排序-1" class="headerlink" title="多值排序"></a>多值排序</h3><pre><code class="sql">ORDER BY state DESC, first _name
-</code></pre>
-<h2 id="LIMIT"><a href="#LIMIT" class="headerlink" title="LIMIT"></a>LIMIT</h2><table>
-<thead>
-<tr>
-<th>表达式</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>LIMIT 6</code></td>
-<td>设定返回查询数据的最大条数为6</td>
-</tr>
-<tr>
-<td><code>LIMIT 6, 3</code></td>
-<td>跳过前6条，再返回3条数据（返回第7-9条数据）</td>
-</tr>
-</tbody></table>
-<h2 id="Alias-简写"><a href="#Alias-简写" class="headerlink" title="Alias 简写"></a>Alias 简写</h2><pre><code class="sql">SELECT customer _id c
-From table_t
-ORDER BY c
-</code></pre>
-<h2 id="JOIN和ON"><a href="#JOIN和ON" class="headerlink" title="JOIN和ON"></a>JOIN和ON</h2><p>JOIN用于联系多个表的数据列。</p>
-<pre><code class="sql">SELECT *
-FROM orders o
-JOIN customers c
-  ON o.customer _id = c.customer _id
-</code></pre>
-<h2 id="切换数据库"><a href="#切换数据库" class="headerlink" title="切换数据库"></a>切换数据库</h2><pre><code class="sql">USE 数据库名
+<h1 id="模型描述"><a href="#模型描述" class="headerlink" title="模型描述"></a>模型描述</h1><h2 id="目标函数"><a href="#目标函数" class="headerlink" title="目标函数"></a>目标函数</h2><div><span>`minf=P\sum_{k=1}^K\sum_{i=1}^N\sum_{j=1}^Nx_{kij}d_{ij}+\frac{P_a}{Q}\sum_{i=1}^N\sum_{j=1}^N(y_{ij}+z_{ij})x_{kij}d_{ij}+P_m\sum_{k=1}^K\sum_{i=1}^N\sum_{j=M}^Nx_{kij}q_j`</span></div>
 
-SELECT *
-FROM 另一个数据库名.数据表
-…
-</code></pre>
-<h2 id="UNION"><a href="#UNION" class="headerlink" title="UNION"></a>UNION</h2><p>用于合并多个查询结果。</p>
-<pre><code class="sql">SELECT first _name
-FROM customers
-UNION
-SELECT name
-FROM shippers
-</code></pre>
-<ul>
-<li>如果一个查询里面有多个语句，一个语句结束后要使用分号（;）</li>
-<li>UNION连接的查询语句只算一个语句</li>
-</ul>
-<h1 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h1><h2 id="列属性"><a href="#列属性" class="headerlink" title="列属性"></a>列属性</h2><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><table>
-<thead>
-<tr>
-<th>类型</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>INT(11)</code></td>
-<td></td>
-</tr>
-<tr>
-<td><code>VARCHAR(50)</code></td>
-<td>最大50个字符，且最大占用50个字符的空间，常用于保存string</td>
-</tr>
-<tr>
-<td><code>CHAR(50)</code></td>
-<td>最大50个字符，占用50个字符的的空间</td>
-</tr>
-</tbody></table>
-<h3 id="数据属性"><a href="#数据属性" class="headerlink" title="数据属性"></a>数据属性</h3><table>
-<thead>
-<tr>
-<th>缩写</th>
-<th>全称</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>PK</code></td>
-<td>Primary Key</td>
-<td>数据主键</td>
-</tr>
-<tr>
-<td><code>NN</code></td>
-<td>Not Null</td>
-<td>是否能接受NULL值？（可选值？）</td>
-</tr>
-<tr>
-<td><code>AI</code></td>
-<td>Auto Increment</td>
-<td>自动递增</td>
-</tr>
-<tr>
-<td><code>Default / Expression</code></td>
-<td>-</td>
-<td>默认值</td>
-</tr>
-</tbody></table>
-<h1 id="数据管理"><a href="#数据管理" class="headerlink" title="数据管理"></a>数据管理</h1><h2 id="添加行"><a href="#添加行" class="headerlink" title="添加行"></a>添加行</h2><p>按照数据排列顺序，包含在<code>VALUES</code>里面添加。</p>
-<h3 id="全部添加"><a href="#全部添加" class="headerlink" title="全部添加"></a>全部添加</h3><pre><code class="sql">INSERT INTO customers
--- 如果想要用自动递增，可以直接填DEFAULT
--- 如果是可选值，不填入数据的话就填NULL
-VALUES (
-  DEFAULT,
-  &#39;first name value&#39;,
-  &#39;last name value&#39;,
-  &#39;1990-01-01&#39;,
-  NULL,
-  &#39;address&#39;,
-  &#39;city&#39;,
-  &#39;CA&#39;)
-</code></pre>
-<h3 id="选择部分变量添加"><a href="#选择部分变量添加" class="headerlink" title="选择部分变量添加"></a>选择部分变量添加</h3><pre><code class="sql">INSERT INTO customers(
-  first _name,
-  last _name,
-  birth _date)
--- VALUES的顺序根据上面定义的顺序来，上面定义的数据顺序可以根据自己的喜好
-VAULES(
-  &#39;first name value&#39;,
-  &#39;last name value&#39;,
-  &#39;date of birth&#39;)
-</code></pre>
-<h3 id="添加多个变量"><a href="#添加多个变量" class="headerlink" title="添加多个变量"></a>添加多个变量</h3><pre><code class="sql">INSERT INTO shippers (name)
-VALUES(&#39;shipper1&#39;),
-  (&#39;shipper2&#39;),
-  (&#39;shipper3&#39;)
-</code></pre>
-<h3 id="向不同的表格添加变量"><a href="#向不同的表格添加变量" class="headerlink" title="向不同的表格添加变量"></a>向不同的表格添加变量</h3><pre><code class="sql">INSERT INTO orders (customer _id, order _date, status)
-VALUES (1, &#39;2019-01-02&#39;, 1);
-INSERT INTO order _items
-VALUES (LAST _INSERT _ID(), 1, 1, 2.95),
-VALUES (LAST _INSERT _ID(), 2, 1, 3.95)
-</code></pre>
-<h3 id="从一个数据表添加变量到另一个数据表"><a href="#从一个数据表添加变量到另一个数据表" class="headerlink" title="从一个数据表添加变量到另一个数据表"></a>从一个数据表添加变量到另一个数据表</h3><p>新建为数据表（CREATE）</p>
-<pre><code class="sql">CREATE TABLE ordres _archived AS
-SELECT  * FROM orders
--- 这里的SELECT语句是SubQuery
-</code></pre>
-<ul>
-<li>右键数据表的“truncate table”是清空数据表的所有数据</li>
-</ul>
-<h3 id="插入到数据表（INSERT）"><a href="#插入到数据表（INSERT）" class="headerlink" title="插入到数据表（INSERT）"></a>插入到数据表（INSERT）</h3><pre><code class="sql">INSERT INTO orders _archived
-SELECT  *
-FROM orders
-WHERE order _date &lt; &#39;2019-01-01&#39;
-</code></pre>
-<h2 id="更新数据"><a href="#更新数据" class="headerlink" title="更新数据"></a>更新数据</h2><h3 id="更新单行数据"><a href="#更新单行数据" class="headerlink" title="更新单行数据"></a>更新单行数据</h3><pre><code class="sql">UPDATE table
-SET payment _total = 10, payment _date = &#39;2019-03-01&#39;
-WHERE invoice _id = 1
-</code></pre>
-<h3 id="更新多行数据"><a href="#更新多行数据" class="headerlink" title="更新多行数据"></a>更新多行数据</h3><pre><code class="sql">UPDATE table
-SET payment _total = 10, payment _date = &#39;2019-03-01&#39;
-WHERE invoice _id IN (3, 4)
--- 如果要更新数据表中的所有值，只需留空WHERE
-</code></pre>
-<h2 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h2><pre><code class="sql">DELETE FROM table
--- 如果没有WHERE语句，将会删除所有数据，非常危险。
-WHERE client _id = (
-  SELECT client _id
-  FROM clients
-  WHERE name = &#39;Myworks&#39;)
-</code></pre>
+<h2 id="约束方程"><a href="#约束方程" class="headerlink" title="约束方程"></a>约束方程</h2><div>
+<span>
+$
+s.t.\left\{  
+\begin{array}{**lr**}  
+\sum_{k=1}^K\sum_{i=1}^Nx_{kij}=1 & j=2,3,...,N \\  
+\sum_{j=1}^Nx_{kij} = \sum_{j=1}^Nx_{kij} & i=1,2,...,N;k=1,2,...,K \\
+\sum_{j=1}^Nx_{k1j} \le 1 & k=1,2,...,K \\
+y_{ij}+z_{ij} \le Q\sum_{k=1}^Kx_{kij} & i,j=2,3,...,N \\
+\sum_{i=1}^N\sum_{j=1}^Nx_{kij}d_{ij} \leq D & k=1,2,...,K \\
+\sum_{j=1}^Nz_{ij}-\sum_{j=1}^Nz_{ij}=p_i & i=2,3,...,N \\
+\sum_{i=1}^Nx_{kii}=0 & j=1,2,...,N \\
+\sum_{i=2}^N\sum_{j=1}^Nx_{kij} \le V & k=1,2,...,K \\
+y_{ij} \ge 0 ,z_{ij} \ge 0 & i,j=1,2,...,N
+\end{array}  
+\right.
+$
+</span>
+</div>
 
+<h1 id="遗传算法设计"><a href="#遗传算法设计" class="headerlink" title="遗传算法设计"></a>遗传算法设计</h1><p>经过本次从0开始编写遗传算法求解模型，我将遗传算法划分为几个模块（步骤）</p>
+<ol>
+<li><a href="#%E5%88%9D%E5%A7%8B%E5%8F%AF%E8%A1%8C%E8%A7%A3%E7%9A%84%E7%94%9F%E6%88%90">初始可行解的生成</a></li>
+<li><a href="#%E7%9B%AE%E6%A0%87%E5%87%BD%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA">目标函数的表示</a></li>
+<li><a href="#%E5%9F%BA%E5%9B%A0%E5%BA%8F%E5%88%97%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E4%BA%A4%E5%8F%89%E6%96%B9%E5%BC%8F">基因序列的设计和交叉方式</a></li>
+<li><a href="#%E7%A7%8D%E7%BE%A4%E7%AE%A1%E7%90%86">种群管理</a></li>
+</ol>
+<h2 id="初始可行解的生成"><a href="#初始可行解的生成" class="headerlink" title="初始可行解的生成"></a>初始可行解的生成</h2><p>我自认为这个部分写得不太好。如果按照我这个方法生成初始可行解，可能比较需要天时地利。如果模型规模变大可能初始可行解的生成就会很慢，我暂时还没有想到改进的方法，因为约束确实也有点多，只能尽可能在这部分通过算法节约时间。<br>在我的模型中，初始可行解的生成受到几个约束：</p>
+<ol>
+<li>客户需要被完全分配。我提供的代码中的分配部分已经有改进的方案（我懒得改了🤣），即使用<code>Random.shuffle()</code>函数对一个序列进行打乱。如给定序列<code>[1,2,3,4,5,6,7,8]</code>，可以通过这个函数对序列顺序进行打乱再进行切割，达到分组分配的目的。</li>
+<li>车辆每段送货路径的载重量之和不能超过最大允许载重量。</li>
+<li>车辆的单个环路（从仓库出发到返回仓库）的里程之和不能超过单台车辆允许行驶的里程上限。</li>
+</ol>
+<p>后两个约束属于限制，我的函数在进行检测的过程中如果发现其中任何的路径不符合要求会直接<code>break</code>循环，节约算力和时间。</p>
+<p>以下是生成初始可行解的相关代码：</p>
+<pre><code class="python">def item_generate():  # 生成个体
+    w_max = -1
+    s_max = -1
+    nc = N - 1
+    k_num_list = []  # 每辆车服务客户数量如 [4, 2, 3, 5]
+    k_visit_arr = []  # 车辆服务客户顺序列表如 [[12, 11, 14, 3, 6, 13], [9, 4, 7, 2], [5, 8], [10, 15]]
+    k_x_scatter = []  # 每辆车ij的列表如 [[[1,2],[2,3],...],[...],...]; [车[点[,]]]
+
+    while w_max &lt; 0 or s_max &lt; 0 or s_max &gt; D or w_max &gt; Q:  # 要求生成的方案满足重量约束和距离约束
+
+        # 生成每辆车要访问的顾客数
+        while nc != 0:  # 如果不能完全分配要重新生成
+            # 初始化生成
+            k_num_list = []
+            nc = N - 1
+            # 生成
+            for i in range(K - 1):
+                num = random.randint(0, min(nc, V))
+                nc -= num  # 从顾客中删除num个
+                k_num_list.append(num)
+            if nc &lt; V:
+                k_num_list.append(nc)
+                nc = 0
+        k_num_list.sort(reverse=True)  # 从大到小排列车辆服务客户数量
+
+        # 根据每辆车服务客户数量生成配送方案
+        [k_visit_arr, k_x_scatter] = generate_d_arr(k_num_list)
+
+        # 检测是否符合载货量要求（见函数）
+        w_max = cal_w_max(k_visit_arr)
+        # for debug
+        if w_max &gt; Q and print_debug:
+            print(&quot;超重&quot;, w_max)
+
+        # 检测是否符合最远距离要求
+        s_max = cal_s_max(k_x_scatter)
+        if s_max &gt; D and print_debug:  # for debug
+            print(&quot;超距离&quot;, s_max)
+
+    return [k_num_list, k_visit_arr, k_x_scatter]
+
+# 根据每辆车的服务顺序生成配送方案
+def generate_d_arr(k_num_list):  # 输入服务顺序，如 [4,2,3,5]
+    # 生成客户列表
+    customers = []
+    for i in range(2, N + 1):  # (客户：2~15（14个）)
+        customers.append(i)
+
+    # 生成每辆车服务的顺序和决策点
+    k_visit_arr = []  # 车辆服务客户顺序列表如 [[12, 11, 14, 3, 6, 13], [9, 4, 7, 2], [5, 8], [10, 15]]
+    k_x_scatter = []  # 每辆车ij的列表如 [[[1,2],[2,3],...],[...],...]; [车[点[,]]]
+    for i in range(K):
+        visit_arr = []  # 定义一辆车服务顺序向量
+        x_scatter = []  # 访问点
+        for j in range(k_num_list[i]):  # 根据服务数量生成每辆车要服务的客户的顺序
+            # 抽取客户
+            nc_remain = len(customers)
+            c_rand = customers[random.randint(0, nc_remain - 1)]  # 随机选中的客户
+            visit_arr.append(c_rand)
+            customers.remove((c_rand))  # 从列表中删除客户
+
+            # 组合决策点x
+            if j == 0:  # 第一个
+                x_scatter.append([1, c_rand])
+            else:
+                x_scatter.append([visit_arr[-2], visit_arr[-1]])  # 已经加进去了，所以[-2]，[-1]是最新的
+            if j == (k_num_list[i] - 1):  # 如果是最后一个
+                x_scatter.append([c_rand, 1])
+
+        # 添加到列表
+        k_visit_arr.append(visit_arr)  # 添加这辆车的访问客户顺序
+        k_x_scatter.append(x_scatter)  # 添加这辆车的访问决策点
+
+    return [k_visit_arr, k_x_scatter]
+
+# 输入车辆服务顺序矩阵，计算最大重量是否超标，返回最大重量
+def cal_w_max(k_visit_arr):
+    # 检测是否符合载货量要求
+    w_max = 0
+    for karr in k_visit_arr:  # 每辆车
+        q_all = []  # 初始化送货重量
+        p_all = []  # 初始化取货重量
+        # todo: 计算初始运货量的载重 w_sum
+        for id in karr:  # 每个客户(id),从2开始（扫描数据）
+            # print(id)
+            q_all.append(q[id - 2])  # 加入指定客户的送货重量（q为向量）
+            p_all.append(p[id - 2])  # 加入指定客户的取货重量
+        w_sum = sum(q_all)  # 初始载重量（离开仓库时）
+        w_max = max(w_sum, w_max)  # 更新最大值
+
+        if w_max &gt; Q:  # 如果此时已经超过最大允许载重量，直接跳出循环，不再计算
+            break
+
+        # todo: 计算每一段路程的载重
+        for i in range(len(karr)):  # 0~5 每个节点计算
+            w_sum += (-q_all[i] + p_all[i])  # 更新过程重量
+            w_max = max(w_sum, w_max)  # 更新最大值
+
+    return w_max
+
+
+def cal_s_max(k_x_scatter):  # 计算路程（最大值）
+    s_max = 0
+    for k in range(K):  # 每辆车都计算
+        s = []  # 初始化距离
+        for o in k_x_scatter[k]:
+            if (o != 0):
+                xi = o[0] - 1
+                xj = o[1] - 1
+                s.append(d[xi][xj])
+        s_max = max(sum(s), s_max)
+
+        if s_max &gt; D:  # 如果已经超距离
+            break
+    return s_max
+</code></pre>
+<p>模块测试代码：</p>
+<pre><code class="python">[k_num_list, k_visit_arr, k_x_scatter] = item_generate()
+print(&quot;最终结果&quot;)
+print(k_num_list)
+print(k_visit_arr)
+print(k_x_scatter)
+</code></pre>
+<pre><code class="python">[k_visit_arr,k_x_scatter] = generate_d_arr([4,2,3,5])
+score = cal_score([[4, 12, 11, 15, 5, 7], [2, 9, 6], [10, 14, 3], [13, 8]])
+print(score)
+</code></pre>
+<h2 id="目标函数的表示"><a href="#目标函数的表示" class="headerlink" title="目标函数的表示"></a>目标函数的表示</h2><p>这部分没什么好说的，按照模型里面给定的目标函数编写就是了。下面附上我的目标函数</p>
+<pre><code class="python"># 计算成本
+def cal_score(k_visit_arr):
+    score = 0.0
+    p_w_sums = []  # 每段路径对应的取货量之和
+    q_w_sums = []  # 每段路径运送的送货量之和
+    w_sums = []  # 每段路径的总载重量
+    for nodes in k_visit_arr:
+        p_all = []
+        q_all = []
+        w_all = []
+
+        for node in nodes:
+            p_all.append(p[node - 2])  # 从向量中获取取货数值，刨除仓库占1，再考虑从0开始
+            q_all.append(q[node - 2])  # 从向量中获取送货数值，同上
+
+        p_w_sum = []
+        q_w_sum = []
+        for i in range(len(nodes)):  # 全路程取送货量计算（从仓库出发到回到仓库）
+            p_w_sum.append(sum(p_all[:i + 1]))
+            q_w_sum.append(sum(q_all[i:]))
+
+        if len(q_w_sum) != 0:
+            w_all.append(q_w_sum[0])  # 运往第一个节点
+            for i in range(0, len(nodes) - 1):
+                w_all.append(p_w_sum[i] + q_w_sum[i + 1])
+            w_all.append(p_w_sum[-1])
+
+        p_w_sums.append(p_w_sum)
+        q_w_sums.append(q_w_sum)
+        w_sums.append(w_all)
+
+    k_x_scatter = get_scatter(k_visit_arr)  # 获取散点集合
+    for y in range(len(k_x_scatter)):
+        for z in range(len(k_x_scatter[y])):
+            # 转化为下标索引
+            i = k_x_scatter[y][z][0] - 1
+            j = k_x_scatter[y][z][1] - 1
+            score += P * d[i][j]
+            score += w_sums[y][z] * d[i][j] * Pa / Q
+
+    score += Pm * sum(q[Med - 1:])  # 配送药店药物额外加固费用
+
+    return score
+</code></pre>
+<p>在我的模型中，<code>k_visit_arr</code>是访问的客户的编号的向量。函数测试代码如下：</p>
+<pre><code class="python">print(cal_score([13,6,7,8,3,14,2,9,15,5,11,12,10,4]))
+</code></pre>
+<h2 id="基因序列的设计和交叉方式"><a href="#基因序列的设计和交叉方式" class="headerlink" title="基因序列的设计和交叉方式"></a>基因序列的设计和交叉方式</h2><h3 id="基因序列的设计"><a href="#基因序列的设计" class="headerlink" title="基因序列的设计"></a>基因序列的设计</h3><table>
+<thead>
+<tr>
+<th><strong>5</strong></th>
+<th><strong>5</strong></th>
+<th><strong>4</strong></th>
+<th><strong>0</strong></th>
+<th>4</th>
+<th>10</th>
+<th>12</th>
+<th>11</th>
+<th>5</th>
+<th>9</th>
+<th>2</th>
+<th>3</th>
+<th>14</th>
+<th>15</th>
+<th>13</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+</tr>
+</thead>
+</table>
+<p>在我的模型中，由于车辆数为4，设定前4位分别为每辆车服务的客户数量。<br>后14位客户的服务顺序，根据车辆服务客户的数量依次分配。交叉时不切断前四位，保证交换后的方案在一定程度上的可行。</p>
+<p>基因相关代码：</p>
+<pre><code class="python">def get_gene(k_num_list, k_visit_arr):  # 获取基因(K+(N-1))；前K位为形状，后N-1位为顺序
+    gene = copy.deepcopy(k_num_list)
+    for items in k_visit_arr:
+        for item in items:
+            gene.append(item)
+    return gene
+
+
+def grow(gene):  # 根据基因恢复
+    structure = gene[:4]  # 切割位置在4位末尾
+    content = gene[4:]
+    adult = []  # 声明恢复目标
+    for num in structure:
+        arr = []  # 每辆车的服务顺序
+        i = 0  # 声明切割点
+        for i in range(num):
+            arr.append(content[i])
+        content = content[i + 1:]
+        adult.append(arr)
+
+    return [structure, adult]  # 返回结构和内容
+</code></pre>
+<p>模块测试代码</p>
+<pre><code class="python">print(get_gene([5, 5, 2, 2],[[13, 9, 2, 6, 14], [15, 8, 12, 4, 11], [5, 7], [3, 10]]))
+
+print(grow([5, 5, 2, 2, 13, 9, 2, 6, 14, 15, 8, 12, 4, 11, 5, 7, 3, 10]))
+</code></pre>
+<h3 id="交叉方法"><a href="#交叉方法" class="headerlink" title="交叉方法"></a>交叉方法</h3><p>一对基因交叉会产生两个新的序列。</p>
+<ol>
+<li>先从4位后确定交换片段的长度，基因交叉时在4位后随机选取位点。</li>
+<li>先插入0（无意义，原序列也不存在），再删除基因4位后中存在的即将要插入片段中包括的所有数值。</li>
+<li>将片段插入到基因中，最后删除0，得到可用的基因。</li>
+</ol>
+<p>这种交叉方式在一定程度上保留了访问客户的顺序，相比直接交叉避免了客户被重复服务或者被漏掉的情况。</p>
+<p>交叉相关代码：</p>
+<pre><code class="python">def cross(item1, item2):  # 交叉
+    structures = [item1[:4], item2[:4]]  # 储存结构
+    gene_1 = item1[4:]
+    gene_2 = item2[4:]
+
+    swap_len = random.randint(1, int(len(gene_1) / 2))  # 交换长度
+    sec_p = random.randint(0, len(gene_1) - swap_len)  # 截取位点
+    insert_p = random.randint(0, len(gene_1))  # 插入位点
+
+    sections = [gene_1[sec_p:sec_p + swap_len], gene_2[sec_p:sec_p + swap_len]]  # 截取的交换片段
+
+    genes_s = [gene_1[:], gene_2[:]]  # 要返回的基因
+
+    for i in range(2):
+        genes_s[i].insert(insert_p, 0)  # 插入的0无意义，只是一个标记
+
+        for sec in sections[i]:
+            genes_s[i].remove(sec)
+        tag = genes_s[i].index(0)  # 0的标记位点
+
+        for j in range(swap_len):
+            genes_s[i].insert(tag + j, sections[i][j])
+        genes_s[i].remove(0)  # 移除标记位点
+
+    for i in range(K):
+        genes_s[0].insert(i, structures[0][i])
+        genes_s[1].insert(i, structures[1][i])
+    return genes_s
+</code></pre>
+<p>模块测试代码：</p>
+<pre><code class="python">print(cross([6, 6, 1, 1, 7, 15, 5, 11, 6, 13, 3, 14, 12, 10, 4, 9, 2, 8],[6, 4, 3, 1, 13, 14, 11, 5, 3, 15, 6, 7, 8, 12, 4, 9, 2, 10]))
+</code></pre>
+<h2 id="种群管理"><a href="#种群管理" class="headerlink" title="种群管理"></a>种群管理</h2><h3 id="生成初始种群"><a href="#生成初始种群" class="headerlink" title="生成初始种群"></a>生成初始种群</h3><p>生成初始种群时通过之前的<code>item_generate()</code>生成个体函数生成可行个体，再通过<code>cal_score()</code>函数计算个体的分数，通过<code>get_gene()</code>函数获取个体对应的基因。最终按照个体的分数进行从小到大排序。</p>
+<p>代码如下：</p>
+<pre><code class="python">def init_gen():  # 初始种群
+    population = []  # 声明初始种群
+
+    for index in range(init_population_num):
+        [k_num_list, k_visit_arr, k_x_scatter] = item_generate()
+
+        score = cal_score(k_visit_arr)
+        gene = get_gene(k_num_list, k_visit_arr)
+        population.append([score, gene])
+    population.sort()  # 此处排序为分数从小到大
+
+    print(&quot;已生成初始种群并完成排序&quot;)
+    return population  # 返回种群：[[分数,基因],...]
+</code></pre>
+<h3 id="种群的迭代"><a href="#种群的迭代" class="headerlink" title="种群的迭代"></a>种群的迭代</h3><p>种群迭代需要考虑变异，根据分数得到每个个体的选取概率，从个体中抽取进行交叉。整体大致的算法流程为：</p>
+<ol>
+<li>生成初始种群。</li>
+<li>将初始种群迭代：根据适应度计算每个个体被选择的概率并随机抽取一定的个体进行交叉（轮盘赌），按照变异概率发生变异，得到本次迭代后种群中的最优值。如果交叉一直失败，达到交叉失败次数的上限，则放弃继续交叉，使用新生成个体弥补。</li>
+<li>如果迭代过程中一直维持一个最优值不变，且到达迭代步数上限，则停止迭代。否则迭代步数清零，重新计算迭代步数。</li>
+</ol>
+<p>代码如下：</p>
+<pre><code class="python">def evolution(population):
+
+    if random.random() &lt; mutation_rate:  # 触发变异
+        print(&quot;触发变异&quot;)
+        for i in range(mutation_num):
+            [k_num_list, k_visit_arr, _] = item_generate()
+            gene = get_gene(k_num_list, k_visit_arr)
+            score = cal_score(k_visit_arr)
+            population.append([score, gene])
+
+    # 统计分数
+    scores = []
+    for item in population:
+        scores.append(item[0])
+    min_score = min(scores)  # 最低成本统计
+    print(&quot;最低成本&quot;, min_score)
+
+    # 计算比例
+    proportion = []  # 比例（累计）
+    proportion_sum = 0
+    score_max = max(scores)  # 得到成本最高值
+    adjusted_scores = []
+
+    for score in scores:  # 预处理
+        adjusted_scores.append((score_max - score + 20))
+
+    scores_sum = sum(adjusted_scores)
+    for score in adjusted_scores:
+        proportion_sum += score / scores_sum
+        proportion.append(proportion_sum)
+
+    selected_population = []  # 随机抽取的个体
+    bests_selected = []  # 用于交叉的好的个体（不是了， 也改成了随机个体）
+    pairs = evo_pairs  # 新增对数
+    for i in range(pairs):  # 根据需要添加的个体数，抽取交换的一对
+        r = random.random()
+        for j in range(len(proportion)):
+            if r &lt; proportion[j]:
+                selected_population.append(population[j][1])  # 添加随机抽取的个体基因
+                break
+        for j in range(len(proportion)):
+            if r &lt; proportion[j]:
+                bests_selected.append(population[j][1])  # 添加随机抽取的个体基因
+                break
+
+    for i in range(len(bests_selected)):  # 交叉后结果
+        passed_gene = []
+        count = 0
+        while len(passed_gene) &lt; 2 and count &lt; swap_max:  # 合格的基因个数不够，且在交叉尝试的范围内
+
+            genes = cross(bests_selected[i], selected_population[i])
+
+            # 获取基本信息
+            k_visit_arrs = [get_visit_arr_by_gene(genes[0]), get_visit_arr_by_gene(genes[1])]
+
+            k_x_scatters = [get_scatter(k_visit_arrs[0]), get_scatter(k_visit_arrs[1])]
+            # 检验是否可行
+            w_maxs = [cal_w_max(k_visit_arrs[0]), cal_w_max(k_visit_arrs[1])]
+            s_maxs = [cal_s_max(k_x_scatters[0]), cal_s_max(k_x_scatters[1])]
+
+            for j in range(2):
+                if w_maxs[j] &lt;= Q and s_maxs[j] &lt;= D:  # 符合要求
+                    passed_gene.append(genes[j])  # 添加到合格的基因
+
+        if len(passed_gene) &lt; 2:  # 没交叉出来
+            gene_remain = 2 - len(passed_gene)  # 剩余多少个达到标准
+            for r in range(gene_remain):
+                [k_num_list, k_visit_arr, _] = item_generate()
+                passed_gene.append(get_gene(k_num_list, k_visit_arr))
+
+        scores = [cal_score(get_visit_arr_by_gene(passed_gene[0])),
+                  cal_score(get_visit_arr_by_gene(passed_gene[0]))]  # 只取前两个
+        population.append([scores[0], passed_gene[0]])
+        population.append([scores[1], passed_gene[1]])
+
+    # for debug
+    scores = []
+    for item in population:
+        scores.append(item[0])
+    min_score = min(scores)  # 最高分统计
+    print(&quot;进化后最低成本&quot;, min_score)
+
+    population.sort()  # 排序
+    population = population[:init_population_num]  # 将数量调整回初始种群数量
+    return [min_score, population]
+</code></pre>
+<h1 id="遗传算法参数设置"><a href="#遗传算法参数设置" class="headerlink" title="遗传算法参数设置"></a>遗传算法参数设置</h1><p>调试参数设置如下：</p>
+<pre><code class="python"># 调试参数
+print_debug = 0  # 是否显示debug信息
+init_population_num = 100  # 初始种群数量
+evo_pairs = 50  # 每代多少个杂交对(新生成个体的数量 = evo_pairs*2)
+swap_max = 80  # 最大单次交换次数
+max_iterate = 1000  # 最大单次迭代步数
+mutation_rate = 0.2  # 变异概率
+mutation_num = 60  # 产生变异的个数
+</code></pre>
+<p>初始种群：随机生成含有 100 个可行个体的初始种群。<br>杂交：每次迭代的时候根据适应度计算的概率随机抽取 50 对个体进行杂交，杂交出另 50 对个体（100 个个体）。<br>单次交换：杂交可能失败，最多允许尝试 80 次，否则使用随机生成的个体补充。<br>单次迭代：如果最优值在迭代 1000 次后都没有发生变化，则停止迭代，输出结果。<br>变异：变异概率设置为 0.2，如果发生变异产生 60 个可行的变异个体。</p>
+<h1 id="遗传算法完整代码下载"><a href="#遗传算法完整代码下载" class="headerlink" title="遗传算法完整代码下载"></a>遗传算法完整代码下载</h1><link rel="stylesheet" href="/Tools/addition.css">
+<!-- 链接card -->
+<div class="link-card">
+    <a target="_blank" rel="noopener" href="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/src/ga.py">
+        <span class="link-card-title">ga.py</span>
+        <span class="link-description">本模型遗传算法Python完整代码下载，包含debug注释。</span>
+        <span class="link-navigation">
+            Visit
+            <span class="material-icons">arrow_forward</span>
+        </span>
+    </a>
+</div>
             
                 <!-- <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;border-radius: 2px;">
                     <p><strong>
@@ -911,8 +1090,8 @@ WHERE client _id = (
                     </strong>
                         <br>
                         <strong>本文链接：</strong>
-                        <a href="https://huuhghhgyg.github.io/2022/03/27/sql/">
-                            https://huuhghhgyg.github.io/2022/03/27/sql/
+                        <a href="https://huuhghhgyg.github.io/2022/07/13/ga/">
+                            https://huuhghhgyg.github.io/2022/07/13/ga/
                         </a>
                     </p>
                 </blockquote> -->
@@ -985,15 +1164,15 @@ WHERE client _id = (
                         </div>
                     </div>
                     <div class="title-link">
-                        <a href="https://huuhghhgyg.github.io/2022/03/27/sql/">
-                            https://huuhghhgyg.github.io/2022/03/27/sql/
+                        <a href="https://huuhghhgyg.github.io/2022/07/13/ga/">
+                            https://huuhghhgyg.github.io/2022/07/13/ga/
                         </a>
                     </div>
                     <div class="info">
                         <div class="time license-block">
                             <div class="license-subtitle">发文时间</div>
                             <div class="license-content">
-                                3月 27, 2022
+                                7月 13, 2022
                             </div>
                         </div>
                         <div class="license license-block">
@@ -1065,21 +1244,13 @@ WHERE client _id = (
 <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2022/07/12/optimization-code/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2022/03/25/CSharpTask/" id="post_nav-older" class="next-content">
+        <a href="/2022/07/12/optimization-code/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
