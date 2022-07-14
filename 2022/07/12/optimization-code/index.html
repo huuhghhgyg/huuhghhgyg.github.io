@@ -313,7 +313,7 @@
 
     
         <meta property="article:published_time" content="Tue Jul 12 2022 22:22:54 GMT+0800">
-        <meta property="article:modified_time" content="Thu Jul 14 2022 11:54:14 GMT+0800">
+        <meta property="article:modified_time" content="Thu Jul 14 2022 12:13:07 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -336,7 +336,7 @@
     "mainEntityOfPage": "https://huuhghhgyg.github.io/2022/07/12/optimization-code/index.html",
     "headline": "优化软件语法",
     "datePublished": "Tue Jul 12 2022 22:22:54 GMT+0800",
-    "dateModified": "Thu Jul 14 2022 11:54:14 GMT+0800",
+    "dateModified": "Thu Jul 14 2022 12:13:07 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "huuhghhgyg",
@@ -637,6 +637,7 @@ MathJax.Hub.Config({
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
 });
 </script>
+<link rel="stylesheet" href="/Tools/math.css">
 
 <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>求解大规模线性优化问题的时候不可能使用单纯形算法一个个地列单纯形表去手算，必须借助计算机求解才能使求解精确解的求解速度在可接受的范围内。可接受的求解时间范围根据每个人的接受情况不同大多分布于3小时或1天之内。此处记录一下之前稍微了解到的LINGO软件的语言、这次自学的CPLEX软件的OPL语言，这两个软件都可以用于求解线性规划问题。</p>
 <h1 id="LINGO语法"><a href="#LINGO语法" class="headerlink" title="LINGO语法"></a>LINGO语法</h1><p>LINGO的整个线性规划模型大致可以描述为：</p>
@@ -703,7 +704,7 @@ enddata
 <p>如果同时用到两个下标进行求和的时候，可以直接使用集合函数<code>@sum</code>对其直接进行求和，否则应考虑如何使用<code>@for</code>函数遍历所有情况。</p>
 </blockquote>
 <h3 id="LINGO中目标函数的表示"><a href="#LINGO中目标函数的表示" class="headerlink" title="LINGO中目标函数的表示"></a>LINGO中目标函数的表示</h3><p>数学公式</p>
-<div><span>`min\sum_{j=1}^2\sum_{i=1}^6\sqrt{(x_j-a_i)^2+(y_j-b_i)^2}`</span></div>
+<div class="formula"><span>`min\sum_{j=1}^2\sum_{i=1}^6\sqrt{(x_j-a_i)^2+(y_j-b_i)^2}`</span></div>
 
 <p>LINGO代码：</p>
 <pre><code class="lingo">min = @sum(T(j): @sum(S(i):
@@ -712,7 +713,7 @@ enddata
 </code></pre>
 <p>范围不同，需要使用两次<code>@sum</code>进行求和操作。<code>@sum</code>内表示了求和操作的对象，如<code>T(j)</code>和<code>S(i)</code>，其冒号后跟的是求和对象。</p>
 <h3 id="LINGO中约束方程的表示"><a href="#LINGO中约束方程的表示" class="headerlink" title="LINGO中约束方程的表示"></a>LINGO中约束方程的表示</h3><p>数学公式</p>
-<div>
+<div class="formula">
 <span>s.t.</span>
 <span>
 $

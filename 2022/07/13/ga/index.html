@@ -313,7 +313,7 @@
 
     
         <meta property="article:published_time" content="Wed Jul 13 2022 12:07:30 GMT+0800">
-        <meta property="article:modified_time" content="Thu Jul 14 2022 11:54:40 GMT+0800">
+        <meta property="article:modified_time" content="Thu Jul 14 2022 12:12:21 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -336,7 +336,7 @@
     "mainEntityOfPage": "https://huuhghhgyg.github.io/2022/07/13/ga/index.html",
     "headline": "使用Python编写遗传算法",
     "datePublished": "Wed Jul 13 2022 12:07:30 GMT+0800",
-    "dateModified": "Thu Jul 14 2022 11:54:40 GMT+0800",
+    "dateModified": "Thu Jul 14 2022 12:12:21 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "huuhghhgyg",
@@ -637,6 +637,7 @@ MathJax.Hub.Config({
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
 });
 </script>
+<link rel="stylesheet" href="/Tools/math.css">
 
 <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>当涉及非线性规划问题或者难以在短时间内求得满意解的线性规划问题，可以通过求其近似解（或满意解）而非精确解。使用遗传算法求解近似解所消耗的时间远少于求解精确解，多数时候近似解的效果都可以接受。<br>遗传算法的优势体现在：在小规模问题上，遗传算法求解得到的通常是精确解；而在大规模问题上，遗传算法通常可以通过较短的时间求得精确解。<br><img src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/ga/ga.webp" alt="ga1"></p>
 <blockquote>
@@ -661,9 +662,9 @@ MathJax.Hub.Config({
 <td>367.07</td>
 </tr>
 </tbody></table>
-<h1 id="模型描述"><a href="#模型描述" class="headerlink" title="模型描述"></a>模型描述</h1><h2 id="目标函数"><a href="#目标函数" class="headerlink" title="目标函数"></a>目标函数</h2><div><span>`minf=P\sum_{k=1}^K\sum_{i=1}^N\sum_{j=1}^Nx_{kij}d_{ij}+\frac{P_a}{Q}\sum_{i=1}^N\sum_{j=1}^N(y_{ij}+z_{ij})x_{kij}d_{ij}+P_m\sum_{k=1}^K\sum_{i=1}^N\sum_{j=M}^Nx_{kij}q_j`</span></div>
+<h1 id="模型描述"><a href="#模型描述" class="headerlink" title="模型描述"></a>模型描述</h1><h2 id="目标函数"><a href="#目标函数" class="headerlink" title="目标函数"></a>目标函数</h2><div class="formula"><span>`minf=P\sum_{k=1}^K\sum_{i=1}^N\sum_{j=1}^Nx_{kij}d_{ij}+\frac{P_a}{Q}\sum_{i=1}^N\sum_{j=1}^N(y_{ij}+z_{ij})x_{kij}d_{ij}+P_m\sum_{k=1}^K\sum_{i=1}^N\sum_{j=M}^Nx_{kij}q_j`</span></div>
 
-<h2 id="约束方程"><a href="#约束方程" class="headerlink" title="约束方程"></a>约束方程</h2><div>
+<h2 id="约束方程"><a href="#约束方程" class="headerlink" title="约束方程"></a>约束方程</h2><div class="formula">
 <span>
 $
 s.t.\left\{  
