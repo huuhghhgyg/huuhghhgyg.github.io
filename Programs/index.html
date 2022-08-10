@@ -2,37 +2,78 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>小程序列表</title>
-    <link rel="stylesheet" href="./tailwind.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小程序页面</title>
+  <link rel="stylesheet" href="./tailwind.css">
 </head>
 
-<body class="bg-gray-100">
-    <div class="p-8">
-        <h1 class="text-4xl font-normal text-gray-700">小程序页面🎈</h1>
-        <div class="mt-8">
-            <div class="rounded-lg bg-white p-8 shadow-xl">
-                <h2 class="text-3xl font-semibold text-gray-700">Oral Calculation</h2>
-                <p class="mt-4 mb-2 text-gray-500">一个口算自动生成应用📐</p>
-                <span>
-                    <span>👉</span>
-                    <a class="underline text-blue-400"
-                    href="https://launcher3-1251886115.cos.ap-shanghai.myqcloud.com/OralCalculation/index.html">前往</a>
-                </span>
-            </div>
-            <div class="mt-12 rounded-lg bg-white p-8 shadow-xl">
-                <h2 class="text-3xl font-semibold text-gray-700">Chamberlain</h2>
-                <p class="mt-4 mb-2 text-gray-500">现在是一个能够创建提醒的todo-list🤣</p>
-                <span>
-                    <span>👉</span>                    
-                    <a class="underline text-blue-400"
-                    href="https://launcher3-1251886115.cos.ap-shanghai.myqcloud.com/Chamberlain/index.html">前往</a>
-                </span>
-            </div>
-        </div>
+<body class="bg-white dark:bg-gray-800 flex flex-col">
+  <!-- 导航栏 -->
+  <div class="nav-bar">
+    <ul class="flex items-center justify-end">
+      <li class="nav-items"><a href="https://huuhghhgyg.github.io/">Blog</a></li>
+      <li class="nav-items"><a href="https://huuhghhgyg.github.io/links">Link</a></li>
+      <li class="nav-items"><a href="https://huuhghhgyg.github.io/about">About Me</a></li>
+    </ul>
+  </div>
+
+  <!-- 内容 -->
+  <div class="content-box">
+    <!-- 介绍 -->
+    <div class="flex flex-col md:flex-row items-start">
+      <div>
+        <h1 class="page-title">Some Softwares By Huuhghhgyg</h1>
+        <p class="page-desc">一些有用的小程序</p>
+      </div>
+      <div class="mt-4 md:mt-0 overflow-hidden rounded-3xl transition-all hover:rounded-xl">
+        <img src="https://cdn.dribbble.com/users/124454/screenshots/17293053/media/d05fddb4583ef12b7f5ef3aeb29f0af9.png"
+          alt="" />
+      </div>
     </div>
+
+    <!-- 程序 -->
+    <div>
+
+      <div class="mt-12">
+        <div class="pb-4">
+          <h2 class="card-title">Chamberlain</h2>
+          <p class="card-desc">一个能够创建提醒的todo-list和备份工具📆</p>
+        </div>
+        <img class="card-img"
+          src="https://raw.githubusercontent.com/huuhghhgyg/Chamberlain_UWP/master/images/MainPage.png" alt="" />
+      </div>
+      <div class="mt-4 flex items-center">
+        <div class="download-btn btn2-color">
+          <a href="https://launcher3-1251886115.cos.ap-shanghai.myqcloud.com/Chamberlain/index.html">Download</a>
+        </div>
+        <a href="https://github.com/huuhghhgyg/Chamberlain_UWP" class="link-btn">👓转到GitHub</a>
+      </div>
+    </div>
+
+    <div class="mt-12">
+      <div class="pb-4">
+        <h2 class="card-title">Oral Calculation</h2>
+        <p class="card-desc">一个口算自动生成应用📐</p>
+      </div>
+      <img class="card-img" src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/OralCalculation_1.webp"
+        alt="" />
+    </div>
+    <div class="mt-4 flex items-center">
+      <div class="download-btn btn1-color">
+        <a href="https://launcher3-1251886115.cos.ap-shanghai.myqcloud.com/OralCalculation/index.html">Download</a>
+      </div>
+      <a href="https://github.com/huuhghhgyg/OralCalculation" class="link-btn">👓转到GitHub</a>
+    </div>
+
+  </div>
+
+  <footer class="footer-box">
+    <a href="">Huuhghhgyg's GitHub Page</a>
+    <p>Copyright © 2017 - 2022 Hikaru's Blog</p>
+  </footer>
+
 </body>
 
 </html>
