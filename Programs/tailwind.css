@@ -747,7 +747,7 @@ video {
 @media (prefers-color-scheme: dark) {
   .card-title {
     --tw-text-opacity: 1;
-    color: rgb(209 213 219 / var(--tw-text-opacity));
+    color: rgb(229 231 235 / var(--tw-text-opacity));
   }
 }
 
@@ -760,7 +760,7 @@ video {
 @media (prefers-color-scheme: dark) {
   .card-desc {
     --tw-text-opacity: 1;
-    color: rgb(209 213 219 / var(--tw-text-opacity));
+    color: rgb(229 231 235 / var(--tw-text-opacity));
   }
 }
 
@@ -791,12 +791,24 @@ video {
   margin-left: 1rem;
   font-size: 1.125rem;
   line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+
+.link-btn:hover {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
   .link-btn {
     --tw-text-opacity: 1;
-    color: rgb(243 244 246 / var(--tw-text-opacity));
+    color: rgb(209 213 219 / var(--tw-text-opacity));
+  }
+
+  .link-btn:hover {
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
   }
 }
 
