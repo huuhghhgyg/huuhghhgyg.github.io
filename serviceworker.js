@@ -40,10 +40,6 @@ self.addEventListener('install', (e) => {
         '/img/random/material-30.webp',
         '/img/random/material-31.webp',
         '/img/random/material-32.webp',
-        '/page/2',
-        '/page/3',
-        '/page/4',
-        '/page/5',
       ])),
     );
   });
