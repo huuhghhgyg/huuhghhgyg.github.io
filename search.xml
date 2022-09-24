@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title>MicroCity内置的LUA函数</title>
+      <title>MCity内置的LUA函数</title>
       <link href="/2022/09/23/lua-microcity/"/>
       <url>/2022/09/23/lua-microcity/</url>
       
@@ -14,9 +14,9 @@
       
         <tags>
             
-            <tag> 编程 </tag>
-            
             <tag> 语法 </tag>
+            
+            <tag> 编程 </tag>
             
             <tag> Lua </tag>
             
@@ -37,9 +37,9 @@
       
         <tags>
             
-            <tag> 编程 </tag>
-            
             <tag> 语法 </tag>
+            
+            <tag> 编程 </tag>
             
             <tag> Python </tag>
             
@@ -399,9 +399,9 @@
             
             <tag> 后端 </tag>
             
-            <tag> 编程 </tag>
-            
             <tag> 语法 </tag>
+            
+            <tag> 编程 </tag>
             
         </tags>
       
@@ -1118,17 +1118,6 @@
     
     
     <entry>
-      <title>About Me</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[<p>huuhghhgyg这个名字是一次玩奥比岛的时候乱打的，后来就一直沿用下来了😀<br>huu也是这个名字的简称。</p><p>🥴性格：INTP50%,INTJ50%(更新于2019年3月)</p><p>🆒喜欢研究设计相关，喜欢北欧风格和北欧🏔（梦想是去北欧三国旅游哈哈🌍，要攒💰）；<br>🆕喜欢电子产品中的Material Design（Material You也不错🤗）和Fluent Design（虽然最近有点拉）。(蓝色最棒!!!😋)</p><p>🆓自由散漫<br>🍣喜欢日本菜<br>📱喜欢折腾电子产品<br>🚆火车迷（半个，特别喜欢新干线🚄）<br>🌟喜欢做些新的尝试，每天都是崭新的一天。Never Settle,一步一步来。</p><p>物流工程专业📦，最近在学习前端相关知识。</p><h1 id="找我吗？"><a href="#找我吗？" class="headerlink" title="找我吗？"></a>找我吗？</h1><p><strong>邮箱:</strong><a href="mailto:huuhghhgyg@outlook.com">Email him</a></p><blockquote><p>经常能看到的邮箱</p></blockquote><h2 id="来点墙外的？"><a href="#来点墙外的？" class="headerlink" title="来点墙外的？"></a>来点墙外的？</h2><p><strong>Facebook:</strong><a href="https://www.facebook.com/hghhgyg.huu.7">huuhghhgyg</a></p><p><strong>Twitter:</strong><a href="https://twitter.com/Huuhghhgyg">huuhghhgyg</a></p><blockquote><p>Instagram就在Facebook里面找吧，不写了</p></blockquote><h2 id="去我的Github页面逛逛吗？"><a href="#去我的Github页面逛逛吗？" class="headerlink" title="去我的Github页面逛逛吗？"></a>去我的Github页面逛逛吗？</h2><p><strong>Github:</strong><a href="https://github.com/huuhghhgyg">huuhghhgyg</a></p>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title></title>
       <link href="/links/footerstyle.css"/>
       <url>/links/footerstyle.css</url>
@@ -1140,11 +1129,11 @@
     
     
     <entry>
-      <title>links</title>
-      <link href="/links/index.html"/>
-      <url>/links/index.html</url>
+      <title>About Me</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>huuhghhgyg这个名字是一次玩奥比岛的时候乱打的，后来就一直沿用下来了😀<br>huu也是这个名字的简称。</p><p>🥴性格：INTP50%,INTJ50%(更新于2019年3月)</p><p>🆒喜欢研究设计相关，喜欢北欧风格和北欧🏔（梦想是去北欧三国旅游哈哈🌍，要攒💰）；<br>🆕喜欢电子产品中的Material Design（Material You也不错🤗）和Fluent Design（虽然最近有点拉）。(蓝色最棒!!!😋)</p><p>🆓自由散漫<br>🍣喜欢日本菜<br>📱喜欢折腾电子产品<br>🚆火车迷（半个，特别喜欢新干线🚄）<br>🌟喜欢做些新的尝试，每天都是崭新的一天。Never Settle,一步一步来。</p><p>物流工程专业📦，最近在学习前端相关知识。</p><h1 id="找我吗？"><a href="#找我吗？" class="headerlink" title="找我吗？"></a>找我吗？</h1><p><strong>邮箱:</strong><a href="mailto:huuhghhgyg@outlook.com">Email him</a></p><blockquote><p>经常能看到的邮箱</p></blockquote><h2 id="来点墙外的？"><a href="#来点墙外的？" class="headerlink" title="来点墙外的？"></a>来点墙外的？</h2><p><strong>Facebook:</strong><a href="https://www.facebook.com/hghhgyg.huu.7">huuhghhgyg</a></p><p><strong>Twitter:</strong><a href="https://twitter.com/Huuhghhgyg">huuhghhgyg</a></p><blockquote><p>Instagram就在Facebook里面找吧，不写了</p></blockquote><h2 id="去我的Github页面逛逛吗？"><a href="#去我的Github页面逛逛吗？" class="headerlink" title="去我的Github页面逛逛吗？"></a>去我的Github页面逛逛吗？</h2><p><strong>Github:</strong><a href="https://github.com/huuhghhgyg">huuhghhgyg</a></p>]]></content>
       
     </entry>
     
@@ -1154,6 +1143,17 @@
       <title>timeline</title>
       <link href="/timeline/index.html"/>
       <url>/timeline/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>links</title>
+      <link href="/links/index.html"/>
+      <url>/links/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
