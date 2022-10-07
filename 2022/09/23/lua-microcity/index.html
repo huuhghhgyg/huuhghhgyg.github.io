@@ -313,7 +313,7 @@
 
     
         <meta property="article:published_time" content="Fri Sep 23 2022 16:20:36 GMT+0800">
-        <meta property="article:modified_time" content="Sun Oct 02 2022 18:02:26 GMT+0800">
+        <meta property="article:modified_time" content="Sat Oct 08 2022 01:03:28 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -336,7 +336,7 @@
     "mainEntityOfPage": "https://huuhghhgyg.github.io/2022/09/23/lua-microcity/index.html",
     "headline": "MicroCity内置的LUA函数",
     "datePublished": "Fri Sep 23 2022 16:20:36 GMT+0800",
-    "dateModified": "Sun Oct 02 2022 18:02:26 GMT+0800",
+    "dateModified": "Sat Oct 08 2022 01:03:28 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "huuhghhgyg",
@@ -419,7 +419,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Lua%E7%9A%84%E5%B0%8F%E7%89%B9%E6%80%A7%EF%BC%9A%E9%9B%86%E5%90%88"><span class="post-toc-number">1.</span> <span class="post-toc-text">Lua的小特性：集合</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MicroCity%E7%9A%84%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0"><span class="post-toc-number">2.</span> <span class="post-toc-text">MicroCity的内置函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">常用函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%9B%BE%E5%BD%A2"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">图形</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Open"><span class="post-toc-number">2.1.1.1.</span> <span class="post-toc-text">Open</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Update"><span class="post-toc-number">2.1.1.2.</span> <span class="post-toc-text">Update</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%9F%A2%E9%87%8F%E5%9B%BE"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">矢量图</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetRecCount"><span class="post-toc-number">2.1.2.1.</span> <span class="post-toc-text">GetRecCount</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetShape"><span class="post-toc-number">2.1.2.2.</span> <span class="post-toc-text">GetShape</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetPartCount"><span class="post-toc-number">2.1.2.3.</span> <span class="post-toc-text">GetPartCount</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetPointCount"><span class="post-toc-number">2.1.2.4.</span> <span class="post-toc-text">GetPointCount</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetPointXY"><span class="post-toc-number">2.1.2.5.</span> <span class="post-toc-text">GetPointXY</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetValue"><span class="post-toc-number">2.1.2.6.</span> <span class="post-toc-text">GetValue</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#SetValue"><span class="post-toc-number">2.1.2.7.</span> <span class="post-toc-text">SetValue</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetShapeLen"><span class="post-toc-number">2.1.2.8.</span> <span class="post-toc-text">GetShapeLen</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%A0%85%E6%A0%BC%E5%9B%BE"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">栅格图</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ShapeToGrid"><span class="post-toc-number">2.1.3.1.</span> <span class="post-toc-text">ShapeToGrid</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetGridMaxXY"><span class="post-toc-number">2.1.3.2.</span> <span class="post-toc-text">GetGridMaxXY</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetValue-1"><span class="post-toc-number">2.1.3.3.</span> <span class="post-toc-text">GetValue</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#SetValue-1"><span class="post-toc-number">2.1.3.4.</span> <span class="post-toc-text">SetValue</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Lua%E7%9A%84%E5%B0%8F%E7%89%B9%E6%80%A7%EF%BC%9A%E9%9B%86%E5%90%88"><span class="post-toc-number">1.</span> <span class="post-toc-text">Lua的小特性：集合</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MicroCity%E7%9A%84%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0"><span class="post-toc-number">2.</span> <span class="post-toc-text">MicroCity的内置函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">常用函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%9B%BE%E5%BD%A2"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">图形</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Open"><span class="post-toc-number">2.1.1.1.</span> <span class="post-toc-text">Open</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Update"><span class="post-toc-number">2.1.1.2.</span> <span class="post-toc-text">Update</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%9F%A2%E9%87%8F%E5%9B%BE"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">矢量图</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetRecCount"><span class="post-toc-number">2.1.2.1.</span> <span class="post-toc-text">GetRecCount</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetShape"><span class="post-toc-number">2.1.2.2.</span> <span class="post-toc-text">GetShape</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetPartCount"><span class="post-toc-number">2.1.2.3.</span> <span class="post-toc-text">GetPartCount</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetPointCount"><span class="post-toc-number">2.1.2.4.</span> <span class="post-toc-text">GetPointCount</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetPointXY"><span class="post-toc-number">2.1.2.5.</span> <span class="post-toc-text">GetPointXY</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetValue"><span class="post-toc-number">2.1.2.6.</span> <span class="post-toc-text">GetValue</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#SetValue"><span class="post-toc-number">2.1.2.7.</span> <span class="post-toc-text">SetValue</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetShapeLen"><span class="post-toc-number">2.1.2.8.</span> <span class="post-toc-text">GetShapeLen</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetDistance"><span class="post-toc-number">2.1.2.9.</span> <span class="post-toc-text">GetDistance</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%A0%85%E6%A0%BC%E5%9B%BE"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">栅格图</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ShapeToGrid"><span class="post-toc-number">2.1.3.1.</span> <span class="post-toc-text">ShapeToGrid</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetGridMaxXY"><span class="post-toc-number">2.1.3.2.</span> <span class="post-toc-text">GetGridMaxXY</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GetValue-1"><span class="post-toc-number">2.1.3.3.</span> <span class="post-toc-text">GetValue</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#SetValue-1"><span class="post-toc-number">2.1.3.4.</span> <span class="post-toc-text">SetValue</span></a></li></ol></li></ol></li></ol></li></ol>
     </ul>
     
 
@@ -710,6 +710,10 @@ end
 <td><a href="#GetShapeLen"><code>GetShapeLen</code></a></td>
 <td>获取图形对象的长度</td>
 </tr>
+<tr>
+<td><a href="#GetDistance"><code>GetDistance</code></a></td>
+<td>获取坐标点之间的距离</td>
+</tr>
 </tbody></table>
 <h4 id="GetRecCount"><a href="#GetRecCount" class="headerlink" title="GetRecCount"></a>GetRecCount</h4><p><code>GetRecCount([图形文件对象])</code>，返回图形文件中记录的图形对象个数。</p>
 <pre><code class="lua">countryNum = GetRecCount(countriesObject)
@@ -729,12 +733,30 @@ end
 <h4 id="GetValue"><a href="#GetValue" class="headerlink" title="GetValue"></a>GetValue</h4><p><code>GetaValue([图形对象], &quot;属性名&quot;)</code>，返回对应图形对象的属性值。</p>
 <pre><code class="lua">name = GetValue(country, &quot;NAME&quot;)
 </code></pre>
-<h4 id="SetValue"><a href="#SetValue" class="headerlink" title="SetValue"></a>SetValue</h4><p>设置图形对象的属性值。也可以是对应图形表中的值。<br><code>SetValue([图形对象], [设置值], &quot;属性名&quot;)</code><br><code>SetValue([图形对象], [设置值1], &quot;属性名1&quot;, [设置值2], &quot;属性值2&quot;, ...)</code></p>
+<h4 id="SetValue"><a href="#SetValue" class="headerlink" title="SetValue"></a>SetValue</h4><p>设置图形对象的属性值。也可以是对应图形表中的值。</p>
+<p>函数重载：</p>
+<pre><code class="lua">-- 对单个图形对象进行属性设置
+SetValue([图形对象], [设置值], &quot;属性名&quot;)
+SetValue([图形对象], [设置值1], &quot;属性名1&quot;, [设置值2], &quot;属性值2&quot;, ...)
+
+-- 设置图形文件对象中固定编号(index)对象的属性值(Shapes中包含有多个图形对象)
+SetValue (Shapes, [设置值], &quot;属性名&quot;, [index])
+-- 也可以设置多个编号的同一个属性名为同一个值
+SetValue (Shapes, [设置值], &quot;属性名&quot;, [index1], [index2], ...)
+</code></pre>
+<p>使用实例</p>
 <pre><code class="lua">SetValue(shape, 0, &quot;W&quot;) --设置图形的W(表中)属性值为0
 </code></pre>
-<p>设置图形文件对象中固定编号(index)对象的属性值(Shapes中包含有多个图形对象)<br><code>SetValue (Shapes, [设置值], &quot;属性名&quot;, [index])</code><br>也可以设置多个编号的同一个属性名为同一个值<br><code>SetValue (Shapes, [设置值], &quot;属性名&quot;, [index1], [index2], ...)</code></p>
-<h4 id="GetShapeLen"><a href="#GetShapeLen" class="headerlink" title="GetShapeLen"></a>GetShapeLen</h4><p>返回图形的长度<br><code>GetShapeLen([图形])</code><br><code>GetShapeLen([图形1], [图形2], ...)</code></p>
+<h4 id="GetShapeLen"><a href="#GetShapeLen" class="headerlink" title="GetShapeLen"></a>GetShapeLen</h4><p>返回图形的长度</p>
+<p>函数重载：</p>
+<pre><code class="lua">GetShapeLen([图形])
+GetShapeLen([图形1], [图形2], ...)
+</code></pre>
+<p>使用实例</p>
 <pre><code class="lua">local len = GetShapeLen(route) --获取线路（line形状）的长度
+</code></pre>
+<h4 id="GetDistance"><a href="#GetDistance" class="headerlink" title="GetDistance"></a>GetDistance</h4><p>根据坐标值返回坐标点的长度。如果输入了多个坐标点，则返回每两对点之间的距离。<code>(x1,y1), (x2,y2), (x3,y3)</code></p>
+<pre><code class="lua">GetDistance(x1, y1, x2, y2 [, x3, y3, ...])
 </code></pre>
 <h3 id="栅格图"><a href="#栅格图" class="headerlink" title="栅格图"></a>栅格图</h3><table>
 <thead>
