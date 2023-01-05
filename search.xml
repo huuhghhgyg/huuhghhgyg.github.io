@@ -89,9 +89,9 @@
       
         <tags>
             
-            <tag> 后端 </tag>
-            
             <tag> 编程 </tag>
+            
+            <tag> 后端 </tag>
             
         </tags>
       
@@ -171,11 +171,11 @@
       
         <tags>
             
-            <tag> 后端 </tag>
-            
             <tag> C# </tag>
             
             <tag> 编程 </tag>
+            
+            <tag> 后端 </tag>
             
         </tags>
       
@@ -194,11 +194,11 @@
       
         <tags>
             
-            <tag> 后端 </tag>
-            
             <tag> C# </tag>
             
             <tag> 编程 </tag>
+            
+            <tag> 后端 </tag>
             
         </tags>
       
@@ -364,7 +364,7 @@
       <link href="/2021/01/20/raspi-setup/"/>
       <url>/2021/01/20/raspi-setup/</url>
       
-        <content type="html"><![CDATA[<p>重新刷入系统进行各项设置安装</p><link rel="stylesheet" href="/Tools/addition.css"><h1 id="系统下载安装"><a href="#系统下载安装" class="headerlink" title="系统下载安装"></a>系统下载安装</h1><p>有3个系统可以选择<br><strong>Raspbian</strong></p><!-- 有图标的链接card --><div class="link-card">    <a href="https://www.raspberrypi.org/software/operating-systems/">        <div class="img-card-span">            <image class="link-card-img" src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/icon/raspberry.webp">            </image>            <span class="img-h2">下载Raspbian</span>            <span class="img-description">Raspberry Pi OS, our official supported operating system</span>        </div>        <span class="link-navigation">            Visit            <span class="material-icons">arrow_forward</span>        </span>    </a></div><p><strong>Ubuntu</strong></p><!-- 有图标的链接card --><div class="link-card">    <a href="https://ubuntu.com/download/raspberry-pi">        <div class="img-card-span">            <image class="link-card-img" src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/icon/ubuntu.webp">            </image>            <span class="img-h2">下载Ubuntu</span>            <span class="img-description">Running Ubuntu on your Raspberry Pi is easy. Just pick the OS image you want, flash it onto a microSD card, load it onto your Pi and away you go.</span>        </div>        <span class="link-navigation">            Visit            <span class="material-icons">arrow_forward</span>        </span>    </a></div><!-- 链接card --><div class="link-card">    <a href="https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi">        <span class="link-card-title">Ubuntu官方指引</span>        <span class="link-description">In this tutorial, we walk you through the process of installing Ubuntu Server on a Raspberry Pi</span>        <span class="link-navigation">            Visit            <span class="material-icons">arrow_forward</span>        </span>    </a></div><p>默认账号ubuntu，密码ubuntu，进入后会要求修改密码</p><p><strong>OPENFANS Raspbian</strong><br>这是一个由Debian重新构建的系统</p><!-- 链接card --><div class="link-card">    <a href="https://gitee.com/openfans-community/Debian-Pi-Aarch64">        <span class="link-card-title">Debian-Pi-Aarch64</span>        <span class="link-description">这是全球发行的第一个同时支持树莓派全系64位硬件的64位系统 !!!（包括：2Bv1.2，3B，3B+，3A+，4B）</span>        <span class="link-navigation">            Visit            <span class="material-icons">arrow_forward</span>        </span>    </a></div><h1 id="软件源"><a href="#软件源" class="headerlink" title="软件源"></a>软件源</h1><p>备份软件源后对其进行修改<br><code>sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak</code></p><p>在这里使用清华tuna源<br>在 ARM(arm64, armhf)、PowerPC(ppc64el)、RISC-V(riscv64) 和 S390x 等架构的设备上（对应官方源为ports.ubuntu.com）使用 ubuntu-ports 镜像。</p><pre><code class="bash"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal main restricted universe multiverse# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal main restricted universe multiversedeb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-updates main restricted universe multiverse# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-updates main restricted universe multiversedeb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-backports main restricted universe multiverse# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-backports main restricted universe multiversedeb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-security main restricted universe multiverse# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-security main restricted universe multiverse# 预发布软件源，不建议启用# deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-proposed main restricted universe multiverse# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-proposed main restricted universe multiverse</code></pre><h1 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a>Vim</h1><p>新建vim配置文件<br><code>vim ~/.vimrc</code></p><p>vim配置</p><pre><code>syntax enable &quot;自动检测语法syntax on &quot;自动语法高亮set number &quot;显示行号colorscheme industry &quot;设定配色方案set guifont=Consolas:h12:cANSI &quot;英文字体set guifontwide=SimSun-ExtB:h12:cGB2312 &quot;设置文字宽度set tabstop=4 &quot;表示Tab代表4个空格的宽度set expandtab &quot;表示Tab自动转换成空格set autoindent &quot;表示换行后自动缩进set autoread &quot;当文件在外部被修改时，自动重新读取set history=400 &quot;vim记住的历史操作的数量，默认的是20set nocompatible &quot;使用vim自己的键盘模式,而不是兼容vi的模式set confirm &quot;处理未保存或者只读文件时,给出提示set smartindent &quot;智能对齐set shiftwidth=4 &quot;偏移4个空格set helplang=cn &quot;中文帮助文档(前提是下了中文包)</code></pre><h1 id="Python相关"><a href="#Python相关" class="headerlink" title="Python相关"></a>Python相关</h1><p><strong>安装pip</strong><br><code>sudo apt install python3-pip</code></p><p><strong>安装Selenium对浏览器进行控制</strong><br><code>pip3 install selenium</code></p><p><strong>安装火狐</strong><br><code>sudo apt install firefox</code><br>如果出现错误，可以尝试<br><code>sudo apt install firefox-esr</code></p><p><strong>安装虚拟屏幕</strong>:在shell中也可以使用Selenium<br><code>sudo apt install xvfb</code><br><code>pip3 install pyvirtualdisplay</code></p><h1 id="安装Samba服务器用于传文件"><a href="#安装Samba服务器用于传文件" class="headerlink" title="安装Samba服务器用于传文件"></a>安装Samba服务器用于传文件</h1><p><code>sudo apt install samba</code></p><p>备份Samba配置文件后修改<br><code>sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.bak</code><br><code>sudo vim /etc/samba/smb.conf</code></p><p>防乱码：在[default]下添加</p><pre><code>unix charset = UTF-8 dos charset = cp936 </code></pre><h2 id="文件夹权限"><a href="#文件夹权限" class="headerlink" title="文件夹权限"></a>文件夹权限</h2><p>先用两张表格</p><table><thead><tr><th>r 读取</th><th>w 写入</th><th>x 执行</th></tr></thead><tbody><tr><td>4</td><td>2</td><td>1</td></tr></tbody></table><table><thead><tr><th>d</th><th>rwx</th><th>rwx</th><th>rwx</th></tr></thead><tbody><tr><td>文件(-)&#x2F;目录(d)</td><td>4+2+1</td><td>4+2+1</td><td>4+2+1</td></tr></tbody></table><p>将文件夹权限更改为777</p><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><pre><code>[share]path = /home/pi/terminalavailable = yesbrowseable = yespublic = yeswritable = yesvalid users = picreate mask = 0777directory mask =0777force user = piforce group = samba-public</code></pre><p><strong>添加用户组</strong></p><pre><code class="bash">sudo useradd -rs /bin/false samba-publicsudo chown samba-public /home/pi/terminalsudo chmod u+rwx /home/pi/terminal</code></pre><p><strong>添加名为pi的用户</strong><br><code>sudo smbpasswd -a pi</code></p><p><strong>测试配置是否有错误</strong><br><code>sudo testparm</code></p><p><strong>重新启动Samba服务器</strong><br><code>sudo service smbd restart</code></p><h1 id="设置时区-防止执行时间错误"><a href="#设置时区-防止执行时间错误" class="headerlink" title="设置时区:防止执行时间错误"></a>设置时区:防止执行时间错误</h1><p><code>timedatectl set-timezone Asia/Shanghai</code></p><h1 id="设置定时任务"><a href="#设置定时任务" class="headerlink" title="设置定时任务"></a>设置定时任务</h1><p><code>crontab -e</code></p><p><strong>查看crontab日志</strong><br><code>sudo cat /var/log/syslog | grep -i cron</code></p><h1 id="开机启动"><a href="#开机启动" class="headerlink" title="开机启动"></a>开机启动</h1><p>编辑开机启动服务<br><code>sudo vim /lib/systemd/system/rc-local.service</code></p><p>以某一用户执行命令（<code>screen -S main</code>为命令、<code>pi</code>为用户）<br><code>su -c &#39;screen -S main&#39; pi</code></p><p><strong>添加</strong></p><pre><code>[Install]WantedBy=multi-user.targetAlias=rc-local.service</code></pre><p><strong>rc.local (&#x2F;etc&#x2F;rc.local)</strong></p><pre><code>#!/bin/sh# 这里添加要开机执行的脚本和命令等等exit 0</code></pre><p><strong>添加可执行权限</strong><br><code>sudo chmod +x /etc/rc.local</code></p><p><strong>创建软链接??</strong><br><code>sudo ln -s /lib/systemd/system/rc-local.service /etc/systemd/system/rc-local.service</code></p><h1 id="安装ngnix"><a href="#安装ngnix" class="headerlink" title="安装ngnix"></a>安装ngnix</h1><p><code>sudo apt install nginx</code><br><strong>编辑默认配置</strong><br><code>/etc/nginx/sites-available/default</code><br>其中的 root 是网页目录</p><p><strong>重启nginx</strong><br><code>service nginx restart</code></p><h1 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h1><h3 id="Q-缺少依赖"><a href="#Q-缺少依赖" class="headerlink" title="Q:缺少依赖"></a>Q:缺少依赖</h3><pre><code>Preparing to unpack terminal/webmin_1.970_all.deb ...Unpacking webmin (1.970) over (1.970) ...dpkg: dependency problems prevent configuration of webmin: webmin depends on libnet-ssleay-perl; however:  Package libnet-ssleay-perl is not installed. webmin depends on libauthen-pam-perl; however:  Package libauthen-pam-perl is not installed. webmin depends on libio-pty-perl; however:  Package libio-pty-perl is not installed. webmin depends on unzip; however:  Package unzip is not installed.</code></pre><p><strong>A:</strong><br><code>sudo apt install -f</code></p><h3 id="Q-vimrc在sudo中不生效"><a href="#Q-vimrc在sudo中不生效" class="headerlink" title="Q: .vimrc在sudo中不生效"></a>Q: .vimrc在sudo中不生效</h3><p><strong>A:</strong><br><code>cp ~/.vimrc /root</code></p>]]></content>
+        <content type="html"><![CDATA[<p>重新刷入系统进行各项设置安装</p><link rel="stylesheet" href="/Tools/addition.css"><h1 id="系统下载安装"><a href="#系统下载安装" class="headerlink" title="系统下载安装"></a>系统下载安装</h1><p>有3个系统可以选择<br><strong>Raspbian</strong></p><!-- 有图标的链接card --><div class="link-card">    <a href="https://www.raspberrypi.org/software/operating-systems/">        <div class="img-card-span">            <image class="link-card-img" src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/icon/raspberry.webp">            </image>            <span class="img-h2">下载Raspbian</span>            <span class="img-description">Raspberry Pi OS, our official supported operating system</span>        </div>        <span class="link-navigation">            Visit            <span class="material-icons">arrow_forward</span>        </span>    </a></div><p><strong>Ubuntu</strong></p><!-- 有图标的链接card --><div class="link-card">    <a href="https://ubuntu.com/download/raspberry-pi">        <div class="img-card-span">            <image class="link-card-img" src="https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/icon/ubuntu.webp">            </image>            <span class="img-h2">下载Ubuntu</span>            <span class="img-description">Running Ubuntu on your Raspberry Pi is easy. Just pick the OS image you want, flash it onto a microSD card, load it onto your Pi and away you go.</span>        </div>        <span class="link-navigation">            Visit            <span class="material-icons">arrow_forward</span>        </span>    </a></div><!-- 链接card --><div class="link-card">    <a href="https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi">        <span class="link-card-title">Ubuntu官方指引</span>        <span class="link-description">In this tutorial, we walk you through the process of installing Ubuntu Server on a Raspberry Pi</span>        <span class="link-navigation">            Visit            <span class="material-icons">arrow_forward</span>        </span>    </a></div><p>默认账号ubuntu，密码ubuntu，进入后会要求修改密码</p><p><strong>OPENFANS Raspbian</strong><br>这是一个由Debian重新构建的系统</p><!-- 链接card --><div class="link-card">    <a href="https://gitee.com/openfans-community/Debian-Pi-Aarch64">        <span class="link-card-title">Debian-Pi-Aarch64</span>        <span class="link-description">这是全球发行的第一个同时支持树莓派全系64位硬件的64位系统 !!!（包括：2Bv1.2，3B，3B+，3A+，4B）</span>        <span class="link-navigation">            Visit            <span class="material-icons">arrow_forward</span>        </span>    </a></div><h1 id="软件源"><a href="#软件源" class="headerlink" title="软件源"></a>软件源</h1><h2 id="修改apt软件源"><a href="#修改apt软件源" class="headerlink" title="修改apt软件源"></a>修改apt软件源</h2><p>备份软件源后对其进行修改<br><code>sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak</code></p><p>在这里使用清华tuna源<br>在 ARM(arm64, armhf)、PowerPC(ppc64el)、RISC-V(riscv64) 和 S390x 等架构的设备上（对应官方源为ports.ubuntu.com）使用 ubuntu-ports 镜像。</p><pre><code class="bash"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal main restricted universe multiverse# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal main restricted universe multiversedeb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-updates main restricted universe multiverse# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-updates main restricted universe multiversedeb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-backports main restricted universe multiverse# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-backports main restricted universe multiversedeb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-security main restricted universe multiverse# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-security main restricted universe multiverse# 预发布软件源，不建议启用# deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-proposed main restricted universe multiverse# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-proposed main restricted universe multiverse</code></pre><h2 id="修改pip-x2F-pip3源"><a href="#修改pip-x2F-pip3源" class="headerlink" title="修改pip&#x2F;pip3源"></a>修改pip&#x2F;pip3源</h2><p>这里发现清华源好像就不太好用了，下载安装的时候我看都用的是阿里的源。但是可以先配置上：<br>1.创建<code>.pip</code>文件夹</p><pre><code class="bash">mkdir ~/.pipvim ~/.pip/pip.conf</code></pre><p>2.创建<code>pip.conf</code>配置文件</p><pre><code class="txt">[global]index-url = https://mirrors.aliyun.com/pypi/simple/[install]trusted-host=mirrors.aliyun.com</code></pre><blockquote><p>文件内容来自 <a href="https://developer.aliyun.com/mirror/pypi">阿里云 - pypi镜像</a></p></blockquote><h1 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a>Vim</h1><p>新建vim配置文件<br><code>vim ~/.vimrc</code></p><p>vim配置</p><pre><code>syntax enable &quot;自动检测语法syntax on &quot;自动语法高亮set number &quot;显示行号colorscheme industry &quot;设定配色方案set guifont=Consolas:h12:cANSI &quot;英文字体set guifontwide=SimSun-ExtB:h12:cGB2312 &quot;设置文字宽度set tabstop=4 &quot;表示Tab代表4个空格的宽度set expandtab &quot;表示Tab自动转换成空格set autoindent &quot;表示换行后自动缩进set autoread &quot;当文件在外部被修改时，自动重新读取set history=400 &quot;vim记住的历史操作的数量，默认的是20set nocompatible &quot;使用vim自己的键盘模式,而不是兼容vi的模式set confirm &quot;处理未保存或者只读文件时,给出提示set smartindent &quot;智能对齐set shiftwidth=4 &quot;偏移4个空格set helplang=cn &quot;中文帮助文档(前提是下了中文包)</code></pre><h1 id="Python相关"><a href="#Python相关" class="headerlink" title="Python相关"></a>Python相关</h1><p><strong>安装pip</strong><br><code>sudo apt install python3-pip</code></p><p><strong>安装Selenium对浏览器进行控制</strong><br><code>pip3 install selenium</code></p><p><strong>安装火狐</strong><br><code>sudo apt install firefox</code><br>如果出现错误，可以尝试<br><code>sudo apt install firefox-esr</code></p><p><strong>安装虚拟屏幕</strong>:在shell中也可以使用Selenium<br><code>sudo apt install xvfb</code><br><code>pip3 install pyvirtualdisplay</code></p><h1 id="安装Samba服务器用于传文件"><a href="#安装Samba服务器用于传文件" class="headerlink" title="安装Samba服务器用于传文件"></a>安装Samba服务器用于传文件</h1><p><code>sudo apt install samba</code></p><p>备份Samba配置文件后修改<br><code>sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.bak</code><br><code>sudo vim /etc/samba/smb.conf</code></p><p>防乱码：在[default]下添加</p><pre><code>unix charset = UTF-8 dos charset = cp936 </code></pre><h2 id="文件夹权限"><a href="#文件夹权限" class="headerlink" title="文件夹权限"></a>文件夹权限</h2><p>先用两张表格</p><table><thead><tr><th>r 读取</th><th>w 写入</th><th>x 执行</th></tr></thead><tbody><tr><td>4</td><td>2</td><td>1</td></tr></tbody></table><table><thead><tr><th>d</th><th>rwx</th><th>rwx</th><th>rwx</th></tr></thead><tbody><tr><td>文件(-)&#x2F;目录(d)</td><td>4+2+1</td><td>4+2+1</td><td>4+2+1</td></tr></tbody></table><p>将文件夹权限更改为777</p><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><pre><code>[share]path = /home/pi/terminalavailable = yesbrowseable = yespublic = yeswritable = yesvalid users = picreate mask = 0777directory mask =0777force user = piforce group = samba-public</code></pre><p><strong>添加用户组</strong></p><pre><code class="bash">sudo useradd -rs /bin/false samba-publicsudo chown samba-public /home/pi/terminalsudo chmod u+rwx /home/pi/terminal</code></pre><p><strong>添加名为pi的用户</strong><br><code>sudo smbpasswd -a pi</code></p><p><strong>测试配置是否有错误</strong><br><code>sudo testparm</code></p><p><strong>重新启动Samba服务器</strong><br><code>sudo service smbd restart</code></p><h1 id="设置时区-防止执行时间错误"><a href="#设置时区-防止执行时间错误" class="headerlink" title="设置时区:防止执行时间错误"></a>设置时区:防止执行时间错误</h1><p><code>timedatectl set-timezone Asia/Shanghai</code></p><h1 id="设置定时任务"><a href="#设置定时任务" class="headerlink" title="设置定时任务"></a>设置定时任务</h1><p><code>crontab -e</code></p><p><strong>查看crontab日志</strong><br><code>sudo cat /var/log/syslog | grep -i cron</code></p><h1 id="开机启动"><a href="#开机启动" class="headerlink" title="开机启动"></a>开机启动</h1><p>编辑开机启动服务<br><code>sudo vim /lib/systemd/system/rc-local.service</code></p><p>以某一用户执行命令（<code>screen -S main</code>为命令、<code>pi</code>为用户）<br><code>su -c &#39;screen -S main&#39; pi</code></p><p><strong>添加</strong></p><pre><code>[Install]WantedBy=multi-user.targetAlias=rc-local.service</code></pre><p><strong>rc.local (&#x2F;etc&#x2F;rc.local)</strong></p><pre><code>#!/bin/sh# 这里添加要开机执行的脚本和命令等等exit 0</code></pre><p><strong>添加可执行权限</strong><br><code>sudo chmod +x /etc/rc.local</code></p><p><strong>创建软链接??</strong><br><code>sudo ln -s /lib/systemd/system/rc-local.service /etc/systemd/system/rc-local.service</code></p><h1 id="安装ngnix"><a href="#安装ngnix" class="headerlink" title="安装ngnix"></a>安装ngnix</h1><p><code>sudo apt install nginx</code><br><strong>编辑默认配置</strong><br><code>/etc/nginx/sites-available/default</code><br>其中的 root 是网页目录</p><p><strong>重启nginx</strong><br><code>service nginx restart</code></p><h1 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h1><h3 id="Q-缺少依赖"><a href="#Q-缺少依赖" class="headerlink" title="Q:缺少依赖"></a>Q:缺少依赖</h3><pre><code>Preparing to unpack terminal/webmin_1.970_all.deb ...Unpacking webmin (1.970) over (1.970) ...dpkg: dependency problems prevent configuration of webmin: webmin depends on libnet-ssleay-perl; however:  Package libnet-ssleay-perl is not installed. webmin depends on libauthen-pam-perl; however:  Package libauthen-pam-perl is not installed. webmin depends on libio-pty-perl; however:  Package libio-pty-perl is not installed. webmin depends on unzip; however:  Package unzip is not installed.</code></pre><p><strong>A:</strong><br><code>sudo apt install -f</code></p><h3 id="Q-vimrc在sudo中不生效"><a href="#Q-vimrc在sudo中不生效" class="headerlink" title="Q: .vimrc在sudo中不生效"></a>Q: .vimrc在sudo中不生效</h3><p><strong>A:</strong><br><code>cp ~/.vimrc /root</code></p>]]></content>
       
       
       
@@ -397,9 +397,9 @@
       
         <tags>
             
-            <tag> 后端 </tag>
-            
             <tag> 编程 </tag>
+            
+            <tag> 后端 </tag>
             
             <tag> 语法 </tag>
             
@@ -685,11 +685,11 @@
       
         <tags>
             
+            <tag> C# </tag>
+            
             <tag> 后端 </tag>
             
             <tag> 软件开发 </tag>
-            
-            <tag> C# </tag>
             
         </tags>
       
@@ -746,11 +746,11 @@
       
         <tags>
             
+            <tag> C# </tag>
+            
             <tag> 后端 </tag>
             
             <tag> 软件开发 </tag>
-            
-            <tag> C# </tag>
             
         </tags>
       
@@ -950,11 +950,11 @@
       
         <tags>
             
+            <tag> C# </tag>
+            
             <tag> 后端 </tag>
             
             <tag> 软件开发 </tag>
-            
-            <tag> C# </tag>
             
         </tags>
       
@@ -1034,11 +1034,11 @@
       
         <tags>
             
+            <tag> C# </tag>
+            
             <tag> 后端 </tag>
             
             <tag> 软件开发 </tag>
-            
-            <tag> C# </tag>
             
         </tags>
       
@@ -1057,11 +1057,11 @@
       
         <tags>
             
+            <tag> C# </tag>
+            
             <tag> 后端 </tag>
             
             <tag> 软件开发 </tag>
-            
-            <tag> C# </tag>
             
         </tags>
       
@@ -1080,11 +1080,11 @@
       
         <tags>
             
+            <tag> C# </tag>
+            
             <tag> 后端 </tag>
             
             <tag> 软件开发 </tag>
-            
-            <tag> C# </tag>
             
         </tags>
       
