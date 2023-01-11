@@ -197,7 +197,7 @@ a {
 #post-content h1 {
     /* font-size: 2.5em; */
     font-size: 2em;
-    color: #111;
+    color: #444;
     border-bottom: 1px solid #ddd;
     font-weight: 400;
 }
@@ -1314,7 +1314,7 @@ ul > li:last-child > p:last-child{
     line-height: 40px;
     font-weight: 400;
     margin: 0;
-    text-shadow: 1px 1px 8px #444
+    text-shadow: 1px 1px 4px #888
 }
 
 @media screen and (max-width:840px) {
