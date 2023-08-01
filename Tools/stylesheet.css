@@ -202,3 +202,9 @@
 .card-image7__filename {
     color: #fff;
 }
+
+.card-image8.mdl-card {
+    width: 256px;
+    height: 256px;
+    background: url('https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/Tools/pdf.png') center / cover;
+}
