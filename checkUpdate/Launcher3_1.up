@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Config source="Launcher">
-	<Version>4</Version>
-	<ProgramURL>https://launcher3-1251886115.cossh.myqcloud.com/RELauncher3.exe</ProgramURL>
-	<ConfigURL>https://launcher3-1251886115.cossh.myqcloud.com/RELauncher3.exe.config</ConfigURL>
-	<Recovery>https://launcher3-1251886115.cossh.myqcloud.com/Recovery.exe</Recovery>
-	<ProgramMD5></ProgramMD5>
-	<ConfigMD5></ConfigMD5>
-</Config>
