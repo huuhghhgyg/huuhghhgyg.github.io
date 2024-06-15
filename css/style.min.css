@@ -2574,8 +2574,6 @@ ul > li:last-child > p:last-child{
     bottom: 0;
     z-index: 10;
     left: 0;
-    box-shadow: 2px 0 15px rgba(0, 0, 0, .35);
-    -webkit-box-shadow: 2px 0 15px rgba(0, 0, 0, .35)
 }
 
 @media (max-width:840px) {

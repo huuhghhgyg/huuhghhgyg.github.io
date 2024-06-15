@@ -1,5 +1,5 @@
 .demo-layout-transparent {
-    background: url('https://github-page-1251886115.cos.ap-chengdu.myqcloud.com/img/Tools/background.png') center / cover;
+    background: url('/img/Tools/background.png') center / cover;
 }
 
 .demo-layout-transparent .mdl-layout__header,
