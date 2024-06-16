@@ -6,14 +6,14 @@
     "short_name": "huu's blog",
     "name": "huu's Main Page",
     "icons": [{
-            "src": "img/favicon.jpg",
+            "src": "img/site/favicon720.webp",
             "sizes": "720x720",
-            "type": "image/jpg"
+            "type": "image/webp"
         },
         {
-            "src": "links/favicon192.jpg",
+            "src": "img/site/favicon192.webp",
             "sizes": "192x192",
-            "type": "image/jpg"
+            "type": "image/webp"
         }
     ],
     "start_url": ".",
