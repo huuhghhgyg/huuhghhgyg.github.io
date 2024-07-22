@@ -6,8 +6,29 @@
     <description>Recent content in Skills on Hikaru&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 09 Jul 2021 20:56:37 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 27 Mar 2022 11:52:50 +0000</lastBuildDate>
     <atom:link href="https://www.zhhuu.top/categories/skills/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQL入门</title>
+      <link>https://www.zhhuu.top/posts/sql-basics/</link>
+      <pubDate>Sun, 27 Mar 2022 11:52:50 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/sql-basics/</guid>
+      <description>1SELECT * 2FROM table 3WHERE column LIKE &amp;#39;条件&amp;#39; 4Order by 1 5LIMIT 100 基本语法 注释 --后面是注释内容。--是sql的注释标志&#xA;运算符 运算符 说明 AND 和，AND的优先级一般会高于OR OR 或者 NOT 非 () 括号，提高优先级。 条件 符号 含义 % n个任意字符 _ 1个任意字符 正则表达式 REGEXP（Regular Expression）&#xA;1WHERE column REGEXP &amp;#39;表达式&amp;#39; 符号 意义 例子 ^ 以..开头 ^field $ 以..结尾 field$ \ 或者 ^field｜mac｜rose [] 匹配中括号内的所有字符 [gim]e，匹配ge、ie、me，&#xA;[a-c]d，匹配&#xA;ad、bd、cd，&#xA;[1-3]同理 注意：由于我使用的markdown编译器无法将表格中的代码中的|识别为符号，以上的|为全角符号&#xA;NULL 表达式 含义 IS NULL 值为null IS NOT NULL 值不为null AS 在原有数据基础上新建一列数据，或者理解为处理完原有列数据填入新一列中</description>
+    </item>
+    <item>
+      <title>VSCode多光标输入</title>
+      <link>https://www.zhhuu.top/posts/vscode-multicursor/</link>
+      <pubDate>Sun, 11 Jul 2021 15:00:42 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/vscode-multicursor/</guid>
+      <description>VSCode多行光标功能的使用&#xA;参考 Visual Studio Code Basics: This topic takes you through the basics of the editor and helps you get moving with your code StackOverflow: Multiline editing in Visual Studio Code 多行光标的使用 用键盘使用多行光标 快捷键 作用 Ctrl+D 选择下一个匹配的内容 Ctrl+U 撤销上一个光标操作 Esc 取消多行选择 Ctrl+Backspace 智能删除 使用 Ctrl+D 时,右上角的小部件，从左到右依次是： 区分大小写 Alt+C、全字匹配 Alt+W、使用正则表达式 Alt+R&#xA;Ctrl+Shift+P 能够呼出万能指令窗口&#xA;Ctrl+Shift+P 指令 作用 Cursor Undo 撤销光标操作 Cursor Redo 重做光标操作 用鼠标使用多行光标 有时候可能会想要跳过某一个位置，这时使用Ctrl+D就难以做到。使用鼠标控制会令多行光标的使用更灵活。（比如说跳过注释部分的“：”）&#xA;使用方法 按住 Alt 并点击&#xA;多行光标特性 合并 当两个光标移动到重合时，会自动合并。例如下面的删除： 有时候在一行中分布有很多光标，当用 Ctrl+← 将光标置于行开头的时候，也会因此自动合并。 这个特性可以在VSCode选项中关闭，默认开启。</description>
+    </item>
+    <item>
+      <title>npm快速上手</title>
+      <link>https://www.zhhuu.top/posts/npm-overview/</link>
+      <pubDate>Sat, 10 Jul 2021 19:13:03 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/npm-overview/</guid>
+      <description>在npm中，包（package）、模块（module）、依赖（dependency）都是一个东西。&#xA;npm常用操作 npm配置项 初始化 npm init（其实就是创建一个package.json文件），之后让你填入许多信息（package name, version, description, entry point, test command, git repository, key words, author) npm init -y相当于npm init但信息都为空，初始化后npm会认为你的项目是一个包&#xA;npm搜索 npm search &amp;lt;包名&amp;gt; 如：npm search jquery&#xA;包安装 操作 命令 直接安装 npm install &amp;lt;包名&amp;gt;，简写为npm i &amp;lt;包名&amp;gt; 安装指定版本/旧版本 npm install &amp;lt;包名&amp;gt;@&amp;lt;版本号&amp;gt; 安装指定tag的包 npm install &amp;lt;包名&amp;gt;@&amp;lt;tag&amp;gt; 参数 -g 安装到全局环境下，这样在任何一个目录下都能识别，比如 npm install npm@latest -g 参数 --save-dev或者-D 表明是开发环境下的依赖，不会在生产环境中出现 包卸载 npm uninstall &amp;lt;包名&amp;gt; -D 卸载包，并从package.json的devDependencies中删除。 老版本的npm中卸载包要加--save才能保存到package.json中&#xA;常用操作 操作 命令 更新包 npm update &amp;lt;包名&amp;gt;，局部更新。加-g全局更新 列出已安装包 npm list默认列出局部依赖。加-g 列出已安装的全局依赖。 检查过期包（依赖） npm outdated 查看依赖安装路径 npm root，也就是node_modules的路径，加-g查看全局安装路径 查看模块的注册信息 npm view &amp;lt;包名&amp;gt; versions，列出所有版本。</description>
+    </item>
     <item>
       <title>利用Gitkraken了解Git</title>
       <link>https://www.zhhuu.top/posts/git-basic/</link>
@@ -30,11 +51,46 @@
       <description>尝试了 docker 的一些常用操作&#xA;查看正在运行的容器 查看正在运行的容器 docker ps&#xA;如果 docker 没有运行，则会显示错误&#xA;查看所有容器 docker ps -a&#xA;建立容器 docker run ubuntu -it&#xA;参数 作用 -i 与容器互动(类似 ssh，可以输入指令) -t 创造一个终端 容器常用操作 本地容器操作容器： 运行但不进入： docker start [容器ID/容器ID开头的几个字]&#xA;进入容器： docker attach [容器ID/容器ID开头的几个字]&#xA;离开容器: Ctrl+P Ctrl+Q&#xA;停止容器： docker stop [容器ID/容器ID开头的几个字]&#xA;查看已经下载到本地的容器： docker image ls 移除本地容器： docker rm [容器名称]&#xA;移除本地镜像： docker rmi [镜像名称]&#xA;镜像名称在 REPOSITORY 下&#xA;新建容器 搜索镜像从 Docker Hub 下载&#xA;docker run (参数) [容器名称]&#xA;参数 作用 --name [name] 更改容器名称 -d 运行成 Detached 模式 -p [端口]:[容器端口] 端口映射 -v [路径]:[容器路径] 文件映射。将电脑的文件映射入容器 第一次使用的镜像会自动从 Docker Hub 下载</description>
     </item>
     <item>
+      <title>正则表达式笔记</title>
+      <link>https://www.zhhuu.top/posts/regular-expression/</link>
+      <pubDate>Thu, 31 Dec 2020 19:32:35 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/regular-expression/</guid>
+      <description>🔗 链接&#xA;正则表达式在线测试 | 菜鸟工具 标记 表达式 作用 示例 作用 ^ 匹配行首 ^a 匹配 a 在行首的情况 $ 结匹配行尾 a$ 匹配 a 在行尾的情况 普通字符（大小写敏感） 表达式 作用 示例 作用 [] 只能匹配中括号中的字符 [ABC] 匹配字符串中的所有 A、B、C [^A] 除去 [^ABC] 得到除了 ABC 以外的所有字符 [A-Z] 某一个区间(可以是大写区间、小写区间、数字区间) [A-C] 匹配 A-C 的区间 . 匹配 除换行符的所有单个字符,相当于[^\n\r] [\s] 匹配 空白字符（空格、换行） [\s] 匹配 非空白字符（包括换行） [\w] 匹配 字母、数字、下划线,相当于[A-Za-z0-9] 非打印字符 符号 作用 示例 作用 \ca 匹配 control+a 的快捷键（\c 是表示 c，\为转义）(\cx 的 x 必须是 A-Z 或者 a-z) \cv 匹配 ctrl+v 的快捷键 \f 换页符 \n 换行符 \r 回车 \s 空白字符，包括空格、制表符、换页符等等 \S 非空白字符，包括回车 \t 制表符（Tab） \v 垂直制表符(Vertical Tab) \d 数字字符，等价于[0-9] \D 非数字字符，等价于[^0-9] \w 单词(word) \W 非单词 特殊字符 符号 作用 示例 作用 $ 匹配字符串的结尾位置 () 标记一个子表达式开始和结束的位置 * 匹配前面的子表达式 0 次或多次 go*gle 可以匹配 ggle,google,gooooogle 等 + 匹配前面的子表达式 1 次或多次(1+) go+gle 可以匹配 gogle,goooogle 等 .</description>
+    </item>
+    <item>
+      <title>Word排版技巧</title>
+      <link>https://www.zhhuu.top/posts/word-typesetting/</link>
+      <pubDate>Thu, 16 Jul 2020 22:12:31 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/word-typesetting/</guid>
+      <description>Word的一点小技巧&#xA;快捷键/按键 快捷键 功能 Del 向后删除 Backspace 向前删除 Ctrl + Enter 插入分页符 单位 单位可以直接输入，例如“50磅” 修改默认单位可以在“文件-选项-高级-显示-度量单位”修改 格式 粘贴时可以只粘贴文本而不粘贴格式：“右键-只保留文本”，修改默认粘贴方式可以在 “文件-选项-高级-剪切、复制和粘贴” 处修改默认值（从其他程序粘贴-&amp;gt;“仅保留文本”） 定制功能区提高效率（高级选手）【Word选项-自定义功能区】 参考：元卅的B站主页&#xA;个人信息排版 用表格排版，防止改字体改信息以后引起排版问题 表头可以使用分散对齐，点击表格左上角的控制柄后设置居中可以使表格内容竖直和水平居中 最后去掉表格框线，再加下框线达到下划线的效果 设置目录 引用选项卡-插入（插入目录） 使用 “样式” 让Word软件知道你的文章结构（标题等），软件可以以此自动生成目录 右键 “样式” 中的样式可以修改样式 更改 “正文” 的样式会改变后面所有自带样式 分隔符 文件-选项-显示-显示所有格式标记 显示特殊排版符号 符号 使用方法 分页符 Ctrl+Enter 插入分页符 分节符 “布局-分隔符-分节符” 再页眉页脚插入分节符可以达到每一页页眉页脚不同/数字不同的效果，点击与上一页相同取消内容与上一页相同 有奇偶页不同的选项 公式 插入公式：“插入-公式” 或者 Alt + = 公式分为 行内公式（嵌入） 和 单行公式（显示） 鼠标悬停在公式的符号上就可以看到字符的转义代码 符号 特殊字符/用法 上标 ^ 下标 _ ×（叉乘号） \times ·（点乘号） \cdot 矢量 \vec 写方程组时加&amp;amp;可以上下对齐 插入域：Seq Alt + F9 , SEQ后面加序列名字，再按Alt + F9退出，光标点到标号按F9更新序号，自动标号 F9自动更新文档内数据内容 图片显示不全时，改行距（单倍/多倍行距） </description>
+    </item>
+    <item>
       <title>更快地部署Office</title>
       <link>https://www.zhhuu.top/posts/deploy-office-faster/</link>
       <pubDate>Sat, 25 May 2019 18:00:00 +0000</pubDate>
       <guid>https://www.zhhuu.top/posts/deploy-office-faster/</guid>
       <description>每次新安装Office诚然是一件很头疼地事情。这里介绍可以快速在电脑上安装Office的方法。&#xA;Office Tool Plus 如果你想深入了解Office Tool Plus，也请访问官方网站。 打开网站以后，点击立即下载，并打开Office Tool Plus。打开以后可能会进行自动更新。更新完之后进入软件界面 个人快速安装Office 如果仅在一台电脑上安装，你可以直接转到安装选项卡进行安装。 1、选择你需要的Office套件。&#xA;Win10推荐使用Office2019，Win7推荐使用Office2016 建议安装零售版，即Retail&#xA;2、根据你需要的Office软件勾选应用程序。&#xA;完整版Office安装的项目为Excel Powerpoint Word Access Publisher。大学生建议勾选完整版Office的安装项目。&#xA;3、安装设置: 根据系统，设置体系结构。为了获取较新的Office版本，建议把通道设置为&amp;quot;每月通道&amp;quot;。安装方式无需更改。 设置可选设置下的更新设置。 注意其中的禁用Office更新和使用配置管理器管理更新，建议取消勾选。 更新通道建议更改为&amp;quot;每月通道&amp;quot; 激活设置中，按需要进行勾选。 4、以上设置完毕后，即可点击开始安装。等待安装完毕即可使用。&#xA;批量快速安装Office 这种情况适用于多台设备需要安装Office。首先需要在一台机器上完成配置设置。&#xA;转到下载选项卡。点击版本号,查询版本号。 设置常规设置中的通道、体系结构以及版本。 点击上方的开始按钮。&#xA;下载完成后，转到安装选项卡，参照上文个人快速安装Office的前三个步骤。不同的是，安装设置中的安装方式应设置为离线安装。 点击开始安装旁边的三角形，选择保存配置为XML。&#xA;找到并打开你保存的XML文件，转到其中SourcePath所指的目录，复制整个文件夹到你的U盘。 把你保存的XML文件也复制到U盘下的同一个文件夹。&#xA;当你需要在其他电脑上从U盘安装Office时，修改其中SourcePath所指的目录为你的U盘所在的同文件夹目录，打开Office Tool Plus，进入安装选项卡，点击开始安装旁边的三角形，选择选择XML文件，选择你的XML文件，点击开始安装。或者使用微软的Office Deployment Tool，用CMD的方式进行安装。这里不再介绍这种方法，请百度。</description>
+    </item>
+    <item>
+      <title>PPT设计指南</title>
+      <link>https://www.zhhuu.top/posts/ppt-design-guide/</link>
+      <pubDate>Fri, 23 Nov 2018 20:09:45 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/ppt-design-guide/</guid>
+      <description>其实做了这么多的PPT以后，慢慢摸索出了一种做PPT的方式技巧。但其实下面包括的也不仅仅是技巧，还包含了一套我认为比较成熟的设计系统（借鉴+创新），目的是为了使演示过程更加流畅。当然，要制造出这样的PPT，达到这样的效果是肯定要花费一些时间的。可能只有像我这种对美有变态追求的人可能才会花费如此多的时间做PPT，如果您有兴趣的话，可以继续看下去。&#xA;所需: Microsoft PowerPoint 2016或以上 耐心&#xA;引言 Microsoft Office 2016 中新引进了“变体”的切换效果。通过这个全新的切换效果能更准确地实现Material Design和Microsoft Fluent Design System中的一些内容，使整个幻灯片的设计更加系统化。&#xA;🔗链接&#xA;Material Design Microsoft Fluent Design System 变体的简单应用 &amp;ldquo;变体&amp;quot;是 Office 2016 中新增加的一种切换效果。它可以自动识别两张相邻的幻灯片之间的变化并自动插补动画。下面通过两个例子介绍这种切换动画的使用方法。&#xA;精确的位移 在第一张幻灯片中创建一个正方形。 在第二张幻灯片中创建一个正方形，并移动到你想要的位置。 选中第二张幻灯片，在顶栏的&amp;quot;切换&amp;quot;中选择&amp;quot;变体&amp;rdquo;。 放映幻灯片，正方形从第一张幻灯片的位置移动到第二张幻灯片的位置。&#xA;精确地位移并更改大小 在上述的操作的基础上您可以尝试改变第二张幻灯片中正方形的形状和大小，您可以发现放映幻灯片的时候原来的正方形自动变成了第二张幻灯片中的样式(大小，位置，甚至颜色，形状的改变)。&#xA;因此，您可以利用变体的这一特性实现后文中卡片的大小，位置甚至深度(阴影大小)的变化。&#xA;多动画连续播放和延迟 1.创建矩形若干个,并纵向排列。&#xA;2.拖动鼠标选中所有创建的矩形，在顶栏的&amp;quot;动画&amp;quot;选项卡中选择&amp;quot;淡出&amp;quot;动画。此时，选中的所有矩形在幻灯片放映时会同时淡出。&#xA;3.为了遵循Material Design中的&amp;quot;有层次的时序&amp;quot;的原则，我们将每个矩形相对其上层的矩形延迟0.1秒钟淡出,直至最后一个矩形。&#xA;建议使用&amp;quot;缩放&amp;quot;动画实现矩形的顺次进入屏幕，这么做的依据是下文中所提将到的&amp;quot;视觉连贯性&amp;quot;原则。缩放在大部分情况下是最适合几何形状进入屏幕的方式，而顺次淡出则适合文字进入屏幕。 上文使用矩形是为了简化演示过程。&#xA;圆的场景切换的实现 1.您将在第一张幻灯片中创建这个场景切换。这意味着这一张幻灯片将包含两章节的内容(前一章节的结束部分和后一章节的开头部分)。这里用&amp;quot;标题&amp;quot;二字表示上一章节的结束部分。&#xA;2.创建一个与演示区域大小相当的正圆，并将其移动到演示区域的中心。&#xA;3.选中刚才创建的圆形，给所选圆形添加**&amp;ldquo;缩放&amp;rdquo;**动画(在顶栏的&amp;quot;动画&amp;quot;中找到&amp;quot;缩放&amp;quot;，并点击)。从含圆的那张幻灯片开始放映幻灯片，您就能观察到&amp;quot;圆形场景切换&amp;quot;。&#xA;元素 卡片(Cards) 分隔各组不同的内容，并归类。&#xA;卡片是包含一组特定数据集的纸片，数据集含有各种相关信息，例如，关于单一主题的照片，文本，和链接。卡片通常是通往更详细复杂信息的入口。卡片有固定的宽度和可变的高度。最大高度限制于可适应平台上单一视图的内容，但如果需要它可以临时扩展（例如，显示评论栏）。卡片不会翻转以展示其背后的信息。&#xA;显示这些内容时使用卡片布局：&#xA;为一个集合，由多种数据类型组成（例如，卡片集包含照片，电影，文本，图像） 不要求直接比较（观看者不直接与图像或字符串比较） 包含可变长度内容，例如评论 如果使用列表需要显示超过三行文本 制作卡片 1.在顶栏的&amp;quot;插入&amp;quot;选项卡中选择&amp;quot;形状&amp;quot;，选择矩形。&#xA;2.在创建好的卡片上右击，选择&amp;quot;设置形状格式&amp;quot;。&#xA;3.在右边弹出来的边栏上选择&amp;quot;油桶&amp;quot;的选项卡，选择纯色填充，将填充颜色设置为白色。线条选择无线条。&#xA;4.选择&amp;quot;五边形&amp;quot;选项卡，设置阴影，将阴影的预设样式设置为框选的样式。&#xA;5.最终效果如图。&#xA;按钮(Buttons) 在PPT中，一般使用的是圆形按钮。圆形按钮能更方便地引导转场。圆形按钮一般与图标配合使用。更有想象力的用法可以参照此处&#xA;在PPT中，用于表示一段演示的结束，并引出完全切换的转场(动画)。&#xA;按钮有阴影，因此与卡片的制作方式大同小异。不同的是按钮一般被赋予颜色而不是白色，并且按钮中心一般会有图标显示其作用。您可以按照您的需求定制按钮。 纸条(Chips) 拓展可能性，作为一个原因容器。入场一般用横向拉取。&#xA;图标(Icons) 增强观者对当前页的理解，增强视觉体验。&#xA;完整版图标库 Material icons are delightful, beautifully crafted symbols for common actions and items.</description>
+    </item>
+    <item>
+      <title>Windows10 快捷键</title>
+      <link>https://www.zhhuu.top/posts/windows-hotkey/</link>
+      <pubDate>Sun, 06 May 2018 17:04:33 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/windows-hotkey/</guid>
+      <description>好像还不怎么熟悉Windows的快捷键，先存下。 微软为Win10技术预览版命令行(Command Prompt)加入了Ctrl + V的支持，Scott Hanselman为此整理了命令行中的键盘快捷键。&#xA;Win10新增功能快捷键大全： 动作 操作 贴靠窗口 Win +左/右&amp;gt; Win +上/下&amp;gt;窗口可以变为1/4大小放置在屏幕4个角落 切换窗口 Alt + Tab(不是新的，但任务切换界面改进) 任务视图 Win + Tab(松开键盘界面不会消失) 创建新的虚拟桌面 Win + Ctrl + D 关闭当前虚拟桌面 Win + Ctrl + F4 切换虚拟桌面 Win + Ctrl +左/右 文本编辑类 按此键&#xA;执行此操作&#xA;Ctrl + X&#xA;剪切选定项&#xA;Ctrl + C（或 Ctrl + Insert）&#xA;复制选定项&#xA;Ctrl + V（或 Shift + Insert）&#xA;粘贴选定项&#xA;Ctrl + Z&#xA;撤消操作&#xA;Alt + Tab&#xA;在打开的应用之间切换&#xA;Alt + F4</description>
+    </item>
+    <item>
+      <title>Visual Studio 快捷键</title>
+      <link>https://www.zhhuu.top/posts/visual-studio-hotkey/</link>
+      <pubDate>Sun, 29 Apr 2018 18:07:34 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/visual-studio-hotkey/</guid>
+      <description>Visual Studio 快捷键整理&#xA;窗口快捷键 记忆诀窍：&#xA;凡跟窗口挂上钩的快捷键必有一个W（Windows）； Ctrl+W,W: 浏览器窗口 （浏览橱窗用有道的翻译是window shopping）&#xA;Ctrl+W,S: 解决方案管理器 （Solution）&#xA;Ctrl+W,C: 类视图 （Class）&#xA;Ctrl+W,E: 错误列表 （Error）&#xA;Ctrl+W,O: 输出窗口（输出Output；输出程序的的编译信息 ;可在vs中“工具”—-“选项”—-“调试”—-“输出窗口”进行配置需要查看哪些信息）&#xA;Ctrl+W,P: 属性窗口 （属性 Property）&#xA;Ctrl+W,T: 任务列表 （任务Task）&#xA;Ctrl+W,X: 工具箱 （事实上工具应该是Tool 但t已被任务列表占用了 ；参照一些大神的记忆方法：“X”长得四通八达，而工具就有这样一个特点，所以属性的快捷键是“X”）&#xA;Ctrl+W,B: 书签窗口 （书签 Bookmark 书签非常好用，如果有几千行代码，在寻找代码的时候添加书签找起来要快很多）&#xA;Ctrl+W,U: 文档大纲 （OutLine；使用第二个字母U）&#xA;Ctrl+D,B: 断点窗口 （breakpoint）&#xA;Ctrl+D,I: 即时窗口 （immediately）&#xA;项目功能快捷键 规律： Ctrl 是强制功能键 Shift 有给项目增加功能&#xA;CTRL + F6 /CTRL + TAB 下一个文档窗口即活动窗体切换 （windows操作系统是alt+tab表示在任务之间切换&#xA;CTRL + SHIFT + F6 /CTRL + SHIFT + TAB 上一个文档窗口 （在windows系统操作中 相信大家都知道shift有相反的功能 哈哈 在这里体现了）</description>
     </item>
     <item>
       <title>Hexo书写语法</title>
