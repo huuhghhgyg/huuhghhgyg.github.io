@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Friends on Hikaru&#39;s Blog</title>
+    <link>https://www.zhhuu.top/friends/</link>
+    <description>Recent content in Friends on Hikaru&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <atom:link href="https://www.zhhuu.top/friends/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
