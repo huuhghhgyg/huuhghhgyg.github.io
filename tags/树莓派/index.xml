@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>树莓派 on Hikaru&#39;s Blog</title>
+    <link>https://www.zhhuu.top/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/</link>
+    <description>Recent content in 树莓派 on Hikaru&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 23 Jan 2021 17:34:33 +0000</lastBuildDate>
+    <atom:link href="https://www.zhhuu.top/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>初探Docker</title>
+      <link>https://www.zhhuu.top/posts/docker-startup/</link>
+      <pubDate>Sat, 23 Jan 2021 17:34:33 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/docker-startup/</guid>
+      <description>尝试了 docker 的一些常用操作&#xA;查看正在运行的容器 查看正在运行的容器 docker ps&#xA;如果 docker 没有运行，则会显示错误&#xA;查看所有容器 docker ps -a&#xA;建立容器 docker run ubuntu -it&#xA;参数 作用 -i 与容器互动(类似 ssh，可以输入指令) -t 创造一个终端 容器常用操作 本地容器操作容器： 运行但不进入： docker start [容器ID/容器ID开头的几个字]&#xA;进入容器： docker attach [容器ID/容器ID开头的几个字]&#xA;离开容器: Ctrl+P Ctrl+Q&#xA;停止容器： docker stop [容器ID/容器ID开头的几个字]&#xA;查看已经下载到本地的容器： docker image ls 移除本地容器： docker rm [容器名称]&#xA;移除本地镜像： docker rmi [镜像名称]&#xA;镜像名称在 REPOSITORY 下&#xA;新建容器 搜索镜像从 Docker Hub 下载&#xA;docker run (参数) [容器名称]&#xA;参数 作用 --name [name] 更改容器名称 -d 运行成 Detached 模式 -p [端口]:[容器端口] 端口映射 -v [路径]:[容器路径] 文件映射。将电脑的文件映射入容器 第一次使用的镜像会自动从 Docker Hub 下载</description>
+    </item>
+    <item>
+      <title>树莓派安装设置</title>
+      <link>https://www.zhhuu.top/posts/raspi-setup/</link>
+      <pubDate>Wed, 20 Jan 2021 10:02:05 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/raspi-setup/</guid>
+      <description>重新刷入系统进行各项设置安装&#xA;系统下载安装 有3个系统可以选择&#xA;Raspbian Ubuntu：默认账号ubuntu，密码ubuntu，进入后会要求修改密码 OPENFANS Raspbian：一个由Debian重新构建的系统 软件源 修改apt软件源 备份软件源后对其进行修改 sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak&#xA;在这里使用清华tuna源 在 ARM(arm64, armhf)、PowerPC(ppc64el)、RISC-V(riscv64) 和 S390x 等架构的设备上（对应官方源为ports.ubuntu.com）使用 ubuntu-ports 镜像。&#xA;1# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释 2deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal main restricted universe multiverse 3# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal main restricted universe multiverse 4deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-updates main restricted universe multiverse 5# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-updates main restricted universe multiverse 6deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-backports main restricted universe multiverse 7# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-backports main restricted universe multiverse 8deb https://mirrors.</description>
+    </item>
+  </channel>
+</rss>

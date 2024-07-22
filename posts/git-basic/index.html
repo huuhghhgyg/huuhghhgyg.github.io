@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>利用Gitkraken了解Git | Hikaru&#39;s Blog</title>
+
+<meta name="description" content="">
+      <link rel="stylesheet" href="/css/main.min.4dc2e2ce92c37525f4749bdb618a9af11becbea894cd27cf53e52755187d6dbb.css" integrity="sha256-TcLizpLDdSX0dJvbYYqa8RvsvqiUzSfPU&#43;UnVRh9bbs=" crossorigin="anonymous">
+
+<link rel="icon" type="image/svg+xml" href="https://www.zhhuu.top/favicon.svg"> 
+<link rel="icon" type="image/x-icon" href="https://www.zhhuu.top/favicon.ico"> 
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.zhhuu.top/favicon.png"> 
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.zhhuu.top/favicon-32.png"> 
+<link rel="icon" type="image/png" sizes="64x64" href="https://www.zhhuu.top/favicon-64.png"> 
+
+</head>
+<body>
+  <header class="py-6 border-b"><div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col">
+	<div class="flex items-center">
+		<div class="flex items-center">
+			<button class="flex items-center space-x-2 rounded-full border py-1 pr-[5px] pl-3 group bg-zinc-100 hover:bg-zinc-200 toggle-button" data-target="menu-bar">
+				<svg width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+					<path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
+				</svg>
+				<span class="bg-blue-500 fill-white rounded-full overflow-hidden h-8 w-8">
+					<img src="/favicon.png" alt="site icon" class="mr-2 object-cover">
+				</span>
+			</button>
+			<div class="relative rounded-full py-1.5 px-6 bg-zinc-100 hover:bg-zinc-200 text-xl font-bold uppercase mx-2">
+				<h2><a class="before:content-[''] before:z-10 before:top-0 before:right-0 before:left-0 before:bottom-0 before:absolute before:pointer-events-auto" href="https://www.zhhuu.top/">Hikaru&#39;s Blog</a></h2>
+			</div>
+		</div>
+		<div class="flex items-center ml-auto">
+			<button id="search-btn" class="flex items-center rounded-full p-3 bg-zinc-100 hover:bg-zinc-200 toggle-button" data-target="search-bar">
+				<svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+					<path id="path1" class="transition-all ease-linear" d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+					<path id="path2" class="transition-all ease-linear hidden" d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"></path>
+				</svg>
+			</button>
+		</div>
+	</div>
+  <nav id="menu-bar" class="block mt-3 close">
+    <ul class="flex items-center flex flex-nowrap whitespace-nowrap overflow-x-auto space-x-4">
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/">Home</a>
+    </li>
+    <li class="my-2">
+      <a aria-current="true" class="ancestor" href="/posts/">Posts</a>
+    </li>
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/tags/">Tags</a>
+    </li>
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/friend/">Friends</a>
+    </li>
+    </ul>
+  </nav>
+
+
+
+<div id="search-bar" class="block mt-3 relative z-50 close">
+    <form id="search" class="flex items-stretch">
+      <input id="searchInput" tabindex="0"
+        class="w-full block px-6 py-2 rounded-full focus:outline-none border border-zinc-200" type="text"
+        placeholder="Search...">
+    </form>
+
+    <div id="fastSearch" class="absolute left-0 right-0 mt-2 bg-white shadow-sm rounded-xl z-50 overflow-x-hidden">
+      <ul id="searchResults" class="divide-y divide-gray-200 z-50">
+      </ul>
+    </div>
+  </div>
+
+  <div id="overlay" class="fixed inset-0 bg-black opacity-50 hidden z-40"></div>
+
+<script src="/js/fuse.min.js"></script> 
+<script src="/js/fastsearch.js"></script></div></header>
+  <main class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8"><div id="breadcrumb" class="max-w-7xl mx-auto py-8">
+	<ul class="flex space-x-4 text-sm text-zinc-500">
+		<li class="after:content-['❯'] after:ml-4 after:opacity-30 last:after:content-none uppercase">
+			<a href="https://www.zhhuu.top/">Hikaru&#39;s Blog</a>
+		</li>
+		<li class="after:content-['❯'] after:ml-4 after:opacity-30 last:after:content-none uppercase">
+			<a href="https://www.zhhuu.top/posts/">Posts</a>
+		</li>
+	</ul>
+</div><div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+
+  <article class="md:col-span-2 prose lg:prose-lg">
+
+    <header class="not-prose">
+      
+      <h1 id="title" class="text-4xl font-bold leading-normal">利用Gitkraken了解Git</h1>
+
+      <div id="lead" class="my-6">
+
+        <p class="font-bold"> </p>
+
+      </div>
+      
+      <div id="writer" class="flex items-center space-x-4">
+
+        <img class="w-12 h-12 bg-black rounded-full" src="https://www.zhhuu.top/img/favicon.jpg" alt="huuhghhgyg avatar" width="1033" height="1033">
+
+        <ul class="flex items-center space-x-4 flex-nowrap whitespace-nowrap overflow-x-auto">
+          
+          <li class="font-semibold my-2">huuhghhgyg</li>
+          
+          <li class="before:content-['•'] before:mr-2 before:opacity-50 my-2"><time datetime="2021-07-09T20:56:37&#43;00:00">July 9, 2021</time>
+          </li>
+
+          <li class="before:content-['•'] before:mr-2 before:opacity-50 my-2">
+            1 min read
+          </li>
+
+        </ul>
+
+      </div>
+      
+    </header>
+
+<figure id="featureimage" class="rounded-xl aspect-video">
+        <img class="rounded-lg w-full h-full object-cover object-center" src="https://www.zhhuu.top/img/git-basic_hu19b06501de46f63c4f3f04ed919138b9_145160_750x0_resize_q75_h2_box_2.webp" alt="" width="750" height="460">
+</figure>
+
+    <div id="content" class="mb-14">
+      <p>git是版本控制系统。应用最为广泛，适用于中小项目。本身是命令行工具。
+GitKraken图形化客户端，界面漂亮，功能全面。</p>
+<p>🔗链接</p>
+<ul>
+<li><a href="https://www.gitkraken.com/">GitKraken</a></li>
+</ul>
+<h1 id="git的基本概念和操作">Git的基本概念和操作</h1>
+<h2 id="代码仓库repository">代码仓库(Repository)</h2>
+<p>创建一个<strong>代码仓库(Repository)</strong>，可以是本地仓库，也可以是保存在远程服务器上的仓库。仓库之间可以相互同步。
+<img src="1.png" alt="">
+显示代码的所有提交历史，其中每项代表一个<strong>提交(Commit)</strong>,提交相当于检查点或者快照。对代码作出修改后可以提交这次修改，Git会保存当前的代码快照，之后可以轻松回溯到这里。
+新建代码仓库的时候会自动创建一个提交。
+选中提交后可以看到所有修改的文件。</p>
+<blockquote>
+<p>GitKraken 中打开git目录可以点击“文件”-“在文件浏览器中打开”，找到代码仓库在本地计算机上存放的位置</p>
+</blockquote>
+<p>作出更改后文件历史中多出 <code>//WIP</code> (Work In Progress)，代表这个提交正在施工中。
+Git要求在提交修改的文件前要对它们先 <strong>Stage</strong>，点击Stage。Stage可看作提交前防止误操作。其中必填本次提交的描述。最后&quot;Commit&quot;完成提交，这里的提交还是在本地计算机的提交。
+如果要远程提交到代码仓库，就需要 <strong>&ldquo;Push&quot;s</strong>，推送提交即可。</p>
+<h2 id="拉取pull">拉取(Pull)</h2>
+<p>从远程服务器 <strong>拉取(Pull)</strong> 提交
+<img src="2.png" alt="">
+提交历史会多出来一条。master和电脑图标的标签表示本地仓库的提交，上面的表示Github上的远程仓库提交（master是分支）。(origin通常代表远程仓库)。如果想把远程提交同步到本地仓库只需要点击**&ldquo;Pull&rdquo;**。点击后两个图标重合在一起，代表远程仓库和本地仓库的提交历史已经完全相同。</p>
+<h2 id="合并merge">合并(Merge)</h2>
+<p>两边同时作出了修改后提交历史会产生分叉
+<img src="3.png" alt="">
+如果想要将两个修改同时应用在本地仓库中，需要合并。Pull的时候会自动合并远程提交到本地的提交中。Pull后Git会自动生成一个新提交。
+<img src="4.png" alt="">
+如果同时修改代码的同一处位置，再次Pull的时候，会自动合并失败，需要手动合并冲突(Conflict)的部分。
+<img src="5.png" alt="">
+<img src="6.png" alt="">
+下面的窗口用于手动解决冲突
+<img src="7.png" alt="">
+最终完成提交
+<img src="8.png" alt=""></p>
+<h2 id="提交改写amend">提交改写(Amend)</h2>
+<p>用于提交代码有误或者提交信息出错，对已提交的文件和信息进行修改。在提交前勾选Amend后正常提交。这个操作只会修改已经存在的提交。但是最好本地使用。</p>
+<h2 id="分支branch">分支(Branch)</h2>
+<p>创建一个新分支，点击Branch按钮。创建好后分支的提交历史和原来相同，但是往后的提交会相互独立。默认只会推送master分支到远程服务器，如果要推送其他分支，点右键然后选择Push。</p>
+<h2 id="合并分支merge-branches">合并分支（Merge Branches）</h2>
+<p>将test合并到master上，先双击切换到master分支，在test分支上右键点“合并test分支到master分支”。（可能需要手动解决代码冲突）</p>
+<h2 id="暂存stash">暂存(Stash)</h2>
+<p><img src="9.png" alt="">
+暂存当前的修改，源代码会被还原到之前的状态，可以进行其他操作。
+<img src="10.png" alt="">
+最后可以通过Pop将暂存的代码恢复出来，甚至可以切换到很老的版本将暂存的修改恢复出来。</p>
+<h2 id="变基rebase">变基(Rebase)</h2>
+<p><img src="11.png" alt="">
+在合并分支的过程中，会将整个分支摘取下来，嫁接到另一个分支上（改变了原有的基底）。相比Merge,Merge的优点在于原先的提交历史会被完整地保留下来。
+比如将test分支变基到master分支，先选择test分支，右键选择“将test分支变基到master分支上”，完成操作。最后将master分支指向最新的提交，这样master分支的内容才是最新的。（用到Fast Forward)</p>
+<h2 id="快进fast-forward">快进(Fast Forward)</h2>
+<p>直接让master的指针快进到test分支。</p>
+<h2 id="签出checkout">签出(Checkout)</h2>
+<p>回退到早期的版本完成一些bug的修复。在想要回到的节点上右键点击签出，此时Head标签指向当前提交。
+<img src="12.png" alt="">
+修改完后提交是基于早期的提交,最后可以将其变基到当前的提交上，变基完成后提交会变成一条直线。</p>
+<h2 id="撤销操作undoing">撤销操作(Undoing)</h2>
+<p>常用于在Git中错误提交了代码或者错误合并了一个分支。得益于每次的操作都记录在Reflog的类似日志的文件里，能够帮你轻松回退之前的状态。GitKraken中就是状态栏中的undo操作。包括分支切换、合并、修改甚至删除等等。</p>
+<h2 id="恢复revert">恢复(Revert)</h2>
+<p>常用于撤销已提交的代码（远程）。在GitKraken中在提交上点右键，Git会创建一个完全相反的提交以恢复。</p>
+<h1 id="图形化界面对应的命令行命令">图形化界面对应的命令行命令</h1>
+<h2 id="第一部分常用基础部分">第一部分（常用基础部分）</h2>
+<p>配置基本用户信息
+<code>git config --global user.name &lt;用户名&gt;</code>
+<code>git config --global user.email &lt;邮箱地址&gt;</code></p>
+<p>创建一个新仓库
+<code>git init</code></p>
+<p>从远程服务器克隆一个仓库
+<code>git clone &lt;远程仓库url&gt;</code></p>
+<p>显示当前的工作目录下的提交文件的状态
+<code>git status</code></p>
+<p>将指定文件Stage（标记为将要被提交的文件）
+<code>git add &lt;文件路径&gt;</code></p>
+<p>将指定文件Unstage（取消标记为将要被提交的文件）
+<code>git reset &lt;文件路径&gt;</code></p>
+<p>创建一个提交并提供提交信息
+<code>git commit -m &quot;提交信息&quot;</code></p>
+<p>显示提交历史（类似GitKraken中间窗口的提交历史）
+<code>git log</code></p>
+<p>向远程仓库推送(Push)
+<code>git push</code></p>
+<p>从远程仓库拉去(Pull)
+<code>git pull</code></p>
+<h2 id="第二部分基础进阶部分">第二部分（基础进阶部分）</h2>
+<p>修改(Amend)上一个提交
+<code>git commit --amend -m &lt;新的提交信息&gt;</code></p>
+<p>查看所有分支
+<code>git branch</code></p>
+<p>创建新的分支
+<code>git branch &lt;分支名字&gt;</code></p>
+<p>切换分支
+<code>git checkoout &lt;分支名字&gt;</code></p>
+<p>重命名分支
+<code>git branch -m &lt;旧名字&gt; &lt;新名字&gt;</code></p>
+<p>删除分支
+<code>git branch -d &lt;分支名字&gt;</code></p>
+<p>将分支变基(Rebase)到master</p>
+<blockquote>
+<p>注：需要先切换到分支后，再完成变基</p>
+</blockquote>
+<p><code>git checkout &lt;分支名字&gt;</code>
+<code>git rebase master</code></p>
+<p>使用快进(Fast-Forward)将分支合并到master
+<code>git checkout &lt;分支名字&gt;</code>
+<code>git merge -ff-only master</code></p>
+<p>中止这一次提交的合并（当遇到冲突时）
+<code>git merge --abort</code></p>
+<p>将未提交的修改暂存(Stash)
+<code>git stach save &quot;&lt;可以输入一个信息&gt;&quot;</code></p>
+<p>将上一个暂存的修改恢复并从暂存列表中删除
+<code>git stash pop</code></p>
+<p>签出指定的提交
+<code>git checkout &lt;提交的hash&gt;</code></p>
+<p>撤销旧的提交</p>
+<blockquote>
+<p>注：Revert并不会修改旧的提交历史，而是在工作树中生成一个与之前提交完全相反的修改。</p>
+</blockquote>
+<p><code>git revert &lt;旧提交的hash&gt;</code></p>
+<p>利用reflog查看本地仓库中的所有操作
+<code>git reflog</code></p>
+
+
+    <ul id="taxonomy" class="not-prose flex items-center space-x-4 flex-nowrap whitespace-nowrap overflow-x-auto">
+
+      <li class="font-semibold my-4">Tags:</li>
+        <li ><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/git/">Git</a></li>
+        <li ><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/%E5%89%8D%E7%AB%AF/">前端</a></li>
+        <li ><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/%E5%90%8E%E7%AB%AF/">后端</a></li>
+        <li ><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/feature/">Feature</a></li>
+    </ul>
+
+      
+
+    </div>
+
+    <footer id="content-footer" class="not-prose">
+
+      
+      
+
+      <div id="author-box" class="my-8 md:my-14 border p-8 bg-zinc-100 rounded-2xl">
+
+        <img class="w-20 h-20 rounded-full" src="/img/favicon.jpg" alt="huuhghhgyg">
+
+        <h2 class="text-xl font-bold my-4">Writter by : huuhghhgyg</h2>
+
+        <p >Never Settle</p>
+
+        
+        
+        
+      </div>
+
+      <div id="related-post" class="">
+
+        <h2 class="text-xl md:text-2xl font-bold mb-6 md:mb-8">Recommended for You</h2><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><article class="relative group bg-zinc-100 hover:bg-blue-100 rounded-3xl">
+	
+	<a class="insert-link" href="https://www.zhhuu.top/posts/docker-startup/"></a>
+
+	<figure class="w-full aspect-video overflow-hidden rounded-3xl"><img class="object-cover group-hover:scale-105 transition duration-500 cursor-pointer object-center w-full h-full" src="https://www.zhhuu.top/img/docker-setup_hu2d747d4ddd64714ecaec7eb8669dd893_245792_750x0_resize_q75_h2_box_2.webp" alt="初探Docker" width="750" height="563">
+
+	  </figure>
+
+	<div class="p-6">
+
+		<time datetime="2021-01-23T17:34:33&#43;00:00">Jan 23, 2021</time>
+
+		<h3 class="my-4 text-2xl font-bold">初探Docker</h3>
+
+		<p class="text-normal leading-normal text-zinc-500 line-clamp-2"></p>
+
+	</div>
+</article><article class="relative group bg-zinc-100 hover:bg-blue-100 rounded-3xl">
+	
+	<a class="insert-link" href="https://www.zhhuu.top/posts/raspi-setup/"></a>
+
+	<figure class="w-full aspect-video overflow-hidden rounded-3xl"><img class="object-cover group-hover:scale-105 transition duration-500 cursor-pointer object-center w-full h-full" src="https://www.zhhuu.top/img/linux-setup_hu310f575dad52e9467471fca9b2e987e1_664500_750x0_resize_q75_h2_box_2.webp" alt="树莓派安装设置" width="750" height="422">
+
+	  </figure>
+
+	<div class="p-6">
+
+		<time datetime="2021-01-20T10:02:05&#43;00:00">Jan 20, 2021</time>
+
+		<h3 class="my-4 text-2xl font-bold">树莓派安装设置</h3>
+
+		<p class="text-normal leading-normal text-zinc-500 line-clamp-2"></p>
+
+	</div>
+</article>
+          
+        </div>
+      </div>
+
+    </footer>
+
+  </article>
+
+  
+  <aside class="md:col-span-1"><div class="lg:sticky lg:top-8">
+
+	
+      
+
+
+
+
+
+
+<div class="toc rounded-2xl p-4 bg-zinc-100 mb-10">
+    <div class="page-header font-bold text-lg pb-2">目录</div>
+    <div class="toc-nav">
+        <ul class="nav">
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link" href="#git%e7%9a%84%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5%e5%92%8c%e6%93%8d%e4%bd%9c">
+                    1. Git的基本概念和操作
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e4%bb%a3%e7%a0%81%e4%bb%93%e5%ba%93repository">
+                    1.1. 代码仓库(Repository)
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e6%8b%89%e5%8f%96pull">
+                    1.2. 拉取(Pull)
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e5%90%88%e5%b9%b6merge">
+                    1.3. 合并(Merge)
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e6%8f%90%e4%ba%a4%e6%94%b9%e5%86%99amend">
+                    1.4. 提交改写(Amend)
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e5%88%86%e6%94%afbranch">
+                    1.5. 分支(Branch)
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e5%90%88%e5%b9%b6%e5%88%86%e6%94%afmerge-branches">
+                    1.6. 合并分支（Merge Branches）
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e6%9a%82%e5%ad%98stash">
+                    1.7. 暂存(Stash)
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e5%8f%98%e5%9f%barebase">
+                    1.8. 变基(Rebase)
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e5%bf%ab%e8%bf%9bfast-forward">
+                    1.9. 快进(Fast Forward)
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e7%ad%be%e5%87%bacheckout">
+                    1.10. 签出(Checkout)
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e6%92%a4%e9%94%80%e6%93%8d%e4%bd%9cundoing">
+                    1.11. 撤销操作(Undoing)
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e6%81%a2%e5%a4%8drevert">
+                    1.12. 恢复(Revert)
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link" href="#%e5%9b%be%e5%bd%a2%e5%8c%96%e7%95%8c%e9%9d%a2%e5%af%b9%e5%ba%94%e7%9a%84%e5%91%bd%e4%bb%a4%e8%a1%8c%e5%91%bd%e4%bb%a4">
+                    2. 图形化界面对应的命令行命令
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e7%ac%ac%e4%b8%80%e9%83%a8%e5%88%86%e5%b8%b8%e7%94%a8%e5%9f%ba%e7%a1%80%e9%83%a8%e5%88%86">
+                    2.1. 第一部分（常用基础部分）
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e7%ac%ac%e4%ba%8c%e9%83%a8%e5%88%86%e5%9f%ba%e7%a1%80%e8%bf%9b%e9%98%b6%e9%83%a8%e5%88%86">
+                    2.2. 第二部分（基础进阶部分）
+                </a>
+            </li>
+        
+        </ul>
+    </div>
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const tocLinks = document.querySelectorAll(".toc-nav .nav-link");
+    const headers = Array.from(tocLinks).map(link => document.querySelector(decodeURI(link.getAttribute("href"))));
+    const offset = 10; 
+    
+    if (tocLinks.length === 0) {
+        return;
+    }
+
+    function updateActiveLink() {
+        let index = headers.findIndex(header => header.getBoundingClientRect().top > offset);
+        if (index === -1) {
+            index = headers.length - 1;
+        } else if (index > 0) {
+            index -= 1;
+        }
+        tocLinks.forEach(link => link.classList.remove("active"));
+        tocLinks[index].classList.add("active");
+    }
+
+    window.addEventListener("scroll", updateActiveLink);
+
+    tocLinks.forEach(link => {
+        link.addEventListener("click", function(event) {
+            event.preventDefault();
+            const targetId = decodeURI(this.getAttribute("href").substring(1));
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+                
+                history.pushState(null, null, `#${targetId}`);
+                setTimeout(updateActiveLink, 100); 
+            }
+        });
+    });
+
+    updateActiveLink(); 
+});
+</script>
+
+    
+
+
+	
+
+	<div class="space-y-6">
+
+		<h2 class="font-bold text-xl mb-8">Recent Post</h2>
+
+		<article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/new-theme/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/new-theme_hu0c1069844488d39e3d981653fdb9672c_552496_250x250_fill_box_smart1_3.png" alt="启用新主题" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">启用新主题</h3>
+	</div>
+</article><article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/lua-microcity/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/MicroCityWorldGrid_hueeb30e2fa18f4d0617e0e9462be0f772_91378_250x250_fill_q75_h2_box_smart1_2.webp" alt="MicroCity内置的LUA函数" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">MicroCity内置的LUA函数</h3>
+	</div>
+</article><article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/ga/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/evolution_huad65e07a071e6dac9af389d1c00f7d4b_297498_250x250_fill_q75_h2_box_smart1_2.webp" alt="使用Python编写遗传算法" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">使用Python编写遗传算法</h3>
+	</div>
+</article><article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/optimization-code/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/optimization-code_hud268f4a32eb0d40a0727452f8945d9dc_278734_250x250_fill_q75_h2_box_smart1_2.webp" alt="优化软件语法" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">优化软件语法</h3>
+	</div>
+</article><article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/sql-basics/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/sql_hu35c510dc12184cf2364d179ea6307c22_25788_250x250_fill_q75_h2_box_smart1_2.webp" alt="SQL入门" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">SQL入门</h3>
+	</div>
+</article>
+		
+	</div>
+
+</div>
+</aside>
+
+</div>
+  
+</main>
+  <footer class="bg-zinc-100 py-10 md:py-14"><div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+
+  <div class="flex flex-wrap space-y-6 mb-4">
+
+    <div class="w-full md:w-3/5 flex flex-col space-y-4 md:pr-8 lg:pr-10">
+
+      <a class="flex items-center group" href="https://www.zhhuu.top/">
+        <img src="/favicon.png" alt="site icon" class="mr-2" width="32" height="32">
+        
+        <span class="text-2xl font-semibold uppercase">Hikaru&#39;s Blog</span>
+      </a>
+
+      <p class="font-semibold">
+        Write with love. Minimalism design.
+      </p>
+
+      <p>Never Settle</p>
+
+    </div>
+
+    <div class="self-center flex flex-col w-full md:w-2/5">
+
+<ul id="social-media" class="flex items-center space-x-4">
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.facebook.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+				<path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.twitter.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.github.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.instagram.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+			</svg>
+		</a>
+	</li>
+</ul>
+
+    </div>
+    
+  </div>
+
+  <div class="my-8">
+    <ul class="flex items-center space-x-4">
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/">Home</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/posts/">Posts</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/tags/">Tags</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/friend/">Friends</a></li>
+      
+    </ul>
+  </div>
+
+  <div class="border-t pt-4">
+
+    <p class="text-sm">Copyright © 2024. All rights reserved. </p>
+
+  </div>
+  
+</div>
+</footer>
+      <script defer src="/js/insertoggle.2f07edcf51c0cba06f691f947fdaeea96d2c85627f30b4b0640a40d5a1bfeb08.js" integrity="sha256-Lwftz1HAy6BvaR&#43;Uf9ruqW0shWJ/MLSwZApA1aG/6wg=" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>壁纸 on Hikaru&#39;s Blog</title>
+    <link>https://www.zhhuu.top/tags/%E5%A3%81%E7%BA%B8/</link>
+    <description>Recent content in 壁纸 on Hikaru&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 19 May 2019 20:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.zhhuu.top/tags/%E5%A3%81%E7%BA%B8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>把自己的城市地图设置为壁纸</title>
+      <link>https://www.zhhuu.top/posts/city-phone-background/</link>
+      <pubDate>Sun, 19 May 2019 20:00:00 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/city-phone-background/</guid>
+      <description>说明：经查，网站已经失效，本文仅作存档&#xA;这个网站可以把自己的城市设置为壁纸。具体步骤如下:&#xA;你会看到如下界面 可以在 Map Location 那一栏输入自己想要的城市。我输入的是深圳。 同时，你也可以更改地图颜色。共有4种颜色可选。 还可以选图片大小。部分热门机型已经有预设了，可以直接选择。 如果没有，可以手动设置图片大小。我这里设置1080P。 最后点击 蓝色按钮 Generate，Download 下载即可。</description>
+    </item>
+    <item>
+      <title>使用Powershell自动设置壁纸</title>
+      <link>https://www.zhhuu.top/posts/powershell-wallpaper/</link>
+      <pubDate>Fri, 15 Mar 2019 19:00:08 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/powershell-wallpaper/</guid>
+      <description>发现CMD不能达到此目的，更换更高级的Powershell来执行这个任务~&#xA;最近有的人经常更换电脑桌面壁纸，而且壁纸我觉得也不算好看(很难看)，基本上就是起到哗众取宠的目的，所以我打算利用脚本自动定时更换电脑壁纸，达到锁定电脑壁纸的目的。&#xA;准备工作 学校的电脑系统是Win7,默认设置不允许执行脚本(不知道是不是Ghost系统的人设置的)，所以第一步要解除限制。 Powershell中执行命令如下: Set-ExecutionPolicy Unrestricted 执行完毕之后就能运行.ps1脚本了。&#xA;自动更换壁纸的函数方法 保存如下代码到一个.ps1文件中。(可以用记事本编辑再更改文件拓展名)&#xA;1Function Set-WallPaper($Value) 2{ 3 Set-ItemProperty -path &amp;#39;HKCU:\Control Panel\Desktop\&amp;#39; -name wallpaper -value $value 4 rundll32.exe user32.dll, UpdatePerUserSystemParameters 1, True 5} 6 7Set-WallPaper -value &amp;#34;C:\Windows\Web\Wallpaper\Homes_Background.bmp&amp;#34; 将其中C:\Windows\Web\Wallpaper\Homes_Background.bmp更改成壁纸所在处，执行脚本即生效。&#xA;添加到计划任务 计划任务的位置在 &amp;ldquo;控制面板&amp;rdquo;-(&amp;ldquo;系统和安全&amp;rdquo;)-&amp;ldquo;管理工具&amp;rdquo;-&amp;ldquo;计划任务&amp;rdquo; 打开后点击 &amp;ldquo;添加基本任务&amp;rdquo; ,之后就可以跟着向导走了。执行文件填写 powershell ,参数填写刚刚保存的脚本文件位置即可。 还可以 每日获取Bing图片并设为壁纸&#xA;1function Save-BingTodayImage() 2{ 3 #必应图片故事API 4 $bingImageApi =&amp;#39;http://www.bing.com/HPImageArchive.aspx?format=xml&amp;amp;idx=0&amp;amp;n=1&amp;amp;mkt=zh-cn&amp;#39; 5 $bingUri = &amp;#39;http://www.bing.com/&amp;#39; 6 7 # 获取图片链接 8 [xml]$bingImageXml = (Invoke-WebRequest -Uri $bingImageApi).Content 9 Write-Host &amp;#34; 今日图片故事： $( $bingImageXml.</description>
+    </item>
+  </channel>
+</rss>

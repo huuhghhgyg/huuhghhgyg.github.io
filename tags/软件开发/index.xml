@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>软件开发 on Hikaru&#39;s Blog</title>
+    <link>https://www.zhhuu.top/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/</link>
+    <description>Recent content in 软件开发 on Hikaru&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 29 Apr 2018 19:13:31 +0000</lastBuildDate>
+    <atom:link href="https://www.zhhuu.top/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FileGetter使用说明</title>
+      <link>https://www.zhhuu.top/posts/file-getter-instructions/</link>
+      <pubDate>Sun, 29 Apr 2018 19:13:31 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/file-getter-instructions/</guid>
+      <description>File Getter使用说明 功能 启动后持续扫描电脑上盘符数，当盘符数量有变更时检索新增盘符内文件。当检索到指定文件时复制到电脑中指定目录(C:/got)下。&#xA;使用方法 直接打开(建议存入电脑C盘中某个位置再打开)，当你程序成功开始运行后发出短暂(哔)声。当有新盘符插入时，扫描盘符内文件，若有指定类型文件则复制。当扫描完成后程序发出长(1s,哔)声，并自动退出。&#xA;使用技巧 当你在程序运行目录下新建以下文件程序运行逻辑会发生改变:&#xA;debug.txt 当程序运行时，只要检测到运行目录下有此文件，日志窗口会显示出来。当检测到此文件被删去，窗口则会被隐藏。 注意:此操作在程序运行时是实时的，命令即刻执行(在下一个循环时)&#xA;keeprunning.txt 当程序完成扫描新磁盘(不管有没有复制)后，若检测到此文件则会继续运行下去。终止程序运行方法参见下文。&#xA;exit.txt 当程序在运行时检测到此文件后则立刻终止运行。&#xA;支持的指定类型文件 .xls .xlsx&#xA;其他说明 本程序仅供学习用途使用。</description>
+    </item>
+    <item>
+      <title>C#异步介绍</title>
+      <link>https://www.zhhuu.top/posts/csharp-async/</link>
+      <pubDate>Sun, 08 Apr 2018 21:14:06 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/csharp-async/</guid>
+      <description>创建多线程？太麻烦了！来试试更快更便捷的异步。程序无须按照代码顺序自上而下的执行。&#xA;什么是异步编程 什么是异步编程呢？举个简单的例子：&#xA;1using System.Net.Http; 2using System.Threading.Tasks; 3using static System.Console; 4 5namespace Core 6{ 7 class Async 8 { 9 static void Main() 10 { 11 Start(); 12 End(); 13 } 14 15 static void Wait()=&amp;gt;WriteLine(&amp;#34;waiting...&amp;#34;); 16 static void End()=&amp;gt;WriteLine(&amp;#34;end...&amp;#34;); 17 static int Start() 18 { 19 WriteLine(&amp;#34;start...&amp;#34;); 20 HttpClient client = new HttpClient(); 21 Waiting(); 22 var result = client.GetStringAsync(&amp;#34;https://www.visualstudio.com/&amp;#34;); 23 string str = result.Result; 24 return str.Length; 25 } 26 } 27} 上面这段代码中，Main方法中的代码是按照自上而下的顺序执行的。网络状况不佳时，Start() 方法是比较耗时 （注意，这里在Start方法中调用了异步方法GetStringAsync，但该方法在此处是以同步方式执行的，具体原因下文会进行说明） ，在 Start() 方法执行完毕之前，整个程序处于阻塞状态。而异步编程可以很好的解决这个问题，一句简单的话来概括异步编程就是，程序无须按照代码顺序自上而下的执行。</description>
+    </item>
+    <item>
+      <title>HCalculator</title>
+      <link>https://www.zhhuu.top/posts/hcalculator/</link>
+      <pubDate>Mon, 26 Jun 2017 08:51:34 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/hcalculator/</guid>
+      <description>A calculator was written by huuhghhgyg [2022-03-02]：该项目已被归档，只是留作纪念。&#xA;链接 View on Github 在Github查看 Download .zip 下载.zip文件 Download .tar.gz 下载.tar.gz文件&#xA;说明 若要访问原网页点击&amp;gt;这里&amp;lt;&#xA;嗯，就只是一个计算器嘛没什么好看的….要下赶快下XDD&#xA;历代大版本更新 计算器1.0(最初版本) 基本的傻瓜计算器功能，差不多支持键盘乱弹。&#xA;计算器2.0(已遗失) 作为向Material Design的过渡 计算器3.0 拥有更好的界面，Material Design设计标准，更多的功能。支持生成随机数，计算日期之间的间隔等新功能。&#xA;计算器4.0(当前版本) 新增了科学计算器。改进了科学计算器的界面。持续改进!</description>
+    </item>
+  </channel>
+</rss>

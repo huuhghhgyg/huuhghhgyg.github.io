@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SQL入门 | Hikaru&#39;s Blog</title>
+
+<meta name="description" content="">
+      <link rel="stylesheet" href="/css/main.min.4dc2e2ce92c37525f4749bdb618a9af11becbea894cd27cf53e52755187d6dbb.css" integrity="sha256-TcLizpLDdSX0dJvbYYqa8RvsvqiUzSfPU&#43;UnVRh9bbs=" crossorigin="anonymous">
+
+<link rel="icon" type="image/svg+xml" href="https://www.zhhuu.top/favicon.svg"> 
+<link rel="icon" type="image/x-icon" href="https://www.zhhuu.top/favicon.ico"> 
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.zhhuu.top/favicon.png"> 
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.zhhuu.top/favicon-32.png"> 
+<link rel="icon" type="image/png" sizes="64x64" href="https://www.zhhuu.top/favicon-64.png"> 
+
+</head>
+<body>
+  <header class="py-6 border-b"><div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col">
+	<div class="flex items-center">
+		<div class="flex items-center">
+			<button class="flex items-center space-x-2 rounded-full border py-1 pr-[5px] pl-3 group bg-zinc-100 hover:bg-zinc-200 toggle-button" data-target="menu-bar">
+				<svg width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+					<path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
+				</svg>
+				<span class="bg-blue-500 fill-white rounded-full overflow-hidden h-8 w-8">
+					<img src="/favicon.png" alt="site icon" class="mr-2 object-cover">
+				</span>
+			</button>
+			<div class="relative rounded-full py-1.5 px-6 bg-zinc-100 hover:bg-zinc-200 text-xl font-bold uppercase mx-2">
+				<h2><a class="before:content-[''] before:z-10 before:top-0 before:right-0 before:left-0 before:bottom-0 before:absolute before:pointer-events-auto" href="https://www.zhhuu.top/">Hikaru&#39;s Blog</a></h2>
+			</div>
+		</div>
+		<div class="flex items-center ml-auto">
+			<button id="search-btn" class="flex items-center rounded-full p-3 bg-zinc-100 hover:bg-zinc-200 toggle-button" data-target="search-bar">
+				<svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+					<path id="path1" class="transition-all ease-linear" d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+					<path id="path2" class="transition-all ease-linear hidden" d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"></path>
+				</svg>
+			</button>
+		</div>
+	</div>
+  <nav id="menu-bar" class="block mt-3 close">
+    <ul class="flex items-center flex flex-nowrap whitespace-nowrap overflow-x-auto space-x-4">
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/">Home</a>
+    </li>
+    <li class="my-2">
+      <a aria-current="true" class="ancestor" href="/posts/">Posts</a>
+    </li>
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/tags/">Tags</a>
+    </li>
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/friend/">Friends</a>
+    </li>
+    </ul>
+  </nav>
+
+
+
+<div id="search-bar" class="block mt-3 relative z-50 close">
+    <form id="search" class="flex items-stretch">
+      <input id="searchInput" tabindex="0"
+        class="w-full block px-6 py-2 rounded-full focus:outline-none border border-zinc-200" type="text"
+        placeholder="Search...">
+    </form>
+
+    <div id="fastSearch" class="absolute left-0 right-0 mt-2 bg-white shadow-sm rounded-xl z-50 overflow-x-hidden">
+      <ul id="searchResults" class="divide-y divide-gray-200 z-50">
+      </ul>
+    </div>
+  </div>
+
+  <div id="overlay" class="fixed inset-0 bg-black opacity-50 hidden z-40"></div>
+
+<script src="/js/fuse.min.js"></script> 
+<script src="/js/fastsearch.js"></script></div></header>
+  <main class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8"><div id="breadcrumb" class="max-w-7xl mx-auto py-8">
+	<ul class="flex space-x-4 text-sm text-zinc-500">
+		<li class="after:content-['❯'] after:ml-4 after:opacity-30 last:after:content-none uppercase">
+			<a href="https://www.zhhuu.top/">Hikaru&#39;s Blog</a>
+		</li>
+		<li class="after:content-['❯'] after:ml-4 after:opacity-30 last:after:content-none uppercase">
+			<a href="https://www.zhhuu.top/posts/">Posts</a>
+		</li>
+	</ul>
+</div><div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+
+  <article class="md:col-span-2 prose lg:prose-lg">
+
+    <header class="not-prose">
+      
+      <h1 id="title" class="text-4xl font-bold leading-normal">SQL入门</h1>
+
+      <div id="lead" class="my-6">
+
+        <p class="font-bold"> </p>
+
+      </div>
+      
+      <div id="writer" class="flex items-center space-x-4">
+
+        <img class="w-12 h-12 bg-black rounded-full" src="https://www.zhhuu.top/img/favicon.jpg" alt="huuhghhgyg avatar" width="1033" height="1033">
+
+        <ul class="flex items-center space-x-4 flex-nowrap whitespace-nowrap overflow-x-auto">
+          
+          <li class="font-semibold my-2">huuhghhgyg</li>
+          
+          <li class="before:content-['•'] before:mr-2 before:opacity-50 my-2"><time datetime="2022-03-27T11:52:50&#43;00:00">March 27, 2022</time>
+          </li>
+
+          <li class="before:content-['•'] before:mr-2 before:opacity-50 my-2">
+            2 min read
+          </li>
+
+        </ul>
+
+      </div>
+      
+    </header>
+
+<figure id="featureimage" class="rounded-xl aspect-video">
+        <img class="rounded-lg w-full h-full object-cover object-center" src="https://www.zhhuu.top/img/sql_hu35c510dc12184cf2364d179ea6307c22_25788_750x0_resize_q75_h2_box_2.webp" alt="" width="750" height="281">
+</figure>
+
+    <div id="content" class="mb-14">
+      <div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span><span style="color:#cba6f7">SELECT</span> <span style="color:#89dceb;font-weight:bold">*</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">2</span><span><span style="color:#cba6f7">FROM</span> <span style="color:#cba6f7">table</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">3</span><span><span style="color:#cba6f7">WHERE</span> <span style="color:#cba6f7">column</span> <span style="color:#cba6f7">LIKE</span> <span style="color:#a6e3a1">&#39;条件&#39;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">4</span><span><span style="color:#cba6f7">Order</span> <span style="color:#cba6f7">by</span> <span style="color:#fab387">1</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">5</span><span><span style="color:#cba6f7">LIMIT</span> <span style="color:#fab387">100</span>
+</span></span></code></pre></div><h1 id="基本语法">基本语法</h1>
+<h2 id="注释">注释</h2>
+<p><code>--</code>后面是注释内容。<code>--</code>是sql的注释标志</p>
+<h2 id="运算符">运算符</h2>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AND</code></td>
+<td>和，AND的优先级一般会高于OR</td>
+</tr>
+<tr>
+<td><code>OR</code></td>
+<td>或者</td>
+</tr>
+<tr>
+<td><code>NOT</code></td>
+<td>非</td>
+</tr>
+<tr>
+<td><code>()</code></td>
+<td>括号，提高优先级。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="条件">条件</h2>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>%</code></td>
+<td>n个任意字符</td>
+</tr>
+<tr>
+<td><code>_</code></td>
+<td>1个任意字符</td>
+</tr>
+</tbody>
+</table>
+<h2 id="正则表达式">正则表达式</h2>
+<p>REGEXP（Regular Expression）</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span><span style="color:#cba6f7">WHERE</span> <span style="color:#cba6f7">column</span> REGEXP <span style="color:#a6e3a1">&#39;表达式&#39;</span>
+</span></span></code></pre></div><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>意义</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>^</code></td>
+<td>以..开头</td>
+<td><code>^field</code></td>
+</tr>
+<tr>
+<td><code> $</code></td>
+<td>以..结尾</td>
+<td><code>field$</code></td>
+</tr>
+<tr>
+<td><code>\</code></td>
+<td>或者</td>
+<td><code>^field｜mac｜rose</code></td>
+</tr>
+<tr>
+<td><code>[]</code></td>
+<td>匹配中括号内的所有字符</td>
+<td><code>[gim]e</code>，匹配ge、ie、me，<br><code>[a-c]d</code>，匹配<br>ad、bd、cd，<br><code>[1-3]</code>同理</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注意：由于我使用的markdown编译器无法将表格中的代码中的<code>|</code>识别为符号，以上的<code>|</code>为全角符号</p>
+</blockquote>
+<h2 id="null">NULL</h2>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IS NULL</code></td>
+<td>值为<code>null</code></td>
+</tr>
+<tr>
+<td><code>IS NOT NULL</code></td>
+<td>值不为<code>null</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="as">AS</h2>
+<p>在原有数据基础上新建一列数据，或者理解为处理完原有列数据填入新一列中</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span>score <span style="color:#89dceb;font-weight:bold">+</span> <span style="color:#fab387">10</span> <span style="color:#cba6f7">AS</span> <span style="color:#cba6f7">new</span> _score
+</span></span></code></pre></div><h2 id="select">SELECT</h2>
+<p>选择表内的数据</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span><span style="color:#cba6f7">SELECT</span> <span style="color:#cba6f7">first</span> _name, <span style="color:#cba6f7">last</span> _name
+</span></span></code></pre></div><h2 id="order-by">ORDER BY</h2>
+<p>根据什么值排序</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span><span style="color:#cba6f7">ORDER</span> <span style="color:#cba6f7">BY</span> <span style="color:#cba6f7">first</span> _name
+</span></span></code></pre></div><h3 id="多值排序">多值排序</h3>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span><span style="color:#cba6f7">ORDER</span> <span style="color:#cba6f7">BY</span> <span style="color:#cba6f7">state</span>, <span style="color:#cba6f7">first</span> _name
+</span></span></code></pre></div><h3 id="根据列排序">根据列排序</h3>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span><span style="color:#cba6f7">ORDER</span> <span style="color:#cba6f7">BY</span> <span style="color:#fab387">1</span>, <span style="color:#fab387">2</span>
+</span></span></code></pre></div><h3 id="desc">DESC</h3>
+<ul>
+<li>descending：降序</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span><span style="color:#cba6f7">ORDER</span> <span style="color:#cba6f7">BY</span> <span style="color:#cba6f7">first</span> _name <span style="color:#cba6f7">DESC</span>
+</span></span></code></pre></div><h3 id="多值排序-1">多值排序</h3>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span><span style="color:#cba6f7">ORDER</span> <span style="color:#cba6f7">BY</span> <span style="color:#cba6f7">state</span> <span style="color:#cba6f7">DESC</span>, <span style="color:#cba6f7">first</span> _name
+</span></span></code></pre></div><h2 id="limit">LIMIT</h2>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LIMIT 6</code></td>
+<td>设定返回查询数据的最大条数为6</td>
+</tr>
+<tr>
+<td><code>LIMIT 6, 3</code></td>
+<td>跳过前6条，再返回3条数据（返回第7-9条数据）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="alias-简写">Alias 简写</h2>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span><span style="color:#cba6f7">SELECT</span> customer _id <span style="color:#cba6f7">c</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">2</span><span><span style="color:#cba6f7">From</span> table_t
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">3</span><span><span style="color:#cba6f7">ORDER</span> <span style="color:#cba6f7">BY</span> <span style="color:#cba6f7">c</span>
+</span></span></code></pre></div><h2 id="join和on">JOIN和ON</h2>
+<p>JOIN用于联系多个表的数据列。</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span><span style="color:#cba6f7">SELECT</span> <span style="color:#89dceb;font-weight:bold">*</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">2</span><span><span style="color:#cba6f7">FROM</span> orders o
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">3</span><span><span style="color:#cba6f7">JOIN</span> customers <span style="color:#cba6f7">c</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">4</span><span>  <span style="color:#cba6f7">ON</span> o.customer _id <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#cba6f7">c</span>.customer _id
+</span></span></code></pre></div><h2 id="切换数据库">切换数据库</h2>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span>USE <span style="color:#f38ba8">数据库名</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">3</span><span><span style="color:#cba6f7">SELECT</span> <span style="color:#89dceb;font-weight:bold">*</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">4</span><span><span style="color:#cba6f7">FROM</span> <span style="color:#f38ba8">另一个数据库名</span>.<span style="color:#f38ba8">数据表</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">5</span><span><span style="color:#f38ba8">…</span>
+</span></span></code></pre></div><h2 id="union">UNION</h2>
+<p>用于合并多个查询结果。</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span><span style="color:#cba6f7">SELECT</span> <span style="color:#cba6f7">first</span> _name
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">2</span><span><span style="color:#cba6f7">FROM</span> customers
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">3</span><span><span style="color:#cba6f7">UNION</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">4</span><span><span style="color:#cba6f7">SELECT</span> name
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">5</span><span><span style="color:#cba6f7">FROM</span> shippers
+</span></span></code></pre></div><ul>
+<li>如果一个查询里面有多个语句，一个语句结束后要使用分号（;）</li>
+<li>UNION连接的查询语句只算一个语句</li>
+</ul>
+<h1 id="属性">属性</h1>
+<h2 id="列属性">列属性</h2>
+<h3 id="数据类型">数据类型</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>INT(11)</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>VARCHAR(50)</code></td>
+<td>最大50个字符，且最大占用50个字符的空间，常用于保存string</td>
+</tr>
+<tr>
+<td><code>CHAR(50)</code></td>
+<td>最大50个字符，占用50个字符的的空间</td>
+</tr>
+</tbody>
+</table>
+<h3 id="数据属性">数据属性</h3>
+<table>
+<thead>
+<tr>
+<th>缩写</th>
+<th>全称</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PK</code></td>
+<td>Primary Key</td>
+<td>数据主键</td>
+</tr>
+<tr>
+<td><code>NN</code></td>
+<td>Not Null</td>
+<td>是否能接受NULL值？（可选值？）</td>
+</tr>
+<tr>
+<td><code>AI</code></td>
+<td>Auto Increment</td>
+<td>自动递增</td>
+</tr>
+<tr>
+<td><code>Default / Expression</code></td>
+<td>-</td>
+<td>默认值</td>
+</tr>
+</tbody>
+</table>
+<h1 id="数据管理">数据管理</h1>
+<h2 id="添加行">添加行</h2>
+<p>按照数据排列顺序，包含在<code>VALUES</code>里面添加。</p>
+<h3 id="全部添加">全部添加</h3>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 1</span><span><span style="color:#cba6f7">INSERT</span> <span style="color:#cba6f7">INTO</span> customers
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 2</span><span><span style="color:#6c7086;font-style:italic">-- 如果想要用自动递增，可以直接填DEFAULT
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 3</span><span><span style="color:#6c7086;font-style:italic">-- 如果是可选值，不填入数据的话就填NULL
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 4</span><span><span style="color:#6c7086;font-style:italic"></span><span style="color:#cba6f7">VALUES</span> (
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 5</span><span>  <span style="color:#cba6f7">DEFAULT</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 6</span><span>  <span style="color:#a6e3a1">&#39;first name value&#39;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 7</span><span>  <span style="color:#a6e3a1">&#39;last name value&#39;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 8</span><span>  <span style="color:#a6e3a1">&#39;1990-01-01&#39;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 9</span><span>  <span style="color:#cba6f7">NULL</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">10</span><span>  <span style="color:#a6e3a1">&#39;address&#39;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">11</span><span>  <span style="color:#a6e3a1">&#39;city&#39;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">12</span><span>  <span style="color:#a6e3a1">&#39;CA&#39;</span>)
+</span></span></code></pre></div><h3 id="选择部分变量添加">选择部分变量添加</h3>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span><span style="color:#cba6f7">INSERT</span> <span style="color:#cba6f7">INTO</span> customers(
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">2</span><span>  <span style="color:#cba6f7">first</span> _name,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">3</span><span>  <span style="color:#cba6f7">last</span> _name,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">4</span><span>  birth _date)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">5</span><span><span style="color:#6c7086;font-style:italic">-- VALUES的顺序根据上面定义的顺序来，上面定义的数据顺序可以根据自己的喜好
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">6</span><span><span style="color:#6c7086;font-style:italic"></span>VAULES(
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">7</span><span>  <span style="color:#a6e3a1">&#39;first name value&#39;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">8</span><span>  <span style="color:#a6e3a1">&#39;last name value&#39;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">9</span><span>  <span style="color:#a6e3a1">&#39;date of birth&#39;</span>)
+</span></span></code></pre></div><h3 id="添加多个变量">添加多个变量</h3>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span><span style="color:#cba6f7">INSERT</span> <span style="color:#cba6f7">INTO</span> shippers (name)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">2</span><span><span style="color:#cba6f7">VALUES</span>(<span style="color:#a6e3a1">&#39;shipper1&#39;</span>),
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">3</span><span>  (<span style="color:#a6e3a1">&#39;shipper2&#39;</span>),
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">4</span><span>  (<span style="color:#a6e3a1">&#39;shipper3&#39;</span>)
+</span></span></code></pre></div><h3 id="向不同的表格添加变量">向不同的表格添加变量</h3>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span><span style="color:#cba6f7">INSERT</span> <span style="color:#cba6f7">INTO</span> orders (customer _id, <span style="color:#cba6f7">order</span> _date, status)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">2</span><span><span style="color:#cba6f7">VALUES</span> (<span style="color:#fab387">1</span>, <span style="color:#a6e3a1">&#39;2019-01-02&#39;</span>, <span style="color:#fab387">1</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">3</span><span><span style="color:#cba6f7">INSERT</span> <span style="color:#cba6f7">INTO</span> <span style="color:#cba6f7">order</span> _items
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">4</span><span><span style="color:#cba6f7">VALUES</span> (<span style="color:#cba6f7">LAST</span> _INSERT _ID(), <span style="color:#fab387">1</span>, <span style="color:#fab387">1</span>, <span style="color:#fab387">2</span>.<span style="color:#fab387">95</span>),
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">5</span><span><span style="color:#cba6f7">VALUES</span> (<span style="color:#cba6f7">LAST</span> _INSERT _ID(), <span style="color:#fab387">2</span>, <span style="color:#fab387">1</span>, <span style="color:#fab387">3</span>.<span style="color:#fab387">95</span>)
+</span></span></code></pre></div><h3 id="从一个数据表添加变量到另一个数据表">从一个数据表添加变量到另一个数据表</h3>
+<p>新建为数据表（CREATE）</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span><span style="color:#cba6f7">CREATE</span> <span style="color:#cba6f7">TABLE</span> ordres _archived <span style="color:#cba6f7">AS</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">2</span><span><span style="color:#cba6f7">SELECT</span>  <span style="color:#89dceb;font-weight:bold">*</span> <span style="color:#cba6f7">FROM</span> orders
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">3</span><span><span style="color:#6c7086;font-style:italic">-- 这里的SELECT语句是SubQuery
+</span></span></span></code></pre></div><ul>
+<li>右键数据表的“truncate table”是清空数据表的所有数据</li>
+</ul>
+<h3 id="插入到数据表insert">插入到数据表（INSERT）</h3>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span><span style="color:#cba6f7">INSERT</span> <span style="color:#cba6f7">INTO</span> orders _archived
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">2</span><span><span style="color:#cba6f7">SELECT</span>  <span style="color:#89dceb;font-weight:bold">*</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">3</span><span><span style="color:#cba6f7">FROM</span> orders
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">4</span><span><span style="color:#cba6f7">WHERE</span> <span style="color:#cba6f7">order</span> _date <span style="color:#89dceb;font-weight:bold">&lt;</span> <span style="color:#a6e3a1">&#39;2019-01-01&#39;</span>
+</span></span></code></pre></div><h2 id="更新数据">更新数据</h2>
+<h3 id="更新单行数据">更新单行数据</h3>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span><span style="color:#cba6f7">UPDATE</span> <span style="color:#cba6f7">table</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">2</span><span><span style="color:#cba6f7">SET</span> payment _total <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#fab387">10</span>, payment _date <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#a6e3a1">&#39;2019-03-01&#39;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">3</span><span><span style="color:#cba6f7">WHERE</span> invoice _id <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#fab387">1</span>
+</span></span></code></pre></div><h3 id="更新多行数据">更新多行数据</h3>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span><span style="color:#cba6f7">UPDATE</span> <span style="color:#cba6f7">table</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">2</span><span><span style="color:#cba6f7">SET</span> payment _total <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#fab387">10</span>, payment _date <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#a6e3a1">&#39;2019-03-01&#39;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">3</span><span><span style="color:#cba6f7">WHERE</span> invoice _id <span style="color:#cba6f7">IN</span> (<span style="color:#fab387">3</span>, <span style="color:#fab387">4</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">4</span><span><span style="color:#6c7086;font-style:italic">-- 如果要更新数据表中的所有值，只需留空WHERE
+</span></span></span></code></pre></div><h2 id="删除数据">删除数据</h2>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span><span style="color:#cba6f7">DELETE</span> <span style="color:#cba6f7">FROM</span> <span style="color:#cba6f7">table</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">2</span><span><span style="color:#6c7086;font-style:italic">-- 如果没有WHERE语句，将会删除所有数据，非常危险。
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">3</span><span><span style="color:#6c7086;font-style:italic"></span><span style="color:#cba6f7">WHERE</span> client _id <span style="color:#89dceb;font-weight:bold">=</span> (
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">4</span><span>  <span style="color:#cba6f7">SELECT</span> client _id
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">5</span><span>  <span style="color:#cba6f7">FROM</span> clients
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">6</span><span>  <span style="color:#cba6f7">WHERE</span> name <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#a6e3a1">&#39;Myworks&#39;</span>)
+</span></span></code></pre></div>
+
+    <ul id="taxonomy" class="not-prose flex items-center space-x-4 flex-nowrap whitespace-nowrap overflow-x-auto">
+
+      <li class="font-semibold my-4">Tags:</li>
+        <li ><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/%E7%BC%96%E7%A8%8B/">编程</a></li>
+        <li ><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/%E5%90%8E%E7%AB%AF/">后端</a></li>
+    </ul>
+
+      
+
+    </div>
+
+    <footer id="content-footer" class="not-prose">
+
+      
+      
+
+      <div id="author-box" class="my-8 md:my-14 border p-8 bg-zinc-100 rounded-2xl">
+
+        <img class="w-20 h-20 rounded-full" src="/img/favicon.jpg" alt="huuhghhgyg">
+
+        <h2 class="text-xl font-bold my-4">Writter by : huuhghhgyg</h2>
+
+        <p >Never Settle</p>
+
+        
+        
+        
+      </div>
+
+      <div id="related-post" class="">
+
+        <h2 class="text-xl md:text-2xl font-bold mb-6 md:mb-8">Recommended for You</h2><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><article class="relative group bg-zinc-100 hover:bg-blue-100 rounded-3xl">
+	
+	<a class="insert-link" href="https://www.zhhuu.top/posts/xaml-summary/"></a>
+
+	<figure class="w-full aspect-video overflow-hidden rounded-3xl"><img class="object-cover group-hover:scale-105 transition duration-500 cursor-pointer object-center w-full h-full" src="https://www.zhhuu.top/img/xaml_huc284e228a0fe42d4686d169967b3dd24_47304_750x0_resize_q75_h2_box_2.webp" alt="Xaml学习小结" width="750" height="422">
+
+	  </figure>
+
+	<div class="p-6">
+
+		<time datetime="2022-03-16T22:08:15&#43;00:00">Mar 16, 2022</time>
+
+		<h3 class="my-4 text-2xl font-bold">Xaml学习小结</h3>
+
+		<p class="text-normal leading-normal text-zinc-500 line-clamp-2"></p>
+
+	</div>
+</article><article class="relative group bg-zinc-100 hover:bg-blue-100 rounded-3xl">
+	
+	<a class="insert-link" href="https://www.zhhuu.top/posts/linq/"></a>
+
+	<figure class="w-full aspect-video overflow-hidden rounded-3xl"><img class="object-cover group-hover:scale-105 transition duration-500 cursor-pointer object-center w-full h-full" src="https://www.zhhuu.top/img/query_hu33fa0e5a0622b32c3d8e585165ab35a5_26042_750x0_resize_q75_h2_box_2.webp" alt="LINQ笔记&amp;实例" width="750" height="563">
+
+	  </figure>
+
+	<div class="p-6">
+
+		<time datetime="2022-03-12T16:29:27&#43;00:00">Mar 12, 2022</time>
+
+		<h3 class="my-4 text-2xl font-bold">LINQ笔记&amp;实例</h3>
+
+		<p class="text-normal leading-normal text-zinc-500 line-clamp-2"></p>
+
+	</div>
+</article>
+          
+        </div>
+      </div>
+
+    </footer>
+
+  </article>
+
+  
+  <aside class="md:col-span-1"><div class="lg:sticky lg:top-8">
+
+	
+      
+
+
+
+
+
+
+<div class="toc rounded-2xl p-4 bg-zinc-100 mb-10">
+    <div class="page-header font-bold text-lg pb-2">目录</div>
+    <div class="toc-nav">
+        <ul class="nav">
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link" href="#%e5%9f%ba%e6%9c%ac%e8%af%ad%e6%b3%95">
+                    1. 基本语法
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e6%b3%a8%e9%87%8a">
+                    1.1. 注释
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e8%bf%90%e7%ae%97%e7%ac%a6">
+                    1.2. 运算符
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e6%9d%a1%e4%bb%b6">
+                    1.3. 条件
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f">
+                    1.4. 正则表达式
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#null">
+                    1.5. NULL
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#as">
+                    1.6. AS
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#select">
+                    1.7. SELECT
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#order-by">
+                    1.8. ORDER BY
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e5%a4%9a%e5%80%bc%e6%8e%92%e5%ba%8f">
+                    1.8.1. 多值排序
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e6%a0%b9%e6%8d%ae%e5%88%97%e6%8e%92%e5%ba%8f">
+                    1.8.2. 根据列排序
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#desc">
+                    1.8.3. DESC
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e5%a4%9a%e5%80%bc%e6%8e%92%e5%ba%8f-1">
+                    1.8.4. 多值排序
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#limit">
+                    1.9. LIMIT
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#alias-%e7%ae%80%e5%86%99">
+                    1.10. Alias 简写
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#join%e5%92%8con">
+                    1.11. JOIN和ON
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e5%88%87%e6%8d%a2%e6%95%b0%e6%8d%ae%e5%ba%93">
+                    1.12. 切换数据库
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#union">
+                    1.13. UNION
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link" href="#%e5%b1%9e%e6%80%a7">
+                    2. 属性
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e5%88%97%e5%b1%9e%e6%80%a7">
+                    2.1. 列属性
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b">
+                    2.1.5. 数据类型
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e6%95%b0%e6%8d%ae%e5%b1%9e%e6%80%a7">
+                    2.1.6. 数据属性
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link" href="#%e6%95%b0%e6%8d%ae%e7%ae%a1%e7%90%86">
+                    3. 数据管理
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e6%b7%bb%e5%8a%a0%e8%a1%8c">
+                    3.1. 添加行
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e5%85%a8%e9%83%a8%e6%b7%bb%e5%8a%a0">
+                    3.1.7. 全部添加
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e9%80%89%e6%8b%a9%e9%83%a8%e5%88%86%e5%8f%98%e9%87%8f%e6%b7%bb%e5%8a%a0">
+                    3.1.8. 选择部分变量添加
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e6%b7%bb%e5%8a%a0%e5%a4%9a%e4%b8%aa%e5%8f%98%e9%87%8f">
+                    3.1.9. 添加多个变量
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e5%90%91%e4%b8%8d%e5%90%8c%e7%9a%84%e8%a1%a8%e6%a0%bc%e6%b7%bb%e5%8a%a0%e5%8f%98%e9%87%8f">
+                    3.1.10. 向不同的表格添加变量
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e4%bb%8e%e4%b8%80%e4%b8%aa%e6%95%b0%e6%8d%ae%e8%a1%a8%e6%b7%bb%e5%8a%a0%e5%8f%98%e9%87%8f%e5%88%b0%e5%8f%a6%e4%b8%80%e4%b8%aa%e6%95%b0%e6%8d%ae%e8%a1%a8">
+                    3.1.11. 从一个数据表添加变量到另一个数据表
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e6%8f%92%e5%85%a5%e5%88%b0%e6%95%b0%e6%8d%ae%e8%a1%a8insert">
+                    3.1.12. 插入到数据表（INSERT）
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e6%9b%b4%e6%96%b0%e6%95%b0%e6%8d%ae">
+                    3.2. 更新数据
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e6%9b%b4%e6%96%b0%e5%8d%95%e8%a1%8c%e6%95%b0%e6%8d%ae">
+                    3.2.13. 更新单行数据
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e6%9b%b4%e6%96%b0%e5%a4%9a%e8%a1%8c%e6%95%b0%e6%8d%ae">
+                    3.2.14. 更新多行数据
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e5%88%a0%e9%99%a4%e6%95%b0%e6%8d%ae">
+                    3.3. 删除数据
+                </a>
+            </li>
+        
+        </ul>
+    </div>
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const tocLinks = document.querySelectorAll(".toc-nav .nav-link");
+    const headers = Array.from(tocLinks).map(link => document.querySelector(decodeURI(link.getAttribute("href"))));
+    const offset = 10; 
+    
+    if (tocLinks.length === 0) {
+        return;
+    }
+
+    function updateActiveLink() {
+        let index = headers.findIndex(header => header.getBoundingClientRect().top > offset);
+        if (index === -1) {
+            index = headers.length - 1;
+        } else if (index > 0) {
+            index -= 1;
+        }
+        tocLinks.forEach(link => link.classList.remove("active"));
+        tocLinks[index].classList.add("active");
+    }
+
+    window.addEventListener("scroll", updateActiveLink);
+
+    tocLinks.forEach(link => {
+        link.addEventListener("click", function(event) {
+            event.preventDefault();
+            const targetId = decodeURI(this.getAttribute("href").substring(1));
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+                
+                history.pushState(null, null, `#${targetId}`);
+                setTimeout(updateActiveLink, 100); 
+            }
+        });
+    });
+
+    updateActiveLink(); 
+});
+</script>
+
+    
+
+
+	
+
+	<div class="space-y-6">
+
+		<h2 class="font-bold text-xl mb-8">Recent Post</h2>
+
+		<article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/new-theme/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/new-theme_hu0c1069844488d39e3d981653fdb9672c_552496_250x250_fill_box_smart1_3.png" alt="启用新主题" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">启用新主题</h3>
+	</div>
+</article><article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/lua-microcity/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/MicroCityWorldGrid_hueeb30e2fa18f4d0617e0e9462be0f772_91378_250x250_fill_q75_h2_box_smart1_2.webp" alt="MicroCity内置的LUA函数" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">MicroCity内置的LUA函数</h3>
+	</div>
+</article><article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/ga/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/evolution_huad65e07a071e6dac9af389d1c00f7d4b_297498_250x250_fill_q75_h2_box_smart1_2.webp" alt="使用Python编写遗传算法" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">使用Python编写遗传算法</h3>
+	</div>
+</article><article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/optimization-code/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/optimization-code_hud268f4a32eb0d40a0727452f8945d9dc_278734_250x250_fill_q75_h2_box_smart1_2.webp" alt="优化软件语法" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">优化软件语法</h3>
+	</div>
+</article><article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/sql-basics/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/sql_hu35c510dc12184cf2364d179ea6307c22_25788_250x250_fill_q75_h2_box_smart1_2.webp" alt="SQL入门" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">SQL入门</h3>
+	</div>
+</article>
+		
+	</div>
+
+</div>
+</aside>
+
+</div>
+  
+</main>
+  <footer class="bg-zinc-100 py-10 md:py-14"><div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+
+  <div class="flex flex-wrap space-y-6 mb-4">
+
+    <div class="w-full md:w-3/5 flex flex-col space-y-4 md:pr-8 lg:pr-10">
+
+      <a class="flex items-center group" href="https://www.zhhuu.top/">
+        <img src="/favicon.png" alt="site icon" class="mr-2" width="32" height="32">
+        
+        <span class="text-2xl font-semibold uppercase">Hikaru&#39;s Blog</span>
+      </a>
+
+      <p class="font-semibold">
+        Write with love. Minimalism design.
+      </p>
+
+      <p>Never Settle</p>
+
+    </div>
+
+    <div class="self-center flex flex-col w-full md:w-2/5">
+
+<ul id="social-media" class="flex items-center space-x-4">
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.facebook.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+				<path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.twitter.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.github.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.instagram.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+			</svg>
+		</a>
+	</li>
+</ul>
+
+    </div>
+    
+  </div>
+
+  <div class="my-8">
+    <ul class="flex items-center space-x-4">
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/">Home</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/posts/">Posts</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/tags/">Tags</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/friend/">Friends</a></li>
+      
+    </ul>
+  </div>
+
+  <div class="border-t pt-4">
+
+    <p class="text-sm">Copyright © 2024. All rights reserved. </p>
+
+  </div>
+  
+</div>
+</footer>
+      <script defer src="/js/insertoggle.2f07edcf51c0cba06f691f947fdaeea96d2c85627f30b4b0640a40d5a1bfeb08.js" integrity="sha256-Lwftz1HAy6BvaR&#43;Uf9ruqW0shWJ/MLSwZApA1aG/6wg=" crossorigin="anonymous"></script>
+</body>
+</html>

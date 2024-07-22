@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>后端 on Hikaru&#39;s Blog</title>
+    <link>https://www.zhhuu.top/tags/%E5%90%8E%E7%AB%AF/</link>
+    <description>Recent content in 后端 on Hikaru&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 27 Mar 2022 11:52:50 +0000</lastBuildDate>
+    <atom:link href="https://www.zhhuu.top/tags/%E5%90%8E%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQL入门</title>
+      <link>https://www.zhhuu.top/posts/sql-basics/</link>
+      <pubDate>Sun, 27 Mar 2022 11:52:50 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/sql-basics/</guid>
+      <description>1SELECT * 2FROM table 3WHERE column LIKE &amp;#39;条件&amp;#39; 4Order by 1 5LIMIT 100 基本语法 注释 --后面是注释内容。--是sql的注释标志&#xA;运算符 运算符 说明 AND 和，AND的优先级一般会高于OR OR 或者 NOT 非 () 括号，提高优先级。 条件 符号 含义 % n个任意字符 _ 1个任意字符 正则表达式 REGEXP（Regular Expression）&#xA;1WHERE column REGEXP &amp;#39;表达式&amp;#39; 符号 意义 例子 ^ 以..开头 ^field $ 以..结尾 field$ \ 或者 ^field｜mac｜rose [] 匹配中括号内的所有字符 [gim]e，匹配ge、ie、me，&#xA;[a-c]d，匹配&#xA;ad、bd、cd，&#xA;[1-3]同理 注意：由于我使用的markdown编译器无法将表格中的代码中的|识别为符号，以上的|为全角符号&#xA;NULL 表达式 含义 IS NULL 值为null IS NOT NULL 值不为null AS 在原有数据基础上新建一列数据，或者理解为处理完原有列数据填入新一列中</description>
+    </item>
+    <item>
+      <title>Xaml学习小结</title>
+      <link>https://www.zhhuu.top/posts/xaml-summary/</link>
+      <pubDate>Wed, 16 Mar 2022 22:08:15 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/xaml-summary/</guid>
+      <description>主要是Xaml的“绑定”和“资源”&#xA;Xaml静态资源绑定 需要绑定一个resource的时候，需要的表达式就是大括号里面有“StaticResource”，再加上resource的名字。这种绑定只在App运行的时候进行一次，因为是静态资源，所以它就不会变了。 如：&#xA;1&amp;lt;TextBlock Foreground = &amp;#34;{StaticResource MyBrush}&amp;#34; /&amp;gt; StaticResource表明了我们所绑定的资源的类型&#xA;单个属性的绑定 可以创建单个属性的资源绑定，如：&#xA;1&amp;lt;Page.Resources&amp;gt; 2 &amp;lt;SolidColorBrush x:Key=&amp;#34;MyBrush&amp;#34; Color=&amp;#34;Brown&amp;#34;/&amp;gt; 3&amp;lt;/Page.Resources&amp;gt; 4 5&amp;lt;!-- 使用 --&amp;gt; 6&amp;lt;TextBlock Text=&amp;#34;Hello World&amp;#34; Foreground=&amp;#34;{StaticResource MyBrush}&amp;#34;/&amp;gt; 还可以创建值绑定，如将Slider的值绑定到ProgessBar中：&#xA;1&amp;lt;ProgressBar Maximum=&amp;#34;100&amp;#34; Value=&amp;#34;{x:Bind MySlider.Value, Mode=OneWay}&amp;#34;&amp;gt; 多个属性的绑定（Style） 也可以创建多个值类型的绑定，如设置背景、字体、字号等属性，如：&#xA;1&amp;lt;Page.Resources&amp;gt; 2 &amp;lt;Style TargetType=&amp;#34;Button&amp;#34; x:Key=&amp;#34;MyButtonStyle&amp;#34;&amp;gt; 3 &amp;lt;!-- 定义了目标类型、样式（资源）名称 --&amp;gt; 4 &amp;lt;!-- 下面是各个属性值的设置 --&amp;gt; 5 &amp;lt;Setter Property=&amp;#34;Background&amp;#34; Value=&amp;#34;Blue&amp;#34;/&amp;gt; 6 &amp;lt;Setter Property=&amp;#34;FontFamily&amp;#34; Value=&amp;#34;Arial Black&amp;#34;/&amp;gt; 7 &amp;lt;Setter Property=&amp;#34;FontSize&amp;#34; Value=&amp;#34;36&amp;#34;/&amp;gt; 8 &amp;lt;/Style&amp;gt; 9&amp;lt;/Page.Resources&amp;gt; 10 11&amp;lt;Button Content=&amp;#34;My Button Style Example&amp;#34; 12 Height=&amp;#34;100&amp;#34; 13 Style=&amp;#34;{StaticResource MyButtonStyle}&amp;#34; /&amp;gt; 14 &amp;lt;!</description>
+    </item>
+    <item>
+      <title>LINQ笔记&amp;实例</title>
+      <link>https://www.zhhuu.top/posts/linq/</link>
+      <pubDate>Sat, 12 Mar 2022 16:29:27 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/linq/</guid>
+      <description>LINQ：语言继承查询&#xA;限制运算符 Where where语句的基本示例&#xA;1int[] numbers = {5,4,1,3,9,8,6,7,2,0}; 2var lowNums = from num in numbers 3 where num &amp;lt; 5 4 select num; // 只选择小于5的数字 筛选符合属性条件的元素&#xA;1var soldOutProducts = from prod in products 2 where prod.UnitsInStock == 0 3 select prod; // 从集合中选出符合属性的元素 用多个条件筛选元素&#xA;1var expensiveInStockProducts = from prod in products 2 where prod.UnitsInStock &amp;gt; 0 &amp;amp;&amp;amp; prod.UnitPrice &amp;gt; 3.00M 3 select prod; // 从集合中选出符合上述两个条件的元素 基于元素在列表中位置的筛选&#xA;1string[] digits = {&amp;#34;zero&amp;#34;, &amp;#34;one&amp;#34;, &amp;#34;two&amp;#34;, &amp;#34;three&amp;#34;, &amp;#34;four&amp;#34;, &amp;#34;five&amp;#34;, &amp;#34;six&amp;#34;, &amp;#34;seven&amp;#34;, &amp;#34;eight&amp;#34;, &amp;#34;nine&amp;#34;}; 2var shortDigits = digits.</description>
+    </item>
+    <item>
+      <title>npm快速上手</title>
+      <link>https://www.zhhuu.top/posts/npm-overview/</link>
+      <pubDate>Sat, 10 Jul 2021 19:13:03 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/npm-overview/</guid>
+      <description>在npm中，包（package）、模块（module）、依赖（dependency）都是一个东西。&#xA;npm常用操作 npm配置项 初始化 npm init（其实就是创建一个package.json文件），之后让你填入许多信息（package name, version, description, entry point, test command, git repository, key words, author) npm init -y相当于npm init但信息都为空，初始化后npm会认为你的项目是一个包&#xA;npm搜索 npm search &amp;lt;包名&amp;gt; 如：npm search jquery&#xA;包安装 操作 命令 直接安装 npm install &amp;lt;包名&amp;gt;，简写为npm i &amp;lt;包名&amp;gt; 安装指定版本/旧版本 npm install &amp;lt;包名&amp;gt;@&amp;lt;版本号&amp;gt; 安装指定tag的包 npm install &amp;lt;包名&amp;gt;@&amp;lt;tag&amp;gt; 参数 -g 安装到全局环境下，这样在任何一个目录下都能识别，比如 npm install npm@latest -g 参数 --save-dev或者-D 表明是开发环境下的依赖，不会在生产环境中出现 包卸载 npm uninstall &amp;lt;包名&amp;gt; -D 卸载包，并从package.json的devDependencies中删除。 老版本的npm中卸载包要加--save才能保存到package.json中&#xA;常用操作 操作 命令 更新包 npm update &amp;lt;包名&amp;gt;，局部更新。加-g全局更新 列出已安装包 npm list默认列出局部依赖。加-g 列出已安装的全局依赖。 检查过期包（依赖） npm outdated 查看依赖安装路径 npm root，也就是node_modules的路径，加-g查看全局安装路径 查看模块的注册信息 npm view &amp;lt;包名&amp;gt; versions，列出所有版本。</description>
+    </item>
+    <item>
+      <title>利用Gitkraken了解Git</title>
+      <link>https://www.zhhuu.top/posts/git-basic/</link>
+      <pubDate>Fri, 09 Jul 2021 20:56:37 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/git-basic/</guid>
+      <description>git是版本控制系统。应用最为广泛，适用于中小项目。本身是命令行工具。 GitKraken图形化客户端，界面漂亮，功能全面。&#xA;🔗链接&#xA;GitKraken Git的基本概念和操作 代码仓库(Repository) 创建一个代码仓库(Repository)，可以是本地仓库，也可以是保存在远程服务器上的仓库。仓库之间可以相互同步。 显示代码的所有提交历史，其中每项代表一个提交(Commit),提交相当于检查点或者快照。对代码作出修改后可以提交这次修改，Git会保存当前的代码快照，之后可以轻松回溯到这里。 新建代码仓库的时候会自动创建一个提交。 选中提交后可以看到所有修改的文件。&#xA;GitKraken 中打开git目录可以点击“文件”-“在文件浏览器中打开”，找到代码仓库在本地计算机上存放的位置&#xA;作出更改后文件历史中多出 //WIP (Work In Progress)，代表这个提交正在施工中。 Git要求在提交修改的文件前要对它们先 Stage，点击Stage。Stage可看作提交前防止误操作。其中必填本次提交的描述。最后&amp;quot;Commit&amp;quot;完成提交，这里的提交还是在本地计算机的提交。 如果要远程提交到代码仓库，就需要 &amp;ldquo;Push&amp;quot;s，推送提交即可。&#xA;拉取(Pull) 从远程服务器 拉取(Pull) 提交 提交历史会多出来一条。master和电脑图标的标签表示本地仓库的提交，上面的表示Github上的远程仓库提交（master是分支）。(origin通常代表远程仓库)。如果想把远程提交同步到本地仓库只需要点击**&amp;ldquo;Pull&amp;rdquo;**。点击后两个图标重合在一起，代表远程仓库和本地仓库的提交历史已经完全相同。&#xA;合并(Merge) 两边同时作出了修改后提交历史会产生分叉 如果想要将两个修改同时应用在本地仓库中，需要合并。Pull的时候会自动合并远程提交到本地的提交中。Pull后Git会自动生成一个新提交。 如果同时修改代码的同一处位置，再次Pull的时候，会自动合并失败，需要手动合并冲突(Conflict)的部分。 下面的窗口用于手动解决冲突 最终完成提交 提交改写(Amend) 用于提交代码有误或者提交信息出错，对已提交的文件和信息进行修改。在提交前勾选Amend后正常提交。这个操作只会修改已经存在的提交。但是最好本地使用。&#xA;分支(Branch) 创建一个新分支，点击Branch按钮。创建好后分支的提交历史和原来相同，但是往后的提交会相互独立。默认只会推送master分支到远程服务器，如果要推送其他分支，点右键然后选择Push。&#xA;合并分支（Merge Branches） 将test合并到master上，先双击切换到master分支，在test分支上右键点“合并test分支到master分支”。（可能需要手动解决代码冲突）&#xA;暂存(Stash) 暂存当前的修改，源代码会被还原到之前的状态，可以进行其他操作。 最后可以通过Pop将暂存的代码恢复出来，甚至可以切换到很老的版本将暂存的修改恢复出来。&#xA;变基(Rebase) 在合并分支的过程中，会将整个分支摘取下来，嫁接到另一个分支上（改变了原有的基底）。相比Merge,Merge的优点在于原先的提交历史会被完整地保留下来。 比如将test分支变基到master分支，先选择test分支，右键选择“将test分支变基到master分支上”，完成操作。最后将master分支指向最新的提交，这样master分支的内容才是最新的。（用到Fast Forward)&#xA;快进(Fast Forward) 直接让master的指针快进到test分支。&#xA;签出(Checkout) 回退到早期的版本完成一些bug的修复。在想要回到的节点上右键点击签出，此时Head标签指向当前提交。 修改完后提交是基于早期的提交,最后可以将其变基到当前的提交上，变基完成后提交会变成一条直线。&#xA;撤销操作(Undoing) 常用于在Git中错误提交了代码或者错误合并了一个分支。得益于每次的操作都记录在Reflog的类似日志的文件里，能够帮你轻松回退之前的状态。GitKraken中就是状态栏中的undo操作。包括分支切换、合并、修改甚至删除等等。&#xA;恢复(Revert) 常用于撤销已提交的代码（远程）。在GitKraken中在提交上点右键，Git会创建一个完全相反的提交以恢复。&#xA;图形化界面对应的命令行命令 第一部分（常用基础部分） 配置基本用户信息 git config --global user.name &amp;lt;用户名&amp;gt; git config --global user.email &amp;lt;邮箱地址&amp;gt;&#xA;创建一个新仓库 git init</description>
+    </item>
+    <item>
+      <title>初探Docker</title>
+      <link>https://www.zhhuu.top/posts/docker-startup/</link>
+      <pubDate>Sat, 23 Jan 2021 17:34:33 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/docker-startup/</guid>
+      <description>尝试了 docker 的一些常用操作&#xA;查看正在运行的容器 查看正在运行的容器 docker ps&#xA;如果 docker 没有运行，则会显示错误&#xA;查看所有容器 docker ps -a&#xA;建立容器 docker run ubuntu -it&#xA;参数 作用 -i 与容器互动(类似 ssh，可以输入指令) -t 创造一个终端 容器常用操作 本地容器操作容器： 运行但不进入： docker start [容器ID/容器ID开头的几个字]&#xA;进入容器： docker attach [容器ID/容器ID开头的几个字]&#xA;离开容器: Ctrl+P Ctrl+Q&#xA;停止容器： docker stop [容器ID/容器ID开头的几个字]&#xA;查看已经下载到本地的容器： docker image ls 移除本地容器： docker rm [容器名称]&#xA;移除本地镜像： docker rmi [镜像名称]&#xA;镜像名称在 REPOSITORY 下&#xA;新建容器 搜索镜像从 Docker Hub 下载&#xA;docker run (参数) [容器名称]&#xA;参数 作用 --name [name] 更改容器名称 -d 运行成 Detached 模式 -p [端口]:[容器端口] 端口映射 -v [路径]:[容器路径] 文件映射。将电脑的文件映射入容器 第一次使用的镜像会自动从 Docker Hub 下载</description>
+    </item>
+    <item>
+      <title>树莓派安装设置</title>
+      <link>https://www.zhhuu.top/posts/raspi-setup/</link>
+      <pubDate>Wed, 20 Jan 2021 10:02:05 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/raspi-setup/</guid>
+      <description>重新刷入系统进行各项设置安装&#xA;系统下载安装 有3个系统可以选择&#xA;Raspbian Ubuntu：默认账号ubuntu，密码ubuntu，进入后会要求修改密码 OPENFANS Raspbian：一个由Debian重新构建的系统 软件源 修改apt软件源 备份软件源后对其进行修改 sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak&#xA;在这里使用清华tuna源 在 ARM(arm64, armhf)、PowerPC(ppc64el)、RISC-V(riscv64) 和 S390x 等架构的设备上（对应官方源为ports.ubuntu.com）使用 ubuntu-ports 镜像。&#xA;1# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释 2deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal main restricted universe multiverse 3# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal main restricted universe multiverse 4deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-updates main restricted universe multiverse 5# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-updates main restricted universe multiverse 6deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-backports main restricted universe multiverse 7# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-backports main restricted universe multiverse 8deb https://mirrors.</description>
+    </item>
+    <item>
+      <title>正则表达式笔记</title>
+      <link>https://www.zhhuu.top/posts/regular-expression/</link>
+      <pubDate>Thu, 31 Dec 2020 19:32:35 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/regular-expression/</guid>
+      <description>🔗 链接&#xA;正则表达式在线测试 | 菜鸟工具 标记 表达式 作用 示例 作用 ^ 匹配行首 ^a 匹配 a 在行首的情况 $ 结匹配行尾 a$ 匹配 a 在行尾的情况 普通字符（大小写敏感） 表达式 作用 示例 作用 [] 只能匹配中括号中的字符 [ABC] 匹配字符串中的所有 A、B、C [^A] 除去 [^ABC] 得到除了 ABC 以外的所有字符 [A-Z] 某一个区间(可以是大写区间、小写区间、数字区间) [A-C] 匹配 A-C 的区间 . 匹配 除换行符的所有单个字符,相当于[^\n\r] [\s] 匹配 空白字符（空格、换行） [\s] 匹配 非空白字符（包括换行） [\w] 匹配 字母、数字、下划线,相当于[A-Za-z0-9] 非打印字符 符号 作用 示例 作用 \ca 匹配 control+a 的快捷键（\c 是表示 c，\为转义）(\cx 的 x 必须是 A-Z 或者 a-z) \cv 匹配 ctrl+v 的快捷键 \f 换页符 \n 换行符 \r 回车 \s 空白字符，包括空格、制表符、换页符等等 \S 非空白字符，包括回车 \t 制表符（Tab） \v 垂直制表符(Vertical Tab) \d 数字字符，等价于[0-9] \D 非数字字符，等价于[^0-9] \w 单词(word) \W 非单词 特殊字符 符号 作用 示例 作用 $ 匹配字符串的结尾位置 () 标记一个子表达式开始和结束的位置 * 匹配前面的子表达式 0 次或多次 go*gle 可以匹配 ggle,google,gooooogle 等 + 匹配前面的子表达式 1 次或多次(1+) go+gle 可以匹配 gogle,goooogle 等 .</description>
+    </item>
+    <item>
+      <title>PythonNote1</title>
+      <link>https://www.zhhuu.top/posts/python-note-1/</link>
+      <pubDate>Thu, 08 Oct 2020 09:25:58 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/python-note-1/</guid>
+      <description>删除对象 类似C#中的 =null&#xA;1var1 = 1 2var2 = 10 3 4del var1,var2 #关闭 5 6print(var1) 字符串截取 字符串的截取的语法格式： &amp;lsquo;变量[头下标:尾下标:步长]&amp;rsquo; 头下标从0开始，尾下标从-1开始 某一下标后的所有内容 &amp;lsquo;str[1:]&amp;rsquo;&#xA;列表同理，将str替换为list&#xA;都是闭区间&#xA;步长:间距截取，默认间隔为1，为-1时表示逆向读取 join() str.join() 方法用于将序列中的元素以指定的字符(str)连接生成一个新的字符串。 list → string&#xA;split() split() 通过指定分隔符(str)对字符串进行切片形成列表&#xA;数据类型 Number（数字） String（字符串） List（列表） []：元素可以修改 Tuple（元组）()：元素不可修改，也可以用+进行拼接 1tup1 = () # 空元组 2tup2 = (20,) # 一个元素，需要在元素后添加逗号 Set（集合）{}: 可以进行集合运算 1a = set(&amp;#39;abracadabra&amp;#39;) 2b = set(&amp;#39;alacazam&amp;#39;) 3 4print(a - b) # a 和 b 的差集 5print(a | b) # a 和 b 的并集 6print(a &amp;amp; b) # a 和 b 的交集 7print(a ^ b) # a 和 b 中不同时存在的元素 创建空集合set() Dictionary（字典）{a:b}:内容写法与集合不同 1dict = {} 2dict[&amp;#39;one&amp;#39;] = &amp;#34;1 - 菜鸟教程&amp;#34; 3dict[2] = &amp;#34;2 - 菜鸟工具&amp;#34; 4 5tinydict = {&amp;#39;name&amp;#39;: &amp;#39;runoob&amp;#39;,&amp;#39;code&amp;#39;:1, &amp;#39;site&amp;#39;: &amp;#39;www.</description>
+    </item>
+    <item>
+      <title>使用Powershell自动设置壁纸</title>
+      <link>https://www.zhhuu.top/posts/powershell-wallpaper/</link>
+      <pubDate>Fri, 15 Mar 2019 19:00:08 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/powershell-wallpaper/</guid>
+      <description>发现CMD不能达到此目的，更换更高级的Powershell来执行这个任务~&#xA;最近有的人经常更换电脑桌面壁纸，而且壁纸我觉得也不算好看(很难看)，基本上就是起到哗众取宠的目的，所以我打算利用脚本自动定时更换电脑壁纸，达到锁定电脑壁纸的目的。&#xA;准备工作 学校的电脑系统是Win7,默认设置不允许执行脚本(不知道是不是Ghost系统的人设置的)，所以第一步要解除限制。 Powershell中执行命令如下: Set-ExecutionPolicy Unrestricted 执行完毕之后就能运行.ps1脚本了。&#xA;自动更换壁纸的函数方法 保存如下代码到一个.ps1文件中。(可以用记事本编辑再更改文件拓展名)&#xA;1Function Set-WallPaper($Value) 2{ 3 Set-ItemProperty -path &amp;#39;HKCU:\Control Panel\Desktop\&amp;#39; -name wallpaper -value $value 4 rundll32.exe user32.dll, UpdatePerUserSystemParameters 1, True 5} 6 7Set-WallPaper -value &amp;#34;C:\Windows\Web\Wallpaper\Homes_Background.bmp&amp;#34; 将其中C:\Windows\Web\Wallpaper\Homes_Background.bmp更改成壁纸所在处，执行脚本即生效。&#xA;添加到计划任务 计划任务的位置在 &amp;ldquo;控制面板&amp;rdquo;-(&amp;ldquo;系统和安全&amp;rdquo;)-&amp;ldquo;管理工具&amp;rdquo;-&amp;ldquo;计划任务&amp;rdquo; 打开后点击 &amp;ldquo;添加基本任务&amp;rdquo; ,之后就可以跟着向导走了。执行文件填写 powershell ,参数填写刚刚保存的脚本文件位置即可。 还可以 每日获取Bing图片并设为壁纸&#xA;1function Save-BingTodayImage() 2{ 3 #必应图片故事API 4 $bingImageApi =&amp;#39;http://www.bing.com/HPImageArchive.aspx?format=xml&amp;amp;idx=0&amp;amp;n=1&amp;amp;mkt=zh-cn&amp;#39; 5 $bingUri = &amp;#39;http://www.bing.com/&amp;#39; 6 7 # 获取图片链接 8 [xml]$bingImageXml = (Invoke-WebRequest -Uri $bingImageApi).Content 9 Write-Host &amp;#34; 今日图片故事： $( $bingImageXml.</description>
+    </item>
+    <item>
+      <title>FileGetter使用说明</title>
+      <link>https://www.zhhuu.top/posts/file-getter-instructions/</link>
+      <pubDate>Sun, 29 Apr 2018 19:13:31 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/file-getter-instructions/</guid>
+      <description>File Getter使用说明 功能 启动后持续扫描电脑上盘符数，当盘符数量有变更时检索新增盘符内文件。当检索到指定文件时复制到电脑中指定目录(C:/got)下。&#xA;使用方法 直接打开(建议存入电脑C盘中某个位置再打开)，当你程序成功开始运行后发出短暂(哔)声。当有新盘符插入时，扫描盘符内文件，若有指定类型文件则复制。当扫描完成后程序发出长(1s,哔)声，并自动退出。&#xA;使用技巧 当你在程序运行目录下新建以下文件程序运行逻辑会发生改变:&#xA;debug.txt 当程序运行时，只要检测到运行目录下有此文件，日志窗口会显示出来。当检测到此文件被删去，窗口则会被隐藏。 注意:此操作在程序运行时是实时的，命令即刻执行(在下一个循环时)&#xA;keeprunning.txt 当程序完成扫描新磁盘(不管有没有复制)后，若检测到此文件则会继续运行下去。终止程序运行方法参见下文。&#xA;exit.txt 当程序在运行时检测到此文件后则立刻终止运行。&#xA;支持的指定类型文件 .xls .xlsx&#xA;其他说明 本程序仅供学习用途使用。</description>
+    </item>
+    <item>
+      <title>Visual Studio 快捷键</title>
+      <link>https://www.zhhuu.top/posts/visual-studio-hotkey/</link>
+      <pubDate>Sun, 29 Apr 2018 18:07:34 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/visual-studio-hotkey/</guid>
+      <description>Visual Studio 快捷键整理&#xA;窗口快捷键 记忆诀窍：&#xA;凡跟窗口挂上钩的快捷键必有一个W（Windows）； Ctrl+W,W: 浏览器窗口 （浏览橱窗用有道的翻译是window shopping）&#xA;Ctrl+W,S: 解决方案管理器 （Solution）&#xA;Ctrl+W,C: 类视图 （Class）&#xA;Ctrl+W,E: 错误列表 （Error）&#xA;Ctrl+W,O: 输出窗口（输出Output；输出程序的的编译信息 ;可在vs中“工具”—-“选项”—-“调试”—-“输出窗口”进行配置需要查看哪些信息）&#xA;Ctrl+W,P: 属性窗口 （属性 Property）&#xA;Ctrl+W,T: 任务列表 （任务Task）&#xA;Ctrl+W,X: 工具箱 （事实上工具应该是Tool 但t已被任务列表占用了 ；参照一些大神的记忆方法：“X”长得四通八达，而工具就有这样一个特点，所以属性的快捷键是“X”）&#xA;Ctrl+W,B: 书签窗口 （书签 Bookmark 书签非常好用，如果有几千行代码，在寻找代码的时候添加书签找起来要快很多）&#xA;Ctrl+W,U: 文档大纲 （OutLine；使用第二个字母U）&#xA;Ctrl+D,B: 断点窗口 （breakpoint）&#xA;Ctrl+D,I: 即时窗口 （immediately）&#xA;项目功能快捷键 规律： Ctrl 是强制功能键 Shift 有给项目增加功能&#xA;CTRL + F6 /CTRL + TAB 下一个文档窗口即活动窗体切换 （windows操作系统是alt+tab表示在任务之间切换&#xA;CTRL + SHIFT + F6 /CTRL + SHIFT + TAB 上一个文档窗口 （在windows系统操作中 相信大家都知道shift有相反的功能 哈哈 在这里体现了）</description>
+    </item>
+    <item>
+      <title>C#异步介绍</title>
+      <link>https://www.zhhuu.top/posts/csharp-async/</link>
+      <pubDate>Sun, 08 Apr 2018 21:14:06 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/csharp-async/</guid>
+      <description>创建多线程？太麻烦了！来试试更快更便捷的异步。程序无须按照代码顺序自上而下的执行。&#xA;什么是异步编程 什么是异步编程呢？举个简单的例子：&#xA;1using System.Net.Http; 2using System.Threading.Tasks; 3using static System.Console; 4 5namespace Core 6{ 7 class Async 8 { 9 static void Main() 10 { 11 Start(); 12 End(); 13 } 14 15 static void Wait()=&amp;gt;WriteLine(&amp;#34;waiting...&amp;#34;); 16 static void End()=&amp;gt;WriteLine(&amp;#34;end...&amp;#34;); 17 static int Start() 18 { 19 WriteLine(&amp;#34;start...&amp;#34;); 20 HttpClient client = new HttpClient(); 21 Waiting(); 22 var result = client.GetStringAsync(&amp;#34;https://www.visualstudio.com/&amp;#34;); 23 string str = result.Result; 24 return str.Length; 25 } 26 } 27} 上面这段代码中，Main方法中的代码是按照自上而下的顺序执行的。网络状况不佳时，Start() 方法是比较耗时 （注意，这里在Start方法中调用了异步方法GetStringAsync，但该方法在此处是以同步方式执行的，具体原因下文会进行说明） ，在 Start() 方法执行完毕之前，整个程序处于阻塞状态。而异步编程可以很好的解决这个问题，一句简单的话来概括异步编程就是，程序无须按照代码顺序自上而下的执行。</description>
+    </item>
+    <item>
+      <title>HCalculator</title>
+      <link>https://www.zhhuu.top/posts/hcalculator/</link>
+      <pubDate>Mon, 26 Jun 2017 08:51:34 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/hcalculator/</guid>
+      <description>A calculator was written by huuhghhgyg [2022-03-02]：该项目已被归档，只是留作纪念。&#xA;链接 View on Github 在Github查看 Download .zip 下载.zip文件 Download .tar.gz 下载.tar.gz文件&#xA;说明 若要访问原网页点击&amp;gt;这里&amp;lt;&#xA;嗯，就只是一个计算器嘛没什么好看的….要下赶快下XDD&#xA;历代大版本更新 计算器1.0(最初版本) 基本的傻瓜计算器功能，差不多支持键盘乱弹。&#xA;计算器2.0(已遗失) 作为向Material Design的过渡 计算器3.0 拥有更好的界面，Material Design设计标准，更多的功能。支持生成随机数，计算日期之间的间隔等新功能。&#xA;计算器4.0(当前版本) 新增了科学计算器。改进了科学计算器的界面。持续改进!</description>
+    </item>
+  </channel>
+</rss>

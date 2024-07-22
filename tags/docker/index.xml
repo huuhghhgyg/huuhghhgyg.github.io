@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on Hikaru&#39;s Blog</title>
+    <link>https://www.zhhuu.top/tags/docker/</link>
+    <description>Recent content in Docker on Hikaru&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 23 Jan 2021 17:34:33 +0000</lastBuildDate>
+    <atom:link href="https://www.zhhuu.top/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>初探Docker</title>
+      <link>https://www.zhhuu.top/posts/docker-startup/</link>
+      <pubDate>Sat, 23 Jan 2021 17:34:33 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/docker-startup/</guid>
+      <description>尝试了 docker 的一些常用操作&#xA;查看正在运行的容器 查看正在运行的容器 docker ps&#xA;如果 docker 没有运行，则会显示错误&#xA;查看所有容器 docker ps -a&#xA;建立容器 docker run ubuntu -it&#xA;参数 作用 -i 与容器互动(类似 ssh，可以输入指令) -t 创造一个终端 容器常用操作 本地容器操作容器： 运行但不进入： docker start [容器ID/容器ID开头的几个字]&#xA;进入容器： docker attach [容器ID/容器ID开头的几个字]&#xA;离开容器: Ctrl+P Ctrl+Q&#xA;停止容器： docker stop [容器ID/容器ID开头的几个字]&#xA;查看已经下载到本地的容器： docker image ls 移除本地容器： docker rm [容器名称]&#xA;移除本地镜像： docker rmi [镜像名称]&#xA;镜像名称在 REPOSITORY 下&#xA;新建容器 搜索镜像从 Docker Hub 下载&#xA;docker run (参数) [容器名称]&#xA;参数 作用 --name [name] 更改容器名称 -d 运行成 Detached 模式 -p [端口]:[容器端口] 端口映射 -v [路径]:[容器路径] 文件映射。将电脑的文件映射入容器 第一次使用的镜像会自动从 Docker Hub 下载</description>
+    </item>
+  </channel>
+</rss>

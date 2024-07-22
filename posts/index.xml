@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Hikaru&#39;s Blog</title>
+    <link>https://www.zhhuu.top/posts/</link>
+    <description>Recent content in Posts on Hikaru&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 21 Jul 2024 14:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.zhhuu.top/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>启用新主题</title>
+      <link>https://www.zhhuu.top/posts/new-theme/</link>
+      <pubDate>Sun, 21 Jul 2024 14:00:00 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/new-theme/</guid>
+      <description>缘由 旧主题来源于 2017 年的hexo-theme-material，但是作者很早已经停止维护。后来我自己修改了一些样式，虽然观感有点提升，但是还是有很多问题，比如我一直没有找到一个很好的文字排版显示样式，代码高亮、数学公式显示等等都多少有点问题。而且之前的网站维护经验不足，添加了一堆有的没的 CDN 外链，不知道什么时候就会失效，维护起来有点费力。所以我决定换一个新的主题，降低维护难度，把需要的资源和链接全部迁移到 GitHub Page 和 Cloudflare 上，顺便尝试一下 Hugo。&#xA;旧主题样式 其实旧主题整体上还是很好看的，但是加载上也是莫名其妙有点慢&#xA;新主题样式 换的另一个原因是在 Hugo theme 上逛了一圈好不容易看中了一个主题，pehtheme-hugo&#xA;过程 hexo 换成 hugo 还是有一些区别，比如帖子格式得重新设置，图片存放位置等都要做相应调整，全部放到文章对应的文件夹下面等。费了一点力气，好在不多，顺便也删除了一些没有什么作用的历史文章，留下的要么感觉比较实用，要么留作纪念。&#xA;换这个主题也是花费了一些时间的，主要是在我手上压了一段时间。一方面是最近比较忙，另一方面是时间主要花在调整主题功能上面了。用惯了 VuePress 后感觉这个主题功能缺失有点多，比如目录、评论、搜索、数学公式显示这些都没有，感觉比较塑料。&#xA;但是这个主题的优点是简洁好看，和其他人的主题看上去也不太一样（比如经典的 Hexo Next 系列及其衍生主题，以及屏幕樱花乱飘、点击还会跳出来彩色字的那种），而且还是 Material Design 3 的设计，所以还是没有办法，选择了这个（我之前爆改 Hexo 主题也是因为有的地方看着不合适）。&#xA;在迁移的过程中非常感谢自己之前抽空学了 Git 和 PowerShell 的一些基本操作，省下了很多“体力劳动”耗费的时间，如通过命令行批量将文件设置为指定格式，逐步记录对于新主题的修改。说明《计算机教育中缺失的一课》还是非常实用的（可以把 PowerShell 看成 Bash）。还有以前自己学的 TailwindCSS 在快速修改了主题的一些样式上也起到了一些作用，不过其实大多都还要归功于 ChatGPT，它确实是一个很好的帮手（工具人）。&#xA;当然现在有的功能还是没来得及添加，比如评论，也不知道以后加不加，看情况吧。&#xA;规划 其实最近不是很想动 Blog 这边了，感觉时间也不是很多，可以看到我 2022 年左右就已经断更了。一是感觉没有什么很特别的东西可以共享出来，一些碎碎念都放到伊龙马的平台上了；二是这段时间虽然也有在写，但是主要都放上 Obsidian 上面变成了自己的知识库，大多是课程笔记之类的东西（比如 6.0001、6.0002 之类的学习笔记），虽然比较实用，但是和网上太多重复感觉再放上来也没什么意义。&#xA;不过具体也再看吧，也许以后有的 Obsidian 内容会想着放上来，作为某种知识的整理。</description>
+    </item>
+    <item>
+      <title>MicroCity内置的LUA函数</title>
+      <link>https://www.zhhuu.top/posts/lua-microcity/</link>
+      <pubDate>Fri, 23 Sep 2022 16:20:36 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/lua-microcity/</guid>
+      <description>物流信息管理课程MicroCity学习笔记&#xA;Lua的小特性：集合 虽然Lua里面把它自己的数组称作table，但是我认为这个数据结构更类似于Python的集合或者json，里面可以存储任何东西，不受结构约束。&#xA;1collection = {{&amp;#34;a&amp;#34;, 1, 2}, &amp;#34;abc&amp;#34;, {2, 3}} 如果需要查询数组的长度，只需要在数组名前面添加#即可得到&#xA;1list = {1, 2, 3, 4, 5} 2for i=1,#list do 3 print(list[i]) 4end Lua的数组（集合）下标从1开始，不同于C类语言的0&#xA;MicroCity的内置函数 为什么要写这个？因为MicroCity自带的编辑器相比较于“现代”的编辑器来说还是不够好用（如VSCode等）。我已经遇到了很多同学自己无法解决，找我排除代码中存在的问题。而这些问题98%都是由于语法问题，如缺少关键字（如end、then等）。但是我用VSCode，Lua插件一般都会直接给我自动补全。就算有什么问题也会高亮，或者使用快捷键格式化代码的时候也能看出问题。&#xA;我认为，相比于更加现代的编辑器，MicroCity自带的编辑器“ScriptEditor”由于语法问题的标示不明显、格式化代码功能缺失等使用便利性上的问题，特别是对于Lua语言不熟练的新手，造成代码编写的错误率更高。&#xA;说明：也许其中提到的功能存在于内在编辑器中，但是我反正是没有找到。&#xA;对于我个人来说，VSCode的操作快捷键和各种特性我已经很熟悉，所以我也更倾向于使用VSCode编写Lua语言的脚本。但是对于使用VSCode编写适用于MicroCity运行的Lua脚本（.mcs）而言，由于MicroCity内置了一些函数，无法在VSCode上高亮显示，因此需要特别整理出来方便日后使用。&#xA;常用函数 这里的函数不是全集，只是我用了多少就写多少😂 全部图形函数及使用方法参见 MicroCity文档(英文) 4.3 Shapes And Tables&#xA;在本页中浏览可以使用右上角的目录列表快速转到对应函数。&#xA;图形 函数 作用 Open 打开图形文件，并获取图形文件对象 Update 刷新图形 Open Open(&amp;quot;路径&amp;quot;)，返回图形文件对象。&#xA;1countryObject = Open(&amp;#34;countries.shp&amp;#34;) Update Update([图形对象])，刷新图形对象，显示最新的图形。&#xA;1Update(countryGRD) 矢量图 函数 作用 GetRecCount 获取图形文件中记录的图形对象个数 GetShape 从图形文件对象中获取图形对象 GetPartCount 获取对应图形对象分为多少个部分 GetPointCount 获取对应图形对象（部分）有多少个点 GetPointXY 获取图形对象指定部分、指定点编号的XY坐标 GetValue 获取图形对象的属性值 SetValue 设置图形对象的属性值 GetShapeLen 获取图形对象的长度 GetDistance 获取坐标点之间的距离 GetRecCount GetRecCount([图形文件对象])，返回图形文件中记录的图形对象个数。</description>
+    </item>
+    <item>
+      <title>使用Python编写遗传算法</title>
+      <link>https://www.zhhuu.top/posts/ga/</link>
+      <pubDate>Wed, 13 Jul 2022 12:07:30 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/ga/</guid>
+      <description>算法设计，附源码&#xA;概述 当涉及非线性规划问题或者难以在短时间内求得满意解的线性规划问题，可以通过求其近似解（或满意解）而非精确解。使用遗传算法求解近似解所消耗的时间远少于求解精确解，多数时候近似解的效果都可以接受。 遗传算法的优势体现在：在小规模问题上，遗传算法求解得到的通常是精确解；而在大规模问题上，遗传算法通常可以通过较短的时间求得精确解。 同样的问题通过遗传算法求解近似解和线性规划求解精确解，遗传算法花费的时间显著短于精确算法。&#xA;算法 时长 结果(此处结果越小越好） 遗传算法 123s (2m03s) 371.06 精确算法 201s (3m21s) 367.07 模型描述 目标函数 $minf=P\sum_{k=1}^K\sum_{i=1}^N\sum_{j=1}^Nx_{kij}d_{ij}+\frac{P_a}{Q}\sum_{i=1}^N\sum_{j=1}^N(y_{ij}+z_{ij})x_{kij}d_{ij}+P_m\sum_{k=1}^K\sum_{i=1}^N\sum_{j=M}^Nx_{kij}q_j$&#xA;约束方程 $$ s.t.\left\{ \begin{array}{**lr**} \sum_{k=1}^K\sum_{i=1}^Nx_{kij}=1 &amp; j=2,3,...,N \\ \sum_{j=1}^Nx_{kij} = \sum_{j=1}^Nx_{kij} &amp; i=1,2,...,N;k=1,2,...,K \\ \sum_{j=1}^Nx_{k1j} \le 1 &amp; k=1,2,...,K \\ y_{ij}+z_{ij} \le Q\sum_{k=1}^Kx_{kij} &amp; i,j=2,3,...,N \\ \sum_{i=1}^N\sum_{j=1}^Nx_{kij}d_{ij} \leq D &amp; k=1,2,...,K \\ \sum_{j=1}^Nz_{ij}-\sum_{j=1}^Nz_{ij}=p_i &amp; i=2,3,...,N \\ \sum_{i=1}^Nx_{kii}=0 &amp; j=1,2,...,N \\ \sum_{i=2}^N\sum_{j=1}^Nx_{kij} \le V &amp; k=1,2,...,K \\ y_{ij} \ge 0 ,z_{ij} \ge 0 &amp; i,j=1,2,.</description>
+    </item>
+    <item>
+      <title>优化软件语法</title>
+      <link>https://www.zhhuu.top/posts/optimization-code/</link>
+      <pubDate>Tue, 12 Jul 2022 22:22:54 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/optimization-code/</guid>
+      <description>最近上课自学了CPLEX，感觉和之前浅浅接触过的LINGO的语法很像。记录一下以免以后忘了怎么用。此外，还在其中记录一下本次自学的遗传算法。&#xA;概述 求解大规模线性优化问题的时候不可能使用单纯形算法一个个地列单纯形表去手算，必须借助计算机求解才能使求解精确解的求解速度在可接受的范围内。可接受的求解时间范围根据每个人的接受情况不同大多分布于3小时或1天之内。此处记录一下之前稍微了解到的LINGO软件的语言、这次自学的CPLEX软件的OPL语言，这两个软件都可以用于求解线性规划问题。&#xA;LINGO语法 LINGO的整个线性规划模型大致可以描述为：&#xA;集合（Sets） 变量（Data) 模型（Model） LINGO的集合 先上一段代码&#xA;1sets: 2&#x9;S/1..6/: a, b, d ; // S为1~6的集合，a有6个分量（a1~a6)，b、d、e等同理 3&#x9;T/1,2/: e, x, y; // T为1和2组成的集合， 4&#x9;U(S,T): c ; // 定义了双下标的集合（c为双下标变量c_ij） 5endsets 第2行描述了三个变量abd各自都有6个分量，如a可以看成a1,a2,...,a6，在LINGO里面引用就是a(1),a(2),...,a(6)，剩下两个变量b和d同理。 第四行定义了U为双下标集合，如果将U的每个元素看作Uij，那么i的范围为[1,6]，整数；j的范围为{1,2}。在LINGO里面引用就是U(i,j)。根据定义的集合，U(i,j)共有12个变量。&#xA;LINGO的变量 代码&#xA;1data: 2&#x9;a=1 2 3 4 5 6; // 定义a(n)的值 3&#x9;b=1 2 3 4 5 6; 4&#x9;x=5 2; 5&#x9;y=1 7; 6enddata 第2行表示a(1)到a(6)的值分别为1、2、3、4、5、6。&#xA;LINGO的模型 模型又可以分为两个部分：&#xA;目标函数 约束方程 在这之前，需要先了解集合函数，方便规模化地表示模型的目标函数和约束方程。&#xA;LINGO的集合函数 我也不知道它是不是叫这个名字，姑且先用集合函数表示他们。当时简单了解到的集合函数有两个。&#xA;函数表示 功能 @sum 求和 @for 遍历，但不操作 仅求和而言，大致有以下2种情况：</description>
+    </item>
+    <item>
+      <title>SQL入门</title>
+      <link>https://www.zhhuu.top/posts/sql-basics/</link>
+      <pubDate>Sun, 27 Mar 2022 11:52:50 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/sql-basics/</guid>
+      <description>1SELECT * 2FROM table 3WHERE column LIKE &amp;#39;条件&amp;#39; 4Order by 1 5LIMIT 100 基本语法 注释 --后面是注释内容。--是sql的注释标志&#xA;运算符 运算符 说明 AND 和，AND的优先级一般会高于OR OR 或者 NOT 非 () 括号，提高优先级。 条件 符号 含义 % n个任意字符 _ 1个任意字符 正则表达式 REGEXP（Regular Expression）&#xA;1WHERE column REGEXP &amp;#39;表达式&amp;#39; 符号 意义 例子 ^ 以..开头 ^field $ 以..结尾 field$ \ 或者 ^field｜mac｜rose [] 匹配中括号内的所有字符 [gim]e，匹配ge、ie、me，&#xA;[a-c]d，匹配&#xA;ad、bd、cd，&#xA;[1-3]同理 注意：由于我使用的markdown编译器无法将表格中的代码中的|识别为符号，以上的|为全角符号&#xA;NULL 表达式 含义 IS NULL 值为null IS NOT NULL 值不为null AS 在原有数据基础上新建一列数据，或者理解为处理完原有列数据填入新一列中</description>
+    </item>
+    <item>
+      <title>C# Task</title>
+      <link>https://www.zhhuu.top/posts/csharp-task/</link>
+      <pubDate>Fri, 25 Mar 2022 11:56:41 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/csharp-task/</guid>
+      <description>Task 线程的问题：线程(Thread)是用来创建并发的一种低级别工具，尤其在于以下方面有一些限制：&#xA;虽然开始线程的时候可以方便地传入数据，但是当Join（等待）的时候，很难从线程获得返回值。 可能需要设置一些共享字段 如果抛出异常，捕获和传播该异常都很麻烦 无法告诉线程在结束时开始做另外的工作，必须进行Join操作，在进程中阻塞当前的进程，等待线程结束。 对手动同步的更大依赖以及随之而来的问题 Task类可以很好地解决上述问题。Task是一个相对高级的抽象，它代表了一个并发操作(concurrent)，该操作可能由Thread支持，或不由Thread支持。并且，Task是可组合的。 Tasks可以使用线程池来减少启动延迟 使用TaskCompletionSource，Tasks可以利用回调的方式在等待I/O绑定操作是完全避免线程。 开始一个Task 开始一个Task最简单的方法就是使用Task.Run这个静态方法。(.NET4.5开始，.NET4.0的时候是Task.Factory.StartNew这个静态方法) 使用方法：传入一个Action委托即可。&#xA;Task默认使用线程池，也就是后台线程。当主线程结束时，创建的所有任务都会结束。&#xA;1static void Main(string[] args) 2{ 3 Task.Run(() =&amp;gt; Console.WriteLine(&amp;#34;Foo&amp;#34;)); 4 Console.ReadLine(); // 可以达到阻塞线程的效果。 5 // 如果程序运行完了，由于Task是后台线程，Task也会被关闭。 6} Task.Run返回一个Task对象，可以使用它来监视其过程。Task.Run之后没有调用Start，因为该方法创建的是“热”任务(hot task)；可以通过Task的构造函数创建“冷”任务(cold task)，但很少这样做。&#xA;Wait 调用Task的Wait方法会进行阻塞直到操作完成（相当于调用Thread上的Join方法）&#xA;1static void Main(string[] args) 2{ 3 Task task = Task.Run(() =&amp;gt; 4 { 5 Thread.Sleep(3000); 6 Console.WriteLine(&amp;#34;Foo&amp;#34;); 7 }); //创建一个“热任务” 8 9 Console.WriteLine(task.IsCompleted); //False 10 11 task.Wait(); //阻塞至task完成操作 12 13 Console.WriteLine(task.IsCompleted); //True 14 15 // False 16 // Foo 17 // True 18} Wait也可以指定一个超时时间和取消令牌来提前结束等待。</description>
+    </item>
+    <item>
+      <title>C# 线程</title>
+      <link>https://www.zhhuu.top/posts/csharp-thread/</link>
+      <pubDate>Fri, 25 Mar 2022 11:31:09 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/csharp-thread/</guid>
+      <description>Thread 线程 一个可执行路径，独立于其它线程执行。&#xA;线程被抢占 线程的执行与另外一个线程上代码的执行交织的那一点。&#xA;线程的属性&amp;amp;特性 线程一旦开始执行，IsAlive为true；线程结束变成false 线程结束的条件：线程构造函数传入的委托执行结束 线程一旦结束，无法重启 每个线程都有Name属性，通常用于调试。Name只能设置一次，更改会抛出异常。 静态的Thread.CurrentThread属性返回当前执行的线程。 Join 调用Join方法，可以等待另一个线程结束。&#xA;1Thread t = new Thread(Go); 2t.Start(); //开始线程 3t.Join(); //等待线程执行完成 4Console.WriteLine(&amp;#34;Thread t has ended!&amp;#34;); //线程结束 5 6static void Go() //线程构造函数传入的委托 7{ 8 for (int i = 0; i &amp;lt; 1000; i++) 9 Console.Write(&amp;#39;y&amp;#39;); 10} 添加超时 调用Join的时候，可以设置一个超时，可以使用毫秒或者TimeSpan 如果返回true，线程结束；如果超时，返回false&#xA;1bool IsTerminated = thread1.Join(2000); //等待2秒后线程是否执行结束 Sleep Thread.Sleep()方法会暂停当前的线程，并等待一段时间。可以是毫秒或者TimeSpan&#xA;1Thread.Sleep(500); //线程休眠500ms Thread.Sleep(0)会导致线程立即放弃当前的时间片，自动将CPU移交给其它线程。 Thread.Yield()做同样的事情，但是它只会把执行交给同一处理器上的其它线程。 当等待Sleep或Join的时候，线程处于阻塞的状态。 阻塞：正在等待某一事件发生，根据原因可设置多个阻塞队列&#xA;❔ 如果在代码中任何地方插入Thread.Yield()就破坏了程序，程序几乎肯定会有bug&#xA;阻塞 线程的执行由于某种原因导致暂停。 可以通过ThreadState属性判断线程是否处于被阻塞的状态。&#xA;ThreadState ThreadState是一个flags enum(可以有多个枚举值)，通过**按位**的形式可以合并数据的选项。</description>
+    </item>
+    <item>
+      <title>进程管理（操作系统）</title>
+      <link>https://www.zhhuu.top/posts/multi-threading-hardware/</link>
+      <pubDate>Tue, 22 Mar 2022 23:13:13 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/multi-threading-hardware/</guid>
+      <description>操作系统方面的进程管理&#xA;进程 进程是一个可并发执行的具有独立功能的程序关于某个数据集合的一次执行过程，是操作系统进行资源分配和保护的基本单位。进程是程序在处理机上的一次执行过程。&#xA;动态性：创建👉产生；调度👉执行；得不到资源👉阻塞；撤销👉消亡 并发性：多个进程可同时存在于内存中，在一段时间内同时运行。 独立性：独立获得资源的基本单位 异步性：各进程按各自独立的不可预知的速度执行 交往性（制约性）：进程至今啊相互制约，互斥地使用某些资源、相关进程之间同步、通信等。 进程的静态描述 进程控制块：反映了进程的动态特征。 程序段：能被调度程序选中，并在CPU上执行的程序代码段 数据段：进程对应的原始数据、中间或最终数据 进程控制块 进程控制块 PCB(Process Control Block)&#xA;是操作系统为了管理进程设置的一个数据结构，用于记录和描述进程。 系统利用PCB控制和管理进程。一个进程只有一个PCB，PCB是进程是否存在的唯一标记，是系统感知进程存在的唯一标志。 进程与PCB一一对应。 PCB包含如下信息：&#xA;描述信息：ID、进程组关系（父进程、子进程） 控制信息：状态、优先级、外存地址、运行同级信息等 资源管理信息：指针、占用内存大小等 CPU现场保护结构：当前进程的执行被打断，储存进程现场数据 PCB组织方式：线性、链接（链表）、索引&#xA;进程上下文 操作系统中，把进程物理实体和支持进程运行的环境合称为进程上下文。 系统调度新进程时，新老进程的上下文将进行切换。&#xA;进程的状态 进程的三种基本状态&#xA;就绪态：已经得到除了CPU以外的其它资源 运行态：占用CPU 阻塞态：正在等待某一事件发生 进程的控制 fork()：进程创建。调用者用fork()建立一个子进程和自己独立并发地运行。创建的子进程基本拷贝父进程的上下文（正文段（代码）共享） fork()返回值为-1：进程创建不成功 fork()返回值大于0：在父进程的上下文中，fork()返回值为子进程标识号 fork()返回值等于0：在子进程的上下文中。 wait()：进程挂起等待（封锁）。调用者进入封锁状态等待它的子进程终止。 exit()：进程终止。调用者将终止自己，并解除父进程的封锁（wait()）。 execvp(filename,argp)：进程上下文更换。用文件名filename所指定的可执行文件来替换当前进程上下文中的程序和数据部分，并转入执行。 常见代码段 循环创建线程。如果创建不成功（返回值为1），则执行;语句&#xA;1while((i=fork()) == -1); 创建子线程。父线程和子线程将（将开始）同时在这里执行。&#xA;1i=fork(); 判断现在执行的是父线程还是子线程&#xA;1if (i==0) // 子线程 2else // 父线程（i为大于0的进程id） 线程 线程和进程的区别和联系 线程是进程的一部分，它是进程内的一个执行体。 引入线程的操作系统中，资源分配的对象是进程，而不是线程。 引入线程的操作系统中，调度的基本单位是线程而不是进程。 进程之间可以并发执行，而一个进程中的这些线程之间亦可以并发执行。 进程调度，系统需要进行进程上下文的切换，需要大量的系统开销。 线程切换比进程切换快得多。 从一个进程的线程向另一个进程的线程切换，将引起线程的上下文切换。 从安全的角度来看，线程不如进程安全。 线程控制块 在管理线程的时候，同样也使用一种数据结构，称之为线程控制块TCB(Thread Control Block) 线程控制块包含如下信息：</description>
+    </item>
+    <item>
+      <title>Xaml学习小结</title>
+      <link>https://www.zhhuu.top/posts/xaml-summary/</link>
+      <pubDate>Wed, 16 Mar 2022 22:08:15 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/xaml-summary/</guid>
+      <description>主要是Xaml的“绑定”和“资源”&#xA;Xaml静态资源绑定 需要绑定一个resource的时候，需要的表达式就是大括号里面有“StaticResource”，再加上resource的名字。这种绑定只在App运行的时候进行一次，因为是静态资源，所以它就不会变了。 如：&#xA;1&amp;lt;TextBlock Foreground = &amp;#34;{StaticResource MyBrush}&amp;#34; /&amp;gt; StaticResource表明了我们所绑定的资源的类型&#xA;单个属性的绑定 可以创建单个属性的资源绑定，如：&#xA;1&amp;lt;Page.Resources&amp;gt; 2 &amp;lt;SolidColorBrush x:Key=&amp;#34;MyBrush&amp;#34; Color=&amp;#34;Brown&amp;#34;/&amp;gt; 3&amp;lt;/Page.Resources&amp;gt; 4 5&amp;lt;!-- 使用 --&amp;gt; 6&amp;lt;TextBlock Text=&amp;#34;Hello World&amp;#34; Foreground=&amp;#34;{StaticResource MyBrush}&amp;#34;/&amp;gt; 还可以创建值绑定，如将Slider的值绑定到ProgessBar中：&#xA;1&amp;lt;ProgressBar Maximum=&amp;#34;100&amp;#34; Value=&amp;#34;{x:Bind MySlider.Value, Mode=OneWay}&amp;#34;&amp;gt; 多个属性的绑定（Style） 也可以创建多个值类型的绑定，如设置背景、字体、字号等属性，如：&#xA;1&amp;lt;Page.Resources&amp;gt; 2 &amp;lt;Style TargetType=&amp;#34;Button&amp;#34; x:Key=&amp;#34;MyButtonStyle&amp;#34;&amp;gt; 3 &amp;lt;!-- 定义了目标类型、样式（资源）名称 --&amp;gt; 4 &amp;lt;!-- 下面是各个属性值的设置 --&amp;gt; 5 &amp;lt;Setter Property=&amp;#34;Background&amp;#34; Value=&amp;#34;Blue&amp;#34;/&amp;gt; 6 &amp;lt;Setter Property=&amp;#34;FontFamily&amp;#34; Value=&amp;#34;Arial Black&amp;#34;/&amp;gt; 7 &amp;lt;Setter Property=&amp;#34;FontSize&amp;#34; Value=&amp;#34;36&amp;#34;/&amp;gt; 8 &amp;lt;/Style&amp;gt; 9&amp;lt;/Page.Resources&amp;gt; 10 11&amp;lt;Button Content=&amp;#34;My Button Style Example&amp;#34; 12 Height=&amp;#34;100&amp;#34; 13 Style=&amp;#34;{StaticResource MyButtonStyle}&amp;#34; /&amp;gt; 14 &amp;lt;!</description>
+    </item>
+    <item>
+      <title>LINQ笔记&amp;实例</title>
+      <link>https://www.zhhuu.top/posts/linq/</link>
+      <pubDate>Sat, 12 Mar 2022 16:29:27 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/linq/</guid>
+      <description>LINQ：语言继承查询&#xA;限制运算符 Where where语句的基本示例&#xA;1int[] numbers = {5,4,1,3,9,8,6,7,2,0}; 2var lowNums = from num in numbers 3 where num &amp;lt; 5 4 select num; // 只选择小于5的数字 筛选符合属性条件的元素&#xA;1var soldOutProducts = from prod in products 2 where prod.UnitsInStock == 0 3 select prod; // 从集合中选出符合属性的元素 用多个条件筛选元素&#xA;1var expensiveInStockProducts = from prod in products 2 where prod.UnitsInStock &amp;gt; 0 &amp;amp;&amp;amp; prod.UnitPrice &amp;gt; 3.00M 3 select prod; // 从集合中选出符合上述两个条件的元素 基于元素在列表中位置的筛选&#xA;1string[] digits = {&amp;#34;zero&amp;#34;, &amp;#34;one&amp;#34;, &amp;#34;two&amp;#34;, &amp;#34;three&amp;#34;, &amp;#34;four&amp;#34;, &amp;#34;five&amp;#34;, &amp;#34;six&amp;#34;, &amp;#34;seven&amp;#34;, &amp;#34;eight&amp;#34;, &amp;#34;nine&amp;#34;}; 2var shortDigits = digits.</description>
+    </item>
+    <item>
+      <title>VSCode多光标输入</title>
+      <link>https://www.zhhuu.top/posts/vscode-multicursor/</link>
+      <pubDate>Sun, 11 Jul 2021 15:00:42 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/vscode-multicursor/</guid>
+      <description>VSCode多行光标功能的使用&#xA;参考 Visual Studio Code Basics: This topic takes you through the basics of the editor and helps you get moving with your code StackOverflow: Multiline editing in Visual Studio Code 多行光标的使用 用键盘使用多行光标 快捷键 作用 Ctrl+D 选择下一个匹配的内容 Ctrl+U 撤销上一个光标操作 Esc 取消多行选择 Ctrl+Backspace 智能删除 使用 Ctrl+D 时,右上角的小部件，从左到右依次是： 区分大小写 Alt+C、全字匹配 Alt+W、使用正则表达式 Alt+R&#xA;Ctrl+Shift+P 能够呼出万能指令窗口&#xA;Ctrl+Shift+P 指令 作用 Cursor Undo 撤销光标操作 Cursor Redo 重做光标操作 用鼠标使用多行光标 有时候可能会想要跳过某一个位置，这时使用Ctrl+D就难以做到。使用鼠标控制会令多行光标的使用更灵活。（比如说跳过注释部分的“：”）&#xA;使用方法 按住 Alt 并点击&#xA;多行光标特性 合并 当两个光标移动到重合时，会自动合并。例如下面的删除： 有时候在一行中分布有很多光标，当用 Ctrl+← 将光标置于行开头的时候，也会因此自动合并。 这个特性可以在VSCode选项中关闭，默认开启。</description>
+    </item>
+    <item>
+      <title>npm快速上手</title>
+      <link>https://www.zhhuu.top/posts/npm-overview/</link>
+      <pubDate>Sat, 10 Jul 2021 19:13:03 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/npm-overview/</guid>
+      <description>在npm中，包（package）、模块（module）、依赖（dependency）都是一个东西。&#xA;npm常用操作 npm配置项 初始化 npm init（其实就是创建一个package.json文件），之后让你填入许多信息（package name, version, description, entry point, test command, git repository, key words, author) npm init -y相当于npm init但信息都为空，初始化后npm会认为你的项目是一个包&#xA;npm搜索 npm search &amp;lt;包名&amp;gt; 如：npm search jquery&#xA;包安装 操作 命令 直接安装 npm install &amp;lt;包名&amp;gt;，简写为npm i &amp;lt;包名&amp;gt; 安装指定版本/旧版本 npm install &amp;lt;包名&amp;gt;@&amp;lt;版本号&amp;gt; 安装指定tag的包 npm install &amp;lt;包名&amp;gt;@&amp;lt;tag&amp;gt; 参数 -g 安装到全局环境下，这样在任何一个目录下都能识别，比如 npm install npm@latest -g 参数 --save-dev或者-D 表明是开发环境下的依赖，不会在生产环境中出现 包卸载 npm uninstall &amp;lt;包名&amp;gt; -D 卸载包，并从package.json的devDependencies中删除。 老版本的npm中卸载包要加--save才能保存到package.json中&#xA;常用操作 操作 命令 更新包 npm update &amp;lt;包名&amp;gt;，局部更新。加-g全局更新 列出已安装包 npm list默认列出局部依赖。加-g 列出已安装的全局依赖。 检查过期包（依赖） npm outdated 查看依赖安装路径 npm root，也就是node_modules的路径，加-g查看全局安装路径 查看模块的注册信息 npm view &amp;lt;包名&amp;gt; versions，列出所有版本。</description>
+    </item>
+    <item>
+      <title>利用Gitkraken了解Git</title>
+      <link>https://www.zhhuu.top/posts/git-basic/</link>
+      <pubDate>Fri, 09 Jul 2021 20:56:37 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/git-basic/</guid>
+      <description>git是版本控制系统。应用最为广泛，适用于中小项目。本身是命令行工具。 GitKraken图形化客户端，界面漂亮，功能全面。&#xA;🔗链接&#xA;GitKraken Git的基本概念和操作 代码仓库(Repository) 创建一个代码仓库(Repository)，可以是本地仓库，也可以是保存在远程服务器上的仓库。仓库之间可以相互同步。 显示代码的所有提交历史，其中每项代表一个提交(Commit),提交相当于检查点或者快照。对代码作出修改后可以提交这次修改，Git会保存当前的代码快照，之后可以轻松回溯到这里。 新建代码仓库的时候会自动创建一个提交。 选中提交后可以看到所有修改的文件。&#xA;GitKraken 中打开git目录可以点击“文件”-“在文件浏览器中打开”，找到代码仓库在本地计算机上存放的位置&#xA;作出更改后文件历史中多出 //WIP (Work In Progress)，代表这个提交正在施工中。 Git要求在提交修改的文件前要对它们先 Stage，点击Stage。Stage可看作提交前防止误操作。其中必填本次提交的描述。最后&amp;quot;Commit&amp;quot;完成提交，这里的提交还是在本地计算机的提交。 如果要远程提交到代码仓库，就需要 &amp;ldquo;Push&amp;quot;s，推送提交即可。&#xA;拉取(Pull) 从远程服务器 拉取(Pull) 提交 提交历史会多出来一条。master和电脑图标的标签表示本地仓库的提交，上面的表示Github上的远程仓库提交（master是分支）。(origin通常代表远程仓库)。如果想把远程提交同步到本地仓库只需要点击**&amp;ldquo;Pull&amp;rdquo;**。点击后两个图标重合在一起，代表远程仓库和本地仓库的提交历史已经完全相同。&#xA;合并(Merge) 两边同时作出了修改后提交历史会产生分叉 如果想要将两个修改同时应用在本地仓库中，需要合并。Pull的时候会自动合并远程提交到本地的提交中。Pull后Git会自动生成一个新提交。 如果同时修改代码的同一处位置，再次Pull的时候，会自动合并失败，需要手动合并冲突(Conflict)的部分。 下面的窗口用于手动解决冲突 最终完成提交 提交改写(Amend) 用于提交代码有误或者提交信息出错，对已提交的文件和信息进行修改。在提交前勾选Amend后正常提交。这个操作只会修改已经存在的提交。但是最好本地使用。&#xA;分支(Branch) 创建一个新分支，点击Branch按钮。创建好后分支的提交历史和原来相同，但是往后的提交会相互独立。默认只会推送master分支到远程服务器，如果要推送其他分支，点右键然后选择Push。&#xA;合并分支（Merge Branches） 将test合并到master上，先双击切换到master分支，在test分支上右键点“合并test分支到master分支”。（可能需要手动解决代码冲突）&#xA;暂存(Stash) 暂存当前的修改，源代码会被还原到之前的状态，可以进行其他操作。 最后可以通过Pop将暂存的代码恢复出来，甚至可以切换到很老的版本将暂存的修改恢复出来。&#xA;变基(Rebase) 在合并分支的过程中，会将整个分支摘取下来，嫁接到另一个分支上（改变了原有的基底）。相比Merge,Merge的优点在于原先的提交历史会被完整地保留下来。 比如将test分支变基到master分支，先选择test分支，右键选择“将test分支变基到master分支上”，完成操作。最后将master分支指向最新的提交，这样master分支的内容才是最新的。（用到Fast Forward)&#xA;快进(Fast Forward) 直接让master的指针快进到test分支。&#xA;签出(Checkout) 回退到早期的版本完成一些bug的修复。在想要回到的节点上右键点击签出，此时Head标签指向当前提交。 修改完后提交是基于早期的提交,最后可以将其变基到当前的提交上，变基完成后提交会变成一条直线。&#xA;撤销操作(Undoing) 常用于在Git中错误提交了代码或者错误合并了一个分支。得益于每次的操作都记录在Reflog的类似日志的文件里，能够帮你轻松回退之前的状态。GitKraken中就是状态栏中的undo操作。包括分支切换、合并、修改甚至删除等等。&#xA;恢复(Revert) 常用于撤销已提交的代码（远程）。在GitKraken中在提交上点右键，Git会创建一个完全相反的提交以恢复。&#xA;图形化界面对应的命令行命令 第一部分（常用基础部分） 配置基本用户信息 git config --global user.name &amp;lt;用户名&amp;gt; git config --global user.email &amp;lt;邮箱地址&amp;gt;&#xA;创建一个新仓库 git init</description>
+    </item>
+    <item>
+      <title>两种设计风格</title>
+      <link>https://www.zhhuu.top/posts/two-design-style/</link>
+      <pubDate>Thu, 20 May 2021 12:21:56 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/two-design-style/</guid>
+      <description>简单介绍下两种设计风格：波普（POP）风格和孟菲斯风格（Memphis）&#xA;波普风格 波普艺术被定义为：大众传播媒介的形式与技巧，并以人们日常生活中随处可见的广告、大众传媒与通俗文化中的形象为主题的艺术创作。&#xA;特征 波普本身颠覆了人们对艺术的印象，而总结波普的特点，可以归纳为以下三个：&#xA;通俗化 波普模糊了艺术和非艺术、现存品和艺术品、精英文化与大众文化、高雅与低俗之间的界限，把艺术从神坛上拉下来，成为所有人都可享受之物。&#xA;商业化 波普艺术的重要特点就是将着眼于日趋发达的商业流行文化，用极为通俗化的方式直接表现物质生活，强调消费主义与物质主义。&#xA;形式主义 波普艺术的作品追求别具一格外形，装饰，追求纯粹的视觉快感，希望新颖多样的艺术表现形式来反抗现代主义的“无趣、无聊、一成不变”。&#xA;表现手法 元素：借用大众传媒和日常生活物品 在波普艺术中，常常会借用广告、商业、流行文化图像，以及名人或者虚构人物形象来作为主要视觉资源，因此来呈现消费型社会具有的各种杂乱表象。&#xA;Andy Warhol的金宝汤（Campbell&amp;rsquo;s Soup Cans）&#xA;手法：拼接、覆盖、粘贴、重复 波普的重要特质之一就是能够通过不同的载体和复制形式体现出趣味。 Tom Wesselmann的静物拼贴作品&#xA;色彩 波普的作品中通常更注重色彩表现的刺激性效应。例如使用高度饱和的色彩，以及强化无彩色系（黑白灰）与有彩色系之间的对比张力，营造一种强烈而廉价的色彩感，并同时用来暗示物质主义对人们的诱惑。 Keith Haring&#xA;美国波普代表艺术家 安迪·沃霍尔（Andy Warhol）：色彩组合、质感 凯斯·哈林（Keith Haring）：涂鸦风格 罗伊·里奇特斯坦（Roy Lichtenstein）：漫画风格 孟菲斯风格 风格介绍 孟菲斯风格最早形成于1981年，是由一群意大利籍家具设计师探索出来的一种装饰艺术的设计风格。他们反对单调冷峻的现代主义，提倡装饰，强调手工艺方法制作的产品，并积极从波普艺术、东方艺术、非洲拉美的传统艺术中寻求灵感。&#xA;上个世纪70年代，非常流行极简主义和现代主义，物极必反，不会有一种设计风格永远流行，总有人看多了没有装饰性、没有个性化的设计风格，厌倦了单调冷峻的现代主义，所以才有了孟菲斯风格的诞生。孟菲斯的兴起可以说是“装饰主义”的复苏。&#xA;特点 而要追究到底是什么造就了这种引人注目的设计风格，则必须追溯到孟菲斯设计师们的设计主张:&#xA;反对“功能主义”的设计理念 无限制的材料使用 强调个性化的装饰 无限制的材料使用 孟菲斯设计师们认为材料是一种积极交流感情的媒介，因此孟菲斯对于材料的态度是感性而非理性的，他们不考虑材料的真实感，不管是大理石、木材还是塑料像，在孟菲斯设计师看来都无区别。他们看重的是材料的表现力，例如材料的肌理、花纹、色彩、浓度、透明度、发光度、反光率等等。例如孟菲斯很喜欢当时被认为很“俗气”的材料——三聚氰胺塑料胶合板，用表达朝气蓬勃，活泼向上的生活态度。&#xA;强调个性化的装饰 在装饰方面，孟菲斯一直抵制现代主义的“装饰即罪恶”、“少即是多”理论，总是在设计中表现富有个性的设计形式和文化涵义。&#xA;孟菲斯的美学灵感主要汲取自装饰艺术和波普艺术，在设计中通常采用抽象图案来作为装饰元素，使它布满产品表面，变产品的静态为活跃的动态结构。而且在色彩方面，反现代主义设计规定的色彩学法则和配色规律而行，喜欢采用色调差别很大的色块并列，产生一种颤动的视觉效果，甚至不惜互相干扰，以创造一种风趣、滑稽、诙谐、戏谑的后现代情调，造成亦庄亦谐的效果。&#xA;现代孟菲斯的特征:&#xA;高饱和度的颜色 重复的几何图形 黑色粗描边 孟菲斯风格在色彩上，常常打破配色规律，喜欢用一些靓丽、纯度高、大胆、对比强烈的配色，借鉴了波普艺术的配色。&#xA;在排版上，元素之间没有过多的联系，元素的排列常常无规律可循，正是因为无规律可循，跳跃的色彩和元素运用得好，反而更能吸引人的眼球，但是要做到“形散神不散”，构图上一定要保持平衡，这是做好孟菲斯风格的必要条件。&#xA;孟菲斯风格还有一个很明显的特点，就是运用大量的几何元素，点、线、面综合运用。规则的几何图形有圆形、三角形、矩形、圆环、波浪线、网格、斜杠等等，不规则的几何图形也是由点、线、面拼贴而成。把这些规则的几何图形和不规则的几何图形排列好，再加上大胆跳跃的配色，就可以做出孟菲斯风格了。&#xA;应用 孟菲斯风格最初是运用于室内设计比较多。后来由于孟菲斯风格在设计上比较大胆，比较吸引人眼球，适合做招贴、海报，慢慢地也运用在了平面设计当中。</description>
+    </item>
+    <item>
+      <title>鲁迅名言</title>
+      <link>https://www.zhhuu.top/posts/luxun-sayings/</link>
+      <pubDate>Fri, 05 Mar 2021 23:13:51 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/luxun-sayings/</guid>
+      <description>迅哥儿快被踢出课本了，这都是各种鲁迅名言的摘抄🤣&#xA;沉默和孤独 惟沉默是最高的轻蔑。——《且介亭杂文附集》&#xA;猛兽总是独行，牛羊才成群结队。&#xA;当我沉默的时候，我觉得很充实，当我开口说话，就感到了空虚。&#xA;楼下一个男人病得要死，那间隔壁的一家唱着留声机，对面是弄孩子。楼上有两人狂笑；还有打牌声。河中的船上有女人哭着她死去的母亲。人类的悲欢并不相通，我只觉得他们吵闹。——《而已集•小杂感》&#xA;这4句是鲁迅说沉默和孤独的，嗯，我们迅哥儿还是有点傲娇的。因此愿意独行，不想像新月派、鸳鸯蝴蝶派的“牛羊”一样成群结队。&#xA;工作 哪里有什么天才，我只是把别人喝咖啡的时间用在工作上了。&#xA;伟大的成绩和辛勤劳动是成正比例的，有一分劳动就有一分收获，日积月累，从少到多，奇迹就可以创造出来。&#xA;这两句说明，鲁迅其实也是工作狂，每周996，相信一分耕耘一分收获，把喝咖啡的时间都用在了写作上，所以才著作等身，成为近现代作家中的第一大咖（或许只有胡适才能齐名）&#xA;情 待我成尘时，你将见我的微笑。&#xA;无情未必真豪杰，怜子如何不丈夫。&#xA;渡尽劫波兄弟在，相逢一笑泯恩仇。&#xA;友谊是两颗心真诚相待，而不是一颗心对另一颗心的敲打。&#xA;人生得一知已足矣，斯世当以同怀视之。&#xA;我寄你的信，总要送往邮局,不喜欢放在街边的绿色邮筒中，我总疑心那里会慢一点。&#xA;这6句话可以归为一类：迅哥儿看感情——儿女之情、兄弟之情和朋友之情。我们的教材，经常把鲁迅塑造成头发如钢针、横眉冷对千夫指的刚毅硬汉，其实迅哥儿也有自己温柔的一面。上面5句话，就表达了迅哥儿作为暖男的一面，不管是对朋友、兄弟还是妻儿，都有无限柔情。&#xA;责任和担当 无穷的远方，无数的人们，都与我有关。&#xA;必须敢于正视，这才可望敢想，敢说，敢做，敢当。&#xA;我们自古以来，就有埋头苦干的人，有拼命硬干的人，有为民请命的人，有舍身求法的人。虽是等于为帝王将相作家谱的所谓“正史”，也往往掩不住他们的光辉，这就是中国的脊梁。&#xA;愿中国青年都摆脱冷气，只是向上走，不必听自暴自弃者流的话。能做事的做事，能发声的发声。有一分热，发一分光，就令萤火一般，也可以在黑暗里发一点光，不必等候炬火。此后如竟没有炬火：我便是唯一的光。倘若有了炬火，出了太阳，我们自然心悦诚服的消失，不但毫无不平，而且还要随喜赞美这炬火或太阳；因为他照了人类，连我都在内。&#xA;中国的孩子，只要生，不管他好不好，只要多，不管他才不才，生他们的人，不负教他的责任。虽然“人口众多”这一句话，很可以闭了眼睛自负，然而这许多人口，便只在尘土中辗转，小的时候，不把他当人，大了以后也做不了人。——《随感录廿五》&#xA;杂谈 谣言世家的子弟是以谣言杀人，也以谣言被杀的。&#xA;讽刺和冷嘲只隔一张纸，有趣和肉麻也一样。&#xA;悲剧将人生的有价值的东西毁灭给人看，喜剧将那无价值的撕破给人看。&#xA;若举世唯科学是崇，则人生必将归于枯寂。&#xA;我之所谓生存，并不是苟活，所谓温饱，不是奢侈，所谓发展，也不是放纵。&#xA;面具戴太久，就会长到脸上，再想揭下来，除非伤筋动骨扒皮。&#xA;人生最苦痛的是梦醒了无路可走，做梦的人是幸福的；倘没有看出可走的路，最要紧的是不要去惊醒他。&#xA;有缺点的战士终竟是战士，完美的苍蝇也终竟不过是苍蝇。 ——《战士和苍蝇》&#xA;这些话不太好归类，干脆就全放一起，就叫鲁迅杂谈吧。迅哥儿杂文写得多，这些名言就算迅哥儿杂谈好了。&#xA;创新 从来如此，便对么？&#xA;其实地上本没有路，走的人多了，也便成了路。&#xA;同是不满于现状，但打破现状的手段却不同：一是革新，一是复古。&#xA;从原虫到人类，从野蛮到文明，就因为没有一刻不在革命。&#xA;既然像螃蟹这样的东西，人们都很爱吃，那么蜘蛛也一定有人吃过，只不过后来知道不好吃才不吃了，但是第一个吃螃蟹的人一定是个勇士。&#xA;这一类名言，主题都指向了一个点：创新（不守旧）。&#xA;抨击黑暗 中国人的性情是总喜欢调和折中的，譬如你说，这屋子太暗，须在这里开一个窗，大家一定不允许的。但如果你主张拆掉屋顶他们就来调和，愿意开窗了。&#xA;我独不解中国人何以于旧状况那么心平气和，于较新的机运就这么疾首蹙额；于已成之局那么委曲求全；于初兴之事就这么求全责备? ——《这个与那个》&#xA;一见短袖子，立刻想到白臂膊，立刻想到全裸体，立刻想到生殖器，立刻想到性交，立刻想到杂交，立刻想到私生子。中国人的想象惟在这一层能够如此跃进。&#xA;一部《红楼梦》，单是命意，就因读者的眼光而有种种：经学家看见《易》，道学家看见淫，才子看见缠绵，革命家看见排满，流言家看见宫闱秘事。&#xA;我翻开历史一查，这历史没有年代。歪歪斜斜的每页上都写着“仁义道德”几个字，我横竖睡不着，仔细看了半夜，才从字缝里看出来，满本上都写着两个字“吃人”！&#xA;中国一向就少有失败的英雄，少有韧性的反抗，少有敢单身鏖战的武人，少有敢抚哭叛徒的吊客；见胜兆则纷纷聚集，见败兆则纷纷逃亡。&#xA;他们这群人，又想吃人，又是鬼鬼祟祟，想法子遮掩，不敢直截下手，真要令我笑死。我忍不住，便放声大笑起来，十分快活。自己晓得这笑声里面，有的是义勇和正气。——《狂人日记》&#xA;但究竟是夷人可恶，偏要讲什么科学。科学虽然给我们许多惊奇，但也搅坏了我们许多好梦。——《春末闲谈》&#xA;群众，尤其是中国的——永远是戏剧的看客。牺牲上场，如果显得慷慨，他们就看了悲壮剧；如果显得觳觫，他们就看了滑稽剧。北京的羊肉铺常有几个人张嘴看剥羊，仿佛颇为愉快，人的牺牲能给他们的益处，也不过如此。而况事后走不几步，他们并这一点也就忘了。 ——《娜拉走后怎样》&#xA;真的猛士，敢于直面惨淡的人生，敢于正视淋漓的鲜血。这是怎样的哀痛者和幸福者？然而造化又常常为庸人设计，以时间的流驶，来洗涤旧迹，仅使留下淡红的血色和微漠的悲哀。在这淡红的血色和微漠的悲哀中，又给人暂得偷生，维持着这似人非人的世界。我不知道这样的世界何时是一个尽头！——《纪念刘和珍君》&#xA;这一类就不用我多说了，作为成天怼天怼地怼空气的迅哥儿，最喜欢怼的就是民族劣根性了。以上，都是怼民族劣根性的。虽然当下也有很多粪青，但，这些粪青只是“愤”，却不知“情”，也就是不能从根子里了解问题所在。像迅哥儿这般，既“愤”，又能鞭辟入里，直指要害的，太少了。所以，大师永远是大师，路人甲只是路人甲。&#xA;结尾 于浩歌狂热之际中寒；于天上看见深渊。于一切眼中看见无所有；于无所希望中得救。——鲁迅</description>
+    </item>
+    <item>
+      <title>Hexo升级记录</title>
+      <link>https://www.zhhuu.top/posts/hexo-update/</link>
+      <pubDate>Sun, 21 Feb 2021 23:25:49 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/hexo-update/</guid>
+      <description>hexo版本太旧，将hexo从3.9.0升级到5.4.0 以前尝试了几次，这次终于成功了（把所有问题都解决了）&#xA;升级前后版本变化 升级前&#xA;1hexo: 3.9.0 2hexo-cli: 4.2.0 升级后&#xA;1hexo: 5.4.0 2hexo-cli: 4.2.0 3uv: 1.33.1 升级操作 先运行了npm update查看了一下有没有需要升级的软件，我这边提示有需要升级的软件，所以手动升级了一下&#xA;然后是正经的检查更新&#xA;1npm install -g npm-check 2npm install -g npm-upgrade 后面看来好像还是npm-check更有用一点🤣 分别执行&#xA;1npm-check 2npm-upgrade 其中npm-check占用资源比较多，耗时比较久。最后是通过提示的 npm-check -u 完成升级&#xA;问题解决 由于主题比较老旧，多年没有更新，但是又很喜欢，所以我一直都在魔改并解决问题。&#xA;遇到的问题 在执行hexo操作的时候总会弹出错误&#xA;WARN Deprecated config detected: &amp;ldquo;external_link&amp;rdquo; with a Boolean value is deprecated. See https://hexo.io/docs/configuration for more details.&#xA;主题底部的换页按钮样式失效，直接显示html源码&#xA;本来升级hexo的目的是想尝试修复页面中h3存在时，目录错位显示错误的问题，但是升级后也还是没有解决&amp;hellip;&#xA;[+]那个好像就是一个奇怪的bug也不知道怎么修复，下次注意标题层次好像就没什么大问题了😂&#xA;解决方法 _config.yml文件中的external_link改为external_link.enable，详见 https://hexo.io/docs/configuration#Writing&#xA;主题底部换页显示错误，找到主题文件中的index.ejs中的paginator部分，添加escape:false（记得在上一行最末尾加逗号）。再hexo clean并hexo g应该就能解决</description>
+    </item>
+    <item>
+      <title>初探Docker</title>
+      <link>https://www.zhhuu.top/posts/docker-startup/</link>
+      <pubDate>Sat, 23 Jan 2021 17:34:33 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/docker-startup/</guid>
+      <description>尝试了 docker 的一些常用操作&#xA;查看正在运行的容器 查看正在运行的容器 docker ps&#xA;如果 docker 没有运行，则会显示错误&#xA;查看所有容器 docker ps -a&#xA;建立容器 docker run ubuntu -it&#xA;参数 作用 -i 与容器互动(类似 ssh，可以输入指令) -t 创造一个终端 容器常用操作 本地容器操作容器： 运行但不进入： docker start [容器ID/容器ID开头的几个字]&#xA;进入容器： docker attach [容器ID/容器ID开头的几个字]&#xA;离开容器: Ctrl+P Ctrl+Q&#xA;停止容器： docker stop [容器ID/容器ID开头的几个字]&#xA;查看已经下载到本地的容器： docker image ls 移除本地容器： docker rm [容器名称]&#xA;移除本地镜像： docker rmi [镜像名称]&#xA;镜像名称在 REPOSITORY 下&#xA;新建容器 搜索镜像从 Docker Hub 下载&#xA;docker run (参数) [容器名称]&#xA;参数 作用 --name [name] 更改容器名称 -d 运行成 Detached 模式 -p [端口]:[容器端口] 端口映射 -v [路径]:[容器路径] 文件映射。将电脑的文件映射入容器 第一次使用的镜像会自动从 Docker Hub 下载</description>
+    </item>
+    <item>
+      <title>树莓派安装设置</title>
+      <link>https://www.zhhuu.top/posts/raspi-setup/</link>
+      <pubDate>Wed, 20 Jan 2021 10:02:05 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/raspi-setup/</guid>
+      <description>重新刷入系统进行各项设置安装&#xA;系统下载安装 有3个系统可以选择&#xA;Raspbian Ubuntu：默认账号ubuntu，密码ubuntu，进入后会要求修改密码 OPENFANS Raspbian：一个由Debian重新构建的系统 软件源 修改apt软件源 备份软件源后对其进行修改 sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak&#xA;在这里使用清华tuna源 在 ARM(arm64, armhf)、PowerPC(ppc64el)、RISC-V(riscv64) 和 S390x 等架构的设备上（对应官方源为ports.ubuntu.com）使用 ubuntu-ports 镜像。&#xA;1# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释 2deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal main restricted universe multiverse 3# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal main restricted universe multiverse 4deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-updates main restricted universe multiverse 5# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-updates main restricted universe multiverse 6deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-backports main restricted universe multiverse 7# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-backports main restricted universe multiverse 8deb https://mirrors.</description>
+    </item>
+    <item>
+      <title>正则表达式笔记</title>
+      <link>https://www.zhhuu.top/posts/regular-expression/</link>
+      <pubDate>Thu, 31 Dec 2020 19:32:35 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/regular-expression/</guid>
+      <description>🔗 链接&#xA;正则表达式在线测试 | 菜鸟工具 标记 表达式 作用 示例 作用 ^ 匹配行首 ^a 匹配 a 在行首的情况 $ 结匹配行尾 a$ 匹配 a 在行尾的情况 普通字符（大小写敏感） 表达式 作用 示例 作用 [] 只能匹配中括号中的字符 [ABC] 匹配字符串中的所有 A、B、C [^A] 除去 [^ABC] 得到除了 ABC 以外的所有字符 [A-Z] 某一个区间(可以是大写区间、小写区间、数字区间) [A-C] 匹配 A-C 的区间 . 匹配 除换行符的所有单个字符,相当于[^\n\r] [\s] 匹配 空白字符（空格、换行） [\s] 匹配 非空白字符（包括换行） [\w] 匹配 字母、数字、下划线,相当于[A-Za-z0-9] 非打印字符 符号 作用 示例 作用 \ca 匹配 control+a 的快捷键（\c 是表示 c，\为转义）(\cx 的 x 必须是 A-Z 或者 a-z) \cv 匹配 ctrl+v 的快捷键 \f 换页符 \n 换行符 \r 回车 \s 空白字符，包括空格、制表符、换页符等等 \S 非空白字符，包括回车 \t 制表符（Tab） \v 垂直制表符(Vertical Tab) \d 数字字符，等价于[0-9] \D 非数字字符，等价于[^0-9] \w 单词(word) \W 非单词 特殊字符 符号 作用 示例 作用 $ 匹配字符串的结尾位置 () 标记一个子表达式开始和结束的位置 * 匹配前面的子表达式 0 次或多次 go*gle 可以匹配 ggle,google,gooooogle 等 + 匹配前面的子表达式 1 次或多次(1+) go+gle 可以匹配 gogle,goooogle 等 .</description>
+    </item>
+    <item>
+      <title>PythonNote1</title>
+      <link>https://www.zhhuu.top/posts/python-note-1/</link>
+      <pubDate>Thu, 08 Oct 2020 09:25:58 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/python-note-1/</guid>
+      <description>删除对象 类似C#中的 =null&#xA;1var1 = 1 2var2 = 10 3 4del var1,var2 #关闭 5 6print(var1) 字符串截取 字符串的截取的语法格式： &amp;lsquo;变量[头下标:尾下标:步长]&amp;rsquo; 头下标从0开始，尾下标从-1开始 某一下标后的所有内容 &amp;lsquo;str[1:]&amp;rsquo;&#xA;列表同理，将str替换为list&#xA;都是闭区间&#xA;步长:间距截取，默认间隔为1，为-1时表示逆向读取 join() str.join() 方法用于将序列中的元素以指定的字符(str)连接生成一个新的字符串。 list → string&#xA;split() split() 通过指定分隔符(str)对字符串进行切片形成列表&#xA;数据类型 Number（数字） String（字符串） List（列表） []：元素可以修改 Tuple（元组）()：元素不可修改，也可以用+进行拼接 1tup1 = () # 空元组 2tup2 = (20,) # 一个元素，需要在元素后添加逗号 Set（集合）{}: 可以进行集合运算 1a = set(&amp;#39;abracadabra&amp;#39;) 2b = set(&amp;#39;alacazam&amp;#39;) 3 4print(a - b) # a 和 b 的差集 5print(a | b) # a 和 b 的并集 6print(a &amp;amp; b) # a 和 b 的交集 7print(a ^ b) # a 和 b 中不同时存在的元素 创建空集合set() Dictionary（字典）{a:b}:内容写法与集合不同 1dict = {} 2dict[&amp;#39;one&amp;#39;] = &amp;#34;1 - 菜鸟教程&amp;#34; 3dict[2] = &amp;#34;2 - 菜鸟工具&amp;#34; 4 5tinydict = {&amp;#39;name&amp;#39;: &amp;#39;runoob&amp;#39;,&amp;#39;code&amp;#39;:1, &amp;#39;site&amp;#39;: &amp;#39;www.</description>
+    </item>
+    <item>
+      <title>Word排版技巧</title>
+      <link>https://www.zhhuu.top/posts/word-typesetting/</link>
+      <pubDate>Thu, 16 Jul 2020 22:12:31 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/word-typesetting/</guid>
+      <description>Word的一点小技巧&#xA;快捷键/按键 快捷键 功能 Del 向后删除 Backspace 向前删除 Ctrl + Enter 插入分页符 单位 单位可以直接输入，例如“50磅” 修改默认单位可以在“文件-选项-高级-显示-度量单位”修改 格式 粘贴时可以只粘贴文本而不粘贴格式：“右键-只保留文本”，修改默认粘贴方式可以在 “文件-选项-高级-剪切、复制和粘贴” 处修改默认值（从其他程序粘贴-&amp;gt;“仅保留文本”） 定制功能区提高效率（高级选手）【Word选项-自定义功能区】 参考：元卅的B站主页&#xA;个人信息排版 用表格排版，防止改字体改信息以后引起排版问题 表头可以使用分散对齐，点击表格左上角的控制柄后设置居中可以使表格内容竖直和水平居中 最后去掉表格框线，再加下框线达到下划线的效果 设置目录 引用选项卡-插入（插入目录） 使用 “样式” 让Word软件知道你的文章结构（标题等），软件可以以此自动生成目录 右键 “样式” 中的样式可以修改样式 更改 “正文” 的样式会改变后面所有自带样式 分隔符 文件-选项-显示-显示所有格式标记 显示特殊排版符号 符号 使用方法 分页符 Ctrl+Enter 插入分页符 分节符 “布局-分隔符-分节符” 再页眉页脚插入分节符可以达到每一页页眉页脚不同/数字不同的效果，点击与上一页相同取消内容与上一页相同 有奇偶页不同的选项 公式 插入公式：“插入-公式” 或者 Alt + = 公式分为 行内公式（嵌入） 和 单行公式（显示） 鼠标悬停在公式的符号上就可以看到字符的转义代码 符号 特殊字符/用法 上标 ^ 下标 _ ×（叉乘号） \times ·（点乘号） \cdot 矢量 \vec 写方程组时加&amp;amp;可以上下对齐 插入域：Seq Alt + F9 , SEQ后面加序列名字，再按Alt + F9退出，光标点到标号按F9更新序号，自动标号 F9自动更新文档内数据内容 图片显示不全时，改行距（单倍/多倍行距） </description>
+    </item>
+    <item>
+      <title>为本站添加A2HS</title>
+      <link>https://www.zhhuu.top/posts/a2hs/</link>
+      <pubDate>Sat, 27 Jul 2019 15:45:10 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/a2hs/</guid>
+      <description>终究止不住折腾，终于还是把卡住很久的这个功能做出来了。&#xA;🔗参考链接&#xA;Mozilla A2HS Mozilla A2HS demo Google A2HS | App install banners Google A2HS | Web app manifest manifest的设置 一开始的时候瞎瞄两眼介绍，就天真地以为只要manifest.json或者manifest.webmanifest这个文件存在就好了，结果后来慢慢了解发现还有事呢..反正让它跑起来再说&amp;hellip;&#xA;不管怎么说，先把manifest.webmanifest写好 (当然你写manifest.json也是可以的，只不过时改了一下后缀名而已，内容相同，看哪个顺眼就用哪个) 那既然要这个文件，就先找最简单的抄了一个，内容如下(来自Mozilla A2HS demo)&#xA;1{ 2 &amp;#34;background_color&amp;#34;: &amp;#34;purple&amp;#34;, 3 &amp;#34;description&amp;#34;: &amp;#34;Shows random fox pictures. Hey, at least it isn&amp;#39;t cats.&amp;#34;, 4 &amp;#34;display&amp;#34;: &amp;#34;fullscreen&amp;#34;, 5 &amp;#34;icons&amp;#34;: [ 6 { 7 &amp;#34;src&amp;#34;: &amp;#34;icon/fox-icon.png&amp;#34;, 8 &amp;#34;sizes&amp;#34;: &amp;#34;192x192&amp;#34;, 9 &amp;#34;type&amp;#34;: &amp;#34;image/png&amp;#34; 10 } 11 ], 12 &amp;#34;name&amp;#34;: &amp;#34;Awesome fox pictures&amp;#34;, 13 &amp;#34;short_name&amp;#34;: &amp;#34;Foxes&amp;#34;, 14 &amp;#34;start_url&amp;#34;: &amp;#34;/pwa-examples/a2hs/index.</description>
+    </item>
+    <item>
+      <title>更快地部署Office</title>
+      <link>https://www.zhhuu.top/posts/deploy-office-faster/</link>
+      <pubDate>Sat, 25 May 2019 18:00:00 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/deploy-office-faster/</guid>
+      <description>每次新安装Office诚然是一件很头疼地事情。这里介绍可以快速在电脑上安装Office的方法。&#xA;Office Tool Plus 如果你想深入了解Office Tool Plus，也请访问官方网站。 打开网站以后，点击立即下载，并打开Office Tool Plus。打开以后可能会进行自动更新。更新完之后进入软件界面 个人快速安装Office 如果仅在一台电脑上安装，你可以直接转到安装选项卡进行安装。 1、选择你需要的Office套件。&#xA;Win10推荐使用Office2019，Win7推荐使用Office2016 建议安装零售版，即Retail&#xA;2、根据你需要的Office软件勾选应用程序。&#xA;完整版Office安装的项目为Excel Powerpoint Word Access Publisher。大学生建议勾选完整版Office的安装项目。&#xA;3、安装设置: 根据系统，设置体系结构。为了获取较新的Office版本，建议把通道设置为&amp;quot;每月通道&amp;quot;。安装方式无需更改。 设置可选设置下的更新设置。 注意其中的禁用Office更新和使用配置管理器管理更新，建议取消勾选。 更新通道建议更改为&amp;quot;每月通道&amp;quot; 激活设置中，按需要进行勾选。 4、以上设置完毕后，即可点击开始安装。等待安装完毕即可使用。&#xA;批量快速安装Office 这种情况适用于多台设备需要安装Office。首先需要在一台机器上完成配置设置。&#xA;转到下载选项卡。点击版本号,查询版本号。 设置常规设置中的通道、体系结构以及版本。 点击上方的开始按钮。&#xA;下载完成后，转到安装选项卡，参照上文个人快速安装Office的前三个步骤。不同的是，安装设置中的安装方式应设置为离线安装。 点击开始安装旁边的三角形，选择保存配置为XML。&#xA;找到并打开你保存的XML文件，转到其中SourcePath所指的目录，复制整个文件夹到你的U盘。 把你保存的XML文件也复制到U盘下的同一个文件夹。&#xA;当你需要在其他电脑上从U盘安装Office时，修改其中SourcePath所指的目录为你的U盘所在的同文件夹目录，打开Office Tool Plus，进入安装选项卡，点击开始安装旁边的三角形，选择选择XML文件，选择你的XML文件，点击开始安装。或者使用微软的Office Deployment Tool，用CMD的方式进行安装。这里不再介绍这种方法，请百度。</description>
+    </item>
+    <item>
+      <title>把自己的城市地图设置为壁纸</title>
+      <link>https://www.zhhuu.top/posts/city-phone-background/</link>
+      <pubDate>Sun, 19 May 2019 20:00:00 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/city-phone-background/</guid>
+      <description>说明：经查，网站已经失效，本文仅作存档&#xA;这个网站可以把自己的城市设置为壁纸。具体步骤如下:&#xA;你会看到如下界面 可以在 Map Location 那一栏输入自己想要的城市。我输入的是深圳。 同时，你也可以更改地图颜色。共有4种颜色可选。 还可以选图片大小。部分热门机型已经有预设了，可以直接选择。 如果没有，可以手动设置图片大小。我这里设置1080P。 最后点击 蓝色按钮 Generate，Download 下载即可。</description>
+    </item>
+    <item>
+      <title>使用Powershell自动设置壁纸</title>
+      <link>https://www.zhhuu.top/posts/powershell-wallpaper/</link>
+      <pubDate>Fri, 15 Mar 2019 19:00:08 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/powershell-wallpaper/</guid>
+      <description>发现CMD不能达到此目的，更换更高级的Powershell来执行这个任务~&#xA;最近有的人经常更换电脑桌面壁纸，而且壁纸我觉得也不算好看(很难看)，基本上就是起到哗众取宠的目的，所以我打算利用脚本自动定时更换电脑壁纸，达到锁定电脑壁纸的目的。&#xA;准备工作 学校的电脑系统是Win7,默认设置不允许执行脚本(不知道是不是Ghost系统的人设置的)，所以第一步要解除限制。 Powershell中执行命令如下: Set-ExecutionPolicy Unrestricted 执行完毕之后就能运行.ps1脚本了。&#xA;自动更换壁纸的函数方法 保存如下代码到一个.ps1文件中。(可以用记事本编辑再更改文件拓展名)&#xA;1Function Set-WallPaper($Value) 2{ 3 Set-ItemProperty -path &amp;#39;HKCU:\Control Panel\Desktop\&amp;#39; -name wallpaper -value $value 4 rundll32.exe user32.dll, UpdatePerUserSystemParameters 1, True 5} 6 7Set-WallPaper -value &amp;#34;C:\Windows\Web\Wallpaper\Homes_Background.bmp&amp;#34; 将其中C:\Windows\Web\Wallpaper\Homes_Background.bmp更改成壁纸所在处，执行脚本即生效。&#xA;添加到计划任务 计划任务的位置在 &amp;ldquo;控制面板&amp;rdquo;-(&amp;ldquo;系统和安全&amp;rdquo;)-&amp;ldquo;管理工具&amp;rdquo;-&amp;ldquo;计划任务&amp;rdquo; 打开后点击 &amp;ldquo;添加基本任务&amp;rdquo; ,之后就可以跟着向导走了。执行文件填写 powershell ,参数填写刚刚保存的脚本文件位置即可。 还可以 每日获取Bing图片并设为壁纸&#xA;1function Save-BingTodayImage() 2{ 3 #必应图片故事API 4 $bingImageApi =&amp;#39;http://www.bing.com/HPImageArchive.aspx?format=xml&amp;amp;idx=0&amp;amp;n=1&amp;amp;mkt=zh-cn&amp;#39; 5 $bingUri = &amp;#39;http://www.bing.com/&amp;#39; 6 7 # 获取图片链接 8 [xml]$bingImageXml = (Invoke-WebRequest -Uri $bingImageApi).Content 9 Write-Host &amp;#34; 今日图片故事： $( $bingImageXml.</description>
+    </item>
+    <item>
+      <title>PPT设计指南</title>
+      <link>https://www.zhhuu.top/posts/ppt-design-guide/</link>
+      <pubDate>Fri, 23 Nov 2018 20:09:45 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/ppt-design-guide/</guid>
+      <description>其实做了这么多的PPT以后，慢慢摸索出了一种做PPT的方式技巧。但其实下面包括的也不仅仅是技巧，还包含了一套我认为比较成熟的设计系统（借鉴+创新），目的是为了使演示过程更加流畅。当然，要制造出这样的PPT，达到这样的效果是肯定要花费一些时间的。可能只有像我这种对美有变态追求的人可能才会花费如此多的时间做PPT，如果您有兴趣的话，可以继续看下去。&#xA;所需: Microsoft PowerPoint 2016或以上 耐心&#xA;引言 Microsoft Office 2016 中新引进了“变体”的切换效果。通过这个全新的切换效果能更准确地实现Material Design和Microsoft Fluent Design System中的一些内容，使整个幻灯片的设计更加系统化。&#xA;🔗链接&#xA;Material Design Microsoft Fluent Design System 变体的简单应用 &amp;ldquo;变体&amp;quot;是 Office 2016 中新增加的一种切换效果。它可以自动识别两张相邻的幻灯片之间的变化并自动插补动画。下面通过两个例子介绍这种切换动画的使用方法。&#xA;精确的位移 在第一张幻灯片中创建一个正方形。 在第二张幻灯片中创建一个正方形，并移动到你想要的位置。 选中第二张幻灯片，在顶栏的&amp;quot;切换&amp;quot;中选择&amp;quot;变体&amp;rdquo;。 放映幻灯片，正方形从第一张幻灯片的位置移动到第二张幻灯片的位置。&#xA;精确地位移并更改大小 在上述的操作的基础上您可以尝试改变第二张幻灯片中正方形的形状和大小，您可以发现放映幻灯片的时候原来的正方形自动变成了第二张幻灯片中的样式(大小，位置，甚至颜色，形状的改变)。&#xA;因此，您可以利用变体的这一特性实现后文中卡片的大小，位置甚至深度(阴影大小)的变化。&#xA;多动画连续播放和延迟 1.创建矩形若干个,并纵向排列。&#xA;2.拖动鼠标选中所有创建的矩形，在顶栏的&amp;quot;动画&amp;quot;选项卡中选择&amp;quot;淡出&amp;quot;动画。此时，选中的所有矩形在幻灯片放映时会同时淡出。&#xA;3.为了遵循Material Design中的&amp;quot;有层次的时序&amp;quot;的原则，我们将每个矩形相对其上层的矩形延迟0.1秒钟淡出,直至最后一个矩形。&#xA;建议使用&amp;quot;缩放&amp;quot;动画实现矩形的顺次进入屏幕，这么做的依据是下文中所提将到的&amp;quot;视觉连贯性&amp;quot;原则。缩放在大部分情况下是最适合几何形状进入屏幕的方式，而顺次淡出则适合文字进入屏幕。 上文使用矩形是为了简化演示过程。&#xA;圆的场景切换的实现 1.您将在第一张幻灯片中创建这个场景切换。这意味着这一张幻灯片将包含两章节的内容(前一章节的结束部分和后一章节的开头部分)。这里用&amp;quot;标题&amp;quot;二字表示上一章节的结束部分。&#xA;2.创建一个与演示区域大小相当的正圆，并将其移动到演示区域的中心。&#xA;3.选中刚才创建的圆形，给所选圆形添加**&amp;ldquo;缩放&amp;rdquo;**动画(在顶栏的&amp;quot;动画&amp;quot;中找到&amp;quot;缩放&amp;quot;，并点击)。从含圆的那张幻灯片开始放映幻灯片，您就能观察到&amp;quot;圆形场景切换&amp;quot;。&#xA;元素 卡片(Cards) 分隔各组不同的内容，并归类。&#xA;卡片是包含一组特定数据集的纸片，数据集含有各种相关信息，例如，关于单一主题的照片，文本，和链接。卡片通常是通往更详细复杂信息的入口。卡片有固定的宽度和可变的高度。最大高度限制于可适应平台上单一视图的内容，但如果需要它可以临时扩展（例如，显示评论栏）。卡片不会翻转以展示其背后的信息。&#xA;显示这些内容时使用卡片布局：&#xA;为一个集合，由多种数据类型组成（例如，卡片集包含照片，电影，文本，图像） 不要求直接比较（观看者不直接与图像或字符串比较） 包含可变长度内容，例如评论 如果使用列表需要显示超过三行文本 制作卡片 1.在顶栏的&amp;quot;插入&amp;quot;选项卡中选择&amp;quot;形状&amp;quot;，选择矩形。&#xA;2.在创建好的卡片上右击，选择&amp;quot;设置形状格式&amp;quot;。&#xA;3.在右边弹出来的边栏上选择&amp;quot;油桶&amp;quot;的选项卡，选择纯色填充，将填充颜色设置为白色。线条选择无线条。&#xA;4.选择&amp;quot;五边形&amp;quot;选项卡，设置阴影，将阴影的预设样式设置为框选的样式。&#xA;5.最终效果如图。&#xA;按钮(Buttons) 在PPT中，一般使用的是圆形按钮。圆形按钮能更方便地引导转场。圆形按钮一般与图标配合使用。更有想象力的用法可以参照此处&#xA;在PPT中，用于表示一段演示的结束，并引出完全切换的转场(动画)。&#xA;按钮有阴影，因此与卡片的制作方式大同小异。不同的是按钮一般被赋予颜色而不是白色，并且按钮中心一般会有图标显示其作用。您可以按照您的需求定制按钮。 纸条(Chips) 拓展可能性，作为一个原因容器。入场一般用横向拉取。&#xA;图标(Icons) 增强观者对当前页的理解，增强视觉体验。&#xA;完整版图标库 Material icons are delightful, beautifully crafted symbols for common actions and items.</description>
+    </item>
+    <item>
+      <title>Windows10 快捷键</title>
+      <link>https://www.zhhuu.top/posts/windows-hotkey/</link>
+      <pubDate>Sun, 06 May 2018 17:04:33 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/windows-hotkey/</guid>
+      <description>好像还不怎么熟悉Windows的快捷键，先存下。 微软为Win10技术预览版命令行(Command Prompt)加入了Ctrl + V的支持，Scott Hanselman为此整理了命令行中的键盘快捷键。&#xA;Win10新增功能快捷键大全： 动作 操作 贴靠窗口 Win +左/右&amp;gt; Win +上/下&amp;gt;窗口可以变为1/4大小放置在屏幕4个角落 切换窗口 Alt + Tab(不是新的，但任务切换界面改进) 任务视图 Win + Tab(松开键盘界面不会消失) 创建新的虚拟桌面 Win + Ctrl + D 关闭当前虚拟桌面 Win + Ctrl + F4 切换虚拟桌面 Win + Ctrl +左/右 文本编辑类 按此键&#xA;执行此操作&#xA;Ctrl + X&#xA;剪切选定项&#xA;Ctrl + C（或 Ctrl + Insert）&#xA;复制选定项&#xA;Ctrl + V（或 Shift + Insert）&#xA;粘贴选定项&#xA;Ctrl + Z&#xA;撤消操作&#xA;Alt + Tab&#xA;在打开的应用之间切换&#xA;Alt + F4</description>
+    </item>
+    <item>
+      <title>FileGetter使用说明</title>
+      <link>https://www.zhhuu.top/posts/file-getter-instructions/</link>
+      <pubDate>Sun, 29 Apr 2018 19:13:31 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/file-getter-instructions/</guid>
+      <description>File Getter使用说明 功能 启动后持续扫描电脑上盘符数，当盘符数量有变更时检索新增盘符内文件。当检索到指定文件时复制到电脑中指定目录(C:/got)下。&#xA;使用方法 直接打开(建议存入电脑C盘中某个位置再打开)，当你程序成功开始运行后发出短暂(哔)声。当有新盘符插入时，扫描盘符内文件，若有指定类型文件则复制。当扫描完成后程序发出长(1s,哔)声，并自动退出。&#xA;使用技巧 当你在程序运行目录下新建以下文件程序运行逻辑会发生改变:&#xA;debug.txt 当程序运行时，只要检测到运行目录下有此文件，日志窗口会显示出来。当检测到此文件被删去，窗口则会被隐藏。 注意:此操作在程序运行时是实时的，命令即刻执行(在下一个循环时)&#xA;keeprunning.txt 当程序完成扫描新磁盘(不管有没有复制)后，若检测到此文件则会继续运行下去。终止程序运行方法参见下文。&#xA;exit.txt 当程序在运行时检测到此文件后则立刻终止运行。&#xA;支持的指定类型文件 .xls .xlsx&#xA;其他说明 本程序仅供学习用途使用。</description>
+    </item>
+    <item>
+      <title>Visual Studio 快捷键</title>
+      <link>https://www.zhhuu.top/posts/visual-studio-hotkey/</link>
+      <pubDate>Sun, 29 Apr 2018 18:07:34 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/visual-studio-hotkey/</guid>
+      <description>Visual Studio 快捷键整理&#xA;窗口快捷键 记忆诀窍：&#xA;凡跟窗口挂上钩的快捷键必有一个W（Windows）； Ctrl+W,W: 浏览器窗口 （浏览橱窗用有道的翻译是window shopping）&#xA;Ctrl+W,S: 解决方案管理器 （Solution）&#xA;Ctrl+W,C: 类视图 （Class）&#xA;Ctrl+W,E: 错误列表 （Error）&#xA;Ctrl+W,O: 输出窗口（输出Output；输出程序的的编译信息 ;可在vs中“工具”—-“选项”—-“调试”—-“输出窗口”进行配置需要查看哪些信息）&#xA;Ctrl+W,P: 属性窗口 （属性 Property）&#xA;Ctrl+W,T: 任务列表 （任务Task）&#xA;Ctrl+W,X: 工具箱 （事实上工具应该是Tool 但t已被任务列表占用了 ；参照一些大神的记忆方法：“X”长得四通八达，而工具就有这样一个特点，所以属性的快捷键是“X”）&#xA;Ctrl+W,B: 书签窗口 （书签 Bookmark 书签非常好用，如果有几千行代码，在寻找代码的时候添加书签找起来要快很多）&#xA;Ctrl+W,U: 文档大纲 （OutLine；使用第二个字母U）&#xA;Ctrl+D,B: 断点窗口 （breakpoint）&#xA;Ctrl+D,I: 即时窗口 （immediately）&#xA;项目功能快捷键 规律： Ctrl 是强制功能键 Shift 有给项目增加功能&#xA;CTRL + F6 /CTRL + TAB 下一个文档窗口即活动窗体切换 （windows操作系统是alt+tab表示在任务之间切换&#xA;CTRL + SHIFT + F6 /CTRL + SHIFT + TAB 上一个文档窗口 （在windows系统操作中 相信大家都知道shift有相反的功能 哈哈 在这里体现了）</description>
+    </item>
+    <item>
+      <title>C#异步介绍</title>
+      <link>https://www.zhhuu.top/posts/csharp-async/</link>
+      <pubDate>Sun, 08 Apr 2018 21:14:06 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/csharp-async/</guid>
+      <description>创建多线程？太麻烦了！来试试更快更便捷的异步。程序无须按照代码顺序自上而下的执行。&#xA;什么是异步编程 什么是异步编程呢？举个简单的例子：&#xA;1using System.Net.Http; 2using System.Threading.Tasks; 3using static System.Console; 4 5namespace Core 6{ 7 class Async 8 { 9 static void Main() 10 { 11 Start(); 12 End(); 13 } 14 15 static void Wait()=&amp;gt;WriteLine(&amp;#34;waiting...&amp;#34;); 16 static void End()=&amp;gt;WriteLine(&amp;#34;end...&amp;#34;); 17 static int Start() 18 { 19 WriteLine(&amp;#34;start...&amp;#34;); 20 HttpClient client = new HttpClient(); 21 Waiting(); 22 var result = client.GetStringAsync(&amp;#34;https://www.visualstudio.com/&amp;#34;); 23 string str = result.Result; 24 return str.Length; 25 } 26 } 27} 上面这段代码中，Main方法中的代码是按照自上而下的顺序执行的。网络状况不佳时，Start() 方法是比较耗时 （注意，这里在Start方法中调用了异步方法GetStringAsync，但该方法在此处是以同步方式执行的，具体原因下文会进行说明） ，在 Start() 方法执行完毕之前，整个程序处于阻塞状态。而异步编程可以很好的解决这个问题，一句简单的话来概括异步编程就是，程序无须按照代码顺序自上而下的执行。</description>
+    </item>
+    <item>
+      <title>GPT分区是啥？</title>
+      <link>https://www.zhhuu.top/posts/gpt-partition/</link>
+      <pubDate>Sat, 07 Apr 2018 13:01:03 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/gpt-partition/</guid>
+      <description>UEFI BIOS可以说是legacy BIOS的继承者，也就是传统BIOS的后代。以后的主流模式。&#xA;GPT MBR与GPT的区别 传统的MBR最大支持2TB的单分区，最多能设置4个主分区;GPT支持2TB以上的单分区，理论上能设置128个主分区（硬盘的4k对齐与GPT无关联，AHCI和GPT无关联）&#xA;MBR分区表：Master Boot Record，即硬盘主引导记录分区表，只支持容量在 2.1TB 以下的硬盘，超过2.1TB的硬盘只能管理2.1TB，最多只支持4个主分区或三个主分区和一个扩展分区，扩展分区下可以有多个逻辑分区。 GPT分区表：GPT，全局唯一标识分区表(GUID Partition Table)，与MBR最大4个分区表项的限制相比，GPT对分区数量没有限制，但Windows最大仅支持128个GPT分区，GPT可管理硬盘大小达到了18EB。只有基于UEFI平台的主板才支持GPT 分区引导启动。&#xA;GPT-ESP ESP分区：EFI system partition，该分区用于采用了EFI BIOS的电脑系统，用来启动操作系统。分区内存放引导管理程序、驱动程序、系统维护工具等。如果电脑采用了EFI系统，或当前磁盘用于在EFI平台上启动操作系统，则应建议ESP分区。如果只是作为仓库盘，就没必要设置这个分区了。&#xA;GPT-MSR ESP分区：EFI system partition，该分区用于采用了EFI BIOS的电脑系统，用来启动操作系统。分区内存放引导管理程序、驱动程序、系统维护工具等。如果电脑采用了EFI系统，或当前磁盘用于在EFI平台上启动操作系统，则应建议ESP分区。如果只是作为仓库盘，也同样没必要设置这个分区。&#xA;SECURE BOOT(Windows8+) SECURE BOOT功能:Windows 8中增加了一个新的安全功能,Secure Boot内置于UEFI BIOS中,用来对抗感染MBR、BIOS的恶意软件, Windows 8 缺省将使用Secure Boot,在启动过程中，任何要加载的模块必须签名(强制的)，UEFI固件会进行验证， 没有签名或者无法验证的，将不会加载。&#xA;UEFI UEFI全称“统一的可扩展固件接口”(Unified Extensible Firmware Interface)， 是一种详细描述类型接口的标准。这种接口用于操作系统自动从预启动的操作环境，加载到一种操作系统上。&#xA;UEFI的优点 1.纠错特性：与BIOS显著不同的是，UEFI是用模块化、C语言风格的参数堆栈传递方式、动态链接的形式构建系统，它比BIOS更易于实现，容错和纠错特性也更强，从而缩短了系统研发的时间。更加重要的是，它运行于32位或64位模式，突破了传统16位代码的寻址能力，达到处理器的最大寻址，此举克服了BIOS代码运行缓慢的弊端。&#xA;2.兼容性：与BIOS不同的是，UEFI体系的驱动并不是由直接运行在CPU上的代码组成的，而是用EFI Byte Code(EFI字节代码)编写而成的。Java是以“Byte Code”形式存在的，正是这种没有一步到位的中间性机制，使Java可以在多种平台上运行。UEFI也借鉴了类似的做法。EFI Byte Code是一组用于UEFI驱动的虚拟机器指令，必须在UEFI驱动运行环境下被解释运行，由此保证了充分的向下兼容性。&#xA;3.鼠标操作：UEFI内置图形驱动功能，可以提供一个高分辨率的彩色图形环境，用户进入后能用鼠标点击调整配置，一切就像操作Windows系统下的应用软件一样简单。&#xA;4.强大的可扩展性：UEFI将使用模块化设计，它在逻辑上分为硬件控制与OS(操作系统)软件管理两部分，硬件控制为所有UEFI版本所共有，而OS软件管理其实是一个可编程的开放接口。借助这个接口，主板厂商可以实现各种丰富的功能。比如我们熟悉的各种备份及诊断功能可通过UEFI加以实现，主板或固件厂商可以将它们作为自身产品的一大卖点。UEFI也提供了强大的联网功能，其他用户可以对你的主机进行可靠的远程故障诊断，而这一切并不需要进入操作系统。&#xA;5.图形界面：目前UEFI主要由这几部分构成：UEFI初始化模块、UEFI驱动执行环境、UEFI驱动程序、兼容性支持模块、UEFI高层应用和GUID磁盘分区组成。&#xA;在什么情况下能使用UEFI+GPT模式来装系统呢？ win7/8 64位系统+UEFI才能在GPT中引导哦。但是现在使用传统legacy+MBR模式装系统的，还是比较多的。&#xA;AHCI AHCI（Serial ATA Advanced Host Controller Interface）串行ATA高级主控接口/高级主机控制器接口），是在Intel的指导下，由多家公司联合研发的接口标准，它允许存储驱动程序启用高级串行 ATA 功能，&#xA;AHCI本质是一种PCI类设备，在系统内存总线和串行ATA设备内部逻辑之间扮演一种通用接口的角色（即它在不同的操作系统和硬件中是通用的）。这类设备描述了一个含控制和状态区域、命令序列入口表的通用系统内存结构；每个命令表入口包含SATA设备编程信息，和一个指向（用于在设备和主机传输数据的）描述表的指针。 AHCI通过包含一个PCI BAR（基址寄存器），来实现原生SATA功能。由于AHCI统一接口的研发成功，使得支持串行ATA产品的开发工作大为简化，操作系统和设备制造商省去了单独开发接口的工作，取而代之的是直接在统一接口上进行操作，可以实现包括NCQ（Native Command Queuing）在内的诸多功能。 AHCI模式则与IDE模式相反，装系统时需要安装SATA驱动（而且貌似只有这个模式能打开NCQ功能）。</description>
+    </item>
+    <item>
+      <title>如何唤醒在硬盘中的hexo</title>
+      <link>https://www.zhhuu.top/posts/wakeup-hexo/</link>
+      <pubDate>Mon, 28 Aug 2017 23:05:40 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/wakeup-hexo/</guid>
+      <description>昨天重新灌了电脑的系统，发现 hexo 不能用了&#xA;安装基本软件 Git Node.js 注意：必须使用 Node v12.14.0 旧版 Hexo 才不会报错&#xA;注:Node.js(中文网站)没有使用 https，原因是使用后可能导致无法打开此网页&#xA;步骤 假使 hexo 目录为 D:/hexo&#xA;打开 CMD [按下**(win+r)**组合键，输入 cmd] 输入 npm:如果没有 npm 的详细信息，请重装 Node.js CMD 中定位到 hexo 目录 1d: 2cd hexo 安装 hexo:在 CMD 中输入npm install -g hexo 安装完成后关闭 CMD 打开 Git，定位到 hexo 的目录cd d:/hexo 可以使用啦! 密钥问题 打开 Github，转到你的设置 找到SSH and GPG keys，添加新的密钥&#xA;1git config --global user.name &amp;#34;用户名&amp;#34; 2git config --global user.email &amp;#34;邮箱&amp;#34; 3 4ssh-keygen -t rsa -C &amp;#34;邮箱&amp;#34; 你的 windows 账户文件夹内，会有.</description>
+    </item>
+    <item>
+      <title>Hexo书写语法</title>
+      <link>https://www.zhhuu.top/posts/hexo-grammer/</link>
+      <pubDate>Tue, 08 Aug 2017 09:30:38 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/hexo-grammer/</guid>
+      <description>介绍如何用Markdown语法在hexo上写文章，发现自己对这类东西还不是很熟悉233&amp;hellip;&#xA;Markdown语法 粗体 样式 **样式**&#xA;斜体 样式 *样式*&#xA;删除线 样式 ~~样式~~&#xA;分割线 样式&#xA;细线:--- 粗线:***&#xA;外链 样式 [描述](链接地址) 代码行 样式 `样式`&#xA;##代码块&#xA;1@Echo off 2Echo &amp;#34;Hello World!&amp;#34; 3Pause ``` @Echo off Echo &amp;ldquo;Hello World!&amp;rdquo; Pause ```&#xA;引用 样式&#xA;&amp;gt; 样式&#xA;插入图片 ![描述](图片链接地址)&#xA;分级标题 1H1 : # Header 1 2H2 : ## Header 2 3H3 : ### Header 3 4H4 : #### Header 4 5H5 : ##### Header 5 6H6 : ###### Header 6 我是一级标题 我是二级标题 1我是一级标题 2==== 3 4 5我是二级标题 6---- 无序列表 可以用+或-或*</description>
+    </item>
+    <item>
+      <title>HCalculator</title>
+      <link>https://www.zhhuu.top/posts/hcalculator/</link>
+      <pubDate>Mon, 26 Jun 2017 08:51:34 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/hcalculator/</guid>
+      <description>A calculator was written by huuhghhgyg [2022-03-02]：该项目已被归档，只是留作纪念。&#xA;链接 View on Github 在Github查看 Download .zip 下载.zip文件 Download .tar.gz 下载.tar.gz文件&#xA;说明 若要访问原网页点击&amp;gt;这里&amp;lt;&#xA;嗯，就只是一个计算器嘛没什么好看的….要下赶快下XDD&#xA;历代大版本更新 计算器1.0(最初版本) 基本的傻瓜计算器功能，差不多支持键盘乱弹。&#xA;计算器2.0(已遗失) 作为向Material Design的过渡 计算器3.0 拥有更好的界面，Material Design设计标准，更多的功能。支持生成随机数，计算日期之间的间隔等新功能。&#xA;计算器4.0(当前版本) 新增了科学计算器。改进了科学计算器的界面。持续改进!</description>
+    </item>
+  </channel>
+</rss>

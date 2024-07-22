@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Windows10 快捷键 | Hikaru&#39;s Blog</title>
+
+<meta name="description" content="">
+      <link rel="stylesheet" href="/css/main.min.4dc2e2ce92c37525f4749bdb618a9af11becbea894cd27cf53e52755187d6dbb.css" integrity="sha256-TcLizpLDdSX0dJvbYYqa8RvsvqiUzSfPU&#43;UnVRh9bbs=" crossorigin="anonymous">
+
+<link rel="icon" type="image/svg+xml" href="https://www.zhhuu.top/favicon.svg"> 
+<link rel="icon" type="image/x-icon" href="https://www.zhhuu.top/favicon.ico"> 
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.zhhuu.top/favicon.png"> 
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.zhhuu.top/favicon-32.png"> 
+<link rel="icon" type="image/png" sizes="64x64" href="https://www.zhhuu.top/favicon-64.png"> 
+
+</head>
+<body>
+  <header class="py-6 border-b"><div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col">
+	<div class="flex items-center">
+		<div class="flex items-center">
+			<button class="flex items-center space-x-2 rounded-full border py-1 pr-[5px] pl-3 group bg-zinc-100 hover:bg-zinc-200 toggle-button" data-target="menu-bar">
+				<svg width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+					<path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
+				</svg>
+				<span class="bg-blue-500 fill-white rounded-full overflow-hidden h-8 w-8">
+					<img src="/favicon.png" alt="site icon" class="mr-2 object-cover">
+				</span>
+			</button>
+			<div class="relative rounded-full py-1.5 px-6 bg-zinc-100 hover:bg-zinc-200 text-xl font-bold uppercase mx-2">
+				<h2><a class="before:content-[''] before:z-10 before:top-0 before:right-0 before:left-0 before:bottom-0 before:absolute before:pointer-events-auto" href="https://www.zhhuu.top/">Hikaru&#39;s Blog</a></h2>
+			</div>
+		</div>
+		<div class="flex items-center ml-auto">
+			<button id="search-btn" class="flex items-center rounded-full p-3 bg-zinc-100 hover:bg-zinc-200 toggle-button" data-target="search-bar">
+				<svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+					<path id="path1" class="transition-all ease-linear" d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+					<path id="path2" class="transition-all ease-linear hidden" d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"></path>
+				</svg>
+			</button>
+		</div>
+	</div>
+  <nav id="menu-bar" class="block mt-3 close">
+    <ul class="flex items-center flex flex-nowrap whitespace-nowrap overflow-x-auto space-x-4">
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/">Home</a>
+    </li>
+    <li class="my-2">
+      <a aria-current="true" class="ancestor" href="/posts/">Posts</a>
+    </li>
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/tags/">Tags</a>
+    </li>
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/friend/">Friends</a>
+    </li>
+    </ul>
+  </nav>
+
+
+
+<div id="search-bar" class="block mt-3 relative z-50 close">
+    <form id="search" class="flex items-stretch">
+      <input id="searchInput" tabindex="0"
+        class="w-full block px-6 py-2 rounded-full focus:outline-none border border-zinc-200" type="text"
+        placeholder="Search...">
+    </form>
+
+    <div id="fastSearch" class="absolute left-0 right-0 mt-2 bg-white shadow-sm rounded-xl z-50 overflow-x-hidden">
+      <ul id="searchResults" class="divide-y divide-gray-200 z-50">
+      </ul>
+    </div>
+  </div>
+
+  <div id="overlay" class="fixed inset-0 bg-black opacity-50 hidden z-40"></div>
+
+<script src="/js/fuse.min.js"></script> 
+<script src="/js/fastsearch.js"></script></div></header>
+  <main class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8"><div id="breadcrumb" class="max-w-7xl mx-auto py-8">
+	<ul class="flex space-x-4 text-sm text-zinc-500">
+		<li class="after:content-['❯'] after:ml-4 after:opacity-30 last:after:content-none uppercase">
+			<a href="https://www.zhhuu.top/">Hikaru&#39;s Blog</a>
+		</li>
+		<li class="after:content-['❯'] after:ml-4 after:opacity-30 last:after:content-none uppercase">
+			<a href="https://www.zhhuu.top/posts/">Posts</a>
+		</li>
+	</ul>
+</div><div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+
+  <article class="md:col-span-2 prose lg:prose-lg">
+
+    <header class="not-prose">
+      
+      <h1 id="title" class="text-4xl font-bold leading-normal">Windows10 快捷键</h1>
+
+      <div id="lead" class="my-6">
+
+        <p class="font-bold"> </p>
+
+      </div>
+      
+      <div id="writer" class="flex items-center space-x-4">
+
+        <img class="w-12 h-12 bg-black rounded-full" src="https://www.zhhuu.top/img/favicon.jpg" alt="huuhghhgyg avatar" width="1033" height="1033">
+
+        <ul class="flex items-center space-x-4 flex-nowrap whitespace-nowrap overflow-x-auto">
+          
+          <li class="font-semibold my-2">huuhghhgyg</li>
+          
+          <li class="before:content-['•'] before:mr-2 before:opacity-50 my-2"><time datetime="2018-05-06T17:04:33&#43;00:00">May 6, 2018</time>
+          </li>
+
+          <li class="before:content-['•'] before:mr-2 before:opacity-50 my-2">
+            3 min read
+          </li>
+
+        </ul>
+
+      </div>
+      
+    </header>
+
+<figure id="featureimage" class="rounded-xl aspect-video">
+        <img class="rounded-lg w-full h-full object-cover object-center" src="https://www.zhhuu.top/img/Windows_Device_hu6c50e72e94fea0602bb82fa4259df3fd_122940_750x0_resize_q75_h2_box_2.webp" alt="" width="750" height="282">
+</figure>
+
+    <div id="content" class="mb-14">
+      <h2 id="好像还不怎么熟悉windows的快捷键先存下">好像还不怎么熟悉Windows的快捷键，先存下。</h2>
+<blockquote>
+<p>微软为Win10技术预览版命令行(Command Prompt)加入了Ctrl + V的支持，Scott Hanselman为此整理了命令行中的键盘快捷键。</p>
+</blockquote>
+<h2 id="win10新增功能快捷键大全">Win10新增功能快捷键大全：</h2>
+<table>
+<thead>
+<tr>
+<th>动作</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>贴靠窗口</td>
+<td>Win +左/右&gt; Win +上/下&gt;窗口可以变为1/4大小放置在屏幕4个角落</td>
+</tr>
+<tr>
+<td>切换窗口</td>
+<td>Alt + Tab(不是新的，但任务切换界面改进)</td>
+</tr>
+<tr>
+<td>任务视图</td>
+<td>Win + Tab(松开键盘界面不会消失)</td>
+</tr>
+<tr>
+<td>创建新的虚拟桌面</td>
+<td>Win + Ctrl + D</td>
+</tr>
+<tr>
+<td>关闭当前虚拟桌面</td>
+<td>Win + Ctrl + F4</td>
+</tr>
+<tr>
+<td>切换虚拟桌面</td>
+<td>Win + Ctrl +左/右</td>
+</tr>
+</tbody>
+</table>
+<h2 id="文本编辑类">文本编辑类</h2>
+<table class="table ng-scope"><tbody style="box-sizing: border-box;"><tr style="box-sizing: border-box;" class="firstRow"><th style="box-sizing: border-box; text-align: center; background-color: rgb(249, 249, 249);">按此键<br></th><th style="box-sizing: border-box; text-align: center; background-color: rgb(249, 249, 249);">执行此操作<br></th></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Ctrl + X<br></td><td style="box-sizing: border-box;">剪切选定项<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Ctrl + C（或 Ctrl + Insert）<br></td><td style="box-sizing: border-box;">复制选定项<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Ctrl + V（或 Shift + Insert）<br></td><td style="box-sizing: border-box;">粘贴选定项<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Ctrl + Z<br></td><td style="box-sizing: border-box;">撤消操作<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Alt + Tab<br></td><td style="box-sizing: border-box;">在打开的应用之间切换<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Alt + F4<br></td><td style="box-sizing: border-box;">关闭活动项，或者退出活动应用<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键 + L<br></td><td style="box-sizing: border-box;">锁定电脑<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键 + D<br></td><td style="box-sizing: border-box;">显示和隐藏桌面<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">F2<br></td><td style="box-sizing: border-box;">重命名选定项<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">F3<br></td><td style="box-sizing: border-box;">在文件资源管理器中搜索文件或文件夹<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">F4<br></td><td style="box-sizing: border-box;">在文件资源管理器中显示地址栏列表<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">F5<br></td><td style="box-sizing: border-box;">刷新活动窗口<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">F6<br></td><td style="box-sizing: border-box;">在窗口中或桌面上循环浏览屏幕元素<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">F10<br></td><td style="box-sizing: border-box;">激活活动应用中的菜单栏<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Alt + F8<br></td><td style="box-sizing: border-box;">在登录屏幕上显示密码<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Alt + Esc<br></td><td style="box-sizing: border-box;">以项目打开的顺序循环切换项目<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Alt + 带下划线的字母<br></td><td style="box-sizing: border-box;">执行该字母对应的命令<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Alt + Enter<br></td><td style="box-sizing: border-box;">显示选定项的属性<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Alt + 空格键<br></td><td style="box-sizing: border-box;">为活动窗口打开快捷菜单<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Alt + 向左键<br></td><td style="box-sizing: border-box;">后退<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Alt + 向右键<br></td><td style="box-sizing: border-box;">前进<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Alt + Page Up<br></td><td style="box-sizing: border-box;">向上移动一个屏幕<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Alt + Page Down<br></td><td style="box-sizing: border-box;">向下移动一个屏幕<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Ctrl + F4<br></td><td style="box-sizing: border-box;">关闭活动文档（在全屏模式和允许你同时打开多个文档的应用中）<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Ctrl + A<br></td><td style="box-sizing: border-box;">选择文档或窗口中的所有项目<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Ctrl + D（或 Delete）<br></td><td style="box-sizing: border-box;">删除选定项并将其移动到“回收站”<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Ctrl + R（或 F5）<br></td><td style="box-sizing: border-box;">刷新活动窗口<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Ctrl + Y<br></td><td style="box-sizing: border-box;">重做操作<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Ctrl + 向右键<br></td><td style="box-sizing: border-box;">将光标移动到下一个字词的起始处<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Ctrl + 向左键<br></td><td style="box-sizing: border-box;">将光标移动到上一个字词的起始处<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Ctrl + 向下键<br></td><td style="box-sizing: border-box;">将光标移动到下一个段落的起始处<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Ctrl + 向上键<br></td><td style="box-sizing: border-box;">将光标移动到上一个段落的起始处<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Ctrl + Alt + Tab<br></td><td style="box-sizing: border-box;">使用箭头键在所有打开的应用之间切换<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Ctrl + Alt + Shift + 箭头键<br></td><td style="box-sizing: border-box;">当分组或磁贴在“开始”菜单中获得焦点时，请将其按指定方向移动<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Ctrl + 箭头键（用来移动到某个项目）+ 空格键<br></td><td style="box-sizing: border-box;">在窗口中或桌面上选择多个单独的项目<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Ctrl + Shift 加某个箭头键<br></td><td style="box-sizing: border-box;">选择文本块<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Ctrl + Esc<br></td><td style="box-sizing: border-box;">打开“开始”屏幕<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Ctrl + Shift + Esc<br></td><td style="box-sizing: border-box;">打开任务管理器<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Ctrl + Shift<br></td><td style="box-sizing: border-box;">在提供了多个键盘布局时切换键盘布局<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Ctrl + 空格键<br></td><td style="box-sizing: border-box;">打开或关闭中文输入法编辑器 (IME)<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Shift + F10<br></td><td style="box-sizing: border-box;">显示选定项的快捷菜单<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Shift 加任意箭头键<br></td><td style="box-sizing: border-box;">在窗口中或桌面上选择多个项目，或者在文档中选择文本<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Shift + Delete<br></td><td style="box-sizing: border-box;">无需先将选定项移动到“回收站”，直接将其删除<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">向右键<br></td><td style="box-sizing: border-box;">打开右侧的下一个菜单，或者打开子菜单<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">向左键<br></td><td style="box-sizing: border-box;">打开左侧的下一个菜单，或者关闭子菜单<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Esc<br></td><td style="box-sizing: border-box;">停止或退出当前任务<br></td></tr></tbody></table>
+<h2 id="windows键有关">Windows键有关</h2>
+<table class="table"><tbody style="box-sizing: border-box;"><tr style="box-sizing: border-box;" class="firstRow"><th style="box-sizing: border-box; text-align: center; background-color: rgb(249, 249, 249);">按此键<br></th><th style="box-sizing: border-box; text-align: center; background-color: rgb(249, 249, 249);">执行此操作<br></th></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<br></td><td style="box-sizing: border-box;">打开或关闭“开始”菜单<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ A<br></td><td style="box-sizing: border-box;">打开“操作中心”<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键&nbsp;+ B<br></td><td style="box-sizing: border-box;">将焦点设置到通知区域<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ Shift + C<br></td><td style="box-sizing: border-box;">在侦听模式下打开 Cortana<br><br><br><strong>注意：</strong>&nbsp;Cortana 仅在某些国家/地区提供，并且某些 Cortana 功能可能无法随时随地使用。如果 Cortana 不可用或已关闭，你仍然可以使用搜索。<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ D<br></td><td style="box-sizing: border-box;">显示和隐藏桌面<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ Alt + D<br></td><td style="box-sizing: border-box;">显示和隐藏桌面上的日期和时间<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ E<br></td><td style="box-sizing: border-box;">打开“文件资源管理器”<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ F<br></td><td style="box-sizing: border-box;">打开“反馈中心”<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ G<br></td><td style="box-sizing: border-box;">打开游戏栏（当游戏处于打开状态时）<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ H<br></td><td style="box-sizing: border-box;">打开“共享”超级按钮<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ I<br></td><td style="box-sizing: border-box;">打开“设置”<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ J<br></td><td style="box-sizing: border-box;">&nbsp;将焦点设置到 Windows 提示（如果可用）。<br><br><br>出现 Windows 提示时，将焦点移到该提示。&nbsp;再次按这些键盘快捷方式，将焦点移到定位 Windows 提示的屏幕上的元素。<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ K<br></td><td style="box-sizing: border-box;">打开“连接”快速操作<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ L<br></td><td style="box-sizing: border-box;">锁定电脑或切换帐户<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ M<br></td><td style="box-sizing: border-box;">最小化所有窗口<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ O<br></td><td style="box-sizing: border-box;">锁定设备方向<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ P<br></td><td style="box-sizing: border-box;">选择演示显示模式<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ R<br></td><td style="box-sizing: border-box;">打开“运行”对话框<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ S<br></td><td style="box-sizing: border-box;">打开搜素<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ T<br></td><td style="box-sizing: border-box;">在任务栏上循环切换应用<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ U<br></td><td style="box-sizing: border-box;">打开“轻松使用设置中心”<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ V<br></td><td style="box-sizing: border-box;">循环切换通知<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ Shift + V<br></td><td style="box-sizing: border-box;">以相反的顺序循环切换通知<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ X<br></td><td style="box-sizing: border-box;">打开“快速链接”菜单<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ Z<br></td><td style="box-sizing: border-box;">显示在以全屏模式呈现的应用中可用的命令<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ 逗号 (,)<br></td><td style="box-sizing: border-box;">临时快速查看桌面<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ Pause<br></td><td style="box-sizing: border-box;">显示“系统属性”对话框<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ Ctrl + F<br></td><td style="box-sizing: border-box;">搜索电脑（如果你位于网络中）<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ Shift + M<br></td><td style="box-sizing: border-box;">将最小化的窗口还原到桌面<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ 数字<br></td><td style="box-sizing: border-box;">打开桌面，并启动固定到任务栏的位于该数字所表示位置的应用。如果该应用已在运行，则切换到该应用。<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ Shift + 数字<br></td><td style="box-sizing: border-box;">打开桌面，并启动固定到任务栏的位于该数字所表示位置的应用的新实例<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ Ctrl + 数字<br></td><td style="box-sizing: border-box;">打开桌面，并切换到固定到任务栏的位于该数字所表示位置的应用的最后一个活动窗口<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ Alt + 数字<br></td><td style="box-sizing: border-box;">打开桌面，并打开固定到任务栏的位于该数字所表示位置的应用的跳转列表<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ Ctrl + Shift + 数字<br></td><td style="box-sizing: border-box;">打开桌面，并以管理员身份打开位于任务栏上给定位置的应用的新实例<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ Tab<br></td><td style="box-sizing: border-box;">打开“任务视图”<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ 向上键<br></td><td style="box-sizing: border-box;">最大化窗口<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ 向下键<br></td><td style="box-sizing: border-box;">从屏幕中删除当前应用或最小化桌面窗口<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ 向左键<br></td><td style="box-sizing: border-box;">将应用或桌面窗口最大化到屏幕左侧<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ 向右键<br></td><td style="box-sizing: border-box;">将应用或桌面窗口最大化到屏幕右侧<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ Home<br></td><td style="box-sizing: border-box;">最小化除活动桌面窗口以外的所有窗口（在第二道笔划时还原所有窗口）<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ Shift + 向上键<br></td><td style="box-sizing: border-box;">将桌面窗口拉伸到屏幕的顶部和底部<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ Shift + 向下键<br></td><td style="box-sizing: border-box;">在垂直方向上还原/最小化活动桌面窗口，同时保持宽度不变<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ Shift + 向左键或向右键<br></td><td style="box-sizing: border-box;">将桌面中的应用或窗口从一个监视器移动到另一个监视器<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ 空格键<br></td><td style="box-sizing: border-box;">切换输入语言和键盘布局<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ Ctrl + 空格键<br></td><td style="box-sizing: border-box;">更改为以前选择的输入<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ Enter<br></td><td style="box-sizing: border-box;">打开“讲述人”<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ 正斜杠 (/)<br></td><td style="box-sizing: border-box;">启动 IME 重新转换<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ 加号 (+) 或减号 (-)<br></td><td style="box-sizing: border-box;">使用“放大镜”放大或缩小<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键<strong>&nbsp;</strong>+ Esc<br></td><td style="box-sizing: border-box;">退出“放大镜”<br></td></tr></tbody></table>
+<h2 id="虚拟桌面键盘">虚拟桌面键盘</h2>
+<table class="table ng-scope"><tbody style="box-sizing: border-box;"><tr style="box-sizing: border-box;" class="firstRow"><th style="box-sizing: border-box; text-align: center; background-color: rgb(249, 249, 249);">按此键<br></th><th style="box-sizing: border-box; text-align: center; background-color: rgb(249, 249, 249);">执行此操作<br></th></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键 + Tab<br></td><td style="box-sizing: border-box;">打开任务视图<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键 + Ctrl + D<br></td><td style="box-sizing: border-box;">添加虚拟桌面<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键 + Ctrl + 向右键<br></td><td style="box-sizing: border-box;">在你于右侧创建的虚拟桌面之间进行切换<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键 + Ctrl + 向左键<br></td><td style="box-sizing: border-box;">在你于左侧创建的虚拟桌面之间进行切换<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Windows 徽标键 + Ctrl + F4<br></td><td style="box-sizing: border-box;">关闭你正在使用的虚拟桌面<br></td></tr></tbody></table>
+<h2 id="任务栏键盘">任务栏键盘</h2>
+<table class="table"><tbody style="box-sizing: border-box;"><tr style="box-sizing: border-box;" class="firstRow"><th style="box-sizing: border-box; text-align: center; background-color: rgb(249, 249, 249);">按此键<br></th><th style="box-sizing: border-box; text-align: center; background-color: rgb(249, 249, 249);">执行此操作<br></th></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Shift + 单击某个任务栏按钮<br></td><td style="box-sizing: border-box;">打开某个应用，或快速打开应用的另一个实例<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Ctrl + Shift + 单击某个任务栏按钮<br></td><td style="box-sizing: border-box;">以管理员身份打开应用<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Shift + 右键单击某个任务栏按钮<br></td><td style="box-sizing: border-box;">显示该应用的窗口菜单<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Shift + 右键单击某个已分组的任务栏按钮<br></td><td style="box-sizing: border-box;">显示该组的窗口菜单<br></td></tr><tr style="box-sizing: border-box;"><td style="box-sizing: border-box;">Ctrl + 单击某个已分组的任务栏按钮<br></td><td style="box-sizing: border-box;">循环切换该组的窗口<br></td></tr></tbody></table>
+
+    <ul id="taxonomy" class="not-prose flex items-center space-x-4 flex-nowrap whitespace-nowrap overflow-x-auto">
+
+      <li class="font-semibold my-4">Tags:</li>
+        <li ><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/">快捷键</a></li>
+        <li ><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/%E7%B3%BB%E7%BB%9F/">系统</a></li>
+    </ul>
+
+      
+
+    </div>
+
+    <footer id="content-footer" class="not-prose">
+
+      
+      
+
+      <div id="author-box" class="my-8 md:my-14 border p-8 bg-zinc-100 rounded-2xl">
+
+        <img class="w-20 h-20 rounded-full" src="/img/favicon.jpg" alt="huuhghhgyg">
+
+        <h2 class="text-xl font-bold my-4">Writter by : huuhghhgyg</h2>
+
+        <p >Never Settle</p>
+
+        
+        
+        
+      </div>
+
+      <div id="related-post" class="">
+
+        <h2 class="text-xl md:text-2xl font-bold mb-6 md:mb-8">Recommended for You</h2>
+      </div>
+
+    </footer>
+
+  </article>
+
+  
+  <aside class="md:col-span-1"><div class="lg:sticky lg:top-8">
+
+	
+      
+
+
+
+
+
+
+<div class="toc rounded-2xl p-4 bg-zinc-100 mb-10">
+    <div class="page-header font-bold text-lg pb-2">目录</div>
+    <div class="toc-nav">
+        <ul class="nav">
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e5%a5%bd%e5%83%8f%e8%bf%98%e4%b8%8d%e6%80%8e%e4%b9%88%e7%86%9f%e6%82%89windows%e7%9a%84%e5%bf%ab%e6%8d%b7%e9%94%ae%e5%85%88%e5%ad%98%e4%b8%8b">
+                    0.1. 好像还不怎么熟悉Windows的快捷键，先存下。
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#win10%e6%96%b0%e5%a2%9e%e5%8a%9f%e8%83%bd%e5%bf%ab%e6%8d%b7%e9%94%ae%e5%a4%a7%e5%85%a8">
+                    0.2. Win10新增功能快捷键大全：
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e6%96%87%e6%9c%ac%e7%bc%96%e8%be%91%e7%b1%bb">
+                    0.3. 文本编辑类
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#windows%e9%94%ae%e6%9c%89%e5%85%b3">
+                    0.4. Windows键有关
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e8%99%9a%e6%8b%9f%e6%a1%8c%e9%9d%a2%e9%94%ae%e7%9b%98">
+                    0.5. 虚拟桌面键盘
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e4%bb%bb%e5%8a%a1%e6%a0%8f%e9%94%ae%e7%9b%98">
+                    0.6. 任务栏键盘
+                </a>
+            </li>
+        
+        </ul>
+    </div>
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const tocLinks = document.querySelectorAll(".toc-nav .nav-link");
+    const headers = Array.from(tocLinks).map(link => document.querySelector(decodeURI(link.getAttribute("href"))));
+    const offset = 10; 
+    
+    if (tocLinks.length === 0) {
+        return;
+    }
+
+    function updateActiveLink() {
+        let index = headers.findIndex(header => header.getBoundingClientRect().top > offset);
+        if (index === -1) {
+            index = headers.length - 1;
+        } else if (index > 0) {
+            index -= 1;
+        }
+        tocLinks.forEach(link => link.classList.remove("active"));
+        tocLinks[index].classList.add("active");
+    }
+
+    window.addEventListener("scroll", updateActiveLink);
+
+    tocLinks.forEach(link => {
+        link.addEventListener("click", function(event) {
+            event.preventDefault();
+            const targetId = decodeURI(this.getAttribute("href").substring(1));
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+                
+                history.pushState(null, null, `#${targetId}`);
+                setTimeout(updateActiveLink, 100); 
+            }
+        });
+    });
+
+    updateActiveLink(); 
+});
+</script>
+
+    
+
+
+	
+
+	<div class="space-y-6">
+
+		<h2 class="font-bold text-xl mb-8">Recent Post</h2>
+
+		<article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/new-theme/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/new-theme_hu0c1069844488d39e3d981653fdb9672c_552496_250x250_fill_box_smart1_3.png" alt="启用新主题" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">启用新主题</h3>
+	</div>
+</article><article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/lua-microcity/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/MicroCityWorldGrid_hueeb30e2fa18f4d0617e0e9462be0f772_91378_250x250_fill_q75_h2_box_smart1_2.webp" alt="MicroCity内置的LUA函数" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">MicroCity内置的LUA函数</h3>
+	</div>
+</article><article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/ga/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/evolution_huad65e07a071e6dac9af389d1c00f7d4b_297498_250x250_fill_q75_h2_box_smart1_2.webp" alt="使用Python编写遗传算法" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">使用Python编写遗传算法</h3>
+	</div>
+</article><article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/optimization-code/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/optimization-code_hud268f4a32eb0d40a0727452f8945d9dc_278734_250x250_fill_q75_h2_box_smart1_2.webp" alt="优化软件语法" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">优化软件语法</h3>
+	</div>
+</article><article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/sql-basics/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/sql_hu35c510dc12184cf2364d179ea6307c22_25788_250x250_fill_q75_h2_box_smart1_2.webp" alt="SQL入门" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">SQL入门</h3>
+	</div>
+</article>
+		
+	</div>
+
+</div>
+</aside>
+
+</div>
+  
+</main>
+  <footer class="bg-zinc-100 py-10 md:py-14"><div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+
+  <div class="flex flex-wrap space-y-6 mb-4">
+
+    <div class="w-full md:w-3/5 flex flex-col space-y-4 md:pr-8 lg:pr-10">
+
+      <a class="flex items-center group" href="https://www.zhhuu.top/">
+        <img src="/favicon.png" alt="site icon" class="mr-2" width="32" height="32">
+        
+        <span class="text-2xl font-semibold uppercase">Hikaru&#39;s Blog</span>
+      </a>
+
+      <p class="font-semibold">
+        Write with love. Minimalism design.
+      </p>
+
+      <p>Never Settle</p>
+
+    </div>
+
+    <div class="self-center flex flex-col w-full md:w-2/5">
+
+<ul id="social-media" class="flex items-center space-x-4">
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.facebook.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+				<path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.twitter.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.github.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.instagram.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+			</svg>
+		</a>
+	</li>
+</ul>
+
+    </div>
+    
+  </div>
+
+  <div class="my-8">
+    <ul class="flex items-center space-x-4">
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/">Home</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/posts/">Posts</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/tags/">Tags</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/friend/">Friends</a></li>
+      
+    </ul>
+  </div>
+
+  <div class="border-t pt-4">
+
+    <p class="text-sm">Copyright © 2024. All rights reserved. </p>
+
+  </div>
+  
+</div>
+</footer>
+      <script defer src="/js/insertoggle.2f07edcf51c0cba06f691f947fdaeea96d2c85627f30b4b0640a40d5a1bfeb08.js" integrity="sha256-Lwftz1HAy6BvaR&#43;Uf9ruqW0shWJ/MLSwZApA1aG/6wg=" crossorigin="anonymous"></script>
+</body>
+</html>

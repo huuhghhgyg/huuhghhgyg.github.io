@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hexo on Hikaru&#39;s Blog</title>
+    <link>https://www.zhhuu.top/tags/hexo/</link>
+    <description>Recent content in Hexo on Hikaru&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 21 Feb 2021 23:25:49 +0000</lastBuildDate>
+    <atom:link href="https://www.zhhuu.top/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hexo升级记录</title>
+      <link>https://www.zhhuu.top/posts/hexo-update/</link>
+      <pubDate>Sun, 21 Feb 2021 23:25:49 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/hexo-update/</guid>
+      <description>hexo版本太旧，将hexo从3.9.0升级到5.4.0 以前尝试了几次，这次终于成功了（把所有问题都解决了）&#xA;升级前后版本变化 升级前&#xA;1hexo: 3.9.0 2hexo-cli: 4.2.0 升级后&#xA;1hexo: 5.4.0 2hexo-cli: 4.2.0 3uv: 1.33.1 升级操作 先运行了npm update查看了一下有没有需要升级的软件，我这边提示有需要升级的软件，所以手动升级了一下&#xA;然后是正经的检查更新&#xA;1npm install -g npm-check 2npm install -g npm-upgrade 后面看来好像还是npm-check更有用一点🤣 分别执行&#xA;1npm-check 2npm-upgrade 其中npm-check占用资源比较多，耗时比较久。最后是通过提示的 npm-check -u 完成升级&#xA;问题解决 由于主题比较老旧，多年没有更新，但是又很喜欢，所以我一直都在魔改并解决问题。&#xA;遇到的问题 在执行hexo操作的时候总会弹出错误&#xA;WARN Deprecated config detected: &amp;ldquo;external_link&amp;rdquo; with a Boolean value is deprecated. See https://hexo.io/docs/configuration for more details.&#xA;主题底部的换页按钮样式失效，直接显示html源码&#xA;本来升级hexo的目的是想尝试修复页面中h3存在时，目录错位显示错误的问题，但是升级后也还是没有解决&amp;hellip;&#xA;[+]那个好像就是一个奇怪的bug也不知道怎么修复，下次注意标题层次好像就没什么大问题了😂&#xA;解决方法 _config.yml文件中的external_link改为external_link.enable，详见 https://hexo.io/docs/configuration#Writing&#xA;主题底部换页显示错误，找到主题文件中的index.ejs中的paginator部分，添加escape:false（记得在上一行最末尾加逗号）。再hexo clean并hexo g应该就能解决</description>
+    </item>
+    <item>
+      <title>如何唤醒在硬盘中的hexo</title>
+      <link>https://www.zhhuu.top/posts/wakeup-hexo/</link>
+      <pubDate>Mon, 28 Aug 2017 23:05:40 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/wakeup-hexo/</guid>
+      <description>昨天重新灌了电脑的系统，发现 hexo 不能用了&#xA;安装基本软件 Git Node.js 注意：必须使用 Node v12.14.0 旧版 Hexo 才不会报错&#xA;注:Node.js(中文网站)没有使用 https，原因是使用后可能导致无法打开此网页&#xA;步骤 假使 hexo 目录为 D:/hexo&#xA;打开 CMD [按下**(win+r)**组合键，输入 cmd] 输入 npm:如果没有 npm 的详细信息，请重装 Node.js CMD 中定位到 hexo 目录 1d: 2cd hexo 安装 hexo:在 CMD 中输入npm install -g hexo 安装完成后关闭 CMD 打开 Git，定位到 hexo 的目录cd d:/hexo 可以使用啦! 密钥问题 打开 Github，转到你的设置 找到SSH and GPG keys，添加新的密钥&#xA;1git config --global user.name &amp;#34;用户名&amp;#34; 2git config --global user.email &amp;#34;邮箱&amp;#34; 3 4ssh-keygen -t rsa -C &amp;#34;邮箱&amp;#34; 你的 windows 账户文件夹内，会有.</description>
+    </item>
+    <item>
+      <title>Hexo书写语法</title>
+      <link>https://www.zhhuu.top/posts/hexo-grammer/</link>
+      <pubDate>Tue, 08 Aug 2017 09:30:38 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/hexo-grammer/</guid>
+      <description>介绍如何用Markdown语法在hexo上写文章，发现自己对这类东西还不是很熟悉233&amp;hellip;&#xA;Markdown语法 粗体 样式 **样式**&#xA;斜体 样式 *样式*&#xA;删除线 样式 ~~样式~~&#xA;分割线 样式&#xA;细线:--- 粗线:***&#xA;外链 样式 [描述](链接地址) 代码行 样式 `样式`&#xA;##代码块&#xA;1@Echo off 2Echo &amp;#34;Hello World!&amp;#34; 3Pause ``` @Echo off Echo &amp;ldquo;Hello World!&amp;rdquo; Pause ```&#xA;引用 样式&#xA;&amp;gt; 样式&#xA;插入图片 ![描述](图片链接地址)&#xA;分级标题 1H1 : # Header 1 2H2 : ## Header 2 3H3 : ### Header 3 4H4 : #### Header 4 5H5 : ##### Header 5 6H6 : ###### Header 6 我是一级标题 我是二级标题 1我是一级标题 2==== 3 4 5我是二级标题 6---- 无序列表 可以用+或-或*</description>
+    </item>
+  </channel>
+</rss>

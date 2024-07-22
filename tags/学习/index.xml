@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>学习 on Hikaru&#39;s Blog</title>
+    <link>https://www.zhhuu.top/tags/%E5%AD%A6%E4%B9%A0/</link>
+    <description>Recent content in 学习 on Hikaru&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 16 Jul 2020 22:12:31 +0000</lastBuildDate>
+    <atom:link href="https://www.zhhuu.top/tags/%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Word排版技巧</title>
+      <link>https://www.zhhuu.top/posts/word-typesetting/</link>
+      <pubDate>Thu, 16 Jul 2020 22:12:31 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/word-typesetting/</guid>
+      <description>Word的一点小技巧&#xA;快捷键/按键 快捷键 功能 Del 向后删除 Backspace 向前删除 Ctrl + Enter 插入分页符 单位 单位可以直接输入，例如“50磅” 修改默认单位可以在“文件-选项-高级-显示-度量单位”修改 格式 粘贴时可以只粘贴文本而不粘贴格式：“右键-只保留文本”，修改默认粘贴方式可以在 “文件-选项-高级-剪切、复制和粘贴” 处修改默认值（从其他程序粘贴-&amp;gt;“仅保留文本”） 定制功能区提高效率（高级选手）【Word选项-自定义功能区】 参考：元卅的B站主页&#xA;个人信息排版 用表格排版，防止改字体改信息以后引起排版问题 表头可以使用分散对齐，点击表格左上角的控制柄后设置居中可以使表格内容竖直和水平居中 最后去掉表格框线，再加下框线达到下划线的效果 设置目录 引用选项卡-插入（插入目录） 使用 “样式” 让Word软件知道你的文章结构（标题等），软件可以以此自动生成目录 右键 “样式” 中的样式可以修改样式 更改 “正文” 的样式会改变后面所有自带样式 分隔符 文件-选项-显示-显示所有格式标记 显示特殊排版符号 符号 使用方法 分页符 Ctrl+Enter 插入分页符 分节符 “布局-分隔符-分节符” 再页眉页脚插入分节符可以达到每一页页眉页脚不同/数字不同的效果，点击与上一页相同取消内容与上一页相同 有奇偶页不同的选项 公式 插入公式：“插入-公式” 或者 Alt + = 公式分为 行内公式（嵌入） 和 单行公式（显示） 鼠标悬停在公式的符号上就可以看到字符的转义代码 符号 特殊字符/用法 上标 ^ 下标 _ ×（叉乘号） \times ·（点乘号） \cdot 矢量 \vec 写方程组时加&amp;amp;可以上下对齐 插入域：Seq Alt + F9 , SEQ后面加序列名字，再按Alt + F9退出，光标点到标号按F9更新序号，自动标号 F9自动更新文档内数据内容 图片显示不全时，改行距（单倍/多倍行距） </description>
+    </item>
+  </channel>
+</rss>

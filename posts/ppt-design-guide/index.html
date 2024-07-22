@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PPT设计指南 | Hikaru&#39;s Blog</title>
+
+<meta name="description" content="">
+      <link rel="stylesheet" href="/css/main.min.4dc2e2ce92c37525f4749bdb618a9af11becbea894cd27cf53e52755187d6dbb.css" integrity="sha256-TcLizpLDdSX0dJvbYYqa8RvsvqiUzSfPU&#43;UnVRh9bbs=" crossorigin="anonymous">
+
+<link rel="icon" type="image/svg+xml" href="https://www.zhhuu.top/favicon.svg"> 
+<link rel="icon" type="image/x-icon" href="https://www.zhhuu.top/favicon.ico"> 
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.zhhuu.top/favicon.png"> 
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.zhhuu.top/favicon-32.png"> 
+<link rel="icon" type="image/png" sizes="64x64" href="https://www.zhhuu.top/favicon-64.png"> 
+
+</head>
+<body>
+  <header class="py-6 border-b"><div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col">
+	<div class="flex items-center">
+		<div class="flex items-center">
+			<button class="flex items-center space-x-2 rounded-full border py-1 pr-[5px] pl-3 group bg-zinc-100 hover:bg-zinc-200 toggle-button" data-target="menu-bar">
+				<svg width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+					<path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
+				</svg>
+				<span class="bg-blue-500 fill-white rounded-full overflow-hidden h-8 w-8">
+					<img src="/favicon.png" alt="site icon" class="mr-2 object-cover">
+				</span>
+			</button>
+			<div class="relative rounded-full py-1.5 px-6 bg-zinc-100 hover:bg-zinc-200 text-xl font-bold uppercase mx-2">
+				<h2><a class="before:content-[''] before:z-10 before:top-0 before:right-0 before:left-0 before:bottom-0 before:absolute before:pointer-events-auto" href="https://www.zhhuu.top/">Hikaru&#39;s Blog</a></h2>
+			</div>
+		</div>
+		<div class="flex items-center ml-auto">
+			<button id="search-btn" class="flex items-center rounded-full p-3 bg-zinc-100 hover:bg-zinc-200 toggle-button" data-target="search-bar">
+				<svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+					<path id="path1" class="transition-all ease-linear" d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+					<path id="path2" class="transition-all ease-linear hidden" d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"></path>
+				</svg>
+			</button>
+		</div>
+	</div>
+  <nav id="menu-bar" class="block mt-3 close">
+    <ul class="flex items-center flex flex-nowrap whitespace-nowrap overflow-x-auto space-x-4">
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/">Home</a>
+    </li>
+    <li class="my-2">
+      <a aria-current="true" class="ancestor" href="/posts/">Posts</a>
+    </li>
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/tags/">Tags</a>
+    </li>
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/friend/">Friends</a>
+    </li>
+    </ul>
+  </nav>
+
+
+
+<div id="search-bar" class="block mt-3 relative z-50 close">
+    <form id="search" class="flex items-stretch">
+      <input id="searchInput" tabindex="0"
+        class="w-full block px-6 py-2 rounded-full focus:outline-none border border-zinc-200" type="text"
+        placeholder="Search...">
+    </form>
+
+    <div id="fastSearch" class="absolute left-0 right-0 mt-2 bg-white shadow-sm rounded-xl z-50 overflow-x-hidden">
+      <ul id="searchResults" class="divide-y divide-gray-200 z-50">
+      </ul>
+    </div>
+  </div>
+
+  <div id="overlay" class="fixed inset-0 bg-black opacity-50 hidden z-40"></div>
+
+<script src="/js/fuse.min.js"></script> 
+<script src="/js/fastsearch.js"></script></div></header>
+  <main class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8"><div id="breadcrumb" class="max-w-7xl mx-auto py-8">
+	<ul class="flex space-x-4 text-sm text-zinc-500">
+		<li class="after:content-['❯'] after:ml-4 after:opacity-30 last:after:content-none uppercase">
+			<a href="https://www.zhhuu.top/">Hikaru&#39;s Blog</a>
+		</li>
+		<li class="after:content-['❯'] after:ml-4 after:opacity-30 last:after:content-none uppercase">
+			<a href="https://www.zhhuu.top/posts/">Posts</a>
+		</li>
+	</ul>
+</div><div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+
+  <article class="md:col-span-2 prose lg:prose-lg">
+
+    <header class="not-prose">
+      
+      <h1 id="title" class="text-4xl font-bold leading-normal">PPT设计指南</h1>
+
+      <div id="lead" class="my-6">
+
+        <p class="font-bold"> </p>
+
+      </div>
+      
+      <div id="writer" class="flex items-center space-x-4">
+
+        <img class="w-12 h-12 bg-black rounded-full" src="https://www.zhhuu.top/img/favicon.jpg" alt="huuhghhgyg avatar" width="1033" height="1033">
+
+        <ul class="flex items-center space-x-4 flex-nowrap whitespace-nowrap overflow-x-auto">
+          
+          <li class="font-semibold my-2">huuhghhgyg</li>
+          
+          <li class="before:content-['•'] before:mr-2 before:opacity-50 my-2"><time datetime="2018-11-23T20:09:45&#43;00:00">November 23, 2018</time>
+          </li>
+
+          <li class="before:content-['•'] before:mr-2 before:opacity-50 my-2">
+            1 min read
+          </li>
+
+        </ul>
+
+      </div>
+      
+    </header>
+
+<figure id="featureimage" class="rounded-xl aspect-video">
+        <img class="rounded-lg w-full h-full object-cover object-center" src="https://www.zhhuu.top/img/ppt-design-guide_hu0fbcd16b18f45406c744dda7232c5a2f_74188_750x0_resize_q75_h2_box_2.webp" alt="" width="750" height="403">
+</figure>
+
+    <div id="content" class="mb-14">
+      <p>其实做了这么多的PPT以后，慢慢摸索出了一种做PPT的方式技巧。但其实下面包括的也不仅仅是技巧，还包含了一套我认为比较成熟的设计系统（借鉴+创新），目的是为了使演示过程更加流畅。当然，要制造出这样的PPT，达到这样的效果是肯定要花费一些时间的。可能只有像我这种对美有变态追求的人可能才会花费如此多的时间做PPT，如果您有兴趣的话，可以继续看下去。</p>
+<blockquote>
+<p>所需:
+Microsoft PowerPoint 2016或以上
+耐心</p>
+</blockquote>
+<h1 id="引言">引言</h1>
+<p>Microsoft Office 2016 中新引进了“变体”的切换效果。通过这个全新的切换效果能更准确地实现<strong>Material Design</strong>和<strong>Microsoft Fluent Design System</strong>中的一些内容，使整个幻灯片的设计更加系统化。</p>
+<p>🔗链接</p>
+<ul>
+<li><a href="https://material.io/">Material Design</a></li>
+<li><a href="https://www.microsoft.com/design/fluent/">Microsoft Fluent Design System</a></li>
+</ul>
+<h2 id="变体的简单应用">变体的简单应用</h2>
+<p>&ldquo;变体&quot;是 Office 2016 中新增加的一种切换效果。它可以自动识别两张相邻的幻灯片之间的变化并自动插补动画。下面通过两个例子介绍这种切换动画的使用方法。</p>
+<h3 id="精确的位移">精确的位移</h3>
+<ol>
+<li>
+<p>在第一张幻灯片中创建一个正方形。
+<img src="%E5%8F%98%E4%BD%93%E4%BD%8D%E7%A7%BB1.webp" alt="创建正方形(变体位移1)"></p>
+</li>
+<li>
+<p>在第二张幻灯片中创建一个正方形，并移动到你想要的位置。
+<img src="%E5%8F%98%E4%BD%93%E4%BD%8D%E7%A7%BB2.webp" alt="变体位移2"></p>
+</li>
+<li>
+<p>选中第二张幻灯片，在顶栏的&quot;切换&quot;中选择&quot;变体&rdquo;。
+<img src="%E5%8F%98%E4%BD%93%E4%BD%8D%E7%A7%BB3.webp" alt="变体位移3"></p>
+</li>
+<li>
+<p>放映幻灯片，正方形从第一张幻灯片的位置移动到第二张幻灯片的位置。</p>
+</li>
+</ol>
+<h3 id="精确地位移并更改大小">精确地位移并更改大小</h3>
+<p>在上述的操作的基础上您可以尝试改变第二张幻灯片中正方形的形状和大小，您可以发现放映幻灯片的时候原来的正方形自动变成了第二张幻灯片中的样式(大小，位置，甚至颜色，形状的改变)。</p>
+<p>因此，您可以利用变体的这一特性实现后文中卡片的大小，位置甚至深度(阴影大小)的变化。</p>
+<h3 id="多动画连续播放和延迟">多动画连续播放和延迟</h3>
+<p><img src="%E9%A1%BA%E6%AC%A1%E6%B7%A1%E5%87%BA1.webp" alt="顺次淡出1">
+1.创建矩形若干个,并纵向排列。</p>
+<p><img src="%E9%A1%BA%E6%AC%A1%E6%B7%A1%E5%87%BA2.webp" alt="顺次淡出2">
+2.拖动鼠标选中所有创建的矩形，在顶栏的&quot;动画&quot;选项卡中选择&quot;淡出&quot;动画。此时，选中的所有矩形在幻灯片放映时会同时淡出。</p>
+<p><img src="%E9%A1%BA%E6%AC%A1%E6%B7%A1%E5%87%BA3.webp" alt="顺次淡出3">
+<img src="%E9%A1%BA%E6%AC%A1%E6%B7%A1%E5%87%BA4.webp" alt="顺次淡出4"></p>
+<p>3.为了遵循Material Design中的&quot;有层次的时序&quot;的原则，我们将每个矩形相对其上层的矩形延迟0.1秒钟淡出,直至最后一个矩形。</p>
+<blockquote>
+<p>建议使用&quot;缩放&quot;动画实现矩形的顺次进入屏幕，这么做的依据是下文中所提将到的&quot;视觉连贯性&quot;原则。缩放在大部分情况下是最适合<strong>几何形状</strong>进入屏幕的方式，而顺次淡出则适合<strong>文字</strong>进入屏幕。
+<em>上文使用矩形是为了简化演示过程。</em></p>
+</blockquote>
+<h3 id="圆的场景切换的实现">圆的场景切换的实现</h3>
+<p><img src="%E5%9C%86%E5%BD%A2%E5%88%87%E6%8D%A21.webp" alt="圆形切换1">
+1.您将在第一张幻灯片中创建这个场景切换。这意味着这一张幻灯片将包含两章节的内容(前一章节的结束部分和后一章节的开头部分)。<strong>这里用&quot;标题&quot;二字表示上一章节的结束部分。</strong></p>
+<p><img src="%E5%9C%86%E5%BD%A2%E5%88%87%E6%8D%A22.webp" alt="圆形切换2">
+2.创建一个与演示区域大小相当的正圆，并将其移动到演示区域的中心。</p>
+<p><img src="%E5%9C%86%E5%BD%A2%E5%88%87%E6%8D%A23.webp" alt="圆形切换3">
+3.选中刚才创建的圆形，给所选圆形添加**&ldquo;缩放&rdquo;**动画(在顶栏的&quot;动画&quot;中找到&quot;缩放&quot;，并点击)。从含圆的那张幻灯片开始放映幻灯片，您就能观察到&quot;圆形场景切换&quot;。</p>
+<h1 id="元素">元素</h1>
+<h2 id="卡片cards">卡片(Cards)</h2>
+<blockquote>
+<p>分隔各组不同的内容，并归类。</p>
+</blockquote>
+<p>卡片是包含一组特定数据集的纸片，数据集含有各种相关信息，例如，关于单一主题的照片，文本，和链接。卡片通常是通往更详细复杂信息的入口。卡片有固定的宽度和可变的高度。最大高度限制于可适应平台上单一视图的内容，但如果需要它可以临时扩展（例如，显示评论栏）。卡片不会翻转以展示其背后的信息。</p>
+<p>显示这些内容时使用卡片布局：</p>
+<ul>
+<li>为一个集合，由多种数据类型组成（例如，卡片集包含照片，电影，文本，图像）</li>
+<li>不要求直接比较（观看者不直接与图像或字符串比较）</li>
+<li>包含可变长度内容，例如评论</li>
+<li>如果使用列表需要显示超过三行文本</li>
+</ul>
+<h3 id="制作卡片">制作卡片</h3>
+<p><img src="%E5%88%B6%E4%BD%9C%E5%8D%A1%E7%89%871.webp" alt="制作卡片1">
+1.在顶栏的&quot;插入&quot;选项卡中选择&quot;形状&quot;，选择矩形。</p>
+<p><img src="%E5%88%B6%E4%BD%9C%E5%8D%A1%E7%89%872.webp" alt="制作卡片2">
+2.在创建好的卡片上右击，选择&quot;设置形状格式&quot;。</p>
+<p><img src="%E5%88%B6%E4%BD%9C%E5%8D%A1%E7%89%873.webp" alt="制作卡片3">
+3.在右边弹出来的边栏上选择&quot;油桶&quot;的选项卡，选择纯色填充，将填充颜色设置为白色。线条选择无线条。</p>
+<p><img src="%E5%88%B6%E4%BD%9C%E5%8D%A1%E7%89%874.webp" alt="制作卡片4">
+4.选择&quot;五边形&quot;选项卡，设置阴影，将阴影的预设样式设置为框选的样式。</p>
+<p><img src="%E5%88%B6%E4%BD%9C%E5%8D%A1%E7%89%875.webp" alt="制作卡片5">
+5.最终效果如图。</p>
+<h2 id="按钮buttons">按钮(Buttons)</h2>
+<p>在PPT中，一般使用的是圆形按钮。圆形按钮能更方便地引导转场。圆形按钮一般与图标配合使用。更有想象力的用法可以参照<a href="http://design.1sters.com/material_design/components/buttons.html">此处</a></p>
+<blockquote>
+<p>在PPT中，用于表示一段演示的结束，并引出完全切换的转场(动画)。</p>
+</blockquote>
+<p>按钮有阴影，因此与卡片的制作方式大同小异。不同的是按钮一般被赋予颜色而不是白色，并且按钮中心一般会有图标显示其作用。您可以按照您的需求定制按钮。
+<img src="%E5%88%B6%E4%BD%9C%E6%8C%89%E9%92%AE1.webp" alt="制作按钮1">
+<img src="%E5%88%B6%E4%BD%9C%E6%8C%89%E9%92%AE2.webp" alt="制作按钮2"></p>
+<p><img src="%E6%8C%89%E9%92%AE.webp" alt="按钮"></p>
+<h2 id="纸条chips">纸条(Chips)</h2>
+<p>拓展可能性，作为一个原因容器。入场一般用横向拉取。</p>
+<p><img src="%E7%BA%B8%E7%89%87.webp" alt="纸片"></p>
+<h2 id="图标icons">图标(Icons)</h2>
+<p>增强观者对当前页的理解，增强视觉体验。</p>
+<!-- 有图标的链接card -->
+<div class="link-card">
+    <a href="https://material.io/resources/icons/?style=baseline">
+        <div class="img-card-span">
+            <image class="link-card-img" src="https://material.io/resources/icons/static/ic_icons_192px_light.svg">
+            </image>
+            <span class="img-h2">完整版图标库</span>
+            <span class="img-description">Material icons are delightful, beautifully crafted symbols for common actions and items.</span>
+        </div>
+        <span class="link-navigation">
+            Visit
+            <span class="material-icons">arrow_forward</span>
+        </span>
+    </a>
+</div>
+<!-- card容器(card少可不用，多了用美观) -->
+<div class="card-span">
+<!-- 链接card -->
+<div class="link-card">
+    <a href="https://github.com/google/material-design-icons/releases">
+        <span class="link-card-title">图标（Lite）下载页</span>
+        <span class="link-description">跳转到Github的下载页</span>
+        <span class="link-navigation">
+            Visit
+            <span class="material-icons">arrow_forward</span>
+        </span>
+    </a>
+</div>
+<!-- 链接card -->
+<div class="link-card">
+    <a href="https://github.com/google/material-design-icons/releases/download/3.0.1/material-design-icons-3.0.1.zip">
+        <span class="link-card-title">图标（Lite）下载</span>
+        <span class="link-description">点击直接下载图标</span>
+        <span class="link-navigation">
+            Visit
+            <span class="material-icons">cloud_download</span>
+        </span>
+    </a>
+</div>
+</div>
+<h1 id="色彩">色彩</h1>
+<p>如果你手头没有拿得出手的颜色可以选择的话，我推荐使用这个<strong>配色工具</strong>。这是Material Design的配色工具(Color Tool)，你可以在线搭配所需颜色，同时会生成颜色代码(HTML格式)。得到<strong>HTML格式的颜色代码</strong>以后转换成<strong>RGB格式</strong>，最终导入PPT内使用。</p>
+<!-- 有图标的链接card -->
+<div class="link-card">
+    <a href="https://material.io/tools/color/">
+        <div class="img-card-span">
+            <image class="link-card-img" src="https://storage.googleapis.com/non-spec-apps/mio-color/assets/images/ic_colortool_192px.png">
+            </image>
+            <span class="img-h2">配色工具</span>
+            <span class="img-description">Create, share, and apply color palettes to your UI, as well as measure the accessibility level of any color combination.</span>
+        </div>
+        <span class="link-navigation">
+            Visit
+            <span class="material-icons">arrow_forward</span>
+        </span>
+    </a>
+</div>
+<!-- card容器(card少可不用，多了用美观) -->
+<div class="card-span">
+<!-- 链接card -->
+<div class="link-card">
+    <a href="https://tool.css-js.com/rgba.html">
+        <span class="link-card-title">颜色转换器</span>
+        <span class="link-description">这是一个实时转换工具，当填写的值满足合法格式后会自动触发转换。</span>
+        <span class="link-navigation">
+            Visit
+            <span class="material-icons">arrow_forward</span>
+        </span>
+    </a>
+</div>
+</div>
+<h1 id="转场">转场</h1>
+<p>为什么要设计转场？</p>
+<ol>
+<li>使整个演示过程更流畅，更有层次感。</li>
+<li>交代屏幕中元素去向，尽量避免观者产生不适感</li>
+</ol>
+<p>转场包括这两部分:</p>
+<ul>
+<li>完全切换(Material圆)</li>
+<li>分支情况：可以使用卡片进行自由扩展</li>
+</ul>
+<h2 id="视觉连贯性fluency">视觉连贯性(Fluency)</h2>
+<p>在两个视觉效果不同的页面之间的转场应该平滑、轻快，更重要的是使观看者感觉清晰而非困惑。一个好的转场可以四两拨千斤，让观看者清楚地了解他们应该关注哪里。每一个转场应该包含以下三类元素：</p>
+<ul>
+<li>新入元素(Incoming elements): 全新的元素进入屏幕时需要被引导，从已有场景中转变而来的元素需要重新被识别</li>
+<li>淡出元素(Outgoing elements)：与当前场景不相关的元素应当以恰当的方式被移除</li>
+<li>通用元素(Shared elements)：<em>指那些从转场开始到结束都没有发生变化的元素。可以是细微至单个图标，也可以是显著到占据屏幕的图片展示</em></li>
+</ul>
+<h2 id="有层次的时序layering">有层次的时序(Layering)</h2>
+<p>在建立转场的时候，对于元素移动的顺序和时机都要详加考虑。要确保这个动画能使信息的展示具有层次感。也就是说，它能引导观看者的关注力，将最重要的内容传递给观看者。</p>
+<p><video name="media" controls="" width="480"><source src="%E5%B1%82%E6%AC%A1%E6%84%9F.mp4" type="video/mp4"></video></p>
+<p>然而，这并不是说最重要的东西先动，最不重要的东西就后动。元素转场的时序要平滑并且避免脱节的感觉。</p>
+<div class="note note-info">
+    <span class="material-icons">error</span> 应用：逐条展示时，用"淡出"顺次引出对象,每条延时应为0.1秒。</div>
+<h2 id="真实的动作authentic-motion">真实的动作（Authentic Motion）</h2>
+<p>感知一个物体有形的部分可以帮助我们理解如何去控制它。观察一个物理的运动可以告诉我们它轻还是重，柔性还是刚性，小还是大。在material design设计规范中，动作不止是呈现着它美丽的一面，它还意味着在空间中的关系、功能以及在整个系统中的趋势。当一张卡片被强调或选中时，其离地面的距离增大，视觉上看起来被抬高，z轴距离增大，因此阴影应变大。当然，为了凸显这一动作，您可以为卡片的背景套上一层灰色的半透明层。
+<video name="media" controls="" width="480"><source src="%E7%9C%9F%E5%AE%9E%E7%9A%84%E5%8A%A8%E4%BD%9C.mp4" type="video/mp4"></video></p>
+<h2 id="体积和重量mass-and-weight">体积和重量（Mass and Weight）</h2>
+<p>物理世界中物体拥有质量，所以只有当施加给它们力量的时候才会移动，因此，物体没法在瞬间开始或者结束动作。动画突然开始或者停止，或者在运动时突兀的变化方向，都会使用户感到意外和不和谐的干扰。在现实世界中，事物不会立即开始或停止移动。他们需要时间来加速和减速。宽松使元素移动，好像受摩擦等自然力的影响。因此，大的元素质量大，运动所需时间会更长。在PPT中，设置的运动时间也应该相应地更长。
+<video name="media" controls="" width="480"><source src="%E8%BF%90%E5%8A%A8%E9%80%9F%E5%BA%A6.mp4" type="video/mp4"></video></p>
+<h1 id="场景纯原创">场景(纯原创)</h1>
+<p><strong>拓展屏幕(Extended Display)</strong>:屏幕只是充当一个查看器，不局限于屏幕大小。
+1.可将部分下一张PPT中的元素暴露于当前屏幕中，暗示当前章节未结束，增强连续性。</p>
+<p><span class="label label-default">示例</span></p>
+<p><img src="ExtendedScreen1.webp" alt="ExtendedDisplay1"></p>
+<p><img src="ExtendedScreen2.webp" alt="ExtendedDisplay2"></p>
+<p>2.充当放大器，使转场不失流畅。放大后若要继续当前章节，应还原屏幕(退回放大前的状态)再继续当前章节，交代元素去向。
+<span class="label label-primary">e.g</span> 地图放大,强调场景。</p>
+<p><strong>下一章节</strong>
+从当前屏幕拉出下一章节按钮（圆形），并由按钮进行转场，由按钮决定下一章节的背景颜色。</p>
+<div class="note note-good">
+    <span class="material-icons">thumb_up_alt</span> 前言到正文的转场</div>
+<p><strong>拓展卡片(Extended Card)</strong>
+<video name="media" controls="" width="480"><source src="%E5%8D%A1%E7%89%87%E9%9D%A2%E7%A7%AF%E6%8B%93%E5%B1%95.mp4" type="video/mp4"></video>
+卡片大小也可以改变。（参见material card），当卡片拓展（放大）后，可引出详细内容。若被放大的卡片周围有卡片，此卡片将会推开周围的卡片，而不是直接覆盖其它卡片上。当卡片收缩时，若其周围本有卡片，则应将其它卡片拉回。若无，也可以借此机会引出新的卡片。</p>
+<ul>
+<li>拓展时不宜覆盖其它卡片</li>
+<li>若不是极大地改变卡片的面积则不应该更改卡片的深度（表现为阴影的大小）</li>
+</ul>
+<p><video name="media" controls="" width="480"><source src="%E5%8D%A1%E7%89%87%E6%B7%B1%E5%BA%A6%E5%8F%98%E5%8C%96.mp4" type="video/mp4"></video></p>
+<h1 id="示例文件">示例文件</h1>
+<p><img src="Cover.webp" alt="示例文件预览"></p>
+<p><a href="Fluent%20Design%20System.pptx">📄示例文件</a></p>
+
+
+    <ul id="taxonomy" class="not-prose flex items-center space-x-4 flex-nowrap whitespace-nowrap overflow-x-auto">
+
+      <li class="font-semibold my-4">Tags:</li>
+        <li ><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/ppt/">PPT</a></li>
+        <li ><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/%E8%AE%BE%E8%AE%A1/">设计</a></li>
+    </ul>
+
+      
+
+    </div>
+
+    <footer id="content-footer" class="not-prose">
+
+      
+      
+
+      <div id="author-box" class="my-8 md:my-14 border p-8 bg-zinc-100 rounded-2xl">
+
+        <img class="w-20 h-20 rounded-full" src="/img/favicon.jpg" alt="huuhghhgyg">
+
+        <h2 class="text-xl font-bold my-4">Writter by : huuhghhgyg</h2>
+
+        <p >Never Settle</p>
+
+        
+        
+        
+      </div>
+
+      <div id="related-post" class="">
+
+        <h2 class="text-xl md:text-2xl font-bold mb-6 md:mb-8">Recommended for You</h2>
+      </div>
+
+    </footer>
+
+  </article>
+
+  
+  <aside class="md:col-span-1"><div class="lg:sticky lg:top-8">
+
+	
+      
+
+
+
+
+
+
+<div class="toc rounded-2xl p-4 bg-zinc-100 mb-10">
+    <div class="page-header font-bold text-lg pb-2">目录</div>
+    <div class="toc-nav">
+        <ul class="nav">
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link" href="#%e5%bc%95%e8%a8%80">
+                    1. 引言
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e5%8f%98%e4%bd%93%e7%9a%84%e7%ae%80%e5%8d%95%e5%ba%94%e7%94%a8">
+                    1.1. 变体的简单应用
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e7%b2%be%e7%a1%ae%e7%9a%84%e4%bd%8d%e7%a7%bb">
+                    1.1.1. 精确的位移
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e7%b2%be%e7%a1%ae%e5%9c%b0%e4%bd%8d%e7%a7%bb%e5%b9%b6%e6%9b%b4%e6%94%b9%e5%a4%a7%e5%b0%8f">
+                    1.1.2. 精确地位移并更改大小
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e5%a4%9a%e5%8a%a8%e7%94%bb%e8%bf%9e%e7%bb%ad%e6%92%ad%e6%94%be%e5%92%8c%e5%bb%b6%e8%bf%9f">
+                    1.1.3. 多动画连续播放和延迟
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e5%9c%86%e7%9a%84%e5%9c%ba%e6%99%af%e5%88%87%e6%8d%a2%e7%9a%84%e5%ae%9e%e7%8e%b0">
+                    1.1.4. 圆的场景切换的实现
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link" href="#%e5%85%83%e7%b4%a0">
+                    2. 元素
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e5%8d%a1%e7%89%87cards">
+                    2.1. 卡片(Cards)
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e5%88%b6%e4%bd%9c%e5%8d%a1%e7%89%87">
+                    2.1.5. 制作卡片
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e6%8c%89%e9%92%aebuttons">
+                    2.2. 按钮(Buttons)
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e7%ba%b8%e6%9d%a1chips">
+                    2.3. 纸条(Chips)
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e5%9b%be%e6%a0%87icons">
+                    2.4. 图标(Icons)
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link" href="#%e8%89%b2%e5%bd%a9">
+                    3. 色彩
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link" href="#%e8%bd%ac%e5%9c%ba">
+                    4. 转场
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e8%a7%86%e8%a7%89%e8%bf%9e%e8%b4%af%e6%80%a7fluency">
+                    4.1. 视觉连贯性(Fluency)
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e6%9c%89%e5%b1%82%e6%ac%a1%e7%9a%84%e6%97%b6%e5%ba%8flayering">
+                    4.2. 有层次的时序(Layering)
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e7%9c%9f%e5%ae%9e%e7%9a%84%e5%8a%a8%e4%bd%9cauthentic-motion">
+                    4.3. 真实的动作（Authentic Motion）
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e4%bd%93%e7%a7%af%e5%92%8c%e9%87%8d%e9%87%8fmass-and-weight">
+                    4.4. 体积和重量（Mass and Weight）
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link" href="#%e5%9c%ba%e6%99%af%e7%ba%af%e5%8e%9f%e5%88%9b">
+                    5. 场景(纯原创)
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link" href="#%e7%a4%ba%e4%be%8b%e6%96%87%e4%bb%b6">
+                    6. 示例文件
+                </a>
+            </li>
+        
+        </ul>
+    </div>
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const tocLinks = document.querySelectorAll(".toc-nav .nav-link");
+    const headers = Array.from(tocLinks).map(link => document.querySelector(decodeURI(link.getAttribute("href"))));
+    const offset = 10; 
+    
+    if (tocLinks.length === 0) {
+        return;
+    }
+
+    function updateActiveLink() {
+        let index = headers.findIndex(header => header.getBoundingClientRect().top > offset);
+        if (index === -1) {
+            index = headers.length - 1;
+        } else if (index > 0) {
+            index -= 1;
+        }
+        tocLinks.forEach(link => link.classList.remove("active"));
+        tocLinks[index].classList.add("active");
+    }
+
+    window.addEventListener("scroll", updateActiveLink);
+
+    tocLinks.forEach(link => {
+        link.addEventListener("click", function(event) {
+            event.preventDefault();
+            const targetId = decodeURI(this.getAttribute("href").substring(1));
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+                
+                history.pushState(null, null, `#${targetId}`);
+                setTimeout(updateActiveLink, 100); 
+            }
+        });
+    });
+
+    updateActiveLink(); 
+});
+</script>
+
+    
+
+
+	
+
+	<div class="space-y-6">
+
+		<h2 class="font-bold text-xl mb-8">Recent Post</h2>
+
+		<article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/new-theme/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/new-theme_hu0c1069844488d39e3d981653fdb9672c_552496_250x250_fill_box_smart1_3.png" alt="启用新主题" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">启用新主题</h3>
+	</div>
+</article><article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/lua-microcity/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/MicroCityWorldGrid_hueeb30e2fa18f4d0617e0e9462be0f772_91378_250x250_fill_q75_h2_box_smart1_2.webp" alt="MicroCity内置的LUA函数" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">MicroCity内置的LUA函数</h3>
+	</div>
+</article><article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/ga/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/evolution_huad65e07a071e6dac9af389d1c00f7d4b_297498_250x250_fill_q75_h2_box_smart1_2.webp" alt="使用Python编写遗传算法" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">使用Python编写遗传算法</h3>
+	</div>
+</article><article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/optimization-code/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/optimization-code_hud268f4a32eb0d40a0727452f8945d9dc_278734_250x250_fill_q75_h2_box_smart1_2.webp" alt="优化软件语法" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">优化软件语法</h3>
+	</div>
+</article><article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/sql-basics/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/sql_hu35c510dc12184cf2364d179ea6307c22_25788_250x250_fill_q75_h2_box_smart1_2.webp" alt="SQL入门" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">SQL入门</h3>
+	</div>
+</article>
+		
+	</div>
+
+</div>
+</aside>
+
+</div>
+  
+</main>
+  <footer class="bg-zinc-100 py-10 md:py-14"><div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+
+  <div class="flex flex-wrap space-y-6 mb-4">
+
+    <div class="w-full md:w-3/5 flex flex-col space-y-4 md:pr-8 lg:pr-10">
+
+      <a class="flex items-center group" href="https://www.zhhuu.top/">
+        <img src="/favicon.png" alt="site icon" class="mr-2" width="32" height="32">
+        
+        <span class="text-2xl font-semibold uppercase">Hikaru&#39;s Blog</span>
+      </a>
+
+      <p class="font-semibold">
+        Write with love. Minimalism design.
+      </p>
+
+      <p>Never Settle</p>
+
+    </div>
+
+    <div class="self-center flex flex-col w-full md:w-2/5">
+
+<ul id="social-media" class="flex items-center space-x-4">
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.facebook.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+				<path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.twitter.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.github.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.instagram.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+			</svg>
+		</a>
+	</li>
+</ul>
+
+    </div>
+    
+  </div>
+
+  <div class="my-8">
+    <ul class="flex items-center space-x-4">
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/">Home</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/posts/">Posts</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/tags/">Tags</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/friend/">Friends</a></li>
+      
+    </ul>
+  </div>
+
+  <div class="border-t pt-4">
+
+    <p class="text-sm">Copyright © 2024. All rights reserved. </p>
+
+  </div>
+  
+</div>
+</footer>
+      <script defer src="/js/insertoggle.2f07edcf51c0cba06f691f947fdaeea96d2c85627f30b4b0640a40d5a1bfeb08.js" integrity="sha256-Lwftz1HAy6BvaR&#43;Uf9ruqW0shWJ/MLSwZApA1aG/6wg=" crossorigin="anonymous"></script>
+</body>
+</html>

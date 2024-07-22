@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>语法 on Hikaru&#39;s Blog</title>
+    <link>https://www.zhhuu.top/tags/%E8%AF%AD%E6%B3%95/</link>
+    <description>Recent content in 语法 on Hikaru&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 23 Sep 2022 16:20:36 +0000</lastBuildDate>
+    <atom:link href="https://www.zhhuu.top/tags/%E8%AF%AD%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MicroCity内置的LUA函数</title>
+      <link>https://www.zhhuu.top/posts/lua-microcity/</link>
+      <pubDate>Fri, 23 Sep 2022 16:20:36 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/lua-microcity/</guid>
+      <description>物流信息管理课程MicroCity学习笔记&#xA;Lua的小特性：集合 虽然Lua里面把它自己的数组称作table，但是我认为这个数据结构更类似于Python的集合或者json，里面可以存储任何东西，不受结构约束。&#xA;1collection = {{&amp;#34;a&amp;#34;, 1, 2}, &amp;#34;abc&amp;#34;, {2, 3}} 如果需要查询数组的长度，只需要在数组名前面添加#即可得到&#xA;1list = {1, 2, 3, 4, 5} 2for i=1,#list do 3 print(list[i]) 4end Lua的数组（集合）下标从1开始，不同于C类语言的0&#xA;MicroCity的内置函数 为什么要写这个？因为MicroCity自带的编辑器相比较于“现代”的编辑器来说还是不够好用（如VSCode等）。我已经遇到了很多同学自己无法解决，找我排除代码中存在的问题。而这些问题98%都是由于语法问题，如缺少关键字（如end、then等）。但是我用VSCode，Lua插件一般都会直接给我自动补全。就算有什么问题也会高亮，或者使用快捷键格式化代码的时候也能看出问题。&#xA;我认为，相比于更加现代的编辑器，MicroCity自带的编辑器“ScriptEditor”由于语法问题的标示不明显、格式化代码功能缺失等使用便利性上的问题，特别是对于Lua语言不熟练的新手，造成代码编写的错误率更高。&#xA;说明：也许其中提到的功能存在于内在编辑器中，但是我反正是没有找到。&#xA;对于我个人来说，VSCode的操作快捷键和各种特性我已经很熟悉，所以我也更倾向于使用VSCode编写Lua语言的脚本。但是对于使用VSCode编写适用于MicroCity运行的Lua脚本（.mcs）而言，由于MicroCity内置了一些函数，无法在VSCode上高亮显示，因此需要特别整理出来方便日后使用。&#xA;常用函数 这里的函数不是全集，只是我用了多少就写多少😂 全部图形函数及使用方法参见 MicroCity文档(英文) 4.3 Shapes And Tables&#xA;在本页中浏览可以使用右上角的目录列表快速转到对应函数。&#xA;图形 函数 作用 Open 打开图形文件，并获取图形文件对象 Update 刷新图形 Open Open(&amp;quot;路径&amp;quot;)，返回图形文件对象。&#xA;1countryObject = Open(&amp;#34;countries.shp&amp;#34;) Update Update([图形对象])，刷新图形对象，显示最新的图形。&#xA;1Update(countryGRD) 矢量图 函数 作用 GetRecCount 获取图形文件中记录的图形对象个数 GetShape 从图形文件对象中获取图形对象 GetPartCount 获取对应图形对象分为多少个部分 GetPointCount 获取对应图形对象（部分）有多少个点 GetPointXY 获取图形对象指定部分、指定点编号的XY坐标 GetValue 获取图形对象的属性值 SetValue 设置图形对象的属性值 GetShapeLen 获取图形对象的长度 GetDistance 获取坐标点之间的距离 GetRecCount GetRecCount([图形文件对象])，返回图形文件中记录的图形对象个数。</description>
+    </item>
+    <item>
+      <title>使用Python编写遗传算法</title>
+      <link>https://www.zhhuu.top/posts/ga/</link>
+      <pubDate>Wed, 13 Jul 2022 12:07:30 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/ga/</guid>
+      <description>算法设计，附源码&#xA;概述 当涉及非线性规划问题或者难以在短时间内求得满意解的线性规划问题，可以通过求其近似解（或满意解）而非精确解。使用遗传算法求解近似解所消耗的时间远少于求解精确解，多数时候近似解的效果都可以接受。 遗传算法的优势体现在：在小规模问题上，遗传算法求解得到的通常是精确解；而在大规模问题上，遗传算法通常可以通过较短的时间求得精确解。 同样的问题通过遗传算法求解近似解和线性规划求解精确解，遗传算法花费的时间显著短于精确算法。&#xA;算法 时长 结果(此处结果越小越好） 遗传算法 123s (2m03s) 371.06 精确算法 201s (3m21s) 367.07 模型描述 目标函数 $minf=P\sum_{k=1}^K\sum_{i=1}^N\sum_{j=1}^Nx_{kij}d_{ij}+\frac{P_a}{Q}\sum_{i=1}^N\sum_{j=1}^N(y_{ij}+z_{ij})x_{kij}d_{ij}+P_m\sum_{k=1}^K\sum_{i=1}^N\sum_{j=M}^Nx_{kij}q_j$&#xA;约束方程 $$ s.t.\left\{ \begin{array}{**lr**} \sum_{k=1}^K\sum_{i=1}^Nx_{kij}=1 &amp; j=2,3,...,N \\ \sum_{j=1}^Nx_{kij} = \sum_{j=1}^Nx_{kij} &amp; i=1,2,...,N;k=1,2,...,K \\ \sum_{j=1}^Nx_{k1j} \le 1 &amp; k=1,2,...,K \\ y_{ij}+z_{ij} \le Q\sum_{k=1}^Kx_{kij} &amp; i,j=2,3,...,N \\ \sum_{i=1}^N\sum_{j=1}^Nx_{kij}d_{ij} \leq D &amp; k=1,2,...,K \\ \sum_{j=1}^Nz_{ij}-\sum_{j=1}^Nz_{ij}=p_i &amp; i=2,3,...,N \\ \sum_{i=1}^Nx_{kii}=0 &amp; j=1,2,...,N \\ \sum_{i=2}^N\sum_{j=1}^Nx_{kij} \le V &amp; k=1,2,...,K \\ y_{ij} \ge 0 ,z_{ij} \ge 0 &amp; i,j=1,2,.</description>
+    </item>
+    <item>
+      <title>优化软件语法</title>
+      <link>https://www.zhhuu.top/posts/optimization-code/</link>
+      <pubDate>Tue, 12 Jul 2022 22:22:54 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/optimization-code/</guid>
+      <description>最近上课自学了CPLEX，感觉和之前浅浅接触过的LINGO的语法很像。记录一下以免以后忘了怎么用。此外，还在其中记录一下本次自学的遗传算法。&#xA;概述 求解大规模线性优化问题的时候不可能使用单纯形算法一个个地列单纯形表去手算，必须借助计算机求解才能使求解精确解的求解速度在可接受的范围内。可接受的求解时间范围根据每个人的接受情况不同大多分布于3小时或1天之内。此处记录一下之前稍微了解到的LINGO软件的语言、这次自学的CPLEX软件的OPL语言，这两个软件都可以用于求解线性规划问题。&#xA;LINGO语法 LINGO的整个线性规划模型大致可以描述为：&#xA;集合（Sets） 变量（Data) 模型（Model） LINGO的集合 先上一段代码&#xA;1sets: 2&#x9;S/1..6/: a, b, d ; // S为1~6的集合，a有6个分量（a1~a6)，b、d、e等同理 3&#x9;T/1,2/: e, x, y; // T为1和2组成的集合， 4&#x9;U(S,T): c ; // 定义了双下标的集合（c为双下标变量c_ij） 5endsets 第2行描述了三个变量abd各自都有6个分量，如a可以看成a1,a2,...,a6，在LINGO里面引用就是a(1),a(2),...,a(6)，剩下两个变量b和d同理。 第四行定义了U为双下标集合，如果将U的每个元素看作Uij，那么i的范围为[1,6]，整数；j的范围为{1,2}。在LINGO里面引用就是U(i,j)。根据定义的集合，U(i,j)共有12个变量。&#xA;LINGO的变量 代码&#xA;1data: 2&#x9;a=1 2 3 4 5 6; // 定义a(n)的值 3&#x9;b=1 2 3 4 5 6; 4&#x9;x=5 2; 5&#x9;y=1 7; 6enddata 第2行表示a(1)到a(6)的值分别为1、2、3、4、5、6。&#xA;LINGO的模型 模型又可以分为两个部分：&#xA;目标函数 约束方程 在这之前，需要先了解集合函数，方便规模化地表示模型的目标函数和约束方程。&#xA;LINGO的集合函数 我也不知道它是不是叫这个名字，姑且先用集合函数表示他们。当时简单了解到的集合函数有两个。&#xA;函数表示 功能 @sum 求和 @for 遍历，但不操作 仅求和而言，大致有以下2种情况：</description>
+    </item>
+    <item>
+      <title>正则表达式笔记</title>
+      <link>https://www.zhhuu.top/posts/regular-expression/</link>
+      <pubDate>Thu, 31 Dec 2020 19:32:35 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/regular-expression/</guid>
+      <description>🔗 链接&#xA;正则表达式在线测试 | 菜鸟工具 标记 表达式 作用 示例 作用 ^ 匹配行首 ^a 匹配 a 在行首的情况 $ 结匹配行尾 a$ 匹配 a 在行尾的情况 普通字符（大小写敏感） 表达式 作用 示例 作用 [] 只能匹配中括号中的字符 [ABC] 匹配字符串中的所有 A、B、C [^A] 除去 [^ABC] 得到除了 ABC 以外的所有字符 [A-Z] 某一个区间(可以是大写区间、小写区间、数字区间) [A-C] 匹配 A-C 的区间 . 匹配 除换行符的所有单个字符,相当于[^\n\r] [\s] 匹配 空白字符（空格、换行） [\s] 匹配 非空白字符（包括换行） [\w] 匹配 字母、数字、下划线,相当于[A-Za-z0-9] 非打印字符 符号 作用 示例 作用 \ca 匹配 control+a 的快捷键（\c 是表示 c，\为转义）(\cx 的 x 必须是 A-Z 或者 a-z) \cv 匹配 ctrl+v 的快捷键 \f 换页符 \n 换行符 \r 回车 \s 空白字符，包括空格、制表符、换页符等等 \S 非空白字符，包括回车 \t 制表符（Tab） \v 垂直制表符(Vertical Tab) \d 数字字符，等价于[0-9] \D 非数字字符，等价于[^0-9] \w 单词(word) \W 非单词 特殊字符 符号 作用 示例 作用 $ 匹配字符串的结尾位置 () 标记一个子表达式开始和结束的位置 * 匹配前面的子表达式 0 次或多次 go*gle 可以匹配 ggle,google,gooooogle 等 + 匹配前面的子表达式 1 次或多次(1+) go+gle 可以匹配 gogle,goooogle 等 .</description>
+    </item>
+    <item>
+      <title>Hexo书写语法</title>
+      <link>https://www.zhhuu.top/posts/hexo-grammer/</link>
+      <pubDate>Tue, 08 Aug 2017 09:30:38 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/hexo-grammer/</guid>
+      <description>介绍如何用Markdown语法在hexo上写文章，发现自己对这类东西还不是很熟悉233&amp;hellip;&#xA;Markdown语法 粗体 样式 **样式**&#xA;斜体 样式 *样式*&#xA;删除线 样式 ~~样式~~&#xA;分割线 样式&#xA;细线:--- 粗线:***&#xA;外链 样式 [描述](链接地址) 代码行 样式 `样式`&#xA;##代码块&#xA;1@Echo off 2Echo &amp;#34;Hello World!&amp;#34; 3Pause ``` @Echo off Echo &amp;ldquo;Hello World!&amp;rdquo; Pause ```&#xA;引用 样式&#xA;&amp;gt; 样式&#xA;插入图片 ![描述](图片链接地址)&#xA;分级标题 1H1 : # Header 1 2H2 : ## Header 2 3H3 : ### Header 3 4H4 : #### Header 4 5H5 : ##### Header 5 6H6 : ###### Header 6 我是一级标题 我是二级标题 1我是一级标题 2==== 3 4 5我是二级标题 6---- 无序列表 可以用+或-或*</description>
+    </item>
+  </channel>
+</rss>

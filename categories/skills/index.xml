@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Skills on Hikaru&#39;s Blog</title>
+    <link>https://www.zhhuu.top/categories/skills/</link>
+    <description>Recent content in Skills on Hikaru&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 09 Jul 2021 20:56:37 +0000</lastBuildDate>
+    <atom:link href="https://www.zhhuu.top/categories/skills/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>利用Gitkraken了解Git</title>
+      <link>https://www.zhhuu.top/posts/git-basic/</link>
+      <pubDate>Fri, 09 Jul 2021 20:56:37 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/git-basic/</guid>
+      <description>git是版本控制系统。应用最为广泛，适用于中小项目。本身是命令行工具。 GitKraken图形化客户端，界面漂亮，功能全面。&#xA;🔗链接&#xA;GitKraken Git的基本概念和操作 代码仓库(Repository) 创建一个代码仓库(Repository)，可以是本地仓库，也可以是保存在远程服务器上的仓库。仓库之间可以相互同步。 显示代码的所有提交历史，其中每项代表一个提交(Commit),提交相当于检查点或者快照。对代码作出修改后可以提交这次修改，Git会保存当前的代码快照，之后可以轻松回溯到这里。 新建代码仓库的时候会自动创建一个提交。 选中提交后可以看到所有修改的文件。&#xA;GitKraken 中打开git目录可以点击“文件”-“在文件浏览器中打开”，找到代码仓库在本地计算机上存放的位置&#xA;作出更改后文件历史中多出 //WIP (Work In Progress)，代表这个提交正在施工中。 Git要求在提交修改的文件前要对它们先 Stage，点击Stage。Stage可看作提交前防止误操作。其中必填本次提交的描述。最后&amp;quot;Commit&amp;quot;完成提交，这里的提交还是在本地计算机的提交。 如果要远程提交到代码仓库，就需要 &amp;ldquo;Push&amp;quot;s，推送提交即可。&#xA;拉取(Pull) 从远程服务器 拉取(Pull) 提交 提交历史会多出来一条。master和电脑图标的标签表示本地仓库的提交，上面的表示Github上的远程仓库提交（master是分支）。(origin通常代表远程仓库)。如果想把远程提交同步到本地仓库只需要点击**&amp;ldquo;Pull&amp;rdquo;**。点击后两个图标重合在一起，代表远程仓库和本地仓库的提交历史已经完全相同。&#xA;合并(Merge) 两边同时作出了修改后提交历史会产生分叉 如果想要将两个修改同时应用在本地仓库中，需要合并。Pull的时候会自动合并远程提交到本地的提交中。Pull后Git会自动生成一个新提交。 如果同时修改代码的同一处位置，再次Pull的时候，会自动合并失败，需要手动合并冲突(Conflict)的部分。 下面的窗口用于手动解决冲突 最终完成提交 提交改写(Amend) 用于提交代码有误或者提交信息出错，对已提交的文件和信息进行修改。在提交前勾选Amend后正常提交。这个操作只会修改已经存在的提交。但是最好本地使用。&#xA;分支(Branch) 创建一个新分支，点击Branch按钮。创建好后分支的提交历史和原来相同，但是往后的提交会相互独立。默认只会推送master分支到远程服务器，如果要推送其他分支，点右键然后选择Push。&#xA;合并分支（Merge Branches） 将test合并到master上，先双击切换到master分支，在test分支上右键点“合并test分支到master分支”。（可能需要手动解决代码冲突）&#xA;暂存(Stash) 暂存当前的修改，源代码会被还原到之前的状态，可以进行其他操作。 最后可以通过Pop将暂存的代码恢复出来，甚至可以切换到很老的版本将暂存的修改恢复出来。&#xA;变基(Rebase) 在合并分支的过程中，会将整个分支摘取下来，嫁接到另一个分支上（改变了原有的基底）。相比Merge,Merge的优点在于原先的提交历史会被完整地保留下来。 比如将test分支变基到master分支，先选择test分支，右键选择“将test分支变基到master分支上”，完成操作。最后将master分支指向最新的提交，这样master分支的内容才是最新的。（用到Fast Forward)&#xA;快进(Fast Forward) 直接让master的指针快进到test分支。&#xA;签出(Checkout) 回退到早期的版本完成一些bug的修复。在想要回到的节点上右键点击签出，此时Head标签指向当前提交。 修改完后提交是基于早期的提交,最后可以将其变基到当前的提交上，变基完成后提交会变成一条直线。&#xA;撤销操作(Undoing) 常用于在Git中错误提交了代码或者错误合并了一个分支。得益于每次的操作都记录在Reflog的类似日志的文件里，能够帮你轻松回退之前的状态。GitKraken中就是状态栏中的undo操作。包括分支切换、合并、修改甚至删除等等。&#xA;恢复(Revert) 常用于撤销已提交的代码（远程）。在GitKraken中在提交上点右键，Git会创建一个完全相反的提交以恢复。&#xA;图形化界面对应的命令行命令 第一部分（常用基础部分） 配置基本用户信息 git config --global user.name &amp;lt;用户名&amp;gt; git config --global user.email &amp;lt;邮箱地址&amp;gt;&#xA;创建一个新仓库 git init</description>
+    </item>
+    <item>
+      <title>Hexo升级记录</title>
+      <link>https://www.zhhuu.top/posts/hexo-update/</link>
+      <pubDate>Sun, 21 Feb 2021 23:25:49 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/hexo-update/</guid>
+      <description>hexo版本太旧，将hexo从3.9.0升级到5.4.0 以前尝试了几次，这次终于成功了（把所有问题都解决了）&#xA;升级前后版本变化 升级前&#xA;1hexo: 3.9.0 2hexo-cli: 4.2.0 升级后&#xA;1hexo: 5.4.0 2hexo-cli: 4.2.0 3uv: 1.33.1 升级操作 先运行了npm update查看了一下有没有需要升级的软件，我这边提示有需要升级的软件，所以手动升级了一下&#xA;然后是正经的检查更新&#xA;1npm install -g npm-check 2npm install -g npm-upgrade 后面看来好像还是npm-check更有用一点🤣 分别执行&#xA;1npm-check 2npm-upgrade 其中npm-check占用资源比较多，耗时比较久。最后是通过提示的 npm-check -u 完成升级&#xA;问题解决 由于主题比较老旧，多年没有更新，但是又很喜欢，所以我一直都在魔改并解决问题。&#xA;遇到的问题 在执行hexo操作的时候总会弹出错误&#xA;WARN Deprecated config detected: &amp;ldquo;external_link&amp;rdquo; with a Boolean value is deprecated. See https://hexo.io/docs/configuration for more details.&#xA;主题底部的换页按钮样式失效，直接显示html源码&#xA;本来升级hexo的目的是想尝试修复页面中h3存在时，目录错位显示错误的问题，但是升级后也还是没有解决&amp;hellip;&#xA;[+]那个好像就是一个奇怪的bug也不知道怎么修复，下次注意标题层次好像就没什么大问题了😂&#xA;解决方法 _config.yml文件中的external_link改为external_link.enable，详见 https://hexo.io/docs/configuration#Writing&#xA;主题底部换页显示错误，找到主题文件中的index.ejs中的paginator部分，添加escape:false（记得在上一行最末尾加逗号）。再hexo clean并hexo g应该就能解决</description>
+    </item>
+    <item>
+      <title>初探Docker</title>
+      <link>https://www.zhhuu.top/posts/docker-startup/</link>
+      <pubDate>Sat, 23 Jan 2021 17:34:33 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/docker-startup/</guid>
+      <description>尝试了 docker 的一些常用操作&#xA;查看正在运行的容器 查看正在运行的容器 docker ps&#xA;如果 docker 没有运行，则会显示错误&#xA;查看所有容器 docker ps -a&#xA;建立容器 docker run ubuntu -it&#xA;参数 作用 -i 与容器互动(类似 ssh，可以输入指令) -t 创造一个终端 容器常用操作 本地容器操作容器： 运行但不进入： docker start [容器ID/容器ID开头的几个字]&#xA;进入容器： docker attach [容器ID/容器ID开头的几个字]&#xA;离开容器: Ctrl+P Ctrl+Q&#xA;停止容器： docker stop [容器ID/容器ID开头的几个字]&#xA;查看已经下载到本地的容器： docker image ls 移除本地容器： docker rm [容器名称]&#xA;移除本地镜像： docker rmi [镜像名称]&#xA;镜像名称在 REPOSITORY 下&#xA;新建容器 搜索镜像从 Docker Hub 下载&#xA;docker run (参数) [容器名称]&#xA;参数 作用 --name [name] 更改容器名称 -d 运行成 Detached 模式 -p [端口]:[容器端口] 端口映射 -v [路径]:[容器路径] 文件映射。将电脑的文件映射入容器 第一次使用的镜像会自动从 Docker Hub 下载</description>
+    </item>
+    <item>
+      <title>更快地部署Office</title>
+      <link>https://www.zhhuu.top/posts/deploy-office-faster/</link>
+      <pubDate>Sat, 25 May 2019 18:00:00 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/deploy-office-faster/</guid>
+      <description>每次新安装Office诚然是一件很头疼地事情。这里介绍可以快速在电脑上安装Office的方法。&#xA;Office Tool Plus 如果你想深入了解Office Tool Plus，也请访问官方网站。 打开网站以后，点击立即下载，并打开Office Tool Plus。打开以后可能会进行自动更新。更新完之后进入软件界面 个人快速安装Office 如果仅在一台电脑上安装，你可以直接转到安装选项卡进行安装。 1、选择你需要的Office套件。&#xA;Win10推荐使用Office2019，Win7推荐使用Office2016 建议安装零售版，即Retail&#xA;2、根据你需要的Office软件勾选应用程序。&#xA;完整版Office安装的项目为Excel Powerpoint Word Access Publisher。大学生建议勾选完整版Office的安装项目。&#xA;3、安装设置: 根据系统，设置体系结构。为了获取较新的Office版本，建议把通道设置为&amp;quot;每月通道&amp;quot;。安装方式无需更改。 设置可选设置下的更新设置。 注意其中的禁用Office更新和使用配置管理器管理更新，建议取消勾选。 更新通道建议更改为&amp;quot;每月通道&amp;quot; 激活设置中，按需要进行勾选。 4、以上设置完毕后，即可点击开始安装。等待安装完毕即可使用。&#xA;批量快速安装Office 这种情况适用于多台设备需要安装Office。首先需要在一台机器上完成配置设置。&#xA;转到下载选项卡。点击版本号,查询版本号。 设置常规设置中的通道、体系结构以及版本。 点击上方的开始按钮。&#xA;下载完成后，转到安装选项卡，参照上文个人快速安装Office的前三个步骤。不同的是，安装设置中的安装方式应设置为离线安装。 点击开始安装旁边的三角形，选择保存配置为XML。&#xA;找到并打开你保存的XML文件，转到其中SourcePath所指的目录，复制整个文件夹到你的U盘。 把你保存的XML文件也复制到U盘下的同一个文件夹。&#xA;当你需要在其他电脑上从U盘安装Office时，修改其中SourcePath所指的目录为你的U盘所在的同文件夹目录，打开Office Tool Plus，进入安装选项卡，点击开始安装旁边的三角形，选择选择XML文件，选择你的XML文件，点击开始安装。或者使用微软的Office Deployment Tool，用CMD的方式进行安装。这里不再介绍这种方法，请百度。</description>
+    </item>
+    <item>
+      <title>Hexo书写语法</title>
+      <link>https://www.zhhuu.top/posts/hexo-grammer/</link>
+      <pubDate>Tue, 08 Aug 2017 09:30:38 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/hexo-grammer/</guid>
+      <description>介绍如何用Markdown语法在hexo上写文章，发现自己对这类东西还不是很熟悉233&amp;hellip;&#xA;Markdown语法 粗体 样式 **样式**&#xA;斜体 样式 *样式*&#xA;删除线 样式 ~~样式~~&#xA;分割线 样式&#xA;细线:--- 粗线:***&#xA;外链 样式 [描述](链接地址) 代码行 样式 `样式`&#xA;##代码块&#xA;1@Echo off 2Echo &amp;#34;Hello World!&amp;#34; 3Pause ``` @Echo off Echo &amp;ldquo;Hello World!&amp;rdquo; Pause ```&#xA;引用 样式&#xA;&amp;gt; 样式&#xA;插入图片 ![描述](图片链接地址)&#xA;分级标题 1H1 : # Header 1 2H2 : ## Header 2 3H3 : ### Header 3 4H4 : #### Header 4 5H5 : ##### Header 5 6H6 : ###### Header 6 我是一级标题 我是二级标题 1我是一级标题 2==== 3 4 5我是二级标题 6---- 无序列表 可以用+或-或*</description>
+    </item>
+  </channel>
+</rss>

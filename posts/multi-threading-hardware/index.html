@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>进程管理（操作系统） | Hikaru&#39;s Blog</title>
+
+<meta name="description" content="">
+      <link rel="stylesheet" href="/css/main.min.4dc2e2ce92c37525f4749bdb618a9af11becbea894cd27cf53e52755187d6dbb.css" integrity="sha256-TcLizpLDdSX0dJvbYYqa8RvsvqiUzSfPU&#43;UnVRh9bbs=" crossorigin="anonymous">
+
+<link rel="icon" type="image/svg+xml" href="https://www.zhhuu.top/favicon.svg"> 
+<link rel="icon" type="image/x-icon" href="https://www.zhhuu.top/favicon.ico"> 
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.zhhuu.top/favicon.png"> 
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.zhhuu.top/favicon-32.png"> 
+<link rel="icon" type="image/png" sizes="64x64" href="https://www.zhhuu.top/favicon-64.png"> 
+
+</head>
+<body>
+  <header class="py-6 border-b"><div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col">
+	<div class="flex items-center">
+		<div class="flex items-center">
+			<button class="flex items-center space-x-2 rounded-full border py-1 pr-[5px] pl-3 group bg-zinc-100 hover:bg-zinc-200 toggle-button" data-target="menu-bar">
+				<svg width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+					<path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
+				</svg>
+				<span class="bg-blue-500 fill-white rounded-full overflow-hidden h-8 w-8">
+					<img src="/favicon.png" alt="site icon" class="mr-2 object-cover">
+				</span>
+			</button>
+			<div class="relative rounded-full py-1.5 px-6 bg-zinc-100 hover:bg-zinc-200 text-xl font-bold uppercase mx-2">
+				<h2><a class="before:content-[''] before:z-10 before:top-0 before:right-0 before:left-0 before:bottom-0 before:absolute before:pointer-events-auto" href="https://www.zhhuu.top/">Hikaru&#39;s Blog</a></h2>
+			</div>
+		</div>
+		<div class="flex items-center ml-auto">
+			<button id="search-btn" class="flex items-center rounded-full p-3 bg-zinc-100 hover:bg-zinc-200 toggle-button" data-target="search-bar">
+				<svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+					<path id="path1" class="transition-all ease-linear" d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+					<path id="path2" class="transition-all ease-linear hidden" d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"></path>
+				</svg>
+			</button>
+		</div>
+	</div>
+  <nav id="menu-bar" class="block mt-3 close">
+    <ul class="flex items-center flex flex-nowrap whitespace-nowrap overflow-x-auto space-x-4">
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/">Home</a>
+    </li>
+    <li class="my-2">
+      <a aria-current="true" class="ancestor" href="/posts/">Posts</a>
+    </li>
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/tags/">Tags</a>
+    </li>
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/friend/">Friends</a>
+    </li>
+    </ul>
+  </nav>
+
+
+
+<div id="search-bar" class="block mt-3 relative z-50 close">
+    <form id="search" class="flex items-stretch">
+      <input id="searchInput" tabindex="0"
+        class="w-full block px-6 py-2 rounded-full focus:outline-none border border-zinc-200" type="text"
+        placeholder="Search...">
+    </form>
+
+    <div id="fastSearch" class="absolute left-0 right-0 mt-2 bg-white shadow-sm rounded-xl z-50 overflow-x-hidden">
+      <ul id="searchResults" class="divide-y divide-gray-200 z-50">
+      </ul>
+    </div>
+  </div>
+
+  <div id="overlay" class="fixed inset-0 bg-black opacity-50 hidden z-40"></div>
+
+<script src="/js/fuse.min.js"></script> 
+<script src="/js/fastsearch.js"></script></div></header>
+  <main class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8"><div id="breadcrumb" class="max-w-7xl mx-auto py-8">
+	<ul class="flex space-x-4 text-sm text-zinc-500">
+		<li class="after:content-['❯'] after:ml-4 after:opacity-30 last:after:content-none uppercase">
+			<a href="https://www.zhhuu.top/">Hikaru&#39;s Blog</a>
+		</li>
+		<li class="after:content-['❯'] after:ml-4 after:opacity-30 last:after:content-none uppercase">
+			<a href="https://www.zhhuu.top/posts/">Posts</a>
+		</li>
+	</ul>
+</div><div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+
+  <article class="md:col-span-2 prose lg:prose-lg">
+
+    <header class="not-prose">
+      
+      <h1 id="title" class="text-4xl font-bold leading-normal">进程管理（操作系统）</h1>
+
+      <div id="lead" class="my-6">
+
+        <p class="font-bold"> </p>
+
+      </div>
+      
+      <div id="writer" class="flex items-center space-x-4">
+
+        <img class="w-12 h-12 bg-black rounded-full" src="https://www.zhhuu.top/img/favicon.jpg" alt="huuhghhgyg avatar" width="1033" height="1033">
+
+        <ul class="flex items-center space-x-4 flex-nowrap whitespace-nowrap overflow-x-auto">
+          
+          <li class="font-semibold my-2">huuhghhgyg</li>
+          
+          <li class="before:content-['•'] before:mr-2 before:opacity-50 my-2"><time datetime="2022-03-22T23:13:13&#43;00:00">March 22, 2022</time>
+          </li>
+
+          <li class="before:content-['•'] before:mr-2 before:opacity-50 my-2">
+            1 min read
+          </li>
+
+        </ul>
+
+      </div>
+      
+    </header>
+
+<figure id="featureimage" class="rounded-xl aspect-video">
+
+    
+
+    
+
+    
+    <img class="rounded-lg w-full h-full object-cover object-center" src="/img/random/material-3.webp" alt="进程管理（操作系统）">
+</figure>
+
+    <div id="content" class="mb-14">
+      <p>操作系统方面的进程管理</p>
+<h1 id="进程">进程</h1>
+<p>进程是一个可并发执行的具有独立功能的程序关于某个数据集合的一次执行过程，是操作系统进行<strong>资源分配和保护的基本单位</strong>。进程是程序在处理机上的一次执行过程。</p>
+<ul>
+<li>动态性：创建👉产生；调度👉执行；得不到资源👉阻塞；撤销👉消亡</li>
+<li>并发性：多个进程可同时存在于内存中，在一段时间内<strong>同时运行</strong>。</li>
+<li>独立性：独立获得资源的基本单位</li>
+<li>异步性：各进程按各自独立的不可预知的速度执行</li>
+<li>交往性（制约性）：进程至今啊相互制约，互斥地使用某些资源、相关进程之间同步、通信等。</li>
+</ul>
+<h2 id="进程的静态描述">进程的静态描述</h2>
+<ul>
+<li><a href="#%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6%E5%9D%97">进程控制块</a>：反映了进程的动态特征。</li>
+<li>程序段：能被调度程序选中，并在CPU上执行的程序代码段</li>
+<li>数据段：进程对应的原始数据、中间或最终数据</li>
+</ul>
+<h2 id="进程控制块">进程控制块</h2>
+<p>进程控制块 PCB(Process Control Block)</p>
+<ul>
+<li>是操作系统为了管理进程设置的一个数据结构，用于记录和描述进程。</li>
+<li>系统利用PCB控制和管理进程。一个进程只有一个PCB，PCB是进程是否存在的唯一标记，是系统感知进程存在的唯一标志。</li>
+<li>进程与PCB一一对应。</li>
+</ul>
+<p>PCB包含如下信息：</p>
+<ul>
+<li>描述信息：ID、进程组关系（父进程、子进程）</li>
+<li>控制信息：状态、优先级、外存地址、运行同级信息等</li>
+<li>资源管理信息：指针、占用内存大小等</li>
+<li>CPU现场保护结构：当前进程的执行被打断，储存进程现场数据</li>
+</ul>
+<p>PCB组织方式：线性、链接（链表）、索引</p>
+<h2 id="进程上下文">进程上下文</h2>
+<p>操作系统中，把<strong>进程物理实体</strong>和<strong>支持进程运行的环境</strong>合称为进程上下文。
+系统调度新进程时，新老进程的上下文将进行切换。</p>
+<h2 id="进程的状态">进程的状态</h2>
+<p>进程的三种基本状态</p>
+<ul>
+<li>就绪态：已经得到除了CPU以外的其它资源</li>
+<li>运行态：占用CPU</li>
+<li>阻塞态：正在等待某一事件发生</li>
+</ul>
+<h2 id="进程的控制">进程的控制</h2>
+<ul>
+<li><code>fork()</code>：进程创建。调用者用<code>fork()</code>建立一个子进程和自己独立并发地运行。创建的子进程基本拷贝父进程的上下文（正文段（代码）共享）
+<ul>
+<li><code>fork()</code>返回值为-1：进程创建不成功</li>
+<li><code>fork()</code>返回值大于0：在父进程的上下文中，<code>fork()</code>返回值为子进程标识号</li>
+<li><code>fork()</code>返回值等于0：在子进程的上下文中。</li>
+</ul>
+</li>
+<li><code>wait()</code>：进程挂起等待（封锁）。调用者进入封锁状态等待它的子进程终止。</li>
+<li><code>exit()</code>：进程终止。调用者将终止自己，并解除父进程的封锁（<code>wait()</code>）。</li>
+<li><code>execvp(filename,argp)</code>：进程上下文更换。用文件名<code>filename</code>所指定的可执行文件来替换当前进程上下文中的程序和数据部分，并转入执行。</li>
+</ul>
+<h3 id="常见代码段">常见代码段</h3>
+<p>循环创建线程。如果创建不成功（返回值为1），则执行<code>;</code>语句</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span><span style="color:#cba6f7">while</span>((i<span style="color:#89dceb;font-weight:bold">=</span><span style="color:#89b4fa">fork</span>()) <span style="color:#89dceb;font-weight:bold">==</span> <span style="color:#89dceb;font-weight:bold">-</span><span style="color:#fab387">1</span>);
+</span></span></code></pre></div><p>创建子线程。父线程和子线程将（将开始）同时在这里执行。</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span>i<span style="color:#89dceb;font-weight:bold">=</span><span style="color:#89b4fa">fork</span>();
+</span></span></code></pre></div><p>判断现在执行的是父线程还是子线程</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span><span style="color:#cba6f7">if</span> (i<span style="color:#89dceb;font-weight:bold">==</span><span style="color:#fab387">0</span>) <span style="color:#6c7086;font-style:italic">// 子线程
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">2</span><span><span style="color:#6c7086;font-style:italic"></span><span style="color:#cba6f7">else</span> <span style="color:#6c7086;font-style:italic">// 父线程（i为大于0的进程id）
+</span></span></span></code></pre></div><h1 id="线程">线程</h1>
+<h2 id="线程和进程的区别和联系">线程和进程的区别和联系</h2>
+<ol>
+<li>线程是进程的一部分，它是进程内的一个执行体。</li>
+<li>引入线程的操作系统中，<strong>资源分配的对象是进程，而不是线程。</strong></li>
+<li>引入线程的操作系统中，调度的基本单位是线程而不是进程。</li>
+<li>进程之间可以并发执行，而一个进程中的这些线程之间亦可以并发执行。</li>
+<li>进程调度，系统需要进行进程上下文的切换，需要大量的系统开销。</li>
+<li><strong>线程切换比进程切换快得多。</strong></li>
+<li>从一个进程的线程向另一个进程的线程切换，<strong>将引起线程的上下文切换。</strong></li>
+<li>从安全的角度来看，线程不如进程安全。</li>
+</ol>
+<h2 id="线程控制块">线程控制块</h2>
+<p>在管理线程的时候，同样也使用一种数据结构，称之为<strong>线程控制块TCB(Thread Control Block)</strong>
+线程控制块包含如下信息：</p>
+<ul>
+<li>线程标识信息：系统内唯一的标识符；</li>
+<li>线程状态和调度信息</li>
+<li>现场信息：主要是CPU内各个寄存器的内容</li>
+<li>线程私有存储区：系统栈和用户栈的指针</li>
+<li>指向PCB的指针：该线程归属于哪个进程，使用哪个进程的资源。</li>
+</ul>
+<h2 id="线程的状态">线程的状态</h2>
+<p>线程的关键状态有：</p>
+<ul>
+<li>运行态</li>
+<li>就绪态</li>
+<li>阻塞态</li>
+</ul>
+<h2 id="线程的级别">线程的级别</h2>
+<h3 id="内核级线程">内核级线程</h3>
+<p>内核线程的建立与销毁都是由操作系统负责
+如果一个进程中没有就绪态的线程，这个进程也不会被调度占用CPU。</p>
+<h3 id="用户级线程">用户级线程</h3>
+<p>用户线程时不能被操作系统感知的。操作系统一如既往地进行进程调度，就像根本没有线程一样。
+线程运行库决定运行哪一个用户线程。</p>
+<h3 id="混合式线程">混合式线程</h3>
+<p><em>混合式线程中，一个应用中的多个线程能同时在多处理器上并行执行，且阻塞一个线程时并不需要封锁整个进程。</em></p>
+<h1 id="进程调度">进程调度</h1>
+<h2 id="调度的层次">调度的层次</h2>
+<p><img src="thread_state.webp" alt="进程状态"></p>
+<ul>
+<li>高级调度：建立PCB（存在于早期的操作系统，无内存参与调度）</li>
+<li>中级调度：调入调出外存等待（得益于虚拟内存技术，将外存扩充为内存使用）。存在外存的进程为挂起态。</li>
+<li>低级调度：内存中选取就绪态的进程占用资源执行
+<ul>
+<li>剥夺方式（抢占方式）</li>
+<li>非剥夺方式（不可抢占式）</li>
+</ul>
+</li>
+</ul>
+<h2 id="调度的概念">调度的概念</h2>
+<h3 id="调度算法的分类和目标">调度算法的分类和目标</h3>
+<p>所有系统</p>
+<ul>
+<li>公平性</li>
+<li>系统策略（调度策略）的强制执行</li>
+<li>均衡性：各种类型的进程</li>
+</ul>
+<p>批处理系统</p>
+<ul>
+<li>吞吐量</li>
+<li>周转时间</li>
+<li>CPU利用率</li>
+</ul>
+<p>交互式系统</p>
+<ul>
+<li>相应时间</li>
+<li>相称性</li>
+</ul>
+<p>实时系统：着重于实时提供服务</p>
+<ul>
+<li>截止线</li>
+<li>可预测性</li>
+</ul>
+<h3 id="批处理系统的调度">批处理系统的调度</h3>
+<ol>
+<li>先来先服务FCFS(First-Come First-Served)：按照作业进入系统后备队列的先后次序挑选作业。<strong>属于非剥夺式算法。</strong></li>
+<li>最短作业优先SJF(Shortest Job First)：以进入系统的作业所要求的CPU时间长短为标准，字面意思。<strong>是一种非剥夺式算法。</strong></li>
+<li>最短剩余时间优先SRTF(Shortest Remaining Time First)：一个作业正在执行时，一个新作业进入就绪态，如果新作业需要的CPU时间比当前正在执行的作业剩余时间短，则新作业抢占并开始执行。<strong>是一种剥夺式算法。</strong>（称为最短剩余时间优先算法/SRTF算法）</li>
+<li>高响应比优先HHRF(Highest Response Ratio First)：每当调度一个作业运行时，都要计算后被作业队列中每个队列的响应比，选择响应比最高的投入运行。<strong>属于非剥夺式算法。</strong>（可能会提高周转时间）<a href="#%E5%93%8D%E5%BA%94%E6%AF%94">响应比</a></li>
+</ol>
+<h3 id="交互式系统的调度">交互式系统的调度</h3>
+<ol>
+<li>时间片轮转法RR(Round Robin)：当一个时间片结束时，强迫一个进程让出CPU，让它排列到就绪队列的尾部，等待下一轮调度。<strong>轮转法调度是一种剥夺式调度。</strong></li>
+<li>优先级调度(Priority)：
+<ul>
+<li>静态优先级：在进程创建时即被确定，在以后整个执行期间不再改变。</li>
+<li>动态优先级：在进程的执行期间，按照某种原则不断修改进程的优先级。优先级一般随进程的等待时间、CPU占用时间变化。</li>
+</ul>
+</li>
+<li>多级反馈队列MFQ(Multi-level Feedback Queue)：<em>多级反馈队列调度算法的主要思想是将就绪进程分为多个级别，系统相应建立多个就绪队列，较高优先级的队列一般分配给较短的时间片。调度程序每次先从高一级的就绪队列中选取可占有CPU的进程，同一队列中按时间片原则排队，只有在该队列为空时，才从较低一级的就绪队列中选取。</em></li>
+</ol>
+<h2 id="相关公式">相关公式</h2>
+<h3 id="周转时间相关">周转时间相关</h3>
+<div>
+$$
+周转时间 = 等待时间 + 执行时间
+$$
+</div>
+<div>
+$$
+平均周转时间 = \frac{周转时间}{进程数量}
+$$
+</div>
+<h3 id="带权周转时间相关">带权周转时间相关</h3>
+<p>$$
+带权作业周转时间 = \frac{周转时间}{作业时间}
+$$</p>
+<p>$$
+平均带权作业周转时间 = \frac{\sum_{i=1}^n\frac{周转时间}{作业时间}}{进程数量}
+$$</p>
+<h3 id="响应比">响应比</h3>
+<p>$$
+响应比 = \frac{作业周转时间}{作业估计计算时间} = \frac{等待时间 + 执行时间}{执行时间} = 1+\frac{等待时间}{执行时间}
+$$</p>
+
+
+    <ul id="taxonomy" class="not-prose flex items-center space-x-4 flex-nowrap whitespace-nowrap overflow-x-auto">
+
+      <li class="font-semibold my-4">Tags:</li>
+        <li ><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/%E7%BC%96%E7%A8%8B/">编程</a></li>
+    </ul>
+
+      
+        <script type="text/javascript"
+        async
+        src="https://proxy.zhhuu.top/cdn/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+      
+
+    </div>
+
+    <footer id="content-footer" class="not-prose">
+
+      
+      
+
+      <div id="author-box" class="my-8 md:my-14 border p-8 bg-zinc-100 rounded-2xl">
+
+        <img class="w-20 h-20 rounded-full" src="/img/favicon.jpg" alt="huuhghhgyg">
+
+        <h2 class="text-xl font-bold my-4">Writter by : huuhghhgyg</h2>
+
+        <p >Never Settle</p>
+
+        
+        
+        
+      </div>
+
+      <div id="related-post" class="">
+
+        <h2 class="text-xl md:text-2xl font-bold mb-6 md:mb-8">Recommended for You</h2><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><article class="relative group bg-zinc-100 hover:bg-blue-100 rounded-3xl">
+	
+	<a class="insert-link" href="https://www.zhhuu.top/posts/xaml-summary/"></a>
+
+	<figure class="w-full aspect-video overflow-hidden rounded-3xl"><img class="object-cover group-hover:scale-105 transition duration-500 cursor-pointer object-center w-full h-full" src="https://www.zhhuu.top/img/xaml_huc284e228a0fe42d4686d169967b3dd24_47304_750x0_resize_q75_h2_box_2.webp" alt="Xaml学习小结" width="750" height="422">
+
+	  </figure>
+
+	<div class="p-6">
+
+		<time datetime="2022-03-16T22:08:15&#43;00:00">Mar 16, 2022</time>
+
+		<h3 class="my-4 text-2xl font-bold">Xaml学习小结</h3>
+
+		<p class="text-normal leading-normal text-zinc-500 line-clamp-2"></p>
+
+	</div>
+</article><article class="relative group bg-zinc-100 hover:bg-blue-100 rounded-3xl">
+	
+	<a class="insert-link" href="https://www.zhhuu.top/posts/linq/"></a>
+
+	<figure class="w-full aspect-video overflow-hidden rounded-3xl"><img class="object-cover group-hover:scale-105 transition duration-500 cursor-pointer object-center w-full h-full" src="https://www.zhhuu.top/img/query_hu33fa0e5a0622b32c3d8e585165ab35a5_26042_750x0_resize_q75_h2_box_2.webp" alt="LINQ笔记&amp;实例" width="750" height="563">
+
+	  </figure>
+
+	<div class="p-6">
+
+		<time datetime="2022-03-12T16:29:27&#43;00:00">Mar 12, 2022</time>
+
+		<h3 class="my-4 text-2xl font-bold">LINQ笔记&amp;实例</h3>
+
+		<p class="text-normal leading-normal text-zinc-500 line-clamp-2"></p>
+
+	</div>
+</article>
+          
+        </div>
+      </div>
+
+    </footer>
+
+  </article>
+
+  
+  <aside class="md:col-span-1"><div class="lg:sticky lg:top-8">
+
+	
+      
+
+
+
+
+
+
+<div class="toc rounded-2xl p-4 bg-zinc-100 mb-10">
+    <div class="page-header font-bold text-lg pb-2">目录</div>
+    <div class="toc-nav">
+        <ul class="nav">
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link" href="#%e8%bf%9b%e7%a8%8b">
+                    1. 进程
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e8%bf%9b%e7%a8%8b%e7%9a%84%e9%9d%99%e6%80%81%e6%8f%8f%e8%bf%b0">
+                    1.1. 进程的静态描述
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e8%bf%9b%e7%a8%8b%e6%8e%a7%e5%88%b6%e5%9d%97">
+                    1.2. 进程控制块
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e8%bf%9b%e7%a8%8b%e4%b8%8a%e4%b8%8b%e6%96%87">
+                    1.3. 进程上下文
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e8%bf%9b%e7%a8%8b%e7%9a%84%e7%8a%b6%e6%80%81">
+                    1.4. 进程的状态
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e8%bf%9b%e7%a8%8b%e7%9a%84%e6%8e%a7%e5%88%b6">
+                    1.5. 进程的控制
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e5%b8%b8%e8%a7%81%e4%bb%a3%e7%a0%81%e6%ae%b5">
+                    1.5.1. 常见代码段
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link" href="#%e7%ba%bf%e7%a8%8b">
+                    2. 线程
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e7%ba%bf%e7%a8%8b%e5%92%8c%e8%bf%9b%e7%a8%8b%e7%9a%84%e5%8c%ba%e5%88%ab%e5%92%8c%e8%81%94%e7%b3%bb">
+                    2.1. 线程和进程的区别和联系
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e7%ba%bf%e7%a8%8b%e6%8e%a7%e5%88%b6%e5%9d%97">
+                    2.2. 线程控制块
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e7%ba%bf%e7%a8%8b%e7%9a%84%e7%8a%b6%e6%80%81">
+                    2.3. 线程的状态
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e7%ba%bf%e7%a8%8b%e7%9a%84%e7%ba%a7%e5%88%ab">
+                    2.4. 线程的级别
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e5%86%85%e6%a0%b8%e7%ba%a7%e7%ba%bf%e7%a8%8b">
+                    2.4.2. 内核级线程
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e7%94%a8%e6%88%b7%e7%ba%a7%e7%ba%bf%e7%a8%8b">
+                    2.4.3. 用户级线程
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e6%b7%b7%e5%90%88%e5%bc%8f%e7%ba%bf%e7%a8%8b">
+                    2.4.4. 混合式线程
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link" href="#%e8%bf%9b%e7%a8%8b%e8%b0%83%e5%ba%a6">
+                    3. 进程调度
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e8%b0%83%e5%ba%a6%e7%9a%84%e5%b1%82%e6%ac%a1">
+                    3.1. 调度的层次
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e8%b0%83%e5%ba%a6%e7%9a%84%e6%a6%82%e5%bf%b5">
+                    3.2. 调度的概念
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e8%b0%83%e5%ba%a6%e7%ae%97%e6%b3%95%e7%9a%84%e5%88%86%e7%b1%bb%e5%92%8c%e7%9b%ae%e6%a0%87">
+                    3.2.5. 调度算法的分类和目标
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e6%89%b9%e5%a4%84%e7%90%86%e7%b3%bb%e7%bb%9f%e7%9a%84%e8%b0%83%e5%ba%a6">
+                    3.2.6. 批处理系统的调度
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e4%ba%a4%e4%ba%92%e5%bc%8f%e7%b3%bb%e7%bb%9f%e7%9a%84%e8%b0%83%e5%ba%a6">
+                    3.2.7. 交互式系统的调度
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e7%9b%b8%e5%85%b3%e5%85%ac%e5%bc%8f">
+                    3.3. 相关公式
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e5%91%a8%e8%bd%ac%e6%97%b6%e9%97%b4%e7%9b%b8%e5%85%b3">
+                    3.3.8. 周转时间相关
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e5%b8%a6%e6%9d%83%e5%91%a8%e8%bd%ac%e6%97%b6%e9%97%b4%e7%9b%b8%e5%85%b3">
+                    3.3.9. 带权周转时间相关
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e5%93%8d%e5%ba%94%e6%af%94">
+                    3.3.10. 响应比
+                </a>
+            </li>
+        
+        </ul>
+    </div>
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const tocLinks = document.querySelectorAll(".toc-nav .nav-link");
+    const headers = Array.from(tocLinks).map(link => document.querySelector(decodeURI(link.getAttribute("href"))));
+    const offset = 10; 
+    
+    if (tocLinks.length === 0) {
+        return;
+    }
+
+    function updateActiveLink() {
+        let index = headers.findIndex(header => header.getBoundingClientRect().top > offset);
+        if (index === -1) {
+            index = headers.length - 1;
+        } else if (index > 0) {
+            index -= 1;
+        }
+        tocLinks.forEach(link => link.classList.remove("active"));
+        tocLinks[index].classList.add("active");
+    }
+
+    window.addEventListener("scroll", updateActiveLink);
+
+    tocLinks.forEach(link => {
+        link.addEventListener("click", function(event) {
+            event.preventDefault();
+            const targetId = decodeURI(this.getAttribute("href").substring(1));
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+                
+                history.pushState(null, null, `#${targetId}`);
+                setTimeout(updateActiveLink, 100); 
+            }
+        });
+    });
+
+    updateActiveLink(); 
+});
+</script>
+
+    
+
+
+	
+
+	<div class="space-y-6">
+
+		<h2 class="font-bold text-xl mb-8">Recent Post</h2>
+
+		<article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/new-theme/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/new-theme_hu0c1069844488d39e3d981653fdb9672c_552496_250x250_fill_box_smart1_3.png" alt="启用新主题" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">启用新主题</h3>
+	</div>
+</article><article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/lua-microcity/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/MicroCityWorldGrid_hueeb30e2fa18f4d0617e0e9462be0f772_91378_250x250_fill_q75_h2_box_smart1_2.webp" alt="MicroCity内置的LUA函数" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">MicroCity内置的LUA函数</h3>
+	</div>
+</article><article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/ga/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/evolution_huad65e07a071e6dac9af389d1c00f7d4b_297498_250x250_fill_q75_h2_box_smart1_2.webp" alt="使用Python编写遗传算法" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">使用Python编写遗传算法</h3>
+	</div>
+</article><article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/optimization-code/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/optimization-code_hud268f4a32eb0d40a0727452f8945d9dc_278734_250x250_fill_q75_h2_box_smart1_2.webp" alt="优化软件语法" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">优化软件语法</h3>
+	</div>
+</article><article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/sql-basics/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/sql_hu35c510dc12184cf2364d179ea6307c22_25788_250x250_fill_q75_h2_box_smart1_2.webp" alt="SQL入门" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">SQL入门</h3>
+	</div>
+</article>
+		
+	</div>
+
+</div>
+</aside>
+
+</div>
+  
+</main>
+  <footer class="bg-zinc-100 py-10 md:py-14"><div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+
+  <div class="flex flex-wrap space-y-6 mb-4">
+
+    <div class="w-full md:w-3/5 flex flex-col space-y-4 md:pr-8 lg:pr-10">
+
+      <a class="flex items-center group" href="https://www.zhhuu.top/">
+        <img src="/favicon.png" alt="site icon" class="mr-2" width="32" height="32">
+        
+        <span class="text-2xl font-semibold uppercase">Hikaru&#39;s Blog</span>
+      </a>
+
+      <p class="font-semibold">
+        Write with love. Minimalism design.
+      </p>
+
+      <p>Never Settle</p>
+
+    </div>
+
+    <div class="self-center flex flex-col w-full md:w-2/5">
+
+<ul id="social-media" class="flex items-center space-x-4">
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.facebook.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+				<path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.twitter.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.github.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.instagram.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+			</svg>
+		</a>
+	</li>
+</ul>
+
+    </div>
+    
+  </div>
+
+  <div class="my-8">
+    <ul class="flex items-center space-x-4">
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/">Home</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/posts/">Posts</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/tags/">Tags</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/friend/">Friends</a></li>
+      
+    </ul>
+  </div>
+
+  <div class="border-t pt-4">
+
+    <p class="text-sm">Copyright © 2024. All rights reserved. </p>
+
+  </div>
+  
+</div>
+</footer>
+      <script defer src="/js/insertoggle.2f07edcf51c0cba06f691f947fdaeea96d2c85627f30b4b0640a40d5a1bfeb08.js" integrity="sha256-Lwftz1HAy6BvaR&#43;Uf9ruqW0shWJ/MLSwZApA1aG/6wg=" crossorigin="anonymous"></script>
+</body>
+</html>

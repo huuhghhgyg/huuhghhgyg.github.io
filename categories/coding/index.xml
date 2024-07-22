@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Coding on Hikaru&#39;s Blog</title>
+    <link>https://www.zhhuu.top/categories/coding/</link>
+    <description>Recent content in Coding on Hikaru&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 23 Sep 2022 16:20:36 +0000</lastBuildDate>
+    <atom:link href="https://www.zhhuu.top/categories/coding/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MicroCity内置的LUA函数</title>
+      <link>https://www.zhhuu.top/posts/lua-microcity/</link>
+      <pubDate>Fri, 23 Sep 2022 16:20:36 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/lua-microcity/</guid>
+      <description>物流信息管理课程MicroCity学习笔记&#xA;Lua的小特性：集合 虽然Lua里面把它自己的数组称作table，但是我认为这个数据结构更类似于Python的集合或者json，里面可以存储任何东西，不受结构约束。&#xA;1collection = {{&amp;#34;a&amp;#34;, 1, 2}, &amp;#34;abc&amp;#34;, {2, 3}} 如果需要查询数组的长度，只需要在数组名前面添加#即可得到&#xA;1list = {1, 2, 3, 4, 5} 2for i=1,#list do 3 print(list[i]) 4end Lua的数组（集合）下标从1开始，不同于C类语言的0&#xA;MicroCity的内置函数 为什么要写这个？因为MicroCity自带的编辑器相比较于“现代”的编辑器来说还是不够好用（如VSCode等）。我已经遇到了很多同学自己无法解决，找我排除代码中存在的问题。而这些问题98%都是由于语法问题，如缺少关键字（如end、then等）。但是我用VSCode，Lua插件一般都会直接给我自动补全。就算有什么问题也会高亮，或者使用快捷键格式化代码的时候也能看出问题。&#xA;我认为，相比于更加现代的编辑器，MicroCity自带的编辑器“ScriptEditor”由于语法问题的标示不明显、格式化代码功能缺失等使用便利性上的问题，特别是对于Lua语言不熟练的新手，造成代码编写的错误率更高。&#xA;说明：也许其中提到的功能存在于内在编辑器中，但是我反正是没有找到。&#xA;对于我个人来说，VSCode的操作快捷键和各种特性我已经很熟悉，所以我也更倾向于使用VSCode编写Lua语言的脚本。但是对于使用VSCode编写适用于MicroCity运行的Lua脚本（.mcs）而言，由于MicroCity内置了一些函数，无法在VSCode上高亮显示，因此需要特别整理出来方便日后使用。&#xA;常用函数 这里的函数不是全集，只是我用了多少就写多少😂 全部图形函数及使用方法参见 MicroCity文档(英文) 4.3 Shapes And Tables&#xA;在本页中浏览可以使用右上角的目录列表快速转到对应函数。&#xA;图形 函数 作用 Open 打开图形文件，并获取图形文件对象 Update 刷新图形 Open Open(&amp;quot;路径&amp;quot;)，返回图形文件对象。&#xA;1countryObject = Open(&amp;#34;countries.shp&amp;#34;) Update Update([图形对象])，刷新图形对象，显示最新的图形。&#xA;1Update(countryGRD) 矢量图 函数 作用 GetRecCount 获取图形文件中记录的图形对象个数 GetShape 从图形文件对象中获取图形对象 GetPartCount 获取对应图形对象分为多少个部分 GetPointCount 获取对应图形对象（部分）有多少个点 GetPointXY 获取图形对象指定部分、指定点编号的XY坐标 GetValue 获取图形对象的属性值 SetValue 设置图形对象的属性值 GetShapeLen 获取图形对象的长度 GetDistance 获取坐标点之间的距离 GetRecCount GetRecCount([图形文件对象])，返回图形文件中记录的图形对象个数。</description>
+    </item>
+    <item>
+      <title>使用Python编写遗传算法</title>
+      <link>https://www.zhhuu.top/posts/ga/</link>
+      <pubDate>Wed, 13 Jul 2022 12:07:30 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/ga/</guid>
+      <description>算法设计，附源码&#xA;概述 当涉及非线性规划问题或者难以在短时间内求得满意解的线性规划问题，可以通过求其近似解（或满意解）而非精确解。使用遗传算法求解近似解所消耗的时间远少于求解精确解，多数时候近似解的效果都可以接受。 遗传算法的优势体现在：在小规模问题上，遗传算法求解得到的通常是精确解；而在大规模问题上，遗传算法通常可以通过较短的时间求得精确解。 同样的问题通过遗传算法求解近似解和线性规划求解精确解，遗传算法花费的时间显著短于精确算法。&#xA;算法 时长 结果(此处结果越小越好） 遗传算法 123s (2m03s) 371.06 精确算法 201s (3m21s) 367.07 模型描述 目标函数 $minf=P\sum_{k=1}^K\sum_{i=1}^N\sum_{j=1}^Nx_{kij}d_{ij}+\frac{P_a}{Q}\sum_{i=1}^N\sum_{j=1}^N(y_{ij}+z_{ij})x_{kij}d_{ij}+P_m\sum_{k=1}^K\sum_{i=1}^N\sum_{j=M}^Nx_{kij}q_j$&#xA;约束方程 $$ s.t.\left\{ \begin{array}{**lr**} \sum_{k=1}^K\sum_{i=1}^Nx_{kij}=1 &amp; j=2,3,...,N \\ \sum_{j=1}^Nx_{kij} = \sum_{j=1}^Nx_{kij} &amp; i=1,2,...,N;k=1,2,...,K \\ \sum_{j=1}^Nx_{k1j} \le 1 &amp; k=1,2,...,K \\ y_{ij}+z_{ij} \le Q\sum_{k=1}^Kx_{kij} &amp; i,j=2,3,...,N \\ \sum_{i=1}^N\sum_{j=1}^Nx_{kij}d_{ij} \leq D &amp; k=1,2,...,K \\ \sum_{j=1}^Nz_{ij}-\sum_{j=1}^Nz_{ij}=p_i &amp; i=2,3,...,N \\ \sum_{i=1}^Nx_{kii}=0 &amp; j=1,2,...,N \\ \sum_{i=2}^N\sum_{j=1}^Nx_{kij} \le V &amp; k=1,2,...,K \\ y_{ij} \ge 0 ,z_{ij} \ge 0 &amp; i,j=1,2,.</description>
+    </item>
+    <item>
+      <title>C# Task</title>
+      <link>https://www.zhhuu.top/posts/csharp-task/</link>
+      <pubDate>Fri, 25 Mar 2022 11:56:41 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/csharp-task/</guid>
+      <description>Task 线程的问题：线程(Thread)是用来创建并发的一种低级别工具，尤其在于以下方面有一些限制：&#xA;虽然开始线程的时候可以方便地传入数据，但是当Join（等待）的时候，很难从线程获得返回值。 可能需要设置一些共享字段 如果抛出异常，捕获和传播该异常都很麻烦 无法告诉线程在结束时开始做另外的工作，必须进行Join操作，在进程中阻塞当前的进程，等待线程结束。 对手动同步的更大依赖以及随之而来的问题 Task类可以很好地解决上述问题。Task是一个相对高级的抽象，它代表了一个并发操作(concurrent)，该操作可能由Thread支持，或不由Thread支持。并且，Task是可组合的。 Tasks可以使用线程池来减少启动延迟 使用TaskCompletionSource，Tasks可以利用回调的方式在等待I/O绑定操作是完全避免线程。 开始一个Task 开始一个Task最简单的方法就是使用Task.Run这个静态方法。(.NET4.5开始，.NET4.0的时候是Task.Factory.StartNew这个静态方法) 使用方法：传入一个Action委托即可。&#xA;Task默认使用线程池，也就是后台线程。当主线程结束时，创建的所有任务都会结束。&#xA;1static void Main(string[] args) 2{ 3 Task.Run(() =&amp;gt; Console.WriteLine(&amp;#34;Foo&amp;#34;)); 4 Console.ReadLine(); // 可以达到阻塞线程的效果。 5 // 如果程序运行完了，由于Task是后台线程，Task也会被关闭。 6} Task.Run返回一个Task对象，可以使用它来监视其过程。Task.Run之后没有调用Start，因为该方法创建的是“热”任务(hot task)；可以通过Task的构造函数创建“冷”任务(cold task)，但很少这样做。&#xA;Wait 调用Task的Wait方法会进行阻塞直到操作完成（相当于调用Thread上的Join方法）&#xA;1static void Main(string[] args) 2{ 3 Task task = Task.Run(() =&amp;gt; 4 { 5 Thread.Sleep(3000); 6 Console.WriteLine(&amp;#34;Foo&amp;#34;); 7 }); //创建一个“热任务” 8 9 Console.WriteLine(task.IsCompleted); //False 10 11 task.Wait(); //阻塞至task完成操作 12 13 Console.WriteLine(task.IsCompleted); //True 14 15 // False 16 // Foo 17 // True 18} Wait也可以指定一个超时时间和取消令牌来提前结束等待。</description>
+    </item>
+    <item>
+      <title>C# 线程</title>
+      <link>https://www.zhhuu.top/posts/csharp-thread/</link>
+      <pubDate>Fri, 25 Mar 2022 11:31:09 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/csharp-thread/</guid>
+      <description>Thread 线程 一个可执行路径，独立于其它线程执行。&#xA;线程被抢占 线程的执行与另外一个线程上代码的执行交织的那一点。&#xA;线程的属性&amp;amp;特性 线程一旦开始执行，IsAlive为true；线程结束变成false 线程结束的条件：线程构造函数传入的委托执行结束 线程一旦结束，无法重启 每个线程都有Name属性，通常用于调试。Name只能设置一次，更改会抛出异常。 静态的Thread.CurrentThread属性返回当前执行的线程。 Join 调用Join方法，可以等待另一个线程结束。&#xA;1Thread t = new Thread(Go); 2t.Start(); //开始线程 3t.Join(); //等待线程执行完成 4Console.WriteLine(&amp;#34;Thread t has ended!&amp;#34;); //线程结束 5 6static void Go() //线程构造函数传入的委托 7{ 8 for (int i = 0; i &amp;lt; 1000; i++) 9 Console.Write(&amp;#39;y&amp;#39;); 10} 添加超时 调用Join的时候，可以设置一个超时，可以使用毫秒或者TimeSpan 如果返回true，线程结束；如果超时，返回false&#xA;1bool IsTerminated = thread1.Join(2000); //等待2秒后线程是否执行结束 Sleep Thread.Sleep()方法会暂停当前的线程，并等待一段时间。可以是毫秒或者TimeSpan&#xA;1Thread.Sleep(500); //线程休眠500ms Thread.Sleep(0)会导致线程立即放弃当前的时间片，自动将CPU移交给其它线程。 Thread.Yield()做同样的事情，但是它只会把执行交给同一处理器上的其它线程。 当等待Sleep或Join的时候，线程处于阻塞的状态。 阻塞：正在等待某一事件发生，根据原因可设置多个阻塞队列&#xA;❔ 如果在代码中任何地方插入Thread.Yield()就破坏了程序，程序几乎肯定会有bug&#xA;阻塞 线程的执行由于某种原因导致暂停。 可以通过ThreadState属性判断线程是否处于被阻塞的状态。&#xA;ThreadState ThreadState是一个flags enum(可以有多个枚举值)，通过**按位**的形式可以合并数据的选项。</description>
+    </item>
+    <item>
+      <title>进程管理（操作系统）</title>
+      <link>https://www.zhhuu.top/posts/multi-threading-hardware/</link>
+      <pubDate>Tue, 22 Mar 2022 23:13:13 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/multi-threading-hardware/</guid>
+      <description>操作系统方面的进程管理&#xA;进程 进程是一个可并发执行的具有独立功能的程序关于某个数据集合的一次执行过程，是操作系统进行资源分配和保护的基本单位。进程是程序在处理机上的一次执行过程。&#xA;动态性：创建👉产生；调度👉执行；得不到资源👉阻塞；撤销👉消亡 并发性：多个进程可同时存在于内存中，在一段时间内同时运行。 独立性：独立获得资源的基本单位 异步性：各进程按各自独立的不可预知的速度执行 交往性（制约性）：进程至今啊相互制约，互斥地使用某些资源、相关进程之间同步、通信等。 进程的静态描述 进程控制块：反映了进程的动态特征。 程序段：能被调度程序选中，并在CPU上执行的程序代码段 数据段：进程对应的原始数据、中间或最终数据 进程控制块 进程控制块 PCB(Process Control Block)&#xA;是操作系统为了管理进程设置的一个数据结构，用于记录和描述进程。 系统利用PCB控制和管理进程。一个进程只有一个PCB，PCB是进程是否存在的唯一标记，是系统感知进程存在的唯一标志。 进程与PCB一一对应。 PCB包含如下信息：&#xA;描述信息：ID、进程组关系（父进程、子进程） 控制信息：状态、优先级、外存地址、运行同级信息等 资源管理信息：指针、占用内存大小等 CPU现场保护结构：当前进程的执行被打断，储存进程现场数据 PCB组织方式：线性、链接（链表）、索引&#xA;进程上下文 操作系统中，把进程物理实体和支持进程运行的环境合称为进程上下文。 系统调度新进程时，新老进程的上下文将进行切换。&#xA;进程的状态 进程的三种基本状态&#xA;就绪态：已经得到除了CPU以外的其它资源 运行态：占用CPU 阻塞态：正在等待某一事件发生 进程的控制 fork()：进程创建。调用者用fork()建立一个子进程和自己独立并发地运行。创建的子进程基本拷贝父进程的上下文（正文段（代码）共享） fork()返回值为-1：进程创建不成功 fork()返回值大于0：在父进程的上下文中，fork()返回值为子进程标识号 fork()返回值等于0：在子进程的上下文中。 wait()：进程挂起等待（封锁）。调用者进入封锁状态等待它的子进程终止。 exit()：进程终止。调用者将终止自己，并解除父进程的封锁（wait()）。 execvp(filename,argp)：进程上下文更换。用文件名filename所指定的可执行文件来替换当前进程上下文中的程序和数据部分，并转入执行。 常见代码段 循环创建线程。如果创建不成功（返回值为1），则执行;语句&#xA;1while((i=fork()) == -1); 创建子线程。父线程和子线程将（将开始）同时在这里执行。&#xA;1i=fork(); 判断现在执行的是父线程还是子线程&#xA;1if (i==0) // 子线程 2else // 父线程（i为大于0的进程id） 线程 线程和进程的区别和联系 线程是进程的一部分，它是进程内的一个执行体。 引入线程的操作系统中，资源分配的对象是进程，而不是线程。 引入线程的操作系统中，调度的基本单位是线程而不是进程。 进程之间可以并发执行，而一个进程中的这些线程之间亦可以并发执行。 进程调度，系统需要进行进程上下文的切换，需要大量的系统开销。 线程切换比进程切换快得多。 从一个进程的线程向另一个进程的线程切换，将引起线程的上下文切换。 从安全的角度来看，线程不如进程安全。 线程控制块 在管理线程的时候，同样也使用一种数据结构，称之为线程控制块TCB(Thread Control Block) 线程控制块包含如下信息：</description>
+    </item>
+    <item>
+      <title>LINQ笔记&amp;实例</title>
+      <link>https://www.zhhuu.top/posts/linq/</link>
+      <pubDate>Sat, 12 Mar 2022 16:29:27 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/linq/</guid>
+      <description>LINQ：语言继承查询&#xA;限制运算符 Where where语句的基本示例&#xA;1int[] numbers = {5,4,1,3,9,8,6,7,2,0}; 2var lowNums = from num in numbers 3 where num &amp;lt; 5 4 select num; // 只选择小于5的数字 筛选符合属性条件的元素&#xA;1var soldOutProducts = from prod in products 2 where prod.UnitsInStock == 0 3 select prod; // 从集合中选出符合属性的元素 用多个条件筛选元素&#xA;1var expensiveInStockProducts = from prod in products 2 where prod.UnitsInStock &amp;gt; 0 &amp;amp;&amp;amp; prod.UnitPrice &amp;gt; 3.00M 3 select prod; // 从集合中选出符合上述两个条件的元素 基于元素在列表中位置的筛选&#xA;1string[] digits = {&amp;#34;zero&amp;#34;, &amp;#34;one&amp;#34;, &amp;#34;two&amp;#34;, &amp;#34;three&amp;#34;, &amp;#34;four&amp;#34;, &amp;#34;five&amp;#34;, &amp;#34;six&amp;#34;, &amp;#34;seven&amp;#34;, &amp;#34;eight&amp;#34;, &amp;#34;nine&amp;#34;}; 2var shortDigits = digits.</description>
+    </item>
+    <item>
+      <title>C#异步介绍</title>
+      <link>https://www.zhhuu.top/posts/csharp-async/</link>
+      <pubDate>Sun, 08 Apr 2018 21:14:06 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/csharp-async/</guid>
+      <description>创建多线程？太麻烦了！来试试更快更便捷的异步。程序无须按照代码顺序自上而下的执行。&#xA;什么是异步编程 什么是异步编程呢？举个简单的例子：&#xA;1using System.Net.Http; 2using System.Threading.Tasks; 3using static System.Console; 4 5namespace Core 6{ 7 class Async 8 { 9 static void Main() 10 { 11 Start(); 12 End(); 13 } 14 15 static void Wait()=&amp;gt;WriteLine(&amp;#34;waiting...&amp;#34;); 16 static void End()=&amp;gt;WriteLine(&amp;#34;end...&amp;#34;); 17 static int Start() 18 { 19 WriteLine(&amp;#34;start...&amp;#34;); 20 HttpClient client = new HttpClient(); 21 Waiting(); 22 var result = client.GetStringAsync(&amp;#34;https://www.visualstudio.com/&amp;#34;); 23 string str = result.Result; 24 return str.Length; 25 } 26 } 27} 上面这段代码中，Main方法中的代码是按照自上而下的顺序执行的。网络状况不佳时，Start() 方法是比较耗时 （注意，这里在Start方法中调用了异步方法GetStringAsync，但该方法在此处是以同步方式执行的，具体原因下文会进行说明） ，在 Start() 方法执行完毕之前，整个程序处于阻塞状态。而异步编程可以很好的解决这个问题，一句简单的话来概括异步编程就是，程序无须按照代码顺序自上而下的执行。</description>
+    </item>
+  </channel>
+</rss>

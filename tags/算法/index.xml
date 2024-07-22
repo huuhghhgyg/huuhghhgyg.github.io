@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>算法 on Hikaru&#39;s Blog</title>
+    <link>https://www.zhhuu.top/tags/%E7%AE%97%E6%B3%95/</link>
+    <description>Recent content in 算法 on Hikaru&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 13 Jul 2022 12:07:30 +0000</lastBuildDate>
+    <atom:link href="https://www.zhhuu.top/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用Python编写遗传算法</title>
+      <link>https://www.zhhuu.top/posts/ga/</link>
+      <pubDate>Wed, 13 Jul 2022 12:07:30 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/ga/</guid>
+      <description>算法设计，附源码&#xA;概述 当涉及非线性规划问题或者难以在短时间内求得满意解的线性规划问题，可以通过求其近似解（或满意解）而非精确解。使用遗传算法求解近似解所消耗的时间远少于求解精确解，多数时候近似解的效果都可以接受。 遗传算法的优势体现在：在小规模问题上，遗传算法求解得到的通常是精确解；而在大规模问题上，遗传算法通常可以通过较短的时间求得精确解。 同样的问题通过遗传算法求解近似解和线性规划求解精确解，遗传算法花费的时间显著短于精确算法。&#xA;算法 时长 结果(此处结果越小越好） 遗传算法 123s (2m03s) 371.06 精确算法 201s (3m21s) 367.07 模型描述 目标函数 $minf=P\sum_{k=1}^K\sum_{i=1}^N\sum_{j=1}^Nx_{kij}d_{ij}+\frac{P_a}{Q}\sum_{i=1}^N\sum_{j=1}^N(y_{ij}+z_{ij})x_{kij}d_{ij}+P_m\sum_{k=1}^K\sum_{i=1}^N\sum_{j=M}^Nx_{kij}q_j$&#xA;约束方程 $$ s.t.\left\{ \begin{array}{**lr**} \sum_{k=1}^K\sum_{i=1}^Nx_{kij}=1 &amp; j=2,3,...,N \\ \sum_{j=1}^Nx_{kij} = \sum_{j=1}^Nx_{kij} &amp; i=1,2,...,N;k=1,2,...,K \\ \sum_{j=1}^Nx_{k1j} \le 1 &amp; k=1,2,...,K \\ y_{ij}+z_{ij} \le Q\sum_{k=1}^Kx_{kij} &amp; i,j=2,3,...,N \\ \sum_{i=1}^N\sum_{j=1}^Nx_{kij}d_{ij} \leq D &amp; k=1,2,...,K \\ \sum_{j=1}^Nz_{ij}-\sum_{j=1}^Nz_{ij}=p_i &amp; i=2,3,...,N \\ \sum_{i=1}^Nx_{kii}=0 &amp; j=1,2,...,N \\ \sum_{i=2}^N\sum_{j=1}^Nx_{kij} \le V &amp; k=1,2,...,K \\ y_{ij} \ge 0 ,z_{ij} \ge 0 &amp; i,j=1,2,.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>C# 线程 | Hikaru&#39;s Blog</title>
+
+<meta name="description" content="">
+      <link rel="stylesheet" href="/css/main.min.4dc2e2ce92c37525f4749bdb618a9af11becbea894cd27cf53e52755187d6dbb.css" integrity="sha256-TcLizpLDdSX0dJvbYYqa8RvsvqiUzSfPU&#43;UnVRh9bbs=" crossorigin="anonymous">
+
+<link rel="icon" type="image/svg+xml" href="https://www.zhhuu.top/favicon.svg"> 
+<link rel="icon" type="image/x-icon" href="https://www.zhhuu.top/favicon.ico"> 
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.zhhuu.top/favicon.png"> 
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.zhhuu.top/favicon-32.png"> 
+<link rel="icon" type="image/png" sizes="64x64" href="https://www.zhhuu.top/favicon-64.png"> 
+
+</head>
+<body>
+  <header class="py-6 border-b"><div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col">
+	<div class="flex items-center">
+		<div class="flex items-center">
+			<button class="flex items-center space-x-2 rounded-full border py-1 pr-[5px] pl-3 group bg-zinc-100 hover:bg-zinc-200 toggle-button" data-target="menu-bar">
+				<svg width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+					<path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
+				</svg>
+				<span class="bg-blue-500 fill-white rounded-full overflow-hidden h-8 w-8">
+					<img src="/favicon.png" alt="site icon" class="mr-2 object-cover">
+				</span>
+			</button>
+			<div class="relative rounded-full py-1.5 px-6 bg-zinc-100 hover:bg-zinc-200 text-xl font-bold uppercase mx-2">
+				<h2><a class="before:content-[''] before:z-10 before:top-0 before:right-0 before:left-0 before:bottom-0 before:absolute before:pointer-events-auto" href="https://www.zhhuu.top/">Hikaru&#39;s Blog</a></h2>
+			</div>
+		</div>
+		<div class="flex items-center ml-auto">
+			<button id="search-btn" class="flex items-center rounded-full p-3 bg-zinc-100 hover:bg-zinc-200 toggle-button" data-target="search-bar">
+				<svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+					<path id="path1" class="transition-all ease-linear" d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+					<path id="path2" class="transition-all ease-linear hidden" d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"></path>
+				</svg>
+			</button>
+		</div>
+	</div>
+  <nav id="menu-bar" class="block mt-3 close">
+    <ul class="flex items-center flex flex-nowrap whitespace-nowrap overflow-x-auto space-x-4">
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/">Home</a>
+    </li>
+    <li class="my-2">
+      <a aria-current="true" class="ancestor" href="/posts/">Posts</a>
+    </li>
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/tags/">Tags</a>
+    </li>
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/friend/">Friends</a>
+    </li>
+    </ul>
+  </nav>
+
+
+
+<div id="search-bar" class="block mt-3 relative z-50 close">
+    <form id="search" class="flex items-stretch">
+      <input id="searchInput" tabindex="0"
+        class="w-full block px-6 py-2 rounded-full focus:outline-none border border-zinc-200" type="text"
+        placeholder="Search...">
+    </form>
+
+    <div id="fastSearch" class="absolute left-0 right-0 mt-2 bg-white shadow-sm rounded-xl z-50 overflow-x-hidden">
+      <ul id="searchResults" class="divide-y divide-gray-200 z-50">
+      </ul>
+    </div>
+  </div>
+
+  <div id="overlay" class="fixed inset-0 bg-black opacity-50 hidden z-40"></div>
+
+<script src="/js/fuse.min.js"></script> 
+<script src="/js/fastsearch.js"></script></div></header>
+  <main class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8"><div id="breadcrumb" class="max-w-7xl mx-auto py-8">
+	<ul class="flex space-x-4 text-sm text-zinc-500">
+		<li class="after:content-['❯'] after:ml-4 after:opacity-30 last:after:content-none uppercase">
+			<a href="https://www.zhhuu.top/">Hikaru&#39;s Blog</a>
+		</li>
+		<li class="after:content-['❯'] after:ml-4 after:opacity-30 last:after:content-none uppercase">
+			<a href="https://www.zhhuu.top/posts/">Posts</a>
+		</li>
+	</ul>
+</div><div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+
+  <article class="md:col-span-2 prose lg:prose-lg">
+
+    <header class="not-prose">
+      
+      <h1 id="title" class="text-4xl font-bold leading-normal">C# 线程</h1>
+
+      <div id="lead" class="my-6">
+
+        <p class="font-bold"> </p>
+
+      </div>
+      
+      <div id="writer" class="flex items-center space-x-4">
+
+        <img class="w-12 h-12 bg-black rounded-full" src="https://www.zhhuu.top/img/favicon.jpg" alt="huuhghhgyg avatar" width="1033" height="1033">
+
+        <ul class="flex items-center space-x-4 flex-nowrap whitespace-nowrap overflow-x-auto">
+          
+          <li class="font-semibold my-2">huuhghhgyg</li>
+          
+          <li class="before:content-['•'] before:mr-2 before:opacity-50 my-2"><time datetime="2022-03-25T11:31:09&#43;00:00">March 25, 2022</time>
+          </li>
+
+          <li class="before:content-['•'] before:mr-2 before:opacity-50 my-2">
+            2 min read
+          </li>
+
+        </ul>
+
+      </div>
+      
+    </header>
+
+<figure id="featureimage" class="rounded-xl aspect-video">
+
+    
+
+    
+
+    
+    <img class="rounded-lg w-full h-full object-cover object-center" src="/img/random/material-8.webp" alt="C# 线程">
+</figure>
+
+    <div id="content" class="mb-14">
+      <h1 id="thread-线程">Thread 线程</h1>
+<p>一个可执行路径，独立于其它线程执行。</p>
+<h2 id="线程被抢占">线程被抢占</h2>
+<p>线程的执行与另外一个线程上代码的执行交织的那一点。</p>
+<h2 id="线程的属性特性">线程的属性&amp;特性</h2>
+<ul>
+<li>线程一旦开始执行，<code>IsAlive</code>为<code>true</code>；线程结束变成<code>false</code></li>
+<li>线程结束的条件：线程构造函数传入的委托执行结束</li>
+<li>线程一旦结束，无法重启</li>
+<li>每个线程都有<code>Name</code>属性，通常用于调试。<code>Name</code>只能设置一次，更改会抛出异常。</li>
+<li>静态的<code>Thread.CurrentThread</code>属性返回当前执行的线程。</li>
+</ul>
+<h2 id="join">Join</h2>
+<p>调用<code>Join</code>方法，可以<strong>等待另一个线程结束。</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 1</span><span>Thread t = <span style="color:#cba6f7">new</span> Thread(Go);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 2</span><span>t.Start(); <span style="color:#6c7086;font-style:italic">//开始线程</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 3</span><span>t.Join(); <span style="color:#6c7086;font-style:italic">//等待线程执行完成</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 4</span><span>Console.WriteLine(<span style="color:#a6e3a1">&#34;Thread t has ended!&#34;</span>); <span style="color:#6c7086;font-style:italic">//线程结束</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 5</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 6</span><span><span style="color:#f38ba8">static</span> <span style="color:#cba6f7">void</span> Go() <span style="color:#6c7086;font-style:italic">//线程构造函数传入的委托</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 7</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 8</span><span>    <span style="color:#cba6f7">for</span> (<span style="color:#f38ba8">int</span> i = <span style="color:#fab387">0</span>; i &lt; <span style="color:#fab387">1000</span>; i++)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 9</span><span>        Console.Write(<span style="color:#a6e3a1">&#39;y&#39;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">10</span><span>}
+</span></span></code></pre></div><h3 id="添加超时">添加超时</h3>
+<p>调用<code>Join</code>的时候，可以设置一个超时，可以使用毫秒或者<code>TimeSpan</code>
+如果返回<code>true</code>，线程结束；如果超时，返回<code>false</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span><span style="color:#f38ba8">bool</span> IsTerminated = thread1.Join(<span style="color:#fab387">2000</span>); <span style="color:#6c7086;font-style:italic">//等待2秒后线程是否执行结束</span>
+</span></span></code></pre></div><h2 id="sleep">Sleep</h2>
+<p><code>Thread.Sleep()</code>方法会暂停当前的线程，并等待一段时间。可以是毫秒或者<code>TimeSpan</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span>Thread.Sleep(<span style="color:#fab387">500</span>); <span style="color:#6c7086;font-style:italic">//线程休眠500ms</span>
+</span></span></code></pre></div><ul>
+<li><code>Thread.Sleep(0)</code>会导致线程立即放弃当前的时间片，自动将CPU移交给其它线程。</li>
+<li><code>Thread.Yield()</code>做同样的事情，但是它只会把执行交给同一处理器上的其它线程。</li>
+<li>当等待Sleep或Join的时候，线程处于阻塞的状态。</li>
+</ul>
+<blockquote>
+<p>阻塞：正在等待某一事件发生，根据原因可设置多个阻塞队列</p>
+</blockquote>
+<blockquote>
+<p>❔ 如果在代码中任何地方插入Thread.Yield()就破坏了程序，程序几乎肯定会有bug</p>
+</blockquote>
+<h1 id="阻塞">阻塞</h1>
+<p>线程的执行由于某种原因导致暂停。
+可以通过<code>ThreadState</code>属性判断线程是否处于被阻塞的状态。</p>
+<h2 id="threadstate">ThreadState</h2>
+<p><code>ThreadState</code>是一个flags enum(可以有多个枚举值)，通过**<a href="#%E4%BD%8D%E6%93%8D%E4%BD%9C">按位</a>**的形式可以合并数据的选项。</p>
+<blockquote>
+<p>枚举值是2^n</p>
+</blockquote>
+<h3 id="举例">举例</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">状态（只列举部分状态）</th>
+<th>枚举值</th>
+<th>二进制枚举值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>ThreadState.Unstarted</code></td>
+<td>8</td>
+<td>1000 (2^3)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>ThreadState.Stopped</code></td>
+<td>16</td>
+<td>10000 (2^4)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>ThreadState.WaitSleepJoin</code></td>
+<td>32</td>
+<td>100000 (2^5)</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span><span style="color:#f38ba8">var</span> state = ThreadState.Unstarted | ThreadState.Stopped | ThreadState.WaitSleepJoin;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">2</span><span><span style="color:#6c7086;font-style:italic">// 得到的状态为xxx000</span>
+</span></span></code></pre></div><p>通过ThreadState判断线程是否处于被阻塞的状态</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span><span style="color:#f38ba8">bool</span> blocked = (someThread.ThreadState &amp; ThreadState.WaitSleepJoin) != <span style="color:#fab387">0</span>;
+</span></span></code></pre></div><p><img src="thread_state.webp" alt="线程状态图"></p>
+<p>常用的线程状态</p>
+<ul>
+<li>Unstarted：未开始</li>
+<li>Running：运行</li>
+<li>WaitSleepJoin：阻塞</li>
+<li>Stopped：停止</li>
+</ul>
+<p>剥离出这四种状态</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span><span style="color:#f38ba8">public</span> <span style="color:#f38ba8">static</span> ThreadState SimpleThreadState(ThreadState ts)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">2</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">3</span><span>    <span style="color:#cba6f7">return</span> ts &amp; (ThreadState.Unstarted |
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">4</span><span>                ThreadState.WaitSleepJoin |
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">5</span><span>                ThreadState.Stopped);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">6</span><span>}
+</span></span></code></pre></div><h1 id="解除阻塞">解除阻塞</h1>
+<p>四种情况</p>
+<ul>
+<li>阻塞条件被满足</li>
+<li>操作超时（如果设置了超时）</li>
+<li><code>Thread.Interrupt()</code>进行打断</li>
+<li><code>Thread.Abort()</code>进行中止</li>
+</ul>
+<h1 id="异常处理">异常处理</h1>
+<p>创建线程时在作用范围内的try/catch/finally块，在线程开始执行后就与线程无关了。</p>
+<p>在WPF、WinForm里，可以订阅全局异常处理事件：</p>
+<ul>
+<li><code>Application.DispatcherUnhaandledException</code></li>
+<li><code>Application.ThreadException</code></li>
+</ul>
+<p>主线程（UI线程）上有未处理的异常，会触发以上两个线程；非UI线程不会触发以上两个线程。</p>
+<p>任何线程有任何未处理的异常都会触发：</p>
+<ul>
+<li>AppDomain.CurrentDomain.UnhandledException</li>
+</ul>
+<h1 id="前台和后台线程">前台和后台线程</h1>
+<p>默认情况下，手动创建的线程是前台线程。</p>
+<ul>
+<li>只要由前台线程在运行，应用程序就会一直处于活动状态，后台线程却不行。</li>
+<li>一旦所有的前台线程停止，那么应用程序就停止，任何的后台线程也会突然终止。
+可以通过<code>IsBackground</code>判断线程是否后台线程。</li>
+</ul>
+<h1 id="线程优先级">线程优先级</h1>
+<p>线程的优先级（<code>Thread</code>的<code>Priority</code>属性）决定了相对于操作系统中其它活跃线程所占的执行时间。
+优先级：<code>enum ThreadPriority {Lowest, BelowNormal, Normal, AboveNormal, Highest}</code></p>
+<h1 id="信号">信号</h1>
+<p>有时候需要让线程一直处于等待的状态，直至接收到其它线程发来的通知。这就叫做signaling（发送信号）
+最简单的信号结构为<code>ManualResetEvent</code>，调用其上面的<code>WaitOne()</code>方法会阻塞当前的线程，直到另一个线程通过调用<code>Set()</code>方法来开启信号。</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 1</span><span><span style="color:#f38ba8">var</span> signal = <span style="color:#cba6f7">new</span> ManualResetEvent(<span style="color:#fab387">false</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 2</span><span><span style="color:#cba6f7">new</span> Thread(()=&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 3</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 4</span><span>    Console.WriteLine(<span style="color:#a6e3a1">&#34;Waiting for signal...&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 5</span><span>    signal.WaitOne();
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 6</span><span>    signal.Dispose();
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 7</span><span>    Console.WriteLine(<span style="color:#a6e3a1">&#34;Got signal!&#34;</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 8</span><span>}).Start();
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 9</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">10</span><span>Thread.Sleep(<span style="color:#fab387">3000</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">11</span><span>signal.Set(); <span style="color:#6c7086;font-style:italic">//打开信号（线程）</span>
+</span></span></code></pre></div><p>调用完<code>Set()</code>之后，信号会处于“打开”状态，可以通过调用<code>Reset()</code>方法将其关闭。</p>
+<h1 id="富客户端应用程序的线程">富客户端应用程序的线程</h1>
+<p>在有UI的程序中，如果在主线程执行耗时的操作，就会导致整个程序无响应。针对这种耗时的操作，一种流行的做法是启用一个worker线程，执行完操作后再将结果更新到UI。
+富客户端应用的线程模型：</p>
+<ul>
+<li>
+<p>UI元素和控件只能从创建它们的线程来进行访问（通常是主UI线程）</p>
+</li>
+<li>
+<p><strong>当想从worker线程更新UI的时候，必须把请求交给UI线程</strong>
+如：在WPF中，在元素的Dispatcher对象上调用<code>BeginInvoke</code>或<code>Invoke</code>；在WinForm中，调用控件的<code>BeginInvoke</code>或<code>Invoke</code>；UWP中，调用Dispatcher对象上的<code>RunAsync</code>或<code>Invoke</code>。这些方法都接收一个委托。</p>
+</li>
+<li>
+<p><code>BeginInvoke</code>或<code>RunAsync</code>通过将委托排队到UI线程的消息队列来执行工作。</p>
+</li>
+<li>
+<p><code>Invoke</code>也会执行相同的操作，但随后会进行阻塞，直到UI线程读取并处理消息。所以<code>Invoke</code>允许从方法中获取返回值。</p>
+</li>
+</ul>
+<p>从其它线程直接更改UI会引发<code>System.InvalidOperationException</code>错误（无法更新主线程上的UI）
+应该调用<code>Dispatcher.BeginInvoke()</code>，把委托排队发送到UI线程的消息队列（处理键盘鼠标事件、定时事件等）</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span>Action action = () =&gt; MessageText.Text = message; <span style="color:#6c7086;font-style:italic">// 委托</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">2</span><span>Dispatcher.BeginInvoke(action); <span style="color:#6c7086;font-style:italic">// 将委托发送到消息队列</span>
+</span></span></code></pre></div><h1 id="线程池">线程池</h1>
+<p>线程池可以通过预先创建一个可循环使用线程的池来减小类似“创建一个新的局部变量栈(stack)”这样的开销。
+线程池允许在不被线程启动的开销淹没的情况下运行短期操作。（操作事件没有线程启动的时间长）
+线程池对于高效的并行编程和细粒度的并发是必不可少的。</p>
+<p>使用线程池需要注意的几点：</p>
+<ul>
+<li>不可以设置池线程的<code>Name</code></li>
+<li>池线程都是后台线程</li>
+<li>阻塞池线程可使性能降级</li>
+<li>可以自由地更改池线程的优先级，当它释放回池的时候优先级将还原为正常状态。</li>
+<li>可以通过<code>Thread.CurrentThread.IsThreadPoolThread</code>属性判断是否执行在池线程上。</li>
+</ul>
+<p>进入线程池
+最简单的、显式地在线程池运行代码地方式就是<code>Task.Run</code></p>
+<h1 id="参考资料">参考资料</h1>
+<h2 id="位操作">位操作</h2>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&amp;</td>
+<td>按位与</td>
+</tr>
+<tr>
+<td>\</td>
+<td>按位或</td>
+</tr>
+<tr>
+<td>^</td>
+<td>按位异或</td>
+</tr>
+<tr>
+<td>&laquo;</td>
+<td>左移</td>
+</tr>
+<tr>
+<td>&raquo;</td>
+<td>右移</td>
+</tr>
+</tbody>
+</table>
+<h3 id="按位与和按位或">按位与(&amp;)和按位或(|)</h3>
+<p>按位与(&amp;)和按位或(|)运算规则同与(&amp;&amp;)和或(|)，不同在于按位运算是按照二进制位运算。</p>
+<p><strong>例如：一个二进制数<code>1101 1001</code>，只要它的后四位</strong>
+只需要进行如下操作：<code>1101 1001 &amp; 0000 1111</code>即可。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">数值</td>
+<td style="text-align:left"><code>1101 1001</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&amp; 与运算</td>
+<td style="text-align:left"><code>0000 1111</code></td>
+</tr>
+<tr>
+<td style="text-align:left">结果</td>
+<td style="text-align:left"><code>0000 1001</code></td>
+</tr>
+<tr>
+<td style="text-align:left">按位或运算同理</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="按位异或">按位异或(^)</h3>
+<p>只要参与运算的双方不同，结果为1，否则为0</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">运算</th>
+<th style="text-align:left">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">0^0</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">0^1</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left">1^0</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left">1^1</td>
+<td style="text-align:left">0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="左移">左移</h3>
+<p>将目标二进制数字向左/右移动相应的位数
+换算为十进制为原来的1/2
+左移补0;
+<code>1011 1111 &lt;&lt; 1 == 0111 1110</code></p>
+<h3 id="右移">右移</h3>
+<p>需要看符号位：负数补1，正数补0
+换算为十进制为原来的1/2
+<code>1011 1111 &gt;&gt; 1 == 0101 1111</code></p>
+<blockquote>
+<p>位移运算：左乘右除</p>
+</blockquote>
+<h2 id="上下文切换">上下文切换</h2>
+<p>当线程阻塞或解除阻塞时，操作系统将执行上下文切换。</p>
+<ul>
+<li>I/O-bound 花费大部分时间等待某件事发生的操作。</li>
+<li>Compute-bound或CPU-bound 花费大部分事件执行CPU密集型工作的操作</li>
+</ul>
+<h1 id="引用">引用</h1>
+<p><a href="https://docs.microsoft.com/zh-cn/dotnet/api/system.threading.threadstate?view=net-6.0">ThreadState 枚举 (System.Threading) | Microsoft Docs</a></p>
+
+
+    <ul id="taxonomy" class="not-prose flex items-center space-x-4 flex-nowrap whitespace-nowrap overflow-x-auto">
+
+      <li class="font-semibold my-4">Tags:</li>
+        <li ><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/%E7%BC%96%E7%A8%8B/">编程</a></li>
+        <li ><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="/tags/c%23/">C#</a></li>
+    </ul>
+
+      
+
+    </div>
+
+    <footer id="content-footer" class="not-prose">
+
+      
+      
+
+      <div id="author-box" class="my-8 md:my-14 border p-8 bg-zinc-100 rounded-2xl">
+
+        <img class="w-20 h-20 rounded-full" src="/img/favicon.jpg" alt="huuhghhgyg">
+
+        <h2 class="text-xl font-bold my-4">Writter by : huuhghhgyg</h2>
+
+        <p >Never Settle</p>
+
+        
+        
+        
+      </div>
+
+      <div id="related-post" class="">
+
+        <h2 class="text-xl md:text-2xl font-bold mb-6 md:mb-8">Recommended for You</h2><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><article class="relative group bg-zinc-100 hover:bg-blue-100 rounded-3xl">
+	
+	<a class="insert-link" href="https://www.zhhuu.top/posts/xaml-summary/"></a>
+
+	<figure class="w-full aspect-video overflow-hidden rounded-3xl"><img class="object-cover group-hover:scale-105 transition duration-500 cursor-pointer object-center w-full h-full" src="https://www.zhhuu.top/img/xaml_huc284e228a0fe42d4686d169967b3dd24_47304_750x0_resize_q75_h2_box_2.webp" alt="Xaml学习小结" width="750" height="422">
+
+	  </figure>
+
+	<div class="p-6">
+
+		<time datetime="2022-03-16T22:08:15&#43;00:00">Mar 16, 2022</time>
+
+		<h3 class="my-4 text-2xl font-bold">Xaml学习小结</h3>
+
+		<p class="text-normal leading-normal text-zinc-500 line-clamp-2"></p>
+
+	</div>
+</article><article class="relative group bg-zinc-100 hover:bg-blue-100 rounded-3xl">
+	
+	<a class="insert-link" href="https://www.zhhuu.top/posts/linq/"></a>
+
+	<figure class="w-full aspect-video overflow-hidden rounded-3xl"><img class="object-cover group-hover:scale-105 transition duration-500 cursor-pointer object-center w-full h-full" src="https://www.zhhuu.top/img/query_hu33fa0e5a0622b32c3d8e585165ab35a5_26042_750x0_resize_q75_h2_box_2.webp" alt="LINQ笔记&amp;实例" width="750" height="563">
+
+	  </figure>
+
+	<div class="p-6">
+
+		<time datetime="2022-03-12T16:29:27&#43;00:00">Mar 12, 2022</time>
+
+		<h3 class="my-4 text-2xl font-bold">LINQ笔记&amp;实例</h3>
+
+		<p class="text-normal leading-normal text-zinc-500 line-clamp-2"></p>
+
+	</div>
+</article>
+          
+        </div>
+      </div>
+
+    </footer>
+
+  </article>
+
+  
+  <aside class="md:col-span-1"><div class="lg:sticky lg:top-8">
+
+	
+      
+
+
+
+
+
+
+<div class="toc rounded-2xl p-4 bg-zinc-100 mb-10">
+    <div class="page-header font-bold text-lg pb-2">目录</div>
+    <div class="toc-nav">
+        <ul class="nav">
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link" href="#thread-%e7%ba%bf%e7%a8%8b">
+                    1. Thread 线程
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e7%ba%bf%e7%a8%8b%e8%a2%ab%e6%8a%a2%e5%8d%a0">
+                    1.1. 线程被抢占
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e7%ba%bf%e7%a8%8b%e7%9a%84%e5%b1%9e%e6%80%a7%e7%89%b9%e6%80%a7">
+                    1.2. 线程的属性&amp;特性
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#join">
+                    1.3. Join
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e6%b7%bb%e5%8a%a0%e8%b6%85%e6%97%b6">
+                    1.3.1. 添加超时
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#sleep">
+                    1.4. Sleep
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link" href="#%e9%98%bb%e5%a1%9e">
+                    2. 阻塞
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#threadstate">
+                    2.1. ThreadState
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e4%b8%be%e4%be%8b">
+                    2.1.2. 举例
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link" href="#%e8%a7%a3%e9%99%a4%e9%98%bb%e5%a1%9e">
+                    3. 解除阻塞
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link" href="#%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86">
+                    4. 异常处理
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link" href="#%e5%89%8d%e5%8f%b0%e5%92%8c%e5%90%8e%e5%8f%b0%e7%ba%bf%e7%a8%8b">
+                    5. 前台和后台线程
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link" href="#%e7%ba%bf%e7%a8%8b%e4%bc%98%e5%85%88%e7%ba%a7">
+                    6. 线程优先级
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link" href="#%e4%bf%a1%e5%8f%b7">
+                    7. 信号
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link" href="#%e5%af%8c%e5%ae%a2%e6%88%b7%e7%ab%af%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e7%9a%84%e7%ba%bf%e7%a8%8b">
+                    8. 富客户端应用程序的线程
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link" href="#%e7%ba%bf%e7%a8%8b%e6%b1%a0">
+                    9. 线程池
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link" href="#%e5%8f%82%e8%80%83%e8%b5%84%e6%96%99">
+                    10. 参考资料
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e4%bd%8d%e6%93%8d%e4%bd%9c">
+                    10.1. 位操作
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e6%8c%89%e4%bd%8d%e4%b8%8e%e5%92%8c%e6%8c%89%e4%bd%8d%e6%88%96">
+                    10.1.3. 按位与(&amp;)和按位或(|)
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e6%8c%89%e4%bd%8d%e5%bc%82%e6%88%96">
+                    10.1.4. 按位异或(^)
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e5%b7%a6%e7%a7%bb">
+                    10.1.5. 左移
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link" href="#%e5%8f%b3%e7%a7%bb">
+                    10.1.6. 右移
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e4%b8%8a%e4%b8%8b%e6%96%87%e5%88%87%e6%8d%a2">
+                    10.2. 上下文切换
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link" href="#%e5%bc%95%e7%94%a8">
+                    11. 引用
+                </a>
+            </li>
+        
+        </ul>
+    </div>
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const tocLinks = document.querySelectorAll(".toc-nav .nav-link");
+    const headers = Array.from(tocLinks).map(link => document.querySelector(decodeURI(link.getAttribute("href"))));
+    const offset = 10; 
+    
+    if (tocLinks.length === 0) {
+        return;
+    }
+
+    function updateActiveLink() {
+        let index = headers.findIndex(header => header.getBoundingClientRect().top > offset);
+        if (index === -1) {
+            index = headers.length - 1;
+        } else if (index > 0) {
+            index -= 1;
+        }
+        tocLinks.forEach(link => link.classList.remove("active"));
+        tocLinks[index].classList.add("active");
+    }
+
+    window.addEventListener("scroll", updateActiveLink);
+
+    tocLinks.forEach(link => {
+        link.addEventListener("click", function(event) {
+            event.preventDefault();
+            const targetId = decodeURI(this.getAttribute("href").substring(1));
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+                
+                history.pushState(null, null, `#${targetId}`);
+                setTimeout(updateActiveLink, 100); 
+            }
+        });
+    });
+
+    updateActiveLink(); 
+});
+</script>
+
+    
+
+
+	
+
+	<div class="space-y-6">
+
+		<h2 class="font-bold text-xl mb-8">Recent Post</h2>
+
+		<article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/new-theme/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/new-theme_hu0c1069844488d39e3d981653fdb9672c_552496_250x250_fill_box_smart1_3.png" alt="启用新主题" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">启用新主题</h3>
+	</div>
+</article><article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/lua-microcity/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/MicroCityWorldGrid_hueeb30e2fa18f4d0617e0e9462be0f772_91378_250x250_fill_q75_h2_box_smart1_2.webp" alt="MicroCity内置的LUA函数" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">MicroCity内置的LUA函数</h3>
+	</div>
+</article><article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/ga/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/evolution_huad65e07a071e6dac9af389d1c00f7d4b_297498_250x250_fill_q75_h2_box_smart1_2.webp" alt="使用Python编写遗传算法" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">使用Python编写遗传算法</h3>
+	</div>
+</article><article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/optimization-code/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/optimization-code_hud268f4a32eb0d40a0727452f8945d9dc_278734_250x250_fill_q75_h2_box_smart1_2.webp" alt="优化软件语法" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">优化软件语法</h3>
+	</div>
+</article><article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/sql-basics/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/sql_hu35c510dc12184cf2364d179ea6307c22_25788_250x250_fill_q75_h2_box_smart1_2.webp" alt="SQL入门" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">SQL入门</h3>
+	</div>
+</article>
+		
+	</div>
+
+</div>
+</aside>
+
+</div>
+  
+</main>
+  <footer class="bg-zinc-100 py-10 md:py-14"><div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+
+  <div class="flex flex-wrap space-y-6 mb-4">
+
+    <div class="w-full md:w-3/5 flex flex-col space-y-4 md:pr-8 lg:pr-10">
+
+      <a class="flex items-center group" href="https://www.zhhuu.top/">
+        <img src="/favicon.png" alt="site icon" class="mr-2" width="32" height="32">
+        
+        <span class="text-2xl font-semibold uppercase">Hikaru&#39;s Blog</span>
+      </a>
+
+      <p class="font-semibold">
+        Write with love. Minimalism design.
+      </p>
+
+      <p>Never Settle</p>
+
+    </div>
+
+    <div class="self-center flex flex-col w-full md:w-2/5">
+
+<ul id="social-media" class="flex items-center space-x-4">
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.facebook.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+				<path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.twitter.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.github.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.instagram.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+			</svg>
+		</a>
+	</li>
+</ul>
+
+    </div>
+    
+  </div>
+
+  <div class="my-8">
+    <ul class="flex items-center space-x-4">
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/">Home</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/posts/">Posts</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/tags/">Tags</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/friend/">Friends</a></li>
+      
+    </ul>
+  </div>
+
+  <div class="border-t pt-4">
+
+    <p class="text-sm">Copyright © 2024. All rights reserved. </p>
+
+  </div>
+  
+</div>
+</footer>
+      <script defer src="/js/insertoggle.2f07edcf51c0cba06f691f947fdaeea96d2c85627f30b4b0640a40d5a1bfeb08.js" integrity="sha256-Lwftz1HAy6BvaR&#43;Uf9ruqW0shWJ/MLSwZApA1aG/6wg=" crossorigin="anonymous"></script>
+</body>
+</html>

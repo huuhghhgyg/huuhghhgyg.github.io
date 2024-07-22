@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lua on Hikaru&#39;s Blog</title>
+    <link>https://www.zhhuu.top/tags/lua/</link>
+    <description>Recent content in Lua on Hikaru&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 23 Sep 2022 16:20:36 +0000</lastBuildDate>
+    <atom:link href="https://www.zhhuu.top/tags/lua/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MicroCity内置的LUA函数</title>
+      <link>https://www.zhhuu.top/posts/lua-microcity/</link>
+      <pubDate>Fri, 23 Sep 2022 16:20:36 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/lua-microcity/</guid>
+      <description>物流信息管理课程MicroCity学习笔记&#xA;Lua的小特性：集合 虽然Lua里面把它自己的数组称作table，但是我认为这个数据结构更类似于Python的集合或者json，里面可以存储任何东西，不受结构约束。&#xA;1collection = {{&amp;#34;a&amp;#34;, 1, 2}, &amp;#34;abc&amp;#34;, {2, 3}} 如果需要查询数组的长度，只需要在数组名前面添加#即可得到&#xA;1list = {1, 2, 3, 4, 5} 2for i=1,#list do 3 print(list[i]) 4end Lua的数组（集合）下标从1开始，不同于C类语言的0&#xA;MicroCity的内置函数 为什么要写这个？因为MicroCity自带的编辑器相比较于“现代”的编辑器来说还是不够好用（如VSCode等）。我已经遇到了很多同学自己无法解决，找我排除代码中存在的问题。而这些问题98%都是由于语法问题，如缺少关键字（如end、then等）。但是我用VSCode，Lua插件一般都会直接给我自动补全。就算有什么问题也会高亮，或者使用快捷键格式化代码的时候也能看出问题。&#xA;我认为，相比于更加现代的编辑器，MicroCity自带的编辑器“ScriptEditor”由于语法问题的标示不明显、格式化代码功能缺失等使用便利性上的问题，特别是对于Lua语言不熟练的新手，造成代码编写的错误率更高。&#xA;说明：也许其中提到的功能存在于内在编辑器中，但是我反正是没有找到。&#xA;对于我个人来说，VSCode的操作快捷键和各种特性我已经很熟悉，所以我也更倾向于使用VSCode编写Lua语言的脚本。但是对于使用VSCode编写适用于MicroCity运行的Lua脚本（.mcs）而言，由于MicroCity内置了一些函数，无法在VSCode上高亮显示，因此需要特别整理出来方便日后使用。&#xA;常用函数 这里的函数不是全集，只是我用了多少就写多少😂 全部图形函数及使用方法参见 MicroCity文档(英文) 4.3 Shapes And Tables&#xA;在本页中浏览可以使用右上角的目录列表快速转到对应函数。&#xA;图形 函数 作用 Open 打开图形文件，并获取图形文件对象 Update 刷新图形 Open Open(&amp;quot;路径&amp;quot;)，返回图形文件对象。&#xA;1countryObject = Open(&amp;#34;countries.shp&amp;#34;) Update Update([图形对象])，刷新图形对象，显示最新的图形。&#xA;1Update(countryGRD) 矢量图 函数 作用 GetRecCount 获取图形文件中记录的图形对象个数 GetShape 从图形文件对象中获取图形对象 GetPartCount 获取对应图形对象分为多少个部分 GetPointCount 获取对应图形对象（部分）有多少个点 GetPointXY 获取图形对象指定部分、指定点编号的XY坐标 GetValue 获取图形对象的属性值 SetValue 设置图形对象的属性值 GetShapeLen 获取图形对象的长度 GetDistance 获取坐标点之间的距离 GetRecCount GetRecCount([图形文件对象])，返回图形文件中记录的图形对象个数。</description>
+    </item>
+  </channel>
+</rss>

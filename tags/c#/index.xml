@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C# on Hikaru&#39;s Blog</title>
+    <link>https://www.zhhuu.top/tags/c%23/</link>
+    <description>Recent content in C# on Hikaru&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 25 Mar 2022 11:56:41 +0000</lastBuildDate>
+    <atom:link href="https://www.zhhuu.top/tags/c%23/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C# Task</title>
+      <link>https://www.zhhuu.top/posts/csharp-task/</link>
+      <pubDate>Fri, 25 Mar 2022 11:56:41 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/csharp-task/</guid>
+      <description>Task 线程的问题：线程(Thread)是用来创建并发的一种低级别工具，尤其在于以下方面有一些限制：&#xA;虽然开始线程的时候可以方便地传入数据，但是当Join（等待）的时候，很难从线程获得返回值。 可能需要设置一些共享字段 如果抛出异常，捕获和传播该异常都很麻烦 无法告诉线程在结束时开始做另外的工作，必须进行Join操作，在进程中阻塞当前的进程，等待线程结束。 对手动同步的更大依赖以及随之而来的问题 Task类可以很好地解决上述问题。Task是一个相对高级的抽象，它代表了一个并发操作(concurrent)，该操作可能由Thread支持，或不由Thread支持。并且，Task是可组合的。 Tasks可以使用线程池来减少启动延迟 使用TaskCompletionSource，Tasks可以利用回调的方式在等待I/O绑定操作是完全避免线程。 开始一个Task 开始一个Task最简单的方法就是使用Task.Run这个静态方法。(.NET4.5开始，.NET4.0的时候是Task.Factory.StartNew这个静态方法) 使用方法：传入一个Action委托即可。&#xA;Task默认使用线程池，也就是后台线程。当主线程结束时，创建的所有任务都会结束。&#xA;1static void Main(string[] args) 2{ 3 Task.Run(() =&amp;gt; Console.WriteLine(&amp;#34;Foo&amp;#34;)); 4 Console.ReadLine(); // 可以达到阻塞线程的效果。 5 // 如果程序运行完了，由于Task是后台线程，Task也会被关闭。 6} Task.Run返回一个Task对象，可以使用它来监视其过程。Task.Run之后没有调用Start，因为该方法创建的是“热”任务(hot task)；可以通过Task的构造函数创建“冷”任务(cold task)，但很少这样做。&#xA;Wait 调用Task的Wait方法会进行阻塞直到操作完成（相当于调用Thread上的Join方法）&#xA;1static void Main(string[] args) 2{ 3 Task task = Task.Run(() =&amp;gt; 4 { 5 Thread.Sleep(3000); 6 Console.WriteLine(&amp;#34;Foo&amp;#34;); 7 }); //创建一个“热任务” 8 9 Console.WriteLine(task.IsCompleted); //False 10 11 task.Wait(); //阻塞至task完成操作 12 13 Console.WriteLine(task.IsCompleted); //True 14 15 // False 16 // Foo 17 // True 18} Wait也可以指定一个超时时间和取消令牌来提前结束等待。</description>
+    </item>
+    <item>
+      <title>C# 线程</title>
+      <link>https://www.zhhuu.top/posts/csharp-thread/</link>
+      <pubDate>Fri, 25 Mar 2022 11:31:09 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/csharp-thread/</guid>
+      <description>Thread 线程 一个可执行路径，独立于其它线程执行。&#xA;线程被抢占 线程的执行与另外一个线程上代码的执行交织的那一点。&#xA;线程的属性&amp;amp;特性 线程一旦开始执行，IsAlive为true；线程结束变成false 线程结束的条件：线程构造函数传入的委托执行结束 线程一旦结束，无法重启 每个线程都有Name属性，通常用于调试。Name只能设置一次，更改会抛出异常。 静态的Thread.CurrentThread属性返回当前执行的线程。 Join 调用Join方法，可以等待另一个线程结束。&#xA;1Thread t = new Thread(Go); 2t.Start(); //开始线程 3t.Join(); //等待线程执行完成 4Console.WriteLine(&amp;#34;Thread t has ended!&amp;#34;); //线程结束 5 6static void Go() //线程构造函数传入的委托 7{ 8 for (int i = 0; i &amp;lt; 1000; i++) 9 Console.Write(&amp;#39;y&amp;#39;); 10} 添加超时 调用Join的时候，可以设置一个超时，可以使用毫秒或者TimeSpan 如果返回true，线程结束；如果超时，返回false&#xA;1bool IsTerminated = thread1.Join(2000); //等待2秒后线程是否执行结束 Sleep Thread.Sleep()方法会暂停当前的线程，并等待一段时间。可以是毫秒或者TimeSpan&#xA;1Thread.Sleep(500); //线程休眠500ms Thread.Sleep(0)会导致线程立即放弃当前的时间片，自动将CPU移交给其它线程。 Thread.Yield()做同样的事情，但是它只会把执行交给同一处理器上的其它线程。 当等待Sleep或Join的时候，线程处于阻塞的状态。 阻塞：正在等待某一事件发生，根据原因可设置多个阻塞队列&#xA;❔ 如果在代码中任何地方插入Thread.Yield()就破坏了程序，程序几乎肯定会有bug&#xA;阻塞 线程的执行由于某种原因导致暂停。 可以通过ThreadState属性判断线程是否处于被阻塞的状态。&#xA;ThreadState ThreadState是一个flags enum(可以有多个枚举值)，通过**按位**的形式可以合并数据的选项。</description>
+    </item>
+    <item>
+      <title>Xaml学习小结</title>
+      <link>https://www.zhhuu.top/posts/xaml-summary/</link>
+      <pubDate>Wed, 16 Mar 2022 22:08:15 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/xaml-summary/</guid>
+      <description>主要是Xaml的“绑定”和“资源”&#xA;Xaml静态资源绑定 需要绑定一个resource的时候，需要的表达式就是大括号里面有“StaticResource”，再加上resource的名字。这种绑定只在App运行的时候进行一次，因为是静态资源，所以它就不会变了。 如：&#xA;1&amp;lt;TextBlock Foreground = &amp;#34;{StaticResource MyBrush}&amp;#34; /&amp;gt; StaticResource表明了我们所绑定的资源的类型&#xA;单个属性的绑定 可以创建单个属性的资源绑定，如：&#xA;1&amp;lt;Page.Resources&amp;gt; 2 &amp;lt;SolidColorBrush x:Key=&amp;#34;MyBrush&amp;#34; Color=&amp;#34;Brown&amp;#34;/&amp;gt; 3&amp;lt;/Page.Resources&amp;gt; 4 5&amp;lt;!-- 使用 --&amp;gt; 6&amp;lt;TextBlock Text=&amp;#34;Hello World&amp;#34; Foreground=&amp;#34;{StaticResource MyBrush}&amp;#34;/&amp;gt; 还可以创建值绑定，如将Slider的值绑定到ProgessBar中：&#xA;1&amp;lt;ProgressBar Maximum=&amp;#34;100&amp;#34; Value=&amp;#34;{x:Bind MySlider.Value, Mode=OneWay}&amp;#34;&amp;gt; 多个属性的绑定（Style） 也可以创建多个值类型的绑定，如设置背景、字体、字号等属性，如：&#xA;1&amp;lt;Page.Resources&amp;gt; 2 &amp;lt;Style TargetType=&amp;#34;Button&amp;#34; x:Key=&amp;#34;MyButtonStyle&amp;#34;&amp;gt; 3 &amp;lt;!-- 定义了目标类型、样式（资源）名称 --&amp;gt; 4 &amp;lt;!-- 下面是各个属性值的设置 --&amp;gt; 5 &amp;lt;Setter Property=&amp;#34;Background&amp;#34; Value=&amp;#34;Blue&amp;#34;/&amp;gt; 6 &amp;lt;Setter Property=&amp;#34;FontFamily&amp;#34; Value=&amp;#34;Arial Black&amp;#34;/&amp;gt; 7 &amp;lt;Setter Property=&amp;#34;FontSize&amp;#34; Value=&amp;#34;36&amp;#34;/&amp;gt; 8 &amp;lt;/Style&amp;gt; 9&amp;lt;/Page.Resources&amp;gt; 10 11&amp;lt;Button Content=&amp;#34;My Button Style Example&amp;#34; 12 Height=&amp;#34;100&amp;#34; 13 Style=&amp;#34;{StaticResource MyButtonStyle}&amp;#34; /&amp;gt; 14 &amp;lt;!</description>
+    </item>
+    <item>
+      <title>LINQ笔记&amp;实例</title>
+      <link>https://www.zhhuu.top/posts/linq/</link>
+      <pubDate>Sat, 12 Mar 2022 16:29:27 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/linq/</guid>
+      <description>LINQ：语言继承查询&#xA;限制运算符 Where where语句的基本示例&#xA;1int[] numbers = {5,4,1,3,9,8,6,7,2,0}; 2var lowNums = from num in numbers 3 where num &amp;lt; 5 4 select num; // 只选择小于5的数字 筛选符合属性条件的元素&#xA;1var soldOutProducts = from prod in products 2 where prod.UnitsInStock == 0 3 select prod; // 从集合中选出符合属性的元素 用多个条件筛选元素&#xA;1var expensiveInStockProducts = from prod in products 2 where prod.UnitsInStock &amp;gt; 0 &amp;amp;&amp;amp; prod.UnitPrice &amp;gt; 3.00M 3 select prod; // 从集合中选出符合上述两个条件的元素 基于元素在列表中位置的筛选&#xA;1string[] digits = {&amp;#34;zero&amp;#34;, &amp;#34;one&amp;#34;, &amp;#34;two&amp;#34;, &amp;#34;three&amp;#34;, &amp;#34;four&amp;#34;, &amp;#34;five&amp;#34;, &amp;#34;six&amp;#34;, &amp;#34;seven&amp;#34;, &amp;#34;eight&amp;#34;, &amp;#34;nine&amp;#34;}; 2var shortDigits = digits.</description>
+    </item>
+    <item>
+      <title>FileGetter使用说明</title>
+      <link>https://www.zhhuu.top/posts/file-getter-instructions/</link>
+      <pubDate>Sun, 29 Apr 2018 19:13:31 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/file-getter-instructions/</guid>
+      <description>File Getter使用说明 功能 启动后持续扫描电脑上盘符数，当盘符数量有变更时检索新增盘符内文件。当检索到指定文件时复制到电脑中指定目录(C:/got)下。&#xA;使用方法 直接打开(建议存入电脑C盘中某个位置再打开)，当你程序成功开始运行后发出短暂(哔)声。当有新盘符插入时，扫描盘符内文件，若有指定类型文件则复制。当扫描完成后程序发出长(1s,哔)声，并自动退出。&#xA;使用技巧 当你在程序运行目录下新建以下文件程序运行逻辑会发生改变:&#xA;debug.txt 当程序运行时，只要检测到运行目录下有此文件，日志窗口会显示出来。当检测到此文件被删去，窗口则会被隐藏。 注意:此操作在程序运行时是实时的，命令即刻执行(在下一个循环时)&#xA;keeprunning.txt 当程序完成扫描新磁盘(不管有没有复制)后，若检测到此文件则会继续运行下去。终止程序运行方法参见下文。&#xA;exit.txt 当程序在运行时检测到此文件后则立刻终止运行。&#xA;支持的指定类型文件 .xls .xlsx&#xA;其他说明 本程序仅供学习用途使用。</description>
+    </item>
+    <item>
+      <title>C#异步介绍</title>
+      <link>https://www.zhhuu.top/posts/csharp-async/</link>
+      <pubDate>Sun, 08 Apr 2018 21:14:06 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/csharp-async/</guid>
+      <description>创建多线程？太麻烦了！来试试更快更便捷的异步。程序无须按照代码顺序自上而下的执行。&#xA;什么是异步编程 什么是异步编程呢？举个简单的例子：&#xA;1using System.Net.Http; 2using System.Threading.Tasks; 3using static System.Console; 4 5namespace Core 6{ 7 class Async 8 { 9 static void Main() 10 { 11 Start(); 12 End(); 13 } 14 15 static void Wait()=&amp;gt;WriteLine(&amp;#34;waiting...&amp;#34;); 16 static void End()=&amp;gt;WriteLine(&amp;#34;end...&amp;#34;); 17 static int Start() 18 { 19 WriteLine(&amp;#34;start...&amp;#34;); 20 HttpClient client = new HttpClient(); 21 Waiting(); 22 var result = client.GetStringAsync(&amp;#34;https://www.visualstudio.com/&amp;#34;); 23 string str = result.Result; 24 return str.Length; 25 } 26 } 27} 上面这段代码中，Main方法中的代码是按照自上而下的顺序执行的。网络状况不佳时，Start() 方法是比较耗时 （注意，这里在Start方法中调用了异步方法GetStringAsync，但该方法在此处是以同步方式执行的，具体原因下文会进行说明） ，在 Start() 方法执行完毕之前，整个程序处于阻塞状态。而异步编程可以很好的解决这个问题，一句简单的话来概括异步编程就是，程序无须按照代码顺序自上而下的执行。</description>
+    </item>
+    <item>
+      <title>HCalculator</title>
+      <link>https://www.zhhuu.top/posts/hcalculator/</link>
+      <pubDate>Mon, 26 Jun 2017 08:51:34 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/hcalculator/</guid>
+      <description>A calculator was written by huuhghhgyg [2022-03-02]：该项目已被归档，只是留作纪念。&#xA;链接 View on Github 在Github查看 Download .zip 下载.zip文件 Download .tar.gz 下载.tar.gz文件&#xA;说明 若要访问原网页点击&amp;gt;这里&amp;lt;&#xA;嗯，就只是一个计算器嘛没什么好看的….要下赶快下XDD&#xA;历代大版本更新 计算器1.0(最初版本) 基本的傻瓜计算器功能，差不多支持键盘乱弹。&#xA;计算器2.0(已遗失) 作为向Material Design的过渡 计算器3.0 拥有更好的界面，Material Design设计标准，更多的功能。支持生成随机数，计算日期之间的间隔等新功能。&#xA;计算器4.0(当前版本) 新增了科学计算器。改进了科学计算器的界面。持续改进!</description>
+    </item>
+  </channel>
+</rss>

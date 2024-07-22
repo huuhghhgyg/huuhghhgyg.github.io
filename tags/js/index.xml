@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Js on Hikaru&#39;s Blog</title>
+    <link>https://www.zhhuu.top/tags/js/</link>
+    <description>Recent content in Js on Hikaru&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 10 Jul 2021 19:13:03 +0000</lastBuildDate>
+    <atom:link href="https://www.zhhuu.top/tags/js/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>npm快速上手</title>
+      <link>https://www.zhhuu.top/posts/npm-overview/</link>
+      <pubDate>Sat, 10 Jul 2021 19:13:03 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/npm-overview/</guid>
+      <description>在npm中，包（package）、模块（module）、依赖（dependency）都是一个东西。&#xA;npm常用操作 npm配置项 初始化 npm init（其实就是创建一个package.json文件），之后让你填入许多信息（package name, version, description, entry point, test command, git repository, key words, author) npm init -y相当于npm init但信息都为空，初始化后npm会认为你的项目是一个包&#xA;npm搜索 npm search &amp;lt;包名&amp;gt; 如：npm search jquery&#xA;包安装 操作 命令 直接安装 npm install &amp;lt;包名&amp;gt;，简写为npm i &amp;lt;包名&amp;gt; 安装指定版本/旧版本 npm install &amp;lt;包名&amp;gt;@&amp;lt;版本号&amp;gt; 安装指定tag的包 npm install &amp;lt;包名&amp;gt;@&amp;lt;tag&amp;gt; 参数 -g 安装到全局环境下，这样在任何一个目录下都能识别，比如 npm install npm@latest -g 参数 --save-dev或者-D 表明是开发环境下的依赖，不会在生产环境中出现 包卸载 npm uninstall &amp;lt;包名&amp;gt; -D 卸载包，并从package.json的devDependencies中删除。 老版本的npm中卸载包要加--save才能保存到package.json中&#xA;常用操作 操作 命令 更新包 npm update &amp;lt;包名&amp;gt;，局部更新。加-g全局更新 列出已安装包 npm list默认列出局部依赖。加-g 列出已安装的全局依赖。 检查过期包（依赖） npm outdated 查看依赖安装路径 npm root，也就是node_modules的路径，加-g查看全局安装路径 查看模块的注册信息 npm view &amp;lt;包名&amp;gt; versions，列出所有版本。</description>
+    </item>
+  </channel>
+</rss>

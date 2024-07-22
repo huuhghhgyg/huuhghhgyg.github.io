@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>快捷键 on Hikaru&#39;s Blog</title>
+    <link>https://www.zhhuu.top/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+    <description>Recent content in 快捷键 on Hikaru&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 11 Jul 2021 15:00:42 +0000</lastBuildDate>
+    <atom:link href="https://www.zhhuu.top/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VSCode多光标输入</title>
+      <link>https://www.zhhuu.top/posts/vscode-multicursor/</link>
+      <pubDate>Sun, 11 Jul 2021 15:00:42 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/vscode-multicursor/</guid>
+      <description>VSCode多行光标功能的使用&#xA;参考 Visual Studio Code Basics: This topic takes you through the basics of the editor and helps you get moving with your code StackOverflow: Multiline editing in Visual Studio Code 多行光标的使用 用键盘使用多行光标 快捷键 作用 Ctrl+D 选择下一个匹配的内容 Ctrl+U 撤销上一个光标操作 Esc 取消多行选择 Ctrl+Backspace 智能删除 使用 Ctrl+D 时,右上角的小部件，从左到右依次是： 区分大小写 Alt+C、全字匹配 Alt+W、使用正则表达式 Alt+R&#xA;Ctrl+Shift+P 能够呼出万能指令窗口&#xA;Ctrl+Shift+P 指令 作用 Cursor Undo 撤销光标操作 Cursor Redo 重做光标操作 用鼠标使用多行光标 有时候可能会想要跳过某一个位置，这时使用Ctrl+D就难以做到。使用鼠标控制会令多行光标的使用更灵活。（比如说跳过注释部分的“：”）&#xA;使用方法 按住 Alt 并点击&#xA;多行光标特性 合并 当两个光标移动到重合时，会自动合并。例如下面的删除： 有时候在一行中分布有很多光标，当用 Ctrl+← 将光标置于行开头的时候，也会因此自动合并。 这个特性可以在VSCode选项中关闭，默认开启。</description>
+    </item>
+    <item>
+      <title>Windows10 快捷键</title>
+      <link>https://www.zhhuu.top/posts/windows-hotkey/</link>
+      <pubDate>Sun, 06 May 2018 17:04:33 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/windows-hotkey/</guid>
+      <description>好像还不怎么熟悉Windows的快捷键，先存下。 微软为Win10技术预览版命令行(Command Prompt)加入了Ctrl + V的支持，Scott Hanselman为此整理了命令行中的键盘快捷键。&#xA;Win10新增功能快捷键大全： 动作 操作 贴靠窗口 Win +左/右&amp;gt; Win +上/下&amp;gt;窗口可以变为1/4大小放置在屏幕4个角落 切换窗口 Alt + Tab(不是新的，但任务切换界面改进) 任务视图 Win + Tab(松开键盘界面不会消失) 创建新的虚拟桌面 Win + Ctrl + D 关闭当前虚拟桌面 Win + Ctrl + F4 切换虚拟桌面 Win + Ctrl +左/右 文本编辑类 按此键&#xA;执行此操作&#xA;Ctrl + X&#xA;剪切选定项&#xA;Ctrl + C（或 Ctrl + Insert）&#xA;复制选定项&#xA;Ctrl + V（或 Shift + Insert）&#xA;粘贴选定项&#xA;Ctrl + Z&#xA;撤消操作&#xA;Alt + Tab&#xA;在打开的应用之间切换&#xA;Alt + F4</description>
+    </item>
+  </channel>
+</rss>

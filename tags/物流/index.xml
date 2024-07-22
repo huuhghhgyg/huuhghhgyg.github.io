@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>物流 on Hikaru&#39;s Blog</title>
+    <link>https://www.zhhuu.top/tags/%E7%89%A9%E6%B5%81/</link>
+    <description>Recent content in 物流 on Hikaru&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 13 Jul 2022 12:07:30 +0000</lastBuildDate>
+    <atom:link href="https://www.zhhuu.top/tags/%E7%89%A9%E6%B5%81/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用Python编写遗传算法</title>
+      <link>https://www.zhhuu.top/posts/ga/</link>
+      <pubDate>Wed, 13 Jul 2022 12:07:30 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/ga/</guid>
+      <description>算法设计，附源码&#xA;概述 当涉及非线性规划问题或者难以在短时间内求得满意解的线性规划问题，可以通过求其近似解（或满意解）而非精确解。使用遗传算法求解近似解所消耗的时间远少于求解精确解，多数时候近似解的效果都可以接受。 遗传算法的优势体现在：在小规模问题上，遗传算法求解得到的通常是精确解；而在大规模问题上，遗传算法通常可以通过较短的时间求得精确解。 同样的问题通过遗传算法求解近似解和线性规划求解精确解，遗传算法花费的时间显著短于精确算法。&#xA;算法 时长 结果(此处结果越小越好） 遗传算法 123s (2m03s) 371.06 精确算法 201s (3m21s) 367.07 模型描述 目标函数 $minf=P\sum_{k=1}^K\sum_{i=1}^N\sum_{j=1}^Nx_{kij}d_{ij}+\frac{P_a}{Q}\sum_{i=1}^N\sum_{j=1}^N(y_{ij}+z_{ij})x_{kij}d_{ij}+P_m\sum_{k=1}^K\sum_{i=1}^N\sum_{j=M}^Nx_{kij}q_j$&#xA;约束方程 $$ s.t.\left\{ \begin{array}{**lr**} \sum_{k=1}^K\sum_{i=1}^Nx_{kij}=1 &amp; j=2,3,...,N \\ \sum_{j=1}^Nx_{kij} = \sum_{j=1}^Nx_{kij} &amp; i=1,2,...,N;k=1,2,...,K \\ \sum_{j=1}^Nx_{k1j} \le 1 &amp; k=1,2,...,K \\ y_{ij}+z_{ij} \le Q\sum_{k=1}^Kx_{kij} &amp; i,j=2,3,...,N \\ \sum_{i=1}^N\sum_{j=1}^Nx_{kij}d_{ij} \leq D &amp; k=1,2,...,K \\ \sum_{j=1}^Nz_{ij}-\sum_{j=1}^Nz_{ij}=p_i &amp; i=2,3,...,N \\ \sum_{i=1}^Nx_{kii}=0 &amp; j=1,2,...,N \\ \sum_{i=2}^N\sum_{j=1}^Nx_{kij} \le V &amp; k=1,2,...,K \\ y_{ij} \ge 0 ,z_{ij} \ge 0 &amp; i,j=1,2,.</description>
+    </item>
+    <item>
+      <title>优化软件语法</title>
+      <link>https://www.zhhuu.top/posts/optimization-code/</link>
+      <pubDate>Tue, 12 Jul 2022 22:22:54 +0000</pubDate>
+      <guid>https://www.zhhuu.top/posts/optimization-code/</guid>
+      <description>最近上课自学了CPLEX，感觉和之前浅浅接触过的LINGO的语法很像。记录一下以免以后忘了怎么用。此外，还在其中记录一下本次自学的遗传算法。&#xA;概述 求解大规模线性优化问题的时候不可能使用单纯形算法一个个地列单纯形表去手算，必须借助计算机求解才能使求解精确解的求解速度在可接受的范围内。可接受的求解时间范围根据每个人的接受情况不同大多分布于3小时或1天之内。此处记录一下之前稍微了解到的LINGO软件的语言、这次自学的CPLEX软件的OPL语言，这两个软件都可以用于求解线性规划问题。&#xA;LINGO语法 LINGO的整个线性规划模型大致可以描述为：&#xA;集合（Sets） 变量（Data) 模型（Model） LINGO的集合 先上一段代码&#xA;1sets: 2&#x9;S/1..6/: a, b, d ; // S为1~6的集合，a有6个分量（a1~a6)，b、d、e等同理 3&#x9;T/1,2/: e, x, y; // T为1和2组成的集合， 4&#x9;U(S,T): c ; // 定义了双下标的集合（c为双下标变量c_ij） 5endsets 第2行描述了三个变量abd各自都有6个分量，如a可以看成a1,a2,...,a6，在LINGO里面引用就是a(1),a(2),...,a(6)，剩下两个变量b和d同理。 第四行定义了U为双下标集合，如果将U的每个元素看作Uij，那么i的范围为[1,6]，整数；j的范围为{1,2}。在LINGO里面引用就是U(i,j)。根据定义的集合，U(i,j)共有12个变量。&#xA;LINGO的变量 代码&#xA;1data: 2&#x9;a=1 2 3 4 5 6; // 定义a(n)的值 3&#x9;b=1 2 3 4 5 6; 4&#x9;x=5 2; 5&#x9;y=1 7; 6enddata 第2行表示a(1)到a(6)的值分别为1、2、3、4、5、6。&#xA;LINGO的模型 模型又可以分为两个部分：&#xA;目标函数 约束方程 在这之前，需要先了解集合函数，方便规模化地表示模型的目标函数和约束方程。&#xA;LINGO的集合函数 我也不知道它是不是叫这个名字，姑且先用集合函数表示他们。当时简单了解到的集合函数有两个。&#xA;函数表示 功能 @sum 求和 @for 遍历，但不操作 仅求和而言，大致有以下2种情况：</description>
+    </item>
+  </channel>
+</rss>
