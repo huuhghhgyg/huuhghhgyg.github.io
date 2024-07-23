@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>本科学习生活工作流 | Hikaru&#39;s Blog</title>
+
+<meta name="description" content="">
+      <link rel="stylesheet" href="/css/main.min.4509c6decd74e4191202d02922acb8dd7557456eed7abfec22048e0a412ef9dc.css" integrity="sha256-RQnG3s105BkSAtApIqy43XVXRW7ter/sIgSOCkEu&#43;dw=" crossorigin="anonymous">
+
+<link rel="icon" type="image/svg+xml" href="https://www.zhhuu.top/favicon.svg"> 
+<link rel="icon" type="image/x-icon" href="https://www.zhhuu.top/favicon.ico"> 
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.zhhuu.top/favicon.png"> 
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.zhhuu.top/favicon-32.png"> 
+<link rel="icon" type="image/png" sizes="64x64" href="https://www.zhhuu.top/favicon-64.png"> 
+
+</head>
+<body>
+  <header class="py-6 border-b"><div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col">
+	<div class="flex items-center">
+		<div class="flex items-center">
+			<button class="flex items-center space-x-2 rounded-full border py-1 pr-[5px] pl-3 group bg-zinc-100 hover:bg-zinc-200 toggle-button" data-target="menu-bar">
+				<svg width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+					<path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
+				</svg>
+				<span class="bg-blue-500 fill-white rounded-full overflow-hidden h-8 w-8">
+					<img src="/favicon.png" alt="site icon" class="mr-2 object-cover">
+				</span>
+			</button>
+			<div class="relative rounded-full py-1.5 px-6 bg-zinc-100 hover:bg-zinc-200 text-xl font-bold uppercase mx-2">
+				<h2><a class="before:content-[''] before:z-10 before:top-0 before:right-0 before:left-0 before:bottom-0 before:absolute before:pointer-events-auto" href="https://www.zhhuu.top/">Hikaru&#39;s Blog</a></h2>
+			</div>
+		</div>
+		<div class="flex items-center ml-auto">
+			<button id="search-btn" class="flex items-center rounded-full p-3 bg-zinc-100 hover:bg-zinc-200 toggle-button" data-target="search-bar">
+				<svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+					<path id="path1" class="transition-all ease-linear" d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+					<path id="path2" class="transition-all ease-linear hidden" d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"></path>
+				</svg>
+			</button>
+		</div>
+	</div>
+  <nav id="menu-bar" class="block mt-3 close">
+    <ul class="flex items-center flex flex-nowrap whitespace-nowrap overflow-x-auto space-x-4">
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/">Home</a>
+    </li>
+    <li class="my-2">
+      <a aria-current="true" class="ancestor" href="/posts/">Posts</a>
+    </li>
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/tags/">Tags</a>
+    </li>
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/links/">Links</a>
+    </li>
+    <li class="my-2">
+      <a class="rounded-full border px-6 py-2 bg-zinc-100 hover:bg-zinc-200" href="/friends/">Friends</a>
+    </li>
+    </ul>
+  </nav>
+
+
+
+<div id="search-bar" class="block mt-3 relative z-50 close">
+    <form id="search" class="flex items-stretch">
+      <input id="searchInput" tabindex="0"
+        class="w-full block px-6 py-2 rounded-full focus:outline-none border border-zinc-200" type="text"
+        placeholder="Search...">
+    </form>
+
+    <div id="fastSearch" class="absolute left-0 right-0 mt-2 bg-white shadow-sm rounded-xl z-50 overflow-x-hidden">
+      <ul id="searchResults" class="divide-y divide-gray-200 z-50">
+      </ul>
+    </div>
+  </div>
+
+  <div id="overlay" class="fixed inset-0 bg-black opacity-50 hidden z-40"></div>
+
+<script src="/js/fuse.min.js"></script> 
+<script src="/js/fastsearch.js"></script></div></header>
+  <main class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8"><div id="breadcrumb" class="max-w-7xl mx-auto py-8">
+	<ul class="flex space-x-4 text-sm text-zinc-500">
+		<li class="after:content-['❯'] after:ml-4 after:opacity-30 last:after:content-none uppercase">
+			<a href="https://www.zhhuu.top/">Hikaru&#39;s Blog</a>
+		</li>
+		<li class="after:content-['❯'] after:ml-4 after:opacity-30 last:after:content-none uppercase">
+			<a href="https://www.zhhuu.top/posts/">Posts</a>
+		</li>
+	</ul>
+</div><div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+
+  <article class="md:col-span-2 prose lg:prose-lg">
+
+    <header class="not-prose">
+      
+      <h1 id="title" class="text-4xl font-bold leading-normal">本科学习生活工作流</h1>
+
+      <div id="lead" class="my-6">
+
+        <p class="font-bold"> </p>
+
+      </div>
+      
+      <div id="writer" class="flex items-center space-x-4">
+
+        <img class="w-12 h-12 bg-black rounded-full" src="https://www.zhhuu.top/img/favicon.jpg" alt="huuhghhgyg avatar" width="1033" height="1033">
+
+        <ul class="flex items-center space-x-4 flex-nowrap whitespace-nowrap overflow-x-auto">
+          
+          <li class="font-semibold my-2">huuhghhgyg</li>
+          
+          <li class="before:content-['•'] before:mr-2 before:opacity-50 my-2"><time datetime="2023-02-03T23:00:00&#43;00:00">February 3, 2023</time>
+          </li>
+
+          <li class="before:content-['•'] before:mr-2 before:opacity-50 my-2">
+            2 min read
+          </li>
+
+        </ul>
+
+      </div>
+      
+    </header>
+
+<figure id="featureimage" class="rounded-xl aspect-video">
+        <img class="rounded-lg w-full h-full object-cover object-center" src="https://www.zhhuu.top/img/undergraduate-workflow_hu1316ec331ad89848f60ca8a1e05366df_346928_750x0_resize_q75_h2_box_2.webp" alt="" width="750" height="422">
+</figure>
+
+    <div id="content" class="mb-14">
+      <p>写这篇文章总结的想法很早就有了，但是一直没有动笔写，也不知道应该以什么形式写下来。也就是晚上 11 点有动力和灵感写一篇这样的文章，总结一下大学两年半使用电子产品（硬件和软件）进行学习和生活的状态。探索并梳理工作流的新鲜感让我觉得很爽，这样的折腾可能也是一直促进我学习的因素之一。</p>
+<p>而且像我这样买 Surface Pro 还用了那么久的人估计也不多，到了大学教室里面一个专业也很难见到一个用 Surface 的人，更别说我这种把它当平板用的了，就像当年的 1%🤣。因此，也顺便分享一下大学过程中随着 Windows Update 为 Windows 带来日新月异的体验（bug）后我使用 Surface 的感受。</p>
+<p>此外，学习过程中也积累了一些比较好用的软件 🤣 我的专业是物流工程，虽然后面介绍的软件有一部分可能是计算机相关专业同学比较熟悉的软件，但并不影响使用和享受其带来的便捷。所以，虽然介绍的方向可能偏工科专业，但是我认为其实也适合很多其他专业的同学。毕竟，在如今这个时代，什么都离不开电脑、手机和云计算嘛。特别是上云这件事，有时候能减少很多麻烦。</p>
+<h1 id="环境">环境</h1>
+<p>下面我介绍一下我在大学前三年中使用的 EDC（硬件）和日常生活和学习中使用到的软件。</p>
+<h2 id="硬件设备">硬件设备</h2>
+<p>按照购买时间排序：</p>
+<ul>
+<li>平板：Surface Pro 6，高三的时候买的。升级了 Windows 11，耗电多了、速度慢了，但是 Win11 的触控优化对于 Win10 是质的飞跃。升级了 Win11 以后，随着触控键盘可以缩小尺寸等针对平板的优化，能够脱离 Surface Type Cover 使用的场景变多了。虽然很多场景还是必须要键盘鼠标，但是对于看视频看资料写写画画之类的场景确实已经能够脱离 Type Cover 了。（不过现在已经刷回 Windows 10 了）</li>
+<li>手机：小米 10，资本弃舰不多说。</li>
+<li>电脑：ROG 幻 15，大一下学期买的，当时正好显卡荒，本子都被挖矿的抢走了，笔记本加价都不一定能买到，拯救者被抢疯了。当时 10999 抢到 R9+16G+1T+3060 还是很幸运的。</li>
+</ul>
+<h2 id="软件">软件</h2>
+<p>高频使用的学习软件：</p>
+<ul>
+<li>
+<p>OneNote：笔记软件，功能很丰富，我电脑、平板、手机（以下简称“全平台”）都装了，方便各种场合使用，场景包括：考试前没带平板拿手机多看两眼笔记、在上高年级课程的时候老师突然提问高数概率论相关知识，迅速查找相关笔记。电脑上主要往上面记录打字类型的笔记、平板主要往上写、手机主要在没带平板或电脑的时候看，这样就全平台任意时候都能直接参考记录下来的笔记。电脑版 OneDrive（非 OneNote for Windows10）可以将笔记保存到本地，方便进行备份，不用担心巨硬跑路。</p>
+<p><img src="OneNote_UWP.webp" alt=""></p>
+<p><img src="OneNote_Phone.webp" alt=""></p>
+</li>
+<li>
+<p>Office 365 教育版：拿到学校邮箱以后立刻申请了 Office 365 教育版，拿一个 1TB 的 OneDrive 云空间，把 OneNote 笔记都记在教育版账户上。教育版账户实测下载文件能有 1Mb/s 或者更高的速度，不会出现网传的丢笔记，同步不上的问题。真有问题点多几次同步或者关掉再打开就可以了（在 OneNote for Windows10 上总说同步不上感觉是显示的问题，写几下一会就说同步上了），同步速度还可以，主要是比较稳定。</p>
+</li>
+<li>
+<p>滴答清单：一个待办清单软件，我全平台都安装了。主要用于生活中各种琐碎待办的记录，防止事情过多忘记做某些事情。我最喜欢的点在于全平台安装后，只要手头有设备就可以添加待办。如果设置了时间提醒弹出通知也特别及时 👍（特别是在 Windows 端）</p>
+<p><img src="ticktick.webp" alt=""></p>
+</li>
+<li>
+<p>潮汐：白噪声软件。当室友特别吵而必须在宿舍进行学习的时候，带上降噪耳机、将白噪音声音开大，逐渐就能进入专注的状态。对于我来说，专注学习的最大障碍有时候会蹦出来很多想法，这个时候就可以结合“滴答清单”将它们记录下来，等专注时间过了以后再实现。</p>
+</li>
+<li>
+<p>Windows 时钟：专注计时，和“潮汐”二选一使用即可。当环境不是特别嘈杂而阻碍专注的因素来自于自身的时候，可以将里面的专注时段打开并缩小悬挂于屏幕右上角，提醒自己处于专注时间以及剩余时长，合理安排时间。我一般在用 Surface 学习的时候将它挂在右上角。</p>
+<p><img src="Windows_Clock.webp" alt=""></p>
+</li>
+<li>
+<p>飞书妙记：会议记录软件。飞书妙记是飞书里面的一个应用。我身边几乎没有人用飞书，但是里面飞书妙记倒是挺好用的。我的用法就是网课录屏上传视频语音转文字。</p>
+</li>
+</ul>
+<p>其他软件/学习软件推荐：</p>
+<ul>
+<li>
+<p>墨墨背单词：背单词软件，不多说。只要坚持就有成效。（就是坚持最难 😭）</p>
+</li>
+<li>
+<p>VSCode：万能编辑器，对于我这种业余编辑的倒是不在乎它的大小，主要在乎它的各种编辑功能。利用快捷键实现多行编辑，免去编辑文本格式的重复性无意义劳动，也很快捷。还有，通过插件它能支持很多类型代码的高亮、格式化、Snippet 操作，对于轻度写代码也非常友好。具体可以看我博客里面的介绍 <a href="https://www.zhhuu.top/posts/vscode-multicursor/">VSCode 多光标输入 | Hikaru&rsquo;s Blog</a></p>
+</li>
+<li>
+<p>Photomath/Geogebra：算高数的时候可以求方程、积分，算线性代数的时候可以算简单的矩阵。PhotoMath 有时候由于网络差可能进不去，可以改用 Geogebra。此外，Geogebra 支持的画图功能很强，也有网页版。但我还是比较习惯 PhotoMath。</p>
+<p><img src="PhotoMath.webp" alt=""></p>
+</li>
+<li>
+<p>PowerToys：Windows 上的工具箱，能够实现<strong>窗口置顶、屏幕常亮、快捷键静音禁摄像头</strong>等操作。如果电脑没有一键静音的快捷键，用这个也不错，至少不会在腾讯会议上社死。最近还推出了<strong>检测文件占用</strong>的功能，弹出 U 盘/硬盘的时候终于知道到底是谁在占用磁盘了 🤩</p>
+<p><img src="PowerToys.webp" alt=""></p>
+</li>
+<li>
+<p>OBS Studio：最专业的录屏软件之一，开源软件。</p>
+</li>
+</ul>
+<h1 id="学习工作流介绍">学习工作流介绍</h1>
+<p>上面可能已经介绍了一些了，下面也许会有点重复，不过也会比较完整。大部分都是基于以上的硬件和软件实现的，可以看看有没有参考价值。</p>
+<h2 id="老师发-ppt作业">老师发 PPT/作业</h2>
+<p>存到 OneDrive 上对应课程的文件夹里面，以便多端同步文件版本。通常是平板编辑，电脑偶尔也编辑一下。由于存到 OneDrive 上，三个设备上都能看，这就实现了上云。</p>
+<h2 id="用-word-写作业">用 Word 写作业</h2>
+<p>直接在 OneDrive 上对应课程文件夹里面写。OneDrive 有版本记录功能，如果觉得写乱了可以在历史版本记录里面回滚到以前保存的版本。如果能在酷安要到一个 Office 365 E5 就可以实现文档自动保存，再也不怕电脑蓝屏作业文档没保存。其实上面说的申请教育版 Office 365 主要就是要它的 1TB OneDrive，说得夸张一点，如果写作业的时候有联网同步，就算我从外面回宿舍的时候手机掉水里灭失了也能回宿舍用电脑把作业取出来。</p>
+<p>此外，我还见过其他同学论文写到结尾了一直都没保存，然后电脑突然蓝屏全丢的情况。如果使用了 Office 这套工作流，我认为丢文件是一个非常小概率的事件。剩下就是作业能不能写出来的问题了。</p>
+<p>如果是写程序，IDE 创建的项目不建议放到 OneDrive 上写，因为每次编译生成软件都会有文件变化，而这些文件的各个版本都会被 OneDrive 上传占用的存储空间。但是单个脚本文件的源代码还是可以放进去的，看个人习惯。</p>
+<p><img src="OneDrive_Version.webp" alt=""></p>
+<h2 id="嘈杂的环境学习">嘈杂的环境学习</h2>
+<p>戴上降噪耳机，打开潮汐，设定一个合理的专注时长。先将白噪音音量调大直到盖过噪音尝试专注，当进入状态后可以适当减小白噪音音量。如果尝试专注 15 分钟后仍然无法专注，那你可能真的需要换一个环境学习。</p>
+<h2 id="浮躁的状态学习">浮躁的状态学习</h2>
+<p>打开 Windows 计时器/潮汐，设定专注时间。如果在 Windows 上建议将计时移到窗口右上角。我感觉浮躁的状态下听或者不听音乐/白噪音会有很大的区别，每次的需求可能都不一样，当发现听音乐/白噪音无法让你进入状态时可以把音乐停掉试试。我认为最重要的是要注意休息。</p>
+<h2 id="网课录屏">网课录屏</h2>
+<p>这是最薄纱的复习手段 🤪。打开 OBS 录屏，建议码率控制在一个适当的范围内，便于备份和上传。因为网课一般都是老师播 PPT，所录课的码率一般不用很高也能看清楚。等有需要的时候或者期末把所有课程都上传到飞书妙记可以辅助复习。复习的时候如果有不懂的地方可以搜索录屏的语音转文本内容重播，比普通录屏回放的效率更高。</p>
+<p>对于某些垃圾老师上的网课，你坐在那上一个半小时的课感觉就是在浪费时间。这个时候你就可以将录屏传上去，花 15~20 分钟的时间看一下转出来的文字看看他讲了啥，大幅节约你的生命，提高效率。</p>
+<blockquote>
+<p>线下上课可以打开手机录音代替</p>
+</blockquote>
+<h2 id="上课笔记">上课笔记</h2>
+<p>我一般直接用 Drawboard PDF 记在电子课本或者老师发的 PPT 上，回头整理。</p>
+<p><img src="Drawboard_Book.webp" alt=""></p>
+<h2 id="整理笔记">整理笔记</h2>
+<p>OneNote。好处在于 OneNote 的纸可以无限扩大，不用担心笔记的排版问题。需要补充的时候可以用自带的工具直接拉一片空间出来，或直接拉个箭头到别的地方继续补充，自由度很高。学数学的时候，可以充分利用里面的“数学”模块，它可以计算微积分、解方程、画图等，做练习的时候不确定的答案可以用它算一遍验证一下。
+这里吹一下 Surface Pen，设置好快捷键以后按一下后面的按钮可以截屏，直接用笔把 PPT 上的内容截下来，粘贴到 OneNote 上即可。很方便，谁用谁知道。</p>
+<p><img src="OneNote_Math.webp" alt=""></p>
+<h2 id="保存-ppt">保存 PPT</h2>
+<p>老师传到微信群里的文件不会一直在那里，微信并不可靠，总是在你需要那份文件的时候提醒你文件已过期。当老师每次发了什么 PPT 和作业，可以一股脑全部塞到 OneDrive 上。别人问你要过期 PPT 的时候就可以积累一下人缘 🤣</p>
+<p>我一般每个学期结束的时候会将相关课程的文件夹移到 OneDrive 上的其他文件夹，高年级的时候它们可能会有用。</p>
+<p><img src="OneDrive_Archive.webp" alt=""></p>
+<h2 id="找资料">找资料</h2>
+<p>Edge 的集锦挺好用的。看到什么相关的网页可以新建一个集锦往里面塞，等不需要了可以整个删掉。手机上我也装了 Edge，账号密码什么的无墙同步很爽，而且通过 Edge 网页可以发到指定设备上继续看，一打开那台设备他就会弹出提示框。</p>
+<blockquote>
+<p>建议大学期间逐渐积累一下浏览器的收藏夹</p>
+</blockquote>
+<h1 id="生活">生活</h1>
+<h2 id="南方同学记忆力差的同学去澡堂洗澡建议">南方同学/记忆力差的同学去澡堂洗澡建议</h2>
+<p>生活方面嘛，我高中也没住过校，突然就住校了，我一个南方人也没洗过澡堂，给没住过校的同学也带点经验 🤣</p>
+<p>在手机备忘录上建立一个洗澡物品清单，去洗澡前一项项确认，确保没有遗漏物品。原因嘛，首先，如果宿舍和澡堂距离比较远，一来一回要的时间还是挺可观的；其次，对于南方同学来说，考你们一下：如果冬天你去澡堂洗澡，洗到一半发现没带毛巾你会怎么做？不管怎么样，澡堂有设置通风口，我只知道天气还是挺冷的 😂</p>
+<h2 id="出门">出门</h2>
+<p>摸一下口袋里有没有纸巾、饭卡、手机。手机里有 OneDrive 和 OneNote，相当于带上了你所有的学习资料，随时随地只要有网都能看。</p>
+<h1 id="其他吐槽">其他吐槽</h1>
+<p>我用的这台 Surface Pro 6 什么都好，就是充电很令人难受。充电的时候触摸屏经常断触失灵，包括笔也是经常光标漂移，或者写不出字。这属于硬件缺陷，不知道后代版本有没有这个问题。满电状态下会好一点，但是毕竟还是充电的时候多。如果后代型号还有类似问题，我认为这是最劝退的点。由于我这台丐版 SP6 没有风扇，充电发热的时候会严重影响手写笔笔迹，造成手指可数的延迟&hellip;但是后代版本好像都配备风扇了。</p>
+<p>小米 10 机器本身硬件还是很好的，但我觉得到现在就没有出过一个称心如意的 MIUI 版本，刷过很多版本最好的就是 12.5.6 和 12.0.11。现在解锁 Root 打算强行苟到毕业，云控逼我换机不可能的，要么就换别家的。</p>
+<p>微软的软件总要在手机上登录，要么就要挂 Authenticator 的后台，增加耗电。</p>
+
+
+      
+
+    </div>
+
+    <footer id="content-footer" class="not-prose">
+
+      
+      
+
+      <div id="author-box" class="my-8 md:my-14 border p-8 bg-zinc-100 rounded-2xl">
+
+        <img class="w-20 h-20 rounded-full" src="/img/favicon.jpg" alt="huuhghhgyg">
+
+        <h2 class="text-xl font-bold my-4">Writter by : huuhghhgyg</h2>
+
+        <p >Never Settle</p>
+
+        
+        
+        
+      </div>
+
+      <div id="related-post" class="">
+
+        <h2 class="text-xl md:text-2xl font-bold mb-6 md:mb-8">Recommended for You</h2>
+      </div>
+
+    </footer>
+
+  </article>
+
+  
+  <aside class="md:col-span-1"><div class="lg:sticky lg:top-8">
+
+	
+      
+
+
+
+
+
+
+<div class="toc rounded-2xl p-4 bg-zinc-100 mb-10">
+    <div class="page-header font-bold text-lg pb-2">目录</div>
+    <div class="toc-nav">
+        <ul class="nav">
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link" href="#%e7%8e%af%e5%a2%83">
+                    1. 环境
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e7%a1%ac%e4%bb%b6%e8%ae%be%e5%a4%87">
+                    1.1. 硬件设备
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e8%bd%af%e4%bb%b6">
+                    1.2. 软件
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link" href="#%e5%ad%a6%e4%b9%a0%e5%b7%a5%e4%bd%9c%e6%b5%81%e4%bb%8b%e7%bb%8d">
+                    2. 学习工作流介绍
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e8%80%81%e5%b8%88%e5%8f%91-ppt%e4%bd%9c%e4%b8%9a">
+                    2.1. 老师发 PPT/作业
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e7%94%a8-word-%e5%86%99%e4%bd%9c%e4%b8%9a">
+                    2.2. 用 Word 写作业
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e5%98%88%e6%9d%82%e7%9a%84%e7%8e%af%e5%a2%83%e5%ad%a6%e4%b9%a0">
+                    2.3. 嘈杂的环境学习
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e6%b5%ae%e8%ba%81%e7%9a%84%e7%8a%b6%e6%80%81%e5%ad%a6%e4%b9%a0">
+                    2.4. 浮躁的状态学习
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e7%bd%91%e8%af%be%e5%bd%95%e5%b1%8f">
+                    2.5. 网课录屏
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e4%b8%8a%e8%af%be%e7%ac%94%e8%ae%b0">
+                    2.6. 上课笔记
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e6%95%b4%e7%90%86%e7%ac%94%e8%ae%b0">
+                    2.7. 整理笔记
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e4%bf%9d%e5%ad%98-ppt">
+                    2.8. 保存 PPT
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e6%89%be%e8%b5%84%e6%96%99">
+                    2.9. 找资料
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link" href="#%e7%94%9f%e6%b4%bb">
+                    3. 生活
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e5%8d%97%e6%96%b9%e5%90%8c%e5%ad%a6%e8%ae%b0%e5%bf%86%e5%8a%9b%e5%b7%ae%e7%9a%84%e5%90%8c%e5%ad%a6%e5%8e%bb%e6%be%a1%e5%a0%82%e6%b4%97%e6%be%a1%e5%bb%ba%e8%ae%ae">
+                    3.1. 南方同学/记忆力差的同学去澡堂洗澡建议
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link" href="#%e5%87%ba%e9%97%a8">
+                    3.2. 出门
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link" href="#%e5%85%b6%e4%bb%96%e5%90%90%e6%a7%bd">
+                    4. 其他吐槽
+                </a>
+            </li>
+        
+        </ul>
+    </div>
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const tocLinks = document.querySelectorAll(".toc-nav .nav-link");
+    const headers = Array.from(tocLinks).map(link => document.querySelector(decodeURI(link.getAttribute("href"))));
+    const offset = 10; 
+    
+    if (tocLinks.length === 0) {
+        return;
+    }
+
+    function updateActiveLink() {
+        let index = headers.findIndex(header => header.getBoundingClientRect().top > offset);
+        if (index === -1) {
+            index = headers.length - 1;
+        } else if (index > 0) {
+            index -= 1;
+        }
+        tocLinks.forEach(link => link.classList.remove("active"));
+        tocLinks[index].classList.add("active");
+    }
+
+    window.addEventListener("scroll", updateActiveLink);
+
+    tocLinks.forEach(link => {
+        link.addEventListener("click", function(event) {
+            event.preventDefault();
+            const targetId = decodeURI(this.getAttribute("href").substring(1));
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+                
+                history.pushState(null, null, `#${targetId}`);
+                setTimeout(updateActiveLink, 100); 
+            }
+        });
+    });
+
+    updateActiveLink(); 
+});
+</script>
+
+    
+
+
+	
+
+	<div class="space-y-6">
+
+		<h2 class="font-bold text-xl mb-8">Recent Post</h2>
+
+		<article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/new-theme/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/new-theme_hu20e47c60e53948aa6c013a244466a740_87276_250x250_fill_q75_h2_box_smart1_2.webp" alt="启用新主题" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">启用新主题</h3>
+	</div>
+</article><article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/undergraduate-workflow/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/undergraduate-workflow_hu1316ec331ad89848f60ca8a1e05366df_346928_250x250_fill_q75_h2_box_smart1_2.webp" alt="本科学习生活工作流" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">本科学习生活工作流</h3>
+	</div>
+</article><article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/lua-microcity/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/MicroCityWorldGrid_hueeb30e2fa18f4d0617e0e9462be0f772_91378_250x250_fill_q75_h2_box_smart1_2.webp" alt="MicroCity内置的LUA函数" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">MicroCity内置的LUA函数</h3>
+	</div>
+</article><article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/ga/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/evolution_huad65e07a071e6dac9af389d1c00f7d4b_297498_250x250_fill_q75_h2_box_smart1_2.webp" alt="使用Python编写遗传算法" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">使用Python编写遗传算法</h3>
+	</div>
+</article><article class="relative group flex flex-row">
+	<a class="insert-link" href="https://www.zhhuu.top/posts/optimization-code/"></a>
+	<figure class="basis-1/3 aspect-square overflow-hidden rounded-2xl bg-zinc-100"><img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="https://www.zhhuu.top/img/optimization-code_hud268f4a32eb0d40a0727452f8945d9dc_278734_250x250_fill_q75_h2_box_smart1_2.webp" alt="优化软件语法" width="250" height="250">
+
+	</figure>
+	<div class="basis-2/3 self-center ml-4">
+		<h3 class="font-bold group-hover:underline decoration-auto">优化软件语法</h3>
+	</div>
+</article>
+		
+	</div>
+
+</div>
+</aside>
+
+</div>
+  
+</main>
+  <footer class="bg-zinc-100 py-10 md:py-14"><div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+
+  <div class="flex flex-wrap space-y-6 mb-4">
+
+    <div class="w-full md:w-3/5 flex flex-col space-y-4 md:pr-8 lg:pr-10">
+
+      <a class="flex items-center group" href="https://www.zhhuu.top/">
+        <img src="/favicon.png" alt="site icon" class="mr-2" width="32" height="32">
+        
+        <span class="text-2xl font-semibold uppercase">Hikaru&#39;s Blog</span>
+      </a>
+
+      <p class="font-semibold">
+        Write with love. Minimalism design.
+      </p>
+
+      <p>Never Settle</p>
+
+    </div>
+
+    <div class="self-center flex flex-col w-full md:w-2/5">
+
+<ul id="social-media" class="flex items-center space-x-4">
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.facebook.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+				<path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.twitter.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.github.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+			</svg>
+		</a>
+	</li>
+	<li>
+		<a class="w-12 h-12 rounded-full bg-white hover:bg-zinc-200 flex items-center justify-center p-2" href="https://www.instagram.com/#" target="_blank" rel="noopener noreferrer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+				  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+			</svg>
+		</a>
+	</li>
+</ul>
+
+    </div>
+    
+  </div>
+
+  <div class="my-8">
+    <ul class="flex items-center space-x-4">
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/">Home</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/posts/">Posts</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/tags/">Tags</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/links/">Links</a></li>
+      
+        <li><a class="decoration-auto hover:underline font-semibold" href="/friends/">Friends</a></li>
+      
+    </ul>
+  </div>
+
+  <div class="border-t pt-4">
+
+    <p class="text-sm">Copyright © 2024. All rights reserved. </p>
+
+  </div>
+  
+</div>
+</footer>
+      <script defer src="/js/insertoggle.2f07edcf51c0cba06f691f947fdaeea96d2c85627f30b4b0640a40d5a1bfeb08.js" integrity="sha256-Lwftz1HAy6BvaR&#43;Uf9ruqW0shWJ/MLSwZApA1aG/6wg=" crossorigin="anonymous"></script>
+</body>
+</html>

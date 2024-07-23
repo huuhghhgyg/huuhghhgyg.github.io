@@ -6,13 +6,13 @@
     <description>Recent content in Categories on Hikaru&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 23 Sep 2022 16:20:36 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 03 Feb 2023 23:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.zhhuu.top/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Coding</title>
-      <link>https://www.zhhuu.top/categories/coding/</link>
+      <title>Feature</title>
+      <link>https://www.zhhuu.top/categories/feature/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.zhhuu.top/categories/coding/</guid>
+      <guid>https://www.zhhuu.top/categories/feature/</guid>
       <description></description>
     </item>
     <item>
@@ -20,6 +20,13 @@
       <link>https://www.zhhuu.top/categories/skills/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://www.zhhuu.top/categories/skills/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Coding</title>
+      <link>https://www.zhhuu.top/categories/coding/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.zhhuu.top/categories/coding/</guid>
       <description></description>
     </item>
   </channel>
