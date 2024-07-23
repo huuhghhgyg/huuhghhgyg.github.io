@@ -7,7 +7,7 @@
 <title>PPT设计指南 | Hikaru&#39;s Blog</title>
 
 <meta name="description" content="">
-      <link rel="stylesheet" href="/css/main.min.79a56338a32c6abdb6abf26023f69a7f6a62f2052285b68a98493689ecca9137.css" integrity="sha256-eaVjOKMsar22q/JgI/aaf2pi8gUihbaKmEk2iezKkTc=" crossorigin="anonymous">
+      <link rel="stylesheet" href="/css/main.min.4509c6decd74e4191202d02922acb8dd7557456eed7abfec22048e0a412ef9dc.css" integrity="sha256-RQnG3s105BkSAtApIqy43XVXRW7ter/sIgSOCkEu&#43;dw=" crossorigin="anonymous">
 
 <link rel="icon" type="image/svg+xml" href="https://www.zhhuu.top/favicon.svg"> 
 <link rel="icon" type="image/x-icon" href="https://www.zhhuu.top/favicon.ico"> 
@@ -129,15 +129,15 @@
 </figure>
 
     <div id="content" class="mb-14">
-      <p>其实做了这么多的PPT以后，慢慢摸索出了一种做PPT的方式技巧。但其实下面包括的也不仅仅是技巧，还包含了一套我认为比较成熟的设计系统（借鉴+创新），目的是为了使演示过程更加流畅。当然，要制造出这样的PPT，达到这样的效果是肯定要花费一些时间的。可能只有像我这种对美有变态追求的人可能才会花费如此多的时间做PPT，如果您有兴趣的话，可以继续看下去。</p>
+      <p>其实做了这么多的 PPT 以后，慢慢摸索出了一种做 PPT 的方式技巧。但其实下面包括的也不仅仅是技巧，还包含了一套我认为比较成熟的设计系统（借鉴+创新），目的是为了使演示过程更加流畅。当然，要制造出这样的 PPT，达到这样的效果是肯定要花费一些时间的。可能只有像我这种对美有变态追求的人可能才会花费如此多的时间做 PPT，如果您有兴趣的话，可以继续看下去。</p>
 <blockquote>
 <p>所需:
-Microsoft PowerPoint 2016或以上
+Microsoft PowerPoint 2016 或以上
 耐心</p>
 </blockquote>
 <h1 id="引言">引言</h1>
 <p>Microsoft Office 2016 中新引进了“变体”的切换效果。通过这个全新的切换效果能更准确地实现<strong>Material Design</strong>和<strong>Microsoft Fluent Design System</strong>中的一些内容，使整个幻灯片的设计更加系统化。</p>
-<p>🔗链接</p>
+<p>🔗 链接</p>
 <ul>
 <li><a href="https://material.io/">Material Design</a></li>
 <li><a href="https://www.microsoft.com/design/fluent/">Microsoft Fluent Design System</a></li>
@@ -166,24 +166,19 @@ Microsoft PowerPoint 2016或以上
 <p>在上述的操作的基础上您可以尝试改变第二张幻灯片中正方形的形状和大小，您可以发现放映幻灯片的时候原来的正方形自动变成了第二张幻灯片中的样式(大小，位置，甚至颜色，形状的改变)。</p>
 <p>因此，您可以利用变体的这一特性实现后文中卡片的大小，位置甚至深度(阴影大小)的变化。</p>
 <h3 id="多动画连续播放和延迟">多动画连续播放和延迟</h3>
-<p><img src="%E9%A1%BA%E6%AC%A1%E6%B7%A1%E5%87%BA1.webp" alt="顺次淡出1">
-1.创建矩形若干个,并纵向排列。</p>
-<p><img src="%E9%A1%BA%E6%AC%A1%E6%B7%A1%E5%87%BA2.webp" alt="顺次淡出2">
-2.拖动鼠标选中所有创建的矩形，在顶栏的&quot;动画&quot;选项卡中选择&quot;淡出&quot;动画。此时，选中的所有矩形在幻灯片放映时会同时淡出。</p>
+<p><img src="%E9%A1%BA%E6%AC%A1%E6%B7%A1%E5%87%BA1.webp" alt="顺次淡出1"> 1.创建矩形若干个,并纵向排列。</p>
+<p><img src="%E9%A1%BA%E6%AC%A1%E6%B7%A1%E5%87%BA2.webp" alt="顺次淡出2"> 2.拖动鼠标选中所有创建的矩形，在顶栏的&quot;动画&quot;选项卡中选择&quot;淡出&quot;动画。此时，选中的所有矩形在幻灯片放映时会同时淡出。</p>
 <p><img src="%E9%A1%BA%E6%AC%A1%E6%B7%A1%E5%87%BA3.webp" alt="顺次淡出3">
 <img src="%E9%A1%BA%E6%AC%A1%E6%B7%A1%E5%87%BA4.webp" alt="顺次淡出4"></p>
-<p>3.为了遵循Material Design中的&quot;有层次的时序&quot;的原则，我们将每个矩形相对其上层的矩形延迟0.1秒钟淡出,直至最后一个矩形。</p>
+<p>3.为了遵循 Material Design 中的&quot;有层次的时序&quot;的原则，我们将每个矩形相对其上层的矩形延迟 0.1 秒钟淡出,直至最后一个矩形。</p>
 <blockquote>
 <p>建议使用&quot;缩放&quot;动画实现矩形的顺次进入屏幕，这么做的依据是下文中所提将到的&quot;视觉连贯性&quot;原则。缩放在大部分情况下是最适合<strong>几何形状</strong>进入屏幕的方式，而顺次淡出则适合<strong>文字</strong>进入屏幕。
 <em>上文使用矩形是为了简化演示过程。</em></p>
 </blockquote>
 <h3 id="圆的场景切换的实现">圆的场景切换的实现</h3>
-<p><img src="%E5%9C%86%E5%BD%A2%E5%88%87%E6%8D%A21.webp" alt="圆形切换1">
-1.您将在第一张幻灯片中创建这个场景切换。这意味着这一张幻灯片将包含两章节的内容(前一章节的结束部分和后一章节的开头部分)。<strong>这里用&quot;标题&quot;二字表示上一章节的结束部分。</strong></p>
-<p><img src="%E5%9C%86%E5%BD%A2%E5%88%87%E6%8D%A22.webp" alt="圆形切换2">
-2.创建一个与演示区域大小相当的正圆，并将其移动到演示区域的中心。</p>
-<p><img src="%E5%9C%86%E5%BD%A2%E5%88%87%E6%8D%A23.webp" alt="圆形切换3">
-3.选中刚才创建的圆形，给所选圆形添加**&ldquo;缩放&rdquo;**动画(在顶栏的&quot;动画&quot;中找到&quot;缩放&quot;，并点击)。从含圆的那张幻灯片开始放映幻灯片，您就能观察到&quot;圆形场景切换&quot;。</p>
+<p><img src="%E5%9C%86%E5%BD%A2%E5%88%87%E6%8D%A21.webp" alt="圆形切换1"> 1.您将在第一张幻灯片中创建这个场景切换。这意味着这一张幻灯片将包含两章节的内容(前一章节的结束部分和后一章节的开头部分)。<strong>这里用&quot;标题&quot;二字表示上一章节的结束部分。</strong></p>
+<p><img src="%E5%9C%86%E5%BD%A2%E5%88%87%E6%8D%A22.webp" alt="圆形切换2"> 2.创建一个与演示区域大小相当的正圆，并将其移动到演示区域的中心。</p>
+<p><img src="%E5%9C%86%E5%BD%A2%E5%88%87%E6%8D%A23.webp" alt="圆形切换3"> 3.选中刚才创建的圆形，给所选圆形添加**&ldquo;缩放&rdquo;**动画(在顶栏的&quot;动画&quot;中找到&quot;缩放&quot;，并点击)。从含圆的那张幻灯片开始放映幻灯片，您就能观察到&quot;圆形场景切换&quot;。</p>
 <h1 id="元素">元素</h1>
 <h2 id="卡片cards">卡片(Cards)</h2>
 <blockquote>
@@ -198,20 +193,15 @@ Microsoft PowerPoint 2016或以上
 <li>如果使用列表需要显示超过三行文本</li>
 </ul>
 <h3 id="制作卡片">制作卡片</h3>
-<p><img src="%E5%88%B6%E4%BD%9C%E5%8D%A1%E7%89%871.webp" alt="制作卡片1">
-1.在顶栏的&quot;插入&quot;选项卡中选择&quot;形状&quot;，选择矩形。</p>
-<p><img src="%E5%88%B6%E4%BD%9C%E5%8D%A1%E7%89%872.webp" alt="制作卡片2">
-2.在创建好的卡片上右击，选择&quot;设置形状格式&quot;。</p>
-<p><img src="%E5%88%B6%E4%BD%9C%E5%8D%A1%E7%89%873.webp" alt="制作卡片3">
-3.在右边弹出来的边栏上选择&quot;油桶&quot;的选项卡，选择纯色填充，将填充颜色设置为白色。线条选择无线条。</p>
-<p><img src="%E5%88%B6%E4%BD%9C%E5%8D%A1%E7%89%874.webp" alt="制作卡片4">
-4.选择&quot;五边形&quot;选项卡，设置阴影，将阴影的预设样式设置为框选的样式。</p>
-<p><img src="%E5%88%B6%E4%BD%9C%E5%8D%A1%E7%89%875.webp" alt="制作卡片5">
-5.最终效果如图。</p>
+<p><img src="%E5%88%B6%E4%BD%9C%E5%8D%A1%E7%89%871.webp" alt="制作卡片1"> 1.在顶栏的&quot;插入&quot;选项卡中选择&quot;形状&quot;，选择矩形。</p>
+<p><img src="%E5%88%B6%E4%BD%9C%E5%8D%A1%E7%89%872.webp" alt="制作卡片2"> 2.在创建好的卡片上右击，选择&quot;设置形状格式&quot;。</p>
+<p><img src="%E5%88%B6%E4%BD%9C%E5%8D%A1%E7%89%873.webp" alt="制作卡片3"> 3.在右边弹出来的边栏上选择&quot;油桶&quot;的选项卡，选择纯色填充，将填充颜色设置为白色。线条选择无线条。</p>
+<p><img src="%E5%88%B6%E4%BD%9C%E5%8D%A1%E7%89%874.webp" alt="制作卡片4"> 4.选择&quot;五边形&quot;选项卡，设置阴影，将阴影的预设样式设置为框选的样式。</p>
+<p><img src="%E5%88%B6%E4%BD%9C%E5%8D%A1%E7%89%875.webp" alt="制作卡片5"> 5.最终效果如图。</p>
 <h2 id="按钮buttons">按钮(Buttons)</h2>
-<p>在PPT中，一般使用的是圆形按钮。圆形按钮能更方便地引导转场。圆形按钮一般与图标配合使用。更有想象力的用法可以参照<a href="http://design.1sters.com/material_design/components/buttons.html">此处</a></p>
+<p>在 PPT 中，一般使用的是圆形按钮。圆形按钮能更方便地引导转场。圆形按钮一般与图标配合使用。更有想象力的用法可以参照<a href="http://design.1sters.com/material_design/components/buttons.html">此处</a></p>
 <blockquote>
-<p>在PPT中，用于表示一段演示的结束，并引出完全切换的转场(动画)。</p>
+<p>在 PPT 中，用于表示一段演示的结束，并引出完全切换的转场(动画)。</p>
 </blockquote>
 <p>按钮有阴影，因此与卡片的制作方式大同小异。不同的是按钮一般被赋予颜色而不是白色，并且按钮中心一般会有图标显示其作用。您可以按照您的需求定制按钮。
 <img src="%E5%88%B6%E4%BD%9C%E6%8C%89%E9%92%AE1.webp" alt="制作按钮1">
@@ -222,77 +212,18 @@ Microsoft PowerPoint 2016或以上
 <p><img src="%E7%BA%B8%E7%89%87.webp" alt="纸片"></p>
 <h2 id="图标icons">图标(Icons)</h2>
 <p>增强观者对当前页的理解，增强视觉体验。</p>
-<!-- 有图标的链接card -->
-<div class="link-card">
-    <a href="https://material.io/resources/icons/?style=baseline">
-        <div class="img-card-span">
-            <image class="link-card-img" src="https://material.io/resources/icons/static/ic_icons_192px_light.svg">
-            </image>
-            <span class="img-h2">完整版图标库</span>
-            <span class="img-description">Material icons are delightful, beautifully crafted symbols for common actions and items.</span>
-        </div>
-        <span class="link-navigation">
-            Visit
-            <span class="material-icons">arrow_forward</span>
-        </span>
-    </a>
-</div>
-<!-- card容器(card少可不用，多了用美观) -->
-<div class="card-span">
-<!-- 链接card -->
-<div class="link-card">
-    <a href="https://github.com/google/material-design-icons/releases">
-        <span class="link-card-title">图标（Lite）下载页</span>
-        <span class="link-description">跳转到Github的下载页</span>
-        <span class="link-navigation">
-            Visit
-            <span class="material-icons">arrow_forward</span>
-        </span>
-    </a>
-</div>
-<!-- 链接card -->
-<div class="link-card">
-    <a href="https://github.com/google/material-design-icons/releases/download/3.0.1/material-design-icons-3.0.1.zip">
-        <span class="link-card-title">图标（Lite）下载</span>
-        <span class="link-description">点击直接下载图标</span>
-        <span class="link-navigation">
-            Visit
-            <span class="material-icons">cloud_download</span>
-        </span>
-    </a>
-</div>
-</div>
+<p>🔗 链接</p>
+<ul>
+<li><a href="https://material.io/resources/icons/?style=baseline">Material Design 图标</a></li>
+<li><a href="https://github.com/google/material-design-icons/releases">Material Design 图标下载</a></li>
+</ul>
 <h1 id="色彩">色彩</h1>
-<p>如果你手头没有拿得出手的颜色可以选择的话，我推荐使用这个<strong>配色工具</strong>。这是Material Design的配色工具(Color Tool)，你可以在线搭配所需颜色，同时会生成颜色代码(HTML格式)。得到<strong>HTML格式的颜色代码</strong>以后转换成<strong>RGB格式</strong>，最终导入PPT内使用。</p>
-<!-- 有图标的链接card -->
-<div class="link-card">
-    <a href="https://material.io/tools/color/">
-        <div class="img-card-span">
-            <image class="link-card-img" src="https://storage.googleapis.com/non-spec-apps/mio-color/assets/images/ic_colortool_192px.png">
-            </image>
-            <span class="img-h2">配色工具</span>
-            <span class="img-description">Create, share, and apply color palettes to your UI, as well as measure the accessibility level of any color combination.</span>
-        </div>
-        <span class="link-navigation">
-            Visit
-            <span class="material-icons">arrow_forward</span>
-        </span>
-    </a>
-</div>
-<!-- card容器(card少可不用，多了用美观) -->
-<div class="card-span">
-<!-- 链接card -->
-<div class="link-card">
-    <a href="https://tool.css-js.com/rgba.html">
-        <span class="link-card-title">颜色转换器</span>
-        <span class="link-description">这是一个实时转换工具，当填写的值满足合法格式后会自动触发转换。</span>
-        <span class="link-navigation">
-            Visit
-            <span class="material-icons">arrow_forward</span>
-        </span>
-    </a>
-</div>
-</div>
+<p>如果你手头没有拿得出手的颜色可以选择的话，我推荐使用这个<strong>配色工具</strong>。这是 Material Design 的配色工具(Color Tool)，你可以在线搭配所需颜色，同时会生成颜色代码(HTML 格式)。得到<strong>HTML 格式的颜色代码</strong>以后转换成<strong>RGB 格式</strong>，最终导入 PPT 内使用。</p>
+<p>🔗 链接</p>
+<ul>
+<li><a href="https://material.io/tools/color/">Material Design 配色工具</a></li>
+<li><a href="https://tool.css-js.com/rgba.html">颜色转换器</a></li>
+</ul>
 <h1 id="转场">转场</h1>
 <p>为什么要设计转场？</p>
 <ol>
@@ -301,7 +232,7 @@ Microsoft PowerPoint 2016或以上
 </ol>
 <p>转场包括这两部分:</p>
 <ul>
-<li>完全切换(Material圆)</li>
+<li>完全切换(Material 圆)</li>
 <li>分支情况：可以使用卡片进行自由扩展</li>
 </ul>
 <h2 id="视觉连贯性fluency">视觉连贯性(Fluency)</h2>
@@ -315,29 +246,31 @@ Microsoft PowerPoint 2016或以上
 <p>在建立转场的时候，对于元素移动的顺序和时机都要详加考虑。要确保这个动画能使信息的展示具有层次感。也就是说，它能引导观看者的关注力，将最重要的内容传递给观看者。</p>
 <p><video name="media" controls="" width="480"><source src="%E5%B1%82%E6%AC%A1%E6%84%9F.mp4" type="video/mp4"></video></p>
 <p>然而，这并不是说最重要的东西先动，最不重要的东西就后动。元素转场的时序要平滑并且避免脱节的感觉。</p>
-<div class="note note-info">
-    <span class="material-icons">error</span> 应用：逐条展示时，用"淡出"顺次引出对象,每条延时应为0.1秒。</div>
+<blockquote>
+<p>应用：逐条展示时，用&quot;淡出&quot;顺次引出对象,每条延时应为 0.1 秒。</p>
+</blockquote>
 <h2 id="真实的动作authentic-motion">真实的动作（Authentic Motion）</h2>
-<p>感知一个物体有形的部分可以帮助我们理解如何去控制它。观察一个物理的运动可以告诉我们它轻还是重，柔性还是刚性，小还是大。在material design设计规范中，动作不止是呈现着它美丽的一面，它还意味着在空间中的关系、功能以及在整个系统中的趋势。当一张卡片被强调或选中时，其离地面的距离增大，视觉上看起来被抬高，z轴距离增大，因此阴影应变大。当然，为了凸显这一动作，您可以为卡片的背景套上一层灰色的半透明层。
+<p>感知一个物体有形的部分可以帮助我们理解如何去控制它。观察一个物理的运动可以告诉我们它轻还是重，柔性还是刚性，小还是大。在 material design 设计规范中，动作不止是呈现着它美丽的一面，它还意味着在空间中的关系、功能以及在整个系统中的趋势。当一张卡片被强调或选中时，其离地面的距离增大，视觉上看起来被抬高，z 轴距离增大，因此阴影应变大。当然，为了凸显这一动作，您可以为卡片的背景套上一层灰色的半透明层。
 <video name="media" controls="" width="480"><source src="%E7%9C%9F%E5%AE%9E%E7%9A%84%E5%8A%A8%E4%BD%9C.mp4" type="video/mp4"></video></p>
 <h2 id="体积和重量mass-and-weight">体积和重量（Mass and Weight）</h2>
-<p>物理世界中物体拥有质量，所以只有当施加给它们力量的时候才会移动，因此，物体没法在瞬间开始或者结束动作。动画突然开始或者停止，或者在运动时突兀的变化方向，都会使用户感到意外和不和谐的干扰。在现实世界中，事物不会立即开始或停止移动。他们需要时间来加速和减速。宽松使元素移动，好像受摩擦等自然力的影响。因此，大的元素质量大，运动所需时间会更长。在PPT中，设置的运动时间也应该相应地更长。
+<p>物理世界中物体拥有质量，所以只有当施加给它们力量的时候才会移动，因此，物体没法在瞬间开始或者结束动作。动画突然开始或者停止，或者在运动时突兀的变化方向，都会使用户感到意外和不和谐的干扰。在现实世界中，事物不会立即开始或停止移动。他们需要时间来加速和减速。宽松使元素移动，好像受摩擦等自然力的影响。因此，大的元素质量大，运动所需时间会更长。在 PPT 中，设置的运动时间也应该相应地更长。
 <video name="media" controls="" width="480"><source src="%E8%BF%90%E5%8A%A8%E9%80%9F%E5%BA%A6.mp4" type="video/mp4"></video></p>
 <h1 id="场景纯原创">场景(纯原创)</h1>
-<p><strong>拓展屏幕(Extended Display)</strong>:屏幕只是充当一个查看器，不局限于屏幕大小。
-1.可将部分下一张PPT中的元素暴露于当前屏幕中，暗示当前章节未结束，增强连续性。</p>
-<p><span class="label label-default">示例</span></p>
+<p><strong>拓展屏幕(Extended Display)</strong>:屏幕只是充当一个查看器，不局限于屏幕大小。 1.可将部分下一张 PPT 中的元素暴露于当前屏幕中，暗示当前章节未结束，增强连续性。</p>
+<p>示例</p>
 <p><img src="ExtendedScreen1.webp" alt="ExtendedDisplay1"></p>
 <p><img src="ExtendedScreen2.webp" alt="ExtendedDisplay2"></p>
-<p>2.充当放大器，使转场不失流畅。放大后若要继续当前章节，应还原屏幕(退回放大前的状态)再继续当前章节，交代元素去向。
-<span class="label label-primary">e.g</span> 地图放大,强调场景。</p>
+<p>2.充当放大器，使转场不失流畅。放大后若要继续当前章节，应还原屏幕(退回放大前的状态)再继续当前章节，交代元素去向。</p>
+<blockquote>
+<p>e.g 地图放大,强调场景。</p>
+</blockquote>
 <p><strong>下一章节</strong>
 从当前屏幕拉出下一章节按钮（圆形），并由按钮进行转场，由按钮决定下一章节的背景颜色。</p>
 <div class="note note-good">
     <span class="material-icons">thumb_up_alt</span> 前言到正文的转场</div>
 <p><strong>拓展卡片(Extended Card)</strong>
 <video name="media" controls="" width="480"><source src="%E5%8D%A1%E7%89%87%E9%9D%A2%E7%A7%AF%E6%8B%93%E5%B1%95.mp4" type="video/mp4"></video>
-卡片大小也可以改变。（参见material card），当卡片拓展（放大）后，可引出详细内容。若被放大的卡片周围有卡片，此卡片将会推开周围的卡片，而不是直接覆盖其它卡片上。当卡片收缩时，若其周围本有卡片，则应将其它卡片拉回。若无，也可以借此机会引出新的卡片。</p>
+卡片大小也可以改变。（参见 material card），当卡片拓展（放大）后，可引出详细内容。若被放大的卡片周围有卡片，此卡片将会推开周围的卡片，而不是直接覆盖其它卡片上。当卡片收缩时，若其周围本有卡片，则应将其它卡片拉回。若无，也可以借此机会引出新的卡片。</p>
 <ul>
 <li>拓展时不宜覆盖其它卡片</li>
 <li>若不是极大地改变卡片的面积则不应该更改卡片的深度（表现为阴影的大小）</li>
@@ -345,7 +278,7 @@ Microsoft PowerPoint 2016或以上
 <p><video name="media" controls="" width="480"><source src="%E5%8D%A1%E7%89%87%E6%B7%B1%E5%BA%A6%E5%8F%98%E5%8C%96.mp4" type="video/mp4"></video></p>
 <h1 id="示例文件">示例文件</h1>
 <p><img src="Cover.webp" alt="示例文件预览"></p>
-<p><a href="Fluent%20Design%20System.pptx">📄示例文件</a></p>
+<p><a href="Fluent%20Design%20System.pptx">📄 示例文件</a></p>
 
 
     <ul id="taxonomy" class="not-prose flex items-center space-x-4 flex-nowrap whitespace-nowrap overflow-x-auto">
