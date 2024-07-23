@@ -1388,10 +1388,11 @@ div#content > p {
 
 .insert-link svg{
   transition: transform 0.3s cubic-bezier(0.2, 1, 0.5, 1.5);
+  transform: rotate(-45deg);
 }
 
 .insert-link:hover svg {
-  transform: rotate(-45deg);
+  transform: rotate(-90deg);
 }
 
 .sr-only {
