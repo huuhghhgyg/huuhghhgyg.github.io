@@ -120,6 +120,7 @@ function fetchJSONFile(path, callback) {
 //
 function loadSearch() {
     console.log('loadSearch()')
+    searchInput.placeholder = "Search Loading...";
     fetchJSONFile('/index.json', function (data) {
         var options = { // fuse.js options; check fuse.js website for details
             shouldSort: true,
@@ -135,6 +136,7 @@ function loadSearch() {
         // Create the Fuse index
         fuseIndex = Fuse.createIndex(options.keys, data)
         fuse = new Fuse(data, options, fuseIndex); // build the index from the json file
+        searchInput.placeholder = "Search..."; // remove the search loading text
     });
 }
 
