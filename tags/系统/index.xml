@@ -29,12 +29,5 @@
       <guid>https://www.zhhuu.top/posts/deploy-office-faster/</guid>
       <description>每次新安装Office诚然是一件很头疼地事情。这里介绍可以快速在电脑上安装Office的方法。&#xA;Office Tool Plus 如果你想深入了解Office Tool Plus，也请访问官方网站。 打开网站以后，点击立即下载，并打开Office Tool Plus。打开以后可能会进行自动更新。更新完之后进入软件界面 个人快速安装Office 如果仅在一台电脑上安装，你可以直接转到安装选项卡进行安装。 1、选择你需要的Office套件。&#xA;Win10推荐使用Office2019，Win7推荐使用Office2016 建议安装零售版，即Retail&#xA;2、根据你需要的Office软件勾选应用程序。&#xA;完整版Office安装的项目为Excel Powerpoint Word Access Publisher。大学生建议勾选完整版Office的安装项目。&#xA;3、安装设置: 根据系统，设置体系结构。为了获取较新的Office版本，建议把通道设置为&amp;quot;每月通道&amp;quot;。安装方式无需更改。 设置可选设置下的更新设置。 注意其中的禁用Office更新和使用配置管理器管理更新，建议取消勾选。 更新通道建议更改为&amp;quot;每月通道&amp;quot; 激活设置中，按需要进行勾选。 4、以上设置完毕后，即可点击开始安装。等待安装完毕即可使用。&#xA;批量快速安装Office 这种情况适用于多台设备需要安装Office。首先需要在一台机器上完成配置设置。&#xA;转到下载选项卡。点击版本号,查询版本号。 设置常规设置中的通道、体系结构以及版本。 点击上方的开始按钮。&#xA;下载完成后，转到安装选项卡，参照上文个人快速安装Office的前三个步骤。不同的是，安装设置中的安装方式应设置为离线安装。 点击开始安装旁边的三角形，选择保存配置为XML。&#xA;找到并打开你保存的XML文件，转到其中SourcePath所指的目录，复制整个文件夹到你的U盘。 把你保存的XML文件也复制到U盘下的同一个文件夹。&#xA;当你需要在其他电脑上从U盘安装Office时，修改其中SourcePath所指的目录为你的U盘所在的同文件夹目录，打开Office Tool Plus，进入安装选项卡，点击开始安装旁边的三角形，选择选择XML文件，选择你的XML文件，点击开始安装。或者使用微软的Office Deployment Tool，用CMD的方式进行安装。这里不再介绍这种方法，请百度。</description>
     </item>
-    <item>
-      <title>Windows10 快捷键</title>
-      <link>https://www.zhhuu.top/posts/windows-hotkey/</link>
-      <pubDate>Sun, 06 May 2018 17:04:33 +0000</pubDate>
-      <guid>https://www.zhhuu.top/posts/windows-hotkey/</guid>
-      <description>好像还不怎么熟悉Windows的快捷键，先存下。 微软为Win10技术预览版命令行(Command Prompt)加入了Ctrl + V的支持，Scott Hanselman为此整理了命令行中的键盘快捷键。&#xA;Win10新增功能快捷键大全： 动作 操作 贴靠窗口 Win +左/右&amp;gt; Win +上/下&amp;gt;窗口可以变为1/4大小放置在屏幕4个角落 切换窗口 Alt + Tab(不是新的，但任务切换界面改进) 任务视图 Win + Tab(松开键盘界面不会消失) 创建新的虚拟桌面 Win + Ctrl + D 关闭当前虚拟桌面 Win + Ctrl + F4 切换虚拟桌面 Win + Ctrl +左/右 文本编辑类 按此键&#xA;执行此操作&#xA;Ctrl + X&#xA;剪切选定项&#xA;Ctrl + C（或 Ctrl + Insert）&#xA;复制选定项&#xA;Ctrl + V（或 Shift + Insert）&#xA;粘贴选定项&#xA;Ctrl + Z&#xA;撤消操作&#xA;Alt + Tab&#xA;在打开的应用之间切换&#xA;Alt + F4</description>
-    </item>
   </channel>
 </rss>
