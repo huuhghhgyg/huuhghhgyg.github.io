@@ -16,7 +16,7 @@ function startClockAtExactSecond() {
         minuteHand.classList.add("animate");
 
         // 每秒更新一次时间文本
-        // updateClock(); // 立即调用一次，避免延迟一秒才显示
+        updateClock(); // 立即调用一次，避免延迟一秒才显示
         setInterval(updateClock, 1000);
     }, delay);
 }
@@ -38,8 +38,4 @@ window.onload = function () {
 
     // 启动时钟，在整数秒开始动画
     startClockAtExactSecond();
-    // Resize(); // 立即调用一次，避免延迟一秒才调整大小显示
-
-    // 添加窗口大小改变事件，时钟大小和指针跟随窗口变化
-    // window.addEventListener("resize", Resize);
 }

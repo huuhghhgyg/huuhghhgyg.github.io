@@ -3,11 +3,8 @@
   --margin-x: 12vw;
   --margin-t: 12vh;
   --x: 24vw;
-}
-
-div {
-  /* border: 2px solid #333; */
-  /* padding: 10vw; */
+  --w: calc(var(--x) / 12.8);
+  /* --w: 2px; */
 }
 
 #margin {
@@ -67,7 +64,7 @@ div {
 #axis {
   background-color: #f8ca08;
   /* border: 1px #000 solid; */
-  width: calc(var(--x) / 12.8);
+  width: var(--w);
   will-change: transform;
 }
 
@@ -80,7 +77,7 @@ div {
 }
 
 #axis {
-  height: calc(var(--x) / 12.8);
+  height: var(--w);
 }
 
 #hour-hand.animate {
@@ -94,58 +91,47 @@ div {
 @keyframes minute-hand-rotate {
   from {
     transform: translateX(-50%) translateY(-100%) rotate(0deg);
-    transform-origin: 50% 100%;
   }
 
   to {
     transform: translateX(-50%) translateY(-100%) rotate(360deg);
-    transform-origin: 50% 100%;
   }
 }
 
 @keyframes hour-hand-rotate {
   0% {
     transform: translateX(-50%) translateY(-100%) rotate(0deg);
-    transform-origin: 50% 100%;
   }
 
   12.5% {
     transform: translateX(-50%) translateY(-100%) rotate(45deg);
-    transform-origin: 50% 100%;
   }
 
   25% {
     transform: translateX(-50%) translateY(-100%) rotate(90deg);
-    transform-origin: 50% 100%;
   }
 
   37.5% {
     transform: translateX(-50%) translateY(-100%) rotate(135deg);
-    transform-origin: 50% 100%;
   }
 
   50% {
     transform: translateX(-50%) translateY(-100%) rotate(180deg);
-    transform-origin: 50% 100%;
   }
 
   62.5% {
     transform: translateX(-50%) translateY(-100%) rotate(225deg);
-    transform-origin: 50% 100%;
   }
 
   75% {
     transform: translateX(-50%) translateY(-100%) rotate(270deg);
-    transform-origin: 50% 100%;
   }
 
   87.5% {
     transform: translateX(-50%) translateY(-100%) rotate(315deg);
-    transform-origin: 50% 100%;
   }
 
   100% {
     transform: translateX(-50%) translateY(-100%) rotate(360deg);
-    transform-origin: 50% 100%;
   }
 }
