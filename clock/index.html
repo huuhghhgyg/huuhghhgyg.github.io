@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./clock.js"></script>
+  <link rel="stylesheet" href="./clock.css">
+</head>
+
+<body>
+  <div id="background" class="flex h-screen w-full">
+    <div id="margin" class="flex w-full flex-1 flex-col">
+      <!-- <p class="tag">inside margin</p> -->
+      <div id="clock-container" class="flex flex-none">
+        <div id="time" class="flex-auto flex items-center">
+          <!-- <p class="tag">time</p> -->
+          <p id="number">00:00:00</p>
+        </div>
+        <div id="clock" class="flex-none relative aspect-square w-full rounded-full">
+          <!-- <p class="tag">clock</p> -->
+          <!-- 时针 -->
+          <div id="hour-hand" class="absolute left-1/2 top-1/2 origin-bottom -translate-x-1/2 -translate-y-full"></div>
+          <!-- 分针 -->
+          <div id="minute-hand" class="absolute left-1/2 top-1/2 origin-bottom -translate-x-1/2 -translate-y-full">
+          </div>
+          <!-- 转轴 -->
+          <div id="axis" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"></div>
+        </div>
+      </div>
+      <div id="info-container" class="flex-auto flex flex-col-reverse">
+        <div id="info">real time clock</div>
+      </div>
+      <div id="bottom-container" class="flex flex-row-reverse">
+        <!-- <p class="tag">bottom-container</p> -->
+        <div id="semi-circle" class="flex-none rounded-t-full">
+          <!-- <p class="tag">semi-circle</p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
