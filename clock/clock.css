@@ -1,10 +1,12 @@
 :root {
+  /* 添加主题色变量 */
+  --theme-color: #f8ca08;
+  
   /*horizontal*/
   --margin-x: 12vw;
   --margin-t: 12vh;
   --x: 24vw;
   --w: calc(var(--x) / 12.8);
-  /* --w: 2px; */
 }
 
 #margin {
@@ -56,14 +58,13 @@
 }
 
 #background {
-  background-color: #f8ca08;
+  background-color: var(--theme-color);
 }
 
 #hour-hand,
 #minute-hand,
 #axis {
-  background-color: #f8ca08;
-  /* border: 1px #000 solid; */
+  background-color: var(--theme-color);
   width: var(--w);
   will-change: transform;
 }
@@ -134,4 +135,9 @@
   100% {
     transform: translateX(-50%) translateY(-100%) rotate(360deg);
   }
+}
+
+/* 添加超时样式 */
+.overdue {
+  --theme-color: #ed6607;
 }
