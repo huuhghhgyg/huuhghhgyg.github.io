@@ -3775,11 +3775,20 @@ div#content > p {
 }
 
 .close {
-  display: none;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  margin-top: 0;
 }
 
 .open {
-  display: block;
+  max-height: 90px;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
 }
 
 .hover\:prose-lg:hover {
