@@ -7,7 +7,7 @@
 <title>C# 线程 | Hikaru&#39;s Blog</title>
 
 <meta name="description" content="">
-      <link rel="stylesheet" href="/css/main.min.628d64be9957aa62dd57e1b9aef7c590bb4b9480c1072d2dba8e0f3dc2fc0f12.css" integrity="sha256-Yo1kvplXqmLdV&#43;G5rvfFkLtLlIDBBy0tuo4PPcL8DxI=" crossorigin="anonymous">
+      <link rel="stylesheet" href="/css/main.min.a3c4b81db7439f4859a5413b3ecd0058c1cc95c632719df43c0af83a59a69a13.css" integrity="sha256-o8S4HbdDn0hZpUE7Ps0AWMHMlcYycZ30PAr4OlmmmhM=" crossorigin="anonymous">
 
 <link rel="icon" type="image/svg+xml" href="https://www.zhhuu.top/favicon.svg"> 
 <link rel="icon" type="image/x-icon" href="https://www.zhhuu.top/favicon.ico"> 
@@ -131,8 +131,429 @@
     
 
     
-    <img class="rounded-lg w-full h-full object-cover object-center" src="/img/random/material-4.webp" alt="C# 线程">
+    <img class="rounded-lg w-full h-full object-cover object-center" src="/img/random/material-5.webp" alt="C# 线程">
 </figure>
+
+<div class="block md:hidden not-prose">
+  
+    
+
+
+
+
+
+
+<div class="toc mb-4 lg:mb-8">
+    <div class="page-header font-bold text-lg pb-2">目录</div>
+    <div class="toc-nav relative lg:inline-block">
+        
+        <div class="indicator absolute transition-all duration-300 ease-in-out border border-blue-500 rounded-2xl z-10"></div>
+        <ul class="nav relative">
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#thread-%e7%ba%bf%e7%a8%8b">
+                    
+                        1. Thread 线程
+                    
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e7%ba%bf%e7%a8%8b%e8%a2%ab%e6%8a%a2%e5%8d%a0">
+                    
+                        1.1 线程被抢占
+                    
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e7%ba%bf%e7%a8%8b%e7%9a%84%e5%b1%9e%e6%80%a7%e7%89%b9%e6%80%a7">
+                    
+                        1.2 线程的属性&amp;特性
+                    
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#join">
+                    
+                        1.3 Join
+                    
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e6%b7%bb%e5%8a%a0%e8%b6%85%e6%97%b6">
+                    
+                        1.3.1 添加超时
+                    
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#sleep">
+                    
+                        1.4 Sleep
+                    
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e9%98%bb%e5%a1%9e">
+                    
+                        2. 阻塞
+                    
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#threadstate">
+                    
+                        2.1 ThreadState
+                    
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e4%b8%be%e4%be%8b">
+                    
+                        2.1.2 举例
+                    
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e8%a7%a3%e9%99%a4%e9%98%bb%e5%a1%9e">
+                    
+                        3. 解除阻塞
+                    
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86">
+                    
+                        4. 异常处理
+                    
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e5%89%8d%e5%8f%b0%e5%92%8c%e5%90%8e%e5%8f%b0%e7%ba%bf%e7%a8%8b">
+                    
+                        5. 前台和后台线程
+                    
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e7%ba%bf%e7%a8%8b%e4%bc%98%e5%85%88%e7%ba%a7">
+                    
+                        6. 线程优先级
+                    
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e4%bf%a1%e5%8f%b7">
+                    
+                        7. 信号
+                    
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e5%af%8c%e5%ae%a2%e6%88%b7%e7%ab%af%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e7%9a%84%e7%ba%bf%e7%a8%8b">
+                    
+                        8. 富客户端应用程序的线程
+                    
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e7%ba%bf%e7%a8%8b%e6%b1%a0">
+                    
+                        9. 线程池
+                    
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e5%8f%82%e8%80%83%e8%b5%84%e6%96%99">
+                    
+                        10. 参考资料
+                    
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e4%bd%8d%e6%93%8d%e4%bd%9c">
+                    
+                        10.1 位操作
+                    
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e6%8c%89%e4%bd%8d%e4%b8%8e%e5%92%8c%e6%8c%89%e4%bd%8d%e6%88%96">
+                    
+                        10.1.3 按位与(&amp;)和按位或(|)
+                    
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e6%8c%89%e4%bd%8d%e5%bc%82%e6%88%96">
+                    
+                        10.1.4 按位异或(^)
+                    
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e5%b7%a6%e7%a7%bb">
+                    
+                        10.1.5 左移
+                    
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-3">
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e5%8f%b3%e7%a7%bb">
+                    
+                        10.1.6 右移
+                    
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+            
+            <li class="nav-item level-2">
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e4%b8%8a%e4%b8%8b%e6%96%87%e5%88%87%e6%8d%a2">
+                    
+                        10.2 上下文切换
+                    
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e5%bc%95%e7%94%a8">
+                    
+                        11. 引用
+                    
+                </a>
+            </li>
+        
+        </ul>
+    </div>
+</div>
+
+
+
+<script src="/js/toc.js"></script>
+  
+</div>
 
     <div id="content" class="mb-14">
       <h1 id="thread-线程">Thread 线程</h1>
@@ -499,20 +920,23 @@
   </article>
 
   
-  <aside class="md:col-span-1"><div class="lg:sticky lg:top-8">
+  <aside class="md:col-span-1"><div class="md:sticky md:top-8">
 
-	
-      
-
-
-
+	<div class="hidden md:block">
+		
+			
 
 
 
-<div class="toc rounded-2xl p-4 bg-zinc-100 mb-10">
+
+
+
+<div class="toc mb-4 lg:mb-8">
     <div class="page-header font-bold text-lg pb-2">目录</div>
-    <div class="toc-nav">
-        <ul class="nav">
+    <div class="toc-nav relative lg:inline-block">
+        
+        <div class="indicator absolute transition-all duration-300 ease-in-out border border-blue-500 rounded-2xl z-10"></div>
+        <ul class="nav relative">
         
             
             
@@ -524,8 +948,10 @@
                 
             
             <li class="nav-item level-1">
-                <a class="nav-link" href="#thread-%e7%ba%bf%e7%a8%8b">
-                    1. Thread 线程
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#thread-%e7%ba%bf%e7%a8%8b">
+                    
+                        1. Thread 线程
+                    
                 </a>
             </li>
         
@@ -538,8 +964,10 @@
                 
             
             <li class="nav-item level-2">
-                <a class="nav-link" href="#%e7%ba%bf%e7%a8%8b%e8%a2%ab%e6%8a%a2%e5%8d%a0">
-                    1.1. 线程被抢占
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e7%ba%bf%e7%a8%8b%e8%a2%ab%e6%8a%a2%e5%8d%a0">
+                    
+                        1.1 线程被抢占
+                    
                 </a>
             </li>
         
@@ -552,8 +980,10 @@
                 
             
             <li class="nav-item level-2">
-                <a class="nav-link" href="#%e7%ba%bf%e7%a8%8b%e7%9a%84%e5%b1%9e%e6%80%a7%e7%89%b9%e6%80%a7">
-                    1.2. 线程的属性&amp;特性
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e7%ba%bf%e7%a8%8b%e7%9a%84%e5%b1%9e%e6%80%a7%e7%89%b9%e6%80%a7">
+                    
+                        1.2 线程的属性&amp;特性
+                    
                 </a>
             </li>
         
@@ -566,8 +996,10 @@
                 
             
             <li class="nav-item level-2">
-                <a class="nav-link" href="#join">
-                    1.3. Join
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#join">
+                    
+                        1.3 Join
+                    
                 </a>
             </li>
         
@@ -580,8 +1012,10 @@
                 
             
             <li class="nav-item level-3">
-                <a class="nav-link" href="#%e6%b7%bb%e5%8a%a0%e8%b6%85%e6%97%b6">
-                    1.3.1. 添加超时
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e6%b7%bb%e5%8a%a0%e8%b6%85%e6%97%b6">
+                    
+                        1.3.1 添加超时
+                    
                 </a>
             </li>
         
@@ -594,8 +1028,10 @@
                 
             
             <li class="nav-item level-2">
-                <a class="nav-link" href="#sleep">
-                    1.4. Sleep
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#sleep">
+                    
+                        1.4 Sleep
+                    
                 </a>
             </li>
         
@@ -609,8 +1045,10 @@
                 
             
             <li class="nav-item level-1">
-                <a class="nav-link" href="#%e9%98%bb%e5%a1%9e">
-                    2. 阻塞
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e9%98%bb%e5%a1%9e">
+                    
+                        2. 阻塞
+                    
                 </a>
             </li>
         
@@ -623,8 +1061,10 @@
                 
             
             <li class="nav-item level-2">
-                <a class="nav-link" href="#threadstate">
-                    2.1. ThreadState
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#threadstate">
+                    
+                        2.1 ThreadState
+                    
                 </a>
             </li>
         
@@ -637,8 +1077,10 @@
                 
             
             <li class="nav-item level-3">
-                <a class="nav-link" href="#%e4%b8%be%e4%be%8b">
-                    2.1.2. 举例
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e4%b8%be%e4%be%8b">
+                    
+                        2.1.2 举例
+                    
                 </a>
             </li>
         
@@ -652,8 +1094,10 @@
                 
             
             <li class="nav-item level-1">
-                <a class="nav-link" href="#%e8%a7%a3%e9%99%a4%e9%98%bb%e5%a1%9e">
-                    3. 解除阻塞
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e8%a7%a3%e9%99%a4%e9%98%bb%e5%a1%9e">
+                    
+                        3. 解除阻塞
+                    
                 </a>
             </li>
         
@@ -667,8 +1111,10 @@
                 
             
             <li class="nav-item level-1">
-                <a class="nav-link" href="#%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86">
-                    4. 异常处理
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86">
+                    
+                        4. 异常处理
+                    
                 </a>
             </li>
         
@@ -682,8 +1128,10 @@
                 
             
             <li class="nav-item level-1">
-                <a class="nav-link" href="#%e5%89%8d%e5%8f%b0%e5%92%8c%e5%90%8e%e5%8f%b0%e7%ba%bf%e7%a8%8b">
-                    5. 前台和后台线程
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e5%89%8d%e5%8f%b0%e5%92%8c%e5%90%8e%e5%8f%b0%e7%ba%bf%e7%a8%8b">
+                    
+                        5. 前台和后台线程
+                    
                 </a>
             </li>
         
@@ -697,8 +1145,10 @@
                 
             
             <li class="nav-item level-1">
-                <a class="nav-link" href="#%e7%ba%bf%e7%a8%8b%e4%bc%98%e5%85%88%e7%ba%a7">
-                    6. 线程优先级
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e7%ba%bf%e7%a8%8b%e4%bc%98%e5%85%88%e7%ba%a7">
+                    
+                        6. 线程优先级
+                    
                 </a>
             </li>
         
@@ -712,8 +1162,10 @@
                 
             
             <li class="nav-item level-1">
-                <a class="nav-link" href="#%e4%bf%a1%e5%8f%b7">
-                    7. 信号
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e4%bf%a1%e5%8f%b7">
+                    
+                        7. 信号
+                    
                 </a>
             </li>
         
@@ -727,8 +1179,10 @@
                 
             
             <li class="nav-item level-1">
-                <a class="nav-link" href="#%e5%af%8c%e5%ae%a2%e6%88%b7%e7%ab%af%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e7%9a%84%e7%ba%bf%e7%a8%8b">
-                    8. 富客户端应用程序的线程
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e5%af%8c%e5%ae%a2%e6%88%b7%e7%ab%af%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e7%9a%84%e7%ba%bf%e7%a8%8b">
+                    
+                        8. 富客户端应用程序的线程
+                    
                 </a>
             </li>
         
@@ -742,8 +1196,10 @@
                 
             
             <li class="nav-item level-1">
-                <a class="nav-link" href="#%e7%ba%bf%e7%a8%8b%e6%b1%a0">
-                    9. 线程池
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e7%ba%bf%e7%a8%8b%e6%b1%a0">
+                    
+                        9. 线程池
+                    
                 </a>
             </li>
         
@@ -757,8 +1213,10 @@
                 
             
             <li class="nav-item level-1">
-                <a class="nav-link" href="#%e5%8f%82%e8%80%83%e8%b5%84%e6%96%99">
-                    10. 参考资料
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e5%8f%82%e8%80%83%e8%b5%84%e6%96%99">
+                    
+                        10. 参考资料
+                    
                 </a>
             </li>
         
@@ -771,8 +1229,10 @@
                 
             
             <li class="nav-item level-2">
-                <a class="nav-link" href="#%e4%bd%8d%e6%93%8d%e4%bd%9c">
-                    10.1. 位操作
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e4%bd%8d%e6%93%8d%e4%bd%9c">
+                    
+                        10.1 位操作
+                    
                 </a>
             </li>
         
@@ -785,8 +1245,10 @@
                 
             
             <li class="nav-item level-3">
-                <a class="nav-link" href="#%e6%8c%89%e4%bd%8d%e4%b8%8e%e5%92%8c%e6%8c%89%e4%bd%8d%e6%88%96">
-                    10.1.3. 按位与(&amp;)和按位或(|)
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e6%8c%89%e4%bd%8d%e4%b8%8e%e5%92%8c%e6%8c%89%e4%bd%8d%e6%88%96">
+                    
+                        10.1.3 按位与(&amp;)和按位或(|)
+                    
                 </a>
             </li>
         
@@ -799,8 +1261,10 @@
                 
             
             <li class="nav-item level-3">
-                <a class="nav-link" href="#%e6%8c%89%e4%bd%8d%e5%bc%82%e6%88%96">
-                    10.1.4. 按位异或(^)
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e6%8c%89%e4%bd%8d%e5%bc%82%e6%88%96">
+                    
+                        10.1.4 按位异或(^)
+                    
                 </a>
             </li>
         
@@ -813,8 +1277,10 @@
                 
             
             <li class="nav-item level-3">
-                <a class="nav-link" href="#%e5%b7%a6%e7%a7%bb">
-                    10.1.5. 左移
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e5%b7%a6%e7%a7%bb">
+                    
+                        10.1.5 左移
+                    
                 </a>
             </li>
         
@@ -827,8 +1293,10 @@
                 
             
             <li class="nav-item level-3">
-                <a class="nav-link" href="#%e5%8f%b3%e7%a7%bb">
-                    10.1.6. 右移
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e5%8f%b3%e7%a7%bb">
+                    
+                        10.1.6 右移
+                    
                 </a>
             </li>
         
@@ -841,8 +1309,10 @@
                 
             
             <li class="nav-item level-2">
-                <a class="nav-link" href="#%e4%b8%8a%e4%b8%8b%e6%96%87%e5%88%87%e6%8d%a2">
-                    10.2. 上下文切换
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e4%b8%8a%e4%b8%8b%e6%96%87%e5%88%87%e6%8d%a2">
+                    
+                        10.2 上下文切换
+                    
                 </a>
             </li>
         
@@ -856,8 +1326,10 @@
                 
             
             <li class="nav-item level-1">
-                <a class="nav-link" href="#%e5%bc%95%e7%94%a8">
-                    11. 引用
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e5%bc%95%e7%94%a8">
+                    
+                        11. 引用
+                    
                 </a>
             </li>
         
@@ -866,48 +1338,10 @@
 </div>
 
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const tocLinks = document.querySelectorAll(".toc-nav .nav-link");
-    const headers = Array.from(tocLinks).map(link => document.querySelector(decodeURI(link.getAttribute("href"))));
-    const offset = 10; 
-    
-    if (tocLinks.length === 0) {
-        return;
-    }
 
-    function updateActiveLink() {
-        let index = headers.findIndex(header => header.getBoundingClientRect().top > offset);
-        if (index === -1) {
-            index = headers.length - 1;
-        } else if (index > 0) {
-            index -= 1;
-        }
-        tocLinks.forEach(link => link.classList.remove("active"));
-        tocLinks[index].classList.add("active");
-    }
-
-    window.addEventListener("scroll", updateActiveLink);
-
-    tocLinks.forEach(link => {
-        link.addEventListener("click", function(event) {
-            event.preventDefault();
-            const targetId = decodeURI(this.getAttribute("href").substring(1));
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
-                
-                history.pushState(null, null, `#${targetId}`);
-                setTimeout(updateActiveLink, 100); 
-            }
-        });
-    });
-
-    updateActiveLink(); 
-});
-</script>
-
-    
+<script src="/js/toc.js"></script>
+		
+	</div>
 
 
 	

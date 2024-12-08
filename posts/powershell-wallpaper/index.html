@@ -7,7 +7,7 @@
 <title>使用Powershell自动设置壁纸 | Hikaru&#39;s Blog</title>
 
 <meta name="description" content="">
-      <link rel="stylesheet" href="/css/main.min.628d64be9957aa62dd57e1b9aef7c590bb4b9480c1072d2dba8e0f3dc2fc0f12.css" integrity="sha256-Yo1kvplXqmLdV&#43;G5rvfFkLtLlIDBBy0tuo4PPcL8DxI=" crossorigin="anonymous">
+      <link rel="stylesheet" href="/css/main.min.a3c4b81db7439f4859a5413b3ecd0058c1cc95c632719df43c0af83a59a69a13.css" integrity="sha256-o8S4HbdDn0hZpUE7Ps0AWMHMlcYycZ30PAr4OlmmmhM=" crossorigin="anonymous">
 
 <link rel="icon" type="image/svg+xml" href="https://www.zhhuu.top/favicon.svg"> 
 <link rel="icon" type="image/x-icon" href="https://www.zhhuu.top/favicon.ico"> 
@@ -129,6 +129,100 @@
         <img class="rounded-lg w-full h-full object-cover object-center" src="https://www.zhhuu.top/img/powershell-wallpaper_hu7e555814e70e7a5a190e122150027c1b_5048_750x0_resize_q75_h2_box_2.webp" alt="" width="750" height="352">
 </figure>
 
+<div class="block md:hidden not-prose">
+  
+    
+
+
+
+
+
+
+<div class="toc mb-4 lg:mb-8">
+    <div class="page-header font-bold text-lg pb-2">目录</div>
+    <div class="toc-nav relative lg:inline-block">
+        
+        <div class="indicator absolute transition-all duration-300 ease-in-out border border-blue-500 rounded-2xl z-10"></div>
+        <ul class="nav relative">
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e5%87%86%e5%a4%87%e5%b7%a5%e4%bd%9c">
+                    
+                        1. 准备工作
+                    
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e8%87%aa%e5%8a%a8%e6%9b%b4%e6%8d%a2%e5%a3%81%e7%ba%b8%e7%9a%84%e5%87%bd%e6%95%b0%e6%96%b9%e6%b3%95">
+                    
+                        2. 自动更换壁纸的函数方法
+                    
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e6%b7%bb%e5%8a%a0%e5%88%b0%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1">
+                    
+                        3. 添加到计划任务
+                    
+                </a>
+            </li>
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            <li class="nav-item level-1">
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e8%bf%98%e5%8f%af%e4%bb%a5">
+                    
+                        4. 还可以
+                    
+                </a>
+            </li>
+        
+        </ul>
+    </div>
+</div>
+
+
+
+<script src="/js/toc.js"></script>
+  
+</div>
+
     <div id="content" class="mb-14">
       <p>发现CMD不能达到此目的，更换更高级的Powershell来执行这个任务~</p>
 <p>最近有的人经常更换电脑桌面壁纸，而且壁纸我觉得也不算好看(很难看)，基本上就是起到哗众取宠的目的，所以我打算利用脚本自动定时更换电脑壁纸，达到锁定电脑壁纸的目的。</p>
@@ -232,7 +326,7 @@ Powershell中执行命令如下:
 			
 			
 			
-			<img class="object-cover group-hover:scale-105 transition duration-500 cursor-pointer object-center w-full h-full" src="/img/random/material-2.webp" alt="FileGetter使用说明" loading="lazy">
+			<img class="object-cover group-hover:scale-105 transition duration-500 cursor-pointer object-center w-full h-full" src="/img/random/material-11.webp" alt="FileGetter使用说明" loading="lazy">
 
 	  </figure>
 
@@ -272,20 +366,23 @@ Powershell中执行命令如下:
   </article>
 
   
-  <aside class="md:col-span-1"><div class="lg:sticky lg:top-8">
+  <aside class="md:col-span-1"><div class="md:sticky md:top-8">
 
-	
-      
-
-
-
+	<div class="hidden md:block">
+		
+			
 
 
 
-<div class="toc rounded-2xl p-4 bg-zinc-100 mb-10">
+
+
+
+<div class="toc mb-4 lg:mb-8">
     <div class="page-header font-bold text-lg pb-2">目录</div>
-    <div class="toc-nav">
-        <ul class="nav">
+    <div class="toc-nav relative lg:inline-block">
+        
+        <div class="indicator absolute transition-all duration-300 ease-in-out border border-blue-500 rounded-2xl z-10"></div>
+        <ul class="nav relative">
         
             
             
@@ -297,8 +394,10 @@ Powershell中执行命令如下:
                 
             
             <li class="nav-item level-1">
-                <a class="nav-link" href="#%e5%87%86%e5%a4%87%e5%b7%a5%e4%bd%9c">
-                    1. 准备工作
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e5%87%86%e5%a4%87%e5%b7%a5%e4%bd%9c">
+                    
+                        1. 准备工作
+                    
                 </a>
             </li>
         
@@ -312,8 +411,10 @@ Powershell中执行命令如下:
                 
             
             <li class="nav-item level-1">
-                <a class="nav-link" href="#%e8%87%aa%e5%8a%a8%e6%9b%b4%e6%8d%a2%e5%a3%81%e7%ba%b8%e7%9a%84%e5%87%bd%e6%95%b0%e6%96%b9%e6%b3%95">
-                    2. 自动更换壁纸的函数方法
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e8%87%aa%e5%8a%a8%e6%9b%b4%e6%8d%a2%e5%a3%81%e7%ba%b8%e7%9a%84%e5%87%bd%e6%95%b0%e6%96%b9%e6%b3%95">
+                    
+                        2. 自动更换壁纸的函数方法
+                    
                 </a>
             </li>
         
@@ -327,8 +428,10 @@ Powershell中执行命令如下:
                 
             
             <li class="nav-item level-1">
-                <a class="nav-link" href="#%e6%b7%bb%e5%8a%a0%e5%88%b0%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1">
-                    3. 添加到计划任务
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e6%b7%bb%e5%8a%a0%e5%88%b0%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1">
+                    
+                        3. 添加到计划任务
+                    
                 </a>
             </li>
         
@@ -342,8 +445,10 @@ Powershell中执行命令如下:
                 
             
             <li class="nav-item level-1">
-                <a class="nav-link" href="#%e8%bf%98%e5%8f%af%e4%bb%a5">
-                    4. 还可以
+                <a class="nav-link block py-1.5 px-4 relative z-0 text-gray-500 text-sm leading-5 transition-colors duration-200 rounded-2xl hover:bg-gray-100" href="#%e8%bf%98%e5%8f%af%e4%bb%a5">
+                    
+                        4. 还可以
+                    
                 </a>
             </li>
         
@@ -352,48 +457,10 @@ Powershell中执行命令如下:
 </div>
 
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const tocLinks = document.querySelectorAll(".toc-nav .nav-link");
-    const headers = Array.from(tocLinks).map(link => document.querySelector(decodeURI(link.getAttribute("href"))));
-    const offset = 10; 
-    
-    if (tocLinks.length === 0) {
-        return;
-    }
 
-    function updateActiveLink() {
-        let index = headers.findIndex(header => header.getBoundingClientRect().top > offset);
-        if (index === -1) {
-            index = headers.length - 1;
-        } else if (index > 0) {
-            index -= 1;
-        }
-        tocLinks.forEach(link => link.classList.remove("active"));
-        tocLinks[index].classList.add("active");
-    }
-
-    window.addEventListener("scroll", updateActiveLink);
-
-    tocLinks.forEach(link => {
-        link.addEventListener("click", function(event) {
-            event.preventDefault();
-            const targetId = decodeURI(this.getAttribute("href").substring(1));
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
-                
-                history.pushState(null, null, `#${targetId}`);
-                setTimeout(updateActiveLink, 100); 
-            }
-        });
-    });
-
-    updateActiveLink(); 
-});
-</script>
-
-    
+<script src="/js/toc.js"></script>
+		
+	</div>
 
 
 	
