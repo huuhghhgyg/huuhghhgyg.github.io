@@ -13,7 +13,7 @@
         const tocLinks = document.querySelectorAll(".md\\:block .toc-nav .nav-link");
         const headers = Array.from(tocLinks).map(link => document.querySelector(decodeURI(link.getAttribute("href"))));
         const indicator = document.querySelector(".md\\:block .indicator");
-        const offset = 10;
+        const offset = 100;
         
         if (tocLinks.length === 0) return;
 

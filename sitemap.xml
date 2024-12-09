@@ -2,16 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.zhhuu.top/tags/feature/</loc>
-    <lastmod>2024-07-21T14:00:00+00:00</lastmod>
+    <loc>https://www.zhhuu.top/categories/</loc>
+    <lastmod>2024-12-09T11:42:28+08:00</lastmod>
+  </url><url>
+    <loc>https://www.zhhuu.top/categories/coding/</loc>
+    <lastmod>2024-12-09T11:42:28+08:00</lastmod>
   </url><url>
     <loc>https://www.zhhuu.top/</loc>
-    <lastmod>2024-07-21T14:00:00+00:00</lastmod>
+    <lastmod>2024-12-09T11:42:28+08:00</lastmod>
   </url><url>
     <loc>https://www.zhhuu.top/posts/</loc>
-    <lastmod>2024-07-21T14:00:00+00:00</lastmod>
+    <lastmod>2024-12-09T11:42:28+08:00</lastmod>
+  </url><url>
+    <loc>https://www.zhhuu.top/tags/python/</loc>
+    <lastmod>2024-12-09T11:42:28+08:00</lastmod>
   </url><url>
     <loc>https://www.zhhuu.top/tags/</loc>
+    <lastmod>2024-12-09T11:42:28+08:00</lastmod>
+  </url><url>
+    <loc>https://www.zhhuu.top/tags/%E4%BC%98%E5%8C%96/</loc>
+    <lastmod>2024-12-09T11:42:28+08:00</lastmod>
+  </url><url>
+    <loc>https://www.zhhuu.top/posts/gradient-descent/</loc>
+    <lastmod>2024-12-09T11:42:28+08:00</lastmod>
+  </url><url>
+    <loc>https://www.zhhuu.top/tags/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2024-12-09T11:42:28+08:00</lastmod>
+  </url><url>
+    <loc>https://www.zhhuu.top/tags/%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2024-12-09T11:42:28+08:00</lastmod>
+  </url><url>
+    <loc>https://www.zhhuu.top/tags/feature/</loc>
     <lastmod>2024-07-21T14:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.zhhuu.top/tags/%E5%89%8D%E7%AB%AF/</loc>
@@ -19,9 +40,6 @@
   </url><url>
     <loc>https://www.zhhuu.top/posts/new-theme/</loc>
     <lastmod>2024-07-21T14:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.zhhuu.top/categories/</loc>
-    <lastmod>2023-02-03T23:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.zhhuu.top/categories/feature/</loc>
     <lastmod>2023-02-03T23:00:00+00:00</lastmod>
@@ -32,34 +50,19 @@
     <loc>https://www.zhhuu.top/posts/undergraduate-workflow/</loc>
     <lastmod>2023-02-03T23:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.zhhuu.top/categories/coding/</loc>
-    <lastmod>2022-09-23T16:20:36+00:00</lastmod>
-  </url><url>
     <loc>https://www.zhhuu.top/tags/lua/</loc>
     <lastmod>2022-09-23T16:20:36+00:00</lastmod>
   </url><url>
     <loc>https://www.zhhuu.top/posts/lua-microcity/</loc>
     <lastmod>2022-09-23T16:20:36+00:00</lastmod>
   </url><url>
-    <loc>https://www.zhhuu.top/tags/%E7%BC%96%E7%A8%8B/</loc>
-    <lastmod>2022-09-23T16:20:36+00:00</lastmod>
-  </url><url>
     <loc>https://www.zhhuu.top/tags/%E8%AF%AD%E6%B3%95/</loc>
     <lastmod>2022-09-23T16:20:36+00:00</lastmod>
-  </url><url>
-    <loc>https://www.zhhuu.top/tags/python/</loc>
-    <lastmod>2022-07-13T12:07:30+00:00</lastmod>
-  </url><url>
-    <loc>https://www.zhhuu.top/tags/%E4%BC%98%E5%8C%96/</loc>
-    <lastmod>2022-07-13T12:07:30+00:00</lastmod>
   </url><url>
     <loc>https://www.zhhuu.top/posts/ga/</loc>
     <lastmod>2022-07-13T12:07:30+00:00</lastmod>
   </url><url>
     <loc>https://www.zhhuu.top/tags/%E7%89%A9%E6%B5%81/</loc>
-    <lastmod>2022-07-13T12:07:30+00:00</lastmod>
-  </url><url>
-    <loc>https://www.zhhuu.top/tags/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2022-07-13T12:07:30+00:00</lastmod>
   </url><url>
     <loc>https://www.zhhuu.top/posts/optimization-code/</loc>
