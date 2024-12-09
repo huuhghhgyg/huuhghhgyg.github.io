@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>快捷键 on Hikaru&#39;s Blog</title>
-    <link>https://www.zhhuu.top/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+    <link>http://localhost:1313/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
     <description>Recent content in 快捷键 on Hikaru&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 11 Jul 2021 15:00:42 +0000</lastBuildDate>
-    <atom:link href="https://www.zhhuu.top/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VSCode多光标输入</title>
-      <link>https://www.zhhuu.top/posts/vscode-multicursor/</link>
+      <link>http://localhost:1313/posts/vscode-multicursor/</link>
       <pubDate>Sun, 11 Jul 2021 15:00:42 +0000</pubDate>
-      <guid>https://www.zhhuu.top/posts/vscode-multicursor/</guid>
+      <guid>http://localhost:1313/posts/vscode-multicursor/</guid>
       <description>&lt;p&gt;VSCode多行光标功能的使用&lt;/p&gt;&#xA;&lt;h1 id=&#34;参考&#34;&gt;参考&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://code.visualstudio.com/docs/editor/codebasics&#34;&gt;Visual Studio Code Basics&lt;/a&gt;: This topic takes you through the basics of the editor and helps you get moving with your code&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/30037808/multiline-editing-in-visual-studio-code&#34;&gt;StackOverflow&lt;/a&gt;: Multiline editing in Visual Studio Code&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;多行光标的使用&#34;&gt;多行光标的使用&lt;/h1&gt;&#xA;&lt;h2 id=&#34;用键盘使用多行光标&#34;&gt;用键盘使用多行光标&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;快捷键&lt;/th&gt;&#xA;          &lt;th&gt;作用&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;kbd&gt;Ctrl+D&lt;/kbd&gt;&lt;/td&gt;&#xA;          &lt;td&gt;选择下一个匹配的内容&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;kbd&gt;Ctrl+U&lt;/kbd&gt;&lt;/td&gt;&#xA;          &lt;td&gt;撤销上一个光标操作&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;kbd&gt;Esc&lt;/kbd&gt;&lt;/td&gt;&#xA;          &lt;td&gt;取消多行选择&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;kbd&gt;Ctrl+Backspace&lt;/kbd&gt;&lt;/td&gt;&#xA;          &lt;td&gt;智能删除&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;&lt;img src=&#34;1.webp&#34; alt=&#34;&#34;&gt;&#xA;使用 &lt;code&gt;Ctrl+D&lt;/code&gt; 时,右上角的小部件，从左到右依次是：&#xA;区分大小写 &lt;kbd&gt;Alt+C&lt;/kbd&gt;、全字匹配 &lt;kbd&gt;Alt+W&lt;/kbd&gt;、使用正则表达式 &lt;kbd&gt;Alt+R&lt;/kbd&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;kbd&gt;Ctrl+Shift+P&lt;/kbd&gt; 能够呼出万能指令窗口&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;&lt;kbd&gt;Ctrl+Shift+P&lt;/kbd&gt; 指令&lt;/th&gt;&#xA;          &lt;th&gt;作用&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Cursor Undo&lt;/td&gt;&#xA;          &lt;td&gt;撤销光标操作&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Cursor Redo&lt;/td&gt;&#xA;          &lt;td&gt;重做光标操作&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h2 id=&#34;用鼠标使用多行光标&#34;&gt;用鼠标使用多行光标&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;2.webp&#34; alt=&#34;&#34;&gt;&#xA;有时候可能会想要跳过某一个位置，这时使用&lt;code&gt;Ctrl+D&lt;/code&gt;就难以做到。使用鼠标控制会令多行光标的使用更灵活。（比如说跳过注释部分的“：”）&lt;/p&gt;&#xA;&lt;p&gt;使用方法&#xA;按住 &lt;kbd&gt;Alt&lt;/kbd&gt; 并点击&lt;/p&gt;&#xA;&lt;h1 id=&#34;多行光标特性&#34;&gt;多行光标特性&lt;/h1&gt;&#xA;&lt;h2 id=&#34;合并&#34;&gt;合并&lt;/h2&gt;&#xA;&lt;p&gt;当两个光标移动到重合时，会自动合并。例如下面的删除：&#xA;&lt;img src=&#34;3.webp&#34; alt=&#34;&#34;&gt;&#xA;&lt;img src=&#34;4.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
   </channel>
