@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>硬盘 on Hikaru&#39;s Blog</title>
-    <link>http://localhost:1313/tags/%E7%A1%AC%E7%9B%98/</link>
+    <link>https://www.zhhuu.top/tags/%E7%A1%AC%E7%9B%98/</link>
     <description>Recent content in 硬盘 on Hikaru&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 07 Apr 2018 13:01:03 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E7%A1%AC%E7%9B%98/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.zhhuu.top/tags/%E7%A1%AC%E7%9B%98/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GPT分区是啥？</title>
-      <link>http://localhost:1313/posts/gpt-partition/</link>
+      <link>https://www.zhhuu.top/posts/gpt-partition/</link>
       <pubDate>Sat, 07 Apr 2018 13:01:03 +0000</pubDate>
-      <guid>http://localhost:1313/posts/gpt-partition/</guid>
+      <guid>https://www.zhhuu.top/posts/gpt-partition/</guid>
       <description>&lt;p&gt;UEFI  BIOS可以说是legacy  BIOS的继承者，也就是传统BIOS的后代。以后的主流模式。&lt;/p&gt;&#xA;&lt;h1 id=&#34;gpt&#34;&gt;GPT&lt;/h1&gt;&#xA;&lt;h2 id=&#34;mbr与gpt的区别&#34;&gt;MBR与GPT的区别&lt;/h2&gt;&#xA;&lt;p&gt;传统的MBR最大支持2TB的单分区，最多能设置4个主分区;GPT支持2TB以上的单分区，理论上能设置128个主分区（硬盘的4k对齐与GPT无关联，AHCI和GPT无关联）&lt;/p&gt;&#xA;&lt;p&gt;MBR分区表：Master Boot Record，即硬盘主引导记录分区表，只支持容量在 2.1TB 以下的硬盘，超过2.1TB的硬盘只能管理2.1TB，最多只支持4个主分区或三个主分区和一个扩展分区，扩展分区下可以有多个逻辑分区。&#xA;GPT分区表：GPT，全局唯一标识分区表(GUID Partition Table)，与MBR最大4个分区表项的限制相比，GPT对分区数量没有限制，但Windows最大仅支持128个GPT分区，GPT可管理硬盘大小达到了18EB。只有基于UEFI平台的主板才支持GPT 分区引导启动。&lt;/p&gt;&#xA;&lt;h3 id=&#34;gpt-esp&#34;&gt;GPT-ESP&lt;/h3&gt;&#xA;&lt;p&gt;ESP分区：EFI system partition，该分区用于采用了EFI BIOS的电脑系统，用来启动操作系统。分区内存放引导管理程序、驱动程序、系统维护工具等。如果电脑采用了EFI系统，或当前磁盘用于在EFI平台上启动操作系统，则应建议ESP分区。如果只是作为仓库盘，就没必要设置这个分区了。&lt;/p&gt;&#xA;&lt;h3 id=&#34;gpt-msr&#34;&gt;GPT-MSR&lt;/h3&gt;&#xA;&lt;p&gt;ESP分区：EFI system partition，该分区用于采用了EFI BIOS的电脑系统，用来启动操作系统。分区内存放引导管理程序、驱动程序、系统维护工具等。如果电脑采用了EFI系统，或当前磁盘用于在EFI平台上启动操作系统，则应建议ESP分区。如果只是作为仓库盘，也同样没必要设置这个分区。&lt;/p&gt;&#xA;&lt;h3 id=&#34;secure-bootwindows8&#34;&gt;SECURE BOOT(Windows8+)&lt;/h3&gt;&#xA;&lt;p&gt;SECURE BOOT功能:Windows 8中增加了一个新的安全功能,Secure Boot内置于UEFI BIOS中,用来对抗感染MBR、BIOS的恶意软件,  Windows 8 缺省将使用Secure Boot,在启动过程中，任何要加载的模块必须签名(强制的)，UEFI固件会进行验证， 没有签名或者无法验证的，将不会加载。&lt;/p&gt;&#xA;&lt;h1 id=&#34;uefi&#34;&gt;UEFI&lt;/h1&gt;&#xA;&lt;p&gt;UEFI全称“统一的可扩展固件接口”(Unified Extensible Firmware Interface)， 是一种详细描述类型接口的标准。这种接口用于操作系统自动从预启动的操作环境，加载到一种操作系统上。&lt;/p&gt;&#xA;&lt;h2 id=&#34;uefi的优点&#34;&gt;UEFI的优点&lt;/h2&gt;&#xA;&lt;p&gt;　　1.纠错特性：与BIOS显著不同的是，UEFI是用模块化、C语言风格的参数堆栈传递方式、动态链接的形式构建系统，它比BIOS更易于实现，容错和纠错特性也更强，从而缩短了系统研发的时间。更加重要的是，它运行于32位或64位模式，突破了传统16位代码的寻址能力，达到处理器的最大寻址，此举克服了BIOS代码运行缓慢的弊端。&lt;/p&gt;&#xA;&lt;p&gt;　　2.兼容性：与BIOS不同的是，UEFI体系的驱动并不是由直接运行在CPU上的代码组成的，而是用EFI Byte Code(EFI字节代码)编写而成的。Java是以“Byte Code”形式存在的，正是这种没有一步到位的中间性机制，使Java可以在多种平台上运行。UEFI也借鉴了类似的做法。EFI Byte Code是一组用于UEFI驱动的虚拟机器指令，必须在UEFI驱动运行环境下被解释运行，由此保证了充分的向下兼容性。&lt;/p&gt;&#xA;&lt;p&gt;　　3.鼠标操作：UEFI内置图形驱动功能，可以提供一个高分辨率的彩色图形环境，用户进入后能用鼠标点击调整配置，一切就像操作Windows系统下的应用软件一样简单。&lt;/p&gt;&#xA;&lt;p&gt;　　4.强大的可扩展性：UEFI将使用模块化设计，它在逻辑上分为硬件控制与OS(操作系统)软件管理两部分，硬件控制为所有UEFI版本所共有，而OS软件管理其实是一个可编程的开放接口。借助这个接口，主板厂商可以实现各种丰富的功能。比如我们熟悉的各种备份及诊断功能可通过UEFI加以实现，主板或固件厂商可以将它们作为自身产品的一大卖点。UEFI也提供了强大的联网功能，其他用户可以对你的主机进行可靠的远程故障诊断，而这一切并不需要进入操作系统。&lt;/p&gt;&#xA;&lt;p&gt;　　5.图形界面：目前UEFI主要由这几部分构成：UEFI初始化模块、UEFI驱动执行环境、UEFI驱动程序、兼容性支持模块、UEFI高层应用和GUID磁盘分区组成。&lt;/p&gt;&#xA;&lt;h1 id=&#34;在什么情况下能使用uefigpt模式来装系统呢&#34;&gt;在什么情况下能使用UEFI+GPT模式来装系统呢？&lt;/h1&gt;&#xA;&lt;p&gt;win7/8 64位系统+UEFI才能在GPT中引导哦。但是现在使用传统legacy+MBR模式装系统的，还是比较多的。&lt;/p&gt;&#xA;&lt;h1 id=&#34;ahci&#34;&gt;AHCI&lt;/h1&gt;&#xA;&lt;p&gt;AHCI（Serial ATA Advanced Host Controller Interface）串行ATA高级主控接口/高级主机控制器接口），是在Intel的指导下，由多家公司联合研发的接口标准，它允许存储驱动程序启用高级串行 ATA 功能，&lt;/p&gt;&#xA;&lt;p&gt;AHCI本质是一种PCI类设备，在系统内存总线和串行ATA设备内部逻辑之间扮演一种通用接口的角色（即它在不同的操作系统和硬件中是通用的）。这类设备描述了一个含控制和状态区域、命令序列入口表的通用系统内存结构；每个命令表入口包含SATA设备编程信息，和一个指向（用于在设备和主机传输数据的）描述表的指针。&#xA;AHCI通过包含一个PCI BAR（基址寄存器），来实现原生SATA功能。由于AHCI统一接口的研发成功，使得支持串行ATA产品的开发工作大为简化，操作系统和设备制造商省去了单独开发接口的工作，取而代之的是直接在统一接口上进行操作，可以实现包括NCQ（Native Command Queuing）在内的诸多功能。&#xA;AHCI模式则与IDE模式相反，装系统时需要安装SATA驱动（而且貌似只有这个模式能打开NCQ功能）。&lt;/p&gt;</description>
     </item>
   </channel>
