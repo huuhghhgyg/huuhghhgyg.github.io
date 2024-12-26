@@ -7,7 +7,7 @@
 <title>使用Python编写遗传算法 | Hikaru&#39;s Blog</title>
 
 <meta name="description" content="">
-      <link rel="stylesheet" href="/css/main.min.bedbfdf919ae174976485b70bebdbc6f9e8ea76fab0f3730277ac3fd5a423672.css" integrity="sha256-vtv9&#43;RmuF0l2SFtwvr28b56Op2&#43;rDzcwJ3rD/VpCNnI=" crossorigin="anonymous">
+      <link rel="stylesheet" href="/css/main.min.991f9ea3c5ce31bccedc7ffffeb37fe56eb4e8ae29e2bfc095582f90ac22d145.css" integrity="sha256-mR&#43;eo8XOMbzO3H///rN/5W606K4p4r/AlVgvkKwi0UU=" crossorigin="anonymous">
 
 <link rel="icon" type="image/svg+xml" href="https://www.zhhuu.top/favicon.svg"> 
 <link rel="icon" type="image/x-icon" href="https://www.zhhuu.top/favicon.ico"> 
@@ -623,32 +623,7 @@ $$
 <div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span><span style="color:#89dceb">print</span>(cal_score([<span style="color:#fab387">13</span>,<span style="color:#fab387">6</span>,<span style="color:#fab387">7</span>,<span style="color:#fab387">8</span>,<span style="color:#fab387">3</span>,<span style="color:#fab387">14</span>,<span style="color:#fab387">2</span>,<span style="color:#fab387">9</span>,<span style="color:#fab387">15</span>,<span style="color:#fab387">5</span>,<span style="color:#fab387">11</span>,<span style="color:#fab387">12</span>,<span style="color:#fab387">10</span>,<span style="color:#fab387">4</span>]))
 </span></span></code></pre></div><h2 id="基因序列的设计和交叉方式">基因序列的设计和交叉方式</h2>
 <h3 id="基因序列的设计">基因序列的设计</h3>
-<table>
-  <thead>
-      <tr>
-          <th><strong>5</strong></th>
-          <th><strong>5</strong></th>
-          <th><strong>4</strong></th>
-          <th><strong>0</strong></th>
-          <th>4</th>
-          <th>10</th>
-          <th>12</th>
-          <th>11</th>
-          <th>5</th>
-          <th>9</th>
-          <th>2</th>
-          <th>3</th>
-          <th>14</th>
-          <th>15</th>
-          <th>13</th>
-          <th>6</th>
-          <th>7</th>
-          <th>8</th>
-      </tr>
-  </thead>
-  <tbody>
-  </tbody>
-</table>
+<p>基因编码：<strong>5, 5, 4, 0</strong>, 4, 10, 12, 11, 5, 9, 2, 3, 14, 15, 13, 6, 7, 8</p>
 <p>在我的模型中，由于车辆数为4，设定前4位分别为每辆车服务的客户数量。
 后14位客户的服务顺序，根据车辆服务客户的数量依次分配。交叉时不切断前四位，保证交换后的方案在一定程度上的可行。</p>
 <p>基因相关代码：</p>

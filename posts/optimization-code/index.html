@@ -7,7 +7,7 @@
 <title>优化软件语法 | Hikaru&#39;s Blog</title>
 
 <meta name="description" content="">
-      <link rel="stylesheet" href="/css/main.min.bedbfdf919ae174976485b70bebdbc6f9e8ea76fab0f3730277ac3fd5a423672.css" integrity="sha256-vtv9&#43;RmuF0l2SFtwvr28b56Op2&#43;rDzcwJ3rD/VpCNnI=" crossorigin="anonymous">
+      <link rel="stylesheet" href="/css/main.min.991f9ea3c5ce31bccedc7ffffeb37fe56eb4e8ae29e2bfc095582f90ac22d145.css" integrity="sha256-mR&#43;eo8XOMbzO3H///rN/5W606K4p4r/AlVgvkKwi0UU=" crossorigin="anonymous">
 
 <link rel="icon" type="image/svg+xml" href="https://www.zhhuu.top/favicon.svg"> 
 <link rel="icon" type="image/x-icon" href="https://www.zhhuu.top/favicon.ico"> 
@@ -566,23 +566,15 @@
 </table>
 <p>仅求和而言，大致有以下2种情况：</p>
 <ul>
-    <li>
-        <div>
-            <label>双变量求和</label><span>`\sum_{i=1}^{n}\sum_{j=1}^{k}x_{ij}`</span>：可以直接对集合`T(i,j)`使用结合函数<code>@sum</code>进行求和
-        </div>
-    </li>
-    <li>
-        <div>
-            <label>双变量求和</label><span>`\sum_{i=1}^n\sum_{j=1}^{k}x_{j}`</span>或<span>`\sum_{j=1}^kx_{ij}`,`i\in{1,2,3,...,6}`</span>：可以直接对集合`T(i,j)`使用结合函数<code>@sum</code>进行求和
-        </div>
-    </li>
+<li><strong>双变量求和</strong> $\sum_{i=1}^{n}\sum_{j=1}^{k}x_{ij}$：可以直接对集合 <code>T(i,j)</code> 使用集合函数 <code>@sum</code> 进行求和</li>
+<li><strong>双变量求和</strong> $\sum_{i=1}^n\sum_{j=1}^{k}x_{j}$ 或 $\sum_{j=1}^kx_{ij}$, $i\in{1,2,3,&hellip;,6}$：可以直接对集合 <code>T(i,j)</code> 使用集合函数 <code>@sum</code> 进行求和</li>
 </ul>
 <blockquote>
 <p>如果同时用到两个下标进行求和的时候，可以直接使用集合函数<code>@sum</code>对其直接进行求和，否则应考虑如何使用<code>@for</code>函数遍历所有情况。</p>
 </blockquote>
 <h3 id="lingo中目标函数的表示">LINGO中目标函数的表示</h3>
-<p>数学公式</p>
-<div class="formula"><span>`min\sum_{j=1}^2\sum_{i=1}^6\sqrt{(x_j-a_i)^2+(y_j-b_i)^2}`</span></div>
+<p>数学公式：</p>
+<p>$$min\sum_{j=1}^2\sum_{i=1}^6\sqrt{(x_j-a_i)^2+(y_j-b_i)^2}$$</p>
 <p>LINGO代码：</p>
 <div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span>min = @sum(T(j): @sum(S(i):
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">2</span><span>	c(i,j)*@sqrt( ( x(j) - a(i) )^2 + ( y(j) - b(i) )^2 )
@@ -590,18 +582,15 @@
 </span></span></code></pre></div><p>范围不同，需要使用两次<code>@sum</code>进行求和操作。<code>@sum</code>内表示了求和操作的对象，如<code>T(j)</code>和<code>S(i)</code>，其冒号后跟的是求和对象。</p>
 <h3 id="lingo中约束方程的表示">LINGO中约束方程的表示</h3>
 <p>数学公式</p>
-<div class="formula">
-<span>s.t.</span>
-<span>
-$
+<div>
+$$
 \left\{  
     \begin{array}{**lr**}  
     \sum_{j=1}^2c_{ij}=d_i , i=1,2,...,6 \\  
     \sum_{i=1}^6c_{ij} \leq d_i, j=1,2 
     \end{array}  
 \right.
-$
-</span>
+$$
 </div>
 <p>LINGO代码</p>
 <div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">1</span><span>min = @sum(T(j): @sum(S(i):
@@ -699,9 +688,9 @@ $
 </span></span></code></pre></div><h2 id="集合语言">集合语言</h2>
 <p>类似LINGO中的集合函数，此处分为3种情况</p>
 <ul>
-    <li><span>`\sum_{j=1}^np_jx_j`</span>：<code>sum(j in 1..n) p[j]*x[j]</code></li>
-    <li><span>`\sum_{i=1}^n\sum_{j=1}^mx_{ij}`</span>：<code>sum(i in 1..n) sum(j in 1..m) x[i][j]</code></li>
-    <li><span>`\sum_{i=1}^nx_{ij}`</span>：<code>forall(j in 1..m) sum(i in 1..n) x[i][j]</code></li>
+<li>$\sum_{j=1}^n p_j x_j$：<code>sum(j in 1..n) p[j]*x[j]</code></li>
+<li>$\sum_{i=1}^n \sum_{j=1}^m x_{ij}$：<code>sum(i in 1..n) sum(j in 1..m) x[i][j]</code></li>
+<li>$\sum_{i=1}^n x_{ij}$：<code>forall(j in 1..m) sum(i in 1..n) x[i][j]</code></li>
 </ul>
 <p>其实也就还是<code>sum</code>和<code>for</code>函数。建议<code>sum</code>和<code>for</code>函数里面使用<code>range</code>。</p>
 <h3 id="sum">SUM</h3>
@@ -767,6 +756,42 @@ $
     </ul>
 
       
+        <script type="text/javascript"
+        async
+        src="https://proxy.zhhuu.top/cdn/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+      
 
     </div>
 
@@ -818,7 +843,7 @@ $
 			
 			
 			
-			<img class="object-cover group-hover:scale-105 transition duration-500 cursor-pointer object-center w-full h-full" src="/img/random/material-6.webp" alt="Hexo书写语法" loading="lazy">
+			<img class="object-cover group-hover:scale-105 transition duration-500 cursor-pointer object-center w-full h-full" src="/img/random/material-10.webp" alt="Hexo书写语法" loading="lazy">
 
 	  </figure>
 
